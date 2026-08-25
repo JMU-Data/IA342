@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Syllabus
+title: "Syllabus - IA 342"
 ---
 
 # Syllabus - Fall 2026
@@ -64,7 +64,7 @@ AI tools (such as ChatGPT, Copilot, etc.) are part of the course workflow and ma
 - **Before Deadline:** You are allowed to resubmit assignments multiple times before the deadline. Only the final pre-deadline submission will be graded.
 - **Late Penalty:** Late submissions incur a **10% penalty per day**, capped at a maximum 40% penalty, unless prior approval is obtained from the instructor.
 - **Final Exam Week:** **No late submissions** are accepted during final exam week.
-- **Projects:** The mini project and final project may have stricter late/resubmission rules detailed in their specific instructions. Please adhere to those specific project rubrics.
+- **Projects:** Late submissions/resubmissions of the class projects will not be accepted.
 
 ## Attendance / Excused Absence
 

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Home
+title: "Home - IA 342"
 ---
 
 # IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis
@@ -12,20 +12,20 @@ title: Home
 > *Use Business Intelligence and visualization to help people understand complex data.*
 
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
-  <a href="syllabus/" style="text-decoration: none; color: inherit;">
-    <div style="padding: 1.5rem; background-color: #f8f9fa; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); text-align: center;">
+  <a href="syllabus/" style="text-decoration: none; color: inherit; display: block;">
+    <div style="padding: 1.5rem; background-color: #f8f9fa; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); text-align: center; height: 100%; box-sizing: border-box;">
       <h3 style="margin: 0 0 0.5rem 0; color: #0366d6;">Syllabus</h3>
       <p style="margin: 0; font-size: 0.9em; color: #586069;">Course policies, grading, and logistics</p>
     </div>
   </a>
-  <a href="modules/module-1/" style="text-decoration: none; color: inherit;">
-    <div style="padding: 1.5rem; background-color: #f8f9fa; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); text-align: center;">
+  <a href="modules/module-1/" style="text-decoration: none; color: inherit; display: block;">
+    <div style="padding: 1.5rem; background-color: #f8f9fa; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); text-align: center; height: 100%; box-sizing: border-box;">
       <h3 style="margin: 0 0 0.5rem 0; color: #28a745;">Module 1</h3>
       <p style="margin: 0; font-size: 0.9em; color: #586069;">Course Intro & Why Visualization</p>
     </div>
   </a>
-  <a href="assignments/arcgis-access-check/" style="text-decoration: none; color: inherit;">
-    <div style="padding: 1.5rem; background-color: #f8f9fa; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); text-align: center;">
+  <a href="assignments/arcgis-access-check/" style="text-decoration: none; color: inherit; display: block;">
+    <div style="padding: 1.5rem; background-color: #f8f9fa; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); text-align: center; height: 100%; box-sizing: border-box;">
       <h3 style="margin: 0 0 0.5rem 0; color: #6f42c1;">Week 1 Assignment</h3>
       <p style="margin: 0; font-size: 0.9em; color: #586069;">ArcGIS Access Check</p>
     </div>

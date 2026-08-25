@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ArcGIS Access Check
+title: "ArcGIS Access Check - IA 342"
 ---
 
 # Assignment: ArcGIS Business Analyst Access Check

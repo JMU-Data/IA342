@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Module 1
+title: "Module 1 - IA 342"
 ---
 
 # Module 1: Course Introduction and the Value of Visualization

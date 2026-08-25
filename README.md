@@ -7,9 +7,11 @@
 > *Use Business Intelligence and visualization to help people understand complex data.*
 
 ## Quick Links
-- [Syllabus](docs/syllabus/)
-- [Module 1](docs/modules/module-1/)
-- [Week 1 Assignment](docs/assignments/arcgis-access-check/)
+- [Syllabus](docs/syllabus/index.md)
+- [Module 1](docs/modules/module-1/index.md)
+- [Week 1 Assignment](docs/assignments/arcgis-access-check/index.md)
+
+*(Note: The official GitHub Pages Course Website URL will be added here after merge and deployment verification.)*
 
 ## Course Overview
 
