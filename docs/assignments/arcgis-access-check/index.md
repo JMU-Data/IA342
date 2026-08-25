@@ -20,7 +20,7 @@ This assignment is a simple access check to resolve any login issues early.
 ## Instructions
 
 1. Navigate to the ArcGIS Business Analyst web application (your instructor will provide the specific JMU ArcGIS portal link in Canvas).
-2. Attempt to log in using your standard JMU Dukes SSO credentials.
+2. Attempt to log in using your standard JMU institutional login credentials.
 3. Verify that you can successfully enter the application and view the main dashboard without seeing an "unauthorized" or "license required" error.
 
 ## Submission Requirements
