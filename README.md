@@ -1,11 +1,15 @@
 # IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis
 
-> *Use Business Intelligence and visualization to help people understand complex data.*
+**James Madison University | Intelligence Analysis | Fall 2026**
 
 ![IA342 Course Image](docs/assets/images/course-logo.png)
 
-[![Course Website](https://img.shields.io/badge/Course_Website-Available-brightgreen?style=for-the-badge)](https://JMU-Data.github.io/IA342/)
-[![JMU Catalog](https://img.shields.io/badge/JMU_Catalog-IA_Curriculum-blue?style=for-the-badge)](https://www.jmu.edu/cise/intelligence-analysis/academics/curriculum.shtml)
+> *Use Business Intelligence and visualization to help people understand complex data.*
+
+## Quick Links
+- [Syllabus](docs/syllabus/)
+- [Module 1](docs/modules/module-1/)
+- [Week 1 Assignment](docs/assignments/arcgis-access-check/)
 
 ## Course Overview
 
@@ -13,16 +17,13 @@ IA 342 is designed to bridge the gap between raw data and human decision-making.
 
 Throughout the semester, we focus on the theory of visual design and the practical application of industry-standard platforms, specifically ArcGIS and Tableau. We move from foundational spatial analysis to exploratory data visualization, and finally to the creation of interactive, professional-grade visual analytics dashboards.
 
-*Note: This repository contains the public, student-facing materials for the course. For syllabus, policies, and weekly modules, please visit the [Official Course Website](https://JMU-Data.github.io/IA342/).*
-
-## What Students Learn (Course Roadmap)
+## Course Roadmap / Major Modules
 
 The course is structured to take students from raw data to actionable human understanding:
 
 **Data** ➔ **Visual Design & Spatial Analysis** ➔ **ArcGIS** ➔ **Tableau & Visual Analytics** ➔ **Interactive Dashboards** ➔ **Human Understanding & Decision**
 
-### Major Modules
-1. **[Course Introduction](docs/modules/module-1/):** The core philosophy of why visualization matters in the AI era.
+1. **Course Introduction:** The core philosophy of why visualization matters in the AI era.
 2. **Spatial Intelligence (ArcGIS):** Map design, geographic contexts, and spatial visualization.
 3. **Business Intelligence (Tableau):** Connecting data, building primary charts, and visual exploration.
 4. **Visual Analytics & Dashboards:** Advanced calculations, interactivity, and dashboard design.
@@ -33,7 +34,6 @@ The course is structured to take students from raw data to actionable human unde
 IA 342 is a core component of the Intelligence Analysis curriculum at James Madison University.
 - **Curriculum:** [JMU Intelligence Analysis Academic Curriculum](https://www.jmu.edu/cise/intelligence-analysis/academics/curriculum.shtml)
 - **Term:** Fall 2026
-- **[Course Syllabus](docs/syllabus/)**
 
 ## Instructor
 
@@ -44,7 +44,7 @@ IA 342 is a core component of the Intelligence Analysis curriculum at James Madi
 
 *Biography:* Dr. Wei's teaching and research focus on data science and artificial intelligence, cloud computing, GIS and geospatial analysis, and social data analytics. He is the co-author of *Social Data Analytics in the Cloud with AI*. 
 
-## Repository and Reuse Note
+## Repository / Reuse / Privacy Boundary
 
 This repository (`JMU-Data/IA342`) serves as the canonical public source for course materials, built with a "source-first, web-published" approach via GitHub Pages. The materials here are designed for transparency and reuse. 
 

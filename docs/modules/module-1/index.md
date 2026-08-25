@@ -1,40 +1,32 @@
 ---
 layout: default
 title: Module 1
-nav_order: 3
 ---
 
 # Module 1: Course Introduction and the Value of Visualization
 
-Welcome to the first module of IA 342! This week sets the foundation for the entire semester. We will cover the course structure, understand where this course fits within your Intelligence Analysis journey, and explore the fundamental philosophy of why visualization remains critical in the age of Artificial Intelligence.
+## Welcome / Syllabus Highlights
 
----
-
-## 1. Welcome and Syllabus Highlights
-
-Before we dive into the concepts, please ensure you have read the [Fall 2026 Syllabus](../../syllabus/). 
+Welcome to the first module of IA 342! This week sets the foundation for the entire semester. Before we dive into the concepts, please ensure you have read the [Fall 2026 Syllabus](../../syllabus/). 
 
 **Key Takeaways from the Syllabus:**
 - **Communication:** Use your JMU student email to contact Dr. Wei (do not use Canvas messages).
 - **Grading:** Focused on hands-on application—Labs (50%), Mini Project (10%), Final Project (20%), and Attendance (20%).
 - **AI Policy:** AI tools are part of the course workflow and may be expected when instructed. However, you are strictly responsible for the integrity, design, and interpretation of your visualizations.
 
----
+## Intelligence Analysis Technical Curriculum
 
-## 2. The Intelligence Analysis Technical Curriculum
+How does IA 342 connect with the rest of your courses? Our technical curriculum is designed as a logical, complementary architecture. You do not need to take them concurrently.
 
-How does IA 342 connect with the rest of your courses? Our technical curriculum is designed as a logical, complementary architecture, rather than a strict sequence of dependencies. You do not need to take them concurrently.
-
-<div style="margin: 2rem 0; padding: 1.5rem; background-color: #f8f9fa; border-radius: 8px; border-left: 5px solid #0366d6;">
-  <h3 style="margin-top: 0; color: #24292e;">Curriculum Architecture</h3>
+<div style="margin: 2rem 0; padding: 1.5rem; background-color: #f8f9fa; border-radius: 8px; border-left: 5px solid #28a745;">
   <div style="display: flex; flex-direction: column; gap: 1rem;">
     <div style="padding: 1rem; background: white; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
       <strong style="color: #0366d6; font-size: 1.1em;">IA 340: Data Mining and Analytics</strong>
       <p style="margin: 0.5rem 0 0 0;">Focuses on how to collect, organize, and quantitatively analyze data computationally.</p>
     </div>
     <div style="text-align: center; color: #6a737d;">⬇️</div>
-    <div style="padding: 1rem; background: white; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-left: 4px solid #28a745;">
-      <strong style="color: #28a745; font-size: 1.1em;">IA 342: Visualization Methods (This Course!)</strong>
+    <div style="padding: 1.2rem; background: white; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-left: 5px solid #28a745;">
+      <strong style="color: #28a745; font-size: 1.2em;">IA 342: Visualization Methods (This Course)</strong>
       <p style="margin: 0.5rem 0 0 0;">Focuses on how to use Business Intelligence (BI) and visualization to help humans understand data.</p>
     </div>
     <div style="text-align: center; color: #6a737d;">⬇️</div>
@@ -45,11 +37,7 @@ How does IA 342 connect with the rest of your courses? Our technical curriculum 
   </div>
 </div>
 
-In IA 342, our ultimate goal isn't just drawing charts; it's facilitating human understanding.
-
----
-
-## 3. The Core Question: Why Visualization?
+## Why Visualization?
 
 With the rapid advancement of Artificial Intelligence (like ChatGPT, Claude, and advanced data-crunching models), you might wonder: 
 
@@ -82,9 +70,7 @@ Because **humans still make decisions**. AI can summarize text or run regression
 
 </div>
 
----
-
-## 4. Fall 2026 Roadmap
+## Fall 2026 Roadmap
 
 Rather than a rigid week-by-week calendar, our course flows through these major technical phases:
 
@@ -94,12 +80,9 @@ Rather than a rigid week-by-week calendar, our course flows through these major 
 4. **Visual Analytics & Dashboard Design:** Moving beyond basic charts into calculated fields, interactive filters, and cohesive dashboard layouts.
 5. **Final Project:** Your opportunity to build an end-to-end analytical dashboard.
 
----
+## Week 1 Action Items
 
-## Action Items for This Week
-
-1. Review the full [Syllabus](../../syllabus/).
-2. Complete the [ArcGIS Business Analyst Access Check](../../assignments/arcgis-access-check/). Note: We are strictly focusing on ArcGIS this week; we will set up Tableau accounts later in the semester.
+1. Complete the [ArcGIS Business Analyst Access Check](../../assignments/arcgis-access-check/). Note: We are strictly focusing on ArcGIS this week; we will set up Tableau accounts later in the semester.
 
 ---
 [Return to Course Home](../../)
