@@ -65,9 +65,15 @@ AI tools (such as ChatGPT, Copilot, etc.) are part of the course workflow and ma
 - **Projects:** The mini project and final project may have stricter late/resubmission rules detailed in their specific instructions.
 
 ### Attendance and Excused Absences
-Regular attendance is critical, as a significant portion of the learning happens in class through hands-on practice, critique, and discussion.
-- **Excused Absences:** Absences may be excused for university-sponsored activities, religious observations, severe illness, or family emergencies, provided that appropriate documentation is submitted and the instructor is notified *prior* to the class when possible.
-- Excessive unexcused absences will directly impact the Attendance portion of your grade.
+Regular attendance is critical, as a significant portion of the learning happens in class through hands-on practice, critique, and discussion. 
+
+You may lose attendance credit for any of the following reasons:
+- **Unexcused absence**: Missing class without an approved reason or prior notification.
+- **Leaving class early**: Departing before the class is dismissed without the instructor's permission.
+- **Excessive lateness**: Arriving significantly late to class.
+- **Disruptive or disrespectful behavior**: Engaging in activities that disrupt the learning environment or show disrespect to peers or the instructor.
+
+**Excused Absences:** Absences may be excused for university-sponsored activities, religious observations, severe illness, or family emergencies, provided that appropriate documentation is submitted and the instructor is notified *prior* to the class when possible.
 
 ---
 
