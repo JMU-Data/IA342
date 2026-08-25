@@ -1,0 +1,37 @@
+﻿# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Environments and Secrets
+.env
+.env.*
+secrets.json
+credentials.json
+*.pem
+*.key
+auth.json
+
+# Local IDEs / Editor configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Instructor/Private Data safeguards
+roster.csv
+grades.csv
+student_*.csv
+canvas_*.json
+private/
+instructor_only/
+
+# Typical Data / Build ignores
+*.log
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
