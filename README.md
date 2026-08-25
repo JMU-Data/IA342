@@ -1,0 +1,27 @@
+# IA342: Data Visualization (James Madison University)
+
+Welcome to the public repository for **IA342 (Data Visualization)** at James Madison University.
+
+## Course Overview
+IA342 focuses on Data Visualization, Business Intelligence, Visual Analytics, and Data Storytelling. Throughout the course, we utilize industry-standard tools such as **Tableau** and **ArcGIS** to transform raw data into interactive dashboards and compelling visual narratives.
+
+*Note: This is a visualization and analytics course, not a coding-heavy software engineering or database management class.*
+
+## Repository Structure
+This repository (JMU-Data/IA342) serves as the canonical source for public course materials.
+
+**Included Content:**
+- Syllabus and Schedule
+- Lecture Slides and Materials
+- Tableau and ArcGIS Exercises
+- Labs and Assignments
+- Visualization Examples and Public Datasets
+- Student Onboarding Documentation
+
+## Privacy and Boundary Notice
+To protect student privacy and maintain operational security, this repository is strictly for **public-facing course content**.
+
+Private grading, student management, LMS automation (Canvas), and instructor-only tooling belong entirely outside this public repository (managed in a separate private instructor environment).
+
+## Contributing and AI Governance
+All changes to this repository are managed via a strict Pull Request workflow. Direct commits to main are disabled. For AI agents assisting with this repository, please review our strict governance rules defined in [AGENTS.md](AGENTS.md).
