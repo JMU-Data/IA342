@@ -9,7 +9,7 @@ title: "Syllabus - IA 342"
 **Term:** Fall 2026  
 **Instructor:** Dr. Xuebin Wei  
 **Email:** [weixx@jmu.edu](mailto:weixx@jmu.edu)  
-**Profile:** [JMU Faculty Profile](https://www.jmu.edu/sis/people/faculty/wei-xuebin.shtml)  
+**Profile:** [JMU Faculty Profile](https://www.jmu.edu/cise/people/faculty/wei-xuebin.shtml)  
 
 ## Course Description
 
@@ -71,7 +71,7 @@ AI tools (such as ChatGPT, Copilot, etc.) are part of the course workflow and ma
 Regular attendance is critical, as a significant portion of the learning happens in class through hands-on practice, critique, and discussion. 
 
 - **Unexcused Absences & Loss of Credit:** Absence, leaving early without permission, being late more than 20 minutes, or disrespectful/disturbing behavior results in **0 attendance points** for that meeting. Being late more than 5 minutes receives a late penalty.
-- **Excused Absences:** Excused absences are strictly limited to: sickness/health issues; mandatory activities with written documentation; or other situations with instructor approval. Appropriate documentation must be submitted, and the instructor should be notified prior to the class when possible.
+- **Excused Absences:** Excused absences are strictly limited to: sickness/health issues; mandatory activities with written documentation; or other situations with instructor approval.
 
 ## Academic Integrity / Honor Code
 

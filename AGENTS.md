@@ -56,3 +56,17 @@ All substantive changes must follow this PR workflow:
 - **IA342 is a Data Visualization course**.
 - **Core Topics**: Data Visualization, Business Intelligence, Visual Analytics, Tableau, ArcGIS, Dashboards, and Data Storytelling.
 - **Not a Software Engineering Course**: This is not a coding-heavy software development course. Do not introduce heavy database engineering (Cloud SQL, MongoDB), heavy Python automation workflows, API development, or software architecture topics here.
+
+## 5. Multi-device / Fresh Clone Bootstrap
+Because the Owner operates across multiple devices (personal and school computers), this repository must be self-describing from GitHub alone.
+- **Authoritative Source**: The remote GitHub repository and tracked files are the only source of truth. Local project memory, chat history, uncommitted code, and machine-local auth (.env) are NOT authoritative.
+- **Fresh Clone Routine**: Upon initiating work on a new device or fresh clone, Antigravity MUST:
+  1. Confirm the repository and remote.
+  2. Run git fetch --all --prune.
+  3. Inspect the current branch and git status.
+  4. Read AGENTS.md and README.md.
+  5. Inspect relevant open Issues, open PRs, and recent merged PRs to rebuild context.
+  6. Resume an exact remote PR branch if work is ongoing, or start a new branch from the current remote main.
+  7. Bootstrap using ONLY tracked configuration/lock files.
+  8. Request only the absolute minimum Owner-side machine-local auth/setup when credentials are missing.
+- **Independence**: Keep IA342 self-contained. Do not depend on a local IA340 or jmu-teaching-coding checkout. If cross-repository context is needed, query the reviewed/merged remote state rather than local machine directories. Do not use unversioned status tracking files.

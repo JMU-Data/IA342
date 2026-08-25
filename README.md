@@ -2,7 +2,9 @@
 
 **James Madison University | Intelligence Analysis | Fall 2026**
 
-![IA342 Course Image](docs/assets/images/course-logo.png)
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="docs/assets/images/course-logo.png" alt="IA342 Course Image" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+</div>
 
 > *Use Business Intelligence and visualization to help people understand complex data.*
 
@@ -42,7 +44,7 @@ IA 342 is a core component of the Intelligence Analysis curriculum at James Madi
 **Dr. Xuebin Wei**  
 *Associate Professor, James Madison University (Geography / Intelligence Analysis)*  
 **Email:** [weixx@jmu.edu](mailto:weixx@jmu.edu)  
-**Profile:** [Official JMU Faculty Profile](https://www.jmu.edu/sis/people/faculty/wei-xuebin.shtml)  
+**Profile:** [Official JMU Faculty Profile](https://www.jmu.edu/cise/people/faculty/wei-xuebin.shtml)  
 
 *Biography:* Dr. Wei's teaching and research focus on data science and artificial intelligence, cloud computing, GIS and geospatial analysis, and social data analytics. He is the co-author of *Social Data Analytics in the Cloud with AI*. 
 

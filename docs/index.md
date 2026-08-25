@@ -7,29 +7,29 @@ title: "Home - IA 342"
 
 **James Madison University | Intelligence Analysis | Fall 2026**
 
-![IA342 Course Image](assets/images/course-logo.png)
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="assets/images/course-logo.png" alt="IA342 Course Image" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+</div>
 
 > *Use Business Intelligence and visualization to help people understand complex data.*
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
-  <a href="syllabus/" style="text-decoration: none; color: inherit; display: block;">
-    <div style="padding: 1.5rem; background-color: #f8f9fa; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); text-align: center; height: 100%; box-sizing: border-box;">
-      <h3 style="margin: 0 0 0.5rem 0; color: #0366d6;">Syllabus</h3>
-      <p style="margin: 0; font-size: 0.9em; color: #586069;">Course policies, grading, and logistics</p>
-    </div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+
+  <a href="syllabus/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #0969da; display: flex; align-items: center; gap: 0.5rem;">📖 Course Syllabus</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Review the Fall 2026 course policies, grading structure, and official AI guidelines.</p>
   </a>
-  <a href="modules/module-1/" style="text-decoration: none; color: inherit; display: block;">
-    <div style="padding: 1.5rem; background-color: #f8f9fa; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); text-align: center; height: 100%; box-sizing: border-box;">
-      <h3 style="margin: 0 0 0.5rem 0; color: #28a745;">Module 1</h3>
-      <p style="margin: 0; font-size: 0.9em; color: #586069;">Course Intro & Why Visualization</p>
-    </div>
+
+  <a href="modules/module-1/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #2da44e; display: flex; align-items: center; gap: 0.5rem;">🚀 Module 1</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Course Introduction and the Value of Visualization.</p>
   </a>
-  <a href="assignments/arcgis-access-check/" style="text-decoration: none; color: inherit; display: block;">
-    <div style="padding: 1.5rem; background-color: #f8f9fa; border: 1px solid #e1e4e8; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); text-align: center; height: 100%; box-sizing: border-box;">
-      <h3 style="margin: 0 0 0.5rem 0; color: #6f42c1;">Week 1 Assignment</h3>
-      <p style="margin: 0; font-size: 0.9em; color: #586069;">ArcGIS Access Check</p>
-    </div>
+
+  <a href="assignments/arcgis-access-check/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">📝 Week 1 Assignment</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Complete the ArcGIS Business Analyst Access Check.</p>
   </a>
+
 </div>
 
 ## Course Overview
@@ -61,6 +61,12 @@ IA 342 is a core component of the Intelligence Analysis curriculum at James Madi
 **Dr. Xuebin Wei**  
 *Associate Professor, James Madison University (Geography / Intelligence Analysis)*  
 **Email:** [weixx@jmu.edu](mailto:weixx@jmu.edu)  
-**Profile:** [Official JMU Faculty Profile](https://www.jmu.edu/sis/people/faculty/wei-xuebin.shtml)  
+**Profile:** [Official JMU Faculty Profile](https://www.jmu.edu/cise/people/faculty/wei-xuebin.shtml)  
 
 *Biography:* Dr. Wei's teaching and research focus on data science and artificial intelligence, cloud computing, GIS and geospatial analysis, and social data analytics. He is the co-author of *Social Data Analytics in the Cloud with AI*.
+
+## Repository / Reuse / Privacy Boundary
+
+This repository (`JMU-Data/IA342`) serves as the canonical public source for course materials, built with a "source-first, web-published" approach via GitHub Pages. The materials here are designed for transparency and reuse. 
+
+To protect student privacy and maintain operational security, this repository strictly contains public-facing content. All private grading, student submissions, personally identifiable information (PII), and Canvas LMS automation scripts are managed entirely outside this environment.
