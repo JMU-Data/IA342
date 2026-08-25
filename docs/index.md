@@ -1,19 +1,36 @@
+---
+layout: default
+title: "Home - IA 342"
+---
+
 # IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis
 
 **James Madison University | Intelligence Analysis | Fall 2026**
 
 <div style="text-align: center; margin: 2rem 0;">
-  <img src="docs/assets/images/course-logo.png" alt="IA342 Course Image" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
+  <img src="assets/images/course-logo.png" alt="IA342 Course Image" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
 </div>
 
 > *Use Business Intelligence and visualization to help people understand complex data.*
 
-## Quick Links
-- [Syllabus](docs/syllabus/index.md)
-- [Module 1](docs/modules/module-1/index.md)
-- [Week 1 Assignment](docs/assignments/arcgis-access-check/index.md)
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
 
-*(Note: The official GitHub Pages Course Website URL will be added here after merge and deployment verification.)*
+  <a href="syllabus/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #0969da; display: flex; align-items: center; gap: 0.5rem;">📖 Course Syllabus</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Review the Fall 2026 course policies, grading structure, and official AI guidelines.</p>
+  </a>
+
+  <a href="modules/module-1/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #2da44e; display: flex; align-items: center; gap: 0.5rem;">🚀 Module 1</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Course Introduction and the Value of Visualization.</p>
+  </a>
+
+  <a href="assignments/arcgis-access-check/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">📝 Week 1 Assignment</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Complete the ArcGIS Business Analyst Access Check.</p>
+  </a>
+
+</div>
 
 ## Course Overview
 
@@ -27,7 +44,7 @@ The course is structured to take students from raw data to actionable human unde
 
 **Data** ➔ **Visual Design & Spatial Analysis** ➔ **ArcGIS** ➔ **Tableau & Visual Analytics** ➔ **Interactive Dashboards** ➔ **Human Understanding & Decision**
 
-1. **Course Introduction:** The core philosophy of why visualization matters in the AI era.
+1. **[Course Introduction](modules/module-1/):** The core philosophy of why visualization matters in the AI era.
 2. **Spatial Intelligence (ArcGIS):** Map design, geographic contexts, and spatial visualization.
 3. **Business Intelligence (Tableau):** Connecting data, building primary charts, and visual exploration.
 4. **Visual Analytics & Dashboards:** Advanced calculations, interactivity, and dashboard design.
@@ -46,7 +63,7 @@ IA 342 is a core component of the Intelligence Analysis curriculum at James Madi
 **Email:** [weixx@jmu.edu](mailto:weixx@jmu.edu)  
 **Profile:** [Official JMU Faculty Profile](https://www.jmu.edu/cise/people/faculty/wei-xuebin.shtml)  
 
-*Biography:* Dr. Wei's teaching and research focus on data science and artificial intelligence, cloud computing, GIS and geospatial analysis, and social data analytics. He is the co-author of *Social Data Analytics in the Cloud with AI*. 
+*Biography:* Dr. Wei's teaching and research focus on data science and artificial intelligence, cloud computing, GIS and geospatial analysis, and social data analytics. He is the co-author of *Social Data Analytics in the Cloud with AI*.
 
 ## Repository / Reuse / Privacy Boundary
 
