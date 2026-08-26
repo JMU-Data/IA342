@@ -96,11 +96,10 @@ The course is organized into high-level modules rather than a rigid weekly sched
 *(This roadmap is subject to change based on course progress and instructional needs.)*
 
 1. **Module 1 — Course Introduction and Access Check**
-2. **ArcGIS / Spatial Visualization**
-3. **Tableau / Business Intelligence (BI)**
-4. **Mini Project / Checkpoint**
-5. **Visual Analytics and Dashboards**
-6. **Final Project**
+2. **ArcGIS / Spatial Data Visualization**
+3. **Mini Project / Checkpoint**
+4. **Tableau / Business Intelligence (BI) / Visual Analytics and Dashboards**
+5. **Final Project**
 
 ---
 [Return to Course Home](../)
