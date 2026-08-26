@@ -31,18 +31,20 @@ Our first technical module focuses on setting up the necessary platforms for the
 *(Note: If you have already completed these steps in IA 340 this semester, you must still ensure they are completed and submitted for this course, as we will use these tools extensively.)*
 
 1. **Create a Google Account**: You must create a Google account using your official JMU email address. This will allow your JMU email to access Gmail and other Google services.
-2. **Activate Gemini**: Activate the Free Gemini One Year Student Plan using your JMU email account.
+2. **Activate Gemini**: Activate the Free Gemini One Year Student Plan at [https://gemini.google/students/](https://gemini.google/students/) using your JMU email account. **Important Reminder:** The Gemini student plan is free for one year only. Please remember to cancel it after the year ends to avoid any unwanted charges.
 3. **Google AI Skills Enrollment**: Once you have successfully created your Google account with your JMU email, the instructor will enroll you in the **Google AI Skills** program (this step is unique to IA 342). 
 
 ## What to Submit on Canvas
 
-Once you have completed the steps above, go to the corresponding assignment in **Canvas** and submit one of the following responses as a text entry:
+Once you have completed the steps above, go to the corresponding assignment in **Canvas** and submit your response as a text entry in the following format:
 
 **SUCCESS:**
-Yes. (Confirming ArcGIS access and that you have created the Google account and activated Gemini.)
+- **Status:** Yes. (Confirming ArcGIS access, Google account creation, and Gemini activation.)
+- **Google Email:** [Provide your JMU email address used for the Google Account here. This is required so the instructor can enroll you in the Google AI Skills program.]
 
 **FAILURE:**
-No + brief description of which step failed (e.g., ArcGIS license error, Google account creation error) + screenshot if useful.
+- **Status:** No
+- **Details:** Brief description of which step failed (e.g., ArcGIS license error, Google account creation error) + screenshot if useful.
 
 *Note: Do not include credentials, MFA codes, or sensitive information in your screenshot. No student data, screenshots, or credentials should ever be committed to or shared in this public GitHub repository.*
 
