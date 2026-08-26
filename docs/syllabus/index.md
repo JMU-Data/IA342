@@ -43,8 +43,9 @@ AI tools (such as ChatGPT, Copilot, etc.) are part of the course workflow and ma
 ## Grading Breakdown
 
 - **Attendance:** 20%
-- **Labs:** 50%
+- **Labs:** 40%
 - **Mini Project:** 10%
+- **Google AI Skills:** 10% (Requires completing at least three Google AI Skills modules. The instructor will share a 5,000 Google Cloud credits pool with students.)
 - **Final Project:** 20%
 
 ## Letter-Grade Scale

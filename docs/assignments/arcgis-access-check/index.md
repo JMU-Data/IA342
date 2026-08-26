@@ -1,18 +1,20 @@
 ---
 layout: default
-title: "Lab 1: ArcGIS Access Check - IA 342"
+title: "Lab 1: System Access and Account Setup - IA 342"
 ---
 
-# Lab 1: ArcGIS Business Analyst Access Check
+# Lab 1: System Access and Account Setup
 
 **Due Date:** Canvas is the authoritative source for the exact due date/time and submission status.  
 **Submission Location:** Canvas
 
 ## Objective
 
-Our first technical module focuses on spatial visualization using ArcGIS. Before we begin our labs, we must ensure that every student has proper access to the **ArcGIS Business Analyst** web application through the JMU institutional license. This assignment is a simple access check to resolve any login issues early.
+Our first technical module focuses on setting up the necessary platforms for the course, including spatial visualization using ArcGIS and AI tools via Google Cloud. This assignment is to ensure that every student has proper access to the required applications to avoid issues later in the semester.
 
 ## Instructions
+
+### Part 1: ArcGIS Business Analyst Access Check
 
 1. Go to: [https://jmu.maps.arcgis.com/](https://jmu.maps.arcgis.com/)
 2. Sign in using the James Madison University account / JMU SSO.
@@ -22,17 +24,25 @@ Our first technical module focuses on spatial visualization using ArcGIS. Before
 6. Open Business Analyst.
 7. Confirm whether it loads successfully without an access/license error.
 
-If Business Analyst does not appear or you encounter a license/access error, you do not need to troubleshoot the permissions yourself. Simply report the failure in Canvas so we can provision your account.
+*If Business Analyst does not appear or you encounter a license/access error, you do not need to troubleshoot the permissions yourself. Simply report the failure in Canvas so we can provision your account.*
+
+### Part 2: Google Account & Gemini Setup
+
+*(Note: If you have already completed these steps in IA 340 this semester, you must still ensure they are completed and submitted for this course, as we will use these tools extensively.)*
+
+1. **Create a Google Account**: You must create a Google account using your official JMU email address. This will allow your JMU email to access Gmail and other Google services.
+2. **Activate Gemini**: Activate the Free Gemini One Year Student Plan using your JMU email account.
+3. **Google AI Skills Enrollment**: Once you have successfully created your Google account with your JMU email, the instructor will enroll you in the **Google AI Skills** program (this step is unique to IA 342). 
 
 ## What to Submit on Canvas
 
 Once you have completed the steps above, go to the corresponding assignment in **Canvas** and submit one of the following responses as a text entry:
 
 **SUCCESS:**
-Yes
+Yes. (Confirming ArcGIS access and that you have created the Google account and activated Gemini.)
 
 **FAILURE:**
-No + brief description + screenshot if useful
+No + brief description of which step failed (e.g., ArcGIS license error, Google account creation error) + screenshot if useful.
 
 *Note: Do not include credentials, MFA codes, or sensitive information in your screenshot. No student data, screenshots, or credentials should ever be committed to or shared in this public GitHub repository.*
 
