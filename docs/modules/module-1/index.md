@@ -288,7 +288,7 @@ The Week 1 assignment is a simple access check, but it opens the door to powerfu
 
 ## Week 1 Action Items
 
-1. Complete **[Lab 1: ArcGIS Business Analyst Access Check](../../assignments/arcgis-access-check/index.md)**. 
+1. Complete **[Lab 1: System Access and Account Setup](../../assignments/arcgis-access-check/index.md)**.
 
 ---
 [Return to Course Home](../../index.md)

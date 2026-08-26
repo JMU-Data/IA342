@@ -16,7 +16,7 @@
 - [Course Website](https://jmu-data.github.io/IA342/)
 - [Syllabus](docs/syllabus/index.md)
 - [Module 1](docs/modules/module-1/index.md)
-- [Lab 1: ArcGIS Business Analyst Access Check](docs/assignments/arcgis-access-check/index.md)
+- [Lab 1: System Access and Account Setup](docs/assignments/arcgis-access-check/index.md)
 
 ## Course Overview
 
