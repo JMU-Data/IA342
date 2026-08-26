@@ -1,6 +1,10 @@
 # IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis
 
-**James Madison University | Intelligence Analysis | Fall 2026**
+<div style="display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+  <span style="background: #f6f8fa; border: 1px solid #d0d7de; padding: 0.3rem 0.8rem; border-radius: 2em; font-size: 0.9em; font-weight: 500; color: #57606a;">James Madison University</span>
+  <span style="background: #f6f8fa; border: 1px solid #d0d7de; padding: 0.3rem 0.8rem; border-radius: 2em; font-size: 0.9em; font-weight: 500; color: #57606a;">Intelligence Analysis</span>
+  <span style="background: #f6f8fa; border: 1px solid #d0d7de; padding: 0.3rem 0.8rem; border-radius: 2em; font-size: 0.9em; font-weight: 500; color: #57606a;">Fall 2026</span>
+</div>
 
 <div style="text-align: center; margin: 2rem 0;">
   <img src="docs/assets/images/course-logo.png" alt="IA342 Course Image" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
@@ -9,11 +13,10 @@
 > *Use Business Intelligence and visualization to help people understand complex data.*
 
 ## Quick Links
+- [Course Website](https://jmu-data.github.io/IA342/)
 - [Syllabus](docs/syllabus/index.md)
 - [Module 1](docs/modules/module-1/index.md)
-- [Week 1 Assignment](docs/assignments/arcgis-access-check/index.md)
-
-*(Note: The official GitHub Pages Course Website URL will be added here after merge and deployment verification.)*
+- [Lab 1: ArcGIS Business Analyst Access Check](docs/assignments/arcgis-access-check/index.md)
 
 ## Course Overview
 

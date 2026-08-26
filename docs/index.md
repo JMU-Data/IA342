@@ -5,7 +5,11 @@ title: "Home - IA 342"
 
 # IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis
 
-**James Madison University | Intelligence Analysis | Fall 2026**
+<div style="display: flex; justify-content: center; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+  <span style="background: #f6f8fa; border: 1px solid #d0d7de; padding: 0.3rem 0.8rem; border-radius: 2em; font-size: 0.9em; font-weight: 500; color: #57606a;">James Madison University</span>
+  <span style="background: #f6f8fa; border: 1px solid #d0d7de; padding: 0.3rem 0.8rem; border-radius: 2em; font-size: 0.9em; font-weight: 500; color: #57606a;">Intelligence Analysis</span>
+  <span style="background: #f6f8fa; border: 1px solid #d0d7de; padding: 0.3rem 0.8rem; border-radius: 2em; font-size: 0.9em; font-weight: 500; color: #57606a;">Fall 2026</span>
+</div>
 
 <div style="text-align: center; margin: 2rem 0;">
   <img src="assets/images/course-logo.png" alt="IA342 Course Image" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);" />
