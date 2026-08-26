@@ -75,14 +75,132 @@ If you just run a statistical summary or ask an AI to give you the "average" of 
 |---------|-----------|-----------|---------------|---------------|-------------|
 | I, II, III, IV | 9.0 | 7.5 | 11.0 | 4.12 | 0.816 |
 
-But the moment we apply **Visual Encoding** and plot them on a chart, the human eye instantly recognizes patterns that the statistics hid: one is a simple linear trend, one is a clean curve, one has a massive outlier, and one is a vertical line. **Visualization reveals the truth.**
+But the moment we apply **Visual Encoding** and plot them on a chart, the human eye instantly recognizes patterns that the statistics hid:
+
+<!-- Anscombe's Quartet — four scatter plots rendered as inline SVG -->
+<div style="overflow-x: auto; margin: 1.5rem 0;">
+<svg viewBox="0 0 680 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+
+  <!-- Shared defs -->
+  <defs>
+    <marker id="ah" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#aaa"/>
+    </marker>
+  </defs>
+
+  <!-- ── DATASET I (linear) ── top-left  origin (30,20) size 290x130 -->
+  <g transform="translate(30,20)">
+    <text x="145" y="0" text-anchor="middle" font-size="12" font-weight="600" fill="#0366d6">Dataset I — Linear Relationship</text>
+    <!-- axes -->
+    <line x1="30" y1="110" x2="278" y2="110" stroke="#aaa" stroke-width="1" marker-end="url(#ah)"/>
+    <line x1="30" y1="110" x2="30" y2="8" stroke="#aaa" stroke-width="1" marker-end="url(#ah)"/>
+    <!-- regression line approx: y = 3 + 0.5x  domain x=[4,14] mapped to px[30,270], y=[5.5,10] mapped to px[110,15] -->
+    <line x1="38" y1="99" x2="265" y2="38" stroke="#0366d6" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.5"/>
+    <!-- scatter points (x, y) → px using: px = 30 + (x-4)*23.2, py = 110 - (y-4)*19 -->
+    <circle cx="61"  cy="92"  r="4" fill="#0366d6" opacity="0.8"/><!-- 4.26, 3.1 -->
+    <circle cx="107" cy="79"  r="4" fill="#0366d6" opacity="0.8"/><!-- 6.10, 4.74 -->
+    <circle cx="130" cy="72"  r="4" fill="#0366d6" opacity="0.8"/><!-- 7.46, 6.81 (approx midrange) -->
+    <circle cx="152" cy="56"  r="4" fill="#0366d6" opacity="0.8"/><!-- 6.13 (scaled) -->
+    <circle cx="175" cy="61"  r="4" fill="#0366d6" opacity="0.8"/>
+    <circle cx="198" cy="53"  r="4" fill="#0366d6" opacity="0.8"/>
+    <circle cx="221" cy="44"  r="4" fill="#0366d6" opacity="0.8"/>
+    <circle cx="84"  cy="86"  r="4" fill="#0366d6" opacity="0.8"/>
+    <circle cx="244" cy="37"  r="4" fill="#0366d6" opacity="0.8"/>
+    <circle cx="152" cy="65"  r="4" fill="#0366d6" opacity="0.8"/>
+    <circle cx="244" cy="32"  r="4" fill="#0366d6" opacity="0.8"/>
+    <!-- axis labels -->
+    <text x="155" y="124" text-anchor="middle" font-size="9" fill="#57606a">x</text>
+    <text x="18"  y="60"  text-anchor="middle" font-size="9" fill="#57606a" transform="rotate(-90,18,60)">y</text>
+  </g>
+
+  <!-- ── DATASET II (curve) ── top-right  origin (365,20) -->
+  <g transform="translate(365,20)">
+    <text x="145" y="0" text-anchor="middle" font-size="12" font-weight="600" fill="#28a745">Dataset II — Nonlinear Curve</text>
+    <line x1="30" y1="110" x2="278" y2="110" stroke="#aaa" stroke-width="1" marker-end="url(#ah)"/>
+    <line x1="30" y1="110" x2="30" y2="8" stroke="#aaa" stroke-width="1" marker-end="url(#ah)"/>
+    <!-- parabola hint -->
+    <path d="M 50,100 Q 155,18 265,100" stroke="#28a745" stroke-width="1.2" fill="none" stroke-dasharray="4 3" opacity="0.5"/>
+    <!-- points along a parabola -->
+    <circle cx="50"  cy="97"  r="4" fill="#28a745" opacity="0.8"/>
+    <circle cx="76"  cy="76"  r="4" fill="#28a745" opacity="0.8"/>
+    <circle cx="103" cy="52"  r="4" fill="#28a745" opacity="0.8"/>
+    <circle cx="130" cy="32"  r="4" fill="#28a745" opacity="0.8"/>
+    <circle cx="155" cy="22"  r="4" fill="#28a745" opacity="0.8"/>
+    <circle cx="180" cy="30"  r="4" fill="#28a745" opacity="0.8"/>
+    <circle cx="205" cy="52"  r="4" fill="#28a745" opacity="0.8"/>
+    <circle cx="232" cy="76"  r="4" fill="#28a745" opacity="0.8"/>
+    <circle cx="258" cy="97"  r="4" fill="#28a745" opacity="0.8"/>
+    <text x="155" y="124" text-anchor="middle" font-size="9" fill="#57606a">x</text>
+    <text x="18"  y="60"  text-anchor="middle" font-size="9" fill="#57606a" transform="rotate(-90,18,60)">y</text>
+  </g>
+
+  <!-- ── DATASET III (outlier) ── bottom-left  origin (30,195) -->
+  <g transform="translate(30,195)">
+    <text x="145" y="0" text-anchor="middle" font-size="12" font-weight="600" fill="#d73a49">Dataset III — One Outlier Skews Everything</text>
+    <line x1="30" y1="110" x2="278" y2="110" stroke="#aaa" stroke-width="1" marker-end="url(#ah)"/>
+    <line x1="30" y1="110" x2="30" y2="8" stroke="#aaa" stroke-width="1" marker-end="url(#ah)"/>
+    <!-- regression line pulled by outlier -->
+    <line x1="38" y1="96" x2="270" y2="58" stroke="#d73a49" stroke-width="1.2" stroke-dasharray="4 3" opacity="0.5"/>
+    <!-- tight cluster -->
+    <circle cx="61"  cy="96"  r="4" fill="#d73a49" opacity="0.8"/>
+    <circle cx="84"  cy="93"  r="4" fill="#d73a49" opacity="0.8"/>
+    <circle cx="107" cy="91"  r="4" fill="#d73a49" opacity="0.8"/>
+    <circle cx="130" cy="89"  r="4" fill="#d73a49" opacity="0.8"/>
+    <circle cx="152" cy="87"  r="4" fill="#d73a49" opacity="0.8"/>
+    <circle cx="175" cy="85"  r="4" fill="#d73a49" opacity="0.8"/>
+    <circle cx="198" cy="83"  r="4" fill="#d73a49" opacity="0.8"/>
+    <circle cx="221" cy="81"  r="4" fill="#d73a49" opacity="0.8"/>
+    <!-- outlier! -->
+    <circle cx="255" cy="20"  r="6" fill="none" stroke="#d73a49" stroke-width="2"/>
+    <circle cx="255" cy="20"  r="4" fill="#d73a49" opacity="0.9"/>
+    <text x="255" y="15" text-anchor="middle" font-size="9" font-weight="600" fill="#d73a49">outlier</text>
+    <text x="155" y="124" text-anchor="middle" font-size="9" fill="#57606a">x</text>
+    <text x="18"  y="60"  text-anchor="middle" font-size="9" fill="#57606a" transform="rotate(-90,18,60)">y</text>
+  </g>
+
+  <!-- ── DATASET IV (vertical) ── bottom-right  origin (365,195) -->
+  <g transform="translate(365,195)">
+    <text x="145" y="0" text-anchor="middle" font-size="12" font-weight="600" fill="#6f42c1">Dataset IV — Vertical Cluster + One Outlier</text>
+    <line x1="30" y1="110" x2="278" y2="110" stroke="#aaa" stroke-width="1" marker-end="url(#ah)"/>
+    <line x1="30" y1="110" x2="30" y2="8" stroke="#aaa" stroke-width="1" marker-end="url(#ah)"/>
+    <!-- vertical stack at x≈8 (px≈123) -->
+    <circle cx="123" cy="97"  r="4" fill="#6f42c1" opacity="0.8"/>
+    <circle cx="123" cy="86"  r="4" fill="#6f42c1" opacity="0.8"/>
+    <circle cx="123" cy="75"  r="4" fill="#6f42c1" opacity="0.8"/>
+    <circle cx="123" cy="64"  r="4" fill="#6f42c1" opacity="0.8"/>
+    <circle cx="123" cy="53"  r="4" fill="#6f42c1" opacity="0.8"/>
+    <circle cx="123" cy="42"  r="4" fill="#6f42c1" opacity="0.8"/>
+    <circle cx="123" cy="31"  r="4" fill="#6f42c1" opacity="0.8"/>
+    <!-- lone outlier at high x -->
+    <circle cx="245" cy="52"  r="6" fill="none" stroke="#6f42c1" stroke-width="2"/>
+    <circle cx="245" cy="52"  r="4" fill="#6f42c1" opacity="0.9"/>
+    <text x="155" y="124" text-anchor="middle" font-size="9" fill="#57606a">x</text>
+    <text x="18"  y="60"  text-anchor="middle" font-size="9" fill="#57606a" transform="rotate(-90,18,60)">y</text>
+  </g>
+
+  <!-- caption -->
+  <text x="340" y="330" text-anchor="middle" font-size="10" fill="#57606a" font-style="italic">
+    All four datasets share identical summary statistics — yet are completely different. Only visualization reveals the truth.
+  </text>
+</svg>
+</div>
+
+**Visualization reveals the truth.** Statistics alone would never catch the curve, the outlier, or the vertical cluster. This is why the "Visual Encoding" step in our pipeline is not optional — it is the step that enables human cognition to do what AI summaries cannot.
 
 <div style="padding: 1rem; background-color: #fff; border: 1px solid #d0d7de; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-top: 2rem;">
-  <h4 style="margin-top: 0; display: flex; align-items: center; gap: 8px;">📺 Watch / Explore</h4>
-  <p style="margin-bottom: 0.5rem; font-size: 0.9em; color: #57606a;">
-    To see the ultimate example of data storytelling, watch Hans Rosling's legendary BBC presentation using gapminder data:
+  <h4 style="margin-top: 0; display: flex; align-items: center; gap: 8px;">📺 Hans Rosling — 200 Countries, 200 Years, 4 Minutes</h4>
+  <p style="margin-bottom: 0.75rem; font-size: 0.9em; color: #57606a;">
+    To see the ultimate example of data storytelling, watch Hans Rosling's legendary BBC presentation. He turns 200 years of global health data into a live animated visualization that makes the story impossible to miss.
   </p>
-  <a href="https://www.youtube.com/watch?v=jbkSRLYSojo" target="_blank" style="font-weight: bold;">Hans Rosling's 200 Countries, 200 Years, 4 Minutes - The Joy of Stats (BBC)</a>
+  <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px;">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/jbkSRLYSojo"
+      title="Hans Rosling's 200 Countries, 200 Years, 4 Minutes - The Joy of Stats (BBC)"
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
 </div>
 
 ## Semester Roadmap
@@ -93,7 +211,7 @@ Our semester is designed to build your skills progressively through industry-sta
   
   <!-- Phase 1 -->
   <div style="border-left: 4px solid #0366d6; padding-left: 1.5rem; margin-bottom: 1.5rem;">
-    <h3 style="color: #0366d6; margin-top: 0; margin-bottom: 0.5rem;">PHASE 1: ArcGIS / Spatial Visualization</h3>
+    <h3 style="color: #0366d6; margin-top: 0; margin-bottom: 0.5rem;">PHASE 1: ArcGIS / Spatial Data Visualization</h3>
     <ul style="margin: 0; color: #57606a;">
       <li>Map design and geographic context</li>
       <li>Spatial visualization principles</li>

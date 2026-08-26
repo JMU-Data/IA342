@@ -49,10 +49,10 @@ The course is structured to take students from raw data to actionable human unde
 **Data** ➔ **Visual Design & Spatial Analysis** ➔ **ArcGIS** ➔ **Tableau & Visual Analytics** ➔ **Interactive Dashboards** ➔ **Human Understanding & Decision**
 
 1. **[Course Introduction](modules/module-1/):** The core philosophy of why visualization matters in the AI era.
-2. **Spatial Intelligence (ArcGIS):** Map design, geographic contexts, and spatial visualization.
-3. **Business Intelligence (Tableau):** Connecting data, building primary charts, and visual exploration.
-4. **Visual Analytics & Dashboards:** Advanced calculations, interactivity, and dashboard design.
-5. **Data Storytelling:** End-to-end projects culminating in comprehensive visual analytics applications.
+2. **Spatial Intelligence (ArcGIS):** Map design, geographic contexts, and spatial data visualization.
+3. **Mini Project / Checkpoint:** A milestone project applying spatial visualization techniques.
+4. **Business Intelligence (Tableau) & Visual Analytics:** Data connection, charts, calculations, filters, and interactive dashboards.
+5. **Data Storytelling:** End-to-end projects culminating in a comprehensive visual analytics Final Project.
 
 ## Official Course Information
 
