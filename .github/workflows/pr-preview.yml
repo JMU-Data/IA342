@@ -1,0 +1,44 @@
+name: PR Preview
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - closed
+
+concurrency: preview-${{ github.ref }}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    # Only deploy previews for PRs from the same repository (security)
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+
+      - name: Prepare preview configuration
+        if: github.event.action != 'closed'
+        run: |
+          # Append the PR preview baseurl to the Jekyll config
+          echo 'baseurl: "/IA342/pr-preview/pr-${{ github.event.number }}"' >> docs/_config.yml
+
+      - name: Build with Jekyll
+        if: github.event.action != 'closed'
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1.0.13
+        with:
+          source: ./docs/
+          destination: ./_site
+
+      - name: Deploy PR Preview
+        uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.4.8
+        with:
+          source-dir: ./_site/
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
