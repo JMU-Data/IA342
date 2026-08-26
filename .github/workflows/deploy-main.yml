@@ -1,0 +1,36 @@
+name: Deploy Production to gh-pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  deploy-production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+
+      - name: Ensure baseurl in config
+        run: |
+          # Guarantee the production baseurl is set
+          echo 'baseurl: "/IA342"' >> docs/_config.yml
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1.0.13
+        with:
+          source: ./docs/
+          destination: ./_site
+
+      - name: Deploy to gh-pages branch
+        uses: JamesIves/github-pages-deploy-action@94f3c658273cf92fb48ef99e5fbc02bd2dc642b2 # v4.6.3
+        with:
+          branch: gh-pages
+          folder: ./_site
+          clean: true
+          clean-exclude: |
+            pr-preview/

@@ -32,15 +32,31 @@ This file serves as the definitive, repository-level source of truth for any AI 
 - The Owner retains the final review authority and merge decision for all changes.
 
 ## 3. Strict Pull Request (PR) Workflow
-All substantive changes must follow this PR workflow:
-1. main branch
-2. → Create new branch
-3. → Implementation
-4. → Local / Self-Validation
-5. → Create Pull Request
-6. → Wait for Checks
-7. → Owner Review
-8. → Owner Merge Decision
+All substantive changes and course-site redesigns must follow this iterative PR workflow:
+
+### Course-site Preview Workflow
+
+For substantial course-site/content redesign:
+1. `feature branch`
+2. → GitHub PR
+3. → CI builds GitHub-hosted PR Preview
+4. → Owner reviews the clickable preview URL from the PR (accessible from any device)
+5. → iterate on the same branch / PR
+6. → Preview automatically updates
+7. → Owner approves
+8. → merge
+9. → production Pages updates
+
+**Local Jekyll preview:**
+- OPTIONAL fallback only
+- Not required for Owner's workflow
+- Does not require the Owner's machine to have Ruby/Jekyll installed
+- Can be used by the Agent for necessary debugging
+
+**Guidelines:**
+- Minor wording / URL / typo changes do not require unnecessary multiple rounds of visual review.
+- Content iteration can be completed directly between Owner and Antigravity on the same PR.
+- **No direct commits to `main`**; the Owner retains the final merge authority.
 
 - **Self-Audit**: Before creating any PR, agents must perform a security/privacy self-audit to ensure no sensitive data or private scripts are included.
 - **PR Body Requirements**: Every PR must document:

@@ -9,7 +9,8 @@ title: "Syllabus - IA 342"
 **Term:** Fall 2026  
 **Instructor:** Dr. Xuebin Wei  
 **Email:** [weixx@jmu.edu](mailto:weixx@jmu.edu)  
-**Profile:** [JMU Faculty Profile](https://www.jmu.edu/cise/people/faculty/wei-xuebin.shtml)  
+**Profile:** [Official JMU Faculty Profile](https://www.jmu.edu/cise/people/faculty/wei-xuebin.shtml)  
+**Office Hours:** Monday and Wednesday, 9:30–11:00 AM
 
 ## Course Description
 
@@ -25,7 +26,9 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 
 ## Required Textbook / Resources
 
-Wei, Xuebin, and Xinyue Ye. *Social Data Analytics in the Cloud with AI*. CRC Press, 2024.
+Wei, Xuebin, and Xinyue Ye. *Social Data Analytics in the Cloud with AI*. CRC Press / Routledge, 2024.  
+**Access:** [Official Textbook URL](https://www.taylorfrancis.com/books/mono/10.1201/9781003437611/social-data-analytics-cloud-ai-xuebin-wei-xinyue-ye)  
+*(Note: The book is freely accessible via JMU Wi-Fi or by logging in with a JMU account.)*
 
 ## Communication Policy
 
@@ -90,6 +93,7 @@ In the event of inclement weather or university closures, we will follow the off
 ## Module-Level Roadmap
 
 The course is organized into high-level modules rather than a rigid weekly schedule, allowing flexibility for deep dives into core tools:
+*(This roadmap is subject to change based on course progress and instructional needs.)*
 
 1. **Module 1 — Course Introduction and Access Check**
 2. **ArcGIS / Spatial Visualization**
