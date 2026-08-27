@@ -28,9 +28,12 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 
 - **Textbook:** Wei, Xuebin, and Xinyue Ye. *Social Data Analytics in the Cloud with AI*. CRC Press / Routledge, 2024.  
   **Access:** [Official Textbook URL](https://www.taylorfrancis.com/books/mono/10.1201/9781003437611/social-data-analytics-cloud-ai-xuebin-wei-xinyue-ye) *(Freely accessible via JMU Wi-Fi or by logging in with a JMU account.)*
-- **Google Account (Required):** Students must register/create a Google account using their official **James Madison University email address** (`@dukes.jmu.edu` or `@jmu.edu`) for Google Cloud credits pool access and Google AI Skills module enrollment.
-- **ArcGIS & Tableau:** Provided through JMU institutional licensing and SSO.
-- **AI Tools (Recommended):** The free 1-year Gemini Student Plan (Google AI Pro tier) and other AI assistants are recommended to support data exploration and dashboard design, but are optional.
+- **Google Account (Required):** Students must register/create a Google account using their official **James Madison University email address** (`@dukes.jmu.edu` or `@jmu.edu`). This is required for the instructor to grant access to the shared Google Cloud credits pool and enroll students in Google AI Skills modules.
+- **ArcGIS & Tableau (Required):** Provided through JMU institutional licensing and SSO.
+- **AI Tools (Optional / Recommended):** Generative AI tools (such as Google Gemini, ChatGPT, Claude, GitHub Copilot) may be used as analytical assistants. 
+  - **Policy Update:** Activating paid/student tiers (such as the Gemini Student Plan) is **completely optional**.
+  - **Grading:** Having or not having AI Pro / advanced tiers **will have ZERO impact on your course grade**.
+  - **Privacy:** If you choose to activate student promotions that require third-party verification, **we strongly advise against uploading sensitive records (e.g., academic transcripts)**. Use at most a course schedule.
 
 ## Communication Policy
 
@@ -40,7 +43,7 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 
 ## AI Policy
 
-AI tools (such as Google Gemini, ChatGPT, Copilot, etc.) are recommended and permitted as analytical assistants in the course workflow. However, **students remain entirely responsible** for the final visual design, data interpretation, and verification of all outputs. You must ensure the accuracy and integrity of your work.
+AI tools (such as Google Gemini, ChatGPT, Copilot, etc.) are recommended and permitted as analytical assistants in the course workflow. No paid subscription is required. However, **students remain entirely responsible** for the final visual design, data interpretation, and verification of all outputs. You must ensure the accuracy, ethical presentation, and integrity of your work.
 
 ## Grading Breakdown
 
