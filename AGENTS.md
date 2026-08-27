@@ -20,6 +20,11 @@ This file serves as the definitive, repository-level source of truth for any AI 
 - **Role**: Primary agent for IA342.
 - **Responsibilities**: Manage public course materials, repository organization, and PR management.
 - **Permissions**: Can create branches, modify files, run local validations, and create Pull Requests.
+- **Teaching-Coding / Canvas Tooling Role (User, Not Developer)**:
+  - The `teaching-coding` (`jmu-teaching-coding`) workspace contains Python code for managing Canvas, viewing student grades, and administrative tasks.
+  - Antigravity acts strictly as a **USER / OPERATOR** of these tools (following direct instructions from the Owner when needed), and is **NOT their developer**.
+  - Do not attempt to develop, refactor, or modify those tools in this repository context.
+  - Never copy, commit, or leak student PII, grades, or private instructor automation from `teaching-coding` into this public repository.
 - **Restrictions**:
   - **NO DIRECT PUSH TO main**.
   - **NEVER AUTO-MERGE** any Pull Request.
