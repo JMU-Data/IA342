@@ -24,11 +24,16 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 - **Communicate evidence-based data stories** to diverse stakeholders.
 - **Maintain accountability and interpretability** in data-driven analytical workflows.
 
-## Required Textbook / Resources
+## Required Accounts & Resources
 
-Wei, Xuebin, and Xinyue Ye. *Social Data Analytics in the Cloud with AI*. CRC Press / Routledge, 2024.  
-**Access:** [Official Textbook URL](https://www.taylorfrancis.com/books/mono/10.1201/9781003437611/social-data-analytics-cloud-ai-xuebin-wei-xinyue-ye)  
-*(Note: The book is freely accessible via JMU Wi-Fi or by logging in with a JMU account.)*
+- **Textbook:** Wei, Xuebin, and Xinyue Ye. *Social Data Analytics in the Cloud with AI*. CRC Press / Routledge, 2024.  
+  **Access:** [Official Textbook URL](https://www.taylorfrancis.com/books/mono/10.1201/9781003437611/social-data-analytics-cloud-ai-xuebin-wei-xinyue-ye) *(Freely accessible via JMU Wi-Fi or by logging in with a JMU account.)*
+- **Google Account (Required):** Students must register/create a Google account using their official **James Madison University email address** (`@dukes.jmu.edu` or `@jmu.edu`). This is required for the instructor to grant access to the shared Google Cloud credits pool and enroll students in Google AI Skills modules.
+- **ArcGIS & Tableau (Required):** Provided through JMU institutional licensing and SSO.
+- **AI Tools (Optional / Recommended):** Generative AI tools (such as Google Gemini, ChatGPT, Claude, GitHub Copilot) may be used as analytical assistants. 
+  - **Policy Update:** Activating paid/student tiers (such as the Gemini Student Plan) is **completely optional**.
+  - **Grading:** Having or not having AI Pro / advanced tiers **will have ZERO impact on your course grade**.
+  - **Privacy:** If you choose to activate student promotions that require third-party verification, **we strongly advise against uploading sensitive records (e.g., academic transcripts)**. Use at most a course schedule.
 
 ## Communication Policy
 
@@ -38,7 +43,7 @@ Wei, Xuebin, and Xinyue Ye. *Social Data Analytics in the Cloud with AI*. CRC Pr
 
 ## AI Policy
 
-AI tools (such as ChatGPT, Copilot, etc.) are part of the course workflow and may be expected when instructed. However, **students remain entirely responsible** for the final visual design, data interpretation, and verification of all outputs. You must ensure the accuracy and integrity of your work.
+AI tools (such as Google Gemini, ChatGPT, Copilot, etc.) are recommended and permitted as analytical assistants in the course workflow. No paid subscription is required. However, **students remain entirely responsible** for the final visual design, data interpretation, and verification of all outputs. You must ensure the accuracy, ethical presentation, and integrity of your work.
 
 ## Grading Breakdown
 
