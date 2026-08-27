@@ -24,11 +24,13 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 - **Communicate evidence-based data stories** to diverse stakeholders.
 - **Maintain accountability and interpretability** in data-driven analytical workflows.
 
-## Required Textbook / Resources
+## Required Accounts & Resources
 
-Wei, Xuebin, and Xinyue Ye. *Social Data Analytics in the Cloud with AI*. CRC Press / Routledge, 2024.  
-**Access:** [Official Textbook URL](https://www.taylorfrancis.com/books/mono/10.1201/9781003437611/social-data-analytics-cloud-ai-xuebin-wei-xinyue-ye)  
-*(Note: The book is freely accessible via JMU Wi-Fi or by logging in with a JMU account.)*
+- **Textbook:** Wei, Xuebin, and Xinyue Ye. *Social Data Analytics in the Cloud with AI*. CRC Press / Routledge, 2024.  
+  **Access:** [Official Textbook URL](https://www.taylorfrancis.com/books/mono/10.1201/9781003437611/social-data-analytics-cloud-ai-xuebin-wei-xinyue-ye) *(Freely accessible via JMU Wi-Fi or by logging in with a JMU account.)*
+- **Google Account (Required):** Students must register/create a Google account using their official **James Madison University email address** (`@dukes.jmu.edu` or `@jmu.edu`) for Google Cloud credits pool access and Google AI Skills module enrollment.
+- **ArcGIS & Tableau:** Provided through JMU institutional licensing and SSO.
+- **AI Tools (Recommended):** The free 1-year Gemini Student Plan (Google AI Pro tier) and other AI assistants are recommended to support data exploration and dashboard design, but are optional.
 
 ## Communication Policy
 
@@ -38,7 +40,7 @@ Wei, Xuebin, and Xinyue Ye. *Social Data Analytics in the Cloud with AI*. CRC Pr
 
 ## AI Policy
 
-AI tools (such as ChatGPT, Copilot, etc.) are part of the course workflow and may be expected when instructed. However, **students remain entirely responsible** for the final visual design, data interpretation, and verification of all outputs. You must ensure the accuracy and integrity of your work.
+AI tools (such as Google Gemini, ChatGPT, Copilot, etc.) are recommended and permitted as analytical assistants in the course workflow. However, **students remain entirely responsible** for the final visual design, data interpretation, and verification of all outputs. You must ensure the accuracy and integrity of your work.
 
 ## Grading Breakdown
 
