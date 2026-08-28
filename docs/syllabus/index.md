@@ -35,11 +35,11 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
   - **Grading:** Having or not having AI Pro / advanced tiers **will have ZERO impact on your course grade**.
   - **Privacy:** If you choose to activate student promotions that require third-party verification, **we strongly advise against uploading sensitive records (e.g., academic transcripts)**. Use at most a course schedule.
 
-## Communication Policy
+## Email Communication Policy
 
-- **Primary Communication:** Please use your **JMU student email** to contact the instructor.
-- **Canvas:** Canvas is strictly used for grades, course announcements, and logistics. 
-- **DO NOT** use the Canvas messaging system to contact the instructor, as those messages may be missed.
+- **Primary Method:** Emailing the instructor from your **JMU student account** is the primary method of communication.
+- **Response Time:** The instructor typically responds within **1–2 business days**. Emails received after 5:00 PM will be treated as received on the next business day. The instructor does not normally respond to emails on weekends or JMU holidays.
+- **Canvas Messages:** Canvas is strictly used for grades, course announcements, and logistics. **DO NOT** use the Canvas messaging system to contact the instructor; it is not regularly monitored and messages may be missed.
 
 ## AI Policy
 
@@ -75,10 +75,15 @@ AI tools (such as Google Gemini, ChatGPT, Copilot, etc.) are recommended and per
 - **Final Exam Week:** **No late submissions** are accepted during final exam week.
 - **Projects:** Late submissions/resubmissions of the class projects will not be accepted.
 
+## Technical Assignment Support
+
+Technical assignments may require troubleshooting. Start assignments early and allow sufficient time to resolve technical issues. Requests for assistance made shortly before a deadline may not receive a response before the deadline and do not automatically excuse late submissions.
+
 ## Attendance / Excused Absence
 
 Regular attendance is critical, as a significant portion of the learning happens in class through hands-on practice, critique, and discussion. 
 
+- **Registered Section Attendance:** Students must attend the course section in which they are officially registered unless the instructor approves an exception in advance.
 - **Unexcused Absences & Loss of Credit:** Absence, leaving early without permission, being late more than 20 minutes, or disrespectful/disturbing behavior results in **0 attendance points** for that meeting. Being late more than 5 minutes receives a late penalty.
 - **Excused Absences:** Excused absences are strictly limited to: sickness/health issues; mandatory activities with written documentation; or other situations with instructor approval.
 
