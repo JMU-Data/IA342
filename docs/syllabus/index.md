@@ -96,16 +96,52 @@ JMU offers numerous resources for student support, including the Science and Mat
 
 In the event of inclement weather or university closures, we will follow the official JMU delays and cancellations policy. Please monitor your JMU student email and Canvas announcements for updates regarding makeup classes or adjusted assignment deadlines.
 
-## Module-Level Roadmap
+## Course Schedule (Fall 2026)
 
-The course is organized into high-level modules rather than a rigid weekly schedule, allowing flexibility for deep dives into core tools:
-*(This roadmap is subject to change based on course progress and instructional needs.)*
+*Schedule updated: August 27, 2026*
 
-1. **Module 1 — Course Introduction and Access Check**
-2. **ArcGIS / Spatial Data Visualization**
-3. **Mini Project / Checkpoint**
-4. **Tableau / Business Intelligence (BI) / Visual Analytics and Dashboards**
-5. **Final Project**
+| Week / Dates | Lecture / Topic Focus | Hands-on Lab & Activities | Notes & Milestones |
+| :--- | :--- | :--- | :--- |
+| **Week 1**<br>Aug 24 – 28 | **Course Introduction & Cloud/AI Setup**<br>Why visualization matters; course workflow, expectations, and AI policy | Account verification; Tableau & ArcGIS institutional access; Google Cloud & AI environment setup | *Classes begin Wed, Aug 26*<br>*(Status: Completed)* |
+| **Week 2**<br>Aug 31 – Sep 4 | **Introduction to Data Visualization**<br>Data → Information → Decision; Anscombe’s Quartet; visual perception, preattentive attributes & Gestalt principles; Heuer intelligence perception framing | **ArcGIS Business Analyst I**<br>Orientation, study areas, point/site creation, rings/drive-time areas, standard reports & infographics | Visual analytics & spatial orientation |
+| **Week 3**<br>Sep 7 – 11 | **Map Design & Spatial Intelligence**<br>Spatial intelligence framing for analysis; lat/long & coordinate fundamentals; classification (equal interval, quantile, natural breaks, std dev); choropleth & proportional symbol maps | **ArcGIS Business Analyst II**<br>Color-coded maps, classification options, Smart Map Search, POI search, map layers & StoryMap basics | Thematic map design & spatial intelligence |
+| **Week 4**<br>Sep 14 – 18 | **Color Theory for Data Visualization**<br>Hue, saturation, value; sequential, diverging, categorical & alerting palettes; color vision deficiency & accessibility | **ArcGIS Business Analyst III**<br>Import custom data, custom variables/reports, spatial analysis tools (e.g., benchmark comparison, suitability analysis), ArcGIS dashboard | Color accessibility & analytical GIS |
+| **Week 5**<br>Sep 21 – 25 | **Choosing and Critiquing Graphs**<br>Chart-selection principles; histograms, box plots, scatter/line/bar charts, axes/scales; identifying misleading visualizations | **Lab 1 — Get Started with Tableau**<br>Data connection, basic sheets (bar, scatter), simple dashboard construction, and publishing workflow | Visual critique & core Tableau workflow |
+| **Week 6**<br>Sep 28 – Oct 2 | **Data Preparation for Visual Analytics**<br>ETL pipelines, data quality, OLTP vs. OLAP, dimensions vs. measures, live vs. extract connections | **Lab 2 — Tableau Prep / Tableau Flow**<br>Clean, transform, null handling, standardizing values, calculated fields, split, union, join, and outputting clean data | Data cleaning & preparation pipelines |
+| **Week 7**<br>Oct 5 – 9 | **MINI PROJECT: ArcGIS Spatial Visualization**<br>Project kickoff, clinic, and instructor support *(No new lecture)* | **Mini Project Clinic & Studio**<br>Gun Violence Archive spatial analysis and demographic integration in ArcGIS Business Analyst | *Fall Break begins Wed, Oct 7*<br>*(Mon session: Project Clinic)*<br>**Mini Project Due** |
+| **Week 8**<br>Oct 12 – 16 | **Cloud-Connected BI & Multi-Table Data**<br>Relational DB vs. analytical warehouse, PK/FK, joins vs. relationships, cardinality, LOD, duplicate-row risks | **Lab 3 (Mon):** Tableau + Relational DB (Cloud PostgreSQL)<br>**Lab 4 (Wed):** Tableau + BigQuery Warehouse (TICKIT multi-table data model) | Lab-heavy week:<br>Relational DB & BigQuery |
+| **Week 9**<br>Oct 19 – 23 | **Visual Analytics in Tableau**<br>Drill-down, sort, group, sets, filters, trend/reference lines, parameters, and interactive exploration | **Lab 8 — Visual Analytics in Tableau**<br>Parameters, sets, set actions, tooltips, interactive scatter plots, and Tableau mapping exercise | Advanced interactivity & spatial views in Tableau |
+| **Week 10**<br>Oct 26 – 30 | **Dashboard Design**<br>Directed vs. exploratory discovery, KPIs, visual hierarchy, layout containers, eye-scanning, 5-second test, Shaffer 4Cs, Tufte/KISS principles | **Lab 9 — Tableau Dashboard Design**<br>Multiple coordinated views, dashboard layout, interactivity, dynamic titles, device layouts, and publishing | Usability & visual hierarchy |
+| **Week 11**<br>Nov 2 – 6 | **Calculations in Tableau**<br>Basic calculations, date/string/logical functions, aggregate calculations, table calculations (scope/direction), LOD expressions (FIXED, INCLUDE, EXCLUDE) | **Lab 10 — Calculations in Tableau**<br>Calculated metrics, rates, moving averages, table calculations, and LOD expressions in dashboards | Advanced calculation logic & LOD |
+| **Week 12**<br>Nov 9 – 13 | **AI-Generated Dashboards + Tableau Public**<br>AI visualization capabilities & human evaluation (correctness, chart choice, aggregation, 5-second test) | **Mon:** Gemini Canvas / Spark AI dashboard generation & critique<br>**Wed:** Tableau Public publishing & comparative evaluation (AI vs. Tableau) | AI vs. BI comparison & Tableau Public workflow |
+| **Week 13**<br>Nov 16 – 20 | **AI Video Visualization & Analytical Storytelling**<br>AI video as visual communication; storytelling accuracy vs. hallucination risks | **Mon:** Google Flow (visual/video synthesis supporting analytical findings)<br>**Wed:** Google Vids (assembling analytical video briefing) | Multimodal visual communication |
+| **Week 14**<br>Nov 23 – 27 | **Thanksgiving Holiday**<br>*(No Classes)* | — | University Closed |
+| **Week 15**<br>Nov 30 – Dec 4 | **Final Project Workshop: Week 1**<br>Analytical question scoping, data pipeline, and visual planning *(No new lecture)* | **Data Pipeline & Visual Scoping**<br>Clean and join COVID-19 dataset with approved contextual dataset (Colab/Pandas or Tableau Prep); initial Tableau sheets | Final Project data engineering & planning |
+| **Week 16**<br>Dec 7 – 11 | **Final Project Workshop: Week 2**<br>Dashboard design studio & instructor consultation *(No new lecture)* | **Tableau Public Dashboard Finalization**<br>Build required map, temporal trend, comparison/distribution views, LOD calculations, interactivity, and interpretation | Final Project Studio & Link Testing |
+| **Week 17**<br>Dec 12 – 18 | **Final Exam Week**<br>Final project submission only *(No presentations)* | **Final Project Submission** | **Final Project Due**<br>*(Tableau Public Dashboard)* |
+
+---
+
+### Project Overviews
+
+#### Mini Project: ArcGIS Gun Violence Spatial Visualization
+- **Platform:** ArcGIS Business Analyst / ArcGIS StoryMaps
+- **Data:** Instructor-provided Gun Violence Archive dataset + demographic contextual variable(s)
+- **Core Requirements:** Assigned state/study area analysis, meaningful thematic map, spatial analysis tool, infographic/report, and public StoryMap with analytical findings.
+- **Focus:** Map design, spatial visualization, color selection, and synthesis.
+
+#### Final Project: COVID-19 Visual Analytics Project
+- **Platform:** Tableau Desktop / Tableau Public
+- **Data:** Instructor-provided primary COVID-19 dataset + one approved contextual dataset (e.g., population, poverty, income, education, unemployment).
+- **Data Processing:** Google Colab (Pandas) preferred, or Tableau Prep.
+- **Required Dashboard Elements:**
+  - At least one thematic map
+  - At least one temporal / trend visualization
+  - At least one comparison or distribution visualization
+  - At least one meaningful calculation (calculated field, table calculation, or LOD)
+  - At least one interactive feature (filter, parameter, set action, or equivalent)
+  - Clear, evidence-based analytical interpretation
+- **Submission:** Published interactive Tableau Public dashboard (No live presentation). Optional AI-generated visual assets (images/video) may support the story.
 
 ---
 [Return to Course Home](../)
