@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Truncated axis experiment</title>
+<style>
+:root{font-family:Inter,system-ui,Arial,sans-serif;color:#17324d;background:#f7f9fc}
+body{margin:0;display:grid;place-items:center;min-height:100vh}
+.card{width:min(920px,94vw);background:#fff;border:1px solid #d8e1ea;border-radius:20px;padding:28px;box-shadow:0 12px 30px #17324d16}
+h1{margin:0 0 6px;font-size:34px}.sub{margin:0 0 20px;color:#607488}
+.controls{display:flex;gap:12px;flex-wrap:wrap;margin:0 0 18px}
+button{border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer;background:#17324d;color:white}
+button.secondary{background:#e9eff5;color:#17324d}
+.chart{height:410px;position:relative;border-left:2px solid #71869a;border-bottom:2px solid #71869a;margin:14px 44px 36px 70px}
+.grid{position:absolute;inset:0;background:repeating-linear-gradient(to top,transparent 0,transparent 19.5%,#e6ebf0 20%)}
+.bar{position:absolute;bottom:0;width:22%;background:#3f7cac;border-radius:7px 7px 0 0;transition:height .55s ease}
+.b1{left:18%}.b2{left:60%}
+.value{position:absolute;left:50%;transform:translate(-50%,-28px);font-weight:800;font-size:22px}
+.label{position:absolute;bottom:-32px;left:50%;transform:translateX(-50%);color:#52677c}
+.axislabels{position:absolute;left:-58px;top:0;bottom:0;width:48px;color:#66798b;font-size:14px}
+.axislabels span{position:absolute;right:0;transform:translateY(50%)}
+.note{padding:14px 16px;border-radius:12px;background:#eef4f8;line-height:1.45}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Same data, different story?</h1>
+<p class="sub">Which chart makes the change feel larger?</p>
+<div class="controls">
+<button id="toggle">Show zero baseline</button>
+<button class="secondary" id="reset">Reset</button>
+</div>
+<div class="chart" id="chart">
+  <div class="grid"></div>
+  <div class="axislabels" id="axislabels"></div>
+  <div class="bar b1" id="b1"><span class="value">35%</span><span class="label">2012</span></div>
+  <div class="bar b2" id="b2"><span class="value">39.6%</span><span class="label">2013</span></div>
+</div>
+<div class="note"><strong>Teaching point:</strong> the numbers are identical in both states. A truncated baseline can visually exaggerate the difference.</div>
+</div>
+<script>
+const b1=document.getElementById('b1'), b2=document.getElementById('b2'), labels=document.getElementById('axislabels'), toggle=document.getElementById('toggle'), reset=document.getElementById('reset');
+let zero=false;
+function render(){
+ if(zero){
+   b1.style.height=(35/45*100)+'%'; b2.style.height=(39.6/45*100)+'%';
+   labels.innerHTML='<span style="bottom:0%">0</span><span style="bottom:22.2%">10</span><span style="bottom:44.4%">20</span><span style="bottom:66.7%">30</span><span style="bottom:88.9%">40</span>';
+   toggle.textContent='Show truncated axis';
+ }else{
+   b1.style.height=((35-34)/(42-34)*100)+'%'; b2.style.height=((39.6-34)/(42-34)*100)+'%';
+   labels.innerHTML='<span style="bottom:0%">34</span><span style="bottom:25%">36</span><span style="bottom:50%">38</span><span style="bottom:75%">40</span><span style="bottom:100%">42</span>';
+   toggle.textContent='Show zero baseline';
+ }
+}
+toggle.onclick=()=>{zero=!zero;render()}; reset.onclick=()=>{zero=false;render()}; render();
+</script>
+</body>
+</html>

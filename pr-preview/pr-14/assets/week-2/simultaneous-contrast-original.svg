@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">Simultaneous contrast demonstration</title>
+<desc id="d">A single uniform gray strip crosses a dark panel and a light panel, causing different perceived shades.</desc>
+<rect width="1200" height="675" fill="#f7f8fa"/>
+<text x="600" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="42" fill="#1f2937">Does the gray strip change?</text>
+<rect x="170" y="155" width="430" height="390" rx="20" fill="#20242b"/>
+<rect x="600" y="155" width="430" height="390" rx="20" fill="#e5e7eb"/>
+<rect x="255" y="295" width="690" height="110" rx="12" fill="#8a8a8a"/>
+</svg>
