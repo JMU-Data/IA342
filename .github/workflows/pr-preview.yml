@@ -8,7 +8,9 @@ on:
       - synchronize
       - closed
 
-concurrency: preview-${{ github.ref }}
+concurrency:
+  group: gh-pages-writer
+  cancel-in-progress: false
 
 permissions:
   contents: write
