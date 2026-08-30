@@ -34,6 +34,16 @@ title: "Home - IA 342"
     <p style="margin-bottom: 0; color: #57606a;">Complete the System Access and Account Setup (ArcGIS & Google Account).</p>
   </a>
 
+  <a href="modules/module-2/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #2da44e; display: flex; align-items: center; gap: 0.5rem;">🚀 Module 2</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Introduction to Data Visualization (Visual Perception & Design).</p>
+  </a>
+
+  <a href="assignments/lab-2/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">📝 Lab 2</h3>
+    <p style="margin-bottom: 0; color: #57606a;">ArcGIS Business Analyst I — Data, Sites, and Reports.</p>
+  </a>
+
 </div>
 
 ## Course Overview
@@ -49,7 +59,7 @@ The course is structured to take students from raw data to actionable human unde
 **Data** ➔ **Visual Design & Spatial Analysis** ➔ **ArcGIS** ➔ **Tableau & Visual Analytics** ➔ **Interactive Dashboards** ➔ **Human Understanding & Decision**
 
 1. **[Course Introduction](modules/module-1/):** The core philosophy of why visualization matters in the AI era.
-2. **Spatial Intelligence (ArcGIS):** Map design, geographic contexts, and spatial data visualization.
+2. **[Spatial Intelligence & Visual Perception](modules/module-2/):** Map design, geographic contexts, and spatial data visualization.
 3. **Mini Project / Checkpoint:** A milestone project applying spatial visualization techniques.
 4. **Business Intelligence (Tableau) & Visual Analytics:** Data connection, charts, calculations, filters, and interactive dashboards.
 5. **Data Storytelling:** End-to-end projects culminating in a comprehensive visual analytics Final Project.
