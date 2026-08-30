@@ -66,17 +66,9 @@
           "assignment": null
         },
         {
-          "key": "lab-instructions",
-          "type": "ExternalUrl",
-          "title": "Lab 2 — ArcGIS Business Analyst I: Data, Sites, and Reports",
-          "published": true,
-          "external_url": "https://jmu-data.github.io/IA342/assignments/lab-2/",
-          "assignment": null
-        },
-        {
-          "key": "submit-lab",
+          "key": "lab-2",
           "type": "Assignment",
-          "title": "Submit Lab 2",
+          "title": "Lab 2 — ArcGIS Business Analyst I: Data, Sites, and Reports",
           "published": true,
           "external_url": null,
           "assignment": "lab-2"
