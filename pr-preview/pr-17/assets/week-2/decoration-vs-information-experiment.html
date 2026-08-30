@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Decoration vs information</title>
+<style>
+:root{font-family:Inter,system-ui,Arial,sans-serif;color:#17324d;background:#f7f9fc}
+body{margin:0;display:grid;place-items:center;min-height:100vh}
+.card{width:min(940px,94vw);background:#fff;border:1px solid #d8e1ea;border-radius:20px;padding:28px;box-shadow:0 12px 30px #17324d16}
+h1{margin:0 0 6px;font-size:34px}.sub{margin:0 0 20px;color:#607488}
+button{border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer;background:#17324d;color:white}
+.stage{margin-top:20px;min-height:370px;border-radius:18px;background:#f6f9fb;display:grid;place-items:center;padding:20px}
+.decorative{text-align:center}.donut{width:210px;height:210px;border-radius:50%;background:conic-gradient(#3f7cac 0 76%,#e6edf3 76%);position:relative;margin:auto}
+.donut:after{content:"";position:absolute;inset:48px;border-radius:50%;background:#fff}.pct{position:absolute;inset:0;display:grid;place-items:center;font-size:56px;font-weight:800;z-index:2}
+.icons{font-size:40px;letter-spacing:16px;opacity:.55;margin-top:22px}
+.informative{width:min(690px,95%);display:none}
+.row{display:grid;grid-template-columns:100px 1fr 70px;gap:14px;align-items:center;margin:22px 0}.track{height:32px;border-radius:7px;background:#e8eef4;overflow:hidden}.fill{height:100%;background:#3f7cac}.fill.other{background:#87a9c2}.meta{color:#607488;line-height:1.5}
+.note{margin-top:18px;padding:14px 16px;border-radius:12px;background:#eef4f8}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Is this information—or decoration?</h1>
+<p class="sub">Synthetic classroom example. The 76% value is illustrative, not a real survey result.</p>
+<button id="toggle">Add context</button>
+<div class="stage">
+ <div class="decorative" id="decorative">
+  <div class="donut"><div class="pct">76%</div></div>
+  <div class="icons">● ◆ ▲ ●</div>
+  <h2>BEFORE</h2><p>Looks nice, but what does 76% mean?</p>
+ </div>
+ <div class="informative" id="informative">
+  <h2>AFTER — adds context</h2>
+  <div class="meta"><strong>Illustrative survey question:</strong> Which option do you prefer?<br><strong>Sample:</strong> n = 500 (synthetic)</div>
+  <div class="row"><strong>Option A</strong><div class="track"><div class="fill" style="width:76%"></div></div><strong>76%</strong></div>
+  <div class="row"><strong>Other</strong><div class="track"><div class="fill other" style="width:24%"></div></div><strong>24%</strong></div>
+  <div class="meta">Now we know the question, sample size, comparison, and source.</div>
+ </div>
+</div>
+<div class="note"><strong>Teaching point:</strong> the AFTER version is intentionally better. The lesson is the difference between the two states: context makes the same 76% easier to understand and evaluate.</div>
+</div>
+<script>
+const d=document.getElementById('decorative'),i=document.getElementById('informative'),b=document.getElementById('toggle');let info=false;
+b.onclick=()=>{info=!info;d.style.display=info?'none':'block';i.style.display=info?'block':'none';b.textContent=info?'Show BEFORE version':'Add context'};
+</script>
+</body>
+</html>
