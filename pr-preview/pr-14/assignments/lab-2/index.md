@@ -2,7 +2,7 @@
 layout: default
 title: "Lab 2: ArcGIS Business Analyst I — Data, Sites, and Reports - IA 342"
 ---
-# Lab 2 â€” ArcGIS Business Analyst I
+# Lab 2 — ArcGIS Business Analyst I
 
 ## Data, Sites, and Reports
 
@@ -48,7 +48,7 @@ Data source:
 
 Navigation used in class:
 
-**All Reports â†’ Archive â†’ Download**
+**All Reports → Archive → Download**
 
 The downloaded file includes location information that Business Analyst can geocode and fields such as:
 
@@ -64,9 +64,9 @@ The downloaded file includes location information that Business Analyst can geoc
 
 ---
 
-# Session 1 â€” Create the Project, JMU Site, and Standard Report
+# Session 1 — Create the Project, JMU Site, and Standard Report
 
-## Step 1 â€” Create the project
+## Step 1 — Create the project
 
 1. Open **ArcGIS Business Analyst Web App**.
 2. Create a new project named:
@@ -79,9 +79,9 @@ You will reuse this project in Weeks 3 and 4.
 
 ![Create a new ArcGIS Business Analyst project](../../assets/week-2/screenshots/01-create-project.png)
 
-## Step 2 â€” Create the JMU site
+## Step 2 — Create the JMU site
 
-1. Choose **Define areas â†’ Find location**.
+1. Choose **Define areas → Find location**.
 2. Search for:
 
 `James Madison University, Harrisonburg, VA`
@@ -101,7 +101,7 @@ These three drive-time areas will be used together when you run the reports.
 
 ![Create the JMU site with 5-, 10-, and 15-minute drive-time areas](../../assets/week-2/screenshots/02-jmu-drive-time-site.png)
 
-## Step 3 â€” Run the Community Profile report
+## Step 3 — Run the Community Profile report
 
 1. Open the **Reports** tab.
 2. Choose **Run reports**.
@@ -119,14 +119,14 @@ This first report is for practice. You do **not** submit it.
 
 ---
 
-# Session 2 â€” Import GVA Data and Build a Custom Report
+# Session 2 — Import GVA Data and Build a Custom Report
 
-## Step 4 â€” Download the GVA archive data
+## Step 4 — Download the GVA archive data
 
 1. Open the **Gun Violence Archive** website.
 2. Go to:
 
-**All Reports â†’ Archive**
+**All Reports → Archive**
 
 3. Download the available archive file.
 4. Use the file as downloaded.
@@ -141,10 +141,10 @@ Before importing, identify the columns that contain:
 - **Victims Killed**, and
 - **Victims Injured**.
 
-## Step 5 â€” Import and geocode the records
+## Step 5 — Import and geocode the records
 
 1. Return to **ArcGIS Business Analyst**.
-2. Choose **Maps â†’ Add data â†’ Import file**.
+2. Choose **Maps → Add data → Import file**.
 3. Upload the GVA archive file.
 4. Choose **Point locations**.
 5. Match the location fields to the correct ArcGIS fields.
@@ -157,7 +157,7 @@ Before importing, identify the columns that contain:
 
 ![Match the GVA location fields and review the credit estimate](../../assets/week-2/screenshots/04-geocoding-field-match.png)
 
-## Step 6 â€” Check the geocoded map
+## Step 6 — Check the geocoded map
 
 After the import is complete:
 
@@ -169,9 +169,9 @@ No written response is required for this step. The goal is simply to confirm tha
 
 ![Review the geocoded GVA point layer](../../assets/week-2/screenshots/05-geocoded-gva-map.png)
 
-## Step 7 â€” Set up GVA as custom data
+## Step 7 — Set up GVA as custom data
 
-1. Choose **Maps â†’ Add data â†’ Custom data setup**.
+1. Choose **Maps → Add data → Custom data setup**.
 2. Select the imported `lastname_gva` layer.
 3. Create a custom category for the GVA data.
 4. Add these two fields:
@@ -187,13 +187,13 @@ No written response is required for this step. The goal is simply to confirm tha
 
 ![Add Victims Killed and Victims Injured as custom variables](../../assets/week-2/screenshots/07-custom-data-variables.png)
 
-## Step 8 â€” Build a reusable custom report template
+## Step 8 — Build a reusable custom report template
 
 A report template is **not tied to JMU**. Once you save the template, it can be run for other sites.
 
 For this lab, you will build the template first and then run it for the JMU site.
 
-1. Open **Reports â†’ Build reports**.
+1. Open **Reports → Build reports**.
 2. Start with a **blank report template**.
 3. Find your custom GVA category.
 4. Add:
@@ -205,7 +205,7 @@ For this lab, you will build the template first and then run it for the JMU site
 
 ![Add the GVA variables to a blank report template](../../assets/week-2/screenshots/08-report-template-variables.png)
 
-## Step 9 â€” Add a chart to the template
+## Step 9 — Add a chart to the template
 
 1. Insert a **Chart** section.
 2. Search the standard Business Analyst variables.
@@ -224,7 +224,7 @@ Using all three is recommended, but **at least two indexes are required**.
 
 ![Add crime index variables to a vertical bar chart](../../assets/week-2/screenshots/09-crime-index-chart.png)
 
-## Step 10 â€” Save the report template
+## Step 10 — Save the report template
 
 After the variables and chart are complete:
 
@@ -239,9 +239,9 @@ The template name is entered at the **end** of the template-building process.
 
 ![Save the reusable report template](../../assets/week-2/screenshots/10-save-report-template.png)
 
-## Step 11 â€” Run the custom report for JMU
+## Step 11 — Run the custom report for JMU
 
-1. Return to **Reports â†’ Run reports**.
+1. Return to **Reports → Run reports**.
 2. Select your custom report template.
 3. Add the **James Madison University** site.
 4. Make sure the site still includes all three drive-time areas:
@@ -256,7 +256,7 @@ Because the JMU site has three drive-time areas, the custom report should contai
 
 ![Run the saved custom report template for the JMU site](../../assets/week-2/screenshots/11-run-custom-report.png)
 
-## Step 12 â€” Export the final PDF
+## Step 12 — Export the final PDF
 
 Save the final report as:
 
@@ -284,7 +284,7 @@ Do not submit screenshots, the standard Community Profile PDF, or a Business Ana
 
 ---
 
-# Grading rubric â€” 100 points
+# Grading rubric — 100 points
 
 Submit one readable PDF. If the submitted file cannot be opened or is not a PDF, it is not a valid submission and the rubric cannot be applied until a valid file is submitted.
 
