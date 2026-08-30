@@ -1,44 +1,44 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Afterimage Experiment — IA342</title>
+<title>Afterimage Experiment — IA 342</title>
 <style>
-  :root { color-scheme: dark; }
+  :root { color-scheme: dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
   * { box-sizing: border-box; }
-  body { margin: 0; min-height: 100vh; background: #111; color: #f4f4f4; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; display:flex; justify-content:center; }
-  main { width:min(100%, 980px); padding:24px 20px 40px; text-align:center; }
-  h1 { font-size:clamp(1.5rem,3vw,2.2rem); margin:0 0 10px; }
-  p { line-height:1.5; color:#d6d6d6; }
-  button { font:inherit; padding:12px 20px; border-radius:10px; border:1px solid #666; background:#f3f3f3; color:#111; cursor:pointer; font-weight:700; }
-  #stage { margin:18px auto 0; width:min(82vw, 620px); }
-  #status { min-height:2.1em; font-weight:700; font-size:1.05rem; margin-bottom:10px; }
-  #stimulus { width:100%; height:auto; display:block; border-radius:8px; background:white; }
-  #after { display:none; margin-top:18px; }
-  .hint { font-size:.92rem; color:#aaa; }
-  body.blank-phase { background:#fff; }
-  body.blank-phase main { padding-top:18px; }
-  body.blank-phase h1, body.blank-phase #intro, body.blank-phase #status, body.blank-phase .hint { display:none; }
-  body.blank-phase #stage { margin-top:0; }
-  body.blank-phase #stimulus { border-radius:0; }
+  body { margin: 0; padding: 10px; min-height: 100%; background: #111; color: #f4f4f4; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+  main { width: min(100%, 880px); text-align: center; }
+  h1 { font-size: 22px; margin: 0 0 6px; }
+  p { line-height: 1.4; color: #d6d6d6; font-size: 14px; margin: 0 0 10px; }
+  button { font: inherit; font-size: 14px; padding: 8px 18px; border-radius: 8px; border: 1px solid #666; background: #0969da; color: #fff; cursor: pointer; font-weight: 700; transition: background 0.15s; }
+  button:hover { background: #0858b9; }
+  #stage { margin: 6px auto 0; max-height: 380px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  #status { min-height: 24px; font-weight: 700; font-size: 15px; margin-bottom: 6px; color: #58a6ff; }
+  #stimulus { max-height: 320px; max-width: 95%; width: auto; height: auto; display: block; border-radius: 6px; background: white; margin: 0 auto; object-fit: contain; }
+  #after { display: none; margin-top: 10px; }
+  .hint { font-size: 13px; color: #8b949e; }
+  body.blank-phase { background: #fff; color: #111; }
+  body.blank-phase h1, body.blank-phase #intro, body.blank-phase #status, body.blank-phase .hint { display: none; }
+  body.blank-phase #stage { margin-top: 0; max-height: 420px; }
+  body.blank-phase #stimulus { border-radius: 0; max-height: 380px; }
 </style>
 </head>
 <body>
 <main>
   <h1>Afterimage Experiment</h1>
   <div id="intro">
-    <p>When you start, keep your eyes fixed on the red dot on the nose for 15 seconds. Do not scan the face. The image will then switch automatically to a blank fixation screen.</p>
-    <button id="start">Start experiment</button>
-    <p class="hint">Tip: maximize the window and sit at a comfortable viewing distance.</p>
+    <p>Stare fixedly at the <strong>red dot on the nose for 15 seconds</strong> without moving your gaze.<br>The image will automatically switch to a blank fixation screen.</p>
+    <button id="start">Start Experiment (15s)</button>
+    <p class="hint">Sit at a comfortable viewing distance and keep your eyes steady on the dot.</p>
   </div>
-  <section id="stage" hidden>
+  <section id="stage" style="display:none;">
     <div id="status"></div>
     <img id="stimulus" src="afterimage-negative-portrait.png" alt="Color-inverted portrait with fixation dot">
   </section>
   <div id="after">
-    <p>Did a more natural-looking face briefly appear on the blank screen?</p>
-    <button id="restart">Run again</button>
+    <p style="color:#58a6ff; font-weight:600;">Did a natural-looking portrait briefly appear on the blank screen?</p>
+    <button id="restart">Run Again</button>
   </div>
 </main>
 <script>
@@ -57,7 +57,7 @@
     clearTimer();
     document.body.classList.remove('blank-phase');
     intro.style.display='block';
-    stage.hidden=true;
+    stage.style.display='none';
     after.style.display='none';
     img.src='afterimage-negative-portrait.png';
     status.textContent='';
@@ -81,13 +81,13 @@
     clearTimer();
     intro.style.display='none';
     after.style.display='none';
-    stage.hidden=false;
+    stage.style.display='flex';
     img.src='afterimage-negative-portrait.png';
     let remaining=15;
-    status.textContent=`Keep looking at the red dot — ${remaining}`;
+    status.textContent=`Keep looking at the red dot — ${remaining}s`;
     timer=setInterval(() => {
       remaining -= 1;
-      if(remaining > 0) status.textContent=`Keep looking at the red dot — ${remaining}`;
+      if(remaining > 0) status.textContent=`Keep looking at the red dot — ${remaining}s`;
       else beginBlank();
     },1000);
   }
