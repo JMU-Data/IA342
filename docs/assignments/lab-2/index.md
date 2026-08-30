@@ -1,4 +1,4 @@
-﻿---
+---
 layout: default
 title: "Lab 2: ArcGIS Business Analyst I — Data, Sites, and Reports - IA 342"
 ---
@@ -303,4 +303,4 @@ Partial credit within each category is based on how much of the required content
 - [Set up custom data in Business Analyst](https://doc.arcgis.com/en/business-analyst/web/custom-data-setup.htm)
 - [Build a report template](https://doc.arcgis.com/en/business-analyst/web/building-reports.htm)
 ---
-[Return to Module 2](../../modules/module-2/index.md) | [Return to Course Home](../../index.md)
+[Return to Module 2](../../modules/module-2/) | [Return to Course Home](../../)
