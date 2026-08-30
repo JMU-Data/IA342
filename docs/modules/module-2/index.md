@@ -82,7 +82,7 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
   border: 1px solid #d0d7de;
   border-top: none;
   border-radius: 0 0 10px 10px;
-  min-height: 600px;
+  min-height: 560px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
   position: relative;
   overflow: hidden;
@@ -176,7 +176,7 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
 .slide-visual-full img, .slide-visual-full svg {
   max-width: 100%;
-  max-height: 500px;
+  max-height: 480px;
   width: auto;
   height: auto;
   border-radius: 6px;
@@ -223,12 +223,12 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
 .activity-container-full {
   width: 100%;
-  height: 520px;
+  height: 460px;
   border: 1px solid #d0d7de;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  background: #ffffff;
+  background: #f8fafc;
   margin: 0 auto;
 }
 
@@ -250,7 +250,7 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
 .slide-media-box img, .slide-media-box svg {
   max-width: 100%;
-  max-height: 420px;
+  max-height: 400px;
   height: auto;
   border-radius: 4px;
   display: block;
@@ -372,7 +372,7 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
     <div class="deck-title-tag">
       <span>📊 IA 342 Week 2 Lecture</span>
       <span style="opacity: 0.4;">|</span>
-      <span id="slideCounter">Slide 1 of 50</span>
+      <span id="slideCounter">Slide 1 of 49</span>
     </div>
     <div class="deck-controls">
       <button class="deck-btn" id="prevBtn" onclick="changeSlide(-1)" title="Previous (← / PageUp)">◀ Prev</button>
@@ -506,15 +506,15 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
       
 <div class="slide-text-large">
   <p>Summary statistics can make fundamentally distinct datasets look completely identical.</p>
-  <p>Consider four datasets (I, II, III, IV) with identical:</p>
-  <ul style="font-size: 1.1rem; line-height: 1.7;">
-    <li>Means: \( \bar{x} = 9.0, \bar{y} = 7.5 \)</li>
-    <li>Sample Variances: \( s_x^2 = 11.0, s_y^2 = 4.12 \)</li>
-    <li>Correlation Coefficient: \( r = 0.816 \)</li>
-    <li>Linear Regression Fit: \( y \approx 3.0 + 0.5x \) (\( R^2 = 0.67 \))</li>
+  <p>Consider four datasets (I, II, III, IV) with identical statistical properties:</p>
+  <ul style="font-size: 1.15rem; line-height: 1.8;">
+    <li>Mean x = 9.0; mean y = 7.5</li>
+    <li>Variance of x = 11.0; variance of y = 4.12</li>
+    <li>Correlation coefficient: r = 0.816</li>
+    <li>Linear regression line: y ≈ 3.0 + 0.5x (R² ≈ 0.67)</li>
   </ul>
-  <div class="alert-teaching-point">
-    If we rely strictly on numerical summaries, we would conclude these datasets describe identical phenomena.
+  <div class="alert-teaching-point" style="margin-top: 1.2rem;">
+    If we rely strictly on numerical summaries, we would conclude these four datasets describe identical phenomena.
   </div>
 </div>
 
@@ -729,7 +729,7 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     <!-- SLIDE 25: 12A — Interactive: Truncated Axis Experiment -->
     <div class="slide" data-slide="25">
-      <span class="slide-badge">Interactive Activity 1</span>
+      <span class="slide-badge">Interactive Activity 1 of 4</span>
       <h2>12A — Interactive: Truncated Axis Experiment</h2>
       
 <div class="activity-container-full">
@@ -744,27 +744,16 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
       <h2>12A — When Charts Mislead: Pretty vs. Useful Graphics</h2>
       
 <div class="slide-visual-full">
-  <img src="../../assets/week-2/decoration-vs-information-original.svg" alt="A synthetic decorative 76 percent infographic compared to an informative version with denominator, comparison, and source context" />
+  <img src="../../assets/week-2/decoration-vs-information-original.svg" alt="Comparison between a decorative 76 percent donut chart and an informative graphic with question, sample size, comparison group, and data source" />
 </div>
 <div class="alert-teaching-point" style="max-width: 900px; margin: 1rem auto 0;">
-  An infographic can be visually striking while concealing critical context: What was the question? What is the sample size (N)? What is the comparison benchmark? Who collected the data?
+  An infographic can be visually striking while concealing critical context: What was the exact question? What is the sample size (N)? What is the benchmark comparison group? Who collected the data?
 </div>
 
     </div>
 
-    <!-- SLIDE 27: 12A — Interactive: Decoration vs. Informative Visuals -->
+    <!-- SLIDE 27: 13 — What Is Data Visualization? -->
     <div class="slide" data-slide="27">
-      <span class="slide-badge">Interactive Activity 2</span>
-      <h2>12A — Interactive: Decoration vs. Informative Visuals</h2>
-      
-<div class="activity-container-full">
-  <iframe src="../../assets/week-2/decoration-vs-information-experiment.html" title="Decoration vs Information Interactive Experiment"></iframe>
-</div>
-
-    </div>
-
-    <!-- SLIDE 28: 13 — What Is Data Visualization? -->
-    <div class="slide" data-slide="28">
       <span class="slide-badge">Course Core Philosophy</span>
       <h2>13 — What Is Data Visualization?</h2>
       
@@ -778,8 +767,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 29: 13 — Briefing: The Value of Data Visualization -->
-    <div class="slide" data-slide="29">
+    <!-- SLIDE 28: 13 — Briefing: The Value of Data Visualization -->
+    <div class="slide" data-slide="28">
       <span class="slide-badge">Video Briefing</span>
       <h2>13 — Briefing: The Value of Data Visualization</h2>
       
@@ -793,8 +782,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 30: 14 — Visualization & Human Judgment in Intelligence -->
-    <div class="slide" data-slide="30">
+    <!-- SLIDE 29: 14 — Visualization & Human Judgment in Intelligence -->
+    <div class="slide" data-slide="29">
       <span class="slide-badge">Intelligence Analysis Focus</span>
       <h2>14 — Visualization & Human Judgment in Intelligence</h2>
       
@@ -806,8 +795,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 31: 14 — The Intelligence Analysis Cognitive Flow -->
-    <div class="slide" data-slide="31">
+    <!-- SLIDE 30: 14 — The Intelligence Analysis Cognitive Flow -->
+    <div class="slide" data-slide="30">
       <span class="slide-badge">Intelligence Analysis Focus</span>
       <h2>14 — The Intelligence Analysis Cognitive Flow</h2>
       
@@ -818,8 +807,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 32: 15 — Human Perception: We Cannot Always Trust Our Eyes -->
-    <div class="slide" data-slide="32">
+    <!-- SLIDE 31: 15 — Human Perception: We Cannot Always Trust Our Eyes -->
+    <div class="slide" data-slide="31">
       <span class="slide-badge">Perception & Psychology</span>
       <h2>15 — Human Perception: We Cannot Always Trust Our Eyes</h2>
       
@@ -832,8 +821,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 33: 15A — Perceptual Distortion: The Müller-Lyer Illusion -->
-    <div class="slide" data-slide="33">
+    <!-- SLIDE 32: 15A — Perceptual Distortion: The Müller-Lyer Illusion -->
+    <div class="slide" data-slide="32">
       <span class="slide-badge">Perceptual Illusions</span>
       <h2>15A — Perceptual Distortion: The Müller-Lyer Illusion</h2>
       
@@ -844,9 +833,9 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 34: 15A — Interactive: Müller-Lyer Alignment & Reveal -->
-    <div class="slide" data-slide="34">
-      <span class="slide-badge">Interactive Activity 3</span>
+    <!-- SLIDE 33: 15A — Interactive: Müller-Lyer Alignment & Reveal -->
+    <div class="slide" data-slide="33">
+      <span class="slide-badge">Interactive Activity 2 of 4</span>
       <h2>15A — Interactive: Müller-Lyer Alignment & Reveal</h2>
       
 <div class="activity-container-full">
@@ -855,8 +844,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 35: 16 — How Expectations Shape Perception (Richards J. Heuer Jr.) -->
-    <div class="slide" data-slide="35">
+    <!-- SLIDE 34: 16 — How Expectations Shape Perception (Richards J. Heuer Jr.) -->
+    <div class="slide" data-slide="34">
       <span class="slide-badge">Psychology of Intelligence</span>
       <h2>16 — How Expectations Shape Perception (Richards J. Heuer Jr.)</h2>
       
@@ -869,8 +858,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 36: 16A — Ambiguous Figures: Duck or Rabbit? -->
-    <div class="slide" data-slide="36">
+    <!-- SLIDE 35: 16A — Ambiguous Figures: Duck or Rabbit? -->
+    <div class="slide" data-slide="35">
       <span class="slide-badge">Cognitive Ambiguity</span>
       <h2>16A — Ambiguous Figures: Duck or Rabbit?</h2>
       
@@ -883,8 +872,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 37: 16A — Ambiguous Figures: Young Woman or Older Woman? -->
-    <div class="slide" data-slide="37">
+    <!-- SLIDE 36: 16A — Ambiguous Figures: Young Woman or Older Woman? -->
+    <div class="slide" data-slide="36">
       <span class="slide-badge">Cognitive Ambiguity</span>
       <h2>16A — Ambiguous Figures: Young Woman or Older Woman?</h2>
       
@@ -897,8 +886,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 38: 17 — Context Changes What We See: Simultaneous Contrast -->
-    <div class="slide" data-slide="38">
+    <!-- SLIDE 37: 17 — Context Changes What We See: Simultaneous Contrast -->
+    <div class="slide" data-slide="37">
       <span class="slide-badge">Perceptual Contrast</span>
       <h2>17 — Context Changes What We See: Simultaneous Contrast</h2>
       
@@ -909,9 +898,9 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 39: 17 — Interactive: Simultaneous Contrast Experiment -->
-    <div class="slide" data-slide="39">
-      <span class="slide-badge">Interactive Activity 4</span>
+    <!-- SLIDE 38: 17 — Interactive: Simultaneous Contrast Experiment -->
+    <div class="slide" data-slide="38">
+      <span class="slide-badge">Interactive Activity 3 of 4</span>
       <h2>17 — Interactive: Simultaneous Contrast Experiment</h2>
       
 <div class="activity-container-full">
@@ -920,8 +909,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 40: 17 — Briefing: Beau Lotto — Optical Illusions Show How We See -->
-    <div class="slide" data-slide="40">
+    <!-- SLIDE 39: 17 — Briefing: Beau Lotto — Optical Illusions Show How We See -->
+    <div class="slide" data-slide="39">
       <span class="slide-badge">Video Briefing</span>
       <h2>17 — Briefing: Beau Lotto — Optical Illusions Show How We See</h2>
       
@@ -935,8 +924,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 41: 17A — Afterimage Experiment: What Your Eyes Keep Seeing -->
-    <div class="slide" data-slide="41">
+    <!-- SLIDE 40: 17A — Afterimage Experiment: What Your Eyes Keep Seeing -->
+    <div class="slide" data-slide="40">
       <span class="slide-badge">Neural Adaptation</span>
       <h2>17A — Afterimage Experiment: What Your Eyes Keep Seeing</h2>
       
@@ -954,9 +943,9 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 42: 17A — Interactive: Timed Afterimage Experiment -->
-    <div class="slide" data-slide="42">
-      <span class="slide-badge">Interactive Activity 5</span>
+    <!-- SLIDE 41: 17A — Interactive: Timed Afterimage Experiment -->
+    <div class="slide" data-slide="41">
+      <span class="slide-badge">Interactive Activity 4 of 4</span>
       <h2>17A — Interactive: Timed Afterimage Experiment</h2>
       
 <div class="activity-container-full">
@@ -965,8 +954,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 43: 18 — Perspective Changes How Big Things Look -->
-    <div class="slide" data-slide="43">
+    <!-- SLIDE 42: 18 — Perspective Changes How Big Things Look -->
+    <div class="slide" data-slide="42">
       <span class="slide-badge">Spatial Perception</span>
       <h2>18 — Perspective Changes How Big Things Look</h2>
       
@@ -977,8 +966,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 44: 18 — Real-World Perspective & Depth Distortions -->
-    <div class="slide" data-slide="44">
+    <!-- SLIDE 43: 18 — Real-World Perspective & Depth Distortions -->
+    <div class="slide" data-slide="43">
       <span class="slide-badge">Spatial Perception</span>
       <h2>18 — Real-World Perspective & Depth Distortions</h2>
       
@@ -995,8 +984,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 45: 19 — Visual Noise Can Create False Patterns -->
-    <div class="slide" data-slide="45">
+    <!-- SLIDE 44: 19 — Visual Noise Can Create False Patterns -->
+    <div class="slide" data-slide="44">
       <span class="slide-badge">Design Integrity</span>
       <h2>19 — Visual Noise Can Create False Patterns</h2>
       
@@ -1013,8 +1002,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 46: 19 — Chart Gridlines: Supporting vs. Competing Lines -->
-    <div class="slide" data-slide="46">
+    <!-- SLIDE 45: 19 — Chart Gridlines: Supporting vs. Competing Lines -->
+    <div class="slide" data-slide="45">
       <span class="slide-badge">Design Integrity</span>
       <h2>19 — Chart Gridlines: Supporting vs. Competing Lines</h2>
       
@@ -1027,8 +1016,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 47: 20 — Gestalt Principles: Closure -->
-    <div class="slide" data-slide="47">
+    <!-- SLIDE 46: 20 — Gestalt Principles: Closure -->
+    <div class="slide" data-slide="46">
       <span class="slide-badge">Gestalt Psychology</span>
       <h2>20 — Gestalt Principles: Closure</h2>
       
@@ -1045,8 +1034,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 48: 21 — Gestalt Principles: Proximity & Grouping -->
-    <div class="slide" data-slide="48">
+    <!-- SLIDE 47: 21 — Gestalt Principles: Proximity & Grouping -->
+    <div class="slide" data-slide="47">
       <span class="slide-badge">Gestalt Psychology</span>
       <h2>21 — Gestalt Principles: Proximity & Grouping</h2>
       
@@ -1057,8 +1046,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 49: 22 — Week 2 Takeaways & Core Principles -->
-    <div class="slide" data-slide="49">
+    <!-- SLIDE 48: 22 — Week 2 Takeaways & Core Principles -->
+    <div class="slide" data-slide="48">
       <span class="slide-badge">Lecture Summary</span>
       <h2>22 — Week 2 Takeaways & Core Principles</h2>
       
@@ -1074,8 +1063,8 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
     </div>
 
-    <!-- SLIDE 50: 22 — Applying Principles to Spatial Intelligence -->
-    <div class="slide" data-slide="50">
+    <!-- SLIDE 49: 22 — Applying Principles to Spatial Intelligence -->
+    <div class="slide" data-slide="49">
       <span class="slide-badge">Next Steps · Lab 2</span>
       <h2>22 — Applying Principles to Spatial Intelligence</h2>
       
@@ -1095,7 +1084,7 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
 <script>
 let currentSlide = 1;
-const totalSlides = 50;
+const totalSlides = 49;
 
 function updateDeck() {
   const slides = document.querySelectorAll('.slide');
