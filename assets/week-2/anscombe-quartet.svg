@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<rect x="0" y="0" width="1200" height="675" rx="0" fill="#F7F8FA" stroke="none" stroke-width="0" opacity="1"/>
+<text x="70" y="70" font-family="Inter,Arial,sans-serif" font-size="36" font-weight="700" fill="#18212F" text-anchor="start" >Anscombe&#x27;s Quartet</text>
+<text x="70" y="108" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="400" fill="#667085" text-anchor="start" >Same summaries. Different structures.</text>
+<rect x="80" y="155" width="470" height="190" rx="14" fill="#FFFFFF" stroke="#D9DEE7" stroke-width="1" opacity="1"/>
+<text x="102" y="187" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" fill="#18212F" text-anchor="start" >Dataset I</text>
+<line x1="125.0" y1="288.9583333333333" x2="525.0" y2="200.41666666666669" stroke="#667085" stroke-width="2" opacity="0.65" stroke-dasharray="7 6"/>
+<circle cx="289.70588235294116" cy="252.08333333333334" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="242.64705882352942" cy="263.4375" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="360.29411764705884" cy="256.875" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="266.1764705882353" cy="244.0625" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="313.2352941176471" cy="249.0625" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="383.8235294117647" cy="232.08333333333331" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="195.58823529411765" cy="260.4166666666667" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="148.52941176470588" cy="291.4583333333333" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="336.7647058823529" cy="222.91666666666666" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="219.11764705882354" cy="285.625" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="172.05882352941177" cy="276.6666666666667" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<rect x="620" y="155" width="470" height="190" rx="14" fill="#FFFFFF" stroke="#D9DEE7" stroke-width="1" opacity="1"/>
+<text x="642" y="187" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" fill="#18212F" text-anchor="start" >Dataset II</text>
+<line x1="665.0" y1="288.9583333333333" x2="1065.0" y2="200.41666666666669" stroke="#667085" stroke-width="2" opacity="0.65" stroke-dasharray="7 6"/>
+<circle cx="829.7058823529412" cy="240.625" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="782.6470588235294" cy="251.04166666666666" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="900.2941176470588" cy="244.79166666666669" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="806.1764705882354" cy="244.47916666666669" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="853.2352941176471" cy="239.375" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="923.8235294117646" cy="251.45833333333334" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="735.5882352941177" cy="271.9791666666667" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="688.5294117647059" cy="303.5416666666667" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="876.7647058823529" cy="240.72916666666666" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="759.1176470588235" cy="260.2083333333333" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="712.0588235294117" cy="286.4583333333333" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<rect x="80" y="400" width="470" height="190" rx="14" fill="#FFFFFF" stroke="#D9DEE7" stroke-width="1" opacity="1"/>
+<text x="102" y="432" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" fill="#18212F" text-anchor="start" >Dataset III</text>
+<line x1="125.0" y1="533.9583333333334" x2="525.0" y2="445.4166666666667" stroke="#667085" stroke-width="2" opacity="0.65" stroke-dasharray="7 6"/>
+<circle cx="289.70588235294116" cy="503.125" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="242.64705882352942" cy="510.3125" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="360.29411764705884" cy="448.125" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="266.1764705882353" cy="506.7708333333333" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="313.2352941176471" cy="499.4791666666667" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="383.8235294117647" cy="488.75" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="195.58823529411765" cy="517.5" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="148.52941176470588" cy="524.6875" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="336.7647058823529" cy="495.9375" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="219.11764705882354" cy="513.9583333333334" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="172.05882352941177" cy="521.1458333333334" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<rect x="620" y="400" width="470" height="190" rx="14" fill="#FFFFFF" stroke="#D9DEE7" stroke-width="1" opacity="1"/>
+<text x="642" y="432" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="700" fill="#18212F" text-anchor="start" >Dataset IV</text>
+<line x1="665.0" y1="533.9583333333334" x2="1065.0" y2="445.4166666666667" stroke="#667085" stroke-width="2" opacity="0.65" stroke-dasharray="7 6"/>
+<circle cx="782.6470588235294" cy="512.2916666666666" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="782.6470588235294" cy="520.8333333333334" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="782.6470588235294" cy="500.5208333333333" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="782.6470588235294" cy="488.75" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="782.6470588235294" cy="492.6041666666667" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="782.6470588235294" cy="507.5" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="782.6470588235294" cy="526.1458333333334" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="1041.4705882352941" cy="450.625" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="782.6470588235294" cy="522.9166666666666" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="782.6470588235294" cy="498.4375" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<circle cx="782.6470588235294" cy="509.0625" r="5.7" fill="#3559E0" stroke="#FFFFFF" stroke-width="1" opacity="1"/>
+<text x="600" y="640" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="700" fill="#3559E0" text-anchor="middle" >Plot the data before trusting the summary.</text>
+</svg>
