@@ -62,4 +62,4 @@ Once you have completed the steps above, go to the corresponding assignment in *
 *Note: Do not include credentials, MFA codes, or sensitive information in your screenshot. No student data, screenshots, or credentials should ever be committed to or shared in this public GitHub repository.*
 
 ---
-[Return to Module 1](../../modules/module-1/index.md) | [Return to Course Home](../../index.md)
+[Return to Module 1](../../modules/module-1/) | [Return to Course Home](../../)

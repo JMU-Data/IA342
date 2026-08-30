@@ -16,7 +16,9 @@
 - [Course Website](https://jmu-data.github.io/IA342/)
 - [Syllabus](docs/syllabus/index.md)
 - [Module 1](docs/modules/module-1/index.md)
-- [Lab 1: System Access and Account Setup](docs/assignments/arcgis-access-check/index.md)
+- [Week 1 Assignment](docs/assignments/arcgis-access-check/index.md)
+- [Module 2](docs/modules/module-2/index.md)
+- [Lab 2](docs/assignments/lab-2/index.md)
 
 ## Course Overview
 
