@@ -5,6 +5,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: gh-pages-writer
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
