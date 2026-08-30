@@ -1,23 +1,147 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Simultaneous Contrast Experiment</title>
 <style>
-body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;background:#f7f8fa;color:#111827}
-main{max-width:900px;margin:0 auto;padding:28px}
-h1{font-size:32px;margin:0 0 6px}p{font-size:18px;color:#4b5563}
-.card{background:white;border:1px solid #d1d5db;border-radius:16px;padding:22px}
-.stage{height:420px;position:relative;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:16px;border:1px solid #d1d5db}
-.left{background:#20242b}.right{background:#e5e7eb}.neutral .left,.neutral .right{background:#f3f4f6}
-.bar{position:absolute;left:10%;right:10%;top:42%;height:90px;background:#8a8a8a;border-radius:12px}
-button{font-size:17px;padding:10px 16px;border-radius:10px;border:1px solid #9ca3af;background:#fff;cursor:pointer;margin:16px 8px 0 0}
-.answer{font-weight:700;min-height:28px;margin-top:12px}
-</style></head><body><main>
-<h1>Does the strip change shade?</h1>
-<p>Look at the same gray strip against two different contexts, then remove the context.</p>
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #1f2937;
+  background: #f8fafc;
+}
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.card {
+  width: min(900px, 96vw);
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  text-align: center;
+  box-sizing: border-box;
+}
+h1 {
+  font-size: 26px;
+  margin: 0 0 8px;
+  color: #0f172a;
+}
+p.desc {
+  font-size: 16px;
+  color: #64748b;
+  margin: 0 0 20px;
+}
+.stage-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  height: 320px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  position: relative;
+}
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: background-color 0.6s ease;
+  position: relative;
+}
+.panel-left {
+  background-color: #18181b; /* Dark */
+}
+.panel-right {
+  background-color: #f4f4f5; /* Light */
+  border: 1px solid #e4e4e7;
+}
+.stage-container.neutral .panel-left,
+.stage-container.neutral .panel-right {
+  background-color: #cbd5e1; /* Neutral Gray */
+  border-color: #cbd5e1;
+}
+.target-square {
+  width: 110px;
+  height: 110px;
+  background-color: #71717a; /* Exact same medium gray */
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+button {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #0f172a;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+button:hover {
+  background: #334155;
+}
+button.secondary {
+  background: #f1f5f9;
+  color: #334155;
+  border-color: #cbd5e1;
+}
+button.secondary:hover {
+  background: #e2e8f0;
+}
+.answer {
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 24px;
+  color: #0369a1;
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
 <div class="card">
-<div class="stage" id="stage"><div class="left"></div><div class="right"></div><div class="bar"></div></div>
-<button onclick="document.getElementById('stage').classList.add('neutral');document.getElementById('ans').textContent='The bar never changed. Context changed your perception.'">Remove background context</button>
-<button onclick="document.getElementById('stage').classList.remove('neutral');document.getElementById('ans').textContent=''">Reset</button>
-<div class="answer" id="ans"></div>
-</div></main></body></html>
+  <h1>Are these two gray squares identical?</h1>
+  <p class="desc">The square on the dark background appears lighter; the square on the light background appears darker.</p>
+  <div class="stage-container" id="stage">
+    <div class="panel panel-left">
+      <div class="target-square" id="sq1"></div>
+    </div>
+    <div class="panel panel-right">
+      <div class="target-square" id="sq2"></div>
+    </div>
+  </div>
+  <div class="controls">
+    <button onclick="removeContext()">Remove background context</button>
+    <button class="secondary" onclick="resetExperiment()">Reset</button>
+  </div>
+  <div class="answer" id="ans"></div>
+</div>
+
+<script>
+function removeContext() {
+  document.getElementById('stage').classList.add('neutral');
+  document.getElementById('ans').innerHTML = '✅ <strong>The two gray squares are 100% identical (#71717A).</strong> Surrounding context changed your perception.';
+}
+function resetExperiment() {
+  document.getElementById('stage').classList.remove('neutral');
+  document.getElementById('ans').textContent = '';
+}
+</script>
+</body>
+</html>

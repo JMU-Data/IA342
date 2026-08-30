@@ -1,582 +1,1071 @@
-﻿---
+---
 layout: default
 title: "Module 2: Introduction to Data Visualization - IA 342"
 ---
-# Introduction to Data Visualization
 
-**IA 342 — Visualization Methods, Technologies, and Tools for Intelligence Analysis**
+<style>
+/* Presentation Slide Deck Styles */
+.deck-container {
+  max-width: 1120px;
+  margin: 1.5rem auto 3rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1f2328;
+}
+.deck-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f2328;
+  color: #f0f6fc;
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  user-select: none;
+}
+.deck-title-tag {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.deck-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.deck-btn {
+  background: #32383f;
+  color: #f0f6fc;
+  border: 1px solid #444c56;
+  border-radius: 6px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.deck-btn:hover:not(:disabled) {
+  background: #0969da;
+  border-color: #0969da;
+  color: #ffffff;
+}
+.deck-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.deck-progress-track {
+  width: 100%;
+  height: 4px;
+  background: #2d333b;
+}
+.deck-progress-fill {
+  height: 100%;
+  background: #2da44e;
+  width: 3.5%;
+  transition: width 0.25s ease;
+}
+.deck-stage {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  min-height: 560px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+}
+.slide {
+  display: none;
+  padding: 2.2rem 2.5rem;
+  box-sizing: border-box;
+  animation: slideFadeIn 0.2s ease-out;
+}
+.slide.active {
+  display: block;
+}
+@keyframes slideFadeIn {
+  from { opacity: 0.2; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.slide-badge {
+  display: inline-block;
+  background: #ddf4ff;
+  color: #0969da;
+  border: 1px solid rgba(84, 174, 255, 0.4);
+  padding: 0.2rem 0.65rem;
+  border-radius: 2em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.slide h2 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: #1f2328;
+  font-size: 1.65rem;
+  border-bottom: 2px solid #eaeef2;
+  padding-bottom: 0.45rem;
+}
+.slide-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2rem;
+  align-items: center;
+}
+.slide-layout-grid.grid-right-wide {
+  grid-template-columns: 0.95fr 1.05fr;
+}
+.slide-layout-single {
+  max-width: 880px;
+  margin: 0 auto;
+}
+.slide-body {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #24292f;
+}
+.slide-body p {
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+}
+.slide-body ul, .slide-body ol {
+  margin-top: 0.4rem;
+  margin-bottom: 0.9rem;
+  padding-left: 1.4rem;
+}
+.slide-body li {
+  margin-bottom: 0.35rem;
+}
+.slide-media-box {
+  text-align: center;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+.slide-media-box img, .slide-media-box svg {
+  max-width: 100%;
+  max-height: 380px;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+}
+.video-player-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #d0d7de;
+  background: #000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.video-player-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.activity-embed-container {
+  width: 100%;
+  height: 420px;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: #ffffff;
+}
+.activity-embed-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.alert-takeaway {
+  background: #dafbe1;
+  border-left: 4px solid #1a7f37;
+  padding: 0.8rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin-top: 1rem;
+  font-size: 0.96rem;
+  color: #1a7f37;
+  font-weight: 500;
+  text-align: left;
+}
+.alert-teaching-point {
+  background: #ddf4ff;
+  border-left: 4px solid #0969da;
+  padding: 0.8rem 1rem;
+  border-radius: 0 6px 6px 0;
+  margin-top: 1rem;
+  font-size: 0.96rem;
+  color: #0969da;
+  font-weight: 500;
+  text-align: left;
+}
+:fullscreen .deck-container, :-webkit-full-screen .deck-container {
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+:fullscreen .deck-stage, :-webkit-full-screen .deck-stage {
+  flex: 1;
+  border-radius: 0;
+  overflow-y: auto;
+}
+@media (max-width: 860px) {
+  .slide-layout-grid, .slide-layout-grid.grid-right-wide {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+  .deck-stage { min-height: 460px; }
+  .slide { padding: 1.5rem 1.2rem; }
+}
+</style>
+
+<div class="deck-container" id="lectureDeck">
+  <div class="deck-nav-bar">
+    <div class="deck-title-tag">
+      <span>📊 IA 342 Week 2 Lecture</span>
+      <span style="opacity: 0.4;">|</span>
+      <span id="slideCounter">Slide 1 of 28</span>
+    </div>
+    <div class="deck-controls">
+      <button class="deck-btn" id="prevBtn" onclick="changeSlide(-1)" title="Previous (← / PageUp)">◀ Prev</button>
+      <button class="deck-btn" id="nextBtn" onclick="changeSlide(1)" title="Next (→ / Space / PageDown)">Next ▶</button>
+      <button class="deck-btn" onclick="toggleFullScreen()" title="Fullscreen Mode">⛶ Fullscreen</button>
+    </div>
+  </div>
+  <div class="deck-progress-track">
+    <div class="deck-progress-fill" id="progressBar"></div>
+  </div>
+  <div class="deck-stage">
+    <!-- SLIDE 1: Introduction to Data Visualization -->
+    <div class="slide active" data-slide="1">
+      
+<div style="text-align: center; padding: 2.5rem 1rem;">
+  <h1 style="font-size: 2.4rem; margin: 0.5rem 0; color: #0969da;">Introduction to Data Visualization</h1>
+  <p style="font-size: 1.25rem; color: #57606a; max-width: 700px; margin: 0 auto 1.5rem;">
+    Visualization Methods, Technologies, and Tools for Intelligence Analysis
+  </p>
+  <div style="max-width: 680px; margin: 0 auto; background: #f6f8fa; border: 1px solid #d0d7de; padding: 1.4rem 1.6rem; border-radius: 8px; text-align: left;">
+    <p style="margin: 0; font-size: 1.05rem; line-height: 1.6; color: #24292f;">
+      This lecture explains <strong>why visualization helps us understand complex data</strong> and why <strong>human perception</strong> matters when we design charts, maps, and other visual evidence.
+    </p>
+  </div>
+  <div style="margin-top: 2rem;">
+    <button class="deck-btn" style="background: #0969da; border-color: #0969da; padding: 0.65rem 1.6rem; font-size: 1.05rem;" onclick="changeSlide(1)">
+      Start Presentation ▶
+    </button>
+  </div>
+</div>
+
+    </div>
+
+    <!-- SLIDE 2: 01 — Why Visualization? -->
+    <div class="slide" data-slide="2">
+      <span class="slide-badge">Foundations</span>
+      <h2>01 — Why Visualization?</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Organizations can collect and store huge amounts of data.</p>
+<p>The challenge is not just getting data; it is <strong>turning data into something people can understand, interpret, and use</strong>.</p>
+<div class="alert-teaching-point">
+  <strong>Key Question:</strong> What can a chart or other visual show us that a table of raw numbers may hide?
+</div>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/visualization-roles.svg" alt="Visualization roles in analysis" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: 01A — From Data Overload to Insight -->
+    <div class="slide" data-slide="3">
+      <span class="slide-badge">Video Briefing</span>
+      <h2>01A — From Data Overload to Insight</h2>
+      <div class="slide-layout-grid grid-right-wide">
+        <div class="slide-body">
+          
+<p>Digital data can become overwhelming very quickly. Visualization helps turn that complexity into something we can look at and understand.</p>
+<p>The main benefit is not just making data look cleaner: a useful visualization makes <strong>comparisons, trends, patterns, and unusual values (anomalies)</strong> easy to see.</p>
+<p style="font-size: 0.9em; color: #57606a;">▶ Click Play below to watch the briefing inside the slide:</p>
+
+        </div>
+        <div>
+          
+<div class="video-player-container">
+  <iframe src="https://www.youtube-nocookie.com/embed/Xh3p4yKlEQs" title="Why Data Visualization Matters" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div style="margin-top: 0.4rem; text-align: center;"><a href="https://www.youtube.com/watch?v=Xh3p4yKlEQs" target="_blank" style="font-size: 0.85em; color: #57606a;">Open on YouTube ↗</a></div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 4: 02 — From Data to Decision -->
+    <div class="slide" data-slide="4">
+      <span class="slide-badge">Analytical Flow</span>
+      <h2>02 — From Data to Decision</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p><strong>Data → Information → Knowledge → Decision / Strategy</strong></p>
+<ul>
+  <li><strong>Data:</strong> basic facts, records, and observations.</li>
+  <li><strong>Information:</strong> data organized so that it starts to make sense.</li>
+  <li><strong>Knowledge:</strong> understanding built from information, experience, and context.</li>
+  <li><strong>Decision / Strategy:</strong> using that understanding to choose action.</li>
+</ul>
+<div class="video-player-container" style="margin-top: 0.6rem;">
+  <iframe src="https://www.youtube-nocookie.com/embed/eqcv8KF07nM" title="From Data to Strategy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/data-to-decision.svg" alt="Data to Decision flow diagram" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: 03 — Numbers Can Look the Same -->
+    <div class="slide" data-slide="5">
+      <span class="slide-badge">Anscombe's Quartet — Part 1</span>
+      <h2>03 — Numbers Can Look the Same</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Summary statistics can make very different datasets look completely identical.</p>
+<p>Consider four datasets with nearly identical:</p>
+<ul>
+  <li>Means (x̄ = 9.0, ȳ = 7.5),</li>
+  <li>Variances (s_x² = 11.0, s_y² = 4.12),</li>
+  <li>Correlations (r = 0.816), and</li>
+  <li>Linear regression lines (y ≈ 3.0 + 0.5x).</li>
+</ul>
+<p>If we only look at summary numbers, we assume they are the same.</p>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/anscombe-summary.svg" alt="Summary statistics for Anscombe Quartet" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: 04 — But the Patterns Are Different -->
+    <div class="slide" data-slide="6">
+      <span class="slide-badge">Anscombe's Quartet — Part 2</span>
+      <h2>04 — But the Patterns Are Different</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>When we plot the same datasets, the differences become immediately obvious:</p>
+<ul>
+  <li><strong>Dataset I:</strong> standard linear relationship.</li>
+  <li><strong>Dataset II:</strong> smooth quadratic curve.</li>
+  <li><strong>Dataset III:</strong> tight linear cluster + one extreme outlier.</li>
+  <li><strong>Dataset IV:</strong> vertical stack + one high outlier.</li>
+</ul>
+<div class="alert-takeaway">
+  <strong>Takeaway:</strong> Before deciding what is important in a dataset, look at it visually.
+</div>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/anscombe-quartet.svg" alt="Anscombe Quartet scatter plots" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 7: 05 — Visualization Helps Us Analyze -->
+    <div class="slide" data-slide="7">
+      <span class="slide-badge">Core Concept</span>
+      <h2>05 — Visualization Helps Us Analyze</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Visualization is not just decoration, and it is not only for people who call themselves 'visual learners.'</p>
+<p>A good visualization helps analysts:</p>
+<ul>
+  <li>See patterns and relationships</li>
+  <li>Find unusual values (anomalies/outliers)</li>
+  <li>Compare groups effectively</li>
+  <li>Ask better analytical questions</li>
+  <li>Explain findings clearly and defensibly</li>
+</ul>
+<p>In IA 342, visualization is an <strong>integral part of the analysis</strong>.</p>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/visualization-roles.svg" alt="Visualization roles in analysis" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 8: 06 — What the Eye Notices First -->
+    <div class="slide" data-slide="8">
+      <span class="slide-badge">Visual Perception</span>
+      <h2>06 — What the Eye Notices First</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Some visual features are noticed <strong>almost immediately</strong> (under 250ms), before we consciously focus on individual objects. These are called <strong>preattentive attributes</strong>.</p>
+<ul>
+  <li><strong>Color:</strong> Hue (category), Value/Lightness (intensity)</li>
+  <li><strong>Form:</strong> Size, Length, Width, Shape, Orientation</li>
+  <li><strong>Spatial Position:</strong> 2D coordinate placement</li>
+  <li><strong>Movement & Texture:</strong> Motion, density</li>
+</ul>
+<p>These features rapidly direct attention to what matters most.</p>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/preattentive-overview.svg" alt="Preattentive attributes overview" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 9: 07 — Find the 7s -->
+    <div class="slide" data-slide="9">
+      <span class="slide-badge">Perception Experiment</span>
+      <h2>07 — Find the 7s</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p><strong>Step 1:</strong> Count every <strong>7</strong> in the plain digit field on the left. It requires slow, serial scanning.</p>
+<p><strong>Step 2:</strong> Look at the same field on the right with preattentive color emphasis.</p>
+<div class="alert-teaching-point">
+  <strong>Teaching Point:</strong> The data did not change; only the visual encoding changed. Proper visual hierarchy makes critical signals pop out instantly.
+</div>
+
+        </div>
+        <div>
+          
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+  <div class="slide-media-box">
+    <img src="../../assets/week-2/digit-seven-plain.svg" alt="Dense field of digits plain" />
+    <span style="font-size: 0.85em; color: #57606a;">Plain (Serial Search)</span>
+  </div>
+  <div class="slide-media-box">
+    <img src="../../assets/week-2/digit-seven-highlighted.svg" alt="Field of digits highlighted" />
+    <span style="font-size: 0.85em; color: #0969da; font-weight: 600;">Highlighted (Preattentive)</span>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 10: 08 — Color: Hue, Lightness, and Context -->
+    <div class="slide" data-slide="10">
+      <span class="slide-badge">Visual Encoding</span>
+      <h2>08 — Color: Hue, Lightness, and Context</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p><strong>Hue (type of color):</strong> Best for separating qualitative categories or highlighting anomalies.</p>
+<p><strong>Lightness / Value:</strong> Best for ordered or numeric differences (low to high).</p>
+<p><strong>Context Warning:</strong> The human visual system judges colors relative to their surrounding background, not in isolation.</p>
+
+        </div>
+        <div>
+          
+<div style="display: flex; flex-direction: column; gap: 0.8rem;">
+  <div class="slide-media-box">
+    <img src="../../assets/week-2/color-hue-value.svg" alt="Color hue versus color value" />
+  </div>
+  <div class="slide-media-box">
+    <img src="../../assets/week-2/color-context.svg" alt="Color context effect" />
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 11: 09 — Shape and Orientation -->
+    <div class="slide" data-slide="11">
+      <span class="slide-badge">Visual Encoding</span>
+      <h2>09 — Shape and Orientation</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Shape and direction are effective for showing categories, motion, or status:</p>
+<ul>
+  <li>Distinct symbols for distinct categories</li>
+  <li>Upward arrows for increases / growth</li>
+  <li>Downward arrows for decreases / loss</li>
+</ul>
+<p><strong>Limitation:</strong> Shapes and angles are poor visual encodings for precise quantitative comparisons.</p>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/shape-orientation.svg" alt="Shape and orientation encodings" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 12: 10 — Size: Noticeable, but Hard to Measure -->
+    <div class="slide" data-slide="12">
+      <span class="slide-badge">Visual Encoding</span>
+      <h2>10 — Size: Noticeable, but Hard to Measure</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Size easily communicates relative magnitude, but the human brain struggles to accurately calculate 2D area ratios.</p>
+<p>We immediately see that Circle A is larger than Circle B, but estimating <em>by exactly how much</em> is prone to large perceptual errors (Stevens' Power Law).</p>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/size-comparison.svg" alt="Size comparison difficulty" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 13: 11 — Position Gives More Accurate Comparisons -->
+    <div class="slide" data-slide="13">
+      <span class="slide-badge">Visual Encoding Ranking</span>
+      <h2>11 — Position Gives More Accurate Comparisons</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Position along a common aligned scale (as in bar charts and scatter plots) is the <strong>most accurate visual encoding</strong> for quantitative comparison.</p>
+<p>Small differences in height/position are evaluated with far higher precision than 2D areas, angles, or color saturations.</p>
+<div class="alert-takeaway">
+  <strong>Design Rule:</strong> Use position on a common scale when exact comparisons matter.
+</div>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/position-vs-size.svg" alt="Position versus size accuracy" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 14: 12 — Order Changes the Question -->
+    <div class="slide" data-slide="14">
+      <span class="slide-badge">Chart Design</span>
+      <h2>12 — Order Changes the Question</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Alphabetical sorting forces users to search across the entire chart to find high/low performers.</p>
+<p><strong>Sorting by value</strong> instantly answers critical analytical questions:</p>
+<ul>
+  <li>What is the highest / lowest value?</li>
+  <li>Which items form the top 3?</li>
+  <li>Where does a specific entity rank?</li>
+</ul>
+<p>Sorting is not merely formatting; it is <strong>question-driven design</strong>.</p>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/sorted-vs-unsorted-bars.svg" alt="Unsorted versus sorted bar charts" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 15: 12A — When Charts Mislead: Truncated Axis -->
+    <div class="slide" data-slide="15">
+      <span class="slide-badge">Interactive Activity 1</span>
+      <h2>12A — When Charts Mislead: Truncated Axis</h2>
+      <div class="slide-layout-grid grid-right-wide">
+        <div class="slide-body">
+          
+<p>The historical top tax rate was <strong>35% in 2012</strong> and <strong>39.6% in 2013</strong> (IRS Bulletin). The data values are identical, but truncating the baseline exaggerates the visual change.</p>
+<div class="alert-teaching-point">
+  <strong>Rule:</strong> Bar charts encode values as physical length. When the baseline starts above zero, the visual proportion is distorted.
+</div>
+
+        </div>
+        <div>
+          
+<div class="activity-embed-container">
+  <iframe src="../../assets/week-2/truncated-axis-experiment.html" title="Truncated Axis Interactive Experiment"></iframe>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 16: 12A — When Charts Mislead: Pretty vs. Useful -->
+    <div class="slide" data-slide="16">
+      <span class="slide-badge">Interactive Activity 2</span>
+      <h2>12A — When Charts Mislead: Pretty vs. Useful</h2>
+      <div class="slide-layout-grid grid-right-wide">
+        <div class="slide-body">
+          
+<p>An infographic can look visually appealing while conveying almost zero actionable information.</p>
+<p>Useful visualizations provide essential analytical context:</p>
+<ul>
+  <li>Exact question asked & methodology</li>
+  <li>Sample size (N) and denominator</li>
+  <li>Benchmark comparison group</li>
+  <li>Clear data provenance / source</li>
+</ul>
+
+        </div>
+        <div>
+          
+<div class="activity-embed-container">
+  <iframe src="../../assets/week-2/decoration-vs-information-experiment.html" title="Decoration vs Information Interactive Experiment"></iframe>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 17: 13 — What Is Data Visualization? -->
+    <div class="slide" data-slide="17">
+      <span class="slide-badge">Video Briefing</span>
+      <h2>13 — What Is Data Visualization?</h2>
+      <div class="slide-layout-grid grid-right-wide">
+        <div class="slide-body">
+          
+<p>Data visualization is the deliberate use of visual representations to make data easier to explore, understand, compare, and explain.</p>
+<p>The goal is never aesthetic complexity for its own sake; the goal is <strong>clarity of human understanding</strong>.</p>
+<p style="font-size: 0.9em; color: #57606a;">▶ Click Play below to watch the briefing inside the slide:</p>
+
+        </div>
+        <div>
+          
+<div class="video-player-container">
+  <iframe src="https://www.youtube-nocookie.com/embed/xekEXM0Vonc" title="The Value of Data Visualization" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div style="margin-top: 0.4rem; text-align: center;"><a href="https://www.youtube.com/watch?v=xekEXM0Vonc" target="_blank" style="font-size: 0.85em; color: #57606a;">Open on YouTube ↗</a></div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 18: 14 — Visualization & Human Judgment -->
+    <div class="slide" data-slide="18">
+      <span class="slide-badge">Intelligence Context</span>
+      <h2>14 — Visualization & Human Judgment</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>In intelligence analysis, AI and algorithms process massive raw inputs, but <strong>human analysts bear the ultimate responsibility for judgment and action</strong>.</p>
+<p>Visualization serves as the bridge between computational power and human cognitive evaluation, making patterns, context, and uncertainty transparent.</p>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/ia-human-judgment-flow.svg" alt="Intelligence Analysis Judgment Flow" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 19: 15 — We Cannot Always Trust Our Eyes -->
+    <div class="slide" data-slide="19">
+      <span class="slide-badge">Perception & Psychology</span>
+      <h2>15 — We Cannot Always Trust Our Eyes</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Human vision does not function like an objective video camera.</p>
+<p>What we perceive is actively constructed from:</p>
+<ul>
+  <li>Prior expectations & mental models</li>
+  <li>Surrounding visual context</li>
+  <li>Past experience & training</li>
+  <li>Spatial layout and arrangement</li>
+</ul>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/perception-context.svg" alt="Perception context factors" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 20: 15A — Same Length, Different Look: Müller-Lyer -->
+    <div class="slide" data-slide="20">
+      <span class="slide-badge">Interactive Activity 3</span>
+      <h2>15A — Same Length, Different Look: Müller-Lyer</h2>
+      <div class="slide-layout-grid grid-right-wide">
+        <div class="slide-body">
+          
+<p>Which central vertical line looks longer?</p>
+<p>Click <strong>Reveal Equal Lengths</strong> in the interactive panel to superimpose reference lines.</p>
+<div class="alert-teaching-point">
+  <strong>Lesson:</strong> Surrounding shapes heavily distort our perception of length and scale. Visual design choices directly alter perceived magnitude.
+</div>
+
+        </div>
+        <div>
+          
+<div class="activity-embed-container">
+  <iframe src="../../assets/week-2/muller-lyer-experiment.html" title="Muller-Lyer Interactive Experiment"></iframe>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 21: 16 — How Expectations Shape What We See -->
+    <div class="slide" data-slide="21">
+      <span class="slide-badge">Heuer Intelligence Analysis</span>
+      <h2>16 — How Expectations Shape What We See</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>In <em>Psychology of Intelligence Analysis</em>, Richards J. Heuer Jr. notes:</p>
+<ul>
+  <li>We perceive what we expect to perceive.</li>
+  <li>Initial mental mindsets form quickly and resist change.</li>
+  <li>New evidence is assimilated into existing preconceptions.</li>
+</ul>
+<div class="alert-takeaway">
+  <strong>Analytical Imperative:</strong> Use visualization to rigorously test alternative hypotheses, not to cherry-pick confirmation.
+</div>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/perception-mindset-loop.svg" alt="Perception mindset loop" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 22: 16A — The Same Image Can Have Multiple Meanings -->
+    <div class="slide" data-slide="22">
+      <span class="slide-badge">Cognitive Perception</span>
+      <h2>16A — The Same Image Can Have Multiple Meanings</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Look at each image below: What do you see first? Can you shift your perception to see the alternate interpretation?</p>
+<ul>
+  <li><strong>Duck or Rabbit?</strong> (Jastrow, 1899)</li>
+  <li><strong>Young Woman or Older Woman?</strong> (Hill, 1915)</li>
+</ul>
+<div class="alert-teaching-point">
+  <strong>Lesson:</strong> The sensory input remains constant, but cognitive interpretation can shift entirely. Analysts must actively explore alternative explanations.
+</div>
+
+        </div>
+        <div>
+          
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+  <div class="slide-media-box">
+    <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck-Rabbit_illusion.jpg" alt="Duck or Rabbit illusion" />
+    <span style="font-size: 0.8em; color: #57606a;">Duck or Rabbit?</span>
+  </div>
+  <div class="slide-media-box">
+    <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/My_Wife_and_My_Mother-in-Law.jpg" alt="Young Woman or Older Woman" />
+    <span style="font-size: 0.8em; color: #57606a;">Young / Older Woman</span>
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 23: 17 — Simultaneous Contrast: Surrounding Context -->
+    <div class="slide" data-slide="23">
+      <span class="slide-badge">Interactive Activity 4 & Video</span>
+      <h2>17 — Simultaneous Contrast: Surrounding Context</h2>
+      <div class="slide-layout-grid grid-right-wide">
+        <div class="slide-body">
+          
+<p>Our visual system computes color and brightness relative to surrounding fields. The two gray squares inside the experiment are <strong>100% identical (#71717A)</strong>.</p>
+<div class="video-player-container" style="margin-top: 0.5rem;">
+  <iframe src="https://www.youtube-nocookie.com/embed/mf5otGNbkuc" title="Beau Lotto TED Talk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+        </div>
+        <div>
+          
+<div class="activity-embed-container">
+  <iframe src="../../assets/week-2/simultaneous-contrast-experiment.html" title="Redesigned Simultaneous Contrast Experiment"></iframe>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 24: 17A — Afterimage Adaptation Experiment -->
+    <div class="slide" data-slide="24">
+      <span class="slide-badge">Interactive Activity 5</span>
+      <h2>17A — Afterimage Adaptation Experiment</h2>
+      <div class="slide-layout-grid grid-right-wide">
+        <div class="slide-body">
+          
+<p><strong>Instructions:</strong> Stare fixedly at the red dot on the nose for 15 seconds without shifting your gaze. When the screen automatically switches to white, observe the photonegative afterimage.</p>
+<div class="alert-takeaway">
+  <strong>Takeaway:</strong> Neural adaptation creates persistent visual sensations that do not exist on the current physical screen.
+</div>
+
+        </div>
+        <div>
+          
+<div class="activity-embed-container">
+  <iframe src="../../assets/week-2/afterimage-experiment.html" title="Timed Afterimage Experiment"></iframe>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 25: 18 — Perspective Changes How Big Things Look -->
+    <div class="slide" data-slide="25">
+      <span class="slide-badge">Perceptual Distortion</span>
+      <h2>18 — Perspective Changes How Big Things Look</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Linear perspective and depth cues cause objects of identical dimensions to appear drastically different in scale (Ponzo Illusion).</p>
+<p>In spatial and dashboard design, 3D effects and uncalibrated perspective introduce visual distortion.</p>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/perspective-lines.svg" alt="Perspective line distortion" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 26: 19 — Visual Noise Can Create False Patterns -->
+    <div class="slide" data-slide="26">
+      <span class="slide-badge">Design Integrity</span>
+      <h2>19 — Visual Noise Can Create False Patterns</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p>Excessive, high-contrast gridlines generate optical interference (Moiré vibrations) and false ghost spots (Hermann grid).</p>
+<div class="alert-teaching-point">
+  <strong>Design Principle:</strong> Gridlines and supporting layout containers should remain muted, letting the data marks remain primary.
+</div>
+
+        </div>
+        <div>
+          
+<div style="display: flex; flex-direction: column; gap: 0.8rem;">
+  <div class="slide-media-box">
+    <img src="../../assets/week-2/moire-grid.svg" alt="Moire grid visual noise" />
+  </div>
+  <div class="slide-media-box">
+    <img src="../../assets/week-2/muted-gridlines.svg" alt="Muted versus dark gridlines comparison" />
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 27: 20 & 21 — Gestalt: Closure and Proximity -->
+    <div class="slide" data-slide="27">
+      <span class="slide-badge">Gestalt Psychology</span>
+      <h2>20 & 21 — Gestalt: Closure and Proximity</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<p><strong>Closure:</strong> The human brain automatically fills in missing lines to perceive a whole, recognizable shape (e.g. Kanizsa triangle).</p>
+<p><strong>Proximity:</strong> Items placed close together are instinctively interpreted as belonging to the same group or category.</p>
+<p>Good dashboard design leverages Gestalt principles through whitespace and grouping rather than heavy bounding boxes.</p>
+
+        </div>
+        <div>
+          
+<div style="display: flex; flex-direction: column; gap: 0.8rem;">
+  <div class="slide-media-box">
+    <img src="../../assets/week-2/gestalt-closure.svg" alt="Gestalt closure" />
+  </div>
+  <div class="slide-media-box">
+    <img src="../../assets/week-2/gestalt-proximity.svg" alt="Gestalt proximity" />
+  </div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 28: 22 — Week 2 Takeaways & Transition to Spatial -->
+    <div class="slide" data-slide="28">
+      <span class="slide-badge">Summary & Next Steps</span>
+      <h2>22 — Week 2 Takeaways & Transition to Spatial</h2>
+      <div class="slide-layout-grid">
+        <div class="slide-body">
+          
+<ol style="padding-left: 1.2rem; line-height: 1.6;">
+  <li>Visualization is an essential analytical tool, not mere cosmetic decoration.</li>
+  <li>Summary numbers hide critical underlying distributions (Anscombe's Quartet).</li>
+  <li>Position on an aligned scale provides the most accurate quantitative comparisons.</li>
+  <li>Human perception is context-dependent and subject to optical and cognitive biases.</li>
+  <li>Effective visual design enables analysts to communicate evidence with clarity and rigor.</li>
+</ol>
+<div style="margin-top: 1.5rem;">
+  <a href="../../assignments/lab-2/index.md" class="deck-btn" style="background: #1a7f37; border-color: #1a7f37; padding: 0.6rem 1.4rem; font-size: 1.05rem; text-decoration: none;">
+    Proceed to Lab 2: ArcGIS Business Analyst I ▶
+  </a>
+</div>
+
+        </div>
+        <div>
+          
+<div class="slide-media-box">
+  <img src="../../assets/week-2/week2-bridge-to-spatial.svg" alt="Bridge from general data visualization to spatial intelligence" />
+</div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let currentSlide = 1;
+const totalSlides = 28;
+
+function updateDeck() {
+  const slides = document.querySelectorAll('.slide');
+  slides.forEach(slide => {
+    const sNum = parseInt(slide.getAttribute('data-slide'));
+    if (sNum === currentSlide) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+
+  document.getElementById('slideCounter').textContent = `Slide ${currentSlide} of ${totalSlides}`;
+  document.getElementById('progressBar').style.width = `${(currentSlide / totalSlides) * 100}%`;
+  
+  document.getElementById('prevBtn').disabled = (currentSlide === 1);
+  document.getElementById('nextBtn').disabled = (currentSlide === totalSlides);
+
+  history.replaceState(null, null, `#slide-${currentSlide}`);
+}
+
+function changeSlide(direction) {
+  const next = currentSlide + direction;
+  if (next >= 1 && next <= totalSlides) {
+    currentSlide = next;
+    updateDeck();
+  }
+}
+
+function goToSlide(slideNum) {
+  if (slideNum >= 1 && slideNum <= totalSlides) {
+    currentSlide = slideNum;
+    updateDeck();
+  }
+}
+
+function toggleFullScreen() {
+  const deck = document.getElementById('lectureDeck');
+  if (!document.fullscreenElement) {
+    if (deck.requestFullscreen) {
+      deck.requestFullscreen();
+    } else if (deck.webkitRequestFullscreen) {
+      deck.webkitRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
+
+  if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') {
+    event.preventDefault();
+    changeSlide(1);
+  } else if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+    event.preventDefault();
+    changeSlide(-1);
+  } else if (event.key === 'Home') {
+    event.preventDefault();
+    goToSlide(1);
+  } else if (event.key === 'End') {
+    event.preventDefault();
+    goToSlide(totalSlides);
+  }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash;
+  if (hash && hash.startsWith('#slide-')) {
+    const sNum = parseInt(hash.replace('#slide-', ''));
+    if (!isNaN(sNum) && sNum >= 1 && sNum <= totalSlides) {
+      currentSlide = sNum;
+    }
+  }
+  updateDeck();
+});
+</script>
 
-This lecture explains why visualization helps us understand data and why human perception matters when we design charts, maps, and other visual evidence.
-
-<!-- visual: none -->
-
----
-
-## 01 — Why Visualization?
-
-Organizations can collect and store huge amounts of data. The challenge is not just getting data; it is turning data into something people can understand and use.
-
-**Key question:** What can a chart or other visual show us that a table of numbers may hide?
-
----
-
-## 01A — From Data Overload to Insight
-
-Digital data can become overwhelming very quickly. Visualization helps turn that complexity into something we can look at and understand.
-
-The main benefit is not just making data look cleaner. A useful visualization can make **comparisons, trends, patterns, and unusual values (anomalies)** easy to see.
-
-### Short video — Why Data Visualization Matters
-
-[![Watch: Why Data Visualization Matters — From Data Overload to Insight](https://img.youtube.com/vi/Xh3p4yKlEQs/hqdefault.jpg)](https://www.youtube.com/watch?v=Xh3p4yKlEQs)
-
-[Open the video on YouTube](https://www.youtube.com/watch?v=Xh3p4yKlEQs)
-
-<!-- external-media: why-data-visualization-matters-video | type: video | usage: core | final-site: embed -->
-
----
-
-## 02 — From Data to Decision
-
-A simple way to think about the process is:
-
-**Data → Information → Knowledge → Decision / Strategy**
-
-- **Data:** basic facts, records, and observations.
-- **Information:** data organized so that it starts to make sense.
-- **Knowledge:** understanding built from information, experience, and context.
-- **Decision / Strategy:** using that understanding to choose what to do.
-
-Visualization helps move us from raw data toward evidence we can understand and use.
-
-![Data to decision: raw data becomes information, knowledge, and decision](../../assets/week-2/data-to-decision.svg)
-
-<!-- asset: data-to-decision | method: DRAW | status: ready -->
-
-### Short video — From Data to Strategy
-
-[![Watch: From Data to Strategy — How Raw Data Becomes Action](https://img.youtube.com/vi/eqcv8KF07nM/hqdefault.jpg)](https://youtu.be/eqcv8KF07nM)
-
-[Open the video on YouTube](https://youtu.be/eqcv8KF07nM)
-
-<!-- external-media: from-data-to-strategy-video | type: video | usage: core | provider: youtube | video-id: eqcv8KF07nM | final-site: embed -->
-
----
-
-## 03 — Numbers Can Look the Same
-
-Summary statistics can make very different datasets look similar.
-
-Consider four datasets with nearly identical:
-
-- means,
-- variances,
-- correlations, and
-- linear regression results.
-
-If we only look at the statistics, we may think the datasets are similar.
-
-![Four datasets with nearly identical summary statistics](../../assets/week-2/anscombe-summary.svg)
-
-<!-- asset: anscombe-summary | method: DRAW | status: ready -->
-
----
-
-## 04 — But the Patterns Are Different
-
-When we plot the same datasets, the differences become easy to see.
-
-This is the lesson of **Anscombe's Quartet**: summary numbers are useful, but we still need to look at the data.
-
-**Takeaway:** Before deciding what is important in a dataset, look at it visually.
-
-![Anscombe's Quartet: four datasets with very different visual patterns](../../assets/week-2/anscombe-quartet.svg)
-
-<!-- asset: anscombe-quartet | method: DRAW | status: ready -->
-
----
-
-## 05 — Visualization Helps Us Analyze
-
-Visualization is not just decoration, and it is not only for people who call themselves “visual learners.”
-
-A good visualization can help analysts:
-
-- see patterns,
-- find unusual values,
-- compare groups,
-- see relationships,
-- ask better questions, and
-- explain findings clearly.
-
-In IA 342, visualization is part of the analysis. It is not something we add only at the end to make the work look better.
-
-![Visualization supports pattern detection, anomaly detection, comparison, questioning, and communication](../../assets/week-2/visualization-roles.svg)
-
-<!-- asset: visualization-roles | method: DRAW | status: ready -->
-
----
-
-## 06 — What the Eye Notices First
-
-Some visual features are noticed almost immediately, before we focus on individual objects. These are called **preattentive attributes**.
-
-Examples include:
-
-- color,
-- size,
-- shape,
-- orientation,
-- position, and
-- texture.
-
-These features can quickly draw our attention to what matters.
-
-![Examples of preattentive visual attributes including color, size, shape, orientation, position, and texture](../../assets/week-2/preattentive-overview.svg)
-
-<!-- asset: preattentive-overview | method: DRAW | status: ready -->
-
----
-
-## 07 — Find the 7s
-
-First, try to count every **7** in a crowded field of numbers.
-
-Then look at the same numbers again after all the 7s are highlighted.
-
-The data did not change. Only the way the data are shown changed.
-
-**Teaching point:** highlighting important items can make them much faster and easier to find.
-
-![Dense field of digits with no visual emphasis](../../assets/week-2/digit-seven-plain.svg)
-
-![The same field of digits with all sevens visually emphasized](../../assets/week-2/digit-seven-highlighted.svg)
-
-<!-- assets: digit-seven-plain, digit-seven-highlighted | method: DRAW | status: ready -->
-
----
-
-## 08 — Color Is Powerful, but Context Matters
-
-**Hue** means the type of color, such as red, blue, or green. It is useful for separating categories or drawing attention to something important.
-
-**Lightness** can show order or numeric differences, such as low to high.
-
-But color depends on context: the same color can look different when the background changes.
-
-![Color hue for categories and color value for ordered differences](../../assets/week-2/color-hue-value.svg)
-
-![The same color can appear different depending on surrounding context](../../assets/week-2/color-context.svg)
-
-<!-- assets: color-hue-value, color-context | method: DRAW | status: ready -->
-
----
-
-## 09 — Shape and Orientation
-
-Shape and direction are useful for showing different categories or movement.
-
-Examples:
-
-- different symbols for different categories,
-- an upward arrow for increase,
-- a downward arrow for decrease.
-
-They are less useful when we need an exact numeric comparison.
-
-![Shape and orientation as visual encodings for categories and direction](../../assets/week-2/shape-orientation.svg)
-
-<!-- asset: shape-orientation | method: DRAW | status: ready -->
-
----
-
-## 10 — Size Is Easy to Notice, Hard to Measure
-
-Size can show differences, but people are not very good at judging exact amounts from area alone.
-
-We can quickly see that one object is smaller than another, but it is harder to tell exactly how much smaller.
-
-![Objects with different areas illustrating the difficulty of precise size comparison](../../assets/week-2/size-comparison.svg)
-
-<!-- asset: size-comparison | method: DRAW | status: ready -->
-
----
-
-## 11 — Position Gives More Accurate Comparisons
-
-Position and length measured from the same starting line are usually easier to compare than area or decorative shapes.
-
-Small differences in position are easier to judge than small differences in area.
-
-**Design point:** choose the visual method that fits the question you want to answer.
-
-![Comparison of quantitative judgments using position versus area](../../assets/week-2/position-vs-size.svg)
-
-<!-- asset: position-vs-size | method: DRAW | status: ready -->
-
----
-
-## 12 — Order Changes the Question
-
-A chart sorted alphabetically can make ranking questions harder than they need to be.
-
-A chart ordered by value makes questions such as these much easier:
-
-- What is the largest value?
-- What is the smallest value?
-- What are the top three?
-- Where does a particular item rank?
-
-**Takeaway:** sorting can help us answer questions; it is not just formatting.
-
-![The same bar chart shown unsorted and sorted by value](../../assets/week-2/sorted-vs-unsorted-bars.svg)
-
-<!-- asset: sorted-vs-unsorted-bars | method: DRAW | status: ready -->
-
----
-
-## 12A — When Charts Mislead
-
-A chart can use correct numbers and still give a misleading impression. Choices such as **axis scale, where the axis starts, context, and decoration** can change what people see first.
-
-### Classroom activity 1 — Same data, different scale
-
-The historical values below are the same in both charts: the top U.S. individual income tax rate was **35% in 2012** and **39.6% in 2013**. The only thing that changes is the y-axis.
-
-![The same 35% and 39.6% values shown with a truncated axis and with a zero baseline](../../assets/week-2/truncated-axis-original.svg)
-
-**Try it:** [Switch between the two axis scales](../../assets/week-2/truncated-axis-experiment.html)
-
-Ask students:
-
-- Which version makes the increase feel larger?
-- Did the data change?
-- What changed in the way the data are shown?
-- Why can a bar chart be misleading when the axis starts above zero?
-
-**Teaching point:** we read bar length as amount. If the axis starts close to the values instead of at zero, the difference can look much larger than it really is—even when the printed numbers are correct.
-
-**Historical data source:** [IRS Statistics of Income Bulletin — highest rate 35% in 2012 and 39.6% in 2013](https://www.irs.gov/pub/irs-soi/15sprbul.pdf)
-
-The old slide used a TV screenshot. This course version keeps the same teaching idea but uses official values and a new chart drawn for this course.
-
-<!-- asset: truncated-axis-original | method: ORIGINAL_DRAW | status: ready -->
-<!-- interaction: truncated-axis-toggle | type: click-toggle | prototype: assets/truncated-axis-experiment.html | final-site: interactive -->
-
-### Classroom activity 2 — Pretty does not always mean useful
-
-A graphic can look attractive and still tell us very little.
-
-![A synthetic 76% infographic compared with a more informative version that adds denominator, comparison, and context](../../assets/week-2/decoration-vs-information-original.svg)
-
-**Try it:** [Turn the decorative graphic into a more useful one](../../assets/week-2/decoration-vs-information-experiment.html)
-
-The first version is intentionally weak: it looks nice, but it does not tell us enough. The second version is intentionally better because it adds the question, sample size, comparison, and source.
-
-The **76%** in this activity is made up only for teaching. It is not a real statistic.
-
-Ask students what is missing from the decorative version:
-
-- What was the question?
-- How many people or cases are in the total sample?
-- What is the comparison?
-- When and where was the information collected?
-- What source should we trust?
-
-**Teaching point:** looking good is not enough. A useful visualization should give enough context to understand, compare, and check the evidence.
-
-**Optional reading:** [The Guardian — “16 useless infographics”](https://www.theguardian.com/news/datablog/gallery/2013/aug/01/16-useless-infographics). We do **not** copy or store the Guardian/World Bank artwork. The activity above is a new example created for this course.
-
-<!-- asset: decoration-vs-information-original | method: ORIGINAL_DRAW | status: ready -->
-<!-- interaction: decoration-vs-information-toggle | type: click-toggle | prototype: assets/decoration-vs-information-experiment.html | final-site: interactive -->
-<!-- external-media: guardian-useless-infographics | type: reading | usage: optional | storage: external-only -->
-
----
-
-## 13 — What Is Data Visualization?
-
-For this course, think of data visualization as using charts, maps, and other visuals to make data easier to look at, understand, compare, and explain.
-
-The goal is not to make a chart look impressive. The goal is to help people understand the data.
-
-### External video — The Value of Data Visualization
-
-This public video explains the same main idea: visualization should help people understand data, not just make it look attractive.
-
-[![Watch: The Value of Data Visualization](https://img.youtube.com/vi/xekEXM0Vonc/hqdefault.jpg)](https://www.youtube.com/watch?v=xekEXM0Vonc&t=1s)
-
-[Open the video on YouTube](https://www.youtube.com/watch?v=xekEXM0Vonc&t=1s)
-
-<!-- external-media: value-of-data-visualization-video | type: video | usage: core | provider: youtube | video-id: xekEXM0Vonc | final-site: embed -->
-
----
-
-## 14 — Why Visualization Matters for Intelligence Analysis
-
-In IA 342, we move from raw data and analysis to human judgment.
-
-Computers and AI can process, summarize, and combine large amounts of data, but people are still responsible for intelligence judgments and decisions.
-
-Visualization helps make patterns, unusual results, context, and **uncertainty (how sure we are)** easier to see and discuss.
-
-![Flow from computational processing through visual evidence to human intelligence judgment](../../assets/week-2/ia-human-judgment-flow.svg)
-
-<!-- asset: ia-human-judgment-flow | method: DRAW | status: ready -->
-
----
-
-## 15 — We Cannot Always Trust Our Eyes
-
-Human vision is powerful, but our eyes do not work like a camera.
-
-What we see is influenced by:
-
-- expectations,
-- context,
-- prior experience, and
-- the way visual information is arranged.
-
-This means that visual design can help us understand—or it can mislead us.
-
-![Visual perception is influenced by expectation, context, experience, and arrangement](../../assets/week-2/perception-context.svg)
-
-<!-- asset: perception-context | method: DRAW | status: ready -->
-
----
-
-## 15A — Same Length, Different Look
-
-Which center line looks longer?
-
-![Müller-Lyer illusion with two equal vertical center segments and different arrow fins](../../assets/week-2/muller-lyer-original.svg)
-
-**Try it interactively:** [Open the Müller-Lyer reveal experiment](../../assets/week-2/muller-lyer-experiment.html)
-
-<details>
-<summary><strong>Reveal the answer</strong></summary>
-
-The two center lines are **exactly the same length**. The arrowheads around them make one line look longer even though the lines are equal.
-
-</details>
-
-**Teaching point:** what we see is not always the same as what we measure. In charts and other graphics, surrounding shapes can change how big or long something looks.
-
-**Historical note:** the Müller-Lyer illusion is a classic visual illusion. The graphic and interactive version above were redrawn for this course using simple geometry.
-
-<!-- asset: muller-lyer-original | method: ORIGINAL_DRAW | status: ready -->
-<!-- interaction: muller-lyer-reveal | type: click-reveal | prototype: assets/muller-lyer-experiment.html | final-site: interactive -->
-
----
-
-## 16 — How Expectations Shape What We See
-
-Richards J. Heuer explains several important ideas about perception in intelligence analysis:
-
-- we often see what we expect to see,
-- our first mental picture can form quickly and be hard to change,
-- we often fit new information into what we already believe or expect, and
-- unclear early information can shape how we understand later information.
-
-**Analytical point:** visualization should help analysts check the evidence, not just confirm what they already expect.
-
-![Analytic mind-set loop showing how expectations can shape perception and interpretation](../../assets/week-2/perception-mindset-loop.svg)
-
-**Source / optional reading:** [Richards J. Heuer Jr., *Psychology of Intelligence Analysis* — CIA Center for the Study of Intelligence](https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/)
-
-<!-- asset: perception-mindset-loop | method: DRAW | status: ready -->
-<!-- external-media: heuer-psychology-intelligence-analysis | type: reading | usage: supplemental -->
-
----
-
-## 16A — The Same Image Can Have Different Meanings
-
-Look at each image before reading the explanation. What do you see first? Can you make yourself see the other image?
-
-### Duck or rabbit?
-
-![Historic duck-rabbit ambiguous figure](https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck-Rabbit_illusion.jpg)
-
-[Source — Joseph Jastrow, *The Mind's Eye* (1899), public-domain scan on Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Duck-Rabbit_illusion.jpg)
-
-### Young woman or older woman?
-
-![Historic young-woman / older-woman ambiguous figure](https://commons.wikimedia.org/wiki/Special:Redirect/file/My_Wife_and_My_Mother-in-Law.jpg)
-
-[Source — W. E. Hill, *My Wife and My Mother-in-Law* (1915), Library of Congress / public-domain scan on Wikimedia Commons](https://commons.wikimedia.org/wiki/File:My_Wife_and_My_Mother-in-Law.jpg)
-
-**Teaching point:** the picture does not change, but what we think it shows can change. Once we see one meaning, it may take effort to see another.
-
-**Analytical connection:** analysts should test other possible explanations instead of assuming the first explanation is the only one.
-
-<!-- external-media: duck-rabbit-jastrow | type: image | usage: core | license: public-domain-US -->
-<!-- external-media: wife-mother-in-law-hill | type: image | usage: core | license: public-domain-US -->
-
----
-
-## 17 — Context Changes What We See
-
-A color can look different when the background around it changes.
-
-Our brain judges a color in relation to the colors around it, not by itself.
-
-**Design point:** background, contrast, and nearby marks can change what we see.
-
-![Identical colors appearing different because of surrounding context](../../assets/week-2/simultaneous-contrast.svg)
-
-### Classroom activity — Is the gray really changing?
-
-![A single uniform gray strip crossing dark and light backgrounds](../../assets/week-2/simultaneous-contrast-original.svg)
-
-Ask students: Does the strip look like the same gray from left to right?
-
-**Try it:** [Remove the background](../../assets/week-2/simultaneous-contrast-experiment.html)
-
-<details>
-<summary><strong>Reveal the explanation</strong></summary>
-
-The strip is the **same gray all the way across**. When we remove the different backgrounds, that becomes easier to see. The strip did not change; the **background changed what we saw**.
-
-</details>
-
-This activity was redrawn for this course. It demonstrates the same visual principle without copying the old slide artwork.
-
-### Optional video — Beau Lotto: Optical illusions show how we see
-
-[![Watch Beau Lotto: Optical illusions show how we see](https://img.youtube.com/vi/mf5otGNbkuc/hqdefault.jpg)](https://www.youtube.com/watch?v=mf5otGNbkuc)
-
-[Open the official TED talk](https://www.ted.com/talks/beau_lotto_optical_illusions_show_how_we_see)
-
-**Optional famous case — The Dress:** we do not store the original viral photo in the course repository. For source information and discussion, use the [Wikimedia Commons category and individually licensed versions](https://commons.wikimedia.org/wiki/Category:The_dress).
-
-<!-- asset: simultaneous-contrast | method: DRAW | status: ready -->
-<!-- asset: simultaneous-contrast-original | method: ORIGINAL_DRAW | status: ready -->
-<!-- interaction: simultaneous-contrast-reveal | type: click-toggle | prototype: assets/simultaneous-contrast-experiment.html | final-site: interactive -->
-<!-- external-media: beau-lotto-optical-illusions-ted | type: video | usage: optional | final-site: embed -->
-
----
-
-## 17A — Afterimage Experiment: What Your Eyes Keep Seeing
-
-This experiment shows that our eyes and brain do more than simply copy what is in front of us. After staring at one point for a while, we may keep seeing an **afterimage** even after the original picture disappears.
-
-**Try the timed version:** [Open the afterimage experiment](../../assets/week-2/afterimage-experiment.html)
-
-**Step 1 — Stare at the dot**
-
-Look only at the **red dot on the nose** for about **15 seconds**. Try not to move your eyes around the face.
-
-![Color-inverted portrait with a red fixation dot on the nose](../../assets/week-2/afterimage-negative-portrait.png)
-
-<details>
-<summary><strong>Step 2 — After 15 seconds, open the blank fixation screen</strong></summary>
-
-Keep looking at the dot. For a few seconds, you may still see a more natural-looking face even though the screen no longer shows a face.
-
-![Blank white fixation screen for the afterimage experiment](../../assets/week-2/afterimage-blank-fixation.png)
-
-</details>
-
-**Teaching point:** after staring at an image, your eyes and brain can briefly keep part of that image. What you see is not always exactly what is on the screen.
-
-**Final web behavior:** AntiGravity should make this a timed activity. A **Start experiment** button shows the negative portrait for 15 seconds, then automatically switches to the blank screen for 8 seconds. The dot stays in the same place so the viewer does not need to move their eyes.
-
-<!-- assets: afterimage-negative-portrait, afterimage-blank-fixation | method: ORIGINAL_EXPERIMENT | status: ready -->
-<!-- interaction: afterimage-face | type: timed-two-state | stare-seconds: 15 | blank-seconds: 8 | final-site: auto-switch -->
-
----
-
-## 18 — Perspective Changes How Big Things Look
-
-Objects can look larger or smaller because of depth and perspective even when they are actually the same size.
-
-The same idea matters in maps, charts, and dashboards: context can change how large something looks.
-
-![Perspective cues make identical lengths appear different](../../assets/week-2/perspective-lines.svg)
-
-### Legacy / real-world examples
-
-**Railroad-track perspective photo**
-
-![Lotus, Illinois railroad tracks](https://commons.wikimedia.org/wiki/Special:Redirect/file/Lotus_Illinois_railroad_tracks.jpg)
-
-[Source and attribution — Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Lotus_Illinois_railroad_tracks.jpg)
-
-**Forced-perspective Washington Monument photo — CC0 replacement**
-
-![Forced perspective at the Washington Monument](https://pd.w.org/2025/08/96968997de7b578b7.86567587.jpg)
-
-[Source — WordPress Photo Directory](https://wordpress.org/photos/photo/96968997de/)
-
-<!-- asset: perspective-lines | method: DRAW | status: ready -->
-<!-- external-media: lotus-illinois-railroad-tracks | type: image | usage: optional -->
----
-
-## 19 — Visual Noise Can Create False Patterns
-
-Too many repeated lines and grids can create distracting optical effects.
-
-In charts, dark or crowded gridlines can make the data harder to see.
-
-**Design point:** gridlines and other guides should support the data, not compete with it.
-
-![Dense repeated lines creating visual interference](../../assets/week-2/moire-grid.svg)
-
-![A chart comparison showing intrusive gridlines versus muted supporting gridlines](../../assets/week-2/muted-gridlines.svg)
-
-**Open-source historical example — Hermann grid**
-
-![Hermann grid illusion](https://commons.wikimedia.org/wiki/Special:Redirect/file/Hermann_grid_illusion.svg)
-
-[Source — Wikimedia Commons, CC0](https://commons.wikimedia.org/wiki/File:Hermann_grid_illusion.svg)
-
-<!-- assets: moire-grid, muted-gridlines | method: DRAW | status: ready -->
----
-
-## 20 — Gestalt: Our Brain Completes Shapes
-
-People often see a complete shape even when part of it is missing.
-
-This is called **closure**. Our brain fills in missing parts to create a whole shape.
-
-In a visualization, people do not look at every mark separately; they naturally look for a pattern or whole.
-
-![Gestalt closure: the viewer perceives a complete form from incomplete visual elements](../../assets/week-2/gestalt-closure.svg)
-
-**Classic example — Kanizsa triangle**
-
-![Kanizsa triangle](https://commons.wikimedia.org/wiki/Special:Redirect/file/Kanizsa_triangle.svg)
-
-[Source — Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kanizsa_triangle.svg)
-
-<!-- asset: gestalt-closure | method: DRAW | status: ready -->
----
-
-## 21 — Gestalt: Things Close Together Look Grouped
-
-Objects placed close together often look like they belong to the same group.
-
-Color, spacing, and position can create groups even when we do not draw a box around them.
-
-**Design point:** layout itself can show relationships.
-
-![Gestalt proximity: nearby marks are perceived as belonging together](../../assets/week-2/gestalt-proximity.svg)
-
-<!-- asset: gestalt-proximity | method: DRAW | status: ready -->
-
----
-
-## 22 — Week 2 Takeaways
-
-1. Visualization is part of analysis, not just decoration.
-2. Summary numbers alone can hide important patterns.
-3. Some ways of showing data are easier to read and compare than others.
-4. What we see depends on context, and our eyes can be misled.
-5. Good visual design helps analysts understand the evidence and make clear, well-supported judgments.
-
-**Next:** Apply these ideas to spatial intelligence using **ArcGIS Business Analyst**.
-
-![Transition from general data visualization to spatial intelligence and geographic analysis](../../assets/week-2/week2-bridge-to-spatial.svg)
-
-<!-- asset: week2-bridge-to-spatial | method: DRAW | status: ready -->
 ---
 [Return to Course Home](../../index.md) | [Go to Lab 2](../../assignments/lab-2/index.md)
