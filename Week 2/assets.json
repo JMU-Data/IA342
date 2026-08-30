@@ -1,0 +1,1204 @@
+{
+  "course": "IA342",
+  "week": 2,
+  "term": "Fall 2026",
+  "lecture": "Introduction to Data Visualization",
+  "policy": {
+    "prefer_original_drawings": true,
+    "avoid_reusing_third_party_slide_images": true,
+    "instructor_product_screenshots": true,
+    "notes": "Week 2 can be built almost entirely with original SVG diagrams. ArcGIS screenshots will be supplied by the instructor after testing the current interface.",
+    "screenshot_filename_required": false,
+    "screenshot_naming_notes": "Instructor screenshots may use any descriptive filename. The file paths in this manifest are preferred canonical names only. After screenshots are added to Drive, map or rename them during ingestion before publishing.",
+    "external_media_notes": "For third-party photos/videos, prefer linking or embedding from the original/official source. Download/rehost only when licensing clearly permits it and attribution requirements are recorded.",
+    "preserve_legacy_media_sources": true,
+    "legacy_media_notes": "Keep URLs/provenance for engaging legacy visuals even when the rewritten Week 2 lecture uses original SVG replacements. A DROP_FROM_CORE decision does not delete the source from the manifest.",
+    "perception_demo_reuse_rule": "For legacy perception slides credited to Jeffrey Shaffer, Beau Lotto, or other third parties, reuse the perceptual principle with original course geometry/interaction unless a specific open license is verified. Historic public-domain figures may be linked or embedded with source attribution.",
+    "misleading_visualization_reuse_rule": "For legacy misleading-graph or infographic examples, preserve the teaching principle and external source URL. Prefer original course recreations or synthetic examples; do not copy broadcast screenshots or third-party infographic artwork unless a reusable license is verified."
+  },
+  "assets": [
+    {
+      "id": "data-to-decision",
+      "file": "assets/data-to-decision.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Flow from data to information to knowledge to decision or strategy",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "anscombe-summary",
+      "file": "assets/anscombe-summary.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Four datasets with nearly identical summary statistics",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "anscombe-quartet",
+      "file": "assets/anscombe-quartet.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Anscombe's Quartet showing four visually different scatterplot patterns",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "visualization-roles",
+      "file": "assets/visualization-roles.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Visualization roles: detect patterns, anomalies, comparisons, relationships, questions, and communication",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "preattentive-overview",
+      "file": "assets/preattentive-overview.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Examples of color, size, shape, orientation, position, and texture as preattentive attributes",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "digit-seven-plain",
+      "file": "assets/digit-seven-plain.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Dense field of digits containing multiple sevens without visual emphasis",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "digit-seven-highlighted",
+      "file": "assets/digit-seven-highlighted.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Same field of digits with all sevens visually emphasized",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "color-hue-value",
+      "file": "assets/color-hue-value.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Examples of color hue for categories and color value for ordered differences",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "color-context",
+      "file": "assets/color-context.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Identical colors appearing different because of surrounding context",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "shape-orientation",
+      "file": "assets/shape-orientation.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Categorical differences encoded with shape and directional differences encoded with orientation",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "size-comparison",
+      "file": "assets/size-comparison.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Objects of different sizes illustrating difficulty of precise area comparison",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "position-vs-size",
+      "file": "assets/position-vs-size.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Comparison of quantitative judgments using position versus area",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "sorted-vs-unsorted-bars",
+      "file": "assets/sorted-vs-unsorted-bars.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Same bar chart shown alphabetically and sorted by value",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "ia-human-judgment-flow",
+      "file": "assets/ia-human-judgment-flow.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Flow from computational processing through visual evidence to human intelligence judgment",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "perception-context",
+      "file": "assets/perception-context.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Visual example showing that perception is influenced by surrounding context",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "perception-mindset-loop",
+      "file": "assets/perception-mindset-loop.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Diagram showing expectations, perception, interpretation, and reinforcement of analytic mind-sets",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "simultaneous-contrast",
+      "file": "assets/simultaneous-contrast.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Same shade appearing different against light and dark backgrounds",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "perspective-lines",
+      "file": "assets/perspective-lines.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Equal-length lines appearing different because of perspective cues",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "moire-grid",
+      "file": "assets/moire-grid.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Dense overlapping line pattern demonstrating visual interference",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "muted-gridlines",
+      "file": "assets/muted-gridlines.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Comparison between visually dominant gridlines and muted supporting gridlines",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "gestalt-closure",
+      "file": "assets/gestalt-closure.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Incomplete shapes perceived as a complete form through Gestalt closure",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "gestalt-proximity",
+      "file": "assets/gestalt-proximity.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Identical marks perceived as groups because of spatial proximity",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "week2-bridge-to-spatial",
+      "file": "assets/week2-bridge-to-spatial.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW",
+      "status": "ready",
+      "alt": "Transition from general visual perception concepts to spatial intelligence and ArcGIS Business Analyst",
+      "source": "original",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2 from course concepts; no third-party visual asset copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "arcgis-business-analyst-home",
+      "file": "assets/screenshots/01-business-analyst-home.png",
+      "used_in": [
+        "lab.md"
+      ],
+      "method": "SCREENSHOT",
+      "status": "pending_instructor",
+      "alt": "ArcGIS Business Analyst project interface",
+      "preferred_file": "assets/screenshots/01-business-analyst-home.png",
+      "filename_required": false,
+      "actual_file": null,
+      "canonical_name_only": true
+    },
+    {
+      "id": "arcgis-jmu-drive-time",
+      "file": "assets/screenshots/02-jmu-drive-time.png",
+      "used_in": [
+        "lab.md"
+      ],
+      "method": "SCREENSHOT",
+      "status": "pending_instructor",
+      "alt": "JMU with 5, 10, and 15 minute drive-time areas",
+      "preferred_file": "assets/screenshots/02-jmu-drive-time.png",
+      "filename_required": false,
+      "actual_file": null,
+      "canonical_name_only": true
+    },
+    {
+      "id": "arcgis-select-rockingham",
+      "file": "assets/screenshots/03-select-rockingham-county.png",
+      "used_in": [
+        "lab.md"
+      ],
+      "method": "SCREENSHOT",
+      "status": "pending_instructor",
+      "alt": "Selecting Rockingham County as a standard geography",
+      "preferred_file": "assets/screenshots/03-select-rockingham-county.png",
+      "filename_required": false,
+      "actual_file": null,
+      "canonical_name_only": true
+    },
+    {
+      "id": "arcgis-draw-harrisonburg",
+      "file": "assets/screenshots/04-draw-harrisonburg-polygon.png",
+      "used_in": [
+        "lab.md"
+      ],
+      "method": "SCREENSHOT",
+      "status": "pending_instructor",
+      "alt": "Drawing a custom Harrisonburg study area polygon",
+      "preferred_file": "assets/screenshots/04-draw-harrisonburg-polygon.png",
+      "filename_required": false,
+      "actual_file": null,
+      "canonical_name_only": true
+    },
+    {
+      "id": "arcgis-classic-report",
+      "file": "assets/screenshots/05-run-classic-report.png",
+      "used_in": [
+        "lab.md"
+      ],
+      "method": "SCREENSHOT",
+      "status": "pending_instructor",
+      "alt": "Running a classic report for multiple study areas",
+      "preferred_file": "assets/screenshots/05-run-classic-report.png",
+      "filename_required": false,
+      "actual_file": null,
+      "canonical_name_only": true
+    },
+    {
+      "id": "arcgis-community-summary",
+      "file": "assets/screenshots/06-community-summary.png",
+      "used_in": [
+        "lab.md"
+      ],
+      "method": "SCREENSHOT",
+      "status": "pending_instructor",
+      "alt": "Community Summary infographic for selected study areas",
+      "preferred_file": "assets/screenshots/06-community-summary.png",
+      "filename_required": false,
+      "actual_file": null,
+      "canonical_name_only": true
+    },
+    {
+      "id": "arcgis-assistant",
+      "file": "assets/screenshots/07-business-analyst-assistant.png",
+      "used_in": [
+        "lab.md"
+      ],
+      "method": "SCREENSHOT",
+      "status": "pending_instructor_and_account_verification",
+      "alt": "Business Analyst Assistant interface",
+      "preferred_file": "assets/screenshots/07-business-analyst-assistant.png",
+      "filename_required": false,
+      "actual_file": null,
+      "canonical_name_only": true
+    },
+    {
+      "id": "afterimage-negative-portrait",
+      "file": "assets/afterimage-negative-portrait.png",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "IMAGE_GEN_PLUS_DETERMINISTIC_EDIT",
+      "status": "ready",
+      "alt": "Color-inverted portrait with a red fixation dot on the nose for an afterimage perception experiment",
+      "source": "original",
+      "format": "png",
+      "dimensions": "1122x1402",
+      "role": "afterimage_adaptation_stimulus",
+      "fixation_point_px": {
+        "x": 560,
+        "y": 772
+      },
+      "fixation_point_normalized": {
+        "x": 0.4991,
+        "y": 0.5506
+      },
+      "provenance": "Original portrait generated for IA342 Week 2, then the fixation dot was aligned deterministically; no third-party visual asset was copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "afterimage-blank-fixation",
+      "file": "assets/afterimage-blank-fixation.png",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DRAW_DETERMINISTIC",
+      "status": "ready",
+      "alt": "Plain white screen with a black fixation dot aligned to the portrait nose position",
+      "source": "original",
+      "format": "png",
+      "dimensions": "1122x1402",
+      "role": "afterimage_blank_reveal",
+      "fixation_point_px": {
+        "x": 560,
+        "y": 772
+      },
+      "fixation_point_normalized": {
+        "x": 0.4991,
+        "y": 0.5506
+      },
+      "provenance": "Deterministically generated white fixation screen aligned pixel-for-pixel with the portrait stimulus canvas.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "afterimage-experiment-html",
+      "file": "assets/afterimage-experiment.html",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DETERMINISTIC_HTML_INTERACTION",
+      "status": "ready",
+      "alt": "Timed afterimage experiment prototype that automatically switches from the negative portrait to the blank fixation screen",
+      "source": "original",
+      "format": "html",
+      "role": "interactive_prototype",
+      "provenance": "Original self-contained HTML/CSS/JavaScript interaction created for IA342 Week 2; references only local original experiment images.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "muller-lyer-original",
+      "file": "assets/muller-lyer-original.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "ORIGINAL_DRAW",
+      "status": "ready",
+      "alt": "Müller-Lyer illusion with two equal vertical center segments and different arrow fins",
+      "source": "original course recreation based on classic simple geometry",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG drawn for IA342 Week 2. It demonstrates the classic Müller-Lyer perceptual principle without copying the legacy slide artwork.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "simultaneous-contrast-original",
+      "file": "assets/simultaneous-contrast-original.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "ORIGINAL_DRAW",
+      "status": "ready",
+      "alt": "A single uniform gray strip crossing dark and light backgrounds",
+      "source": "original course recreation of simultaneous contrast principle",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG drawn for IA342 Week 2. It demonstrates contextual brightness perception without copying the Jeffrey Shaffer / Beau Lotto legacy slide artwork.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "truncated-axis-original",
+      "file": "assets/truncated-axis-original.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "ORIGINAL_DRAW",
+      "status": "ready",
+      "alt": "The same 35 percent and 39.6 percent values shown with a truncated y-axis and a zero-baseline y-axis",
+      "source": "original course graphic using historical IRS values",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2. Historical values are sourced from IRS Statistics of Income; no television screenshot or legacy artwork is copied.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "truncated-axis-experiment-html",
+      "file": "assets/truncated-axis-experiment.html",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DETERMINISTIC_HTML_INTERACTION",
+      "status": "ready",
+      "alt": "Interactive chart that toggles between a truncated y-axis and a zero baseline while keeping the 35 percent and 39.6 percent values unchanged",
+      "source": "original",
+      "format": "html",
+      "role": "interactive_prototype",
+      "provenance": "Original self-contained HTML/CSS/JavaScript interaction created for IA342 Week 2 using historical IRS values.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "decoration-vs-information-original",
+      "file": "assets/decoration-vs-information-original.svg",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "ORIGINAL_DRAW",
+      "status": "ready",
+      "alt": "Synthetic 76 percent decorative infographic compared with a version that adds question, sample size, comparison, and source context",
+      "source": "original synthetic classroom example",
+      "format": "svg",
+      "dimensions": "1200x675",
+      "provenance": "Original SVG created for IA342 Week 2. The 76 percent value is explicitly synthetic and is not copied from the Guardian or World Bank example.",
+      "rehost_allowed": true
+    },
+    {
+      "id": "decoration-vs-information-experiment-html",
+      "file": "assets/decoration-vs-information-experiment.html",
+      "used_in": [
+        "lecture.md"
+      ],
+      "method": "DETERMINISTIC_HTML_INTERACTION",
+      "status": "ready",
+      "alt": "Interactive synthetic infographic that toggles from decorative presentation to an informative comparison with context",
+      "source": "original synthetic classroom example",
+      "format": "html",
+      "role": "interactive_prototype",
+      "provenance": "Original self-contained HTML/CSS/JavaScript interaction created for IA342 Week 2. No third-party infographic artwork is copied.",
+      "rehost_allowed": true
+    }
+  ],
+  "external_references": [
+    {
+      "id": "why-data-visualization-matters-video",
+      "type": "video",
+      "title": "Why Data Visualization Matters: From Data Overload to Insight",
+      "relationship": "Original short explainer used in Week 2 to show how visualization turns overwhelming raw activity into visible comparisons, trends, patterns, and anomalies.",
+      "source_url": "https://www.youtube.com/watch?v=Xh3p4yKlEQs",
+      "youtube_url": "https://www.youtube.com/watch?v=Xh3p4yKlEQs",
+      "embed_url": "https://www.youtube.com/embed/Xh3p4yKlEQs",
+      "thumbnail_url": "https://img.youtube.com/vi/Xh3p4yKlEQs/hqdefault.jpg",
+      "status": "ready_user_provided_url",
+      "usage": "LINK_OR_EMBED",
+      "preview": "clickable_thumbnail",
+      "final_site": "embed",
+      "local_download": false,
+      "placement": "screen_01A_after_why_visualization",
+      "notes": "Externally hosted public educational video. Course source references the YouTube URL only; do not store or commit the MP4 locally."
+    },
+    {
+      "id": "from-data-to-strategy-video",
+      "type": "video",
+      "title": "From Data to Strategy: How Raw Data Becomes Action",
+      "relationship": "Core Week 2 micro-explainer for the Data → Information → Knowledge → Decision / Strategy progression.",
+      "source_url": "https://youtu.be/eqcv8KF07nM",
+      "youtube_url": "https://youtu.be/eqcv8KF07nM",
+      "embed_url": "https://www.youtube.com/embed/eqcv8KF07nM",
+      "thumbnail_url": "https://img.youtube.com/vi/eqcv8KF07nM/hqdefault.jpg",
+      "status": "scheduled_public_url",
+      "usage": "LINK_OR_EMBED",
+      "preview": "clickable_thumbnail",
+      "final_site": "embed",
+      "local_download": false,
+      "placement": "screen_02",
+      "notes": "Externally hosted short explainer. Course source references the scheduled YouTube URL only; do not store or commit the MP4 locally."
+    },
+    {
+      "id": "value-of-data-visualization-video",
+      "type": "video",
+      "title": "The Value of Data Visualization",
+      "relationship": "Core Week 2 lecture media supporting the definition and value of data visualization",
+      "old_slide": 37,
+      "source_url": "https://www.youtube.com/watch?v=xekEXM0Vonc&t=1s",
+      "embed_url": "https://www.youtube.com/embed/xekEXM0Vonc",
+      "verification_url": "https://curriculum.idsucla.org/unit1/section2/",
+      "status": "verified",
+      "usage": "CORE_LINK_OR_EMBED",
+      "local_download": false,
+      "notes": "Public-source external video. Keep as an external YouTube link/embed; do not download or commit a local MP4.",
+      "placement": "screen_13",
+      "verification_status": "Public YouTube URL supplied for the course lecture; referenced externally rather than copied.",
+      "video_id": "xekEXM0Vonc",
+      "thumbnail_url": "https://img.youtube.com/vi/xekEXM0Vonc/hqdefault.jpg",
+      "preview": "clickable-thumbnail",
+      "final_site": "embed"
+    },
+    {
+      "id": "beau-lotto-optical-illusions-ted",
+      "type": "video",
+      "title": "Optical illusions show how we see",
+      "creator": "Beau Lotto",
+      "relationship": "Old lec1 references Beau Lotto in the visual-perception section; this official TED talk is a suitable optional source/reference.",
+      "source_url": "https://www.ted.com/talks/beau_lotto_optical_illusions_show_how_we_see",
+      "status": "verified_official_source",
+      "usage": "LINK",
+      "local_download": false,
+      "placement": "optional_after_screen_17",
+      "youtube_url": "https://www.youtube.com/watch?v=mf5otGNbkuc",
+      "embed_url": "https://www.youtube.com/embed/mf5otGNbkuc",
+      "verification_status": "Official TED page and TED YouTube upload verified."
+    },
+    {
+      "id": "lotus-illinois-railroad-tracks",
+      "type": "image",
+      "title": "Lotus, Illinois railroad tracks",
+      "creator": "Dual Freq",
+      "relationship": "Source named in old lec1 perspective/perception example; current Week 2 can still use an original DRAW asset instead.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lotus_Illinois_railroad_tracks.jpg",
+      "status": "verified",
+      "license": "CC BY 2.5 (also offered under CC BY-SA 3.0 and GFDL on source page)",
+      "usage": "REFERENCE_OR_DOWNLOAD_WITH_ATTRIBUTION",
+      "local_download": false,
+      "notes": "Prefer original SVG recreation for the lecture; this URL is retained as provenance and an optional licensed photo source.",
+      "placement": "provenance_only_for_screen_18",
+      "attribution": "Dual Freq, “Lotus, Illinois railroad tracks,” Wikimedia Commons, 2007."
+    },
+    {
+      "id": "heuer-psychology-intelligence-analysis",
+      "type": "reading",
+      "title": "Psychology of Intelligence Analysis",
+      "creator": "Richards J. Heuer, Jr.",
+      "relationship": "Supports the perception and intelligence-analysis section of Week 2.",
+      "source_url": "https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/",
+      "pdf_url": "https://www.cia.gov/resources/csi/static/9a5f1162fd0932c29bfed1c030edf4ae/Pyschology-of-Intelligence-Analysis.pdf",
+      "status": "verified_official_source",
+      "usage": "LINK",
+      "placement": "supplemental_reading_for_screen_16",
+      "verification_status": "Official CIA Center for the Study of Intelligence source verified."
+    },
+    {
+      "id": "anscombe-original-paper",
+      "type": "scholarly_source",
+      "title": "Graphs in Statistical Analysis",
+      "creator": "F. J. Anscombe",
+      "year": 1973,
+      "relationship": "Primary scholarly source for Anscombe's Quartet used in screens 03–04. The Week 2 chart itself is an original SVG rendering.",
+      "source_url": "https://doi.org/10.1080/00031305.1973.10478966",
+      "status": "verified",
+      "usage": "CITATION_ONLY",
+      "placement": "screens_03_04"
+    },
+    {
+      "id": "duck-rabbit-jastrow",
+      "type": "image",
+      "title": "Duck-Rabbit illusion",
+      "creator": "Historic image reproduced by Joseph Jastrow in The Mind's Eye (1899)",
+      "relationship": "Core ambiguous-figure classroom activity for perception and analytic mind-sets.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Duck-Rabbit_illusion.jpg",
+      "status": "verified",
+      "license": "Public domain in the United States",
+      "usage": "LINK_OR_EMBED_WITH_SOURCE",
+      "local_download": false,
+      "placement": "screen_16A",
+      "notes": "Use the Wikimedia Commons public-domain scan or link externally; retain source attribution."
+    },
+    {
+      "id": "wife-mother-in-law-hill",
+      "type": "image",
+      "title": "My Wife and My Mother-in-Law",
+      "creator": "W. E. Hill",
+      "year": 1915,
+      "relationship": "Core ambiguous-figure classroom activity demonstrating multiple interpretations from the same marks.",
+      "source_url": "https://commons.wikimedia.org/wiki/File:My_Wife_and_My_Mother-in-Law.jpg",
+      "status": "verified",
+      "license": "Public domain in the United States",
+      "usage": "LINK_OR_EMBED_WITH_SOURCE",
+      "local_download": false,
+      "placement": "screen_16A",
+      "notes": "Library of Congress / Wikimedia Commons public-domain scan; retain source attribution."
+    },
+    {
+      "id": "the-dress-commons-category",
+      "type": "reference",
+      "title": "The Dress — Wikimedia Commons category",
+      "relationship": "Optional famous color-perception case. The original viral photo should not be stored in the course repository unless a specific reusable file license is verified.",
+      "source_url": "https://commons.wikimedia.org/wiki/Category:The_dress",
+      "status": "verified_category",
+      "usage": "LINK_ONLY",
+      "local_download": false,
+      "placement": "screen_17",
+      "notes": "Use only individually licensed derivatives from the category if embedding an image. Do not assume the original viral photograph is reusable."
+    },
+    {
+      "id": "irs-2012-2013-top-rate-source",
+      "type": "official_data_source",
+      "title": "IRS Statistics of Income Bulletin — 2012 and 2013 top individual income tax rates",
+      "creator": "Internal Revenue Service",
+      "relationship": "Historical source for the 35% (2012) and 39.6% (2013) values used in the truncated-axis classroom activity.",
+      "source_url": "https://www.irs.gov/pub/irs-soi/15sprbul.pdf",
+      "status": "verified_official_source",
+      "usage": "CITATION_ONLY",
+      "local_download": false,
+      "placement": "screen_12A",
+      "notes": "The original course chart is drawn from these values; the legacy broadcast screenshot is not stored or copied."
+    },
+    {
+      "id": "guardian-useless-infographics",
+      "type": "reading",
+      "title": "16 useless infographics",
+      "creator": "The Guardian Datablog",
+      "year": 2013,
+      "relationship": "Optional external reading about infographic designs that obscure or distort information; legacy inspiration for the decoration-vs-information activity.",
+      "source_url": "https://www.theguardian.com/news/datablog/gallery/2013/aug/01/16-useless-infographics",
+      "status": "verified_public_url",
+      "usage": "LINK_ONLY",
+      "local_download": false,
+      "placement": "screen_12A",
+      "notes": "Do not store or copy Guardian/World Bank gallery artwork. The course uses an original synthetic example instead."
+    }
+  ],
+  "build_status": {
+    "original_svg_assets_ready": 23,
+    "arcgis_screenshots_pending": 7,
+    "external_references_verified": 5,
+    "last_updated": "2026-08-29",
+    "original_experiment_assets_ready": 2,
+    "interactive_experiments_ready": 1
+  },
+  "legacy_source_audit": [
+    {
+      "old_slide": 37,
+      "kind": "video",
+      "url": "https://www.youtube.com/embed/xekEXM0Vonc",
+      "decision": "RETAIN_OPTIONAL",
+      "new_use": "Optional video after screen 13",
+      "verification": "verified_via_UCLA_curriculum"
+    },
+    {
+      "old_slide": 38,
+      "kind": "definition_source",
+      "url": "http://www.ic.gc.ca/epic/site/trm-crt.nsf/en/rm00196e.html",
+      "decision": "DROP",
+      "reason": "Legacy definition source is unnecessary in the rewritten lecture; use course-authored definition."
+    },
+    {
+      "old_slide": 38,
+      "kind": "definition_source",
+      "url": "http://www.geocities.com/ewmpsi/dictionaryd.html",
+      "decision": "DROP",
+      "reason": "Legacy/obsolete source; use course-authored definition."
+    },
+    {
+      "old_slide": 38,
+      "kind": "image",
+      "url": "https://cdn.lynda.com/course/170778/170778-636190606665464953-16x9.jpg",
+      "decision": "DROP",
+      "reason": "Third-party course image is not needed; no download/rehost."
+    },
+    {
+      "old_slide": 38,
+      "kind": "image",
+      "url": "http://www.poverty.ac.uk/sites/default/files/styles/feature-slide-image/public/Image%20library/results-image.png?itok=d7w18Hd5",
+      "decision": "DROP",
+      "reason": "Third-party image is not needed in the rewritten Week 2 lecture."
+    },
+    {
+      "old_slide": 39,
+      "kind": "scholarly_source",
+      "url": "https://doi.org/10.1080/02684527.2015.1115238",
+      "decision": "RETAIN_AS_REFERENCE",
+      "reason": "Relevant to intelligence-analysis context; not required as a visual asset."
+    },
+    {
+      "old_slide": 41,
+      "kind": "perception_reference",
+      "url": "http://visual-memory.co.uk/daniel/Modules/FM21820/visper04.html",
+      "decision": "DROP_FROM_CORE",
+      "reason": "Perception concept is recreated with original SVGs."
+    },
+    {
+      "old_slide": 41,
+      "kind": "article_or_photo_reference",
+      "url": "https://www.thepennyhoarder.com/make-money/side-gigs/blue-and-black-or-white-and-gold-viral-dress/",
+      "decision": "DROP_FROM_CORE",
+      "reason": "Viral-dress example is not needed; color-context teaching point is recreated with original SVGs."
+    },
+    {
+      "old_slide": 53,
+      "kind": "image_source",
+      "url": "http://www.lpi.usra.edu",
+      "decision": "DROP_FROM_CORE",
+      "reason": "Old crater/source example is not needed; perspective is recreated with an original SVG."
+    },
+    {
+      "old_slide": 72,
+      "kind": "map_example",
+      "url": "https://gis.stackexchange.com/questions/3087/what-makes-a-map-be-classed-as-badly-designed",
+      "decision": "DEFER",
+      "reason": "Map-design material belongs in a later map-design lecture."
+    },
+    {
+      "old_slide": 73,
+      "kind": "map_example",
+      "url": "https://gis.stackexchange.com/questions/3083/what-makes-a-map-beautiful",
+      "decision": "DEFER",
+      "reason": "Map-design material belongs in a later map-design lecture."
+    },
+    {
+      "old_slide": 74,
+      "kind": "chart_example",
+      "url": "http://www.businessinsider.com/the-27-worst-charts-of-all-time-2013-6?op=1/",
+      "decision": "DEFER_OR_REPLACE",
+      "reason": "Misleading-chart examples belong in a later chart/design lecture; prefer current licensed examples or original recreations."
+    },
+    {
+      "old_slide": 75,
+      "kind": "chart_example",
+      "url": "http://www.statisticshowto.com/misleading-graphs/",
+      "decision": "DEFER",
+      "reason": "Misleading-chart content belongs in a later chart/design lecture."
+    },
+    {
+      "old_slide": 76,
+      "kind": "chart_example",
+      "url": "http://economicspsychologypolicy.blogspot.com/2014/03/state-of-american-well-being-ii.html",
+      "decision": "DEFER_OR_REPLACE",
+      "reason": "Not needed in Week 2; reassess if used in a later chart-design lecture."
+    },
+    {
+      "old_slide": 77,
+      "kind": "infographic_example",
+      "url": "https://www.theguardian.com/news/datablog/gallery/2013/aug/01/16-useless-infographics",
+      "decision": "DEFER_OR_REPLACE",
+      "reason": "Not needed in Week 2; reassess for a later critique/design lecture."
+    },
+    {
+      "old_slide": 78,
+      "kind": "product_training",
+      "url": "http://www.tableau.com/learn/training",
+      "decision": "DEFER",
+      "reason": "Tableau-specific material belongs in the Tableau phase."
+    },
+    {
+      "old_slide": 79,
+      "kind": "product_page",
+      "url": "https://www.tableau.com/products/tableau",
+      "decision": "DEFER",
+      "reason": "Tableau-specific material belongs in the Tableau phase."
+    }
+  ],
+  "legacy_media_inventory": [
+    {
+      "old_slide": 7,
+      "title": "What Happens in 60 Seconds",
+      "kind": "infographic/photo",
+      "embedded_media": "image13.jpg",
+      "source_label": "AWS Data Analytics Fundamentals Course, AWS Training and Certification",
+      "source_url": null,
+      "status": "SOURCE_LABEL_ONLY",
+      "reuse": "REFERENCE_ONLY",
+      "notes": "Good historical opener, but exact original image URL is not stored in the PPT."
+    },
+    {
+      "old_slides": [
+        11,
+        12,
+        13
+      ],
+      "title": "Anscombe’s Quartet sequence",
+      "kind": "data_visualization",
+      "embedded_media": [
+        "image14.png",
+        "image15.png",
+        "image16.png"
+      ],
+      "source_label": "Mike Galbreth / Wikipedia",
+      "source_url": "https://en.wikipedia.org/wiki/Anscombe%27s_quartet",
+      "status": "SOURCE_PAGE_AVAILABLE",
+      "reuse": "REFERENCE; CURRENT LECTURE USES ORIGINAL SVG"
+    },
+    {
+      "old_slide": 38,
+      "title": "Data visualization course image",
+      "kind": "image",
+      "embedded_media": "image26.jpeg",
+      "source_url": "https://cdn.lynda.com/course/170778/170778-636190606665464953-16x9.jpg",
+      "status": "LEGACY_DIRECT_URL_FROM_PPT",
+      "reuse": "REFERENCE_ONLY",
+      "notes": "Retained as provenance; do not rehost without rights review."
+    },
+    {
+      "old_slide": 38,
+      "title": "Poverty/results visualization image",
+      "kind": "image",
+      "embedded_media": "image27.png",
+      "source_url": "http://www.poverty.ac.uk/sites/default/files/styles/feature-slide-image/public/Image%20library/results-image.png?itok=d7w18Hd5",
+      "status": "LEGACY_DIRECT_URL_FROM_PPT",
+      "reuse": "REFERENCE_ONLY",
+      "notes": "Retained even though not in core Week 2."
+    },
+    {
+      "old_slide": 41,
+      "title": "The Dress — blue/black vs white/gold",
+      "kind": "photo/color_perception",
+      "embedded_media": "image31.jpeg",
+      "legacy_source_url": "https://www.thepennyhoarder.com/make-money/side-gigs/blue-and-black-or-white-and-gold-viral-dress/",
+      "alternative_source_url": "https://commons.wikimedia.org/wiki/Category:The_dress",
+      "status": "SOURCE_OPTIONS_RECORDED",
+      "reuse": "OPTIONAL_REFERENCE",
+      "notes": "Original viral photo rights are separate; Commons category provides reusable derivative/context files with per-file licenses."
+    },
+    {
+      "old_slide": 41,
+      "title": "Visual perception arrows / line-length illusion",
+      "kind": "optical_illusion",
+      "embedded_media": "image30.gif",
+      "legacy_source_url": "http://visual-memory.co.uk/daniel/Modules/FM21820/visper04.html",
+      "status": "LEGACY_PAGE_FROM_PPT",
+      "reuse": "REFERENCE_ONLY"
+    },
+    {
+      "old_slide": 43,
+      "title": "Beau Lotto cube / same-color context illusion",
+      "kind": "photo/optical_illusion",
+      "embedded_media": [
+        "image34.jpg",
+        "image35.png"
+      ],
+      "legacy_source_label": "Used by permission of Dr. Beau Lotto (www.LottoLab.org)",
+      "source_url": "https://www.ted.com/talks/beau_lotto_optical_illusions_show_how_we_see",
+      "status": "OFFICIAL_RELATED_SOURCE_RECORDED",
+      "reuse": "OPTIONAL_LINK; DO NOT REHOST OLD EMBEDDED IMAGE",
+      "notes": "Exact old image URL is not stored in the PPT."
+    },
+    {
+      "old_slides": [
+        48,
+        49
+      ],
+      "title": "Ames-room / forced-size perception photos",
+      "kind": "photo/optical_illusion",
+      "embedded_media": [
+        "image38.jpeg",
+        "image39.jpeg"
+      ],
+      "source_url": null,
+      "status": "EMBEDDED_ONLY_NEEDS_SOURCE_LOOKUP",
+      "reuse": "REFERENCE_ONLY",
+      "notes": "These are visually strong legacy photos; preserve as candidates. Exact original source URL was not stored in the PPT."
+    },
+    {
+      "old_slide": 50,
+      "title": "Washington Monument forced-perspective photo",
+      "kind": "photo/perspective",
+      "embedded_media": "image40.jpeg",
+      "source_url": null,
+      "replacement_source_url": "https://wordpress.org/photos/photo/96968997de/",
+      "replacement_download_url": "https://pd.w.org/2025/08/96968997de7b578b7.86567587.jpg",
+      "replacement_license": "CC0",
+      "replacement_creator": "Bigul Malayi",
+      "status": "EXACT_OLD_SOURCE_UNKNOWN; VERIFIED_CC0_REPLACEMENT_AVAILABLE",
+      "reuse": "OPTIONAL_PHOTO"
+    },
+    {
+      "old_slide": 51,
+      "title": "Lotus, Illinois railroad tracks",
+      "kind": "photo/perspective",
+      "embedded_media": "image41.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Lotus_Illinois_railroad_tracks.jpg",
+      "status": "VERIFIED_SOURCE",
+      "reuse": "OPTIONAL_DOWNLOAD_WITH_ATTRIBUTION"
+    },
+    {
+      "old_slide": 53,
+      "title": "Terraced lunar crater / crater illusion",
+      "kind": "photo/shape_from_shading",
+      "embedded_media": "image42.jpeg",
+      "legacy_source_url": "https://www.lpi.usra.edu/",
+      "verified_source_url": "https://commons.wikimedia.org/wiki/File:Keeler_crater_AS10-32-4823.jpg",
+      "verified_lpi_index_url": "https://www.lpi.usra.edu/resources/apollo/search/feature/?feature=keeler&sort=6",
+      "image_id": "AS10-32-4823",
+      "license": "CC0 / source NASA public-domain image",
+      "status": "VERIFIED_REPLACEMENT_MATCH_FOR_CLASSIC_CRATER_ILLUSION",
+      "reuse": "OPTIONAL_DOWNLOAD"
+    },
+    {
+      "old_slide": 60,
+      "title": "Kanizsa triangle",
+      "kind": "optical_illusion/gestalt",
+      "embedded_media": "image47.gif",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Kanizsa_triangle.svg",
+      "license": "CC BY-SA 3.0 / GFDL",
+      "status": "VERIFIED_OPEN_SOURCE",
+      "reuse": "OPTIONAL_DOWNLOAD_WITH_ATTRIBUTION"
+    },
+    {
+      "old_slide": 58,
+      "title": "Hermann grid illusion",
+      "kind": "optical_illusion",
+      "embedded_media": null,
+      "source_url": "https://commons.wikimedia.org/wiki/File:Hermann_grid_illusion.svg",
+      "license": "CC0",
+      "status": "VERIFIED_OPEN_SOURCE",
+      "reuse": "OPTIONAL_DOWNLOAD"
+    },
+    {
+      "old_slides": [
+        65,
+        66,
+        67,
+        68
+      ],
+      "title": "Afterimage / color adaptation sequence",
+      "kind": "photo/optical_illusion",
+      "embedded_media": [
+        "image50.jpeg",
+        "image51.jpeg",
+        "image52.jpeg"
+      ],
+      "source_url": null,
+      "status": "EMBEDDED_ONLY_NEEDS_SOURCE_LOOKUP",
+      "reuse": "REFERENCE_ONLY",
+      "notes": "Engaging classroom sequence worth preserving; exact source URLs are not stored in the PPT."
+    }
+  ],
+  "interactions": [
+    {
+      "id": "afterimage-face",
+      "used_in": [
+        "lecture.md"
+      ],
+      "placement": "after_screen_17",
+      "type": "timed_afterimage",
+      "status": "prototype_ready",
+      "purpose": "Demonstrate visual adaptation by switching from a color-inverted face to a blank fixation screen while the viewer maintains gaze.",
+      "stimulus_asset": "afterimage-negative-portrait",
+      "reveal_asset": "afterimage-blank-fixation",
+      "stare_seconds": 15,
+      "blank_seconds": 8,
+      "fixation_point_px": {
+        "x": 560,
+        "y": 772
+      },
+      "frontend_behavior": {
+        "start_control": true,
+        "auto_switch": true,
+        "show_countdown": true,
+        "countdown_position": "outside_stimulus_or_corner",
+        "preserve_image_geometry": true,
+        "allow_restart": true,
+        "avoid_text_over_blank_during_afterimage": true
+      },
+      "notes": "Do not use generative video for the adaptation sequence. The experiment depends on stable geometry and a fixed fixation point.",
+      "prototype_file": "assets/afterimage-experiment.html"
+    },
+    {
+      "id": "muller-lyer-reveal",
+      "used_in": [
+        "lecture.md"
+      ],
+      "placement": "screen_15A",
+      "type": "click_reveal",
+      "status": "prototype_ready",
+      "purpose": "Ask students which equal center segment appears longer, then reveal aligned measurement guides.",
+      "frontend_behavior": {
+        "initial_state": "illusion_only",
+        "reveal_control": true,
+        "show_measurement_guides": true,
+        "allow_reset": true
+      },
+      "notes": "Original course recreation; no legacy slide artwork reused.",
+      "prototype_file": "assets/muller-lyer-experiment.html"
+    },
+    {
+      "id": "simultaneous-contrast-reveal",
+      "used_in": [
+        "lecture.md"
+      ],
+      "placement": "screen_17",
+      "type": "click_toggle",
+      "status": "prototype_ready",
+      "purpose": "Show a uniform gray strip across dark/light contexts, then remove background context to prove the strip itself did not change.",
+      "frontend_behavior": {
+        "initial_state": "contrasting_backgrounds",
+        "toggle_control": true,
+        "reveal_state": "neutral_background",
+        "allow_reset": true
+      },
+      "notes": "Original course recreation of simultaneous contrast; no Jeffrey Shaffer / Beau Lotto image reused.",
+      "prototype_file": "assets/simultaneous-contrast-experiment.html"
+    },
+    {
+      "id": "truncated-axis-toggle",
+      "used_in": [
+        "lecture.md"
+      ],
+      "placement": "screen_12A",
+      "type": "click_toggle",
+      "status": "prototype_ready",
+      "purpose": "Keep the historical 35% and 39.6% values fixed while toggling between a 34–42% truncated axis and a zero baseline to demonstrate visual exaggeration.",
+      "frontend_behavior": {
+        "initial_state": "truncated_axis",
+        "toggle_control": true,
+        "reveal_state": "zero_baseline",
+        "allow_reset": true
+      },
+      "notes": "Use original course chart geometry. Historical values are sourced from IRS Statistics of Income; do not reuse the legacy television screenshot.",
+      "prototype_file": "assets/truncated-axis-experiment.html"
+    },
+    {
+      "id": "decoration-vs-information-toggle",
+      "used_in": [
+        "lecture.md"
+      ],
+      "placement": "screen_12A",
+      "type": "click_toggle",
+      "status": "prototype_ready",
+      "purpose": "Contrast an attractive but context-poor synthetic 76% infographic with a version that provides the question, denominator, comparison, and source context.",
+      "frontend_behavior": {
+        "initial_state": "decorative",
+        "toggle_control": true,
+        "reveal_state": "informative",
+        "allow_reset": true
+      },
+      "notes": "The 76% value is synthetic. Do not copy the Guardian/World Bank legacy artwork.",
+      "prototype_file": "assets/decoration-vs-information-experiment.html"
+    }
+  ]
+}

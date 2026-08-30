@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Simultaneous Contrast Experiment</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;background:#f7f8fa;color:#111827}
+main{max-width:900px;margin:0 auto;padding:28px}
+h1{font-size:32px;margin:0 0 6px}p{font-size:18px;color:#4b5563}
+.card{background:white;border:1px solid #d1d5db;border-radius:16px;padding:22px}
+.stage{height:420px;position:relative;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border-radius:16px;border:1px solid #d1d5db}
+.left{background:#20242b}.right{background:#e5e7eb}.neutral .left,.neutral .right{background:#f3f4f6}
+.bar{position:absolute;left:10%;right:10%;top:42%;height:90px;background:#8a8a8a;border-radius:12px}
+button{font-size:17px;padding:10px 16px;border-radius:10px;border:1px solid #9ca3af;background:#fff;cursor:pointer;margin:16px 8px 0 0}
+.answer{font-weight:700;min-height:28px;margin-top:12px}
+</style></head><body><main>
+<h1>Does the strip change shade?</h1>
+<p>Look at the same gray strip against two different contexts, then remove the context.</p>
+<div class="card">
+<div class="stage" id="stage"><div class="left"></div><div class="right"></div><div class="bar"></div></div>
+<button onclick="document.getElementById('stage').classList.add('neutral');document.getElementById('ans').textContent='The bar never changed. Context changed your perception.'">Remove background context</button>
+<button onclick="document.getElementById('stage').classList.remove('neutral');document.getElementById('ans').textContent=''">Reset</button>
+<div class="answer" id="ans"></div>
+</div></main></body></html>
