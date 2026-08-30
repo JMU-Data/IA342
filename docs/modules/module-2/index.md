@@ -4,7 +4,7 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 ---
 # Introduction to Data Visualization
 
-**IA 342 â€” Visualization Methods, Technologies, and Tools for Intelligence Analysis**
+**IA 342 — Visualization Methods, Technologies, and Tools for Intelligence Analysis**
 
 This lecture explains why visualization helps us understand data and why human perception matters when we design charts, maps, and other visual evidence.
 
@@ -12,7 +12,7 @@ This lecture explains why visualization helps us understand data and why human p
 
 ---
 
-## 01 â€” Why Visualization?
+## 01 — Why Visualization?
 
 Organizations can collect and store huge amounts of data. The challenge is not just getting data; it is turning data into something people can understand and use.
 
@@ -20,15 +20,15 @@ Organizations can collect and store huge amounts of data. The challenge is not j
 
 ---
 
-## 01A â€” From Data Overload to Insight
+## 01A — From Data Overload to Insight
 
 Digital data can become overwhelming very quickly. Visualization helps turn that complexity into something we can look at and understand.
 
 The main benefit is not just making data look cleaner. A useful visualization can make **comparisons, trends, patterns, and unusual values (anomalies)** easy to see.
 
-### Short video â€” Why Data Visualization Matters
+### Short video — Why Data Visualization Matters
 
-[![Watch: Why Data Visualization Matters â€” From Data Overload to Insight](https://img.youtube.com/vi/Xh3p4yKlEQs/hqdefault.jpg)](https://www.youtube.com/watch?v=Xh3p4yKlEQs)
+[![Watch: Why Data Visualization Matters — From Data Overload to Insight](https://img.youtube.com/vi/Xh3p4yKlEQs/hqdefault.jpg)](https://www.youtube.com/watch?v=Xh3p4yKlEQs)
 
 [Open the video on YouTube](https://www.youtube.com/watch?v=Xh3p4yKlEQs)
 
@@ -36,11 +36,11 @@ The main benefit is not just making data look cleaner. A useful visualization ca
 
 ---
 
-## 02 â€” From Data to Decision
+## 02 — From Data to Decision
 
 A simple way to think about the process is:
 
-**Data â†’ Information â†’ Knowledge â†’ Decision / Strategy**
+**Data → Information → Knowledge → Decision / Strategy**
 
 - **Data:** basic facts, records, and observations.
 - **Information:** data organized so that it starts to make sense.
@@ -53,9 +53,9 @@ Visualization helps move us from raw data toward evidence we can understand and 
 
 <!-- asset: data-to-decision | method: DRAW | status: ready -->
 
-### Short video â€” From Data to Strategy
+### Short video — From Data to Strategy
 
-[![Watch: From Data to Strategy â€” How Raw Data Becomes Action](https://img.youtube.com/vi/eqcv8KF07nM/hqdefault.jpg)](https://youtu.be/eqcv8KF07nM)
+[![Watch: From Data to Strategy — How Raw Data Becomes Action](https://img.youtube.com/vi/eqcv8KF07nM/hqdefault.jpg)](https://youtu.be/eqcv8KF07nM)
 
 [Open the video on YouTube](https://youtu.be/eqcv8KF07nM)
 
@@ -63,7 +63,7 @@ Visualization helps move us from raw data toward evidence we can understand and 
 
 ---
 
-## 03 â€” Numbers Can Look the Same
+## 03 — Numbers Can Look the Same
 
 Summary statistics can make very different datasets look similar.
 
@@ -82,7 +82,7 @@ If we only look at the statistics, we may think the datasets are similar.
 
 ---
 
-## 04 â€” But the Patterns Are Different
+## 04 — But the Patterns Are Different
 
 When we plot the same datasets, the differences become easy to see.
 
@@ -96,9 +96,9 @@ This is the lesson of **Anscombe's Quartet**: summary numbers are useful, but we
 
 ---
 
-## 05 â€” Visualization Helps Us Analyze
+## 05 — Visualization Helps Us Analyze
 
-Visualization is not just decoration, and it is not only for people who call themselves â€œvisual learners.â€
+Visualization is not just decoration, and it is not only for people who call themselves “visual learners.”
 
 A good visualization can help analysts:
 
@@ -117,7 +117,7 @@ In IA 342, visualization is part of the analysis. It is not something we add onl
 
 ---
 
-## 06 â€” What the Eye Notices First
+## 06 — What the Eye Notices First
 
 Some visual features are noticed almost immediately, before we focus on individual objects. These are called **preattentive attributes**.
 
@@ -138,7 +138,7 @@ These features can quickly draw our attention to what matters.
 
 ---
 
-## 07 â€” Find the 7s
+## 07 — Find the 7s
 
 First, try to count every **7** in a crowded field of numbers.
 
@@ -156,7 +156,7 @@ The data did not change. Only the way the data are shown changed.
 
 ---
 
-## 08 â€” Color Is Powerful, but Context Matters
+## 08 — Color Is Powerful, but Context Matters
 
 **Hue** means the type of color, such as red, blue, or green. It is useful for separating categories or drawing attention to something important.
 
@@ -172,7 +172,7 @@ But color depends on context: the same color can look different when the backgro
 
 ---
 
-## 09 â€” Shape and Orientation
+## 09 — Shape and Orientation
 
 Shape and direction are useful for showing different categories or movement.
 
@@ -190,7 +190,7 @@ They are less useful when we need an exact numeric comparison.
 
 ---
 
-## 10 â€” Size Is Easy to Notice, Hard to Measure
+## 10 — Size Is Easy to Notice, Hard to Measure
 
 Size can show differences, but people are not very good at judging exact amounts from area alone.
 
@@ -202,7 +202,7 @@ We can quickly see that one object is smaller than another, but it is harder to 
 
 ---
 
-## 11 â€” Position Gives More Accurate Comparisons
+## 11 — Position Gives More Accurate Comparisons
 
 Position and length measured from the same starting line are usually easier to compare than area or decorative shapes.
 
@@ -216,7 +216,7 @@ Small differences in position are easier to judge than small differences in area
 
 ---
 
-## 12 â€” Order Changes the Question
+## 12 — Order Changes the Question
 
 A chart sorted alphabetically can make ranking questions harder than they need to be.
 
@@ -235,11 +235,11 @@ A chart ordered by value makes questions such as these much easier:
 
 ---
 
-## 12A â€” When Charts Mislead
+## 12A — When Charts Mislead
 
 A chart can use correct numbers and still give a misleading impression. Choices such as **axis scale, where the axis starts, context, and decoration** can change what people see first.
 
-### Classroom activity 1 â€” Same data, different scale
+### Classroom activity 1 — Same data, different scale
 
 The historical values below are the same in both charts: the top U.S. individual income tax rate was **35% in 2012** and **39.6% in 2013**. The only thing that changes is the y-axis.
 
@@ -254,16 +254,16 @@ Ask students:
 - What changed in the way the data are shown?
 - Why can a bar chart be misleading when the axis starts above zero?
 
-**Teaching point:** we read bar length as amount. If the axis starts close to the values instead of at zero, the difference can look much larger than it really isâ€”even when the printed numbers are correct.
+**Teaching point:** we read bar length as amount. If the axis starts close to the values instead of at zero, the difference can look much larger than it really is—even when the printed numbers are correct.
 
-**Historical data source:** [IRS Statistics of Income Bulletin â€” highest rate 35% in 2012 and 39.6% in 2013](https://www.irs.gov/pub/irs-soi/15sprbul.pdf)
+**Historical data source:** [IRS Statistics of Income Bulletin — highest rate 35% in 2012 and 39.6% in 2013](https://www.irs.gov/pub/irs-soi/15sprbul.pdf)
 
 The old slide used a TV screenshot. This course version keeps the same teaching idea but uses official values and a new chart drawn for this course.
 
 <!-- asset: truncated-axis-original | method: ORIGINAL_DRAW | status: ready -->
 <!-- interaction: truncated-axis-toggle | type: click-toggle | prototype: assets/truncated-axis-experiment.html | final-site: interactive -->
 
-### Classroom activity 2 â€” Pretty does not always mean useful
+### Classroom activity 2 — Pretty does not always mean useful
 
 A graphic can look attractive and still tell us very little.
 
@@ -285,7 +285,7 @@ Ask students what is missing from the decorative version:
 
 **Teaching point:** looking good is not enough. A useful visualization should give enough context to understand, compare, and check the evidence.
 
-**Optional reading:** [The Guardian â€” â€œ16 useless infographicsâ€](https://www.theguardian.com/news/datablog/gallery/2013/aug/01/16-useless-infographics). We do **not** copy or store the Guardian/World Bank artwork. The activity above is a new example created for this course.
+**Optional reading:** [The Guardian — “16 useless infographics”](https://www.theguardian.com/news/datablog/gallery/2013/aug/01/16-useless-infographics). We do **not** copy or store the Guardian/World Bank artwork. The activity above is a new example created for this course.
 
 <!-- asset: decoration-vs-information-original | method: ORIGINAL_DRAW | status: ready -->
 <!-- interaction: decoration-vs-information-toggle | type: click-toggle | prototype: assets/decoration-vs-information-experiment.html | final-site: interactive -->
@@ -293,13 +293,13 @@ Ask students what is missing from the decorative version:
 
 ---
 
-## 13 â€” What Is Data Visualization?
+## 13 — What Is Data Visualization?
 
 For this course, think of data visualization as using charts, maps, and other visuals to make data easier to look at, understand, compare, and explain.
 
 The goal is not to make a chart look impressive. The goal is to help people understand the data.
 
-### External video â€” The Value of Data Visualization
+### External video — The Value of Data Visualization
 
 This public video explains the same main idea: visualization should help people understand data, not just make it look attractive.
 
@@ -311,7 +311,7 @@ This public video explains the same main idea: visualization should help people 
 
 ---
 
-## 14 â€” Why Visualization Matters for Intelligence Analysis
+## 14 — Why Visualization Matters for Intelligence Analysis
 
 In IA 342, we move from raw data and analysis to human judgment.
 
@@ -325,7 +325,7 @@ Visualization helps make patterns, unusual results, context, and **uncertainty (
 
 ---
 
-## 15 â€” We Cannot Always Trust Our Eyes
+## 15 — We Cannot Always Trust Our Eyes
 
 Human vision is powerful, but our eyes do not work like a camera.
 
@@ -336,7 +336,7 @@ What we see is influenced by:
 - prior experience, and
 - the way visual information is arranged.
 
-This means that visual design can help us understandâ€”or it can mislead us.
+This means that visual design can help us understand—or it can mislead us.
 
 ![Visual perception is influenced by expectation, context, experience, and arrangement](../../assets/week-2/perception-context.svg)
 
@@ -344,13 +344,13 @@ This means that visual design can help us understandâ€”or it can mislead us
 
 ---
 
-## 15A â€” Same Length, Different Look
+## 15A — Same Length, Different Look
 
 Which center line looks longer?
 
-![MÃ¼ller-Lyer illusion with two equal vertical center segments and different arrow fins](../../assets/week-2/muller-lyer-original.svg)
+![Müller-Lyer illusion with two equal vertical center segments and different arrow fins](../../assets/week-2/muller-lyer-original.svg)
 
-**Try it interactively:** [Open the MÃ¼ller-Lyer reveal experiment](../../assets/week-2/muller-lyer-experiment.html)
+**Try it interactively:** [Open the Müller-Lyer reveal experiment](../../assets/week-2/muller-lyer-experiment.html)
 
 <details>
 <summary><strong>Reveal the answer</strong></summary>
@@ -361,14 +361,14 @@ The two center lines are **exactly the same length**. The arrowheads around them
 
 **Teaching point:** what we see is not always the same as what we measure. In charts and other graphics, surrounding shapes can change how big or long something looks.
 
-**Historical note:** the MÃ¼ller-Lyer illusion is a classic visual illusion. The graphic and interactive version above were redrawn for this course using simple geometry.
+**Historical note:** the Müller-Lyer illusion is a classic visual illusion. The graphic and interactive version above were redrawn for this course using simple geometry.
 
 <!-- asset: muller-lyer-original | method: ORIGINAL_DRAW | status: ready -->
 <!-- interaction: muller-lyer-reveal | type: click-reveal | prototype: assets/muller-lyer-experiment.html | final-site: interactive -->
 
 ---
 
-## 16 â€” How Expectations Shape What We See
+## 16 — How Expectations Shape What We See
 
 Richards J. Heuer explains several important ideas about perception in intelligence analysis:
 
@@ -381,14 +381,14 @@ Richards J. Heuer explains several important ideas about perception in intellige
 
 ![Analytic mind-set loop showing how expectations can shape perception and interpretation](../../assets/week-2/perception-mindset-loop.svg)
 
-**Source / optional reading:** [Richards J. Heuer Jr., *Psychology of Intelligence Analysis* â€” CIA Center for the Study of Intelligence](https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/)
+**Source / optional reading:** [Richards J. Heuer Jr., *Psychology of Intelligence Analysis* — CIA Center for the Study of Intelligence](https://www.cia.gov/resources/csi/books-monographs/psychology-of-intelligence-analysis-2/)
 
 <!-- asset: perception-mindset-loop | method: DRAW | status: ready -->
 <!-- external-media: heuer-psychology-intelligence-analysis | type: reading | usage: supplemental -->
 
 ---
 
-## 16A â€” The Same Image Can Have Different Meanings
+## 16A — The Same Image Can Have Different Meanings
 
 Look at each image before reading the explanation. What do you see first? Can you make yourself see the other image?
 
@@ -396,13 +396,13 @@ Look at each image before reading the explanation. What do you see first? Can yo
 
 ![Historic duck-rabbit ambiguous figure](https://commons.wikimedia.org/wiki/Special:Redirect/file/Duck-Rabbit_illusion.jpg)
 
-[Source â€” Joseph Jastrow, *The Mind's Eye* (1899), public-domain scan on Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Duck-Rabbit_illusion.jpg)
+[Source — Joseph Jastrow, *The Mind's Eye* (1899), public-domain scan on Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Duck-Rabbit_illusion.jpg)
 
 ### Young woman or older woman?
 
 ![Historic young-woman / older-woman ambiguous figure](https://commons.wikimedia.org/wiki/Special:Redirect/file/My_Wife_and_My_Mother-in-Law.jpg)
 
-[Source â€” W. E. Hill, *My Wife and My Mother-in-Law* (1915), Library of Congress / public-domain scan on Wikimedia Commons](https://commons.wikimedia.org/wiki/File:My_Wife_and_My_Mother-in-Law.jpg)
+[Source — W. E. Hill, *My Wife and My Mother-in-Law* (1915), Library of Congress / public-domain scan on Wikimedia Commons](https://commons.wikimedia.org/wiki/File:My_Wife_and_My_Mother-in-Law.jpg)
 
 **Teaching point:** the picture does not change, but what we think it shows can change. Once we see one meaning, it may take effort to see another.
 
@@ -413,7 +413,7 @@ Look at each image before reading the explanation. What do you see first? Can yo
 
 ---
 
-## 17 â€” Context Changes What We See
+## 17 — Context Changes What We See
 
 A color can look different when the background around it changes.
 
@@ -423,7 +423,7 @@ Our brain judges a color in relation to the colors around it, not by itself.
 
 ![Identical colors appearing different because of surrounding context](../../assets/week-2/simultaneous-contrast.svg)
 
-### Classroom activity â€” Is the gray really changing?
+### Classroom activity — Is the gray really changing?
 
 ![A single uniform gray strip crossing dark and light backgrounds](../../assets/week-2/simultaneous-contrast-original.svg)
 
@@ -440,13 +440,13 @@ The strip is the **same gray all the way across**. When we remove the different 
 
 This activity was redrawn for this course. It demonstrates the same visual principle without copying the old slide artwork.
 
-### Optional video â€” Beau Lotto: Optical illusions show how we see
+### Optional video — Beau Lotto: Optical illusions show how we see
 
 [![Watch Beau Lotto: Optical illusions show how we see](https://img.youtube.com/vi/mf5otGNbkuc/hqdefault.jpg)](https://www.youtube.com/watch?v=mf5otGNbkuc)
 
 [Open the official TED talk](https://www.ted.com/talks/beau_lotto_optical_illusions_show_how_we_see)
 
-**Optional famous case â€” The Dress:** we do not store the original viral photo in the course repository. For source information and discussion, use the [Wikimedia Commons category and individually licensed versions](https://commons.wikimedia.org/wiki/Category:The_dress).
+**Optional famous case — The Dress:** we do not store the original viral photo in the course repository. For source information and discussion, use the [Wikimedia Commons category and individually licensed versions](https://commons.wikimedia.org/wiki/Category:The_dress).
 
 <!-- asset: simultaneous-contrast | method: DRAW | status: ready -->
 <!-- asset: simultaneous-contrast-original | method: ORIGINAL_DRAW | status: ready -->
@@ -455,20 +455,20 @@ This activity was redrawn for this course. It demonstrates the same visual princ
 
 ---
 
-## 17A â€” Afterimage Experiment: What Your Eyes Keep Seeing
+## 17A — Afterimage Experiment: What Your Eyes Keep Seeing
 
 This experiment shows that our eyes and brain do more than simply copy what is in front of us. After staring at one point for a while, we may keep seeing an **afterimage** even after the original picture disappears.
 
 **Try the timed version:** [Open the afterimage experiment](../../assets/week-2/afterimage-experiment.html)
 
-**Step 1 â€” Stare at the dot**
+**Step 1 — Stare at the dot**
 
 Look only at the **red dot on the nose** for about **15 seconds**. Try not to move your eyes around the face.
 
 ![Color-inverted portrait with a red fixation dot on the nose](../../assets/week-2/afterimage-negative-portrait.png)
 
 <details>
-<summary><strong>Step 2 â€” After 15 seconds, open the blank fixation screen</strong></summary>
+<summary><strong>Step 2 — After 15 seconds, open the blank fixation screen</strong></summary>
 
 Keep looking at the dot. For a few seconds, you may still see a more natural-looking face even though the screen no longer shows a face.
 
@@ -485,7 +485,7 @@ Keep looking at the dot. For a few seconds, you may still see a more natural-loo
 
 ---
 
-## 18 â€” Perspective Changes How Big Things Look
+## 18 — Perspective Changes How Big Things Look
 
 Objects can look larger or smaller because of depth and perspective even when they are actually the same size.
 
@@ -499,19 +499,19 @@ The same idea matters in maps, charts, and dashboards: context can change how la
 
 ![Lotus, Illinois railroad tracks](https://commons.wikimedia.org/wiki/Special:Redirect/file/Lotus_Illinois_railroad_tracks.jpg)
 
-[Source and attribution â€” Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Lotus_Illinois_railroad_tracks.jpg)
+[Source and attribution — Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Lotus_Illinois_railroad_tracks.jpg)
 
-**Forced-perspective Washington Monument photo â€” CC0 replacement**
+**Forced-perspective Washington Monument photo — CC0 replacement**
 
 ![Forced perspective at the Washington Monument](https://pd.w.org/2025/08/96968997de7b578b7.86567587.jpg)
 
-[Source â€” WordPress Photo Directory](https://wordpress.org/photos/photo/96968997de/)
+[Source — WordPress Photo Directory](https://wordpress.org/photos/photo/96968997de/)
 
 <!-- asset: perspective-lines | method: DRAW | status: ready -->
 <!-- external-media: lotus-illinois-railroad-tracks | type: image | usage: optional -->
 ---
 
-## 19 â€” Visual Noise Can Create False Patterns
+## 19 — Visual Noise Can Create False Patterns
 
 Too many repeated lines and grids can create distracting optical effects.
 
@@ -523,16 +523,16 @@ In charts, dark or crowded gridlines can make the data harder to see.
 
 ![A chart comparison showing intrusive gridlines versus muted supporting gridlines](../../assets/week-2/muted-gridlines.svg)
 
-**Open-source historical example â€” Hermann grid**
+**Open-source historical example — Hermann grid**
 
 ![Hermann grid illusion](https://commons.wikimedia.org/wiki/Special:Redirect/file/Hermann_grid_illusion.svg)
 
-[Source â€” Wikimedia Commons, CC0](https://commons.wikimedia.org/wiki/File:Hermann_grid_illusion.svg)
+[Source — Wikimedia Commons, CC0](https://commons.wikimedia.org/wiki/File:Hermann_grid_illusion.svg)
 
 <!-- assets: moire-grid, muted-gridlines | method: DRAW | status: ready -->
 ---
 
-## 20 â€” Gestalt: Our Brain Completes Shapes
+## 20 — Gestalt: Our Brain Completes Shapes
 
 People often see a complete shape even when part of it is missing.
 
@@ -542,16 +542,16 @@ In a visualization, people do not look at every mark separately; they naturally 
 
 ![Gestalt closure: the viewer perceives a complete form from incomplete visual elements](../../assets/week-2/gestalt-closure.svg)
 
-**Classic example â€” Kanizsa triangle**
+**Classic example — Kanizsa triangle**
 
 ![Kanizsa triangle](https://commons.wikimedia.org/wiki/Special:Redirect/file/Kanizsa_triangle.svg)
 
-[Source â€” Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kanizsa_triangle.svg)
+[Source — Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kanizsa_triangle.svg)
 
 <!-- asset: gestalt-closure | method: DRAW | status: ready -->
 ---
 
-## 21 â€” Gestalt: Things Close Together Look Grouped
+## 21 — Gestalt: Things Close Together Look Grouped
 
 Objects placed close together often look like they belong to the same group.
 
@@ -565,7 +565,7 @@ Color, spacing, and position can create groups even when we do not draw a box ar
 
 ---
 
-## 22 â€” Week 2 Takeaways
+## 22 — Week 2 Takeaways
 
 1. Visualization is part of analysis, not just decoration.
 2. Summary numbers alone can hide important patterns.
