@@ -176,7 +176,7 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
 
 .slide-visual-full img, .slide-visual-full svg {
   max-width: 100%;
-  max-height: 480px;
+  max-height: 540px;
   width: auto;
   height: auto;
   border-radius: 6px;
@@ -313,50 +313,95 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
   color: #ffffff;
 }
 
-/* Fullscreen mode */
-:fullscreen .deck-container,
-:-webkit-full-screen .deck-container {
+/* ─── Fullscreen Mode ─────────────────────────────────────────────────────
+   #lectureDeck / .deck-container IS the fullscreen root — target it
+   directly with :fullscreen on the element itself, not as a descendant.
+   ──────────────────────────────────────────────────────────────────────── */
+
+.deck-container:fullscreen,
+.deck-container:-webkit-full-screen {
   max-width: 100vw;
+  width: 100vw;
   height: 100vh;
   margin: 0;
+  box-sizing: border-box;
+  background: #111827;
   display: flex;
   flex-direction: column;
 }
 
-:fullscreen .deck-stage,
-:-webkit-full-screen .deck-stage {
+/* Stage fills all remaining height after the nav bar */
+.deck-container:fullscreen .deck-stage,
+.deck-container:-webkit-full-screen .deck-stage {
   flex: 1;
+  min-height: 0;          /* allow flex child to shrink past its content */
   border-radius: 0;
-  overflow-y: auto;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  background: #ffffff;
 }
 
-:fullscreen .slide.active,
-:-webkit-full-screen .slide.active {
+/* Active slide is a full flex column that centres its content */
+.deck-container:fullscreen .slide.active,
+.deck-container:-webkit-full-screen .slide.active {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1.5rem 3rem;
+  overflow-y: auto;
+  padding: 1.5rem clamp(1.5rem, 4vw, 4rem);
+  box-sizing: border-box;
 }
 
-:fullscreen .slide-visual-full img,
-:fullscreen .slide-visual-full svg,
-:-webkit-full-screen .slide-visual-full img,
-:-webkit-full-screen .slide-visual-full svg {
-  max-height: 74vh;
+/* Visual-heavy slides: let the box grow and centre the image */
+.deck-container:fullscreen .slide-visual-full,
+.deck-container:-webkit-full-screen .slide-visual-full {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-:fullscreen .activity-container-full,
-:-webkit-full-screen .activity-container-full {
-  height: 75vh;
+.deck-container:fullscreen .slide-visual-full img,
+.deck-container:fullscreen .slide-visual-full svg,
+.deck-container:-webkit-full-screen .slide-visual-full img,
+.deck-container:-webkit-full-screen .slide-visual-full svg {
+  max-width: 100%;
+  /* reserve ~9rem for nav bar + caption below the image */
+  max-height: calc(100vh - 9rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
-:fullscreen .video-container-large,
-:-webkit-full-screen .video-container-large {
-  max-width: 80vw;
-  padding-bottom: 45vw;
+/* Video slides: proper 16:9 box — avoids the fragile padding-bottom hack */
+.deck-container:fullscreen .video-container-large,
+.deck-container:-webkit-full-screen .video-container-large {
+  max-width: none;
+  /* Fit the largest 16:9 box that is ≤ 88 vw wide AND ≤ available height */
+  width: min(88vw, calc((100vh - 9rem) * 16 / 9));
+  height: min(49.5vw, calc(100vh - 9rem));
+  padding-bottom: 0;    /* override the normal-mode padding-bottom trick */
+  position: relative;
+}
+
+.deck-container:fullscreen .video-container-large iframe,
+.deck-container:-webkit-full-screen .video-container-large iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Interactive iframes: use nearly all available vertical space */
+.deck-container:fullscreen .activity-container-full,
+.deck-container:-webkit-full-screen .activity-container-full {
+  width: 100%;
+  height: calc(100vh - 9rem);
 }
 
 @media (max-width: 860px) {
@@ -365,6 +410,7 @@ title: "Module 2: Introduction to Data Visualization - IA 342"
   .slide-visual-full img, .slide-visual-full svg { max-height: 340px; }
   .activity-container-full { height: 420px; }
 }
+
 </style>
 
 <div class="deck-container" id="lectureDeck">
