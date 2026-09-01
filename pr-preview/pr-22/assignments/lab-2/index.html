@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Lab 2: ArcGIS Business Analyst I — Data, Sites, and Reports - IA 342 | IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Lab 2: ArcGIS Business Analyst I — Data, Sites, and Reports - IA 342" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<meta property="og:description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<link rel="canonical" href="https://jmu-data.github.io/IA342/pr-preview/pr-22/assignments/lab-2/" />
+<meta property="og:url" content="https://jmu-data.github.io/IA342/pr-preview/pr-22/assignments/lab-2/" />
+<meta property="og:site_name" content="IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Lab 2: ArcGIS Business Analyst I — Data, Sites, and Reports - IA 342" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Lab 2: ArcGIS Business Analyst I — Data, Sites, and Reports - IA 342","url":"https://jmu-data.github.io/IA342/pr-preview/pr-22/assignments/lab-2/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-22/assets/css/style.css?v=be52abbcccba5630e73430050478d8dd0836e0af">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/IA342/pr-preview/pr-22/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://jmu-data.github.io/IA342/pr-preview/pr-22/">IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</a></h1>
+      
+
+      <h1 id="lab-2--arcgis-business-analyst-i">Lab 2 — ArcGIS Business Analyst I</h1>
+
+<h2 id="data-sites-and-reports">Data, Sites, and Reports</h2>
+
+<p>This is the first of three connected ArcGIS Business Analyst labs.</p>
+
+<ul>
+  <li><strong>Week 2:</strong> prepare data and create a report,</li>
+  <li><strong>Week 3:</strong> create maps and a StoryMap, and</li>
+  <li><strong>Week 4:</strong> run spatial analysis and build a dashboard.</li>
+</ul>
+
+<p>You will use the <strong>same Business Analyst project</strong> for all three labs.</p>
+
+<h2 id="final-product">Final product</h2>
+
+<p>Submit <strong>one PDF report</strong>.</p>
+
+<h2 id="learning-goals">Learning goals</h2>
+
+<p>By the end of this lab, you should be able to:</p>
+
+<ul>
+  <li>create a Business Analyst project,</li>
+  <li>define a JMU site with drive-time areas,</li>
+  <li>run a standard report,</li>
+  <li>download and geocode outside data,</li>
+  <li>set up custom data,</li>
+  <li>build a reusable custom report template,</li>
+  <li>add a chart using Business Analyst variables, and</li>
+  <li>run the template for JMU and export the final PDF.</li>
+</ul>
+
+<h2 id="data">Data</h2>
+
+<p>You will use:</p>
+
+<ol>
+  <li>built-in U.S. data in ArcGIS Business Analyst, and</li>
+  <li>the <strong>latest downloadable Gun Violence Archive (GVA) incident records</strong>.</li>
+</ol>
+
+<p>For this lab, use the archive download as provided by GVA. The current download is limited to the <strong>latest 2,000 records</strong>.</p>
+
+<p>Do <strong>not</strong> filter the file to a specific year.</p>
+
+<p>Data source:</p>
+
+<p><a href="https://www.gunviolencearchive.org/">Gun Violence Archive</a></p>
+
+<p>Navigation used in class:</p>
+
+<p><strong>All Reports → Archive → Download</strong></p>
+
+<p>The downloaded file includes location information that Business Analyst can geocode and fields such as:</p>
+
+<ul>
+  <li><strong>Victims Killed</strong></li>
+  <li><strong>Victims Injured</strong></li>
+</ul>
+
+<h2 id="before-you-begin">Before you begin</h2>
+
+<ul>
+  <li>Sign in with the ArcGIS account provided for this course.</li>
+  <li>Watch the credit estimate before you run a credit-consuming tool.</li>
+  <li>Do not repeat a geocoding step unless you have a reason.</li>
+  <li>Use the naming rules exactly so your work is easy to find and grade.</li>
+</ul>
+
+<hr />
+
+<h1 id="session-1--create-the-project-jmu-site-and-standard-report">Session 1 — Create the Project, JMU Site, and Standard Report</h1>
+
+<h2 id="step-1--create-the-project">Step 1 — Create the project</h2>
+
+<ol>
+  <li>Open <strong>ArcGIS Business Analyst Web App</strong>.</li>
+  <li>Create a new project named:</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">firstname_lastname_arcgis</code></p>
+
+<ol>
+  <li>Open the <strong>Maps</strong> tab.</li>
+</ol>
+
+<p>You will reuse this project in Weeks 3 and 4.</p>
+
+<p><img src="/IA342/pr-preview/pr-22/assets/week-2/screenshots/01-create-project.png" alt="Create a new ArcGIS Business Analyst project" /></p>
+
+<h2 id="step-2--create-the-jmu-site">Step 2 — Create the JMU site</h2>
+
+<ol>
+  <li>Choose <strong>Define areas → Find location</strong>.</li>
+  <li>Search for:</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">James Madison University, Harrisonburg, VA</code></p>
+
+<ol>
+  <li>Use the drive-time option shown in class.</li>
+  <li>Keep the three drive-time areas created for the JMU site:</li>
+</ol>
+
+<ul>
+  <li><strong>5 minutes</strong></li>
+  <li><strong>10 minutes</strong></li>
+  <li><strong>15 minutes</strong></li>
+</ul>
+
+<p>Do not replace them with a single 10-minute area.</p>
+
+<p>Save the site as <strong>JMU</strong> or keep the default <strong>James Madison University</strong> site name.</p>
+
+<p>These three drive-time areas will be used together when you run the reports.</p>
+
+<p><img src="/IA342/pr-preview/pr-22/assets/week-2/screenshots/02-jmu-drive-time-site.png" alt="Create the JMU site with 5-, 10-, and 15-minute drive-time areas" /></p>
+
+<h2 id="step-3--run-the-community-profile-report">Step 3 — Run the Community Profile report</h2>
+
+<ol>
+  <li>Open the <strong>Reports</strong> tab.</li>
+  <li>Choose <strong>Run reports</strong>.</li>
+  <li>Add the JMU site.</li>
+  <li>Choose <strong>Community Profile</strong>.</li>
+  <li>Confirm that the selected site includes the <strong>5-, 10-, and 15-minute</strong> drive-time areas.</li>
+  <li>Check the credit estimate.</li>
+  <li>Run the report and open the PDF.</li>
+</ol>
+
+<p>The report should show the three drive-time areas as separate columns.</p>
+
+<p>This first report is for practice. You do <strong>not</strong> submit it.</p>
+
+<p><img src="/IA342/pr-preview/pr-22/assets/week-2/screenshots/03-community-profile-report.png" alt="Select Community Profile for the JMU site" /></p>
+
+<hr />
+
+<h1 id="session-2--import-gva-data-and-build-a-custom-report">Session 2 — Import GVA Data and Build a Custom Report</h1>
+
+<h2 id="step-4--download-the-gva-archive-data">Step 4 — Download the GVA archive data</h2>
+
+<ol>
+  <li>Open the <strong>Gun Violence Archive</strong> website.</li>
+  <li>Go to:</li>
+</ol>
+
+<p><strong>All Reports → Archive</strong></p>
+
+<ol>
+  <li>Download the available archive file.</li>
+  <li>Use the file as downloaded.</li>
+</ol>
+
+<p>The current archive download is limited to the <strong>latest 2,000 records</strong>.</p>
+
+<p>Do not try to filter the file to 2025 or another specific year for this lab.</p>
+
+<p>Before importing, identify the columns that contain:</p>
+
+<ul>
+  <li>location information,</li>
+  <li><strong>Victims Killed</strong>, and</li>
+  <li><strong>Victims Injured</strong>.</li>
+</ul>
+
+<h2 id="step-5--import-and-geocode-the-records">Step 5 — Import and geocode the records</h2>
+
+<ol>
+  <li>Return to <strong>ArcGIS Business Analyst</strong>.</li>
+  <li>Choose <strong>Maps → Add data → Import file</strong>.</li>
+  <li>Upload the GVA archive file.</li>
+  <li>Choose <strong>Point locations</strong>.</li>
+  <li>Match the location fields to the correct ArcGIS fields.</li>
+  <li>Review the estimated credit cost before continuing.</li>
+  <li>Run the location matching/geocoding.</li>
+  <li>Use a simple point symbol.</li>
+  <li>Save the imported layer as:</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">lastname_gva</code></p>
+
+<p><img src="/IA342/pr-preview/pr-22/assets/week-2/screenshots/04-geocoding-field-match.png" alt="Match the GVA location fields and review the credit estimate" /></p>
+
+<h2 id="step-6--check-the-geocoded-map">Step 6 — Check the geocoded map</h2>
+
+<p>After the import is complete:</p>
+
+<ol>
+  <li>Zoom out and confirm that the records are distributed across reasonable U.S. locations.</li>
+  <li>Zoom back to <strong>Harrisonburg / JMU</strong>.</li>
+  <li>Look at the GVA points inside or near the JMU drive-time areas.</li>
+</ol>
+
+<p>No written response is required for this step. The goal is simply to confirm that the geocoding worked and to see what the downloaded data contain around JMU.</p>
+
+<p><img src="/IA342/pr-preview/pr-22/assets/week-2/screenshots/05-geocoded-gva-map.png" alt="Review the geocoded GVA point layer" /></p>
+
+<h2 id="step-7--set-up-gva-as-custom-data">Step 7 — Set up GVA as custom data</h2>
+
+<ol>
+  <li>Choose <strong>Maps → Add data → Custom data setup</strong>.</li>
+  <li>Select the imported <code class="language-plaintext highlighter-rouge">lastname_gva</code> layer.</li>
+  <li>Create a custom category for the GVA data.</li>
+  <li>Add these two fields:</li>
+</ol>
+
+<ul>
+  <li><strong>Victims Killed</strong></li>
+  <li><strong>Victims Injured</strong></li>
+</ul>
+
+<ol>
+  <li>Confirm that both are numeric variables.</li>
+  <li>Use an appropriate summary method such as <strong>Sum</strong> for these count fields.</li>
+  <li>Finish and save the custom data setup.</li>
+</ol>
+
+<p><img src="/IA342/pr-preview/pr-22/assets/week-2/screenshots/06-custom-data-select-layer.png" alt="Select the imported GVA layer for Custom Data Setup" /></p>
+
+<p><img src="/IA342/pr-preview/pr-22/assets/week-2/screenshots/07-custom-data-variables.png" alt="Add Victims Killed and Victims Injured as custom variables" /></p>
+
+<h2 id="step-8--build-a-reusable-custom-report-template">Step 8 — Build a reusable custom report template</h2>
+
+<p>A report template is <strong>not tied to JMU</strong>. Once you save the template, it can be run for other sites.</p>
+
+<p>For this lab, you will build the template first and then run it for the JMU site.</p>
+
+<ol>
+  <li>Open <strong>Reports → Build reports</strong>.</li>
+  <li>Start with a <strong>blank report template</strong>.</li>
+  <li>Find your custom GVA category.</li>
+  <li>Add:</li>
+</ol>
+
+<ul>
+  <li><strong>Victims Killed</strong></li>
+  <li><strong>Victims Injured</strong></li>
+</ul>
+
+<ol>
+  <li>Add these variables to the report.</li>
+</ol>
+
+<p><img src="/IA342/pr-preview/pr-22/assets/week-2/screenshots/08-report-template-variables.png" alt="Add the GVA variables to a blank report template" /></p>
+
+<h2 id="step-9--add-a-chart-to-the-template">Step 9 — Add a chart to the template</h2>
+
+<ol>
+  <li>Insert a <strong>Chart</strong> section.</li>
+  <li>Search the standard Business Analyst variables.</li>
+  <li>Add <strong>at least two crime index variables</strong> to the chart.</li>
+</ol>
+
+<p>Recommended example:</p>
+
+<ul>
+  <li><strong>Total Crime Index</strong></li>
+  <li><strong>Personal Crime Index</strong></li>
+  <li><strong>Property Crime Index</strong></li>
+</ul>
+
+<p>Using all three is recommended, but <strong>at least two indexes are required</strong>.</p>
+
+<ol>
+  <li>Use a simple vertical bar chart.</li>
+  <li>Preview the chart and make sure the variables are readable.</li>
+</ol>
+
+<p><img src="/IA342/pr-preview/pr-22/assets/week-2/screenshots/09-crime-index-chart.png" alt="Add crime index variables to a vertical bar chart" /></p>
+
+<h2 id="step-10--save-the-report-template">Step 10 — Save the report template</h2>
+
+<p>After the variables and chart are complete:</p>
+
+<ol>
+  <li>Save the report template.</li>
+  <li>Enter a clear template name, such as:</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">lastname_firstname_lab2_gva</code></p>
+
+<ol>
+  <li>Save the template.</li>
+</ol>
+
+<p>The template name is entered at the <strong>end</strong> of the template-building process.</p>
+
+<p><img src="/IA342/pr-preview/pr-22/assets/week-2/screenshots/10-save-report-template.png" alt="Save the reusable report template" /></p>
+
+<h2 id="step-11--run-the-custom-report-for-jmu">Step 11 — Run the custom report for JMU</h2>
+
+<ol>
+  <li>Return to <strong>Reports → Run reports</strong>.</li>
+  <li>Select your custom report template.</li>
+  <li>Add the <strong>James Madison University</strong> site.</li>
+  <li>Make sure the site still includes all three drive-time areas:</li>
+</ol>
+
+<ul>
+  <li>5 minutes</li>
+  <li>10 minutes</li>
+  <li>15 minutes</li>
+</ul>
+
+<ol>
+  <li>Run the report as a PDF.</li>
+</ol>
+
+<p>Because the JMU site has three drive-time areas, the custom report should contain results for all three areas.</p>
+
+<p><img src="/IA342/pr-preview/pr-22/assets/week-2/screenshots/11-run-custom-report.png" alt="Run the saved custom report template for the JMU site" /></p>
+
+<h2 id="step-12--export-the-final-pdf">Step 12 — Export the final PDF</h2>
+
+<p>Save the final report as:</p>
+
+<p><code class="language-plaintext highlighter-rouge">lastname_firstname_lab2_report.pdf</code></p>
+
+<p>Your PDF should include:</p>
+
+<ul>
+  <li>the JMU site,</li>
+  <li><strong>5-, 10-, and 15-minute drive-time results</strong>,</li>
+  <li><strong>Victims Killed</strong>,</li>
+  <li><strong>Victims Injured</strong>, and</li>
+  <li>a chart with <strong>at least two crime index variables</strong>.</li>
+</ul>
+
+<p>The chart should appear for the drive-time areas generated by the report template.</p>
+
+<hr />
+
+<h1 id="submission">Submission</h1>
+
+<p>Submit <strong>one PDF file</strong> to Canvas:</p>
+
+<p><code class="language-plaintext highlighter-rouge">lastname_firstname_lab2_report.pdf</code></p>
+
+<p>Do not submit screenshots, the standard Community Profile PDF, or a Business Analyst project URL.</p>
+
+<hr />
+
+<h1 id="grading-rubric--100-points">Grading rubric — 100 points</h1>
+
+<p>Submit one readable PDF. If the submitted file cannot be opened or is not a PDF, it is not a valid submission and the rubric cannot be applied until a valid file is submitted.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Requirement</th>
+      <th style="text-align: right">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>JMU study area:</strong> the report is run for James Madison University and includes the <strong>5-, 10-, and 15-minute drive-time areas</strong></td>
+      <td style="text-align: right">20</td>
+    </tr>
+    <tr>
+      <td><strong>Custom GVA results:</strong> <strong>Victims Killed</strong> and <strong>Victims Injured</strong> are included for the JMU drive-time areas</td>
+      <td style="text-align: right">40</td>
+    </tr>
+    <tr>
+      <td><strong>Crime index charts:</strong> a readable chart with <strong>at least two crime index variables</strong> is included for the JMU drive-time areas</td>
+      <td style="text-align: right">40</td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td style="text-align: right"><strong>100</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Partial credit within each category is based on how much of the required content is present and correct.</p>
+
+<h2 id="official-references">Official references</h2>
+
+<ul>
+  <li><a href="https://www.gunviolencearchive.org/">Gun Violence Archive</a></li>
+  <li><a href="https://doc.arcgis.com/en/business-analyst/web/custom-data-setup.htm">Set up custom data in Business Analyst</a></li>
+  <li>
+    <h2 id="build-a-report-template"><a href="https://doc.arcgis.com/en/business-analyst/web/building-reports.htm">Build a report template</a></h2>
+    <p><a href="../../modules/module-2/">Return to Module 2</a> | <a href="../../">Return to Course Home</a></p>
+  </li>
+</ul>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
