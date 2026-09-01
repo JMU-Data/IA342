@@ -91,3 +91,14 @@ Because the Owner operates across multiple devices (personal and school computer
   7. Bootstrap using ONLY tracked configuration/lock files.
   8. Request only the absolute minimum Owner-side machine-local auth/setup when credentials are missing.
 - **Independence**: Keep IA342 self-contained. Do not depend on a local IA340 or jmu-teaching-coding checkout. If cross-repository context is needed, query the reviewed/merged remote state rather than local machine directories. Do not use unversioned status tracking files.
+
+## 6. Canvas Rubric & Lab Authoring Convention
+All weekly labs and assignments in this course adhere to the standardized ratings rubric convention:
+- **Scoring Mode**: Always use `"scoring": "ratings"` in Canvas Content Profiles (`canvas/module-*.json`).
+- **Binary Rating Tiers**: Each criterion must define exactly two rating levels:
+  - `PASS`: Full maximum points for that criterion (`points`).
+  - `MISSING`: `0.0` points.
+- **No Fixed `PARTIAL` Tier**: Intermediate `PARTIAL` ratings are intentionally excluded from pre-defined rubric buttons to keep SpeedGrader UX clean and predictable.
+- **Manual Partial Credit**: Partial credit remains fully supported in Canvas SpeedGrader via manual criterion point entry when needed.
+- **Automation Invariant**: Verification automation only inspects student submissions and leaves instructional feedback comments. Automation NEVER writes grades or rubric rating assessments.
+
