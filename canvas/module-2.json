@@ -28,25 +28,58 @@
       "title": "Lab 2 — ArcGIS Business Analyst I",
       "assignment": "lab-2",
       "use_for_grading": true,
-      "scoring": "free_form",
+      "scoring": "ratings",
       "criteria": [
         {
           "key": "study-area",
           "description": "JMU study area",
           "points": 20.0,
-          "ratings": []
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         },
         {
           "key": "gva-results",
           "description": "Custom GVA results",
           "points": 40.0,
-          "ratings": []
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 40.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         },
         {
           "key": "crime-chart",
           "description": "Crime Index chart",
           "points": 40.0,
-          "ratings": []
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 40.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         }
       ]
     }
