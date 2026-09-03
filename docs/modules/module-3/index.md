@@ -1,0 +1,1148 @@
+---
+layout: default
+title: "Module 3: Map Design & Spatial Intelligence - IA 342"
+---
+
+<style>
+/* Presentation Slide Deck Styles */
+.deck-container {
+  max-width: 1180px;
+  margin: 1rem auto 2.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #1f2328;
+}
+
+.deck-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1f2328;
+  color: #f0f6fc;
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  user-select: none;
+}
+
+.deck-title-tag {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.deck-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.deck-btn {
+  background: #32383f;
+  color: #f0f6fc;
+  border: 1px solid #444c56;
+  border-radius: 6px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.deck-btn:hover:not(:disabled) {
+  background: #0969da;
+  border-color: #0969da;
+  color: #ffffff;
+}
+
+.deck-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.deck-progress-track {
+  width: 100%;
+  height: 4px;
+  background: #2d333b;
+}
+
+.deck-progress-fill {
+  height: 100%;
+  background: #2da44e;
+  width: 2%;
+  transition: width 0.25s ease;
+}
+
+.deck-stage {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  min-height: 560px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  padding: 2.2rem 2.8rem;
+  box-sizing: border-box;
+  animation: slideFadeIn 0.2s ease-out;
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes slideFadeIn {
+  from { opacity: 0.2; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-badge {
+  display: inline-block;
+  background: #ddf4ff;
+  color: #0969da;
+  border: 1px solid rgba(84, 174, 255, 0.4);
+  padding: 0.22rem 0.7rem;
+  border-radius: 2em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.slide h2 {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: #1f2328;
+  font-size: 1.65rem;
+  border-bottom: 2px solid #eaeef2;
+  padding-bottom: 0.45rem;
+}
+
+/* Layout Variations */
+.slide-center-box {
+  max-width: 860px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.slide-main-title {
+  font-size: 2.6rem;
+  margin: 0.5rem 0 0.8rem;
+  color: #0969da;
+}
+
+.slide-subtitle {
+  font-size: 1.3rem;
+  color: #57606a;
+  margin: 0 auto 1.8rem;
+}
+
+.slide-card-lead {
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 1.6rem 2rem;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 1.12rem;
+  line-height: 1.7;
+}
+
+.slide-text-large {
+  max-width: 940px;
+  margin: 1rem auto;
+  font-size: 1.18rem;
+  line-height: 1.75;
+  color: #24292f;
+}
+
+.slide-visual-full {
+  text-align: center;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  margin: 0 auto;
+}
+
+.slide-visual-full img, .slide-visual-full svg {
+  max-width: 100%;
+  max-height: 540px;
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+.caption-text {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #57606a;
+  margin-top: 0.8rem;
+}
+
+.video-container-large {
+  position: relative;
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  padding-bottom: 52.8%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid #d0d7de;
+  background: #000;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.video-container-large iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.media-caption {
+  text-align: center;
+  margin-top: 0.6rem;
+  font-size: 0.92rem;
+  color: #57606a;
+}
+
+.activity-container-full {
+  width: 100%;
+  height: 480px;
+  border: 1px solid #d0d7de;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  background: #f8fafc;
+  margin: 0 auto;
+}
+
+.activity-container-full iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.slide-media-box {
+  text-align: center;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  padding: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.slide-media-box img, .slide-media-box svg {
+  max-width: 100%;
+  max-height: 400px;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+}
+
+.alert-takeaway {
+  background: #dafbe1;
+  border-left: 4px solid #1a7f37;
+  padding: 1rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.05rem;
+  color: #1a7f37;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.alert-teaching-point {
+  background: #ddf4ff;
+  border-left: 4px solid #0969da;
+  padding: 1rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.05rem;
+  color: #0969da;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+.deck-btn-primary {
+  background: #0969da;
+  color: #ffffff;
+  border: 1px solid #0969da;
+  border-radius: 8px;
+  padding: 0.75rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.deck-btn-primary:hover {
+  background: #0858b9;
+}
+
+.deck-btn-lab {
+  background: #1a7f37;
+  color: #ffffff;
+  border: 1px solid #1a7f37;
+  border-radius: 8px;
+  padding: 0.75rem 1.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s ease;
+}
+
+.deck-btn-lab:hover {
+  background: #14622b;
+  color: #ffffff;
+}
+
+/* ─── Fullscreen Mode ─────────────────────────────────────────────────────
+   #lectureDeck / .deck-container IS the fullscreen root — target it
+   directly with :fullscreen on the element itself, not as a descendant.
+   ──────────────────────────────────────────────────────────────────────── */
+
+.deck-container:fullscreen,
+.deck-container:-webkit-full-screen {
+  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  box-sizing: border-box;
+  background: #111827;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stage fills all remaining height after the nav bar */
+.deck-container:fullscreen .deck-stage,
+.deck-container:-webkit-full-screen .deck-stage {
+  flex: 1;
+  min-height: 0;          /* allow flex child to shrink past its content */
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+/* Active slide is a full flex column that centres its content */
+.deck-container:fullscreen .slide.active,
+.deck-container:-webkit-full-screen .slide.active {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 1.5rem clamp(1.5rem, 4vw, 4rem);
+  box-sizing: border-box;
+}
+
+/* Visual-heavy slides: let the box grow and centre the image */
+.deck-container:fullscreen .slide-visual-full,
+.deck-container:-webkit-full-screen .slide-visual-full {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.deck-container:fullscreen .slide-visual-full img,
+.deck-container:fullscreen .slide-visual-full svg,
+.deck-container:-webkit-full-screen .slide-visual-full img,
+.deck-container:-webkit-full-screen .slide-visual-full svg {
+  max-width: 100%;
+  /* reserve ~9rem for nav bar + caption below the image */
+  max-height: calc(100vh - 9rem);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Video slides: proper 16:9 box — avoids the fragile padding-bottom hack */
+.deck-container:fullscreen .video-container-large,
+.deck-container:-webkit-full-screen .video-container-large {
+  max-width: none;
+  /* Fit the largest 16:9 box that is ≤ 88 vw wide AND ≤ available height */
+  width: min(88vw, calc((100vh - 9rem) * 16 / 9));
+  height: min(49.5vw, calc(100vh - 9rem));
+  padding-bottom: 0;    /* override the normal-mode padding-bottom trick */
+  position: relative;
+}
+
+.deck-container:fullscreen .video-container-large iframe,
+.deck-container:-webkit-full-screen .video-container-large iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Interactive iframes: use nearly all available vertical space */
+.deck-container:fullscreen .activity-container-full,
+.deck-container:-webkit-full-screen .activity-container-full {
+  width: 100%;
+  height: calc(100vh - 9rem);
+}
+
+@media (max-width: 860px) {
+  .deck-stage { min-height: 480px; }
+  .slide { padding: 1.5rem 1.2rem; }
+  .slide-visual-full img, .slide-visual-full svg { max-height: 340px; }
+  .activity-container-full { height: 420px; }
+}
+
+</style>
+
+<div class="deck-container" id="lectureDeck">
+  <div class="deck-nav-bar">
+    <div class="deck-title-tag">
+      <span>🗺️ IA 342 Week 3 Lecture</span>
+      <span style="opacity: 0.4;">|</span>
+      <span id="slideCounter">Slide 1 of 48</span>
+    </div>
+    <div class="deck-controls">
+      <button class="deck-btn" id="prevBtn" onclick="changeSlide(-1)" title="Previous (← / PageUp)">◀ Prev</button>
+      <button class="deck-btn" id="nextBtn" onclick="changeSlide(1)" title="Next (→ / Space / PageDown)">Next ▶</button>
+      <button class="deck-btn" onclick="toggleFullScreen()" title="Fullscreen Mode">⛶ Fullscreen</button>
+    </div>
+  </div>
+  <div class="deck-progress-track">
+    <div class="deck-progress-fill" id="progressBar"></div>
+  </div>
+
+  <div class="deck-stage">
+
+    <!-- SLIDE 1: Title Screen -->
+    <div class="slide active" data-slide="1">
+      <div class="slide-center-box">
+        <span class="slide-badge">Lecture 3 · Fall 2026</span>
+        <h1 class="slide-main-title">Map Design & Spatial Intelligence</h1>
+        <p class="slide-subtitle">Connecting Evidence, Coordinate Systems, Classification, and Thematic Map Encodings</p>
+        <div class="slide-card-lead">
+          <p><strong>IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</strong></p>
+          <p>This lecture explains how maps represent the world, how coordinate systems place data, how color and classification change what people see, and how different thematic map types answer different analytical questions.</p>
+          <div style="margin-top: 1.5rem; text-align: center;">
+            <button class="deck-btn-primary" onclick="changeSlide(1)">Start Lecture ▶</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 2: 01 — Why Maps? -->
+    <div class="slide" data-slide="2">
+      <span class="slide-badge">Spatial Framing</span>
+      <h2>01 — Why Maps?</h2>
+      <div class="slide-text-large">
+        <blockquote style="font-size: 1.35rem; font-style: italic; border-left: 4px solid #0969da; padding-left: 1.2rem; color: #0969da; margin: 1.5rem 0;">
+          "If a picture is worth a thousand words, a map is worth a thousand cells."
+        </blockquote>
+        <p>Location connects disparate records that originated from different tables, agencies, databases, or physical sensors. A map reveals spatial clusters, gaps, corridors, boundaries, and proximity relationships that are invisible in tabular rows.</p>
+        <p>In spatial intelligence analysis, we organize and examine data across hierarchical geographic scales: country, state, county, census tract, block group, street segment, or precise coordinates.</p>
+        <div class="caption-text" style="text-align: left; margin-top: 1.5rem;">
+          <em>Source concept: Instructor Lecture 5, slides 2–4.</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 3: 02 — Short Video: 42 Amazing Maps -->
+    <div class="slide" data-slide="3">
+      <span class="slide-badge">Video Perspective</span>
+      <h2>02 — Short Video: 42 Amazing Maps</h2>
+      <div class="video-container-large">
+        <iframe src="https://www.youtube-nocookie.com/embed/dldHalRY-hY" title="42 Amazing Maps video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="media-caption">
+        <strong>Analytical Focus:</strong> What specific question is each map answering, and what visual encoding choice makes that answer intuitive? (<a href="https://www.youtube.com/watch?v=dldHalRY-hY" target="_blank" rel="noopener">Open on YouTube</a>)
+      </div>
+    </div>
+
+    <!-- SLIDE 4: 03 — Maps Represent Cultural and Physical Environments -->
+    <div class="slide" data-slide="4">
+      <span class="slide-badge">Cartographic Definition</span>
+      <h2>03 — Maps Represent Cultural and Physical Environments</h2>
+      <div class="slide-text-large">
+        <p>A map is a graphic representation of selected parts of the cultural or physical environment.</p>
+        <ul style="font-size: 1.15rem; line-height: 1.8; margin: 1.2rem 0;">
+          <li><strong>Physical features:</strong> terrain topography, hydrology, coastlines, and vegetative cover.</li>
+          <li><strong>Cultural features:</strong> transportation networks, political boundaries, critical infrastructure, and place names.</li>
+          <li><strong>Statistical patterns:</strong> demographic distribution, median income, health metrics, and crime incidence.</li>
+          <li><strong>Spatial relationships:</strong> accessibility, travel time, trade routes, and movement corridors.</li>
+        </ul>
+        <div class="alert-teaching-point">
+          A map is uniquely powerful because it binds <strong>where</strong> (spatial position) directly with <strong>what</strong> (substantive attribute data).
+        </div>
+        <div class="caption-text" style="text-align: left; margin-top: 1rem;">
+          <em>Source concept: Torguson, Cartography: Thematic Map Design, cited in Lecture 5.</em>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 5: 04 — Map Design Changes What the Reader Notices -->
+    <div class="slide" data-slide="5">
+      <span class="slide-badge">Analytical Mindset</span>
+      <h2>04 — Map Design Changes What the Reader Notices</h2>
+      <div class="slide-text-large">
+        <p>A map can use <strong>completely accurate, verified data</strong> and still lead readers to vastly different analytical conclusions based purely on design choices.</p>
+        <p>The cartographer or analyst controls critical design levers:</p>
+        <ul style="line-height: 1.7;">
+          <li><strong>Geographic extent & bounding box:</strong> What is framed versus what is excluded.</li>
+          <li><strong>Level of aggregation:</strong> State, county, tract, or block-group resolution.</li>
+          <li><strong>Classification methodology:</strong> Natural breaks, quantiles, equal intervals, or standard deviations.</li>
+          <li><strong>Symbology & visual variables:</strong> Color hue, lightness ramp, symbol area, and layer ordering.</li>
+        </ul>
+        <div class="alert-takeaway">
+          <strong>Key Principle:</strong> Two maps can use the exact same underlying numbers and direct attention to opposing patterns. As an intelligence analyst, you must evaluate both the data and the design choices.
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 6: 05 — The Earth, the Ellipsoid, and the Geoid -->
+    <div class="slide" data-slide="6">
+      <span class="slide-badge">Geodesy & Coordinates</span>
+      <h2>05 — The Earth, the Ellipsoid, and the Geoid</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 980px; margin: 0 auto; align-items: center;">
+        <div class="slide-media-box">
+          <img src="https://assets.science.nasa.gov/dynamicimage/assets/science/esd/climate/2023/12/ImageWall5_1920x1200-80.jpg?crop=faces%2Cfocalpoint&fit=clip&h=1200&w=1920" alt="NASA Blue Marble true-color composite of Earth" style="max-height: 340px;" />
+          <span class="media-caption"><strong>NASA Blue Marble:</strong> Composite of physical Earth observations.</span>
+        </div>
+        <div class="slide-media-box">
+          <img src="https://svs.gsfc.nasa.gov/vis/a000000/a005600/a005660/geoid.png" alt="NASA Scientific Visualization Studio geoid height variation" style="max-height: 340px;" />
+          <span class="media-caption"><strong>The Geoid:</strong> Exaggerated gravitational equipotential surface.</span>
+        </div>
+      </div>
+      <p class="caption-text">Coordinates require reference surfaces: the physical Earth (irregular), the reference ellipsoid (smooth mathematical model), and the geoid (gravitational equipotential sea-level model). <em>Sources: NASA Blue Marble & NASA SVS.</em></p>
+    </div>
+
+    <!-- SLIDE 7: 06 — Latitude and Longitude -->
+    <div class="slide" data-slide="7">
+      <span class="slide-badge">Coordinate Foundations</span>
+      <h2>06 — Latitude and Longitude</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/latitude-longitude-grid.svg" alt="Latitude and longitude global coordinate grid" />
+      </div>
+      <p class="caption-text">Latitude measures north-south angular distance from the Equator (parallels). Longitude measures east-west angular distance from the Prime Meridian (meridians). A coordinate establishes <strong>location</strong>, not intent or causality.</p>
+    </div>
+
+    <!-- SLIDE 8: 07 — Degrees, Minutes, Seconds, and Decimal Degrees -->
+    <div class="slide" data-slide="8">
+      <span class="slide-badge">Coordinate Formats</span>
+      <h2>07 — Degrees, Minutes, Seconds, and Decimal Degrees</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/dms-to-decimal.svg" alt="Conversion between degrees-minutes-seconds and decimal degrees" />
+      </div>
+      <p class="caption-text">Traditional notation uses degrees, minutes, and seconds (DMS). Modern GIS and data platforms rely on numeric <strong>decimal degrees (DD)</strong>. In the Western hemisphere, longitudes are expressed as negative values (e.g., -78.8698°).</p>
+    </div>
+
+    <!-- SLIDE 9: 08 — Geocoding Connects an Address to a Coordinate -->
+    <div class="slide" data-slide="9">
+      <span class="slide-badge">Spatial Data Engineering</span>
+      <h2>08 — Geocoding Connects an Address to a Coordinate</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/geocoding-flow.svg" alt="Geocoding workflow from address to candidate matching to visual verification" />
+      </div>
+      <div class="alert-teaching-point" style="max-width: 900px; margin: 0.8rem auto 0;">
+        Geocoders match text descriptions against reference locator databases. Always perform visual QA/QC: verify whether candidate coordinates land in logical, expected locations before conducting analysis.
+      </div>
+    </div>
+
+    <!-- SLIDE 10: 09 — Geographic and Projected Coordinate Systems -->
+    <div class="slide" data-slide="10">
+      <span class="slide-badge">Spatial Integrity</span>
+      <h2>09 — Geographic and Projected Coordinate Systems</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/gcs-vs-pcs.svg" alt="Comparison of Geographic Coordinate Systems and Projected Coordinate Systems" />
+      </div>
+      <p class="caption-text"><strong>GCS</strong> uses 3D angles (degrees) on an ellipsoid. <strong>PCS</strong> projects coordinates onto a 2D plane (meters or feet). Use GCS for storage/data exchange; use an appropriate PCS when measuring distance, area, or spatial proximity.</p>
+    </div>
+
+    <!-- SLIDE 11: 10 — From a Curved Earth to a Flat Map -->
+    <div class="slide" data-slide="11">
+      <span class="slide-badge">Map Projections</span>
+      <h2>10 — From a Curved Earth to a Flat Map</h2>
+      <div class="video-container-large">
+        <iframe src="https://www.youtube-nocookie.com/embed/PYBhzu3b40o" title="LB Social Map Projection Animation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="media-caption">
+        <strong>Projection Tradeoffs:</strong> Flattening a curved sphere onto a 2D plane mathematically requires compromise. Every projection distorts shape, area, distance, or direction. (<a href="https://www.youtube.com/watch?v=PYBhzu3b40o" target="_blank" rel="noopener">Open animation on YouTube</a>)
+      </div>
+    </div>
+
+    <!-- SLIDE 12: 11 — Zoom Changes Map Scale -->
+    <div class="slide" data-slide="12">
+      <span class="slide-badge">Map Scale</span>
+      <h2>11 — Zoom Changes Map Scale</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/map-scale-zoom.svg" alt="Map scale zoom showing inverse relationship between mapped area and feature detail" />
+      </div>
+      <p class="caption-text"><strong>Small Scale</strong> = Large area, generalized features, low detail. <strong>Large Scale</strong> = Small area, building/cadastral features, high detail. Remember: scale fraction 1/1,000,000 is small; 1/5,000 is large.</p>
+    </div>
+
+    <!-- SLIDE 13: 11b — Interactive Map Scale Explorer -->
+    <div class="slide" data-slide="13">
+      <span class="slide-badge">Interactive Exploration</span>
+      <h2>11b — Interactive Map Scale Explorer</h2>
+      <div class="activity-container-full">
+        <iframe src="../../assets/week-3/map-scale-interactive.html" title="Map Scale Interactive Tool"></iframe>
+      </div>
+      <div class="caption-text">
+        Interact with the scale slider to step through four extents: Regional Valley, County/City, Campus, and Building footprints. Notice how representative fractions and geometric details shift.
+      </div>
+    </div>
+
+    <!-- SLIDE 14: 12 — Three Ways to Express Scale -->
+    <div class="slide" data-slide="14">
+      <span class="slide-badge">Cartographic Elements</span>
+      <h2>12 — Three Ways to Express Scale</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/scale-expressions.svg" alt="Three expressions of map scale: word statement, representative fraction, and graphic bar" />
+      </div>
+      <div class="alert-teaching-point" style="max-width: 900px; margin: 0.8rem auto 0;">
+        A graphic scale bar remains accurate when maps are resized, zoomed, or projected on screens. Verbal statements and fixed fractions are only valid at their original printed dimension.
+      </div>
+    </div>
+
+    <!-- SLIDE 15: 13 — Correct Data Can Still Use a Poor Color Encoding -->
+    <div class="slide" data-slide="15">
+      <span class="slide-badge">Color & Semantics</span>
+      <h2>13 — Correct Data Can Still Use a Poor Color Encoding</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/real/unemployment-rainbow.png" alt="U.S. Bureau of Labor Statistics unemployment rates rendered with an arbitrary rainbow multi-hue palette" />
+      </div>
+      <p class="caption-text"><em>Question:</em> Does red, purple, or black represent the higher unemployment rate? Using arbitrary categorical hues to represent an ordered, continuous variable forces readers to decode an unnatural visual riddle. <em>Reference: BLS Dec 2008 / Jeffrey A. Shaffer critique.</em></p>
+    </div>
+
+    <!-- SLIDE 16: 14 — Match the Color Scheme to the Data and Task -->
+    <div class="slide" data-slide="16">
+      <span class="slide-badge">Visual Encodings</span>
+      <h2>14 — Match the Color Scheme to the Data and Task</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/color-schemes.svg" alt="Five core color schemes: Sequential, Diverging, Categorical, Highlight, and Alert" />
+      </div>
+      <p class="caption-text">Match the visual role of color to the mathematical structure of the data: Sequential for ordered quantities; Diverging for deviations from a baseline; Categorical for distinct qualitative groups.</p>
+    </div>
+
+    <!-- SLIDE 17: 15 — A Sequential Ramp Makes Order Visible -->
+    <div class="slide" data-slide="17">
+      <span class="slide-badge">Design Discipline</span>
+      <h2>15 — A Sequential Ramp Makes Order Visible</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/real/unemployment-sequential.png" alt="State unemployment rates mapped with an intuitive light-to-dark sequential blue ramp" />
+      </div>
+      <p class="caption-text">Using a single perceptual hue with an ordered lightness ramp establishes an immediate cognitive rule: <strong>lighter = lower rate; darker = higher rate</strong>. The spatial pattern of the 2008 recession becomes instantly apparent. <em>Source: BLS / Shaffer redesign.</em></p>
+    </div>
+
+    <!-- SLIDE 18: 16 — Grayscale Can Also Show Order -->
+    <div class="slide" data-slide="18">
+      <span class="slide-badge">Accessible Palette</span>
+      <h2>16 — Grayscale Can Also Show Order</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/real/unemployment-grayscale.png" alt="State unemployment rates rendered cleanly in grayscale" />
+      </div>
+      <p class="caption-text">Color hue is not mandatory for quantitative mapping. Lightness alone communicates order clearly, prints reliably in black and white, and prevents color-vision deficiency barriers. <em>Source: BLS / Shaffer redesign.</em></p>
+    </div>
+
+    <!-- SLIDE 19: 17 — Same Data, Three Color Choices -->
+    <div class="slide" data-slide="19">
+      <span class="slide-badge">Comparative Analysis</span>
+      <h2>17 — Same Data, Three Color Choices</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/real/unemployment-color-comparison.jpg" alt="Direct side-by-side comparison of rainbow, sequential, and grayscale palettes on the same BLS data" />
+      </div>
+      <p class="caption-text">The data rows and geographical boundaries are 100% identical. The difference in interpretation speed and perceptual accuracy is determined solely by cartographic color discipline.</p>
+    </div>
+
+    <!-- SLIDE 20: 18 — Different Class Breaks Can Create a False Comparison -->
+    <div class="slide" data-slide="20">
+      <span class="slide-badge">Cognitive Traps</span>
+      <h2>18 — Different Class Breaks Can Create a False Comparison</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/real/unemployment-comparison.png" alt="Comparison between Dec 2008 and Oct 2011 unemployment maps using different numeric class breaks" />
+      </div>
+      <p class="caption-text">Both maps look similar at a glance, but their underlying break values differ substantially. Matching colors do <strong>not</strong> signify matching values. <em>Analyst habit:</em> Always inspect the legend before comparing maps.</p>
+    </div>
+
+    <!-- SLIDE 21: 19 — Read the Legends Before You Compare the Maps -->
+    <div class="slide" data-slide="21">
+      <span class="slide-badge">Legend Integrity</span>
+      <h2>19 — Read the Legends Before You Compare the Maps</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/real/unemployment-legends.png" alt="Side-by-side legend comparison illustrating shifts in numeric threshold bins" />
+      </div>
+      <div class="alert-teaching-point" style="max-width: 900px; margin: 0.8rem auto 0;">
+        To make a legitimate temporal or cross-regional comparison, hold class breaks, classification rules, color ramps, and geographic units strictly constant across all views.
+      </div>
+    </div>
+
+    <!-- SLIDE 22: 20 — Why Classification Matters -->
+    <div class="slide" data-slide="22">
+      <span class="slide-badge">Data Classification</span>
+      <h2>20 — Why Classification Matters</h2>
+      <div class="slide-text-large">
+        <p>A choropleth or color-coded thematic map groups continuous numeric observations into a manageable number of discrete visual bins (typically 4 to 6 classes).</p>
+        <p><strong>Classification is the mathematical rule that sets those class boundaries.</strong></p>
+        <p>The raw data remains unchanged. The classification method determines which areas are visually grouped together and which regional disparities are highlighted.</p>
+        <div style="background: #f6f8fa; border: 1px solid #d0d7de; padding: 1rem 1.5rem; border-radius: 8px; font-family: monospace; font-size: 1.1rem; text-align: center; margin: 1.5rem 0;">
+          Sample series: 103, 109, 109, 115, 121, 123, 134, 171, 175, 178, 221, 246, 409, 450
+        </div>
+        <p class="caption-text"><em>Source dataset: Instructor Lecture 5 / Dr. Zachary Jared Bortolot.</em></p>
+      </div>
+    </div>
+
+    <!-- SLIDE 23: 21 — Equal Interval -->
+    <div class="slide" data-slide="23">
+      <span class="slide-badge">Classification Methods</span>
+      <h2>21 — Equal Interval</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/equal-interval.svg" alt="Equal interval classification diagram showing equal-width numeric bins" />
+      </div>
+      <p class="caption-text">Divides the range (max - min) into classes of equal numeric width. Ideal for continuous, evenly distributed phenomena (e.g., temperature). Skewed data produces crowded lower bins and empty high bins.</p>
+    </div>
+
+    <!-- SLIDE 24: 22 — Quantile -->
+    <div class="slide" data-slide="24">
+      <span class="slide-badge">Classification Methods</span>
+      <h2>22 — Quantile</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/quantile.svg" alt="Quantile classification diagram placing equal numbers of observations into each class" />
+      </div>
+      <p class="caption-text">Distributes an equal number of geographic features into each class bin. Excellent for ranking (e.g., top 20% vs. bottom 20%). Warning: can group vastly different values together or split nearly identical values across bins.</p>
+    </div>
+
+    <!-- SLIDE 25: 23 — Natural Breaks -->
+    <div class="slide" data-slide="25">
+      <span class="slide-badge">Classification Methods</span>
+      <h2>23 — Natural Breaks (Jenks)</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/natural-breaks.svg" alt="Jenks natural breaks classification finding natural clusters and variance gaps" />
+      </div>
+      <p class="caption-text">Identifies natural cluster groupings and places class breaks where there are large gaps in the data array. Minimizes within-class variance while maximizing between-class differences. Breaks are data-specific.</p>
+    </div>
+
+    <!-- SLIDE 26: 24 — Standard Deviation -->
+    <div class="slide" data-slide="26">
+      <span class="slide-badge">Classification Methods</span>
+      <h2>24 — Standard Deviation</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/standard-deviation.svg" alt="Standard deviation classification measuring distance above and below the mean" />
+      </div>
+      <p class="caption-text">Calculates class breaks using distance from the statistical mean (&plusmn;1&sigma;, &plusmn;2&sigma;). Highlights geographic outliers and anomalies above or below a national/regional benchmark.</p>
+    </div>
+
+    <!-- SLIDE 27: 25 — Real Map Example: Classification Changes What Stands Out -->
+    <div class="slide" data-slide="27">
+      <span class="slide-badge">Real-World Evidence</span>
+      <h2>25 — Real Map Example: Classification Changes What Stands Out</h2>
+      <div class="slide-visual-full">
+        <img src="https://open.lib.umn.edu/app/uploads/sites/178/2017/07/Image111.jpg" alt="University of Minnesota textbook figure comparing six classification methods on the same geographic variable" style="max-height: 460px;" />
+      </div>
+      <p class="caption-text">Six classification schemes applied to the exact same dataset. Notice how counties migrate between light and dark classes depending on the rule. <em>Source: University of Minnesota, Mapping, Society, and Technology (CC BY-NC-SA 4.0).</em></p>
+    </div>
+
+    <!-- SLIDE 28: 26 — Interactive Classification Comparison -->
+    <div class="slide" data-slide="28">
+      <span class="slide-badge">Interactive Simulation</span>
+      <h2>26 — Interactive Classification Comparison</h2>
+      <div class="activity-container-full">
+        <iframe src="../../assets/week-3/classification-experiment.html" title="Classification Interactive Tool"></iframe>
+      </div>
+      <div class="caption-text">
+        Switch between Equal Interval, Quantile, Natural Breaks, and Standard Deviation on the December 2008 BLS unemployment dataset. Observe how state classifications shift dynamically.
+      </div>
+    </div>
+
+    <!-- SLIDE 29: 27 — Classification Decision Checklist -->
+    <div class="slide" data-slide="29">
+      <span class="slide-badge">Analyst Checklist</span>
+      <h2>27 — Classification Decision Checklist</h2>
+      <div class="slide-text-large">
+        <p>Before accepting default software classifications in ArcGIS or Tableau, systematically verify:</p>
+        <ol style="font-size: 1.15rem; line-height: 1.85; padding-left: 1.5rem;">
+          <li><strong>Data distribution shape:</strong> Normal bell curve, highly skewed, bimodal, or uniform?</li>
+          <li><strong>Outliers:</strong> Are there extreme values that distort equal interval widths?</li>
+          <li><strong>Feature distribution:</strong> Are classes populated with balanced counts or empty bins?</li>
+          <li><strong>Comparative requirement:</strong> Are you comparing maps across time periods or study regions?</li>
+          <li><strong>Analytical intent:</strong> Are you answering a ranking question, identifying clusters, or evaluating deviations from a norm?</li>
+        </ol>
+        <div class="alert-takeaway">
+          <strong>The software calculates the mathematics; the analyst bears ethical and professional responsibility for the interpretation.</strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 30: 28 — Map Elements Have Specific Jobs -->
+    <div class="slide" data-slide="30">
+      <span class="slide-badge">Map Composition</span>
+      <h2>28 — Map Elements Have Specific Jobs</h2>
+      <div class="slide-text-large">
+        <p>A professional analytical map is an integrated communication artifact composed of purposeful elements:</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+          <div style="background: #f6f8fa; padding: 1rem; border-radius: 6px; border: 1px solid #d0d7de;">
+            <p style="margin: 0 0 0.4rem;"><strong>Title:</strong> Defines topic, geography, and timeframe.</p>
+            <p style="margin: 0 0 0.4rem;"><strong>Map Body:</strong> Primary analytical visual payload.</p>
+            <p style="margin: 0;"><strong>Legend:</strong> Decodes symbol classes and measurement units.</p>
+          </div>
+          <div style="background: #f6f8fa; padding: 1rem; border-radius: 6px; border: 1px solid #d0d7de;">
+            <p style="margin: 0 0 0.4rem;"><strong>Scale:</strong> Communicates spatial dimension and distance.</p>
+            <p style="margin: 0 0 0.4rem;"><strong>Orientation:</strong> North arrow or coordinate graticule.</p>
+            <p style="margin: 0;"><strong>Metadata/Source:</strong> Provider, publication date, and boundaries.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SLIDE 31: 29 — Real Map Example: Map Body and Marginal Information -->
+    <div class="slide" data-slide="31">
+      <span class="slide-badge">Real-World Layout</span>
+      <h2>29 — Real Map Example: Map Body and Marginal Information</h2>
+      <div class="slide-visual-full">
+        <img src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/styles/full_width/public/media/images/topoBuilder_MillionthMap_2025.png?itok=_j0jDGUs" alt="USGS topoBuilder Millionth Map of Yellowstone National Park illustrating map composition" style="max-height: 480px;" />
+      </div>
+      <p class="caption-text">USGS TopoBuilder map showing how the central map body coordinates with marginal metadata: title block, projection information, scale bars, contour intervals, and boundary keys. <em>Source: USGS public domain.</em></p>
+    </div>
+
+    <!-- SLIDE 32: 30 — Title, Legend, Insets, and Source Notes -->
+    <div class="slide" data-slide="32">
+      <span class="slide-badge">Marginalia Precision</span>
+      <h2>30 — Title, Legend, Insets, and Source Notes</h2>
+      <div class="slide-text-large">
+        <ul style="font-size: 1.15rem; line-height: 1.85;">
+          <li><strong>Title:</strong> Unambiguously states <em>What, Where,</em> and <em>When</em> (e.g., "Median Household Income by Census Block Group — Rockingham County, VA (2026)").</li>
+          <li><strong>Legend:</strong> Contains clear numeric breaks without overlapping ranges. Always state units ($USD, %, persons per sq mile).</li>
+          <li><strong>Detail Inset:</strong> Magnifies dense urban nodes or complex intersections.</li>
+          <li><strong>Location Inset:</strong> Situates the local study area within a statewide or national framework.</li>
+          <li><strong>Source Note:</strong> Citations that allow the reader to independently verify the underlying data.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SLIDE 33: 31 — Symbols Need a Consistent Visual Language -->
+    <div class="slide" data-slide="33">
+      <span class="slide-badge">Symbology Standards</span>
+      <h2>31 — Symbols Need a Consistent Visual Language</h2>
+      <div class="slide-visual-full">
+        <img src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/images/combsymbol2.PNG" alt="USGS Topo Map Symbol Guide illustrating point, line, and polygon feature symbols" style="max-height: 480px;" />
+      </div>
+      <p class="caption-text">Standardized cartographic symbol palettes for transportation, hydrology, administrative boundaries, and terrain features. Symbols must remain legible at the map's target presentation scale. <em>Source: USGS public domain.</em></p>
+    </div>
+
+    <!-- SLIDE 34: 32 — A Clean Map Shows Where Each Element Belongs -->
+    <div class="slide" data-slide="34">
+      <span class="slide-badge">Map Composition</span>
+      <h2>32 — A Clean Map Shows Where Each Element Belongs</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/map-elements-clean.svg" alt="Clean balanced thematic map layout showing proper placement of title, legend, scale, north arrow, and insets" />
+      </div>
+      <p class="caption-text">Balanced visual composition: avoid cluttering map margins. Place secondary metadata quietly while reserving primary visual real estate for the analytical map body.</p>
+    </div>
+
+    <!-- SLIDE 35: 33 — Visual Hierarchy: What Should the Reader Notice First? -->
+    <div class="slide" data-slide="35">
+      <span class="slide-badge">Perceptual Hierarchy</span>
+      <h2>33 — Visual Hierarchy: What Should the Reader Notice First?</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/map-visual-hierarchy.svg" alt="Comparison between cluttered map design and disciplined visual hierarchy" />
+      </div>
+      <p class="caption-text"><strong>Visual Hierarchy Rule:</strong> 1) Thematic analytical findings &rarr; 2) Study area boundary & key labels &rarr; 3) Background basemap context. Basemaps should support the story, never compete with it.</p>
+    </div>
+
+    <!-- SLIDE 36: 34 — Six Thematic Map Types -->
+    <div class="slide" data-slide="36">
+      <span class="slide-badge">Thematic Typology</span>
+      <h2>34 — Six Thematic Map Types</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/map-types-overview.svg" alt="Overview diagram of six core thematic map types" />
+      </div>
+      <p class="caption-text">Choropleth, Dot Density, Proportional Symbol, Isarithmic, Cartogram, and Flow Map. Each type addresses a distinct analytical question.</p>
+    </div>
+
+    <!-- SLIDE 37: 35 — Choropleth Map: Use a Relative Value by Area -->
+    <div class="slide" data-slide="37">
+      <span class="slide-badge">Thematic Map Types</span>
+      <h2>35 — Choropleth Map: Use a Relative Value by Area</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/real/unemployment-sequential.png" alt="Choropleth map of state unemployment rates" />
+      </div>
+      <div class="alert-teaching-point" style="max-width: 900px; margin: 0.8rem auto 0;">
+        <strong>Choropleth Golden Rule:</strong> Always map a normalized rate, ratio, percentage, index, or density. Never shade polygons by raw counts or population totals—larger geographic areas will falsely dominate visual attention simply due to land area.
+      </div>
+    </div>
+
+    <!-- SLIDE 38: 36 — Dot-Density / Dot-Distribution Map -->
+    <div class="slide" data-slide="38">
+      <span class="slide-badge">Thematic Map Types</span>
+      <h2>36 — Dot-Density / Dot-Distribution Map</h2>
+      <div class="slide-visual-full">
+        <img src="https://www.census.gov/library/visualizations/2021/geo/population-distribution-2020/_jcr_content/root/responsivegrid/imagecore.coreimg.jpeg/1770233317270/population-distribution-2020.jpeg" alt="U.S. Census Bureau 2020 population distribution dot-density map" style="max-height: 480px;" />
+      </div>
+      <p class="caption-text">Each white dot represents a discrete quantity (e.g., 1 dot = 7,500 people). Illustrates population clustering and sparse zones without being constrained by artificial administrative boundary polygons. <em>Source: U.S. Census Bureau.</em></p>
+    </div>
+
+    <!-- SLIDE 39: 37 — Proportional Symbol Map: Use Size for Totals -->
+    <div class="slide" data-slide="39">
+      <span class="slide-badge">Thematic Map Types</span>
+      <h2>37 — Proportional Symbol Map: Use Size for Totals</h2>
+      <div class="slide-visual-full">
+        <img src="https://www2.census.gov/programs-surveys/decennial/2020/data/apportionment/apportionment-2020-map02.png" alt="2020 Census resident population proportional symbol map" style="max-height: 480px;" />
+      </div>
+      <p class="caption-text">Proportional symbol maps scale marker area directly with absolute totals (e.g., total residents). This prevents land-area bias when mapping raw counts. <em>Source: U.S. Census Bureau.</em></p>
+    </div>
+
+    <!-- SLIDE 40: 38 — Isarithmic Map: Show a Continuous Field -->
+    <div class="slide" data-slide="40">
+      <span class="slide-badge">Thematic Map Types</span>
+      <h2>38 — Isarithmic Map: Show a Continuous Field</h2>
+      <div class="slide-visual-full">
+        <img src="https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/thumbnails/image/1857_01_09_iso.gif" alt="USGS isoseismal map of earthquake shaking intensity contours" style="max-height: 480px;" />
+      </div>
+      <p class="caption-text">Isolines connect points of equal value across continuous physical or statistical fields (e.g., elevation contours, precipitation, atmospheric pressure, seismic shaking intensity). <em>Source: USGS public domain.</em></p>
+    </div>
+
+    <!-- SLIDE 41: 39 — Cartogram: Resize Geography by a Value -->
+    <div class="slide" data-slide="41">
+      <span class="slide-badge">Thematic Map Types</span>
+      <h2>39 — Cartogram: Resize Geography by a Value</h2>
+      <div class="slide-visual-full">
+        <img src="https://www.census.gov/dataviz/visualizations/021/res/graphics/021_cartograms_201_1x-01.png" alt="U.S. Census Bureau population cartograms across 1890, 1950, and 2010" style="max-height: 480px;" />
+      </div>
+      <p class="caption-text">Distorts geographic geometry so that polygon area is proportional to a chosen attribute (e.g., 1 square = 50,000 residents) rather than square miles of physical land. <em>Source: U.S. Census Bureau.</em></p>
+    </div>
+
+    <!-- SLIDE 42: 40 — Flow Map: Show Movement and Direction -->
+    <div class="slide" data-slide="42">
+      <span class="slide-badge">Thematic Map Types</span>
+      <h2>40 — Flow Map: Show Movement and Direction</h2>
+      <div class="slide-visual-full">
+        <img src="https://www.aoml.noaa.gov/wp-content/uploads/2021/07/moc_v2-1920x979.jpg" alt="NOAA global ocean circulation flow pathways" style="max-height: 480px;" />
+      </div>
+      <p class="caption-text">Visualizes linear movement between origin and destination nodes. Vector line width typically denotes volume, weight, or capacity, while arrows indicate directionality. <em>Source: NOAA / AOML.</em></p>
+    </div>
+
+    <!-- SLIDE 43: 41 — Match the Map Type to the Question -->
+    <div class="slide" data-slide="43">
+      <span class="slide-badge">Decision Matrix</span>
+      <h2>41 — Match the Map Type to the Question</h2>
+      <div class="slide-text-large" style="max-width: 1020px;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 1.05rem;">
+          <thead>
+            <tr style="background: #f6f8fa; border-bottom: 2px solid #d0d7de; text-align: left;">
+              <th style="padding: 0.75rem;">Analytical Question</th>
+              <th style="padding: 0.75rem;">Recommended Map Type</th>
+              <th style="padding: 0.75rem;">Primary Visual Variable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #eaeef2;">
+              <td style="padding: 0.65rem;">Where are <strong>rates, percentages, or densities</strong> high vs low?</td>
+              <td style="padding: 0.65rem;"><strong>Choropleth</strong></td>
+              <td style="padding: 0.65rem;">Polygon color lightness</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eaeef2;">
+              <td style="padding: 0.65rem;">Where are individual events or people clustered?</td>
+              <td style="padding: 0.65rem;"><strong>Dot Density</strong></td>
+              <td style="padding: 0.65rem;">Dot frequency / spatial concentration</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eaeef2;">
+              <td style="padding: 0.65rem;">Where are the largest <strong>raw totals or counts</strong> located?</td>
+              <td style="padding: 0.65rem;"><strong>Proportional Symbol</strong></td>
+              <td style="padding: 0.65rem;">Marker area / diameter</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eaeef2;">
+              <td style="padding: 0.65rem;">How does a continuous surface vary across space?</td>
+              <td style="padding: 0.65rem;"><strong>Isarithmic</strong></td>
+              <td style="padding: 0.65rem;">Isoline contours and filled bands</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #eaeef2;">
+              <td style="padding: 0.65rem;">What does geography look like when sized by data?</td>
+              <td style="padding: 0.65rem;"><strong>Cartogram</strong></td>
+              <td style="padding: 0.65rem;">Rescaled polygon area</td>
+            </tr>
+            <tr>
+              <td style="padding: 0.65rem;">How do commodities, people, or traffic move?</td>
+              <td style="padding: 0.65rem;"><strong>Flow Map</strong></td>
+              <td style="padding: 0.65rem;">Line vector width & direction</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SLIDE 44: 42 — Real StoryMap Example: Evidence in Sequence -->
+    <div class="slide" data-slide="44">
+      <span class="slide-badge">Data Storytelling</span>
+      <h2>42 — Real StoryMap Example: Evidence in Sequence</h2>
+      <div class="activity-container-full" style="height: 490px;">
+        <iframe src="https://storymaps.arcgis.com/stories/930222924edc4506b17be6165368cd42" title="USGS Colorado River Basin drought StoryMap" loading="lazy"></iframe>
+      </div>
+      <div class="caption-text">
+        Examine how the USGS structures evidence: framing question &rarr; interactive map views &rarr; analytical context &rarr; sidecar narratives. (<a href="https://storymaps.arcgis.com/stories/930222924edc4506b17be6165368cd42" target="_blank" rel="noopener">Open full StoryMap in new tab</a>)
+      </div>
+    </div>
+
+    <!-- SLIDE 45: 43 — Week 3 Lab: Build One Public Spatial Story -->
+    <div class="slide" data-slide="45">
+      <span class="slide-badge">Lab 3 Preview</span>
+      <h2>43 — Week 3 Lab: Build One Public Spatial Story</h2>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-3/week3-lab-workflow.svg" alt="Week 3 ArcGIS Business Analyst to StoryMap lab workflow" />
+      </div>
+      <p class="caption-text">Continue your Week 2 Business Analyst project &rarr; produce 4 map layers &rarr; export to a hosted web map &rarr; assemble an interactive StoryMap &rarr; publish publicly.</p>
+    </div>
+
+    <!-- SLIDE 46: 44 — Main Takeaways -->
+    <div class="slide" data-slide="46">
+      <span class="slide-badge">Lecture Summary</span>
+      <h2>44 — Main Takeaways</h2>
+      <div class="slide-text-large">
+        <ol style="font-size: 1.12rem; line-height: 1.8; padding-left: 1.6rem;">
+          <li><strong>Maps connect evidence through spatial relationships:</strong> Location binds disparate data streams.</li>
+          <li><strong>Design drives perception:</strong> Accurate data can still produce misleading impressions if classification or color are misused.</li>
+          <li><strong>Projections and scales matter:</strong> Small scale maps generalize; large scale maps reveal local detail. Every projection distorts some metric.</li>
+          <li><strong>Match encodings to metrics:</strong> Use choropleths for normalized rates/densities; use proportional symbols for raw counts.</li>
+          <li><strong>StoryMaps structure intelligence:</strong> Connect questions, spatial evidence, and narrative text in a clean, reproducible sequence.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- SLIDE 47: 45 — References and Media Sources -->
+    <div class="slide" data-slide="47">
+      <span class="slide-badge">Scholarly Sources</span>
+      <h2>45 — References and Media Sources</h2>
+      <div class="slide-text-large" style="font-size: 0.98rem; line-height: 1.65;">
+        <p><strong>Primary Concept Deck:</strong> Instructor-provided <code>lec5.pptx</code>, <em>Map Design</em>, JMU Intelligence Analysis (citing Torguson, J. A. Shaffer, and Dr. Z. J. Bortolot).</p>
+        <p><strong>Government & Scientific Repositories:</strong></p>
+        <ul>
+          <li><a href="https://science.nasa.gov/resource/blue-marble/" target="_blank" rel="noopener">NASA Blue Marble</a> & <a href="https://svs.gsfc.nasa.gov/5660/" target="_blank" rel="noopener">NASA Scientific Visualization Studio — The Geoid</a></li>
+          <li><a href="https://www.bls.gov/opub/ted/2009/jan/wk4/art03.htm" target="_blank" rel="noopener">U.S. Bureau of Labor Statistics — Unemployment Rates (Dec 2008 & Oct 2011)</a></li>
+          <li><a href="https://www.census.gov/library/visualizations/2021/geo/population-distribution-2020.html" target="_blank" rel="noopener">U.S. Census Bureau — Population Distribution & Cartograms</a></li>
+          <li><a href="https://www.usgs.gov/media/images/topobuilder-millionth-map" target="_blank" rel="noopener">USGS TopoBuilder, Symbol Guides, and Isoseismal Maps</a></li>
+          <li><a href="https://www.aoml.noaa.gov/aoml-researchers-monitor-important-boundary-currents-in-the-north-atlantic-ocean/" target="_blank" rel="noopener">NOAA / AOML Global Ocean Circulation Flow Map</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- SLIDE 48: 46 — Transition to Lab 3 -->
+    <div class="slide" data-slide="48">
+      <div class="slide-center-box">
+        <span class="slide-badge">Next Step</span>
+        <h1 class="slide-main-title">Ready for Lab 3</h1>
+        <p class="slide-subtitle">ArcGIS Business Analyst II: Thematic Maps, Report, and StoryMap</p>
+        <div class="slide-card-lead" style="text-align: center;">
+          <p>Put cartographic principles into practice: build an income choropleth, population proportional symbols, a Smart Map Search, a grocery POI layer, and assemble your published StoryMap.</p>
+          <div style="margin-top: 1.8rem;">
+            <a href="../../assignments/lab-3/" class="deck-btn-lab" style="font-size: 1.2rem; padding: 0.85rem 2rem;">
+              Proceed to Lab 3: ArcGIS Business Analyst II ▶
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+let currentSlide = 1;
+const totalSlides = 48;
+
+function updateDeck() {
+  const slides = document.querySelectorAll('.slide');
+  slides.forEach(slide => {
+    const sNum = parseInt(slide.getAttribute('data-slide'));
+    if (sNum === currentSlide) {
+      slide.classList.add('active');
+    } else {
+      slide.classList.remove('active');
+    }
+  });
+
+  document.getElementById('slideCounter').textContent = `Slide ${currentSlide} of ${totalSlides}`;
+  document.getElementById('progressBar').style.width = `${(currentSlide / totalSlides) * 100}%`;
+  
+  document.getElementById('prevBtn').disabled = (currentSlide === 1);
+  document.getElementById('nextBtn').disabled = (currentSlide === totalSlides);
+
+  history.replaceState(null, null, `#slide-${currentSlide}`);
+}
+
+function changeSlide(direction) {
+  const next = currentSlide + direction;
+  if (next >= 1 && next <= totalSlides) {
+    currentSlide = next;
+    updateDeck();
+  }
+}
+
+function goToSlide(slideNum) {
+  if (slideNum >= 1 && slideNum <= totalSlides) {
+    currentSlide = slideNum;
+    updateDeck();
+  }
+}
+
+function toggleFullScreen() {
+  const deck = document.getElementById('lectureDeck');
+  if (!document.fullscreenElement) {
+    if (deck.requestFullscreen) {
+      deck.requestFullscreen();
+    } else if (deck.webkitRequestFullscreen) {
+      deck.webkitRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA') return;
+
+  if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') {
+    event.preventDefault();
+    changeSlide(1);
+  } else if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+    event.preventDefault();
+    changeSlide(-1);
+  } else if (event.key === 'Home') {
+    event.preventDefault();
+    goToSlide(1);
+  } else if (event.key === 'End') {
+    event.preventDefault();
+    goToSlide(totalSlides);
+  }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash;
+  if (hash && hash.startsWith('#slide-')) {
+    const sNum = parseInt(hash.replace('#slide-', ''));
+    if (!isNaN(sNum) && sNum >= 1 && sNum <= totalSlides) {
+      currentSlide = sNum;
+    }
+  }
+  updateDeck();
+});
+</script>
+
+---
+[Return to Course Home](../../) | [Go to Lab 3](../../assignments/lab-3/)
