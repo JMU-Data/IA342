@@ -19,6 +19,8 @@
 - [Week 1 Assignment](docs/assignments/arcgis-access-check/index.md)
 - [Module 2](docs/modules/module-2/index.md)
 - [Lab 2](docs/assignments/lab-2/index.md)
+- [Module 3](docs/modules/module-3/index.md)
+- [Lab 3](docs/assignments/lab-3/index.md)
 
 ## Course Overview
 
@@ -33,10 +35,10 @@ The course is structured to take students from raw data to actionable human unde
 **Data** ➔ **Visual Design & Spatial Analysis** ➔ **ArcGIS** ➔ **Tableau & Visual Analytics** ➔ **Interactive Dashboards** ➔ **Human Understanding & Decision**
 
 1. **Course Introduction:** The core philosophy of why visualization matters in the AI era.
-2. **Spatial Intelligence (ArcGIS):** Map design, geographic contexts, and spatial visualization.
-3. **Business Intelligence (Tableau):** Connecting data, building primary charts, and visual exploration.
-4. **Visual Analytics & Dashboards:** Advanced calculations, interactivity, and dashboard design.
-5. **Data Storytelling:** End-to-end projects culminating in comprehensive visual analytics applications.
+2. **Introduction to Data Visualization / Visual Perception:** Visual perception, preattentive attributes, Gestalt principles, and analytical framing.
+3. **Map Design & Spatial Intelligence (ArcGIS):** Map design, geographic coordinate systems, classification methods, thematic maps, and StoryMaps.
+4. **Business Intelligence & Visual Analytics (Tableau):** Connecting data, visual exploration, chart critique, calculations, and interactive dashboards.
+5. **Data Storytelling:** End-to-end analytical projects culminating in comprehensive visual analytics applications.
 
 ## Official Course Information
 
