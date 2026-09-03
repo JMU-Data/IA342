@@ -6,6 +6,22 @@
   ],
   "assignments": [
     {
+      "key": "lab-2",
+      "title": "Lab 2 — ArcGIS Business Analyst I: Data, Sites, and Reports",
+      "assignment_group": "Labs",
+      "points": 100.0,
+      "due_at": null,
+      "published": true,
+      "submission_types": [
+        "online_upload"
+      ],
+      "allowed_extensions": [
+        "pdf"
+      ],
+      "description": null,
+      "instruction_url": "https://jmu-data.github.io/IA342/assignments/lab-2/"
+    },
+    {
       "key": "lab-3",
       "title": "Lab 3 — ArcGIS Business Analyst II: Thematic Maps, Report, and StoryMap",
       "assignment_group": "Labs",
@@ -20,6 +36,66 @@
     }
   ],
   "rubrics": [
+    {
+      "key": "lab-2-rubric",
+      "title": "Lab 2 — ArcGIS Business Analyst I",
+      "assignment": "lab-2",
+      "use_for_grading": true,
+      "scoring": "ratings",
+      "criteria": [
+        {
+          "key": "study-area",
+          "description": "JMU study area",
+          "points": 20.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
+        },
+        {
+          "key": "gva-results",
+          "description": "Custom GVA results",
+          "points": 40.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 40.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
+        },
+        {
+          "key": "crime-chart",
+          "description": "Crime Index chart",
+          "points": 40.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 40.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
+        }
+      ]
+    },
     {
       "key": "lab-3-rubric",
       "title": "Lab 3 — ArcGIS Business Analyst II",
