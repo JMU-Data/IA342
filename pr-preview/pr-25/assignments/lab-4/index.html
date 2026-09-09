@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Lab 4: Virginia County Analysis, Infographic, and Interactive Dashboard - IA 342 | IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Lab 4: Virginia County Analysis, Infographic, and Interactive Dashboard - IA 342" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<meta property="og:description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<link rel="canonical" href="https://jmu-data.github.io/IA342/pr-preview/pr-25/assignments/lab-4/" />
+<meta property="og:url" content="https://jmu-data.github.io/IA342/pr-preview/pr-25/assignments/lab-4/" />
+<meta property="og:site_name" content="IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Lab 4: Virginia County Analysis, Infographic, and Interactive Dashboard - IA 342" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Lab 4: Virginia County Analysis, Infographic, and Interactive Dashboard - IA 342","url":"https://jmu-data.github.io/IA342/pr-preview/pr-25/assignments/lab-4/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-25/assets/css/style.css?v=3f1061ea074390bdd0e9da79e8828cc61dbbcd2e">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/IA342/pr-preview/pr-25/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://jmu-data.github.io/IA342/pr-preview/pr-25/">IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</a></h1>
+      
+
+      <h1 id="lab-4-â-virginia-county-analysis-infographic-and-interactive-dashboard">Lab 4 â€” Virginia County Analysis, Infographic, and Interactive Dashboard</h1>
+
+<p><strong>IA342 Â· Week 4 Â· Updated after instructor walkthrough</strong></p>
+
+<p>Continue your existing Business Analyst project. This lab uses <strong>Virginia as the study area</strong> and compares <strong>county-level geographies across the state</strong>.</p>
+
+<p>You will create:</p>
+
+<ol>
+  <li>one <strong>Benchmark comparison</strong> map;</li>
+  <li>one <strong>Suitability analysis</strong> map;</li>
+  <li>one <strong>Virginia infographic</strong>;</li>
+  <li>one <strong>interactive ArcGIS Dashboard</strong> that brings them together.</li>
+</ol>
+
+<p><strong>Submit:</strong> one working dashboard viewing URL to Canvas.</p>
+
+<hr />
+
+<h2 id="1-save-virginia-as-a-site">1. Save Virginia as a site</h2>
+
+<p>Open your existing <code class="language-plaintext highlighter-rouge">firstname_lastname_arcgis</code> project.</p>
+
+<p>You already created <strong>Rockingham County</strong> in the earlier lab. Keep it. For this lab, create only one new site: <strong>Virginia</strong>.</p>
+
+<ol>
+  <li>Go to <strong>Maps â†’ Define areas â†’ Select geography</strong>.</li>
+  <li>Search for <strong>Virginia</strong>.</li>
+  <li>Select the <strong>Virginia</strong> state geography.</li>
+  <li>Save it as a site. The name <strong>Virginia</strong> is fine.</li>
+</ol>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20213759.png" alt="Select Virginia as a site" /></p>
+
+<blockquote>
+  <p><strong>Important:</strong> Virginia must exist as a saved site before you run the two analyses below. The analyses will use Virginia as the <strong>area of interest</strong>, but the units being analyzed will be <strong>Counties</strong>.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="2-analysis-1-â-benchmark-comparisons">2. Analysis 1 â€” Benchmark comparisons</h2>
+
+<h3 id="what-does-benchmark-comparisons-do">What does Benchmark comparisons do?</h3>
+
+<p>Benchmark comparisons answers:</p>
+
+<blockquote>
+  <p><strong>Which areas are above or below a reference value?</strong></p>
+</blockquote>
+
+<p>Here, we will compare county-level areas inside Virginia and use the <strong>median</strong> of those county-level values as the reference.</p>
+
+<h3 id="21-select-the-correct-geography">2.1 Select the correct geography</h3>
+
+<p>This part is slightly tricky.</p>
+
+<ol>
+  <li>Make sure the <strong>Virginia site is the current site</strong> on the map.</li>
+  <li>Go to <strong>Maps â†’ Run analysis â†’ Benchmark comparisons</strong>.</li>
+  <li>For <strong>Select location type</strong>, choose <strong>Geographies or hexagons</strong>.</li>
+</ol>
+
+<p><strong>Do not choose <code class="language-plaintext highlighter-rouge">Your sites</code>.</strong> If you choose the Virginia site directly as a site, Business Analyst treats Virginia as one single area. We want all county-level geographies inside Virginia.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20214055.png" alt="Choose Geographies or hexagons" /></p>
+
+<ol>
+  <li>In <strong>Area of interest</strong>, choose <strong>Current site</strong>. Because Virginia is the current site, the pane may then display <strong>Virginia</strong>.</li>
+  <li>Keep <strong>Geographies</strong> selected.</li>
+  <li>Set <strong>Level of detail = Counties</strong>.</li>
+</ol>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20214109.png" alt="Use Virginia as the area of interest and Counties as the level of detail" /></p>
+
+<blockquote>
+  <p>Virginia has independent cities that may appear as county-equivalent geographies. Keep the geography set returned by Business Analyst.</p>
+</blockquote>
+
+<h3 id="22-select-variables-and-run-the-comparison">2.2 Select variables and run the comparison</h3>
+
+<p>Select:</p>
+
+<ul>
+  <li><strong>2026 Total Population (Esri)</strong></li>
+  <li><strong>2026 Median Household Income (Esri)</strong></li>
+</ul>
+
+<p>Then:</p>
+
+<ol>
+  <li>Turn on <strong>Median</strong> in <strong>Statistics</strong>.</li>
+  <li>Set <strong>Comparison method = Above and below benchmark</strong>.</li>
+  <li>Set <strong>Benchmark = Median</strong>.</li>
+  <li>Use <strong>2026 Median Household Income</strong> as the map variable.</li>
+  <li>Inspect the table and map. Identify at least one county-level area above the median and one below it.</li>
+</ol>
+
+<p>The benchmark is the <strong>median of the county-level areas in this analysis</strong>. It is not the single statewide Virginia median household income value.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20214254.png" alt="Benchmark comparison result" /></p>
+
+<h3 id="23-save-the-benchmark-layer">2.3 Save the Benchmark layer</h3>
+
+<p>Click <strong>Save layer</strong> and name it:</p>
+
+<p><code class="language-plaintext highlighter-rouge">lastname_benchmark</code></p>
+
+<blockquote>
+  <p><strong>Tip:</strong> ArcGIS services can occasionally take a while to save an analysis layer. If the Save process appears slow, give it time to finish before clicking repeatedly or refreshing the page.</p>
+</blockquote>
+
+<h3 id="24-export-the-benchmark-map-now">2.4 Export the Benchmark map now</h3>
+
+<p>Do this <strong>before moving to Suitability analysis</strong>.</p>
+
+<p>Because Benchmark and Suitability are separate analysis workflows, export each one while that analysis is open.</p>
+
+<ol>
+  <li>Keep/open the saved <strong>Benchmark comparisons</strong> layer.</li>
+  <li>Go to <strong>Share results â†’ ArcGIS web map</strong>.</li>
+  <li>Export the map content as a <strong>new hosted feature service</strong>.</li>
+  <li>Include the Benchmark analysis layer.</li>
+  <li>Name the web map:</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">lastname_benchmark_map</code></p>
+
+<p>You should end this step with a Benchmark <strong>web map</strong> and its associated <strong>hosted feature layer</strong> in ArcGIS Online.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20215912.png" alt="Export the Benchmark analysis as its own hosted web map" /></p>
+
+<p><a href="https://doc.arcgis.com/en/business-analyst/web/benchmark-comparisons.htm">Esri: Run benchmark comparisons</a><br />
+<a href="https://doc.arcgis.com/en/business-analyst/web/share-maps.htm">Esri: Share web maps and layers</a></p>
+
+<hr />
+
+<h2 id="3-analysis-2-â-suitability-analysis">3. Analysis 2 â€” Suitability analysis</h2>
+
+<h3 id="what-does-suitability-analysis-do">What does Suitability analysis do?</h3>
+
+<p>Suitability analysis combines several criteria into one score so you can:</p>
+
+<blockquote>
+  <p><strong>rank areas under a set of assumptions that you define.</strong></p>
+</blockquote>
+
+<p>The score is not an objective statement that one county is “best.” Your variable choices, weights, scoring, and classification all affect the result.</p>
+
+<h3 id="31-use-virginia-counties-again">3.1 Use Virginia counties again</h3>
+
+<ol>
+  <li>Make <strong>Virginia</strong> the current site.</li>
+  <li>Go to <strong>Maps â†’ Run analysis â†’ Suitability analysis</strong>.</li>
+  <li>Choose <strong>Geographies or hexagons</strong>.</li>
+  <li>Set <strong>Area of interest = Current site</strong>.</li>
+  <li>Keep <strong>Geographies</strong> selected.</li>
+  <li>Set <strong>Level of detail = Counties</strong>.</li>
+</ol>
+
+<h3 id="32-manually-select-the-three-criteria">3.2 Manually select the three criteria</h3>
+
+<p>Click:</p>
+
+<p><strong>Select criteria â†’ Add variables from data browser</strong></p>
+
+<p>Then search for and <strong>manually check each of these three variables</strong>. Do not rely on a Featured list or automatically generated criteria list.</p>
+
+<h4 id="criterion-1-â-total-population">Criterion 1 â€” Total Population</h4>
+
+<p>Select:</p>
+
+<p><strong>2026 Total Population (Esri)</strong></p>
+
+<p>For this current Esri variable, keep <strong>Calculation = Default</strong>. The latest Total Population variable in the walkthrough did not present a separate Count calculation option.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20214638.png" alt="Select 2026 Total Population" /></p>
+
+<h4 id="criterion-2-â-median-household-income">Criterion 2 â€” Median Household Income</h4>
+
+<p>Select:</p>
+
+<p><strong>2026 Median Household Income (Esri)</strong></p>
+
+<p>Use <strong>Calculation = Median</strong>.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20214707.png" alt="Select 2026 Median Household Income" /></p>
+
+<h4 id="criterion-3-â-bachelors-degree">Criterion 3 â€” Bachelor’s Degree</h4>
+
+<p>Search for:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Bachelor's Degree</code></p>
+
+<p>Select:</p>
+
+<p><strong>2026 Population Age 25+: Bachelor’s Degree (Esri)</strong></p>
+
+<p>Use <strong>Calculation = Percentage</strong>.</p>
+
+<p>This variable measures the <strong>population age 25 and older with a bachelor’s degree</strong>.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20214828.png" alt="Select Population Age 25+ Bachelor's Degree" /></p>
+
+<p>After selection, your three criteria should look similar to this:</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20214943.png" alt="Three suitability criteria" /></p>
+
+<h3 id="33-set-influence-and-weights">3.3 Set influence and weights</h3>
+
+<p>Keep <strong>Positive influence</strong> for all three criteria.</p>
+
+<p>Then click <strong>Adjust weights</strong> and choose your own reasonable weights.</p>
+
+<ul>
+  <li>The weights should total <strong>100%</strong>.</li>
+  <li>Do <strong>not</strong> simply copy the instructor screenshot.</li>
+  <li>Your weights should reflect what you think is more or less important in this practice model.</li>
+  <li>You will add one short line in the dashboard explaining your chosen weights.</li>
+</ul>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20215013.png" alt="Adjust suitability weights" /></p>
+
+<h3 id="34-use-a-consistent-scoring-method">3.4 Use a consistent scoring method</h3>
+
+<p>In <strong>Scoring method</strong>:</p>
+
+<ul>
+  <li><strong>Preset method:</strong> <code class="language-plaintext highlighter-rouge">Combine values (default)</code></li>
+  <li><strong>Final score scale:</strong> <code class="language-plaintext highlighter-rouge">0 to 100</code></li>
+</ul>
+
+<p>Using 0â€“100 makes the final score easier to interpret.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20215129.png" alt="Use Combine values and a 0-to-100 final score" /></p>
+
+<h3 id="35-choose-a-classification">3.5 Choose a classification</h3>
+
+<p>Open <strong>Class options</strong>.</p>
+
+<p>Choose a reasonable classification method and number of classes for your map. Available methods include:</p>
+
+<ul>
+  <li><strong>Natural breaks</strong></li>
+  <li><strong>Quantile</strong></li>
+  <li><strong>Equal interval</strong></li>
+</ul>
+
+<p>You may choose the method that makes the statewide county pattern easiest to read.</p>
+
+<p>Use a <strong>sequential color ramp</strong> for the final suitability score. You may adjust the ramp direction, transparency, and outline so the county pattern is readable.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20215209.png" alt="Choose classification options" /></p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20215226.png" alt="Style the final Suitability map with a sequential color ramp" /></p>
+
+<h3 id="36-save-the-suitability-layer">3.6 Save the Suitability layer</h3>
+
+<p>Save the layer as:</p>
+
+<p><code class="language-plaintext highlighter-rouge">lastname_suitability</code></p>
+
+<p>Record the highest-ranked county-level area and its score.</p>
+
+<h3 id="37-export-the-suitability-map-now">3.7 Export the Suitability map now</h3>
+
+<p>Export this analysis <strong>separately</strong> from the Benchmark map.</p>
+
+<ol>
+  <li>Keep/open the <strong>Suitability analysis</strong> layer.</li>
+  <li>Go to <strong>Share results â†’ ArcGIS web map</strong>.</li>
+  <li>Export the map content as a <strong>new hosted feature service</strong>.</li>
+  <li>Include the Suitability analysis layer.</li>
+  <li>Name the web map:</li>
+</ol>
+
+<p><code class="language-plaintext highlighter-rouge">lastname_suitability_map</code></p>
+
+<p>You should now have <strong>two separate analysis web maps</strong>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">lastname_benchmark_map</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lastname_suitability_map</code></li>
+</ul>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20215452.png" alt="Export the Suitability analysis as its own hosted web map" /></p>
+
+<p><a href="https://doc.arcgis.com/en/business-analyst/web/suitability-analysis.htm">Esri: Perform a suitability analysis</a><br />
+<a href="https://doc.arcgis.com/en/business-analyst/web/understand-suitability-analysis.htm">Esri: Suitability analysis reference</a><br />
+<a href="https://doc.arcgis.com/en/business-analyst/web/share-maps.htm">Esri: Share web maps and layers</a></p>
+
+<hr />
+
+<h2 id="4-run-one-virginia-infographic">4. Run one Virginia infographic</h2>
+
+<p>The infographic is different from the county-level analysis maps.</p>
+
+<p>Because you are selecting the saved <strong>Virginia</strong> site, this standalone infographic summarizes <strong>Virginia as one statewide site</strong>. It does not automatically show one panel for every county.</p>
+
+<h3 id="41-run-the-standalone-infographic">4.1 Run the standalone infographic</h3>
+
+<ol>
+  <li>Go to <strong>Reports â†’ Run reports â†’ Run infographics</strong>.</li>
+  <li>Select the <strong>Virginia</strong> site.</li>
+  <li>Manually select <strong>Demographic Summary</strong>.</li>
+  <li>Click <strong>Run now</strong>.</li>
+  <li>Identify at least two useful statewide indicators.</li>
+</ol>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20220053.png" alt="Select Demographic Summary for the Virginia site and run it" /></p>
+
+<p>The result should be a statewide Virginia infographic, similar to this:</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20220020.png" alt="Standalone Virginia Demographic Summary infographic" /></p>
+
+<h3 id="42-understand-what-is-and-is-not-saved">4.2 Understand what is and is not saved</h3>
+
+<p>This <strong>Reports â†’ Run infographics</strong> run is a one-time output. It is <strong>not saved back into your Business Analyst project as a reusable project item</strong>. If you close it without exporting it, that particular run is gone and you would need to run the infographic again.</p>
+
+<p>If you want to keep this standalone output, export it. Available formats in the walkthrough included:</p>
+
+<ul>
+  <li>PDF</li>
+  <li>Image</li>
+  <li>Dynamic HTML</li>
+  <li>Excel</li>
+</ul>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20220038.png" alt="Export options for the standalone infographic" /></p>
+
+<blockquote>
+  <p><strong>Important:</strong> The infographic you run here and the infographic used later in the Dashboard workflow are <strong>two separate runs</strong>. In Step 5, Business Analyst asks you to choose/run the infographic again. That second run is embedded in the dashboard as <strong>Embedded content</strong>. It does not reuse this standalone output.</p>
+</blockquote>
+
+<p><a href="https://doc.arcgis.com/en/business-analyst/web/create-infographics-and-reports.htm">Esri: Create infographics and reports</a></p>
+
+<hr />
+
+<h2 id="5-create-the-virginia-dashboard">5. Create the Virginia dashboard</h2>
+
+<p>Go to:</p>
+
+<p><strong>Maps â†’ Share results â†’ ArcGIS Dashboards</strong></p>
+
+<p>This starts a <strong>new infographic run for the dashboard</strong>. The dashboard does not reuse the standalone infographic output from Step 4.</p>
+
+<p>First choose <strong>One site â†’ Different infographics</strong>:</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20220539.png" alt="Choose One site â†’ Different infographics" /></p>
+
+<p>Choose:</p>
+
+<ul>
+  <li><strong>Dashboard type:</strong> <code class="language-plaintext highlighter-rouge">One site, Different infographics</code></li>
+  <li><strong>Site:</strong> Virginia</li>
+  <li><strong>Infographic:</strong> Demographic Summary</li>
+  <li><strong>Default infographic display:</strong> Auto</li>
+  <li><strong>Title:</strong> <code class="language-plaintext highlighter-rouge">Virginia Analysis and Demographics</code></li>
+</ul>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20220527.png" alt="Select Virginia and Demographic Summary" /></p>
+
+<p>Set the display to <strong>Auto</strong>, enter the dashboard title, and create the dashboard. The sharing choices on this screen are optional because you will complete the final public-sharing workflow later from ArcGIS Online item pages.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20220601.png" alt="Set display, title, and dashboard creation options" /></p>
+
+<p>Create the dashboard.</p>
+
+<p>The generated dashboard should contain the <strong>embedded infographic</strong>. Depending on the Business Analyst output, it may also contain a default <strong>Virginia base/location map</strong>.</p>
+
+<p>For this lab:</p>
+
+<ul>
+  <li><strong>keep the embedded infographic</strong>;</li>
+  <li>if a default Virginia/base map appears and it is only a location map, <strong>delete it</strong>;</li>
+  <li>then add the Benchmark and Suitability maps <strong>one at a time</strong> in Step 6.1.</li>
+</ul>
+
+<p>Do not worry if your first Dashboard view does not look exactly like the instructor example. The required final layout is defined in Step 6.</p>
+
+<p><a href="https://doc.arcgis.com/en/business-analyst/web/arcgis-dashboards.htm">Esri: Create a dashboard</a></p>
+
+<hr />
+
+<h2 id="6-build-the-final-interactive-dashboard">6. Build the final interactive dashboard</h2>
+
+<p>Your finished dashboard must contain <strong>at least four analytical elements</strong>:</p>
+
+<ol>
+  <li><strong>Virginia Demographic Summary infographic</strong></li>
+  <li><strong>Benchmark map</strong></li>
+  <li><strong>Suitability map</strong></li>
+  <li><strong>One additional data widget</strong></li>
+</ol>
+
+<h3 id="61-add-both-maps">6.1 Add both maps</h3>
+
+<p>Use <strong>Add element</strong> to add dashboard components. The menu includes Map, Map legend, Serial chart, Indicator, Gauge, Rich text, Embedded content, and other elements.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20220903.png" alt="Use Add element to build the dashboard" /></p>
+
+<p>Add a <strong>Map</strong> element for:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">lastname_benchmark_map</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lastname_suitability_map</code></li>
+</ul>
+
+<p>For <strong>both maps</strong>:</p>
+
+<ul>
+  <li>give the element a clear title;</li>
+  <li>turn on the <strong>Legend</strong>;</li>
+  <li>turn on the <strong>Scale bar</strong> when the layout allows it;</li>
+  <li>keep the maps large enough to read the county pattern.</li>
+</ul>
+
+<p>Add the maps <strong>one at a time</strong>. The example below shows the dashboard after the Benchmark map has been added beside the embedded infographic. Your second analysis map will be added the same way.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20220759.png" alt="Dashboard after adding the first analysis map" /></p>
+
+<h3 id="62-add-one-data-widget">6.2 Add one data widget</h3>
+
+<p>Add one additional element that summarizes a meaningful numeric variable.</p>
+
+<p>You may use:</p>
+
+<ul>
+  <li><strong>Indicator</strong></li>
+  <li><strong>Gauge</strong></li>
+  <li><strong>Serial / bar chart</strong></li>
+</ul>
+
+<p>For example, you could display <strong>Median Household Income</strong> or another meaningful field from one of your analysis layers.</p>
+
+<p>Give the widget a clear title. For example, an Indicator can summarize the <strong>Average</strong> of the <code class="language-plaintext highlighter-rouge">2026 Median Household Income</code> field from the Benchmark comparisons layer.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20221112.png" alt="Choose the layer, statistic, and field for a data widget" /></p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20221059.png" alt="Example data widget with a clear title" /></p>
+
+<h3 id="63-make-the-dashboard-interactive">6.3 Make the dashboard interactive</h3>
+
+<p>Choose one of your two maps as the <strong>source map</strong>.</p>
+
+<p>Configure actions so interaction with that map affects other elements.</p>
+
+<p>At minimum:</p>
+
+<ol>
+  <li>Use <strong>Filter</strong> to update your data widget and any compatible target layer/element.</li>
+  <li>Use <strong>Set extent</strong> so the other map follows the source map’s extent.</li>
+</ol>
+
+<p>A useful pattern is:</p>
+
+<p><strong>Benchmark map â†’ filters data widget + sets Suitability map extent</strong></p>
+
+<p>or the reverse.</p>
+
+<p>Use <strong>Map actions</strong> and/or <strong>Layer actions</strong> to choose the targets that should respond.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20221206.png" alt="Choose Filter targets and the other map from Map actions" /></p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20221244.png" alt="Configure map actions for filtering and linked extent" /></p>
+
+<p>If you add a layer-selection action, you may also let clicking a county filter other compatible elements.</p>
+
+<p><a href="https://doc.arcgis.com/en/dashboards/latest/create-and-share/configuring-actions-on-dashboard-elements.htm">Esri: Configure actions for dashboard elements</a></p>
+
+<h3 id="64-add-a-very-short-story--methods-note">6.4 Add a very short story / methods note</h3>
+
+<p>Add a small <strong>Rich text</strong> element with no more than about three short bullets.</p>
+
+<p>Include:</p>
+
+<ul>
+  <li>what the Benchmark map compares;</li>
+  <li>your three Suitability criteria and chosen weights;</li>
+  <li>one useful finding from the dashboard.</li>
+</ul>
+
+<p>Keep this concise. The dashboard should remain visual.</p>
+
+<hr />
+
+<h2 id="7-share-everything-publicly">7. Share everything publicly</h2>
+
+<p>ArcGIS Dashboards does not require a separate <strong>Publish</strong> button. Save the dashboard, then manage sharing from ArcGIS Online item pages.</p>
+
+<h3 id="71-share-every-dependency">7.1 Share every dependency</h3>
+
+<p>Go to <strong>My Content</strong> or the dashboard item page.</p>
+
+<p>Make sure <strong>Everyone (public)</strong> can access:</p>
+
+<ul>
+  <li>the Dashboard;</li>
+  <li>the Benchmark web map;</li>
+  <li>the Benchmark hosted feature layer;</li>
+  <li>the Suitability web map;</li>
+  <li>the Suitability hosted feature layer;</li>
+  <li>any Business Analyst-generated web map or hosted layer still listed under <strong>Items used</strong> by the dashboard.</li>
+</ul>
+
+<p>Your content list may look similar to this:</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20222150.png" alt="Related dashboard items in ArcGIS Online" /></p>
+
+<p>The dashboard item page also shows <strong>Items used</strong>. Use that list as your final dependency checklist. You will return to this same item page in Step 7.3 to copy the public dashboard URL.</p>
+
+<h3 id="72-enable-public-data-collection-when-required">7.2 Enable Public data collection when required</h3>
+
+<p>In the instructor walkthrough, the Business Analyst-exported hosted feature layers were editable, so ArcGIS required the <strong>Public data collection</strong> approval before they could be shared publicly.</p>
+
+<p>For each affected hosted feature layer:</p>
+
+<ol>
+  <li>Open the layer’s <strong>item page</strong>.</li>
+  <li>Open <strong>Settings</strong>.</li>
+  <li>Find <strong>Public data collection</strong>.</li>
+  <li>Turn on:</li>
+</ol>
+
+<p><strong>Approve this layer to be shared with the public when editing is enabled.</strong></p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20222021.png" alt="Enable Public data collection for an editable hosted feature layer" /></p>
+
+<p>Then return to <strong>Share</strong> and set the item to <strong>Everyone (public)</strong>.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20222034.png" alt="Set the hosted feature layer sharing level to Everyone (public)" /></p>
+
+<blockquote>
+  <p>This setting is specifically a safety approval for publicly shared layers when editing is enabled.</p>
+</blockquote>
+
+<p><a href="https://doc.arcgis.com/en/arcgis-online/manage-data/manage-editing-hfl.htm">Esri: Manage hosted feature layer editing</a></p>
+
+<h3 id="73-copy-and-test-the-dashboard-url">7.3 Copy and test the dashboard URL</h3>
+
+<p>Return to the <strong>Dashboard item page</strong> in ArcGIS Online. Do <strong>not</strong> use the Edit Dashboard address from the browser.</p>
+
+<p>In the item page’s <strong>Details</strong> panel, find <strong>URL</strong> and click <strong>Copy</strong>. This is the viewing URL you will submit.</p>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20222218.png" alt="Copy the viewing URL from the Dashboard item page" /></p>
+
+<p>Open a new <strong>Incognito / Private</strong> browser window and paste that copied URL.</p>
+
+<p>Confirm that:</p>
+
+<ul>
+  <li>the infographic loads;</li>
+  <li>both maps load;</li>
+  <li>the data widget loads;</li>
+  <li>the legend(s) appear;</li>
+  <li>your interaction works;</li>
+  <li>no sign-in prompt blocks the dashboard.</li>
+</ul>
+
+<p><img src="../../assets/week-4/screenshots/Screenshot%202026-09-08%20222250.png" alt="Public dashboard tested in an Incognito window" /></p>
+
+<h3 id="instructor-functional-example">Instructor functional example</h3>
+
+<p>The following dashboard is a <strong>functionality example only</strong>. Do not copy its visual design or values. Your own dashboard must work with your own analysis outputs.</p>
+
+<p>https://www.arcgis.com/apps/dashboards/e59a89f479e4488db289575d1ef4c063#</p>
+
+<hr />
+
+<h2 id="8-submission">8. Submission</h2>
+
+<p>Submit <strong>one dashboard viewing URL</strong> to Canvas.</p>
+
+<p>Before submitting, open it once more in a Private / Incognito window.</p>
+
+<hr />
+
+<h2 id="rubric-â-100-points">Rubric â€” 100 points</h2>
+
+<p>| Component | Required evidence | Points |
+|—|—|—:|
+| <strong>Benchmark map</strong> | Virginia county-level Benchmark analysis with a correct median benchmark and its own working exported web map | 20 |
+| <strong>Suitability map</strong> | Virginia county-level Suitability analysis, three manually selected criteria, student-chosen weights, 0â€“100 score, readable classification and sequential color ramp, exported as its own working web map | 20 |
+| <strong>Virginia infographic</strong> | Standalone Virginia Demographic Summary run completed and understood as a one-time output; dashboard contains its own embedded Virginia infographic run | 20 |
+| <strong>Interactive dashboard design</strong> | Embedded infographic + two maps + one data widget; map legends; concise methods/findings text; at least one working filter and linked map extent/action | 20 |
+| <strong>Sharing and submission</strong> | Dashboard and all required dependencies public, editable hosted layers approved for public data collection when required, dashboard verified in Private/Incognito mode, correct viewing URL submitted | 20 |
+| <strong>Total</strong> | | <strong>100</strong> |
+—
+<a href="../../">Return to Course Home</a> | <a href="../../modules/module-4/">Return to Module 4</a></p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
