@@ -81,8 +81,9 @@ The course is structured to take students from raw data to actionable human unde
 1. **[Course Introduction](modules/module-1/):** The core philosophy of why visualization matters in the AI era.
 2. **[Introduction to Data Visualization](modules/module-2/):** Visual perception, preattentive attributes, and Gestalt principles.
 3. **[Map Design & Spatial Intelligence](modules/module-3/):** Coordinate systems, projections, classification methods, and thematic maps.
-4. **Business Intelligence (Tableau) & Visual Analytics:** Data connection, charts, calculations, filters, and interactive dashboards.
-5. **Data Storytelling:** End-to-end projects culminating in a comprehensive visual analytics Final Project.
+4. **[Color Theory for Data Visualization](modules/module-4/):** Physical properties of light, color models (RGB/CMY), color schemes (sequential, diverging, categorical), and color vision deficiency / accessibility.
+5. **Business Intelligence (Tableau) & Visual Analytics:** Data connection, charts, calculations, filters, and interactive dashboards.
+6. **Data Storytelling:** End-to-end projects culminating in a comprehensive visual analytics Final Project.
 
 ## Official Course Information
 

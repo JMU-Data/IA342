@@ -1,10 +1,10 @@
-﻿---
+---
 layout: default
 title: "Lab 4: Virginia County Analysis, Infographic, and Interactive Dashboard - IA 342"
 ---
-# Lab 4 â€” Virginia County Analysis, Infographic, and Interactive Dashboard
+# Lab 4 &mdash; Virginia County Analysis, Infographic, and Interactive Dashboard
 
-**IA342 Â· Week 4 Â· Updated after instructor walkthrough**
+**IA342 &middot; Week 4 &middot; Updated after instructor walkthrough**
 
 Continue your existing Business Analyst project. This lab uses **Virginia as the study area** and compares **county-level geographies across the state**.
 
@@ -25,7 +25,7 @@ Open your existing `firstname_lastname_arcgis` project.
 
 You already created **Rockingham County** in the earlier lab. Keep it. For this lab, create only one new site: **Virginia**.
 
-1. Go to **Maps â†’ Define areas â†’ Select geography**.
+1. Go to **Maps &rarr; Define areas &rarr; Select geography**.
 2. Search for **Virginia**.
 3. Select the **Virginia** state geography.
 4. Save it as a site. The name **Virginia** is fine.
@@ -36,7 +36,7 @@ You already created **Rockingham County** in the earlier lab. Keep it. For this 
 
 ---
 
-## 2. Analysis 1 â€” Benchmark comparisons
+## 2. Analysis 1 &mdash; Benchmark comparisons
 
 ### What does Benchmark comparisons do?
 
@@ -51,7 +51,7 @@ Here, we will compare county-level areas inside Virginia and use the **median** 
 This part is slightly tricky.
 
 1. Make sure the **Virginia site is the current site** on the map.
-2. Go to **Maps â†’ Run analysis â†’ Benchmark comparisons**.
+2. Go to **Maps &rarr; Run analysis &rarr; Benchmark comparisons**.
 3. For **Select location type**, choose **Geographies or hexagons**.
 
 **Do not choose `Your sites`.** If you choose the Virginia site directly as a site, Business Analyst treats Virginia as one single area. We want all county-level geographies inside Virginia.
@@ -100,7 +100,7 @@ Do this **before moving to Suitability analysis**.
 Because Benchmark and Suitability are separate analysis workflows, export each one while that analysis is open.
 
 1. Keep/open the saved **Benchmark comparisons** layer.
-2. Go to **Share results â†’ ArcGIS web map**.
+2. Go to **Share results &rarr; ArcGIS web map**.
 3. Export the map content as a **new hosted feature service**.
 4. Include the Benchmark analysis layer.
 5. Name the web map:
@@ -116,7 +116,7 @@ You should end this step with a Benchmark **web map** and its associated **hoste
 
 ---
 
-## 3. Analysis 2 â€” Suitability analysis
+## 3. Analysis 2 &mdash; Suitability analysis
 
 ### What does Suitability analysis do?
 
@@ -129,7 +129,7 @@ The score is not an objective statement that one county is "best." Your variable
 ### 3.1 Use Virginia counties again
 
 1. Make **Virginia** the current site.
-2. Go to **Maps â†’ Run analysis â†’ Suitability analysis**.
+2. Go to **Maps &rarr; Run analysis &rarr; Suitability analysis**.
 3. Choose **Geographies or hexagons**.
 4. Set **Area of interest = Current site**.
 5. Keep **Geographies** selected.
@@ -139,11 +139,11 @@ The score is not an objective statement that one county is "best." Your variable
 
 Click:
 
-**Select criteria â†’ Add variables from data browser**
+**Select criteria &rarr; Add variables from data browser**
 
 Then search for and **manually check each of these three variables**. Do not rely on a Featured list or automatically generated criteria list.
 
-#### Criterion 1 â€” Total Population
+#### Criterion 1 &mdash; Total Population
 
 Select:
 
@@ -153,7 +153,7 @@ For this current Esri variable, keep **Calculation = Default**. The latest Total
 
 ![Select 2026 Total Population](../../assets/week-4/screenshots/Screenshot%202026-09-08%20214638.png)
 
-#### Criterion 2 â€” Median Household Income
+#### Criterion 2 &mdash; Median Household Income
 
 Select:
 
@@ -163,7 +163,7 @@ Use **Calculation = Median**.
 
 ![Select 2026 Median Household Income](../../assets/week-4/screenshots/Screenshot%202026-09-08%20214707.png)
 
-#### Criterion 3 â€” Bachelor's Degree
+#### Criterion 3 &mdash; Bachelor's Degree
 
 Search for:
 
@@ -203,7 +203,7 @@ In **Scoring method**:
 - **Preset method:** `Combine values (default)`
 - **Final score scale:** `0 to 100`
 
-Using 0â€“100 makes the final score easier to interpret.
+Using 0&ndash;100 makes the final score easier to interpret.
 
 ![Use Combine values and a 0-to-100 final score](../../assets/week-4/screenshots/Screenshot%202026-09-08%20215129.png)
 
@@ -238,7 +238,7 @@ Record the highest-ranked county-level area and its score.
 Export this analysis **separately** from the Benchmark map.
 
 1. Keep/open the **Suitability analysis** layer.
-2. Go to **Share results â†’ ArcGIS web map**.
+2. Go to **Share results &rarr; ArcGIS web map**.
 3. Export the map content as a **new hosted feature service**.
 4. Include the Suitability analysis layer.
 5. Name the web map:
@@ -266,7 +266,7 @@ Because you are selecting the saved **Virginia** site, this standalone infograph
 
 ### 4.1 Run the standalone infographic
 
-1. Go to **Reports â†’ Run reports â†’ Run infographics**.
+1. Go to **Reports &rarr; Run reports &rarr; Run infographics**.
 2. Select the **Virginia** site.
 3. Manually select **Demographic Summary**.
 4. Click **Run now**.
@@ -280,7 +280,7 @@ The result should be a statewide Virginia infographic, similar to this:
 
 ### 4.2 Understand what is and is not saved
 
-This **Reports â†’ Run infographics** run is a one-time output. It is **not saved back into your Business Analyst project as a reusable project item**. If you close it without exporting it, that particular run is gone and you would need to run the infographic again.
+This **Reports &rarr; Run infographics** run is a one-time output. It is **not saved back into your Business Analyst project as a reusable project item**. If you close it without exporting it, that particular run is gone and you would need to run the infographic again.
 
 If you want to keep this standalone output, export it. Available formats in the walkthrough included:
 
@@ -301,13 +301,13 @@ If you want to keep this standalone output, export it. Available formats in the 
 
 Go to:
 
-**Maps â†’ Share results â†’ ArcGIS Dashboards**
+**Maps &rarr; Share results &rarr; ArcGIS Dashboards**
 
 This starts a **new infographic run for the dashboard**. The dashboard does not reuse the standalone infographic output from Step 4.
 
-First choose **One site â†’ Different infographics**:
+First choose **One site &rarr; Different infographics**:
 
-![Choose One site â†’ Different infographics](../../assets/week-4/screenshots/Screenshot%202026-09-08%20220539.png)
+![Choose One site &rarr; Different infographics](../../assets/week-4/screenshots/Screenshot%202026-09-08%20220539.png)
 
 Choose:
 
@@ -401,7 +401,7 @@ At minimum:
 
 A useful pattern is:
 
-**Benchmark map â†’ filters data widget + sets Suitability map extent**
+**Benchmark map &rarr; filters data widget + sets Suitability map extent**
 
 or the reverse.
 
@@ -512,12 +512,12 @@ Before submitting, open it once more in a Private / Incognito window.
 
 ---
 
-## Rubric â€” 100 points
+## Rubric &mdash; 100 points
 
 | Component | Required evidence | Points |
 |---|---|---:|
 | **Benchmark map** | Virginia county-level Benchmark analysis with a correct median benchmark and its own working exported web map | 20 |
-| **Suitability map** | Virginia county-level Suitability analysis, three manually selected criteria, student-chosen weights, 0â€“100 score, readable classification and sequential color ramp, exported as its own working web map | 20 |
+| **Suitability map** | Virginia county-level Suitability analysis, three manually selected criteria, student-chosen weights, 0&ndash;100 score, readable classification and sequential color ramp, exported as its own working web map | 20 |
 | **Virginia infographic** | Standalone Virginia Demographic Summary run completed and understood as a one-time output; dashboard contains its own embedded Virginia infographic run | 20 |
 | **Interactive dashboard design** | Embedded infographic + two maps + one data widget; map legends; concise methods/findings text; at least one working filter and linked map extent/action | 20 |
 | **Sharing and submission** | Dashboard and all required dependencies public, editable hosted layers approved for public data collection when required, dashboard verified in Private/Incognito mode, correct viewing URL submitted | 20 |
