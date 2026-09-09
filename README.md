@@ -21,6 +21,8 @@
 - [Lab 2](docs/assignments/lab-2/index.md)
 - [Module 3](docs/modules/module-3/index.md)
 - [Lab 3](docs/assignments/lab-3/index.md)
+- [Module 4](docs/modules/module-4/index.md)
+- [Lab 4](docs/assignments/lab-4/index.md)
 
 ## Course Overview
 
