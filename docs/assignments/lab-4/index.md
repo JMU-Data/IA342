@@ -514,13 +514,49 @@ Before submitting, open it once more in a Private / Incognito window.
 
 ## Rubric &mdash; 100 points
 
-| Component | Required evidence | Points |
-|---|---|---:|
-| **Benchmark map** | Virginia county-level Benchmark analysis with a correct median benchmark and its own working exported web map | 20 |
-| **Suitability map** | Virginia county-level Suitability analysis, three manually selected criteria, student-chosen weights, 0&ndash;100 score, readable classification and sequential color ramp, exported as its own working web map | 20 |
-| **Virginia infographic** | Standalone Virginia Demographic Summary run completed and understood as a one-time output; dashboard contains its own embedded Virginia infographic run | 20 |
-| **Interactive dashboard design** | Embedded infographic + two maps + one data widget; map legends; concise methods/findings text; at least one working filter and linked map extent/action | 20 |
-| **Sharing and submission** | Dashboard and all required dependencies public, editable hosted layers approved for public data collection when required, dashboard verified in Private/Incognito mode, correct viewing URL submitted | 20 |
-| **Total** | | **100** |
+<div style="overflow-x: auto; margin: 1.5rem 0 2rem;">
+  <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.5; border: 1px solid #d0d7de; border-radius: 6px;">
+    <thead>
+      <tr style="background-color: #f6f8fa; border-bottom: 2px solid #d0d7de;">
+        <th style="padding: 0.75rem 1rem; text-align: left; width: 25%; font-weight: 600; color: #1f2328;">Component</th>
+        <th style="padding: 0.75rem 1rem; text-align: left; width: 63%; font-weight: 600; color: #1f2328;">Required evidence</th>
+        <th style="padding: 0.75rem 1rem; text-align: right; width: 12%; font-weight: 600; color: #1f2328;">Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="border-bottom: 1px solid #d0d7de;">
+        <td style="padding: 0.75rem 1rem; font-weight: 600; color: #1f2328; vertical-align: top;">Benchmark Analysis</td>
+        <td style="padding: 0.75rem 1rem; color: #24292f; vertical-align: top;">Correct Virginia county benchmark analysis and working exported web map.</td>
+        <td style="padding: 0.75rem 1rem; text-align: right; font-weight: 600; color: #1f2328; vertical-align: top;">20</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #d0d7de; background-color: #fafbfc;">
+        <td style="padding: 0.75rem 1rem; font-weight: 600; color: #1f2328; vertical-align: top;">Suitability Analysis</td>
+        <td style="padding: 0.75rem 1rem; color: #24292f; vertical-align: top;">Three required criteria, student-selected weights, readable 0&ndash;100 result, and working exported web map.</td>
+        <td style="padding: 0.75rem 1rem; text-align: right; font-weight: 600; color: #1f2328; vertical-align: top;">20</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #d0d7de;">
+        <td style="padding: 0.75rem 1rem; font-weight: 600; color: #1f2328; vertical-align: top;">Virginia Infographic</td>
+        <td style="padding: 0.75rem 1rem; color: #24292f; vertical-align: top;">Standalone Virginia infographic completed; dashboard contains its own embedded infographic.</td>
+        <td style="padding: 0.75rem 1rem; text-align: right; font-weight: 600; color: #1f2328; vertical-align: top;">20</td>
+      </tr>
+      <tr style="border-bottom: 1px solid #d0d7de; background-color: #fafbfc;">
+        <td style="padding: 0.75rem 1rem; font-weight: 600; color: #1f2328; vertical-align: top;">Interactive Dashboard</td>
+        <td style="padding: 0.75rem 1rem; color: #24292f; vertical-align: top;">Infographic + two maps + one data widget + concise text + working interaction.</td>
+        <td style="padding: 0.75rem 1rem; text-align: right; font-weight: 600; color: #1f2328; vertical-align: top;">20</td>
+      </tr>
+      <tr style="border-bottom: 2px solid #d0d7de;">
+        <td style="padding: 0.75rem 1rem; font-weight: 600; color: #1f2328; vertical-align: top;">Sharing &amp; Submission</td>
+        <td style="padding: 0.75rem 1rem; color: #24292f; vertical-align: top;">Required items are public; dashboard works in Private/Incognito mode; correct viewing URL submitted.</td>
+        <td style="padding: 0.75rem 1rem; text-align: right; font-weight: 600; color: #1f2328; vertical-align: top;">20</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr style="background-color: #f6f8fa; font-weight: bold;">
+        <td colspan="2" style="padding: 0.75rem 1rem; text-align: right; color: #1f2328;">Total:</td>
+        <td style="padding: 0.75rem 1rem; text-align: right; color: #0969da; font-size: 1.05rem;">100</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
 ---
 [Return to Course Home](../../) | [Return to Module 4](../../modules/module-4/)

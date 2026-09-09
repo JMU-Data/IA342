@@ -406,9 +406,9 @@ title: "Module 4: Color Theory - IA 342"
 <div class="deck-container" id="lectureDeck">
   <div class="deck-nav-bar">
     <div class="deck-title-tag">
-      <span>ðŸŽ¨ IA 342 Week 4 Lecture</span>
+      <span>IA 342 Week 4 Lecture</span>
       <span style="opacity: 0.4;">|</span>
-      <span id="slideCounter">Slide 1 of 48</span>
+      <span id="slideCounter">Slide 1 of 56</span>
     </div>
     <div class="deck-controls">
       <button class="deck-btn" id="prevBtn" onclick="changeSlide(-1)" title="Previous (&larr; / PageUp)">&#9664; Prev</button>
@@ -423,7 +423,7 @@ title: "Module 4: Color Theory - IA 342"
   <div class="deck-stage">
     <!-- SLIDE 1: Title Screen -->
     <div class="slide active" data-slide="1">
-      <div class="slide-center-box">
+<div class="slide-center-box">
         <span class="slide-badge">Lecture 04 &middot; Color Theory</span>
         <h1 class="slide-main-title">Color Theory</h1>
         <p class="slide-subtitle">Why Use Color? How Does It Work? When Does It Help&mdash;or Get in the Way?</p>
@@ -464,9 +464,10 @@ title: "Module 4: Color Theory - IA 342"
         </div>
       </div>
     </div>
+
     <!-- SLIDE 2: 02 &mdash; First job: tell the reader where to look -->
     <div class="slide" data-slide="2">
-      <span class="slide-badge">Visual Attention</span>
+<span class="slide-badge">Visual Attention</span>
       <h2>02 &mdash; First job: tell the reader where to look</h2>
       <div class="slide-text-large">
         <p>What does the teal color ask you to notice first?</p>
@@ -477,9 +478,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://www.bigbookofdashboards.com/dashboards.html" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 4, "What-If Analysis: Wage Increase Ramifications"</a>.</em></p>
     </div>
+
     <!-- SLIDE 3: 03 &mdash; Second job: create an emotional frame -->
     <div class="slide" data-slide="3">
-      <span class="slide-badge">Emotional Framing</span>
+<span class="slide-badge">Emotional Framing</span>
       <h2>03 &mdash; Second job: create an emotional frame</h2>
       <div class="slide-text-large">
         <p>Compare your immediate reaction to the red and blue versions.</p>
@@ -491,9 +493,10 @@ title: "Module 4: Color Theory - IA 342"
       <p style="text-align:center; font-size:0.95rem; color:#57606a; margin-top:0.5rem;">Original: Simon Scarr (2011). Blue redesign: Andy Cotgreave (2014). The redesign also changes the headline and orientation; this is not a color-only experiment.</p>
       <p class="caption-text"><em>Source: Original graphic: <a href="https://www.simonscarr.com/iraqs-bloody-toll" target="_blank" rel="noopener">Simon Scarr (2011), "Iraq's bloody toll," South China Morning Post</a>. Blue redesign: <a href="https://study.sagepub.com/onlineresearchmethods2e2/student-resources/chapter-18/colour-illustrations" target="_blank" rel="noopener">Andy Cotgreave (2014), "Iraq: Deaths on the Decline," reproduced and credited by SAGE, Chapter 18, Figure 18.2</a>.</em></p>
     </div>
+
     <!-- SLIDE 4: 04 &mdash; Color can explain and persuade -->
     <div class="slide" data-slide="4">
-      <span class="slide-badge">Design Purpose</span>
+<span class="slide-badge">Design Purpose</span>
       <h2>04 &mdash; Color can explain and persuade</h2>
       <div class="slide-text-large">
         <p>A highlight directs attention. A palette can also suggest mood, urgency or identity.</p>
@@ -504,9 +507,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://www.simonscarr.com/iraqs-bloody-toll" target="_blank" rel="noopener">Simon Scarr (2011), "Iraq's bloody toll," South China Morning Post</a>; <a href="https://study.sagepub.com/onlineresearchmethods2e2/student-resources/chapter-18/colour-illustrations" target="_blank" rel="noopener">Andy Cotgreave (2014), "Iraq: Deaths on the Decline," reproduced and credited by SAGE, Chapter 18, Figure 18.2</a>.</em></p>
     </div>
+
     <!-- SLIDE 5: 05 &mdash; Physical properties: light and wavelength -->
     <div class="slide" data-slide="5">
-      <span class="slide-badge">Physical Properties</span>
+<span class="slide-badge">Physical Properties</span>
       <h2>05 &mdash; Physical properties: light and wavelength</h2>
       <div class="slide-text-large">
         <p>Visible light occupies roughly 380&ndash;700 nm of the electromagnetic spectrum.</p>
@@ -517,9 +521,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://science.nasa.gov/ems/09_visiblelight/" target="_blank" rel="noopener">NASA Science, "Visible Light"</a>.</em></p>
     </div>
+
     <!-- SLIDE 6: 06 &mdash; Surfaces do not reflect every wavelength equally -->
     <div class="slide" data-slide="6">
-      <span class="slide-badge">Physical Properties</span>
+<span class="slide-badge">Physical Properties</span>
       <h2>06 &mdash; Surfaces do not reflect every wavelength equally</h2>
       <div class="slide-text-large">
         <p>Compare the reflectance curves for white, black, red and blue.</p>
@@ -530,9 +535,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill, "Color and Design of Thematic Maps", subsection "Physical Properties of Color". Physical explanation: <a href="https://science.nasa.gov/ems/09_visiblelight/" target="_blank" rel="noopener">NASA Science, "Visible Light"</a>.</em></p>
     </div>
+
     <!-- SLIDE 7: Short video &mdash; Why do we see color? -->
     <div class="slide" data-slide="7">
-      <span class="slide-badge">Video Concept</span>
+<span class="slide-badge">Video Concept</span>
       <h2>Short video &mdash; Why do we see color?</h2>
       <p style="margin-top: 0; color: #57606a;">White light contains many wavelengths. Surfaces absorb some wavelengths and reflect others; the reflected light reaching the eye contributes to the color we perceive.</p>
       <div class="video-container-large">
@@ -542,9 +548,10 @@ title: "Module 4: Color Theory - IA 342"
         <a href="https://youtu.be/g_bMaLqNn6o" target="_blank" rel="noopener">Open the video on YouTube</a>
       </div>
     </div>
+
     <!-- SLIDE 8: 07 &mdash; Three-step takeaway -->
     <div class="slide" data-slide="8">
-      <span class="slide-badge">Conceptual Recap</span>
+<span class="slide-badge">Conceptual Recap</span>
       <h2>07 &mdash; Three-step takeaway</h2>
       <div class="slide-text-large">
         <ol style="font-size: 1.25rem; line-height: 2; margin: 1.5rem 0;">
@@ -558,6 +565,7 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://science.nasa.gov/ems/09_visiblelight/" target="_blank" rel="noopener">NASA Science, "Visible Light"</a>; Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill, "Color and Design of Thematic Maps".</em></p>
     </div>
+
     <!-- SLIDE 9: 08 &mdash; Additive color: RGB light -->
     <div class="slide" data-slide="9">
       <span class="slide-badge">Color Models &middot; Additive</span>
@@ -566,17 +574,24 @@ title: "Module 4: Color Theory - IA 342"
         <p>Red, green and blue are the screen primaries.</p>
         <p>Two primaries form a secondary; all three at full strength give white.</p>
       </div>
-      <div class="slide-visual-full" style="max-height: 260px; margin-bottom: 0.8rem;">
-        <img src="../../assets/week-4/additive-mixing.svg" alt="Additive color: RGB light" style="max-height: 220px;" />
-      </div>
-      <p style="margin: 0.5rem 0 0.3rem;"><strong>Classroom activity:</strong> <a href="../../assets/week-4/color-mixing.html" target="_blank" rel="noopener">Open color mixing in a new tab</a></p>
-      <div class="activity-container-full">
-        <iframe src="../../assets/week-4/color-mixing.html" title="Color Mixing &mdash; classroom activity" loading="lazy" allow="fullscreen"></iframe>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-4/additive-mixing.svg" alt="Additive color: RGB light" />
       </div>
       <p class="caption-text"><em>Source: Original RGB illustration; concepts: Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill, "Color and Design of Thematic Maps", subsection "Color Theories".</em></p>
     </div>
-    <!-- SLIDE 10: 09 &mdash; Subtractive color: CMY filters -->
+
+    <!-- SLIDE 10: Interactive &mdash; Additive Color Mixing (RGB) -->
     <div class="slide" data-slide="10">
+      <span class="slide-badge">Interactive Lab</span>
+      <h2>Interactive &mdash; Additive Color Mixing (RGB)</h2>
+      <p style="margin-top: 0; color: #57606a;">Adjust the Red, Green, and Blue light channels to observe how additive primaries combine on digital screens.</p>
+      <div class="activity-container-full">
+        <iframe src="../../assets/week-4/color-mixing.html" title="Additive Color Mixing &mdash; classroom activity" loading="lazy" allow="fullscreen"></iframe>
+      </div>
+    </div>
+
+    <!-- SLIDE 11: 09 &mdash; Subtractive color: CMY filters -->
+    <div class="slide" data-slide="11">
       <span class="slide-badge">Color Models &middot; Subtractive</span>
       <h2>09 &mdash; Subtractive color: CMY filters</h2>
       <div class="slide-text-large">
@@ -586,14 +601,22 @@ title: "Module 4: Color Theory - IA 342"
       <div class="slide-visual-full">
         <img src="../../assets/week-4/subtractive-mixing.svg" alt="Subtractive color: CMY filters" />
       </div>
-      <div class="slide-text-large" style="text-align: center; margin-top: 1rem;">
-        <p><strong>Classroom activity:</strong> <a href="../../assets/week-4/color-mixing.html" target="_blank" rel="noopener" class="deck-btn">Open color mixing (switch mode to CMY) &#8599;</a></p>
-      </div>
       <p class="caption-text"><em>Source: Original ideal-CMY illustration; concepts: Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill, "Color and Design of Thematic Maps", subsection "Color Theories".</em></p>
     </div>
-    <!-- SLIDE 11: 10 &mdash; Primary, secondary, complementary -->
-    <div class="slide" data-slide="11">
-      <span class="slide-badge">Color Theory</span>
+
+    <!-- SLIDE 12: Interactive &mdash; Subtractive Color Mixing (CMY) -->
+    <div class="slide" data-slide="12">
+      <span class="slide-badge">Interactive Lab</span>
+      <h2>Interactive &mdash; Subtractive Color Mixing (CMY)</h2>
+      <p style="margin-top: 0; color: #57606a;">Switch to CMY mode: observe how physical inks and filters subtract wavelengths from white light.</p>
+      <div class="activity-container-full">
+        <iframe src="../../assets/week-4/color-mixing.html" title="Subtractive Color Mixing &mdash; classroom activity" loading="lazy" allow="fullscreen"></iframe>
+      </div>
+    </div>
+
+    <!-- SLIDE 13: 10 &mdash; Primary, secondary, complementary -->
+    <div class="slide" data-slide="13">
+<span class="slide-badge">Color Theory</span>
       <h2>10 &mdash; Primary, secondary, complementary</h2>
       <div class="slide-text-large">
         <p>RGB secondary colors are cyan, magenta and yellow.</p>
@@ -604,40 +627,60 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: Original color wheel diagram; concepts: Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill, "Color and Design of Thematic Maps".</em></p>
     </div>
-    <!-- SLIDE 12: 11 &mdash; Hue, value and saturation -->
-    <div class="slide" data-slide="12">
+
+    <!-- SLIDE 14: 11 &mdash; Hue, value and saturation -->
+    <div class="slide" data-slide="14">
       <span class="slide-badge">Color Dimensions</span>
       <h2>11 &mdash; Hue, value and saturation</h2>
       <div class="slide-text-large">
-        <p>Hue: the color family. Saturation: vivid versus neutral.</p>
-        <p>Value: light versus dark. In data graphics, value carries order.</p>
+        <p><strong>Hue:</strong> the color family (wavelength category).</p>
+        <p><strong>Saturation:</strong> intensity or purity &mdash; vivid versus neutral gray.</p>
+        <p><strong>Value:</strong> relative lightness or darkness. In data visualization, value carries natural order.</p>
       </div>
-      <p style="margin: 0.5rem 0 0.3rem;"><strong>Classroom activity:</strong> <a href="../../assets/week-4/hue-value-saturation.html" target="_blank" rel="noopener">Open hue value saturation in a new tab</a></p>
+      <div class="slide-visual-full">
+        <img src="../../assets/week-4/hsv.svg" alt="Hue, value and saturation" />
+      </div>
+      <p class="caption-text"><em>Source: Original HSV demonstration; color-component background: Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill, "Color and Design of Thematic Maps".</em></p>
+    </div>
+
+    <!-- SLIDE 15: Interactive &mdash; Explore Hue, Value, and Saturation -->
+    <div class="slide" data-slide="15">
+      <span class="slide-badge">Interactive Lab</span>
+      <h2>Interactive &mdash; Explore Hue, Value, and Saturation</h2>
+      <p style="margin-top: 0; color: #57606a;">Isolate one dimension at a time: change hue around the color wheel, adjust saturation from gray to vivid, and vary value from dark to light.</p>
       <div class="activity-container-full">
         <iframe src="../../assets/week-4/hue-value-saturation.html" title="Hue Value Saturation &mdash; classroom activity" loading="lazy" allow="fullscreen"></iframe>
       </div>
-      <p class="caption-text"><em>Source: Original HSV demonstration; color-component background: Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill, "Color and Design of Thematic Maps", "Components of Color" and color models. This activity uses HSV value, not a perceptually uniform lightness measure.</em></p>
     </div>
-    <!-- SLIDE 13: 12 &mdash; Your reaction first. The book's list second. -->
-    <div class="slide" data-slide="13">
+
+    <!-- SLIDE 16: 12 &mdash; Your reaction first. The book's list second. -->
+    <div class="slide" data-slide="16">
       <span class="slide-badge">Color Perception</span>
       <h2>12 &mdash; Your reaction first. The book's list second.</h2>
       <div class="slide-text-large">
         <p>Look at the color without a verbal label.</p>
-        <p>Ask the class for two or three associations aloud; then reveal the source table. No typing is required.</p>
+        <p>Ask the class for two or three immediate associations aloud; then reveal the historical reference table.</p>
+        <p>Notice cultural agreements, disagreements, and personal associations.</p>
       </div>
-      <div class="slide-visual-full" style="max-height: 240px; margin-bottom: 0.8rem;">
-        <img src="../../assets/week-4/reaction-stimulus.svg" alt="Your reaction first. The book's list second." style="max-height: 200px;" />
+      <div class="slide-visual-full">
+        <img src="../../assets/week-4/reaction-stimulus.svg" alt="Your reaction first. The book's list second." />
       </div>
-      <p style="margin: 0.5rem 0 0.3rem;"><strong>Classroom activity:</strong> <a href="../../assets/week-4/color-reactions.html" target="_blank" rel="noopener">Open color reactions in a new tab</a></p>
+      <p class="caption-text"><em>Source: Classroom discussion protocol; associative table: Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill, "Color and Design of Thematic Maps", Table 14.1.</em></p>
+    </div>
+
+    <!-- SLIDE 17: Interactive &mdash; Color Reactions -->
+    <div class="slide" data-slide="17">
+      <span class="slide-badge">Interactive Activity</span>
+      <h2>Interactive &mdash; Color Reactions and Emotional Associations</h2>
+      <p style="margin-top: 0; color: #57606a;">Test your immediate reactions to saturated hues before comparing with historical associative lists.</p>
       <div class="activity-container-full">
         <iframe src="../../assets/week-4/color-reactions.html" title="Color Reactions &mdash; classroom activity" loading="lazy" allow="fullscreen"></iframe>
       </div>
-      <p class="caption-text"><em>Source: Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill, "Color and Design of Thematic Maps", subsection "Subjective Reactions to Color"; classroom response activity is an original adaptation, not a published experiment.</em></p>
     </div>
-    <!-- SLIDE 14: 13 &mdash; Subjective reactions to color -->
-    <div class="slide" data-slide="14">
-      <span class="slide-badge">Color Associations</span>
+
+    <!-- SLIDE 18: 13 &mdash; Subjective reactions to color -->
+    <div class="slide" data-slide="18">
+<span class="slide-badge">Color Associations</span>
       <h2>13 &mdash; Subjective reactions to color</h2>
       <div class="slide-text-large">
         <p>One color can carry both positive and negative associations.</p>
@@ -653,23 +696,34 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill, "Color and Design of Thematic Maps", subsection "Subjective Reactions to Color".</em></p>
     </div>
-    <!-- SLIDE 15: 14 &mdash; Color combinations: liking versus reading -->
-    <div class="slide" data-slide="15">
+
+    <!-- SLIDE 19: 14 &mdash; Color combinations: liking versus reading -->
+    <div class="slide" data-slide="19">
       <span class="slide-badge">Legibility vs Preference</span>
       <h2>14 &mdash; Color combinations: liking versus reading</h2>
       <div class="slide-text-large">
         <p>Rate "I like it" and "It is easy to read" separately.</p>
-        <p>Would you still choose a favorite combination for small map labels?</p>
+        <p>Would you still choose a favorite combination for small map labels or multi-series charts?</p>
+        <div class="alert-takeaway" style="margin-top: 1.5rem;">
+          <strong>Core Principle:</strong> Aesthetic preference does not predict legibility. High value contrast between foreground mark and background is required for fast, accurate text and symbol discrimination.
+        </div>
       </div>
-      <p style="margin: 0.5rem 0 0.3rem;"><strong>Classroom activity:</strong> <a href="../../assets/week-4/color-combinations.html" target="_blank" rel="noopener">Open color combinations in a new tab</a></p>
+      <p class="caption-text"><em>Source: Historical legibility tables: Sharpe (1974), Hackl (1981); discussion: Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill.</em></p>
+    </div>
+
+    <!-- SLIDE 20: Interactive &mdash; Test Color Combinations -->
+    <div class="slide" data-slide="20">
+      <span class="slide-badge">Interactive Lab</span>
+      <h2>Interactive &mdash; Test Color Combinations and Contrast</h2>
+      <p style="margin-top: 0; color: #57606a;">Compare subjective aesthetic preference against objective legibility and contrast ratios.</p>
       <div class="activity-container-full">
         <iframe src="../../assets/week-4/color-combinations.html" title="Color Combinations &mdash; classroom activity" loading="lazy" allow="fullscreen"></iframe>
       </div>
-      <p class="caption-text"><em>Source: Historical legibility tables: <a href="https://books.google.com/books/about/The_Psychology_of_Color_and_Design.html?id=LNN-AAAAMAAJ" target="_blank" rel="noopener">Deborah T. Sharpe (1974), The Psychology of Color and Design, Nelson-Hall, p. 107</a>; Hackl (1981), pp. 41&ndash;44 (attribution printed on the historical table; full author name and work title remain unverified). Modern text-contrast guidance: <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html" target="_blank" rel="noopener">W3C, WCAG 2.2, Understanding SC 1.4.3: Contrast (Minimum)</a>.</em></p>
     </div>
-    <!-- SLIDE 16: 15 &mdash; The two historical legibility tables -->
-    <div class="slide" data-slide="16">
-      <span class="slide-badge">Historical Research</span>
+
+    <!-- SLIDE 21: 15 &mdash; The two historical legibility tables -->
+    <div class="slide" data-slide="21">
+<span class="slide-badge">Historical Research</span>
       <h2>15 &mdash; The two historical legibility tables</h2>
       <div class="slide-text-large">
         <p>Compare the orderings: they are not identical.</p>
@@ -687,9 +741,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: Left table: <a href="https://books.google.com/books/about/The_Psychology_of_Color_and_Design.html?id=LNN-AAAAMAAJ" target="_blank" rel="noopener">Deborah T. Sharpe (1974), The Psychology of Color and Design, Nelson-Hall, p. 107</a>. Right table: Hackl (1981), pp. 41&ndash;44 (attribution printed on the historical table; full author name and work title remain unverified). The printed page attributions are retained; the original page scans/study methods have not been independently checked.</em></p>
     </div>
-    <!-- SLIDE 17: 16 &mdash; What can we claim from a color preference game? -->
-    <div class="slide" data-slide="17">
-      <span class="slide-badge">Analytical Insight</span>
+
+    <!-- SLIDE 22: 16 &mdash; What can we claim from a color preference game? -->
+    <div class="slide" data-slide="22">
+<span class="slide-badge">Analytical Insight</span>
       <h2>16 &mdash; What can we claim from a color preference game?</h2>
       <div class="slide-text-large">
         <p>Our class may disagree about a pair while agreeing that its labels are hard to read.</p>
@@ -700,9 +755,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: Original classroom discussion. For text legibility, separately consult <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html" target="_blank" rel="noopener">W3C, WCAG 2.2, Understanding SC 1.4.3: Contrast (Minimum)</a>.</em></p>
     </div>
-    <!-- SLIDE 18: 17 &mdash; Five uses of color -->
-    <div class="slide" data-slide="18">
-      <span class="slide-badge">Palettes & Encoding</span>
+
+    <!-- SLIDE 23: 17 &mdash; Five uses of color -->
+    <div class="slide" data-slide="23">
+<span class="slide-badge">Palettes & Encoding</span>
       <h2>17 &mdash; Five uses of color</h2>
       <div class="slide-text-large">
         <p>Match the role to the question before choosing the palette.</p>
@@ -712,9 +768,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer," Figure 1.16</a>.</em></p>
     </div>
-    <!-- SLIDE 19: 18 &mdash; Sequential: ordered values -->
-    <div class="slide" data-slide="19">
-      <span class="slide-badge">Palette Types &middot; Sequential</span>
+
+    <!-- SLIDE 24: 18 &mdash; Sequential: ordered values -->
+    <div class="slide" data-slide="24">
+<span class="slide-badge">Palette Types &middot; Sequential</span>
       <h2>18 &mdash; Sequential: ordered values</h2>
       <div class="slide-text-large">
         <p>Read the light-to-dark direction and the legend.</p>
@@ -725,9 +782,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer," Figure 1.17</a>.</em></p>
     </div>
-    <!-- SLIDE 20: 19 &mdash; Diverging: two sides of a reference -->
-    <div class="slide" data-slide="20">
-      <span class="slide-badge">Palette Types &middot; Diverging</span>
+
+    <!-- SLIDE 25: 19 &mdash; Diverging: two sides of a reference -->
+    <div class="slide" data-slide="25">
+<span class="slide-badge">Palette Types &middot; Diverging</span>
       <h2>19 &mdash; Diverging: two sides of a reference</h2>
       <div class="slide-text-large">
         <p>Find the meaningful midpoint.</p>
@@ -738,9 +796,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer," Figure 1.19</a>.</em></p>
     </div>
-    <!-- SLIDE 21: 20 &mdash; Categorical: different kinds -->
-    <div class="slide" data-slide="21">
-      <span class="slide-badge">Palette Types &middot; Categorical</span>
+
+    <!-- SLIDE 26: 20 &mdash; Categorical: different kinds -->
+    <div class="slide" data-slide="26">
+<span class="slide-badge">Palette Types &middot; Categorical</span>
       <h2>20 &mdash; Categorical: different kinds</h2>
       <div class="slide-text-large">
         <p>Furniture, office supplies and technology keep distinct colors.</p>
@@ -751,9 +810,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer," Figure 1.20</a>.</em></p>
     </div>
-    <!-- SLIDE 22: 21 &mdash; Highlight: one series, the rest as context -->
-    <div class="slide" data-slide="22">
-      <span class="slide-badge">Palette Types &middot; Highlight</span>
+
+    <!-- SLIDE 27: 21 &mdash; Highlight: one series, the rest as context -->
+    <div class="slide" data-slide="27">
+<span class="slide-badge">Palette Types &middot; Highlight</span>
       <h2>21 &mdash; Highlight: one series, the rest as context</h2>
       <div class="slide-text-large">
         <p>Find the highlighted state without searching the legend.</p>
@@ -764,9 +824,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer," Figure 1.21</a>.</em></p>
     </div>
-    <!-- SLIDE 23: 22 &mdash; Alert: attach color to a stated condition -->
-    <div class="slide" data-slide="23">
-      <span class="slide-badge">Palette Types &middot; Alert</span>
+
+    <!-- SLIDE 28: 22 &mdash; Alert: attach color to a stated condition -->
+    <div class="slide" data-slide="28">
+<span class="slide-badge">Palette Types &middot; Alert</span>
       <h2>22 &mdash; Alert: attach color to a stated condition</h2>
       <div class="slide-text-large">
         <p>Which item draws attention? What explains the alert?</p>
@@ -777,9 +838,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer," Figure 1.22</a>.</em></p>
     </div>
-    <!-- SLIDE 24: 23 &mdash; Color vision is not the same for everyone -->
-    <div class="slide" data-slide="24">
-      <span class="slide-badge">Accessibility</span>
+
+    <!-- SLIDE 29: 23 &mdash; Color vision is not the same for everyone -->
+    <div class="slide" data-slide="29">
+<span class="slide-badge">Accessibility</span>
       <h2>23 &mdash; Color vision is not the same for everyone</h2>
       <div class="slide-text-large">
         <p>Compare the original palette with the modeled color-vision conditions.</p>
@@ -791,9 +853,10 @@ title: "Module 4: Color Theory - IA 342"
       <p style="text-align:center; font-size:0.92rem; color:#57606a; margin-top:0.5rem;">This is an approximate model-based comparison. It is not a diagnostic test or an exact representation of every viewer's experience.</p>
       <p class="caption-text"><em>Source: Visual explanation: original classroom simulation based on <a href="https://doi.org/10.1109/TVCG.2009.113" target="_blank" rel="noopener">Gustavo M. Machado, Manuel M. Oliveira and Leandro A. F. Fernandes (2009), "A Physiologically-based Model for Simulation of Color Vision Deficiency," IEEE TVCG 15(6), 1291&ndash;1298</a>. Background: <a href="https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/color-blindness" target="_blank" rel="noopener">National Eye Institute, "Color Blindness"</a>.</em></p>
     </div>
-    <!-- SLIDE 25: 24 &mdash; Cone responses, spectral sensitivity, and why deficiency types differ -->
-    <div class="slide" data-slide="25">
-      <span class="slide-badge">Biological Foundations</span>
+
+    <!-- SLIDE 30: 24 &mdash; Cone responses, spectral sensitivity, and why deficiency types differ -->
+    <div class="slide" data-slide="30">
+<span class="slide-badge">Biological Foundations</span>
       <h2>24 &mdash; Cone responses, spectral sensitivity, and why deficiency types differ</h2>
       <div class="slide-text-large">
         <p>Color vision depends on overlapping <strong>S, M and L cone</strong> responses across the visible spectrum. The cones do <strong>not</strong> each respond to only one pure color; they respond to overlapping ranges of wavelengths.</p>
@@ -810,9 +873,10 @@ title: "Module 4: Color Theory - IA 342"
       <p style="text-align:center; font-size:0.92rem; color:#57606a; margin-top:0.5rem;">The response curves are a <strong>teaching schematic</strong>, not measured spectral-sensitivity data. The main point is overlap: color perception is based on comparing cone responses, not on three isolated red/green/blue channels.</p>
       <p class="caption-text"><em>Sources: <a href="https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/color-blindness/types-color-vision-deficiency" target="_blank" rel="noopener">National Eye Institute, "Types of Color Vision Deficiency"</a>; <a href="https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/color-blindness" target="_blank" rel="noopener">National Eye Institute, "Color Blindness"</a>; <a href="https://doi.org/10.1109/TVCG.2009.113" target="_blank" rel="noopener">Gustavo M. Machado, Manuel M. Oliveira and Leandro A. F. Fernandes (2009), "A Physiologically-based Model for Simulation of Color Vision Deficiency," IEEE TVCG 15(6), 1291&ndash;1298</a>. Diagram: original classroom SVG based on these sources.</em></p>
     </div>
-    <!-- SLIDE 26: Short video &mdash; Why does color vision deficiency happen? -->
-    <div class="slide" data-slide="26">
-      <span class="slide-badge">Video Concept</span>
+
+    <!-- SLIDE 31: Short video &mdash; Why does color vision deficiency happen? -->
+    <div class="slide" data-slide="31">
+<span class="slide-badge">Video Concept</span>
       <h2>Short video &mdash; Why does color vision deficiency happen?</h2>
       <p style="margin-top: 0; color: #57606a;">Normal color vision depends on overlapping S, M and L cone responses. When one response is altered, some colors can become harder to distinguish.</p>
       <div class="video-container-large">
@@ -822,26 +886,35 @@ title: "Module 4: Color Theory - IA 342"
         <a href="https://youtu.be/87_zh0yDMcw" target="_blank" rel="noopener">Open the video on YouTube</a>
       </div>
     </div>
-    <!-- SLIDE 27: 25 &mdash; Simulate the same colors and marks -->
-    <div class="slide" data-slide="27">
-      <span class="slide-badge">Accessibility Simulator</span>
+
+    <!-- SLIDE 32: 25 &mdash; Simulate the same colors and marks -->
+    <div class="slide" data-slide="32">
+      <span class="slide-badge">Accessibility &middot; Deficiency Types</span>
       <h2>25 &mdash; Simulate the same colors and marks</h2>
       <div class="slide-text-large">
-        <p>Compare protanopia, deuteranopia and tritanopia approximations.</p>
-        <p>Switch red&ndash;green to orange&ndash;blue, then add labels and shapes.</p>
+        <p>Compare normal vision, protanopia, deuteranopia and tritanopia approximations.</p>
+        <p>When red and green converge toward identical brownish yellows, hue alone cannot differentiate data categories.</p>
+        <p>Switch red&ndash;green palettes to orange&ndash;blue, and reinforce color coding with distinct shapes and direct text labels.</p>
       </div>
-      <div class="slide-visual-full" style="max-height: 240px; margin-bottom: 0.8rem;">
-        <img src="../../assets/week-4/cvd-comparison.svg" alt="Simulate the same colors and marks" style="max-height: 200px;" />
+      <div class="slide-visual-full">
+        <img src="../../assets/week-4/cvd-comparison.svg" alt="Simulate the same colors and marks" />
       </div>
-      <p style="margin: 0.5rem 0 0.3rem;"><strong>Classroom activity:</strong> <a href="../../assets/week-4/cvd-simulator.html" target="_blank" rel="noopener">Open cvd simulator in a new tab</a></p>
-      <div class="activity-container-full">
-        <iframe src="../../assets/week-4/cvd-simulator.html" title="Cvd Simulator &mdash; classroom activity" loading="lazy" allow="fullscreen"></iframe>
-      </div>
-      <p class="caption-text"><em>Source: Simulation method: <a href="https://doi.org/10.1109/TVCG.2009.113" target="_blank" rel="noopener">Gustavo M. Machado, Manuel M. Oliveira and Leandro A. F. Fernandes (2009), "A Physiologically-based Model for Simulation of Color Vision Deficiency," IEEE TVCG 15(6), 1291&ndash;1298</a>. <a href="https://colorspacious.readthedocs.io/en/latest/tutorial.html#simulating-colorblindness" target="_blank" rel="noopener">Implementation reference: Colorspacious</a>. Design principle: <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html" target="_blank" rel="noopener">W3C, WCAG 2.2, Understanding SC 1.4.1: Use of Color</a>.</em></p>
+      <p class="caption-text"><em>Source: Algorithm: Hans Brettel, Fran&ccedil;oise Vi&eacute;not and John D. Mollon (1997), "Computerized simulation of color appearance for dichromats", Journal of the Optical Society of America A.</em></p>
     </div>
-    <!-- SLIDE 28: 26 &mdash; Original comparison: traffic-light colors -->
-    <div class="slide" data-slide="28">
-      <span class="slide-badge">Accessibility Case Study</span>
+
+    <!-- SLIDE 33: Interactive &mdash; CVD Simulator -->
+    <div class="slide" data-slide="33">
+      <span class="slide-badge">Interactive Lab</span>
+      <h2>Interactive &mdash; Color Vision Deficiency (CVD) Simulator</h2>
+      <p style="margin-top: 0; color: #57606a;">Apply real-time deficiency matrices to maps, palettes, and charts to verify discriminability under protanopia, deuteranopia, and tritanopia.</p>
+      <div class="activity-container-full">
+        <iframe src="../../assets/week-4/cvd-simulator.html" title="CVD Simulator &mdash; classroom activity" loading="lazy" allow="fullscreen"></iframe>
+      </div>
+    </div>
+
+    <!-- SLIDE 34: 26 &mdash; Original comparison: traffic-light colors -->
+    <div class="slide" data-slide="34">
+<span class="slide-badge">Accessibility Case Study</span>
       <h2>26 &mdash; Original comparison: traffic-light colors</h2>
       <div class="slide-text-large">
         <p>Trace the bars across the original and the simulation.</p>
@@ -852,9 +925,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer," Figure 1.24</a>.</em></p>
     </div>
-    <!-- SLIDE 29: 27 &mdash; Original repair: blue and orange -->
-    <div class="slide" data-slide="29">
-      <span class="slide-badge">Accessible Redesign</span>
+
+    <!-- SLIDE 35: 27 &mdash; Original repair: blue and orange -->
+    <div class="slide" data-slide="35">
+<span class="slide-badge">Accessible Redesign</span>
       <h2>27 &mdash; Original repair: blue and orange</h2>
       <div class="slide-text-large">
         <p>Repeat the same comparison with the revised palette.</p>
@@ -865,9 +939,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer," Figure 1.25</a>; <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html" target="_blank" rel="noopener">W3C, WCAG 2.2, Understanding SC 1.4.1: Use of Color</a>.</em></p>
     </div>
-    <!-- SLIDE 30: 28 &mdash; Using color: a practical starting point -->
-    <div class="slide" data-slide="30">
-      <span class="slide-badge">Design Guidelines</span>
+
+    <!-- SLIDE 36: 28 &mdash; Using color: a practical starting point -->
+    <div class="slide" data-slide="36">
+<span class="slide-badge">Design Guidelines</span>
       <h2>28 &mdash; Using color: a practical starting point</h2>
       <div class="slide-text-large">
         <ul style="font-size: 1.2rem; line-height: 1.9; margin: 1.2rem 0;">
@@ -882,9 +957,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer"</a>; <a href="https://colorbrewer2.org/" target="_blank" rel="noopener">Cynthia A. Brewer, Mark Harrower and The Pennsylvania State University, ColorBrewer 2.0</a>; <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html" target="_blank" rel="noopener">W3C, WCAG 2.2, Understanding SC 1.4.1: Use of Color</a>.</em></p>
     </div>
-    <!-- SLIDE 31: 29 &mdash; Too much color: the legend can become the task -->
-    <div class="slide" data-slide="31">
-      <span class="slide-badge">Cognitive Load</span>
+
+    <!-- SLIDE 37: 29 &mdash; Too much color: the legend can become the task -->
+    <div class="slide" data-slide="37">
+<span class="slide-badge">Cognitive Load</span>
       <h2>29 &mdash; Too much color: the legend can become the task</h2>
       <div class="slide-text-large">
         <p>When many categories each get a saturated hue, the reader may spend more effort decoding the legend than reading the pattern.</p>
@@ -896,40 +972,61 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: design discussion informed by <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer"</a>.</em></p>
     </div>
-    <!-- SLIDE 32: 30 &mdash; Try four categories. Then ten. -->
-    <div class="slide" data-slide="32">
+
+    <!-- SLIDE 38: 30 &mdash; Try four categories. Then ten. -->
+    <div class="slide" data-slide="38">
       <span class="slide-badge">Cognitive Experiment</span>
       <h2>30 &mdash; Try four categories. Then ten.</h2>
       <div class="slide-text-large">
         <p>Study the legend for five seconds and identify three colors.</p>
-        <p>Compare accuracy and how often you need a legend peek.</p>
+        <p>Compare accuracy and notice how often you need to glance back at the legend.</p>
+        <div class="alert-takeaway" style="margin-top: 1.5rem;">
+          <strong>Working Memory Limit:</strong> Human visual working memory reliably tracks only 3&ndash;5 discrete colors simultaneously. Above 7 categories, the legend becomes an active analytical obstacle.
+        </div>
       </div>
-      <p style="margin: 0.5rem 0 0.3rem;"><strong>Classroom activity:</strong> <a href="../../assets/week-4/color-memory.html" target="_blank" rel="noopener">Open color memory in a new tab</a></p>
+      <p class="caption-text"><em>Source: Original classroom memory activity; related design discussions: Colin Ware (2012), Information Visualization: Perception for Design, 3rd ed., Morgan Kaufmann.</em></p>
+    </div>
+
+    <!-- SLIDE 39: Interactive &mdash; Color Memory Experiment -->
+    <div class="slide" data-slide="39">
+      <span class="slide-badge">Interactive Activity</span>
+      <h2>Interactive &mdash; Categorical Color Memory Experiment</h2>
+      <p style="margin-top: 0; color: #57606a;">Test working memory limits with 4, 7, and 10 categories. Notice when the legend becomes an analytical barrier.</p>
       <div class="activity-container-full">
         <iframe src="../../assets/week-4/color-memory.html" title="Color Memory &mdash; classroom activity" loading="lazy" allow="fullscreen"></iframe>
       </div>
-      <p class="caption-text"><em>Source: Original classroom memory activity; related design discussion: <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer"</a>. Four and ten are activity conditions, not established perceptual limits.</em></p>
     </div>
-    <!-- SLIDE 33: 31 &mdash; Background is part of the color design -->
-    <div class="slide" data-slide="33">
+
+    <!-- SLIDE 40: 31 &mdash; Background is part of the color design -->
+    <div class="slide" data-slide="40">
       <span class="slide-badge">Color Context</span>
       <h2>31 &mdash; Background is part of the color design</h2>
       <div class="slide-text-large">
         <p>Both center squares have identical RGB values.</p>
-        <p>Reveal the connection; then match the backgrounds.</p>
+        <p>Reveal the connection; then match the backgrounds to see how surrounding value alters perceived brightness.</p>
+        <div class="alert-takeaway" style="margin-top: 1.5rem;">
+          <strong>Simultaneous Contrast:</strong> The eye perceives color relative to its surroundings. A light background makes an identical patch look darker, while a dark background makes it appear brighter.
+        </div>
       </div>
-      <div class="slide-visual-full" style="max-height: 240px; margin-bottom: 0.8rem;">
-        <img src="../../assets/week-4/background-context.svg" alt="Background is part of the color design" style="max-height: 200px;" />
+      <div class="slide-visual-full">
+        <img src="../../assets/week-4/background-context.svg" alt="Background is part of the color design" />
       </div>
-      <p style="margin: 0.5rem 0 0.3rem;"><strong>Classroom activity:</strong> <a href="../../assets/week-4/background-consistency.html" target="_blank" rel="noopener">Open background consistency in a new tab</a></p>
+      <p class="caption-text"><em>Source: Simultaneous contrast principle: Josef Albers (1963), Interaction of Color, Yale University Press.</em></p>
+    </div>
+
+    <!-- SLIDE 41: Interactive &mdash; Background Consistency -->
+    <div class="slide" data-slide="41">
+      <span class="slide-badge">Interactive Lab</span>
+      <h2>Interactive &mdash; Background Consistency and Contrast</h2>
+      <p style="margin-top: 0; color: #57606a;">Experiment with light and dark mode contrasts to see how identical data marks shift in perceived brightness.</p>
       <div class="activity-container-full">
         <iframe src="../../assets/week-4/background-consistency.html" title="Background Consistency &mdash; classroom activity" loading="lazy" allow="fullscreen"></iframe>
       </div>
-      <p class="caption-text"><em>Source: Original simultaneous-contrast demonstration; related color-context discussion: Borden D. Dent, Jeffrey S. Torguson and Thomas W. Hodler (2009), Cartography: Thematic Map Design, 6th ed., McGraw-Hill, "Color and Design of Thematic Maps".</em></p>
     </div>
-    <!-- SLIDE 34: 32 &mdash; A consistent color should mean a consistent thing -->
-    <div class="slide" data-slide="34">
-      <span class="slide-badge">Consistency In Design</span>
+
+    <!-- SLIDE 42: 32 &mdash; A consistent color should mean a consistent thing -->
+    <div class="slide" data-slide="42">
+<span class="slide-badge">Consistency In Design</span>
       <h2>32 &mdash; A consistent color should mean a consistent thing</h2>
       <div class="slide-text-large">
         <p>Keep a year or category's color stable across charts.</p>
@@ -940,9 +1037,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: Original comparison graphic; data: <a href="https://www.dataplusscience.com/HalloweenData.html" target="_blank" rel="noopener">Jeffrey A. Shaffer, "Halloween Data Set Published for Data Visualization" (2008&ndash;2016 observations)</a>. Color-design context: <a href="https://catalogimages.wiley.com/images/db/pdf/9781119282716.excerpt.pdf" target="_blank" rel="noopener">Steve Wexler, Jeffrey Shaffer and Andy Cotgreave (2017), The Big Book of Dashboards, Wiley, Chapter 1, "Data Visualization: A Primer"</a>.</em></p>
     </div>
-    <!-- SLIDE 35: 33 &mdash; Halloween: a small, real dataset -->
-    <div class="slide" data-slide="35">
-      <span class="slide-badge">Real Dataset Case</span>
+
+    <!-- SLIDE 43: 33 &mdash; Halloween: a small, real dataset -->
+    <div class="slide" data-slide="43">
+<span class="slide-badge">Real Dataset Case</span>
       <h2>33 &mdash; Halloween: a small, real dataset</h2>
       <div class="slide-text-large">
         <p>Jeffrey Shaffer has publicly shared a long-running dataset of trick-or-treaters visiting his home in Cincinnati. The historical examples in this lesson use the 2008&ndash;2016 period.</p>
@@ -953,9 +1051,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://www.dataplusscience.com/HalloweenData.html" target="_blank" rel="noopener">Jeffrey A. Shaffer, "Halloween Data Set Published for Data Visualization"</a>.</em></p>
     </div>
-    <!-- SLIDE 36: 34 &mdash; What should color help us see? -->
-    <div class="slide" data-slide="36">
-      <span class="slide-badge">Visual Inquiry</span>
+
+    <!-- SLIDE 44: 34 &mdash; What should color help us see? -->
+    <div class="slide" data-slide="44">
+<span class="slide-badge">Visual Inquiry</span>
       <h2>34 &mdash; What should color help us see?</h2>
       <div class="slide-text-large">
         <p>Before choosing a palette, choose the question:</p>
@@ -971,9 +1070,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: original classroom SVG using data from <a href="https://www.dataplusscience.com/HalloweenData.html" target="_blank" rel="noopener">Jeffrey A. Shaffer's public Halloween dataset</a>.</em></p>
     </div>
-    <!-- SLIDE 37: 35 &mdash; Public case: seasonal colors with a structured dashboard -->
-    <div class="slide" data-slide="37">
-      <span class="slide-badge">Public Case Study</span>
+
+    <!-- SLIDE 45: 35 &mdash; Public case: seasonal colors with a structured dashboard -->
+    <div class="slide" data-slide="45">
+<span class="slide-badge">Public Case Study</span>
       <h2>35 &mdash; Public case: seasonal colors with a structured dashboard</h2>
       <div class="slide-visual-full">
         <img src="https://www.dataplusscience.com/images/HalloweenEx1.png" alt="Jeff's Halloween Metrics" />
@@ -986,9 +1086,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://www.dataplusscience.com/images/HalloweenEx1.png" target="_blank" rel="noopener">Public original image</a>, featured in <a href="https://www.tableau.com/blog/send-us-your-halloweenviz-61423" target="_blank" rel="noopener">Jeffrey A. Shaffer (2016), "#HalloweenViz exercise: Viz this data, get Tableau swag," Tableau</a>.</em></p>
     </div>
-    <!-- SLIDE 38: 36 &mdash; Public case: one palette, several visual tasks -->
-    <div class="slide" data-slide="38">
-      <span class="slide-badge">Public Case Study</span>
+
+    <!-- SLIDE 46: 36 &mdash; Public case: one palette, several visual tasks -->
+    <div class="slide" data-slide="46">
+<span class="slide-badge">Public Case Study</span>
       <h2>36 &mdash; Public case: one palette, several visual tasks</h2>
       <div class="slide-visual-full">
         <img src="https://www.dataplusscience.com/images/HalloweenEx3.png" alt="Halloween Distribution Of Candies by Yuxiong Guo" />
@@ -1001,9 +1102,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: Yuxiong Guo, "Halloween Distribution Of Candies," <a href="https://www.dataplusscience.com/images/HalloweenEx3.png" target="_blank" rel="noopener">public original image</a>.</em></p>
     </div>
-    <!-- SLIDE 39: 37 &mdash; Public case: one dataset, four views -->
-    <div class="slide" data-slide="39">
-      <span class="slide-badge">Public Case Study</span>
+
+    <!-- SLIDE 47: 37 &mdash; Public case: one dataset, four views -->
+    <div class="slide" data-slide="47">
+<span class="slide-badge">Public Case Study</span>
       <h2>37 &mdash; Public case: one dataset, four views</h2>
       <div class="slide-visual-full">
         <img src="https://www.dataplusscience.com/images/HalloweenEx4.png" alt="Number of Tricker Treaters Given Day, Time and Year" />
@@ -1016,9 +1118,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://www.dataplusscience.com/images/HalloweenEx4.png" target="_blank" rel="noopener">Public original image</a>, featured in <a href="https://www.tableau.com/blog/send-us-your-halloweenviz-61423" target="_blank" rel="noopener">Jeffrey A. Shaffer (2016), Tableau</a>.</em></p>
     </div>
-    <!-- SLIDE 40: 38 &mdash; Public case: Aishwarya Nalluri's Halloween Visitors Analysis -->
-    <div class="slide" data-slide="40">
-      <span class="slide-badge">Public Case Study</span>
+
+    <!-- SLIDE 48: 38 &mdash; Public case: Aishwarya Nalluri's Halloween Visitors Analysis -->
+    <div class="slide" data-slide="48">
+<span class="slide-badge">Public Case Study</span>
       <h2>38 &mdash; Public case: Aishwarya Nalluri's Halloween Visitors Analysis</h2>
       <div class="slide-visual-full">
         <img src="https://www.dataplusscience.com/images/HalloweenEx5.png" alt="Halloween Visitors Analysis by Aishwarya Nalluri" />
@@ -1031,9 +1134,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: Aishwarya Nalluri, "Halloween Visitors Analysis," <a href="https://www.dataplusscience.com/images/HalloweenEx5.png" target="_blank" rel="noopener">public original image</a>, featured in the <a href="https://www.tableau.com/blog/send-us-your-halloweenviz-61423" target="_blank" rel="noopener">Tableau #HalloweenViz gallery article</a>.</em></p>
     </div>
-    <!-- SLIDE 41: 39 &mdash; Public case: color can represent a condition -->
-    <div class="slide" data-slide="41">
-      <span class="slide-badge">Public Case Study</span>
+
+    <!-- SLIDE 49: 39 &mdash; Public case: color can represent a condition -->
+    <div class="slide" data-slide="49">
+<span class="slide-badge">Public Case Study</span>
       <h2>39 &mdash; Public case: color can represent a condition</h2>
       <div class="slide-visual-full">
         <img src="https://www.dataplusscience.com/images/HalloweenEx6.png" alt="How Does Rain Effect Trick or Treating?" />
@@ -1046,9 +1150,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://www.dataplusscience.com/images/HalloweenEx6.png" target="_blank" rel="noopener">Public original image</a>, featured in <a href="https://www.tableau.com/blog/send-us-your-halloweenviz-61423" target="_blank" rel="noopener">Jeffrey A. Shaffer (2016), Tableau</a>. Weather data source is credited within the original artwork.</em></p>
     </div>
-    <!-- SLIDE 42: 40 &mdash; Public case: a ghostly visual theme -->
-    <div class="slide" data-slide="42">
-      <span class="slide-badge">Public Case Study</span>
+
+    <!-- SLIDE 50: 40 &mdash; Public case: a ghostly visual theme -->
+    <div class="slide" data-slide="50">
+<span class="slide-badge">Public Case Study</span>
       <h2>40 &mdash; Public case: a ghostly visual theme</h2>
       <div class="slide-visual-full">
         <img src="https://www.dataplusscience.com/files/HalloweenVizDavidPires.jpg" alt="David Pires: trick or treat ghostly analysis" />
@@ -1061,9 +1166,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: David Pires (@davidmpires), "trick or treat ghostly analysis" (2016), <a href="https://www.dataplusscience.com/files/HalloweenVizDavidPires.jpg" target="_blank" rel="noopener">public original image</a>; data credit in the artwork to @HighVizAbility.</em></p>
     </div>
-    <!-- SLIDE 43: 41 &mdash; Remove to improve: the original public animation -->
-    <div class="slide" data-slide="43">
-      <span class="slide-badge">Design Animation</span>
+
+    <!-- SLIDE 51: 41 &mdash; Remove to improve: the original public animation -->
+    <div class="slide" data-slide="51">
+<span class="slide-badge">Design Animation</span>
       <h2>41 &mdash; Remove to improve: the original public animation</h2>
       <div class="slide-text-large">
         <p>Watch what disappears. What becomes easier to read after each removal?</p>
@@ -1074,9 +1180,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: <a href="https://darkhorsevisualization.com/blog/data-looks-better-naked" target="_blank" rel="noopener">Joey Cherdarchuk / Darkhorse Analytics (2013), "Data Looks Better Naked"</a>; <a href="https://framerusercontent.com/images/HukfM3uRCf0Nm4FlCliyfvIWc.gif" target="_blank" rel="noopener">original public GIF</a>.</em></p>
     </div>
-    <!-- SLIDE 44: 42 &mdash; Halloween: truth &middot; highlight &middot; simplify -->
-    <div class="slide" data-slide="44">
-      <span class="slide-badge">Design Synthesis</span>
+
+    <!-- SLIDE 52: 42 &mdash; Halloween: truth &middot; highlight &middot; simplify -->
+    <div class="slide" data-slide="52">
+<span class="slide-badge">Design Synthesis</span>
       <h2>42 &mdash; Halloween: truth &middot; highlight &middot; simplify</h2>
       <div class="slide-text-large">
         <p>The observations do not change. Only the amount of visual competition changes.</p>
@@ -1087,9 +1194,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: original classroom animation using <a href="https://www.dataplusscience.com/HalloweenData.html" target="_blank" rel="noopener">Jeffrey A. Shaffer's public Halloween dataset</a>. Simplification framing informed by <a href="https://darkhorsevisualization.com/blog/data-looks-better-naked" target="_blank" rel="noopener">Darkhorse Analytics, "Data Looks Better Naked"</a>.</em></p>
     </div>
-    <!-- SLIDE 45: 43 &mdash; Creativity and clarity are separate questions -->
-    <div class="slide" data-slide="45">
-      <span class="slide-badge">Critical Evaluation</span>
+
+    <!-- SLIDE 53: 43 &mdash; Creativity and clarity are separate questions -->
+    <div class="slide" data-slide="53">
+<span class="slide-badge">Critical Evaluation</span>
       <h2>43 &mdash; Creativity and clarity are separate questions</h2>
       <p style="margin-top: 0;">Compare three <strong>public originals</strong> from the Halloween gallery:</p>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1rem 0;">
@@ -1116,9 +1224,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Sources: the three public originals linked above; gallery context: <a href="https://www.tableau.com/blog/send-us-your-halloweenviz-61423" target="_blank" rel="noopener">Jeffrey A. Shaffer (2016), Tableau</a>.</em></p>
     </div>
-    <!-- SLIDE 46: 44 &mdash; Before you keep a color, ask why it is there -->
-    <div class="slide" data-slide="46">
-      <span class="slide-badge">Design Checklist</span>
+
+    <!-- SLIDE 54: 44 &mdash; Before you keep a color, ask why it is there -->
+    <div class="slide" data-slide="54">
+<span class="slide-badge">Design Checklist</span>
       <h2>44 &mdash; Before you keep a color, ask why it is there</h2>
       <p style="margin-top: 0;">Use two <strong>public originals</strong> as a final checklist:</p>
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 980px; margin: 0 auto; align-items: center;">
@@ -1141,9 +1250,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Sources: <a href="https://www.dataplusscience.com/images/HalloweenEx1.png" target="_blank" rel="noopener">Jeff's Halloween Metrics</a>; <a href="https://www.dataplusscience.com/images/HalloweenEx6.png" target="_blank" rel="noopener">How Does Rain Effect Trick or Treating?</a>; <a href="https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html" target="_blank" rel="noopener">W3C WCAG 2.2 &mdash; Use of Color</a>.</em></p>
     </div>
-    <!-- SLIDE 47: 45 &mdash; Exit check -->
-    <div class="slide" data-slide="47">
-      <span class="slide-badge">Knowledge Synthesis</span>
+
+    <!-- SLIDE 55: 45 &mdash; Exit check -->
+    <div class="slide" data-slide="55">
+<span class="slide-badge">Knowledge Synthesis</span>
       <h2>45 &mdash; Exit check</h2>
       <div class="slide-text-large">
         <ul style="font-size: 1.25rem; line-height: 2; margin: 1.5rem 0;">
@@ -1158,9 +1268,10 @@ title: "Module 4: Color Theory - IA 342"
       </div>
       <p class="caption-text"><em>Source: Original classroom questions; answers draw on the references accompanying the relevant examples.</em></p>
     </div>
-    <!-- SLIDE 48: 46 &mdash; Original sources and image credits -->
-    <div class="slide" data-slide="48">
-      <span class="slide-badge">Scholarly Provenance</span>
+
+    <!-- SLIDE 56: 46 &mdash; Original sources and image credits -->
+    <div class="slide" data-slide="56">
+<span class="slide-badge">Scholarly Provenance</span>
       <h2>46 &mdash; Original sources and image credits</h2>
       <div class="slide-text-large">
         <ul style="font-size: 1.08rem; line-height: 1.8; margin: 1.2rem 0;">
@@ -1180,7 +1291,7 @@ title: "Module 4: Color Theory - IA 342"
 
 <script>
 var currentSlide = 1;
-var totalSlides = 48;
+var totalSlides = 56;
 
 function updateDeck() {
   var slides = document.querySelectorAll('.slide');
