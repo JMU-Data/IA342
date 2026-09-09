@@ -21,6 +21,8 @@
 - [Lab 2](docs/assignments/lab-2/index.md)
 - [Module 3](docs/modules/module-3/index.md)
 - [Lab 3](docs/assignments/lab-3/index.md)
+- [Module 4](docs/modules/module-4/index.md)
+- [Lab 4](docs/assignments/lab-4/index.md)
 
 ## Course Overview
 
@@ -37,8 +39,9 @@ The course is structured to take students from raw data to actionable human unde
 1. **Course Introduction:** The core philosophy of why visualization matters in the AI era.
 2. **Introduction to Data Visualization / Visual Perception:** Visual perception, preattentive attributes, Gestalt principles, and analytical framing.
 3. **Map Design & Spatial Intelligence (ArcGIS):** Map design, geographic coordinate systems, classification methods, thematic maps, and StoryMaps.
-4. **Business Intelligence & Visual Analytics (Tableau):** Connecting data, visual exploration, chart critique, calculations, and interactive dashboards.
-5. **Data Storytelling:** End-to-end analytical projects culminating in comprehensive visual analytics applications.
+4. **Color Theory for Data Visualization:** Physics of light, RGB/CMY models, hue/value/saturation, sequential/diverging/categorical palettes, and color vision accessibility.
+5. **Business Intelligence & Visual Analytics (Tableau):** Connecting data, visual exploration, chart critique, calculations, and interactive dashboards.
+6. **Data Storytelling:** End-to-end analytical projects culminating in comprehensive visual analytics applications.
 
 ## Official Course Information
 
