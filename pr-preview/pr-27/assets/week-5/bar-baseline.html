@@ -13,31 +13,74 @@ document.getElementById('base').addEventListener('change',base);
 base();</script>
 <script>
 (function() {
-  function sendHeight() {
-    requestAnimationFrame(function() {
-      var h = Math.max(
-        document.body ? document.body.scrollHeight : 0,
-        document.documentElement ? document.documentElement.scrollHeight : 0,
-        document.body ? document.body.offsetHeight : 0,
-        document.documentElement ? document.documentElement.offsetHeight : 0
-      );
-      if (window.parent && window.parent !== window) {
-        window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+  if (window.parent === window) return;
+
+  document.documentElement.style.overflowY = 'hidden';
+  document.body.style.overflowY = 'hidden';
+
+  var lastSentHeight = 0;
+
+  function measureContentHeight() {
+    var body = document.body;
+    if (!body) return 0;
+
+    var children = body.children;
+    var maxBottom = 0;
+    for (var i = 0; i < children.length; i++) {
+      var el = children[i];
+      if (el.nodeType === 1 && el.tagName !== 'SCRIPT' && el.tagName !== 'STYLE') {
+        var style = window.getComputedStyle(el);
+        if (style.display !== 'none' && style.position !== 'fixed') {
+          var mb = parseFloat(style.marginBottom) || 0;
+          var bottom = el.offsetTop + el.offsetHeight + mb;
+          if (bottom > maxBottom) {
+            maxBottom = bottom;
+          }
+        }
       }
-    });
+    }
+
+    var bodyStyle = window.getComputedStyle(body);
+    var padBottom = parseFloat(bodyStyle.paddingBottom) || 0;
+    var calculated = Math.ceil(maxBottom + padBottom);
+
+    return Math.max(calculated, body.offsetHeight || 0);
   }
+
+  function sendHeight(force) {
+    var h = measureContentHeight();
+    if (h > 50 && (force || Math.abs(h - lastSentHeight) >= 2)) {
+      lastSentHeight = h;
+      window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+    }
+  }
+
+  window.ia342SendHeight = function(force) {
+    requestAnimationFrame(function() { sendHeight(force); });
+  };
+
   if (typeof ResizeObserver !== 'undefined' && document.body) {
-    new ResizeObserver(sendHeight).observe(document.body);
+    new ResizeObserver(function() {
+      sendHeight(false);
+    }).observe(document.body);
   }
-  window.addEventListener('load', sendHeight);
-  window.addEventListener('resize', sendHeight);
+
   window.addEventListener('message', function(e) {
     if (e.data && e.data.type === 'ia342-request-height') {
-      sendHeight();
+      sendHeight(true);
     }
   });
-  document.addEventListener('DOMContentLoaded', sendHeight);
-  sendHeight();
+
+  window.addEventListener('load', function() { sendHeight(false); });
+  document.addEventListener('DOMContentLoaded', function() { sendHeight(false); });
+  document.addEventListener('click', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+  document.addEventListener('change', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+
+  sendHeight(false);
 })();
 </script>
 </body>

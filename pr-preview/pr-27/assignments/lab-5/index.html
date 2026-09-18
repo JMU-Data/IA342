@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Lab 5: Get Started with Tableau Online - IA 342","url":"https://jmu-data.github.io/IA342/pr-preview/pr-27/assignments/lab-5/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/IA342/pr-preview/pr-27/assets/css/style.css?v=dff2cfe6defaaf6e3a503d7683125ae38c73d210">
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-27/assets/css/style.css?v=3756c59738eee1cd39989281c1004dac5c100a16">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -51,7 +51,7 @@
 
 <h2 id="what-you-will-learn">What you will learn</h2>
 
-<p>You will upload a CSV as a published data source, correct a field role, build two bar charts and one scatter plot, combine the three views in a dashboard, add an interactive filter, and publish work that Dr. Wei can open directly in Tableau.</p>
+<p>You will upload a CSV as a published data source, correct a field role, build two bar charts and one scatter plot, combine the three views in a dashboard, add an interactive filter, and publish work that the instructor can open directly in Tableau.</p>
 
 <hr />
 
@@ -63,12 +63,12 @@
   <li>Open the Tableau invitation sent to your <strong>JMU email address</strong> and click <strong>Sign In</strong>.</li>
   <li>If Tableau asks you to create an account, use your <strong>James Madison University email address</strong> so the account matches the invitation. If you already have a Tableau account under that JMU email, sign in to it.</li>
   <li>When Tableau asks you to <strong>Register a Verification Method</strong>, choose <strong>One-Time Password Generator</strong> at the bottom of the list. <strong>Do not choose the other verification methods for this course setup.</strong></li>
-  <li>On the next screen, Tableau will show a QR code. Open your authenticator app, scan the QR code shown on <strong>your own screen</strong>, and enter the generated verification code. Dr. Wei recommends <strong>Okta Verify</strong>, which JMU already uses.</li>
+  <li>On the next screen, Tableau will show a QR code. Open your authenticator app, scan the QR code shown on <strong>your own screen</strong>, and enter the generated verification code. The instructor recommends <strong>Okta Verify</strong>, which JMU already uses.</li>
   <li>Keep your QR setup code and verification codes private. Do not send or post them.</li>
   <li>After setup, confirm that you can sign in to the JMU Tableau site.</li>
 </ol>
 
-<p>If the invitation is missing, check junk/spam and ask Dr. Wei to confirm the invited address. Do not create a second Tableau account with a different email just to get around an access problem.</p>
+<p>If the invitation is missing, check junk/spam and ask the instructor to confirm the invited address. Do not create a second Tableau account with a different email just to get around an access problem.</p>
 
 <hr />
 
@@ -232,15 +232,6 @@
 function resizeLabIframe(ifr) {
   if (!ifr) return;
   try {
-    if (ifr.contentDocument && ifr.contentDocument.body) {
-      var h = Math.max(
-        ifr.contentDocument.body.scrollHeight || 0,
-        ifr.contentDocument.documentElement.scrollHeight || 0
-      );
-      if (h > 50) ifr.style.height = (h + 4) + 'px';
-    }
-  } catch (e) {}
-  try {
     if (ifr.contentWindow) {
       ifr.contentWindow.postMessage({ type: 'ia342-request-height' }, '*');
     }
@@ -249,7 +240,13 @@ function resizeLabIframe(ifr) {
 window.addEventListener('message', function(e) {
   if (e.data && e.data.type === 'ia342-frame-height' && typeof e.data.height === 'number') {
     var ifr = document.getElementById('scatter-agg-iframe');
-    if (ifr) ifr.style.height = (e.data.height + 4) + 'px';
+    if (ifr) {
+      var newH = Math.ceil(e.data.height);
+      var curH = parseFloat(ifr.style.height) || 0;
+      if (Math.abs(curH - newH) >= 2) {
+        ifr.style.height = newH + 'px';
+      }
+    }
   }
 });
 </script>
@@ -315,7 +312,7 @@ window.addEventListener('message', function(e) {
 
 <h2 id="submission-and-late-policy">Submission and Late Policy</h2>
 
-<p>There is <strong>nothing to submit on Canvas</strong>. Dr. Wei will grade the published workbook directly in Tableau.</p>
+<p>There is <strong>nothing to submit on Canvas</strong>. The instructor will grade the published workbook directly in Tableau.</p>
 
 <h3 id="submission-time">Submission time</h3>
 
@@ -332,7 +329,7 @@ window.addEventListener('message', function(e) {
 
 <h3 id="after-grading">After grading</h3>
 
-<p>After grading, Dr. Wei may move completed work into a <strong>Lab 5</strong> subfolder. If your workbook/data source has been moved there, that means it has been processed; do not move it back unless asked.</p>
+<p>After grading, the instructor may move completed work into a <strong>Lab 5</strong> subfolder. If your workbook/data source has been moved there, that means it has been processed; do not move it back unless asked.</p>
 
 <h3 id="shared-project-etiquette">Shared-project etiquette</h3>
 
@@ -350,7 +347,7 @@ window.addEventListener('message', function(e) {
 
 <h2 id="grading-rubric--100-points">Grading Rubric — 100 Points</h2>
 
-<p>There is <strong>nothing to submit on Canvas</strong>. Dr. Wei will grade the published Tableau work directly in <code class="language-plaintext highlighter-rouge">fall2026</code>.</p>
+<p>There is <strong>nothing to submit on Canvas</strong>. The instructor will grade the published Tableau work directly in <code class="language-plaintext highlighter-rouge">fall2026</code>.</p>
 
 <div style="overflow-x: auto; margin: 1.5rem 0 2rem;">
   <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.5; border: 1px solid #d0d7de; border-radius: 6px;">
