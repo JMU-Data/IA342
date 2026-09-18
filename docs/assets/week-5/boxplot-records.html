@@ -12,4 +12,35 @@ function setup(id,xMin,xMax,yMin,yMax,xLabel,yLabel){const s=document.getElement
 const q=(a,p)=>{const v=(a.length-1)*p,lo=Math.floor(v),hi=Math.ceil(v);return a[lo]+(a[hi]-a[lo])*(v-lo);};
 function box(){const order=['IF','VVS1','VVS2','VS1','VS2'],show=document.getElementById('showPoints').value==='yes';const {s,x,y}=setup('boxSvg',0,5,0,18000,'CLARITY','PRICE (dataset units)');let summaries=[];order.forEach((c,i)=>{const rec=DATA.filter(d=>d.CLARITY===c),a=rec.map(d=>d.PRICE).sort((a,b)=>a-b),q1=q(a,.25),m=q(a,.5),q3=q(a,.75),iqr=q3-q1,inside=a.filter(v=>v>=q1-1.5*iqr&&v<=q3+1.5*iqr),lo=inside[0],hi=inside.at(-1),cx=x(i+.5);add(s,'line',{x1:cx,x2:cx,y1:y(lo),y2:y(hi),class:'axis'});[lo,hi].forEach(v=>add(s,'line',{x1:cx-23,x2:cx+23,y1:y(v),y2:y(v),class:'axis'}));add(s,'rect',{x:cx-43,y:y(q3),width:86,height:y(q1)-y(q3),fill:'#d9eaf2',stroke:'#175d7b','stroke-width':2});add(s,'line',{x1:cx-43,x2:cx+43,y1:y(m),y2:y(m),stroke:'#17252e','stroke-width':3});rec.forEach(d=>{if(show||d.PRICE<lo||d.PRICE>hi){const px=cx+(show?((d.IDNO*47)%61)-30:0);const circ=add(s,'circle',{cx:px,cy:y(d.PRICE),r:4,class:'point'});circ.appendChild(el('title',{},`IDNO ${d.IDNO}; ${c}; PRICE ${d.PRICE}`));}});text(s,cx,429,c,{'text-anchor':'middle'});text(s,cx,450,'n = '+a.length,{'text-anchor':'middle','font-size':13});summaries.push([c,a.length,lo,q1,m,q3,hi]);});document.getElementById('boxTable').innerHTML='<table><caption>Price summaries by clarity</caption><tr>'+['CLARITY','n','Low whisker','Q1','Median','Q3','High whisker'].map(v=>'<th>'+v+'</th>').join('')+'</tr>'+summaries.map(r=>'<tr>'+r.map(v=>'<td>'+(typeof v==='number'?num(v,2):v)+'</td>').join('')+'</tr>').join('')+'</table>';}
 document.getElementById('showPoints').addEventListener('change',box);
-box();</script></body></html>
+box();</script>
+<script>
+(function() {
+  function sendHeight() {
+    requestAnimationFrame(function() {
+      var h = Math.max(
+        document.body ? document.body.scrollHeight : 0,
+        document.documentElement ? document.documentElement.scrollHeight : 0,
+        document.body ? document.body.offsetHeight : 0,
+        document.documentElement ? document.documentElement.offsetHeight : 0
+      );
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+      }
+    });
+  }
+  if (typeof ResizeObserver !== 'undefined' && document.body) {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ia342-request-height') {
+      sendHeight();
+    }
+  });
+  document.addEventListener('DOMContentLoaded', sendHeight);
+  sendHeight();
+})();
+</script>
+</body>
+</html>

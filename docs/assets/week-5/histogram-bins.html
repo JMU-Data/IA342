@@ -11,4 +11,35 @@ function text(s,x,y,t,a={}){return add(s,'text',{x,y,...a},t);}
 function setup(id,xMin,xMax,yMin,yMax,xLabel,yLabel){const s=document.getElementById(id);s.replaceChildren();const x=v=>88+(v-xMin)/(xMax-xMin)*810,y=v=>398-(v-yMin)/(yMax-yMin)*332;add(s,'line',{x1:88,y1:398,x2:900,y2:398,class:'axis'});for(let i=0;i<5;i++){const v=yMin+(yMax-yMin)*i/4,yy=y(v);add(s,'line',{x1:88,y1:yy,x2:900,y2:yy,class:'grid'});text(s,75,yy+5,num(v,v<10?2:0),{'text-anchor':'end'});}text(s,88,28,yLabel,{'font-weight':700});text(s,495,466,xLabel,{'text-anchor':'middle'});return {s,x,y};}
 function hist(){const w=+document.getElementById('bins').value,counts=Array(20000/w).fill(0);DATA.forEach(d=>counts[Math.floor(d.PRICE/w)]++);const ymax=Math.ceil(Math.max(...counts)/20)*20;const {s,x,y}=setup('histSvg',0,20000,0,ymax,'PRICE (dataset units)','Number of records');counts.forEach((v,i)=>{const r=add(s,'rect',{x:x(i*w)+1,y:y(v),width:x((i+1)*w)-x(i*w)-2,height:y(0)-y(v),class:'mark'});r.appendChild(el('title',{},`${i*w} ≤ PRICE < ${(i+1)*w}: ${v} records`));});[0,5000,10000,15000,20000].forEach(v=>text(s,x(v),429,num(v),{'text-anchor':'middle'}));document.getElementById('histState').textContent=`308 records; ${num(w)}-unit bins; all bin counts sum to ${counts.reduce((a,b)=>a+b,0)}. The horizontal range stays 0–20,000.`;document.getElementById('histTable').innerHTML='<table><caption>Equal-width price intervals</caption><tr><th>PRICE interval</th><th>Count</th></tr>'+counts.map((v,i)=>`<tr><td>${num(i*w)} ≤ PRICE &lt; ${num((i+1)*w)}</td><td>${v}</td></tr>`).join('')+'</table>';}
 document.getElementById('bins').addEventListener('change',hist);
-hist();</script></body></html>
+hist();</script>
+<script>
+(function() {
+  function sendHeight() {
+    requestAnimationFrame(function() {
+      var h = Math.max(
+        document.body ? document.body.scrollHeight : 0,
+        document.documentElement ? document.documentElement.scrollHeight : 0,
+        document.body ? document.body.offsetHeight : 0,
+        document.documentElement ? document.documentElement.offsetHeight : 0
+      );
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+      }
+    });
+  }
+  if (typeof ResizeObserver !== 'undefined' && document.body) {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ia342-request-height') {
+      sendHeight();
+    }
+  });
+  document.addEventListener('DOMContentLoaded', sendHeight);
+  sendHeight();
+})();
+</script>
+</body>
+</html>

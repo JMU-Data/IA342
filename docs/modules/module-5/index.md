@@ -261,15 +261,18 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
   background: #f8fafc;
   margin: 1rem auto;
+  height: auto;
 }
 
 .activity-container-full iframe,
 .slide iframe:not(.youtube) {
   width: 100% !important;
   max-width: 100% !important;
+  min-height: 480px;
   border: 0;
   display: block;
   box-sizing: border-box;
+  transition: height 0.15s ease-out;
 }
 
 .alert-takeaway {
@@ -396,7 +399,7 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
   .deck-stage { min-height: 480px; }
   .slide { padding: 1.5rem 1.2rem; }
   .slide-visual-full img, .slide-visual-full svg { max-height: 340px; }
-  .activity-container-full { height: 420px; }
+  .activity-container-full { height: auto; }
   .figure-pair { grid-template-columns: 1fr; }
 }
 </style>
@@ -529,8 +532,8 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 </div>
 
 
-<div class="activity-container-full" style="height: 760px;">
-  <iframe src="../../assets/week-5/relationship-encoding.html" title="Explore relationships and encodings from the Graph Selection Matrix" loading="lazy" sandbox="allow-scripts"></iframe>
+<div class="activity-container-full">
+  <iframe src="../../assets/week-5/relationship-encoding.html" title="Explore relationships and encodings from the Graph Selection Matrix" loading="lazy" onload="resizeIframe(this)" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
 <p style="text-align: center; margin-top: 0.5rem; font-size: 0.95rem;">
   <a href="../../assets/week-5/relationship-encoding.html" target="_blank" rel="noopener">Open this activity on its own</a>
@@ -550,8 +553,8 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 </div>
 
 
-<div class="activity-container-full" style="height: 760px;">
-  <iframe src="../../assets/week-5/question-chart.html" title="Switch analytical questions using one Diamonds dataset" loading="lazy" sandbox="allow-scripts"></iframe>
+<div class="activity-container-full">
+  <iframe src="../../assets/week-5/question-chart.html" title="Switch analytical questions using one Diamonds dataset" loading="lazy" onload="resizeIframe(this)" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
 <p style="text-align: center; margin-top: 0.5rem; font-size: 0.95rem;">
   <a href="../../assets/week-5/question-chart.html" target="_blank" rel="noopener">Open this activity on its own</a>
@@ -752,8 +755,8 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 </div>
 
 
-<div class="activity-container-full" style="height: 760px;">
-  <iframe src="../../assets/week-5/chart-cleanup.html" title="Step-by-step visual chart cleanup" loading="lazy" sandbox="allow-scripts"></iframe>
+<div class="activity-container-full">
+  <iframe src="../../assets/week-5/chart-cleanup.html" title="Step-by-step visual chart cleanup" loading="lazy" onload="resizeIframe(this)" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
 <p style="text-align: center; margin-top: 0.5rem; font-size: 0.95rem;">
   <a href="../../assets/week-5/chart-cleanup.html" target="_blank" rel="noopener">Open this activity on its own</a>
@@ -792,8 +795,8 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 </div>
 
 
-<div class="activity-container-full" style="height: 850px;">
-  <iframe src="../../assets/week-5/bar-baseline.html" title="Interactive: Does 100 Look Six Units Larger Than 94?" loading="lazy" sandbox="allow-scripts"></iframe>
+<div class="activity-container-full">
+  <iframe src="../../assets/week-5/bar-baseline.html" title="Interactive: Does 100 Look Six Units Larger Than 94?" loading="lazy" onload="resizeIframe(this)" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
 <p style="text-align: center; margin-top: 0.5rem; font-size: 0.95rem;">
   <a href="../../assets/week-5/bar-baseline.html" target="_blank" rel="noopener">Open this activity on its own</a>
@@ -910,8 +913,8 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 </div>
 
 
-<div class="activity-container-full" style="height: 780px;">
-  <iframe src="../../assets/week-5/histogram-bins.html" title="Change the price histogram bin width" loading="lazy" sandbox="allow-scripts"></iframe>
+<div class="activity-container-full">
+  <iframe src="../../assets/week-5/histogram-bins.html" title="Change the price histogram bin width" loading="lazy" onload="resizeIframe(this)" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
 <p style="text-align: center; margin-top: 0.5rem; font-size: 0.95rem;">
   <a href="../../assets/week-5/histogram-bins.html" target="_blank" rel="noopener">Open this activity on its own</a>
@@ -969,8 +972,8 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 </div>
 
 
-<div class="activity-container-full" style="height: 850px;">
-  <iframe src="../../assets/week-5/boxplot-records.html" title="Interactive: Reveal the Records Behind the Boxes" loading="lazy" sandbox="allow-scripts"></iframe>
+<div class="activity-container-full">
+  <iframe src="../../assets/week-5/boxplot-records.html" title="Interactive: Reveal the Records Behind the Boxes" loading="lazy" onload="resizeIframe(this)" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
 <p style="text-align: center; margin-top: 0.5rem; font-size: 0.95rem;">
   <a href="../../assets/week-5/boxplot-records.html" target="_blank" rel="noopener">Open this activity on its own</a>
@@ -1084,8 +1087,8 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 </div>
 
 
-<div class="activity-container-full" style="height: 850px;">
-  <iframe src="../../assets/week-5/time-spacing.html" title="Interactive: Equal Labels Versus Elapsed Days" loading="lazy" sandbox="allow-scripts"></iframe>
+<div class="activity-container-full">
+  <iframe src="../../assets/week-5/time-spacing.html" title="Interactive: Equal Labels Versus Elapsed Days" loading="lazy" onload="resizeIframe(this)" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
 <p style="text-align: center; margin-top: 0.5rem; font-size: 0.95rem;">
   <a href="../../assets/week-5/time-spacing.html" target="_blank" rel="noopener">Open this activity on its own</a>
@@ -1159,8 +1162,8 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 </div>
 
 
-<div class="activity-container-full" style="height: 760px;">
-  <iframe src="../../assets/week-5/bar-dot-comparison.html" title="Compare bar and dot encodings on identical data" loading="lazy" sandbox="allow-scripts"></iframe>
+<div class="activity-container-full">
+  <iframe src="../../assets/week-5/bar-dot-comparison.html" title="Compare bar and dot encodings on identical data" loading="lazy" onload="resizeIframe(this)" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
 <p style="text-align: center; margin-top: 0.5rem; font-size: 0.95rem;">
   <a href="../../assets/week-5/bar-dot-comparison.html" target="_blank" rel="noopener">Open this activity on its own</a>
@@ -1276,8 +1279,8 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 </div>
 
 
-<div class="activity-container-full" style="height: 900px;">
-  <iframe src="../../assets/week-5/shared-dual-axes.html" title="Compare a bar and line on one shared axis versus separate left and right axes" loading="lazy" sandbox="allow-scripts"></iframe>
+<div class="activity-container-full">
+  <iframe src="../../assets/week-5/shared-dual-axes.html" title="Compare a bar and line on one shared axis versus separate left and right axes" loading="lazy" onload="resizeIframe(this)" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
 <p style="text-align: center; margin-top: 0.5rem; font-size: 0.95rem;">
   <a href="../../assets/week-5/shared-dual-axes.html" target="_blank" rel="noopener">Open this activity on its own</a>
@@ -1461,8 +1464,8 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 </div>
 
 
-<div class="activity-container-full" style="height: 780px;">
-  <iframe src="../../assets/week-5/bubble-area-game.html" title="Guess the area ratio and reveal the correct value" loading="lazy" sandbox="allow-scripts"></iframe>
+<div class="activity-container-full">
+  <iframe src="../../assets/week-5/bubble-area-game.html" title="Guess the area ratio and reveal the correct value" loading="lazy" onload="resizeIframe(this)" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
 <p style="text-align: center; margin-top: 0.5rem; font-size: 0.95rem;">
   <a href="../../assets/week-5/bubble-area-game.html" target="_blank" rel="noopener">Open this activity on its own</a>
@@ -1751,7 +1754,6 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
       <h2>65 &mdash; Watch &mdash; Reading Minard with Numberphile</h2>
 <div class="slide-text-large">
 <p>James Grime explains how several kinds of information work together in Minard’s graphic. As you watch, identify the encodings rather than trying to memorize every historical detail.</p>
-<p>.</p>
 <p><strong>After watching:</strong> What would be lost if we retained only the starting and ending quantities?</p>
 </div>
 
@@ -1958,7 +1960,7 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 <p>After account setup, choose <strong>Explore</strong> and open <strong><code>fall2026</code></strong>.</p>
 <p>In Tableau terminology, <code>fall2026</code> is a <strong>project</strong>. For this course, think of it as the shared class folder.</p>
 <p><strong>For Lab 5, create everything inside <code>fall2026</code>:</strong> the published data source, workbook, worksheets, and dashboard. Do <strong>not</strong> work in Personal Space for this assignment.</p>
-<p><strong>Next:</strong> <a href="../../assignments/lab-5/">Open Lab 5</a> for the complete screenshot-based workflow, three worksheets, one dashboard, and the four-item rubric.</p>
+<p><strong>Next:</strong> <a href="../../assignments/lab-5/">Open Lab 5</a> for the complete screenshot-based workflow, three worksheets, one interactive dashboard, and the Lab 5 rubric.</p>
 </div>
 <div class="slide-visual-full">
   <img src="../../assets/week-5/screenshots/Screenshot%202026-09-18%20103626.png" alt="Tableau Explore view showing the fall2026 course project" />
@@ -1976,7 +1978,6 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
       <h2>74 &mdash; Watch &mdash; What Is Tableau? | Salesforce</h2>
 <div class="slide-text-large">
 <p>Watch the <strong>official Salesforce overview of Tableau</strong>. Connect the chart choices in this lecture with a visual analytics workflow: bring in data, explore it, and communicate the result.</p>
-<p>.</p>
 <div class="alert-teaching-point"><strong>Watch for:</strong> how the tool connects an analytical question to a visual view, and how people use the result. Then use the preceding account/project screens to enter <strong>our course’s Tableau Cloud site</strong>.</div>
 </div>
 
@@ -1995,6 +1996,39 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 </div>
 
 <script>
+function resizeIframe(ifr) {
+  if (!ifr) return;
+  try {
+    if (ifr.contentDocument && ifr.contentDocument.body) {
+      var doc = ifr.contentDocument;
+      var h = Math.max(
+        doc.body ? doc.body.scrollHeight : 0,
+        doc.documentElement ? doc.documentElement.scrollHeight : 0,
+        doc.body ? doc.body.offsetHeight : 0
+      );
+      if (h > 50) {
+        ifr.style.height = (h + 4) + 'px';
+      }
+    }
+  } catch (e) {}
+  try {
+    if (ifr.contentWindow) {
+      ifr.contentWindow.postMessage({ type: 'ia342-request-height' }, '*');
+    }
+  } catch (e) {}
+}
+
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'ia342-frame-height' && typeof e.data.height === 'number') {
+    var iframes = document.querySelectorAll('.activity-container-full iframe');
+    iframes.forEach(function(ifr) {
+      if (ifr.contentWindow === e.source) {
+        ifr.style.height = (e.data.height + 4) + 'px';
+      }
+    });
+  }
+});
+
 var currentSlide = 1;
 var totalSlides = 75;
 
@@ -2007,6 +2041,12 @@ function updateDeck() {
   var activeEl = document.querySelector('.slide[data-slide="' + currentSlide + '"]');
   if (activeEl) {
     activeEl.classList.add('active');
+    var activeIframes = activeEl.querySelectorAll('.activity-container-full iframe');
+    activeIframes.forEach(function(ifr) {
+      resizeIframe(ifr);
+      setTimeout(function() { resizeIframe(ifr); }, 80);
+      setTimeout(function() { resizeIframe(ifr); }, 300);
+    });
   }
 
   var counterEl = document.getElementById('slideCounter');

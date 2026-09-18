@@ -21,4 +21,35 @@ function shared(){const svg=el('shared'),{b,x}=base(svg,'One axis: 0–250 (mixe
 function dual(){const svg=el('dual'),{b,x}=base(svg,'Left: requests','Right: success rate'),rMax=Number(el('rightMax').value);const yl=v=>b.b-v/250*(b.b-b.t),yr=v=>b.b-v/rMax*(b.b-b.t);for(let i=0;i<=5;i++){let v=i*50,yy=yl(v);n(svg,'text',{x:b.l-10,y:yy+5,'text-anchor':'end','font-size':13,fill:'#203440'},v)}n(svg,'line',{x1:b.r,y1:b.t,x2:b.r,y2:b.b,stroke:'#a86727','stroke-width':1.5});for(let i=0;i<=5;i++){let v=Math.round(rMax*i/5),yy=b.b-i*(b.b-b.t)/5;n(svg,'text',{x:b.r+10,y:yy+5,'text-anchor':'start','font-size':13,fill:'#a86727'},v+'%')}requests.forEach((v,i)=>{let w=48;n(svg,'rect',{x:x(i)-w/2,y:yl(v),width:w,height:b.b-yl(v),fill:'#587b94'})});let pts=rate.map((v,i)=>`${x(i)},${yr(v)}`).join(' ');n(svg,'polyline',{points:pts,fill:'none',stroke:'#a86727','stroke-width':4});rate.forEach((v,i)=>n(svg,'circle',{cx:x(i),cy:yr(v),r:5,fill:'#fff',stroke:'#a86727','stroke-width':3}));}
 function render(){shared();dual();el('out').value=el('rightMax').value+'%';if(parent!==window)parent.postMessage({type:'ia342-frame-height',height:document.body.scrollHeight},'*')}
 el('rightMax').addEventListener('input',render);el('reset').addEventListener('click',()=>{el('rightMax').value=30;render()});window.addEventListener('resize',render);render();
-</script></body></html>
+</script>
+<script>
+(function() {
+  function sendHeight() {
+    requestAnimationFrame(function() {
+      var h = Math.max(
+        document.body ? document.body.scrollHeight : 0,
+        document.documentElement ? document.documentElement.scrollHeight : 0,
+        document.body ? document.body.offsetHeight : 0,
+        document.documentElement ? document.documentElement.offsetHeight : 0
+      );
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+      }
+    });
+  }
+  if (typeof ResizeObserver !== 'undefined' && document.body) {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ia342-request-height') {
+      sendHeight();
+    }
+  });
+  document.addEventListener('DOMContentLoaded', sendHeight);
+  sendHeight();
+})();
+</script>
+</body>
+</html>

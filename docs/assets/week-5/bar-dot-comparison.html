@@ -11,4 +11,35 @@ const ping=()=>requestAnimationFrame(()=>parent.postMessage({type:'ia342-frame-h
 new ResizeObserver(ping).observe(document.body);window.addEventListener('load',ping);
 const names=['Alpha','Bravo','Charlie','Delta','Echo','Foxtrot','Golf','Hotel'];const vals=[99,98.4,97.9,97.1,96.8,95.6,94.8,92.5];
 function draw(){let zoom=document.getElementById('zoomDots').checked,min=zoom?90:0,s=tx(310,30,'Bars: length from zero',22,'middle')+tx(830,30,zoom?'Dots: position on 90–100%':'Dots: position on 0–100%',22,'middle');let xL=v=>140+v*3.4,xR=v=>670+(v-min)/(100-min)*340;for(let i=0;i<=4;i++){let v=i*25,u=min+(100-min)*i/4;s+=ln(xL(v),55,xL(v),382)+tx(xL(v),420,v+'%',16,'middle')+ln(xR(u),55,xR(u),382)+tx(xR(u),420,Number(u.toFixed(1))+'%',16,'middle');}vals.forEach((v,i)=>{let y=70+i*43;s+=tx(125,y+6,names[i],16,'end')+rc(140,y-11,v*3.4,22)+tx(xL(v)+6,y+5,v,14)+tx(655,y+6,names[i],16,'end')+dot(xR(v),y,5)+tx(xR(v)+9,y+5,v,14);});document.getElementById('chart').innerHTML=wrap(s,1120,460);document.getElementById('explain').textContent=zoom?'Only the dot plot is zoomed. A labeled nonzero range is allowed because dots encode position, not bar length. The difference between 99% and 92.5% is still 6.5 percentage points—not a multiplication of performance.':'Both charts start at zero and show exactly the same values. Compare absolute levels first; then try the clearly labeled zoom to inspect small differences.';ping();}
-document.getElementById('zoomDots').onchange=draw;document.getElementById('reset').onclick=()=>{document.getElementById('zoomDots').checked=false;draw();};draw();</script></body></html>
+document.getElementById('zoomDots').onchange=draw;document.getElementById('reset').onclick=()=>{document.getElementById('zoomDots').checked=false;draw();};draw();</script>
+<script>
+(function() {
+  function sendHeight() {
+    requestAnimationFrame(function() {
+      var h = Math.max(
+        document.body ? document.body.scrollHeight : 0,
+        document.documentElement ? document.documentElement.scrollHeight : 0,
+        document.body ? document.body.offsetHeight : 0,
+        document.documentElement ? document.documentElement.offsetHeight : 0
+      );
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+      }
+    });
+  }
+  if (typeof ResizeObserver !== 'undefined' && document.body) {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ia342-request-height') {
+      sendHeight();
+    }
+  });
+  document.addEventListener('DOMContentLoaded', sendHeight);
+  sendHeight();
+})();
+</script>
+</body>
+</html>

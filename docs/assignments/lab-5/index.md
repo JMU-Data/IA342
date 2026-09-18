@@ -158,10 +158,35 @@ Without `IDNO` on Detail, Tableau can collapse many rows into only a few aggrega
 Use this activity only if you want to compare one overall average, group averages, and record-level marks. It is **not another graded deliverable**.
 
 <div style="width: 100%; max-width: 980px; margin: 1.5rem auto; border: 1px solid #d0d7de; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-  <iframe src="../../assets/week-5/scatter-aggregation.html" title="What does one mark represent?" loading="lazy" style="width: 100%; height: 850px; border: 0; display: block;" sandbox="allow-scripts"></iframe>
+  <iframe id="scatter-agg-iframe" src="../../assets/week-5/scatter-aggregation.html" title="What does one mark represent?" loading="lazy" onload="resizeLabIframe(this)" style="width: 100%; min-height: 520px; border: 0; display: block;" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
+<script>
+function resizeLabIframe(ifr) {
+  if (!ifr) return;
+  try {
+    if (ifr.contentDocument && ifr.contentDocument.body) {
+      var h = Math.max(
+        ifr.contentDocument.body.scrollHeight || 0,
+        ifr.contentDocument.documentElement.scrollHeight || 0
+      );
+      if (h > 50) ifr.style.height = (h + 4) + 'px';
+    }
+  } catch (e) {}
+  try {
+    if (ifr.contentWindow) {
+      ifr.contentWindow.postMessage({ type: 'ia342-request-height' }, '*');
+    }
+  } catch (e) {}
+}
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'ia342-frame-height' && typeof e.data.height === 'number') {
+    var ifr = document.getElementById('scatter-agg-iframe');
+    if (ifr) ifr.style.height = (e.data.height + 4) + 'px';
+  }
+});
+</script>
 
-[Open the aggregation practice by itself](assets/scatter-aggregation.html).
+[Open the aggregation practice by itself](../../assets/week-5/scatter-aggregation.html).
 
 ---
 
@@ -289,12 +314,11 @@ There is **nothing to submit on Canvas**. Dr. Wei will grade the published Table
     <tfoot>
       <tr style="background-color: #f6f8fa; font-weight: bold;">
         <td colspan="2" style="padding: 0.75rem 1rem; text-align: right; color: #1f2328;">Total:</td>
-        <td style="padding: 0.75rem 1rem; text-align: right; color: #0969da; font-size: 1.05rem;">100</td>
+        <td style="padding: 0.75rem 1rem; text-align: right; color: inherit; font-size: 1.05rem;">100</td>
       </tr>
     </tfoot>
   </table>
 </div>
 
-The late-work penalty is applied **after** the rubric score. **Only the workbook’s Last Modified time determines whether the submission is late.**
 ---
 [Return to Course Home](../../) | [Return to Module 5](../../modules/module-5/)

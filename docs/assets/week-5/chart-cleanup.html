@@ -11,4 +11,35 @@ const ping=()=>requestAnimationFrame(()=>parent.postMessage({type:'ia342-frame-h
 new ResizeObserver(ping).observe(document.body);window.addEventListener('load',ping);
 const labels=['Starting chart','1. Labels & order','2. Reduce competition','3. Add useful context'];const notes=['Values are present, but long angled labels and strong grid lines compete with them.','Use horizontal labels and sort by the quantity being compared. The values do not change.','Lighten the grid and remove the decorative frame. Keep a usable scale; removing everything is not the goal.','State what was measured, the unit and period, and name the target. Source and benchmark remain visible.'];let step=0;const d=[['Fresh apples',74],['Seedless grapes',46],['Sweet oranges',63],['Ripe bananas',91],['Summer peaches',55]];
 function draw(){document.querySelectorAll('#steps button').forEach((b,i)=>b.setAttribute('aria-pressed',i===step));let s='';if(step===0){s+=tx(25,30,'Fruit sales',23);for(let v=0;v<=100;v+=10){let y=350-v*2.5;s+=ln(110,y,940,y,'#77838a',2)+tx(92,y+5,v,16,'end');}d.forEach(([n,v],i)=>{let x=140+i*160;s+=rc(x,350-v*2.5,70,v*2.5)+`<text transform="translate(${x+35},380) rotate(-28)" text-anchor="end" font-size="18" fill="#203440">${esc(n)}</text>`;});s+=`<rect x="110" y="100" width="830" height="250" fill="none" stroke="#203440" stroke-width="3"/>`;}else{let a=[...d].sort((x,y)=>y[1]-x[1]);s+=tx(25,30,step===3?'Bananas lead this week’s fruit sales':'Fruit sales',23);for(let v=0;v<=100;v+=20){let x=215+v*6.4;s+=ln(x,75,x,365,step===1?'#77838a':'#e1e8eb',step===1?2:1)+tx(x,393,v,16,'middle');}a.forEach(([n,v],i)=>{let y=95+i*55;s+=tx(200,y+20,n,18,'end')+rc(215,y,v*6.4,30)+tx(225+v*6.4,y+20,v,17);});if(step===3){let x=215+80*6.4;s+=ln(x,70,x,370,'#a96618',2,'6 4')+tx(x,58,'Target: 80',16,'middle','#865110')+tx(535,428,'Units sold • week ending September 20 (illustrative)',17,'middle')+tx(25,466,'Source: constructed fruit-shop example; target is an illustrative benchmark.',14);}else s+=tx(535,438,'Units sold',18,'middle');}document.getElementById('explain').textContent=notes[step];document.getElementById('chart').innerHTML=wrap(s,1060,495);ping();}
-labels.forEach((n,i)=>{let b=document.createElement('button');b.textContent=n;b.onclick=()=>{step=i;draw();};document.getElementById('steps').appendChild(b);});draw();</script></body></html>
+labels.forEach((n,i)=>{let b=document.createElement('button');b.textContent=n;b.onclick=()=>{step=i;draw();};document.getElementById('steps').appendChild(b);});draw();</script>
+<script>
+(function() {
+  function sendHeight() {
+    requestAnimationFrame(function() {
+      var h = Math.max(
+        document.body ? document.body.scrollHeight : 0,
+        document.documentElement ? document.documentElement.scrollHeight : 0,
+        document.body ? document.body.offsetHeight : 0,
+        document.documentElement ? document.documentElement.offsetHeight : 0
+      );
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+      }
+    });
+  }
+  if (typeof ResizeObserver !== 'undefined' && document.body) {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ia342-request-height') {
+      sendHeight();
+    }
+  });
+  document.addEventListener('DOMContentLoaded', sendHeight);
+  sendHeight();
+})();
+</script>
+</body>
+</html>
