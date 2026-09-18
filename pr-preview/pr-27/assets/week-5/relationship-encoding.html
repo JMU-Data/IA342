@@ -16,4 +16,35 @@ function distribution(kind){let a=[2,7,16,27,21,14,8,4],s=tx(25,30,kind==='Boxes
 function geo(kind){let s=tx(25,30,'Schematic locations — not an actual geographic dataset',22);s+=`<path d="M110,320 L160,155 380,85 545,130 725,100 930,245 870,355 580,380 350,325Z" fill="#edf3f4" stroke="#b5c6cc"/>`;let xy=[[230,220],[400,140],[610,290],[825,230]];if(kind==='Lines')s+=`<polyline points="230,220 400,140 610,290 825,230" fill="none" stroke="#276b83" stroke-width="5"/>`;xy.forEach(([x,y],i)=>s+=dot(x,y,kind==='Points'?9+i*4:6)+tx(x+25,y+5,'Place '+(i+1),18));s+=tx(525,445,kind==='Points'?'Location + point size':'Location + connection',18,'middle');return wrap(s);}
 function lens(){let s=tx(25,30,'Table lens: paired miniature bars share each row',22);s+=tx(330,70,'Measurement X',18)+tx(720,70,'Measurement Y',18);[20,40,60,80,100].forEach((a,i)=>{let y=110+i*55;s+=tx(120,y+18,'Record '+(i+1),17)+rc(320,y,a*2,24)+rc(715,y,(a+Math.sin(i)*12)*2,24);});s+=tx(525,435,'Do larger X values tend to appear with larger Y values?',18,'middle');return wrap(s);}
 function draw(){document.querySelectorAll('#relations button').forEach((b,i)=>b.setAttribute('aria-pressed',i===ri));document.querySelectorAll('#encodings button').forEach((b,i)=>b.setAttribute('aria-pressed',i===mi));let good=okay[ri][mi],f=document.getElementById('feedback');f.className='panel'+(good?'':' warning');f.innerHTML='<strong>'+esc(names[ri]+' → '+marks[mi])+'</strong><p>'+esc(questions[ri])+'</p><p>'+esc(rules[ri][mi])+'</p>';let chart='';if(!good){let choices=marks.filter((_,j)=>okay[ri][j]);chart=wrap(tx(530,170,'Try: '+choices.join(' or '),27,'middle')+tx(530,225,'Choose another encoding above and compare the result.',18,'middle'),1060,310);}else if(ri===0)chart=series(marks[mi]);else if(ri===1||ri===7){chart=mi===3?boxes(true):cat([78,66,51,39,28],['Team A','Team B','Team C','Team D','Team E'],marks[mi]);}else if(ri===2)chart=composition(mi===1);else if(ri===3){chart=mi===1?series('Lines','Deviation through time: distance above a reference'):cat([-16,-7,5,12,24],['A','B','C','D','E'],marks[mi],'Deviation from a named reference',-30,30);}else if(ri===4)chart=distribution(marks[mi]);else if(ri===5)chart=mi===0?scatter():lens();else chart=geo(marks[mi]);document.getElementById('chart').innerHTML=chart;ping();}
-names.forEach((n,i)=>{let b=document.createElement('button');b.textContent=n;b.onclick=()=>{ri=i;draw();};document.getElementById('relations').appendChild(b);});marks.forEach((n,i)=>{let b=document.createElement('button');b.textContent=n;b.onclick=()=>{mi=i;draw();};document.getElementById('encodings').appendChild(b);});draw();</script></body></html>
+names.forEach((n,i)=>{let b=document.createElement('button');b.textContent=n;b.onclick=()=>{ri=i;draw();};document.getElementById('relations').appendChild(b);});marks.forEach((n,i)=>{let b=document.createElement('button');b.textContent=n;b.onclick=()=>{mi=i;draw();};document.getElementById('encodings').appendChild(b);});draw();</script>
+<script>
+(function() {
+  function sendHeight() {
+    requestAnimationFrame(function() {
+      var h = Math.max(
+        document.body ? document.body.scrollHeight : 0,
+        document.documentElement ? document.documentElement.scrollHeight : 0,
+        document.body ? document.body.offsetHeight : 0,
+        document.documentElement ? document.documentElement.offsetHeight : 0
+      );
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+      }
+    });
+  }
+  if (typeof ResizeObserver !== 'undefined' && document.body) {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ia342-request-height') {
+      sendHeight();
+    }
+  });
+  document.addEventListener('DOMContentLoaded', sendHeight);
+  sendHeight();
+})();
+</script>
+</body>
+</html>

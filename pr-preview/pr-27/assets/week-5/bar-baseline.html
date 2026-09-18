@@ -10,4 +10,35 @@ function text(s,x,y,t,a={}){return add(s,'text',{x,y,...a},t);}
 function setup(id,xMin,xMax,yMin,yMax,xLabel,yLabel){const s=document.getElementById(id);s.replaceChildren();const x=v=>88+(v-xMin)/(xMax-xMin)*810,y=v=>398-(v-yMin)/(yMax-yMin)*332;add(s,'line',{x1:88,y1:398,x2:900,y2:398,class:'axis'});for(let i=0;i<5;i++){const v=yMin+(yMax-yMin)*i/4,yy=y(v);add(s,'line',{x1:88,y1:yy,x2:900,y2:yy,class:'grid'});text(s,75,yy+5,num(v,v<10?2:0),{'text-anchor':'end'});}text(s,88,28,yLabel,{'font-weight':700});text(s,495,466,xLabel,{'text-anchor':'middle'});return {s,x,y};}
 function base(){const b=+document.getElementById('base').value;const {s,x,y}=setup('baseSvg',0,3,b,102,'Group','Number of records');[94,96,100].forEach((v,i)=>{add(s,'rect',{x:x(i+.18),y:y(v),width:145,height:y(b)-y(v),class:'mark'});text(s,x(i+.45),y(v)-12,String(v),{'text-anchor':'middle','font-weight':700});text(s,x(i+.45),431,['A','B','C'][i],{'text-anchor':'middle'});});document.getElementById('baseState').textContent=b?'Truncated at 90. Values unchanged: A = 94, B = 96, C = 100. The visible lengths are now 4, 6, and 10.':'Starts at 0. Values unchanged: A = 94, B = 96, C = 100. Visible bar lengths are proportional to the counts.';}
 document.getElementById('base').addEventListener('change',base);
-base();</script></body></html>
+base();</script>
+<script>
+(function() {
+  function sendHeight() {
+    requestAnimationFrame(function() {
+      var h = Math.max(
+        document.body ? document.body.scrollHeight : 0,
+        document.documentElement ? document.documentElement.scrollHeight : 0,
+        document.body ? document.body.offsetHeight : 0,
+        document.documentElement ? document.documentElement.offsetHeight : 0
+      );
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+      }
+    });
+  }
+  if (typeof ResizeObserver !== 'undefined' && document.body) {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ia342-request-height') {
+      sendHeight();
+    }
+  });
+  document.addEventListener('DOMContentLoaded', sendHeight);
+  sendHeight();
+})();
+</script>
+</body>
+</html>

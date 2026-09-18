@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Lab 5: Get Started with Tableau Online - IA 342","url":"https://jmu-data.github.io/IA342/pr-preview/pr-27/assignments/lab-5/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/IA342/pr-preview/pr-27/assets/css/style.css?v=65c843726759fc2ee15ba296230e805b401079e4">
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-27/assets/css/style.css?v=dff2cfe6defaaf6e3a503d7683125ae38c73d210">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -226,10 +226,35 @@
 <p>Use this activity only if you want to compare one overall average, group averages, and record-level marks. It is <strong>not another graded deliverable</strong>.</p>
 
 <div style="width: 100%; max-width: 980px; margin: 1.5rem auto; border: 1px solid #d0d7de; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-  <iframe src="../../assets/week-5/scatter-aggregation.html" title="What does one mark represent?" loading="lazy" style="width: 100%; height: 850px; border: 0; display: block;" sandbox="allow-scripts"></iframe>
+  <iframe id="scatter-agg-iframe" src="../../assets/week-5/scatter-aggregation.html" title="What does one mark represent?" loading="lazy" onload="resizeLabIframe(this)" style="width: 100%; min-height: 520px; border: 0; display: block;" sandbox="allow-scripts allow-same-origin"></iframe>
 </div>
+<script>
+function resizeLabIframe(ifr) {
+  if (!ifr) return;
+  try {
+    if (ifr.contentDocument && ifr.contentDocument.body) {
+      var h = Math.max(
+        ifr.contentDocument.body.scrollHeight || 0,
+        ifr.contentDocument.documentElement.scrollHeight || 0
+      );
+      if (h > 50) ifr.style.height = (h + 4) + 'px';
+    }
+  } catch (e) {}
+  try {
+    if (ifr.contentWindow) {
+      ifr.contentWindow.postMessage({ type: 'ia342-request-height' }, '*');
+    }
+  } catch (e) {}
+}
+window.addEventListener('message', function(e) {
+  if (e.data && e.data.type === 'ia342-frame-height' && typeof e.data.height === 'number') {
+    var ifr = document.getElementById('scatter-agg-iframe');
+    if (ifr) ifr.style.height = (e.data.height + 4) + 'px';
+  }
+});
+</script>
 
-<p><a href="assets/scatter-aggregation.html">Open the aggregation practice by itself</a>.</p>
+<p><a href="/IA342/pr-preview/pr-27/assets/week-5/scatter-aggregation.html">Open the aggregation practice by itself</a>.</p>
 
 <hr />
 
@@ -366,13 +391,13 @@
     <tfoot>
       <tr style="background-color: #f6f8fa; font-weight: bold;">
         <td colspan="2" style="padding: 0.75rem 1rem; text-align: right; color: #1f2328;">Total:</td>
-        <td style="padding: 0.75rem 1rem; text-align: right; color: #0969da; font-size: 1.05rem;">100</td>
+        <td style="padding: 0.75rem 1rem; text-align: right; color: inherit; font-size: 1.05rem;">100</td>
       </tr>
     </tfoot>
   </table>
 </div>
 
-<h2 id="the-late-work-penalty-is-applied-after-the-rubric-score-only-the-workbooks-last-modified-time-determines-whether-the-submission-is-late">The late-work penalty is applied <strong>after</strong> the rubric score. <strong>Only the workbook’s Last Modified time determines whether the submission is late.</strong></h2>
+<hr />
 <p><a href="../../">Return to Course Home</a> | <a href="../../modules/module-5/">Return to Module 5</a></p>
 
 

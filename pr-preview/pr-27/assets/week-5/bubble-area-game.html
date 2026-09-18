@@ -3,4 +3,35 @@
 function draw(){r=44;let rb=r*Math.sqrt(ratios[n]);$('b').setAttribute('r',rb);$('db').setAttribute('x1',700-rb);$('db').setAttribute('x2',700+rb);$('measure').hidden=true;$('measure').setAttribute('hidden','');$('round').textContent=`Pair ${n+1} / ${ratios.length}`;$('result').innerHTML='<p>Make your estimate, then select Reveal.</p>';$('reveal').disabled=false;$('next').disabled=true;$('guess').disabled=false;$('guess').value='2';$('next').textContent=n===ratios.length-1?'Finish':'Next pair';}
 $('reveal').onclick=()=>{const g=+$('guess').value;if(!Number.isFinite(g)||g<=0){$('result').textContent='Enter a positive area ratio.';return;}let truth=ratios[n],radius=Math.sqrt(truth),err=Math.abs(g-truth)/truth*100;errors.push(err);$('measure').removeAttribute('hidden');$('result').innerHTML=`<p><strong>Your estimate: ${g.toFixed(2)}×. Actual area ratio: ${truth.toFixed(2)}×.</strong></p><p>Radius ratio = diameter ratio = ${radius.toFixed(2)}×.<br>Area ratio = πr<sub>B</sub>² / πr<sub>A</sub>² = (${radius.toFixed(2)})² = ${truth.toFixed(2)}×.</p><p>A radius that doubles creates <strong>four times</strong> the area, not twice the area.</p>`;$('score').textContent=`Relative error this pair: ${err.toFixed(1)}%. Average so far: ${(errors.reduce((a,b)=>a+b,0)/errors.length).toFixed(1)}%.`;$('reveal').disabled=true;$('guess').disabled=true;$('next').disabled=false;};
 $('next').onclick=()=>{if(n===ratios.length-1){$('next').disabled=true;$('result').innerHTML+='<p><strong>Debrief:</strong> For precise comparisons, would an aligned bar or dot plot be easier? Bubble charts require area—not radius—to encode the data.</p>';return;}n++;draw();};$('reset').onclick=()=>{n=0;errors=[];$('score').textContent='';draw();};draw();
-</script></body></html>
+</script>
+<script>
+(function() {
+  function sendHeight() {
+    requestAnimationFrame(function() {
+      var h = Math.max(
+        document.body ? document.body.scrollHeight : 0,
+        document.documentElement ? document.documentElement.scrollHeight : 0,
+        document.body ? document.body.offsetHeight : 0,
+        document.documentElement ? document.documentElement.offsetHeight : 0
+      );
+      if (window.parent && window.parent !== window) {
+        window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+      }
+    });
+  }
+  if (typeof ResizeObserver !== 'undefined' && document.body) {
+    new ResizeObserver(sendHeight).observe(document.body);
+  }
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ia342-request-height') {
+      sendHeight();
+    }
+  });
+  document.addEventListener('DOMContentLoaded', sendHeight);
+  sendHeight();
+})();
+</script>
+</body>
+</html>
