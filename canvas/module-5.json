@@ -179,27 +179,27 @@
       "criteria": [
         {
           "key": "data-source",
-          "description": "Data Source",
+          "description": "Published Diamonds data source named firstname_lastname_lab5 is in fall2026, opens correctly, and IDNO is treated as a Dimension.",
           "points": 20.0
         },
         {
           "key": "worksheet-1",
-          "description": "Worksheet 1 — Records by Rater",
+          "description": "Correctly uses RATER and CNT(IDNO) and clearly shows the number of records by rater.",
           "points": 20.0
         },
         {
           "key": "worksheet-2",
-          "description": "Worksheet 2 — Average Price by Clarity",
+          "description": "Correctly uses AVG(PRICE) by CLARITY and is sorted from highest to lowest average price.",
           "points": 20.0
         },
         {
           "key": "worksheet-3",
-          "description": "Worksheet 3 — Price vs Weight",
+          "description": "Uses WEIGHT and PRICE, with IDNO on Detail for record-level marks and COLOR on Color.",
           "points": 20.0
         },
         {
           "key": "interactive-dashboard",
-          "description": "Interactive Dashboard",
+          "description": "Diamonds Overview contains all three required worksheets in a readable layout. Average Price by Clarity filters the other views, the filter can be cleared, and the published dashboard opens with all records shown.",
           "points": 20.0
         }
       ]
