@@ -64,6 +64,16 @@ title: "Home - IA 342"
     <p style="margin-bottom: 0; color: #57606a;">Virginia County Analysis, Infographic, and Interactive Dashboard.</p>
   </a>
 
+  <a href="modules/module-5/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #2da44e; display: flex; align-items: center; gap: 0.5rem;">🚀 Module 5</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Types of Graphs and Visual Analytics (Chart Families, Critique, and Tableau Foundations).</p>
+  </a>
+
+  <a href="assignments/lab-5/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">📝 Lab 5</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Get Started with Tableau Online (Diamonds Data Source, Worksheets, and Interactive Dashboard).</p>
+  </a>
+
 </div>
 
 ## Course Overview
@@ -82,7 +92,7 @@ The course is structured to take students from raw data to actionable human unde
 2. **[Introduction to Data Visualization](modules/module-2/):** Visual perception, preattentive attributes, and Gestalt principles.
 3. **[Map Design & Spatial Intelligence](modules/module-3/):** Coordinate systems, projections, classification methods, and thematic maps.
 4. **[Color Theory for Data Visualization](modules/module-4/):** Physical properties of light, color models (RGB/CMY), color schemes (sequential, diverging, categorical), and color vision deficiency / accessibility.
-5. **Business Intelligence (Tableau) & Visual Analytics:** Data connection, charts, calculations, filters, and interactive dashboards.
+5. **[Business Intelligence (Tableau) & Visual Analytics](modules/module-5/):** Data connection, charts, calculations, filters, and interactive dashboards.
 6. **Data Storytelling:** End-to-end projects culminating in a comprehensive visual analytics Final Project.
 
 ## Official Course Information
