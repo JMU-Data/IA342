@@ -8,7 +8,7 @@ title: "Lab 5: Get Started with Tableau Online - IA 342"
 
 Build **three worksheets and one interactive dashboard** with the course Diamonds dataset, then publish both your data source and workbook in the shared **`fall2026`** Tableau project. **There is no Canvas submission for this lab.**
 
-Tableau now calls the hosted service **Tableau Cloud**. In this course, “Tableau Online” means the JMU Tableau site that Dr. Wei invites you to use—not Tableau Public.
+Tableau now calls the hosted service **Tableau Cloud**. In this course, “Tableau Online” means the JMU Tableau site provided for this course—not Tableau Public.
 
 ## What you will learn
 
