@@ -1939,7 +1939,7 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 <p>When Tableau asks you to <strong>Register a Verification Method</strong>, choose the bottom option:</p>
 <p><strong>One-Time Password Generator</strong></p>
 <p>For this course setup, <strong>do not choose Salesforce Authenticator, Security Key, or Built-In Authenticator</strong>.</p>
-<p>On the next screen, Tableau will show a QR code. Scan the QR code shown on <strong>your own screen</strong> with an authenticator app, then enter the generated code. Dr. Wei recommends <strong>Okta Verify</strong>, which JMU already uses.</p>
+<p>On the next screen, Tableau will show a QR code. Scan the QR code shown on <strong>your own screen</strong> with an authenticator app, then enter the generated code. The instructor recommends <strong>Okta Verify</strong>, which JMU already uses.</p>
 <div class="alert-takeaway"><strong>Security:</strong> the QR setup code and verification codes are private. Do not photograph, share, or post them. The course materials intentionally do not reproduce the live QR code.</div>
 </div>
 <div class="slide-visual-full">
@@ -1999,19 +1999,6 @@ title: "Module 5: Types of Graphs and Visual Analytics - IA 342"
 function resizeIframe(ifr) {
   if (!ifr) return;
   try {
-    if (ifr.contentDocument && ifr.contentDocument.body) {
-      var doc = ifr.contentDocument;
-      var h = Math.max(
-        doc.body ? doc.body.scrollHeight : 0,
-        doc.documentElement ? doc.documentElement.scrollHeight : 0,
-        doc.body ? doc.body.offsetHeight : 0
-      );
-      if (h > 50) {
-        ifr.style.height = (h + 4) + 'px';
-      }
-    }
-  } catch (e) {}
-  try {
     if (ifr.contentWindow) {
       ifr.contentWindow.postMessage({ type: 'ia342-request-height' }, '*');
     }
@@ -2023,7 +2010,11 @@ window.addEventListener('message', function(e) {
     var iframes = document.querySelectorAll('.activity-container-full iframe');
     iframes.forEach(function(ifr) {
       if (ifr.contentWindow === e.source) {
-        ifr.style.height = (e.data.height + 4) + 'px';
+        var newH = Math.ceil(e.data.height);
+        var curH = parseFloat(ifr.style.height) || 0;
+        if (Math.abs(curH - newH) >= 2) {
+          ifr.style.height = newH + 'px';
+        }
       }
     });
   }

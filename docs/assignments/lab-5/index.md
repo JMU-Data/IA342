@@ -12,7 +12,7 @@ Tableau now calls the hosted service **Tableau Cloud**. In this course, “Table
 
 ## What you will learn
 
-You will upload a CSV as a published data source, correct a field role, build two bar charts and one scatter plot, combine the three views in a dashboard, add an interactive filter, and publish work that Dr. Wei can open directly in Tableau.
+You will upload a CSV as a published data source, correct a field role, build two bar charts and one scatter plot, combine the three views in a dashboard, add an interactive filter, and publish work that the instructor can open directly in Tableau.
 
 ---
 
@@ -23,11 +23,11 @@ We will do the account setup together in class.
 1. Open the Tableau invitation sent to your **JMU email address** and click **Sign In**.
 2. If Tableau asks you to create an account, use your **James Madison University email address** so the account matches the invitation. If you already have a Tableau account under that JMU email, sign in to it.
 3. When Tableau asks you to **Register a Verification Method**, choose **One-Time Password Generator** at the bottom of the list. **Do not choose the other verification methods for this course setup.**
-4. On the next screen, Tableau will show a QR code. Open your authenticator app, scan the QR code shown on **your own screen**, and enter the generated verification code. Dr. Wei recommends **Okta Verify**, which JMU already uses.
+4. On the next screen, Tableau will show a QR code. Open your authenticator app, scan the QR code shown on **your own screen**, and enter the generated verification code. The instructor recommends **Okta Verify**, which JMU already uses.
 5. Keep your QR setup code and verification codes private. Do not send or post them.
 6. After setup, confirm that you can sign in to the JMU Tableau site.
 
-If the invitation is missing, check junk/spam and ask Dr. Wei to confirm the invited address. Do not create a second Tableau account with a different email just to get around an access problem.
+If the invitation is missing, check junk/spam and ask the instructor to confirm the invited address. Do not create a second Tableau account with a different email just to get around an access problem.
 
 ---
 
@@ -164,15 +164,6 @@ Use this activity only if you want to compare one overall average, group average
 function resizeLabIframe(ifr) {
   if (!ifr) return;
   try {
-    if (ifr.contentDocument && ifr.contentDocument.body) {
-      var h = Math.max(
-        ifr.contentDocument.body.scrollHeight || 0,
-        ifr.contentDocument.documentElement.scrollHeight || 0
-      );
-      if (h > 50) ifr.style.height = (h + 4) + 'px';
-    }
-  } catch (e) {}
-  try {
     if (ifr.contentWindow) {
       ifr.contentWindow.postMessage({ type: 'ia342-request-height' }, '*');
     }
@@ -181,7 +172,13 @@ function resizeLabIframe(ifr) {
 window.addEventListener('message', function(e) {
   if (e.data && e.data.type === 'ia342-frame-height' && typeof e.data.height === 'number') {
     var ifr = document.getElementById('scatter-agg-iframe');
-    if (ifr) ifr.style.height = (e.data.height + 4) + 'px';
+    if (ifr) {
+      var newH = Math.ceil(e.data.height);
+      var curH = parseFloat(ifr.style.height) || 0;
+      if (Math.abs(curH - newH) >= 2) {
+        ifr.style.height = newH + 'px';
+      }
+    }
   }
 });
 </script>
@@ -242,7 +239,7 @@ Reopen the workbook and verify:
 
 ## Submission and Late Policy
 
-There is **nothing to submit on Canvas**. Dr. Wei will grade the published workbook directly in Tableau.
+There is **nothing to submit on Canvas**. The instructor will grade the published workbook directly in Tableau.
 
 ### Submission time
 
@@ -257,7 +254,7 @@ The final `fall2026` view shows where that **Modified** timestamp appears.
 
 ### After grading
 
-After grading, Dr. Wei may move completed work into a **Lab 5** subfolder. If your workbook/data source has been moved there, that means it has been processed; do not move it back unless asked.
+After grading, the instructor may move completed work into a **Lab 5** subfolder. If your workbook/data source has been moved there, that means it has been processed; do not move it back unless asked.
 
 ### Shared-project etiquette
 
@@ -273,7 +270,7 @@ Shared-project activity is not anonymous. Course and platform records can be rev
 
 ## Grading Rubric — 100 Points
 
-There is **nothing to submit on Canvas**. Dr. Wei will grade the published Tableau work directly in `fall2026`.
+There is **nothing to submit on Canvas**. The instructor will grade the published Tableau work directly in `fall2026`.
 
 <div style="overflow-x: auto; margin: 1.5rem 0 2rem;">
   <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem; line-height: 1.5; border: 1px solid #d0d7de; border-radius: 6px;">

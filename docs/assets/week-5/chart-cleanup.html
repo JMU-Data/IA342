@@ -7,38 +7,80 @@ function wrap(s,w=1060,h=480){return `<svg xmlns="http://www.w3.org/2000/svg" vi
 function cat(values,labels,kind='Bars',title='Category values',min=0,max=null,w=1060){max=max??Math.ceil(Math.max(...values)/10)*10;let x0=180,x1=w-100,y0=80,y1=385;let x=v=>x0+(v-min)/(max-min)*(x1-x0),s=tx(25,30,title,22);for(let i=0;i<=4;i++){let v=min+(max-min)*i/4;s+=ln(x(v),55,x(v),y1+25)+tx(x(v),y1+52,Number(v.toFixed(2)),16,'middle');}values.forEach((v,i)=>{let y=y0+i*(y1-y0)/Math.max(1,values.length-1);s+=tx(x0-14,y+6,labels[i],18,'end');if(kind==='Bars'){let zero=x(Math.max(min,Math.min(max,0)));s+=rc(Math.min(zero,x(v)),y-12,Math.abs(x(v)-zero),24);}else s+=dot(x(v),y,6);s+=tx(x(v)+12,y+6,Number(v.toFixed(2)),16);});return wrap(s,w,465);}
 function series(kind,title='Values through time'){let v=[15,24,21,40,38,53,61,69],s=tx(30,30,title,22),x=i=>95+i*125,y=v=>390-v*4;[0,20,40,60,80].forEach(v=>{s+=ln(95,y(v),970,y(v))+tx(80,y(v)+5,v,16,'end');});let path=[];v.forEach((v,i)=>{if(kind==='Bars')s+=rc(x(i)-25,y(v),50,390-y(v));else if(kind==='Boxes'){s+=ln(x(i),y(v+12),x(i),y(Math.max(0,v-12)),'#276b83',2)+rc(x(i)-22,y(v+6),44,48,'#bdced7')+ln(x(i)-22,y(v),x(i)+22,y(v),'#203440',3);}else {s+=dot(x(i),y(v));path.push(x(i)+','+y(v));}s+=tx(x(i),425,'W'+(i+1),16,'middle');});if(kind==='Lines')s+=`<polyline points="${path.join(' ')}" fill="none" stroke="#276b83" stroke-width="3"/>`;return wrap(s);}
 function scatter(data=null){let pts=data??Array.from({length:45},(_,i)=>[i+2,10+i*1.6+Math.sin(i*4)*13]);let maxX=data?1.2:50,maxY=data?18000:100;let s=tx(30,30,data?'Weight and price: each point is one record':'Two paired measurements: one point per observation',22);let x=v=>95+v/maxX*840,y=v=>385-v/maxY*300;for(let i=0;i<=4;i++){s+=ln(95,y(i*maxY/4),935,y(i*maxY/4))+tx(80,y(i*maxY/4)+5,Math.round(i*maxY/4),15,'end')+tx(x(i*maxX/4),414,Number((i*maxX/4).toFixed(2)),15,'middle');}pts.forEach(([a,b])=>s+=dot(x(a),y(b),data?3.2:4.5));s+=tx(525,456,data?'WEIGHT (dataset units)':'Measurement X',18,'middle')+tx(25,65,data?'PRICE':'Y',16);return wrap(s);}
-const ping=()=>requestAnimationFrame(()=>parent.postMessage({type:'ia342-frame-height',height:document.documentElement.scrollHeight},'*'));
-new ResizeObserver(ping).observe(document.body);window.addEventListener('load',ping);
+const ping=()=>{if(typeof window.ia342SendHeight==="function")window.ia342SendHeight();};
 const labels=['Starting chart','1. Labels & order','2. Reduce competition','3. Add useful context'];const notes=['Values are present, but long angled labels and strong grid lines compete with them.','Use horizontal labels and sort by the quantity being compared. The values do not change.','Lighten the grid and remove the decorative frame. Keep a usable scale; removing everything is not the goal.','State what was measured, the unit and period, and name the target. Source and benchmark remain visible.'];let step=0;const d=[['Fresh apples',74],['Seedless grapes',46],['Sweet oranges',63],['Ripe bananas',91],['Summer peaches',55]];
 function draw(){document.querySelectorAll('#steps button').forEach((b,i)=>b.setAttribute('aria-pressed',i===step));let s='';if(step===0){s+=tx(25,30,'Fruit sales',23);for(let v=0;v<=100;v+=10){let y=350-v*2.5;s+=ln(110,y,940,y,'#77838a',2)+tx(92,y+5,v,16,'end');}d.forEach(([n,v],i)=>{let x=140+i*160;s+=rc(x,350-v*2.5,70,v*2.5)+`<text transform="translate(${x+35},380) rotate(-28)" text-anchor="end" font-size="18" fill="#203440">${esc(n)}</text>`;});s+=`<rect x="110" y="100" width="830" height="250" fill="none" stroke="#203440" stroke-width="3"/>`;}else{let a=[...d].sort((x,y)=>y[1]-x[1]);s+=tx(25,30,step===3?'Bananas lead this week’s fruit sales':'Fruit sales',23);for(let v=0;v<=100;v+=20){let x=215+v*6.4;s+=ln(x,75,x,365,step===1?'#77838a':'#e1e8eb',step===1?2:1)+tx(x,393,v,16,'middle');}a.forEach(([n,v],i)=>{let y=95+i*55;s+=tx(200,y+20,n,18,'end')+rc(215,y,v*6.4,30)+tx(225+v*6.4,y+20,v,17);});if(step===3){let x=215+80*6.4;s+=ln(x,70,x,370,'#a96618',2,'6 4')+tx(x,58,'Target: 80',16,'middle','#865110')+tx(535,428,'Units sold • week ending September 20 (illustrative)',17,'middle')+tx(25,466,'Source: constructed fruit-shop example; target is an illustrative benchmark.',14);}else s+=tx(535,438,'Units sold',18,'middle');}document.getElementById('explain').textContent=notes[step];document.getElementById('chart').innerHTML=wrap(s,1060,495);ping();}
 labels.forEach((n,i)=>{let b=document.createElement('button');b.textContent=n;b.onclick=()=>{step=i;draw();};document.getElementById('steps').appendChild(b);});draw();</script>
 <script>
 (function() {
-  function sendHeight() {
-    requestAnimationFrame(function() {
-      var h = Math.max(
-        document.body ? document.body.scrollHeight : 0,
-        document.documentElement ? document.documentElement.scrollHeight : 0,
-        document.body ? document.body.offsetHeight : 0,
-        document.documentElement ? document.documentElement.offsetHeight : 0
-      );
-      if (window.parent && window.parent !== window) {
-        window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+  if (window.parent === window) return;
+
+  document.documentElement.style.overflowY = 'hidden';
+  document.body.style.overflowY = 'hidden';
+
+  var lastSentHeight = 0;
+
+  function measureContentHeight() {
+    var body = document.body;
+    if (!body) return 0;
+
+    var children = body.children;
+    var maxBottom = 0;
+    for (var i = 0; i < children.length; i++) {
+      var el = children[i];
+      if (el.nodeType === 1 && el.tagName !== 'SCRIPT' && el.tagName !== 'STYLE') {
+        var style = window.getComputedStyle(el);
+        if (style.display !== 'none' && style.position !== 'fixed') {
+          var mb = parseFloat(style.marginBottom) || 0;
+          var bottom = el.offsetTop + el.offsetHeight + mb;
+          if (bottom > maxBottom) {
+            maxBottom = bottom;
+          }
+        }
       }
-    });
+    }
+
+    var bodyStyle = window.getComputedStyle(body);
+    var padBottom = parseFloat(bodyStyle.paddingBottom) || 0;
+    var calculated = Math.ceil(maxBottom + padBottom);
+
+    return Math.max(calculated, body.offsetHeight || 0);
   }
+
+  function sendHeight(force) {
+    var h = measureContentHeight();
+    if (h > 50 && (force || Math.abs(h - lastSentHeight) >= 2)) {
+      lastSentHeight = h;
+      window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+    }
+  }
+
+  window.ia342SendHeight = function(force) {
+    requestAnimationFrame(function() { sendHeight(force); });
+  };
+
   if (typeof ResizeObserver !== 'undefined' && document.body) {
-    new ResizeObserver(sendHeight).observe(document.body);
+    new ResizeObserver(function() {
+      sendHeight(false);
+    }).observe(document.body);
   }
-  window.addEventListener('load', sendHeight);
-  window.addEventListener('resize', sendHeight);
+
   window.addEventListener('message', function(e) {
     if (e.data && e.data.type === 'ia342-request-height') {
-      sendHeight();
+      sendHeight(true);
     }
   });
-  document.addEventListener('DOMContentLoaded', sendHeight);
-  sendHeight();
+
+  window.addEventListener('load', function() { sendHeight(false); });
+  document.addEventListener('DOMContentLoaded', function() { sendHeight(false); });
+  document.addEventListener('click', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+  document.addEventListener('change', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+
+  sendHeight(false);
 })();
 </script>
 </body>

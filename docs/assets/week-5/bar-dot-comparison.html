@@ -7,38 +7,80 @@ function wrap(s,w=1060,h=480){return `<svg xmlns="http://www.w3.org/2000/svg" vi
 function cat(values,labels,kind='Bars',title='Category values',min=0,max=null,w=1060){max=max??Math.ceil(Math.max(...values)/10)*10;let x0=180,x1=w-100,y0=80,y1=385;let x=v=>x0+(v-min)/(max-min)*(x1-x0),s=tx(25,30,title,22);for(let i=0;i<=4;i++){let v=min+(max-min)*i/4;s+=ln(x(v),55,x(v),y1+25)+tx(x(v),y1+52,Number(v.toFixed(2)),16,'middle');}values.forEach((v,i)=>{let y=y0+i*(y1-y0)/Math.max(1,values.length-1);s+=tx(x0-14,y+6,labels[i],18,'end');if(kind==='Bars'){let zero=x(Math.max(min,Math.min(max,0)));s+=rc(Math.min(zero,x(v)),y-12,Math.abs(x(v)-zero),24);}else s+=dot(x(v),y,6);s+=tx(x(v)+12,y+6,Number(v.toFixed(2)),16);});return wrap(s,w,465);}
 function series(kind,title='Values through time'){let v=[15,24,21,40,38,53,61,69],s=tx(30,30,title,22),x=i=>95+i*125,y=v=>390-v*4;[0,20,40,60,80].forEach(v=>{s+=ln(95,y(v),970,y(v))+tx(80,y(v)+5,v,16,'end');});let path=[];v.forEach((v,i)=>{if(kind==='Bars')s+=rc(x(i)-25,y(v),50,390-y(v));else if(kind==='Boxes'){s+=ln(x(i),y(v+12),x(i),y(Math.max(0,v-12)),'#276b83',2)+rc(x(i)-22,y(v+6),44,48,'#bdced7')+ln(x(i)-22,y(v),x(i)+22,y(v),'#203440',3);}else {s+=dot(x(i),y(v));path.push(x(i)+','+y(v));}s+=tx(x(i),425,'W'+(i+1),16,'middle');});if(kind==='Lines')s+=`<polyline points="${path.join(' ')}" fill="none" stroke="#276b83" stroke-width="3"/>`;return wrap(s);}
 function scatter(data=null){let pts=data??Array.from({length:45},(_,i)=>[i+2,10+i*1.6+Math.sin(i*4)*13]);let maxX=data?1.2:50,maxY=data?18000:100;let s=tx(30,30,data?'Weight and price: each point is one record':'Two paired measurements: one point per observation',22);let x=v=>95+v/maxX*840,y=v=>385-v/maxY*300;for(let i=0;i<=4;i++){s+=ln(95,y(i*maxY/4),935,y(i*maxY/4))+tx(80,y(i*maxY/4)+5,Math.round(i*maxY/4),15,'end')+tx(x(i*maxX/4),414,Number((i*maxX/4).toFixed(2)),15,'middle');}pts.forEach(([a,b])=>s+=dot(x(a),y(b),data?3.2:4.5));s+=tx(525,456,data?'WEIGHT (dataset units)':'Measurement X',18,'middle')+tx(25,65,data?'PRICE':'Y',16);return wrap(s);}
-const ping=()=>requestAnimationFrame(()=>parent.postMessage({type:'ia342-frame-height',height:document.documentElement.scrollHeight},'*'));
-new ResizeObserver(ping).observe(document.body);window.addEventListener('load',ping);
+const ping=()=>{if(typeof window.ia342SendHeight==="function")window.ia342SendHeight();};
 const names=['Alpha','Bravo','Charlie','Delta','Echo','Foxtrot','Golf','Hotel'];const vals=[99,98.4,97.9,97.1,96.8,95.6,94.8,92.5];
 function draw(){let zoom=document.getElementById('zoomDots').checked,min=zoom?90:0,s=tx(310,30,'Bars: length from zero',22,'middle')+tx(830,30,zoom?'Dots: position on 90–100%':'Dots: position on 0–100%',22,'middle');let xL=v=>140+v*3.4,xR=v=>670+(v-min)/(100-min)*340;for(let i=0;i<=4;i++){let v=i*25,u=min+(100-min)*i/4;s+=ln(xL(v),55,xL(v),382)+tx(xL(v),420,v+'%',16,'middle')+ln(xR(u),55,xR(u),382)+tx(xR(u),420,Number(u.toFixed(1))+'%',16,'middle');}vals.forEach((v,i)=>{let y=70+i*43;s+=tx(125,y+6,names[i],16,'end')+rc(140,y-11,v*3.4,22)+tx(xL(v)+6,y+5,v,14)+tx(655,y+6,names[i],16,'end')+dot(xR(v),y,5)+tx(xR(v)+9,y+5,v,14);});document.getElementById('chart').innerHTML=wrap(s,1120,460);document.getElementById('explain').textContent=zoom?'Only the dot plot is zoomed. A labeled nonzero range is allowed because dots encode position, not bar length. The difference between 99% and 92.5% is still 6.5 percentage points—not a multiplication of performance.':'Both charts start at zero and show exactly the same values. Compare absolute levels first; then try the clearly labeled zoom to inspect small differences.';ping();}
 document.getElementById('zoomDots').onchange=draw;document.getElementById('reset').onclick=()=>{document.getElementById('zoomDots').checked=false;draw();};draw();</script>
 <script>
 (function() {
-  function sendHeight() {
-    requestAnimationFrame(function() {
-      var h = Math.max(
-        document.body ? document.body.scrollHeight : 0,
-        document.documentElement ? document.documentElement.scrollHeight : 0,
-        document.body ? document.body.offsetHeight : 0,
-        document.documentElement ? document.documentElement.offsetHeight : 0
-      );
-      if (window.parent && window.parent !== window) {
-        window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+  if (window.parent === window) return;
+
+  document.documentElement.style.overflowY = 'hidden';
+  document.body.style.overflowY = 'hidden';
+
+  var lastSentHeight = 0;
+
+  function measureContentHeight() {
+    var body = document.body;
+    if (!body) return 0;
+
+    var children = body.children;
+    var maxBottom = 0;
+    for (var i = 0; i < children.length; i++) {
+      var el = children[i];
+      if (el.nodeType === 1 && el.tagName !== 'SCRIPT' && el.tagName !== 'STYLE') {
+        var style = window.getComputedStyle(el);
+        if (style.display !== 'none' && style.position !== 'fixed') {
+          var mb = parseFloat(style.marginBottom) || 0;
+          var bottom = el.offsetTop + el.offsetHeight + mb;
+          if (bottom > maxBottom) {
+            maxBottom = bottom;
+          }
+        }
       }
-    });
+    }
+
+    var bodyStyle = window.getComputedStyle(body);
+    var padBottom = parseFloat(bodyStyle.paddingBottom) || 0;
+    var calculated = Math.ceil(maxBottom + padBottom);
+
+    return Math.max(calculated, body.offsetHeight || 0);
   }
+
+  function sendHeight(force) {
+    var h = measureContentHeight();
+    if (h > 50 && (force || Math.abs(h - lastSentHeight) >= 2)) {
+      lastSentHeight = h;
+      window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+    }
+  }
+
+  window.ia342SendHeight = function(force) {
+    requestAnimationFrame(function() { sendHeight(force); });
+  };
+
   if (typeof ResizeObserver !== 'undefined' && document.body) {
-    new ResizeObserver(sendHeight).observe(document.body);
+    new ResizeObserver(function() {
+      sendHeight(false);
+    }).observe(document.body);
   }
-  window.addEventListener('load', sendHeight);
-  window.addEventListener('resize', sendHeight);
+
   window.addEventListener('message', function(e) {
     if (e.data && e.data.type === 'ia342-request-height') {
-      sendHeight();
+      sendHeight(true);
     }
   });
-  document.addEventListener('DOMContentLoaded', sendHeight);
-  sendHeight();
+
+  window.addEventListener('load', function() { sendHeight(false); });
+  document.addEventListener('DOMContentLoaded', function() { sendHeight(false); });
+  document.addEventListener('click', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+  document.addEventListener('change', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+
+  sendHeight(false);
 })();
 </script>
 </body>
