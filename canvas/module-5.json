@@ -1,0 +1,233 @@
+{
+  "schema_version": "canvas-content-profile/v1",
+  "course_key": "ia342",
+  "allowed_hosts": [
+    "jmu-data.github.io"
+  ],
+  "assignments": [
+    {
+      "key": "lab-2",
+      "title": "Lab 2 — ArcGIS Business Analyst I: Data, Sites, and Reports",
+      "assignment_group": "Labs",
+      "points": 100.0,
+      "due_at": null,
+      "published": true,
+      "submission_types": [
+        "online_upload"
+      ],
+      "allowed_extensions": [
+        "pdf"
+      ],
+      "description": null,
+      "instruction_url": "https://jmu-data.github.io/IA342/assignments/lab-2/"
+    },
+    {
+      "key": "lab-3",
+      "title": "Lab 3 — ArcGIS Business Analyst II: Thematic Maps, Report, and StoryMap",
+      "assignment_group": "Labs",
+      "points": 100.0,
+      "due_at": null,
+      "published": true,
+      "submission_types": [
+        "online_url"
+      ],
+      "description": null,
+      "instruction_url": "https://jmu-data.github.io/IA342/assignments/lab-3/"
+    },
+    {
+      "key": "lab-5",
+      "title": "Lab 5 — Get Started with Tableau Online",
+      "assignment_group": "Labs",
+      "points": 100.0,
+      "due_at": null,
+      "published": true,
+      "submission_types": [
+        "none"
+      ],
+      "allowed_extensions": [],
+      "description": null,
+      "instruction_url": "https://jmu-data.github.io/IA342/assignments/lab-5/"
+    }
+  ],
+  "rubrics": [
+    {
+      "key": "lab-2-rubric",
+      "title": "Lab 2 — ArcGIS Business Analyst I",
+      "assignment": "lab-2",
+      "use_for_grading": true,
+      "scoring": "ratings",
+      "criteria": [
+        {
+          "key": "study-area",
+          "description": "JMU study area",
+          "points": 20.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
+        },
+        {
+          "key": "gva-results",
+          "description": "Custom GVA results",
+          "points": 40.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 40.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
+        },
+        {
+          "key": "crime-chart",
+          "description": "Crime Index chart",
+          "points": 40.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 40.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "lab-3-rubric",
+      "title": "Lab 3 — ArcGIS Business Analyst II",
+      "assignment": "lab-3",
+      "use_for_grading": true,
+      "scoring": "ratings",
+      "criteria": [
+        {
+          "key": "maps-spatial-analysis",
+          "description": "Maps and spatial analysis",
+          "points": 50.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 50.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
+        },
+        {
+          "key": "storymap-content",
+          "description": "StoryMap content and organization",
+          "points": 30.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 30.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
+        },
+        {
+          "key": "public-access",
+          "description": "Public publication and access",
+          "points": 20.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "lab-5-rubric",
+      "title": "Lab 5 — Get Started with Tableau Online",
+      "assignment": "lab-5",
+      "use_for_grading": true,
+      "scoring": "free_form",
+      "criteria": [
+        {
+          "key": "data-source",
+          "description": "Published Diamonds data source named firstname_lastname_lab5 is in fall2026, opens correctly, and IDNO is treated as a Dimension.",
+          "points": 20.0
+        },
+        {
+          "key": "worksheet-1",
+          "description": "Correctly uses RATER and CNT(IDNO) and clearly shows the number of records by rater.",
+          "points": 20.0
+        },
+        {
+          "key": "worksheet-2",
+          "description": "Correctly uses AVG(PRICE) by CLARITY and is sorted from highest to lowest average price.",
+          "points": 20.0
+        },
+        {
+          "key": "worksheet-3",
+          "description": "Uses WEIGHT and PRICE, with IDNO on Detail for record-level marks and COLOR on Color.",
+          "points": 20.0
+        },
+        {
+          "key": "interactive-dashboard",
+          "description": "Diamonds Overview contains all three required worksheets in a readable layout. Average Price by Clarity filters the other views, the filter can be cleared, and the published dashboard opens with all records shown.",
+          "points": 20.0
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "key": "module-5",
+      "title": "Module 5",
+      "published": true,
+      "items": [
+        {
+          "key": "lecture",
+          "type": "ExternalUrl",
+          "title": "Lecture — Types of Graphs and Visual Analytics",
+          "published": true,
+          "external_url": "https://jmu-data.github.io/IA342/modules/module-5/",
+          "assignment": null
+        },
+        {
+          "key": "lab-5",
+          "type": "Assignment",
+          "title": "Lab 5 — Get Started with Tableau Online",
+          "published": true,
+          "external_url": null,
+          "assignment": "lab-5"
+        }
+      ]
+    }
+  ]
+}
