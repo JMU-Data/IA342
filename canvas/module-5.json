@@ -175,32 +175,92 @@
       "title": "Lab 5 — Get Started with Tableau Online",
       "assignment": "lab-5",
       "use_for_grading": true,
-      "scoring": "free_form",
+      "scoring": "ratings",
       "criteria": [
         {
           "key": "data-source",
           "description": "Published Diamonds data source named firstname_lastname_lab5 is in fall2026, opens correctly, and IDNO is treated as a Dimension.",
-          "points": 20.0
+          "points": 20.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         },
         {
           "key": "worksheet-1",
           "description": "Correctly uses RATER and CNT(IDNO) and clearly shows the number of records by rater.",
-          "points": 20.0
+          "points": 20.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         },
         {
           "key": "worksheet-2",
           "description": "Correctly uses AVG(PRICE) by CLARITY and is sorted from highest to lowest average price.",
-          "points": 20.0
+          "points": 20.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         },
         {
           "key": "worksheet-3",
           "description": "Uses WEIGHT and PRICE, with IDNO on Detail for record-level marks and COLOR on Color.",
-          "points": 20.0
+          "points": 20.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         },
         {
           "key": "interactive-dashboard",
           "description": "Diamonds Overview contains all three required worksheets in a readable layout. Average Price by Clarity filters the other views, the filter can be cleared, and the published dashboard opens with all records shown.",
-          "points": 20.0
+          "points": 20.0,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         }
       ]
     }
