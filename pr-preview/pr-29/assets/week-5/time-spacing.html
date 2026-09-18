@@ -1,0 +1,87 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>IA342 — Time spacing</title><style>
+:root{--ink:#17252e;--muted:#53616d;--line:#d8e1e6;--accent:#175d7b;--pale:#f1f6f8}*{box-sizing:border-box}body{font:18px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;margin:0;color:var(--ink);background:#fff}main{max-width:1150px;margin:auto;padding:28px}.eyebrow{letter-spacing:.12em;font-size:12px;font-weight:750;color:var(--accent)}h1{font-size:clamp(30px,5vw,46px);line-height:1.14;margin:10px 0 14px}h2{font-size:27px;line-height:1.2}p{max-width:85ch}.lead{color:var(--muted)}nav{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:12px 0 20px;margin:10px 0 20px}button,select{font:inherit;border:1px solid #8c9faa;background:white;color:var(--ink);border-radius:6px;padding:9px 13px;cursor:pointer}button[aria-pressed=true]{background:var(--accent);color:white;border-color:var(--accent)}button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #ad5c11;outline-offset:3px}.controls{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin:16px 0}.controls label{font-weight:600}.frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}svg{display:block;width:100%;height:auto;max-height:535px}svg text{font:16px system-ui,sans-serif;fill:var(--ink)}.grid{stroke:#dce4e8;stroke-width:1}.axis{stroke:#788b96;stroke-width:1.5}.mark{fill:var(--accent)}.point{fill:var(--accent);opacity:.5;stroke:white;stroke-width:.8}.special{fill:#a75816}.note{padding:14px 18px;background:var(--pale);border-left:4px solid var(--accent);margin-top:14px}details{margin-top:16px}summary{cursor:pointer;font-weight:650}a{color:var(--accent)}.small{font-size:14px;color:var(--muted)}table{border-collapse:collapse;width:100%;font-size:15px}td,th{border-bottom:1px solid var(--line);text-align:left;padding:8px}caption{text-align:left;font-weight:650;padding:8px 0}.table-wrap{overflow-x:auto}.raw-data{max-height:280px;overflow:auto}.badge{display:inline-block;border:1px solid var(--line);border-radius:30px;padding:3px 11px;font-size:13px}section[hidden]{display:none}footer{border-top:1px solid var(--line);margin-top:28px;padding-top:12px}@media(max-width:620px){main{padding:16px}.controls{align-items:flex-start;flex-direction:column}nav button{font-size:14px;padding:8px}svg text{font-size:18px}}@media print{nav,.controls{display:none}section[hidden]{display:block}section{break-before:page}.frame{break-inside:avoid}}
+
+main{padding:14px 20px}h2{font-size:23px;margin:8px 0}.controls{margin:9px 0}p{margin:8px 0}.eyebrow{font-size:11px}svg{max-height:470px}footer{margin-top:12px}</style></head><body><main><p class="eyebrow">IA342 · WEEK 5 · TIME SPACING</p><section id="time"><span class="badge">Illustrative data · four observation dates</span><h2>Equal space does not always mean equal time.</h2><p>The four observations are on days 1, 2, 11, and 31. Each step increases the measured value by 10.</p><div class="controls"><label for="spacing">Horizontal spacing</label><select id="spacing"><option value="category">Equal spacing for the four labels</option><option value="elapsed">Spacing proportional to elapsed days</option></select></div><div class="frame"><svg aria-label="A line chart showing how unequal observation intervals affect slopes" id="timeSvg" role="img" viewbox="0 0 960 490"></svg></div><p aria-live="polite" class="note" id="timeState"></p><details><summary>Discuss the result</summary><p>The intervals are 1, 9, and 20 days. The rates are therefore 10, about 1.11, and 0.5 units per day. Equally spaced category labels conceal this difference when the reader interprets the slope as change over elapsed time. Use numerical coordinates when slope is meant to represent change per unit of elapsed time.</p></details></section><footer class="small">Constructed teaching data. No historical news values are implied. No data are sent to a server.</footer></main><script>'use strict';
+const N='http://www.w3.org/2000/svg'; const num=(x,n=0)=>Number(x).toLocaleString('en-US',{maximumFractionDigits:n});
+const mean=(a,key)=>a.reduce((t,r)=>t+r[key],0)/a.length;
+function el(tag,atts={},text){const e=document.createElementNS(N,tag);for(const [k,v] of Object.entries(atts))e.setAttribute(k,v);if(text!==undefined)e.textContent=text;return e;}
+function add(s,t,a,x){const e=el(t,a,x);s.appendChild(e);return e;}
+function text(s,x,y,t,a={}){return add(s,'text',{x,y,...a},t);}
+function setup(id,xMin,xMax,yMin,yMax,xLabel,yLabel){const s=document.getElementById(id);s.replaceChildren();const x=v=>88+(v-xMin)/(xMax-xMin)*810,y=v=>398-(v-yMin)/(yMax-yMin)*332;add(s,'line',{x1:88,y1:398,x2:900,y2:398,class:'axis'});for(let i=0;i<5;i++){const v=yMin+(yMax-yMin)*i/4,yy=y(v);add(s,'line',{x1:88,y1:yy,x2:900,y2:yy,class:'grid'});text(s,75,yy+5,num(v,v<10?2:0),{'text-anchor':'end'});}text(s,88,28,yLabel,{'font-weight':700});text(s,495,466,xLabel,{'text-anchor':'middle'});return {s,x,y};}
+function time(){const mode=document.getElementById('spacing').value;const days=[1,2,11,31],val=[10,20,30,40];const {s,x,y}=setup('timeSvg',0,1,0,44,mode==='elapsed'?'Elapsed day':'Observation label (not elapsed-time spacing)','Measured value (illustrative units)');const xx=days.map((d,i)=>x(mode==='elapsed'?(d-1)/30:i/3));add(s,'polyline',{points:xx.map((a,i)=>a+','+y(val[i])).join(' '),fill:'none',stroke:'#175d7b','stroke-width':3});days.forEach((d,i)=>{add(s,'circle',{cx:xx[i],cy:y(val[i]),r:6,class:'mark'});text(s,xx[i],y(val[i])-14,String(val[i]),{'text-anchor':'middle'});text(s,xx[i],(mode==='elapsed'&&i===1)?450:427,'Day '+d,{'text-anchor':i===0?'start':i===3?'end':'middle'});});document.getElementById('timeState').textContent=mode==='elapsed'?'Actual intervals: 1, 9, and 20 days. The slope changes because the time between observations changes.':'Equal spacing makes each increase look equally fast. Check the day labels: the observation intervals are not equal.';}
+document.getElementById('spacing').addEventListener('change',time);
+time();</script>
+<script>
+(function() {
+  if (window.parent === window) return;
+
+  document.documentElement.style.overflowY = 'hidden';
+  document.body.style.overflowY = 'hidden';
+
+  var lastSentHeight = 0;
+
+  function measureContentHeight() {
+    var body = document.body;
+    if (!body) return 0;
+
+    var children = body.children;
+    var maxBottom = 0;
+    for (var i = 0; i < children.length; i++) {
+      var el = children[i];
+      if (el.nodeType === 1 && el.tagName !== 'SCRIPT' && el.tagName !== 'STYLE') {
+        var style = window.getComputedStyle(el);
+        if (style.display !== 'none' && style.position !== 'fixed') {
+          var mb = parseFloat(style.marginBottom) || 0;
+          var bottom = el.offsetTop + el.offsetHeight + mb;
+          if (bottom > maxBottom) {
+            maxBottom = bottom;
+          }
+        }
+      }
+    }
+
+    var bodyStyle = window.getComputedStyle(body);
+    var padBottom = parseFloat(bodyStyle.paddingBottom) || 0;
+    var calculated = Math.ceil(maxBottom + padBottom);
+
+    return Math.max(calculated, body.offsetHeight || 0);
+  }
+
+  function sendHeight(force) {
+    var h = measureContentHeight();
+    if (h > 50 && (force || Math.abs(h - lastSentHeight) >= 2)) {
+      lastSentHeight = h;
+      window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+    }
+  }
+
+  window.ia342SendHeight = function(force) {
+    requestAnimationFrame(function() { sendHeight(force); });
+  };
+
+  if (typeof ResizeObserver !== 'undefined' && document.body) {
+    new ResizeObserver(function() {
+      sendHeight(false);
+    }).observe(document.body);
+  }
+
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ia342-request-height') {
+      sendHeight(true);
+    }
+  });
+
+  window.addEventListener('load', function() { sendHeight(false); });
+  document.addEventListener('DOMContentLoaded', function() { sendHeight(false); });
+  document.addEventListener('click', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+  document.addEventListener('change', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+
+  sendHeight(false);
+})();
+</script>
+</body>
+</html>

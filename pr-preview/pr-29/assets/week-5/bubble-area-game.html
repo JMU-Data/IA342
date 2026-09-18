@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Guess the area ratio</title><style>*{box-sizing:border-box}body{font:18px/1.5 system-ui,Arial,sans-serif;color:#203440;margin:0;padding:18px;background:white}h1{font-size:25px;margin:0 0 8px}p{margin:8px 0}button,input,select{font:inherit;border:1px solid #859daa;border-radius:6px;padding:8px 12px;background:#fff;color:#203440}button{cursor:pointer}button:disabled{opacity:.45}button:focus-visible,input:focus-visible{outline:3px solid #c88225;outline-offset:3px}.controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:12px 0}.panel{background:#f0f5f8;border-radius:8px;padding:12px 16px;margin-top:12px}.hint{font-size:14px;color:#58707f}svg{display:block;width:100%;max-width:1000px;margin:auto}a{color:#175d7b}[hidden]{display:none!important}</style><body><h1>How many times larger is circle B?</h1><p>Judge <strong>area</strong>, not diameter. Enter your estimate before revealing the answer.</p><div class="controls"><span id="round"></span><label for="guess">B / A area:</label><input id="guess" type="number" min="0.1" max="100" step="0.1" value="2" style="width:100px"><button id="reveal">Reveal</button><button id="next" disabled>Next pair</button><button id="reset">Restart</button></div><svg viewBox="0 0 1000 350" role="img" aria-label="Two circles for an area comparison"><circle id="a" cx="260" cy="166" r="44" fill="#175d7b"/><circle id="b" cx="700" cy="166" r="88" fill="#175d7b"/><text x="260" y="333" text-anchor="middle" font-size="24">A</text><text x="700" y="333" text-anchor="middle" font-size="24">B</text><g id="measure" hidden stroke="#a65a1d" stroke-width="3"><line id="da" x1="216" y1="166" x2="304" y2="166"/><line id="db" x1="612" y1="166" x2="788" y2="166"/></g></svg><div id="result" class="panel" aria-live="polite"><p>The labels and formula will appear after your guess.</p></div><p id="score" class="hint"></p><p class="hint">Constructed geometric exercise. Your guesses stay in this page; nothing is uploaded or stored.</p><script>
+'use strict';const ratios=[4,2.25,6.25,1.44,9],$=id=>document.getElementById(id);let n=0,errors=[];let r=44;
+function draw(){r=44;let rb=r*Math.sqrt(ratios[n]);$('b').setAttribute('r',rb);$('db').setAttribute('x1',700-rb);$('db').setAttribute('x2',700+rb);$('measure').hidden=true;$('measure').setAttribute('hidden','');$('round').textContent=`Pair ${n+1} / ${ratios.length}`;$('result').innerHTML='<p>Make your estimate, then select Reveal.</p>';$('reveal').disabled=false;$('next').disabled=true;$('guess').disabled=false;$('guess').value='2';$('next').textContent=n===ratios.length-1?'Finish':'Next pair';}
+$('reveal').onclick=()=>{const g=+$('guess').value;if(!Number.isFinite(g)||g<=0){$('result').textContent='Enter a positive area ratio.';return;}let truth=ratios[n],radius=Math.sqrt(truth),err=Math.abs(g-truth)/truth*100;errors.push(err);$('measure').removeAttribute('hidden');$('result').innerHTML=`<p><strong>Your estimate: ${g.toFixed(2)}×. Actual area ratio: ${truth.toFixed(2)}×.</strong></p><p>Radius ratio = diameter ratio = ${radius.toFixed(2)}×.<br>Area ratio = πr<sub>B</sub>² / πr<sub>A</sub>² = (${radius.toFixed(2)})² = ${truth.toFixed(2)}×.</p><p>A radius that doubles creates <strong>four times</strong> the area, not twice the area.</p>`;$('score').textContent=`Relative error this pair: ${err.toFixed(1)}%. Average so far: ${(errors.reduce((a,b)=>a+b,0)/errors.length).toFixed(1)}%.`;$('reveal').disabled=true;$('guess').disabled=true;$('next').disabled=false;};
+$('next').onclick=()=>{if(n===ratios.length-1){$('next').disabled=true;$('result').innerHTML+='<p><strong>Debrief:</strong> For precise comparisons, would an aligned bar or dot plot be easier? Bubble charts require area—not radius—to encode the data.</p>';return;}n++;draw();};$('reset').onclick=()=>{n=0;errors=[];$('score').textContent='';draw();};draw();
+</script>
+<script>
+(function() {
+  if (window.parent === window) return;
+
+  document.documentElement.style.overflowY = 'hidden';
+  document.body.style.overflowY = 'hidden';
+
+  var lastSentHeight = 0;
+
+  function measureContentHeight() {
+    var body = document.body;
+    if (!body) return 0;
+
+    var children = body.children;
+    var maxBottom = 0;
+    for (var i = 0; i < children.length; i++) {
+      var el = children[i];
+      if (el.nodeType === 1 && el.tagName !== 'SCRIPT' && el.tagName !== 'STYLE') {
+        var style = window.getComputedStyle(el);
+        if (style.display !== 'none' && style.position !== 'fixed') {
+          var mb = parseFloat(style.marginBottom) || 0;
+          var bottom = el.offsetTop + el.offsetHeight + mb;
+          if (bottom > maxBottom) {
+            maxBottom = bottom;
+          }
+        }
+      }
+    }
+
+    var bodyStyle = window.getComputedStyle(body);
+    var padBottom = parseFloat(bodyStyle.paddingBottom) || 0;
+    var calculated = Math.ceil(maxBottom + padBottom);
+
+    return Math.max(calculated, body.offsetHeight || 0);
+  }
+
+  function sendHeight(force) {
+    var h = measureContentHeight();
+    if (h > 50 && (force || Math.abs(h - lastSentHeight) >= 2)) {
+      lastSentHeight = h;
+      window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+    }
+  }
+
+  window.ia342SendHeight = function(force) {
+    requestAnimationFrame(function() { sendHeight(force); });
+  };
+
+  if (typeof ResizeObserver !== 'undefined' && document.body) {
+    new ResizeObserver(function() {
+      sendHeight(false);
+    }).observe(document.body);
+  }
+
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ia342-request-height') {
+      sendHeight(true);
+    }
+  });
+
+  window.addEventListener('load', function() { sendHeight(false); });
+  document.addEventListener('DOMContentLoaded', function() { sendHeight(false); });
+  document.addEventListener('click', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+  document.addEventListener('change', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+
+  sendHeight(false);
+})();
+</script>
+</body>
+</html>

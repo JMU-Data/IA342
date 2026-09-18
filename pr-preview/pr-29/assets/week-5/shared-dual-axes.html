@@ -1,0 +1,98 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Shared axis vs dual axis</title>
+<style>
+:root{--ink:#203440;--muted:#60717d;--grid:#d7e0e5;--bar:#587b94;--line:#a86727;--paper:#fff;--panel:#f5f8fa}
+*{box-sizing:border-box}body{margin:0;padding:20px;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--paper)}h1{font-size:25px;margin:0 0 6px}.lead{margin:0 0 14px;color:var(--muted)}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{border:1px solid #ccd8df;border-radius:10px;padding:14px;background:#fff}.card h2{font-size:19px;margin:0 0 4px}.card p{margin:0 0 8px;color:var(--muted);min-height:44px}.legend{display:flex;gap:18px;align-items:center;margin:8px 0 12px;font-size:14px}.key{display:flex;gap:7px;align-items:center}.swatch{width:22px;height:12px;background:var(--bar)}.linekey{width:26px;border-top:3px solid var(--line)}svg{display:block;width:100%;height:auto}.controls{margin-top:14px;padding:12px;background:var(--panel);border-radius:8px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}.controls input{width:220px}.note{margin-top:12px;padding:11px 13px;border-left:4px solid #7d5e2d;background:#faf6ec}.data{overflow:auto;margin-top:12px}table{width:100%;border-collapse:collapse;font-size:14px}th,td{padding:6px 8px;border-bottom:1px solid #e3e9ed;text-align:center}th:first-child,td:first-child{text-align:left}@media(max-width:820px){.grid{grid-template-columns:1fr}}
+</style></head><body>
+<h1>Same bar + line data, two axis choices</h1>
+<p class="lead">The data do not change. Only the vertical scales change.</p>
+<div class="legend"><span class="key"><span class="swatch"></span>Monthly requests — bars</span><span class="key"><span class="linekey"></span>Success rate — line</span></div>
+<div class="grid">
+<section class="card"><h2>1 · One shared y-axis</h2><p>Both measures use the same 0–250 scale. This is visually simple, but it mixes counts and percentages on one scale.</p><svg id="shared" viewBox="0 0 600 410" role="img" aria-label="Bars for requests and line for success rate sharing one vertical axis"></svg></section>
+<section class="card"><h2>2 · Two y-axes</h2><p><strong>Left axis:</strong> requests. <strong>Right axis:</strong> success rate. Both become visible—but the right-axis range changes the apparent slope.</p><svg id="dual" viewBox="0 0 600 410" role="img" aria-label="Bars for requests on left axis and line for success rate on right axis"></svg></section>
+</div>
+<div class="controls"><label for="rightMax"><strong>Right-axis maximum:</strong></label><input id="rightMax" type="range" min="25" max="60" step="5" value="30"><output id="out">30%</output><button id="reset" type="button">Reset</button></div>
+<div class="note"><strong>Teaching point:</strong> dual axes can be useful when measures use different units, but the secondary axis can make a line look steeper or flatter without changing a single value. Always read both axes before comparing shapes.</div>
+<div class="data"><table><thead><tr><th>Month</th><th>Requests</th><th>Success rate</th></tr></thead><tbody><tr><td>Jan</td><td>120</td><td>12%</td></tr><tr><td>Feb</td><td>150</td><td>14%</td></tr><tr><td>Mar</td><td>175</td><td>17%</td></tr><tr><td>Apr</td><td>205</td><td>19%</td></tr><tr><td>May</td><td>230</td><td>22%</td></tr></tbody></table></div>
+<script>
+const NS='http://www.w3.org/2000/svg', months=['Jan','Feb','Mar','Apr','May'], requests=[120,150,175,205,230], rate=[12,14,17,19,22];
+const el=id=>document.getElementById(id);function n(svg,tag,a,t){const x=document.createElementNS(NS,tag);Object.entries(a).forEach(([k,v])=>x.setAttribute(k,v));if(t!==undefined)x.textContent=t;svg.appendChild(x);return x}
+function base(svg,leftTitle,rightTitle){svg.replaceChildren();const b={l:72,r:520,t:38,b:328};const x=i=>b.l+(i+.5)*(b.r-b.l)/months.length;for(let i=0;i<=5;i++){let y=b.b-i*(b.b-b.t)/5;n(svg,'line',{x1:b.l,y1:y,x2:b.r,y2:y,stroke:'#d7e0e5','stroke-width':1})}n(svg,'line',{x1:b.l,y1:b.t,x2:b.l,y2:b.b,stroke:'#60717d','stroke-width':1.5});n(svg,'line',{x1:b.l,y1:b.b,x2:b.r,y2:b.b,stroke:'#60717d','stroke-width':1.5});months.forEach((m,i)=>n(svg,'text',{x:x(i),y:352,'text-anchor':'middle','font-size':14,fill:'#203440'},m));n(svg,'text',{x:b.l,y:20,'text-anchor':'start','font-size':14,fill:'#203440','font-weight':650},leftTitle);if(rightTitle)n(svg,'text',{x:b.r,y:20,'text-anchor':'end','font-size':14,fill:'#a86727','font-weight':650},rightTitle);return {b,x}}
+function shared(){const svg=el('shared'),{b,x}=base(svg,'One axis: 0–250 (mixed units)','');const y=v=>b.b-v/250*(b.b-b.t);for(let i=0;i<=5;i++){let v=i*50,yy=y(v);n(svg,'text',{x:b.l-10,y:yy+5,'text-anchor':'end','font-size':13,fill:'#203440'},v)}requests.forEach((v,i)=>{let w=48;n(svg,'rect',{x:x(i)-w/2,y:y(v),width:w,height:b.b-y(v),fill:'#587b94'})});let pts=rate.map((v,i)=>`${x(i)},${y(v)}`).join(' ');n(svg,'polyline',{points:pts,fill:'none',stroke:'#a86727','stroke-width':4});rate.forEach((v,i)=>n(svg,'circle',{cx:x(i),cy:y(v),r:5,fill:'#fff',stroke:'#a86727','stroke-width':3}));}
+function dual(){const svg=el('dual'),{b,x}=base(svg,'Left: requests','Right: success rate'),rMax=Number(el('rightMax').value);const yl=v=>b.b-v/250*(b.b-b.t),yr=v=>b.b-v/rMax*(b.b-b.t);for(let i=0;i<=5;i++){let v=i*50,yy=yl(v);n(svg,'text',{x:b.l-10,y:yy+5,'text-anchor':'end','font-size':13,fill:'#203440'},v)}n(svg,'line',{x1:b.r,y1:b.t,x2:b.r,y2:b.b,stroke:'#a86727','stroke-width':1.5});for(let i=0;i<=5;i++){let v=Math.round(rMax*i/5),yy=b.b-i*(b.b-b.t)/5;n(svg,'text',{x:b.r+10,y:yy+5,'text-anchor':'start','font-size':13,fill:'#a86727'},v+'%')}requests.forEach((v,i)=>{let w=48;n(svg,'rect',{x:x(i)-w/2,y:yl(v),width:w,height:b.b-yl(v),fill:'#587b94'})});let pts=rate.map((v,i)=>`${x(i)},${yr(v)}`).join(' ');n(svg,'polyline',{points:pts,fill:'none',stroke:'#a86727','stroke-width':4});rate.forEach((v,i)=>n(svg,'circle',{cx:x(i),cy:yr(v),r:5,fill:'#fff',stroke:'#a86727','stroke-width':3}));}
+function render(){shared();dual();el('out').value=el('rightMax').value+'%';if(typeof window.ia342SendHeight==="function")window.ia342SendHeight()}
+el('rightMax').addEventListener('input',render);el('reset').addEventListener('click',()=>{el('rightMax').value=30;render()});window.addEventListener('resize',render);render();
+</script>
+<script>
+(function() {
+  if (window.parent === window) return;
+
+  document.documentElement.style.overflowY = 'hidden';
+  document.body.style.overflowY = 'hidden';
+
+  var lastSentHeight = 0;
+
+  function measureContentHeight() {
+    var body = document.body;
+    if (!body) return 0;
+
+    var children = body.children;
+    var maxBottom = 0;
+    for (var i = 0; i < children.length; i++) {
+      var el = children[i];
+      if (el.nodeType === 1 && el.tagName !== 'SCRIPT' && el.tagName !== 'STYLE') {
+        var style = window.getComputedStyle(el);
+        if (style.display !== 'none' && style.position !== 'fixed') {
+          var mb = parseFloat(style.marginBottom) || 0;
+          var bottom = el.offsetTop + el.offsetHeight + mb;
+          if (bottom > maxBottom) {
+            maxBottom = bottom;
+          }
+        }
+      }
+    }
+
+    var bodyStyle = window.getComputedStyle(body);
+    var padBottom = parseFloat(bodyStyle.paddingBottom) || 0;
+    var calculated = Math.ceil(maxBottom + padBottom);
+
+    return Math.max(calculated, body.offsetHeight || 0);
+  }
+
+  function sendHeight(force) {
+    var h = measureContentHeight();
+    if (h > 50 && (force || Math.abs(h - lastSentHeight) >= 2)) {
+      lastSentHeight = h;
+      window.parent.postMessage({ type: 'ia342-frame-height', height: h }, '*');
+    }
+  }
+
+  window.ia342SendHeight = function(force) {
+    requestAnimationFrame(function() { sendHeight(force); });
+  };
+
+  if (typeof ResizeObserver !== 'undefined' && document.body) {
+    new ResizeObserver(function() {
+      sendHeight(false);
+    }).observe(document.body);
+  }
+
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ia342-request-height') {
+      sendHeight(true);
+    }
+  });
+
+  window.addEventListener('load', function() { sendHeight(false); });
+  document.addEventListener('DOMContentLoaded', function() { sendHeight(false); });
+  document.addEventListener('click', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+  document.addEventListener('change', function() {
+    requestAnimationFrame(function() { sendHeight(false); });
+  });
+
+  sendHeight(false);
+})();
+</script>
+</body>
+</html>
