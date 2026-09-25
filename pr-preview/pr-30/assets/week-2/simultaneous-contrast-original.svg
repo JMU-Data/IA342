@@ -1,0 +1,13 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="t d">
+<title id="t">Simultaneous contrast demonstration</title>
+<desc id="d">Two identical gray squares appear noticeably different against dark and light backgrounds.</desc>
+<rect width="1200" height="675" fill="#f8fafc"/>
+<text x="600" y="80" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="bold" fill="#0f172a">Simultaneous Contrast: Context Shapes Perception</text>
+<text x="600" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#64748b">The center gray squares are exactly identical (#71717A)</text>
+<rect x="120" y="160" width="450" height="400" rx="16" fill="#18181b"/>
+<rect x="630" y="160" width="450" height="400" rx="16" fill="#f4f4f5" stroke="#e4e4e7" stroke-width="2"/>
+<rect x="285" y="300" width="120" height="120" rx="8" fill="#71717a"/>
+<rect x="795" y="300" width="120" height="120" rx="8" fill="#71717a"/>
+<text x="345" y="590" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#94a3b8">Appears lighter</text>
+<text x="855" y="590" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="600" fill="#64748b">Appears darker</text>
+</svg>
