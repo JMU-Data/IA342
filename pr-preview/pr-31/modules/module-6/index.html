@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Module 6: Data Cleaning and Process - IA 342 | IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Module 6: Data Cleaning and Process - IA 342" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<meta property="og:description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<link rel="canonical" href="https://jmu-data.github.io/IA342/pr-preview/pr-31/modules/module-6/" />
+<meta property="og:url" content="https://jmu-data.github.io/IA342/pr-preview/pr-31/modules/module-6/" />
+<meta property="og:site_name" content="IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Module 6: Data Cleaning and Process - IA 342" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Module 6: Data Cleaning and Process - IA 342","url":"https://jmu-data.github.io/IA342/pr-preview/pr-31/modules/module-6/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-31/assets/css/style.css?v=1b645dd93e3e45bfab13e5f3accfb42b7bf1b144">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/IA342/pr-preview/pr-31/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://jmu-data.github.io/IA342/pr-preview/pr-31/">IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</a></h1>
+      
+
+      <style>
+/* Module 6 Slide Deck Container Styles */
+.deck-container {
+  max-width: 1180px;
+  margin: 1rem auto 2.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #19384a;
+}
+
+.deck-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #19384a;
+  color: #f0f6fc;
+  padding: 0.65rem 1.25rem;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  user-select: none;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.deck-title-tag {
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.deck-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.deck-btn {
+  background: #2a4d63;
+  color: #f0f6fc;
+  border: 1px solid #456b82;
+  border-radius: 6px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+}
+
+.deck-btn:hover:not(:disabled) {
+  background: #0969da;
+  border-color: #0969da;
+  color: #ffffff;
+}
+
+.deck-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.deck-btn.highlight {
+  background: #17688f;
+  border-color: #2c85b0;
+  color: #ffffff;
+}
+
+.deck-progress-track {
+  width: 100%;
+  height: 4px;
+  background: #2d333b;
+}
+
+.deck-progress-fill {
+  height: 100%;
+  background: #2da44e;
+  width: 1.67%;
+  transition: width 0.25s ease;
+}
+
+.deck-stage {
+  background: #ffffff;
+  border: 1px solid #d0d7de;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+  min-height: 580px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  display: none;
+  padding: 2.2rem 2.8rem;
+  box-sizing: border-box;
+  animation: slideFadeIn 0.2s ease-out;
+  font-size: 21px;
+  line-height: 1.4;
+  color: #19384a;
+}
+
+.slide.active {
+  display: block;
+}
+
+@keyframes slideFadeIn {
+  from { opacity: 0.2; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #536d7c;
+  font-weight: 700;
+  border-bottom: 2px solid #17688f;
+  padding-bottom: 6px;
+  margin-bottom: 12px;
+}
+
+.slide h2 {
+  font-size: 34px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 12px 0 8px;
+  color: #19384a;
+  border: none;
+  padding: 0;
+}
+
+.subtitle {
+  font-size: 20px;
+  line-height: 1.35;
+  color: #536d7c;
+  margin: 0 0 20px;
+}
+
+.slide-body {
+  min-height: 380px;
+}
+
+.slide-foot {
+  border-top: 1px solid #d7e2e8;
+  padding-top: 10px;
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  font-size: 13px;
+  line-height: 1.3;
+  color: #536d7c;
+}
+
+.slide-foot .credit {
+  max-width: 950px;
+}
+
+.slide-foot b {
+  white-space: nowrap;
+}
+
+/* Specific Content Elements */
+.takeaway {
+  border-left: 4px solid #17688f;
+  padding: 12px 18px;
+  background: #eef5f8;
+  margin-top: 18px;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.slide table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 19px;
+  line-height: 1.3;
+  margin: 14px 0;
+}
+
+.slide th, .slide td {
+  padding: 9px 12px;
+  border-bottom: 1px solid #d7e2e8;
+  text-align: left;
+  vertical-align: top;
+}
+
+.slide th {
+  background: #eef5f8;
+  font-weight: 650;
+  font-size: 19px;
+}
+
+.compact { font-size: 18px !important; }
+.compact th, .compact td { padding: 8px 10px !important; }
+
+.small { font-size: 18px; line-height: 1.4; }
+.short-note { font-size: 16px; line-height: 1.35; color: #536d7c; margin-top: 12px; }
+
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.cover .cover-topic {
+  font-size: 38px;
+  line-height: 1.25;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+}
+
+.cover .cover-description {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.cover .cover-detail {
+  font-size: 19px;
+  color: #536d7c;
+  line-height: 1.5;
+}
+
+.activity {
+  display: block;
+  width: 100%;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #fff;
+  margin: 14px 0;
+}
+
+.download-row {
+  display: flex;
+  gap: 12px;
+  margin: 18px 0;
+  flex-wrap: wrap;
+}
+
+.download-row .button {
+  font-size: 17px;
+  padding: 10px 16px;
+  border: 1px solid #17688f;
+  border-radius: 6px;
+  background: #17688f;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.download-row .button:hover {
+  background: #0969da;
+}
+
+.github-downloads {
+  gap: 24px;
+}
+
+.github-downloads > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.github-view {
+  font-size: 15px;
+  color: #17688f;
+}
+
+.download-status {
+  font-size: 15px;
+  color: #536d7c;
+  margin: 8px 0;
+}
+
+.filename-block {
+  font: 17px/1.5 Consolas, monospace;
+  border: 1px solid #cbdbe3;
+  background: #f6f8fa;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.practice-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.shot-gallery {
+  min-width: 0;
+}
+
+.shot-select {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  color: #536d7c;
+  margin-bottom: 8px;
+}
+
+.shot-select select {
+  font-size: 14px;
+  padding: 6px 10px;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.shot-figure {
+  margin: 0;
+}
+
+.shot-zoom {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: 1px solid #d7e2e8;
+  border-radius: 4px;
+  padding: 4px;
+  background: #ffffff;
+  cursor: zoom-in;
+  transition: border-color 0.15s ease;
+}
+
+.shot-zoom:hover {
+  border-color: #17688f;
+}
+
+.shot-zoom img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.shot-figure figcaption {
+  font-size: 14px;
+  line-height: 1.3;
+  color: #536d7c;
+  margin-top: 8px;
+}
+
+.practice-steps {
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.practice-steps h3 {
+  font-size: 20px;
+  margin: 0 0 10px;
+}
+
+.practice-steps p {
+  font-size: 18px;
+  margin: 0 0 12px;
+}
+
+.practice-steps pre {
+  padding: 10px 12px;
+  background: #f1f5f7;
+  border: 1px solid #d7e2e8;
+  border-radius: 4px;
+  margin: 8px 0 14px;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.practice-steps pre code {
+  font-family: Consolas, monospace;
+}
+
+.steps {
+  padding-left: 22px;
+  margin: 0;
+}
+
+.steps li {
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.practice-check {
+  background: #eef5f8;
+  border-left: 4px solid #17688f;
+  padding: 10px 14px;
+  font-size: 17px;
+  line-height: 1.35;
+  margin-top: 14px !important;
+}
+
+.submission-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.submission-columns > div {
+  border-top: 3px solid #17688f;
+  padding-top: 14px;
+}
+
+.submission-columns h3 {
+  font-size: 22px;
+  margin-top: 0;
+}
+
+.part-points {
+  font-size: 18px;
+  color: #17688f;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.data-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.05fr;
+  gap: 22px;
+}
+
+.data-form-grid > div {
+  border-top: 4px solid #17688f;
+  padding-top: 12px;
+  min-width: 0;
+}
+
+.data-form-grid h3 {
+  font-size: 21px;
+  margin-bottom: 6px;
+}
+
+.data-form-grid p {
+  font-size: 17px;
+  line-height: 1.35;
+  margin: 8px 0;
+}
+
+.data-form-grid pre {
+  margin: 0;
+  padding: 10px;
+  background: #f1f5f7;
+  border: 1px solid #d7e2e8;
+  border-radius: 4px;
+}
+
+.data-form-grid pre code {
+  font-size: 16px;
+}
+
+.data-form-grid img {
+  display: block;
+  width: 100%;
+  height: 177px;
+  object-fit: contain;
+}
+
+.type-home {
+  display: grid;
+  grid-template-columns: 65px 230px 320px 1fr;
+  gap: 14px;
+  align-items: center;
+  min-height: 84px;
+  border-bottom: 1px solid #d7e2e8;
+}
+
+.type-home svg {
+  width: 58px;
+  height: 58px;
+}
+
+.type-home strong {
+  font-size: 20px;
+}
+
+.type-home p {
+  font-size: 18px;
+  margin: 0 !important;
+}
+
+.type-home .detail {
+  font-size: 16px;
+  color: #536d7c;
+}
+
+.headline-shot {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  object-position: left;
+  margin: 0 0 18px;
+}
+
+.reference-shot {
+  display: block;
+  max-width: 100%;
+  max-height: 318px;
+  object-fit: contain;
+  margin: 0 auto 14px;
+}
+
+.money-case {
+  display: grid;
+  grid-template-columns: 0.85fr 1.3fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.cost-value {
+  font-size: 58px;
+  line-height: 1.05;
+  font-weight: 720;
+  letter-spacing: -0.03em;
+  color: #17688f;
+  margin-bottom: 10px;
+}
+
+.cost-label {
+  font-size: 21px;
+  line-height: 1.25;
+}
+
+.case-chain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.case-chain > div {
+  border-left: 4px solid #17688f;
+  background: #f1f6f8;
+  padding: 10px 16px;
+}
+
+.case-chain b {
+  font-size: 20px;
+}
+
+.case-chain p {
+  font-size: 18px;
+  margin: 4px 0 0;
+}
+
+.contrast-note {
+  padding: 10px 14px;
+  border: 1px solid #cbdbe3;
+  background: white;
+  font-size: 17px;
+  line-height: 1.35;
+  margin-top: 16px;
+}
+
+.identity-table {
+  font-size: 17px !important;
+}
+
+.identity-table th {
+  font-size: 17px !important;
+}
+
+.identity-table td, .identity-table th {
+  padding: 10px 8px;
+}
+
+.pipeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 10px 0 22px;
+}
+
+.pipe-card {
+  position: relative;
+  border: 1px solid #c3d7e2;
+  border-top: 4px solid #17688f;
+  padding: 14px 12px;
+  min-height: 290px;
+  background: #fbfdfe;
+}
+
+.pipe-card:not(:last-child):after {
+  content: '→';
+  position: absolute;
+  right: -18px;
+  top: 125px;
+  font-size: 26px;
+  color: #17688f;
+}
+
+.pipe-card h3 {
+  font-size: 20px;
+  margin: 6px 0 10px;
+}
+
+.pipe-card p {
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.excel-label {
+  background: #eef5f8;
+  border: 1px solid #c5d8e2;
+  padding: 9px 12px;
+  font-size: 19px;
+  font-weight: 650;
+}
+
+.recovery-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.recovery-pair > div {
+  border-top: 2px solid #c5d8e2;
+  padding-top: 10px;
+}
+
+.recovery-pair h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.recovery-pair p {
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.transform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 28px;
+}
+
+.transform-grid article {
+  border-top: 3px solid #17688f;
+  padding: 10px 14px 10px 0;
+}
+
+.transform-grid h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.transform-grid p {
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.transform-example {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #f3f7f9;
+  padding: 10px 14px;
+  margin: 10px 0;
+  font-size: 20px;
+  min-height: 50px;
+}
+
+.transform-example span {
+  color: #17688f;
+  font-size: 23px;
+}
+
+.transform-example code {
+  font-size: 19px;
+}
+
+.quality-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px 28px;
+}
+
+.quality-grid article {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 2px solid #c5d8e2;
+}
+
+.quality-grid svg {
+  width: 65px;
+  height: 65px;
+}
+
+.quality-grid h3 {
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+
+.quality-grid p {
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+/* Fullscreen and Lightbox Styles */
+.deck-container:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+.deck-container:fullscreen .deck-stage {
+  flex: 1;
+  overflow-y: auto;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.media-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(16, 30, 45, 0.92);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.media-panel {
+  width: min(1360px, 95vw);
+  max-height: 94vh;
+  background: white;
+  border-radius: 8px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.media-panel header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #19384a;
+}
+
+.media-panel header button {
+  background: #eef5f8;
+  border: 1px solid #b8cbd4;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.media-panel header button:hover {
+  background: #17688f;
+  color: white;
+}
+
+.media-panel #mediaTarget {
+  overflow: auto;
+  text-align: center;
+  flex: 1;
+}
+
+.media-panel #mediaTarget img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+.media-panel iframe {
+  width: 100%;
+  height: min(580px, 68vh);
+  border: 0;
+}
+
+@media (max-width: 860px) {
+  .slide { padding: 1.5rem 1.2rem; font-size: 18px; }
+  .practice-layout { grid-template-columns: 1fr; }
+  .columns, .data-form-grid, .submission-columns, .quality-grid { grid-template-columns: 1fr; }
+  .type-home { grid-template-columns: 50px 1fr; }
+}
+</style>
+
+<div class="deck-container" id="lectureDeck">
+  <div class="deck-nav-bar">
+    <div class="deck-title-tag">
+      <span>IA 342 Week 6 Lecture</span>
+      <span style="opacity: 0.4;">|</span>
+      <span id="slideCounter">Slide 1 of 60</span>
+    </div>
+    <div class="deck-controls">
+      <button class="deck-btn highlight" onclick="goToSlide(48)" title="Jump to Monday in-class activity">Diamonds Activity (Slide 48)</button>
+      <a class="deck-btn highlight" href="../../assignments/lab-6/" title="Open Wednesday Lab instructions">Wednesday Lab 6</a>
+      <a class="deck-btn" href="preview.html" target="_blank" title="Open standalone presentation in new tab">&#x29c9; Standalone Deck</a>
+      <button class="deck-btn" id="prevBtn" onclick="changeSlide(-1)" title="Previous (&larr; / PageUp)">&#9664; Prev</button>
+      <button class="deck-btn" id="nextBtn" onclick="changeSlide(1)" title="Next (&rarr; / Space / PageDown)">Next &#9654;</button>
+      <button class="deck-btn" onclick="toggleFullScreen()" title="Fullscreen Mode">&#9974; Fullscreen</button>
+    </div>
+  </div>
+  <div class="deck-progress-track">
+    <div class="deck-progress-fill" id="progressBar"></div>
+  </div>
+
+  <div class="deck-stage">
+<div data-slide="1" aria-label="Slide 1: Data Cleaning and Process" class="slide active cover" data-chapter="Data preparation" data-title="Data Cleaning and Process" id="slide-1"><div class="eyebrow"><span>Data preparation</span><span>IA342 · Week 6</span></div><h2>Data Cleaning and Process</h2><p class="subtitle">IA342 · Week 6 · Dr. Xuebin Wei</p><div class="slide-body"><p class="cover-topic">Prepare the data before making the chart.</p><p class="cover-description">Why data quality matters · How cleaning changes the result · How to build a Tableau Prep flow</p><p class="cover-detail">In class: clean Diamonds together. In the lab: prepare house data and build a dashboard from three worksheets.</p></div><footer class="slide-foot"><span class="credit"></span><b>1 / 60</b></footer></div>
+
+<div data-slide="2" aria-label="Slide 2: Garbage In, Garbage Out" class="slide" data-chapter="Why clean data?" data-title="Garbage In, Garbage Out" id="slide-2"><div class="eyebrow"><span>Why clean data?</span><span>IA342 · Week 6</span></div><h2>Garbage In, Garbage Out</h2><p class="subtitle">A calculation can run correctly and still answer the wrong question.</p><div class="slide-body"><svg aria-label="A copied sale enters a correct sum calculation and produces an inflated total of 500 instead of 300." class="diagram" role="img" viewbox="0 0 1168 330" xmlns="http://www.w3.org/2000/svg"><title>A copied sale enters a correct sum calculation and produces an inflated total of 500 instead of 300.</title><defs><marker id="arr-8b4936cad9" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><rect fill="#fbf4ed" height="245" rx="6" stroke="#d6b798" stroke-width="2" width="266" x="30" y="42"></rect><text fill="#19384a" font-size="25" font-weight="700" text-anchor="middle" x="163" y="82">GARBAGE IN</text><rect fill="#fff" height="35" rx="2" stroke="#d4c6bb" stroke-width="2" width="204" x="61" y="107"></rect><text fill="#19384a" font-size="20" font-weight="400" text-anchor="start" x="74" y="131">A  ·  100</text><rect fill="#fff" height="35" rx="2" stroke="#d4c6bb" stroke-width="2" width="204" x="61" y="155"></rect><text fill="#19384a" font-size="20" font-weight="400" text-anchor="start" x="74" y="179">B  ·  200</text><rect fill="#fff" height="35" rx="2" stroke="#d4c6bb" stroke-width="2" width="204" x="61" y="203"></rect><text fill="#19384a" font-size="20" font-weight="600" text-anchor="start" x="74" y="227">B  ·  200  ← copy</text><path d="M315,167 L430,167" fill="none" marker-end="url(#arr-8b4936cad9)" stroke="#8bafc1" stroke-width="3"></path><rect fill="#eef5f8" height="204" rx="6" stroke="#b5cedb" stroke-width="2" width="251" x="455" y="64"></rect><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(538,99) scale(0.88)"><path d="M4 22h27l22 28-22 28H4M34 22h27l22 28-22 28H34"></path><path d="M64 38h29M64 62h29"></path></g><text fill="#19384a" font-size="21" font-weight="650" text-anchor="middle" x="581" y="230">Correct SUM formula</text><path d="M725,167 L829,167" fill="none" marker-end="url(#arr-8b4936cad9)" stroke="#8bafc1" stroke-width="3"></path><rect fill="#fbf4ed" height="245" rx="6" stroke="#d6b798" stroke-width="2" width="283" x="853" y="42"></rect><text fill="#19384a" font-size="25" font-weight="700" text-anchor="middle" x="995" y="82">GARBAGE OUT</text><text fill="#19384a" font-size="59" font-weight="720" text-anchor="middle" x="995" y="160">500</text><text fill="#19384a" font-size="21" font-weight="400" text-anchor="middle" x="995" y="205">Reported total</text><text fill="#19384a" font-size="21" font-weight="400" text-anchor="middle" x="995" y="236">Actual unique sales: 300</text></svg><p class="takeaway"><b>Garbage In, Garbage Out.</b> A sophisticated model or polished dashboard does not make unreliable input trustworthy.</p></div><footer class="slide-foot"><span class="credit">Illustrative sales data; B is a confirmed duplicate copy.</span><b>2 / 60</b></footer></div>
+
+<div data-slide="3" aria-label="Slide 3: Components of a Data Analysis Solution" class="slide" data-chapter="From data to analysis" data-title="Components of a Data Analysis Solution" id="slide-3"><div class="eyebrow"><span>From data to analysis</span><span>IA342 · Week 6</span></div><h2>Components of a Data Analysis Solution</h2><p class="subtitle">Raw sources → stored data → prepared information → a useful visual answer.</p><div class="slide-body"><svg aria-label="The four components of a data analysis solution: ingest, store, process and analyze, consume and visualize." class="diagram" role="img" viewbox="0 0 1168 333" xmlns="http://www.w3.org/2000/svg"><title>The four components of a data analysis solution: ingest, store, process and analyze, consume and visualize.</title><defs><marker id="arr-cbc60487d8" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><circle cx="148" cy="106" fill="#f0f6f9" r="70"></circle><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(102,59) scale(0.92)"><rect height="31" rx="3" width="25" x="4" y="12"></rect><path d="M10 22h13m-13 8h10M8 72h68m-48-15 18 15-18 15M59 16v40m-13-13 13 13 13-13"></path><rect height="23" rx="2" width="19" x="76" y="61"></rect></g><text fill="#19384a" font-size="25" font-weight="700" text-anchor="middle" x="148" y="216">Ingest / collect</text><text fill="#19384a" font-size="19" font-weight="400" text-anchor="middle" x="148" y="260">Files · APIs · events</text><text fill="#19384a" font-size="19" font-weight="400" text-anchor="middle" x="148" y="290">Batch or streaming</text><circle cx="92" cy="39" fill="#17688f" r="16"></circle><text font-size="17" font-weight="650" style="fill:white" text-anchor="middle" x="92" y="45">1</text><path d="M230,106 L307,106" fill="none" marker-end="url(#arr-cbc60487d8)" stroke="#8bafc1" stroke-width="3"></path><circle cx="438" cy="106" fill="#f0f6f9" r="70"></circle><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(392,59) scale(0.92)"><ellipse cx="50" cy="20" rx="35" ry="12"></ellipse><path d="M15 20v57c0 16 70 16 70 0V20M15 48c0 16 70 16 70 0M15 75c0 16 70 16 70 0"></path></g><text fill="#19384a" font-size="25" font-weight="700" text-anchor="middle" x="438" y="216">Store</text><text fill="#19384a" font-size="19" font-weight="400" text-anchor="middle" x="438" y="260">Databases · warehouses</text><text fill="#19384a" font-size="19" font-weight="400" text-anchor="middle" x="438" y="290">Lakes · original inputs</text><circle cx="382" cy="39" fill="#17688f" r="16"></circle><text font-size="17" font-weight="650" style="fill:white" text-anchor="middle" x="382" y="45">2</text><path d="M520,106 L597,106" fill="none" marker-end="url(#arr-cbc60487d8)" stroke="#8bafc1" stroke-width="3"></path><circle cx="728" cy="106" fill="#f0f6f9" r="70"></circle><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(682,59) scale(0.92)"><path d="M4 22h27l22 28-22 28H4M34 22h27l22 28-22 28H34"></path><path d="M64 38h29M64 62h29"></path></g><text fill="#19384a" font-size="25" font-weight="700" text-anchor="middle" x="728" y="216">Process / analyze</text><text fill="#19384a" font-size="19" font-weight="400" text-anchor="middle" x="728" y="260">Clean · join · aggregate</text><text fill="#19384a" font-size="19" font-weight="400" text-anchor="middle" x="728" y="290">Apply analytical logic</text><circle cx="672" cy="39" fill="#17688f" r="16"></circle><text font-size="17" font-weight="650" style="fill:white" text-anchor="middle" x="672" y="45">3</text><path d="M810,106 L887,106" fill="none" marker-end="url(#arr-cbc60487d8)" stroke="#8bafc1" stroke-width="3"></path><circle cx="1018" cy="106" fill="#f0f6f9" r="70"></circle><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(972,59) scale(0.92)"><path d="M13 14v72h77"></path><rect height="27" width="12" x="25" y="53"></rect><rect height="46" width="12" x="47" y="34"></rect><rect height="63" width="12" x="69" y="17"></rect></g><text fill="#19384a" font-size="25" font-weight="700" text-anchor="middle" x="1018" y="216">Consume / visualize</text><text fill="#19384a" font-size="19" font-weight="400" text-anchor="middle" x="1018" y="260">Queries · reports</text><text fill="#19384a" font-size="19" font-weight="400" text-anchor="middle" x="1018" y="290">Dashboards · decisions</text><circle cx="962" cy="39" fill="#17688f" r="16"></circle><text font-size="17" font-weight="650" style="fill:white" text-anchor="middle" x="962" y="45">4</text></svg><p class="takeaway">This week focuses on the middle of the pipeline: turn raw records into data that a visualization can use.</p></div><footer class="slide-foot"><span class="credit">AWS Training and Certification, Data Analytics Fundamentals. · <a href="https://aws.amazon.com/what-is/etl/" rel="noopener" target="_blank">AWS: What is ETL?</a></span><b>3 / 60</b></footer></div>
+
+<div data-slide="4" aria-label="Slide 4: Three Types of Data" class="slide" data-chapter="From data to analysis" data-title="Three Types of Data" id="slide-4"><div class="eyebrow"><span>From data to analysis</span><span>IA342 · Week 6</span></div><h2>Three Types of Data</h2><p class="subtitle">The same transfer can arrive as a table row, a JSON record or an image.</p><div class="slide-body"><div class="data-form-grid"><div><h3>Structured</h3><p class="file-label">Rows + named columns</p><table class="compact"><thead><tr><th>ID</th><th>Amount</th><th>Status</th></tr></thead><tbody><tr><td>T1042</td><td>50.00</td><td>Completed</td></tr><tr><td>T1043</td><td>25.00</td><td>Pending</td></tr></tbody></table><p>You can filter <b>Status</b> and sum <b>Amount</b> directly.</p><p class="small">Example: a transaction table in a relational database.</p></div><div><h3>Semi-structured</h3><p class="file-label">Keys + values + nesting</p><pre><code>{
+ "id": "T1042",
+ "amount": 50.00,
+ "status": "Completed",
+ "tags": ["mobile"]
+}</code></pre><p>Keys describe the values. Optional or nested fields can vary between records.</p><p class="small">Example: an API response in JSON.</p></div><div><h3>Unstructured</h3><p class="file-label">Image, video, audio or prose</p><img alt="PNG image of a fictional bank receipt; it contains pixels rather than queryable table cells" data-asset="assets/receipt-image.png" src="../../assets/week-6/receipt-image.png" /><p>This <b>PNG</b> looks readable to us, but its amount is not a numeric database field.</p><p class="video-choice"><button data-play-video="HlKCe_YKlPI" type="button">▶ Video example</button> <span>Optional · needs internet</span></p></div></div><p class="short-note">The same event can be represented in different ways. A video may have structured metadata; its visual and audio content is still unstructured for table-based analysis.</p></div><footer class="slide-foot"><span class="credit">Illustrative table, JSON and receipt. · <a href="https://www.youtube.com/watch?v=HlKCe_YKlPI" rel="noopener" target="_blank">Salesforce: What is Tableau?</a></span><b>4 / 60</b></footer></div>
+
+<div data-slide="5" aria-label="Slide 5: Where Does Each Kind of Data Go?" class="slide" data-chapter="From data to analysis" data-title="Where Does Each Kind of Data Go?" id="slide-5"><div class="eyebrow"><span>From data to analysis</span><span>IA342 · Week 6</span></div><h2>Where Does Each Kind of Data Go?</h2><p class="subtitle">Choose storage for the data’s structure and the work you need to do.</p><div class="slide-body"><div class="type-home"><svg aria-label="Relational database" class="diagram" role="img" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>Relational database</title><defs><marker id="arr-059544afe0" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(0,0) scale(1.0)"><ellipse cx="50" cy="20" rx="35" ry="12"></ellipse><path d="M15 20v57c0 16 70 16 70 0V20M15 48c0 16 70 16 70 0M15 75c0 16 70 16 70 0"></path></g></svg><strong>Relational database</strong><p>Structured records</p><p class="detail">Accounts, payments and transactions</p></div><div class="type-home"><svg aria-label="Document / NoSQL database" class="diagram" role="img" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>Document / NoSQL database</title><defs><marker id="arr-7789e6495a" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(0,0) scale(1.0)"><path d="M24 8h37l18 18v63H24zM61 8v20h18M35 44h31M35 58h31M35 72h22"></path></g></svg><strong>Document / NoSQL database</strong><p>Semi-structured records</p><p class="detail">JSON events and nested documents</p></div><div class="type-home"><svg aria-label="Object storage / data lake" class="diagram" role="img" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>Object storage / data lake</title><defs><marker id="arr-4d8d64362e" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(0,0) scale(1.0)"><path d="M10 21 50 5l40 16-40 16zM10 21v53l40 21 40-21V21M50 37v58"></path></g></svg><strong>Object storage / data lake</strong><p>Structured, semi-structured, unstructured</p><p class="detail">CSV, JSON, images, audio and video</p></div><div class="type-home"><svg aria-label="Data warehouse" class="diagram" role="img" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>Data warehouse</title><defs><marker id="arr-d1e53351be" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(0,0) scale(1.0)"><path d="M5 28 50 4l45 24M13 25v65h74V25M24 41h53M24 58h53M24 75h53M41 41v49M60 41v49"></path></g></svg><strong>Data warehouse</strong><p>Prepared analytical tables</p><p class="detail">Integrated history and reporting data</p></div><p class="short-note"><b>Typical uses, not exclusive rules:</b> a CSV or JSON file can also land in object storage first. A warehouse is itself a database system; many warehouses use relational tables and SQL.</p></div><footer class="slide-foot"><span class="credit"><a href="https://aws.amazon.com/what-is/olap/" rel="noopener" target="_blank">AWS: OLAP and OLTP</a></span><b>5 / 60</b></footer></div>
+
+<div data-slide="6" aria-label="Slide 6: Relational Database — Everyday Banking" class="slide" data-chapter="From data to analysis" data-title="Relational Database — Everyday Banking" id="slide-6"><div class="eyebrow"><span>From data to analysis</span><span>IA342 · Week 6</span></div><h2>Relational Database — Everyday Banking</h2><p class="subtitle">Serve many customers quickly without leaving a transfer half-finished.</p><div class="slide-body"><p class="small">A bank must handle many simultaneous <b>short reads and writes</b>: check a balance, post a deposit, or transfer money. Related tables and transactions keep those operations consistent.</p><iframe class="activity" height="400" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#bank" style="height:400px" title="Banking: short concurrent reads and writes"></iframe></div><footer class="slide-foot"><span class="credit">Illustrative banking data; not a performance benchmark. · <a href="https://www.postgresql.org/docs/16/tutorial-transactions.html" rel="noopener" target="_blank">PostgreSQL: Transactions</a></span><b>6 / 60</b></footer></div>
+
+<div data-slide="7" aria-label="Slide 7: Data Warehouse — The Bank’s Reporting History" class="slide" data-chapter="From data to analysis" data-title="Data Warehouse — The Bank’s Reporting History" id="slide-7"><div class="eyebrow"><span>From data to analysis</span><span>IA342 · Week 6</span></div><h2>Data Warehouse — The Bank’s Reporting History</h2><p class="subtitle">Keep day-to-day transactions separate from broad questions about the whole business.</p><div class="slide-body"><svg aria-label="Operational banking databases supply an analytical warehouse for head-office weekly and monthly reporting." class="diagram" role="img" viewbox="0 0 1168 339" xmlns="http://www.w3.org/2000/svg"><title>Operational banking databases supply an analytical warehouse for head-office weekly and monthly reporting.</title><defs><marker id="arr-d447f52b39" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><rect fill="#eef5f8" height="84" rx="6" stroke="#b9d0dc" stroke-width="2" width="240" x="7" y="15"></rect><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(17,32) scale(0.53)"><ellipse cx="50" cy="20" rx="35" ry="12"></ellipse><path d="M15 20v57c0 16 70 16 70 0V20M15 48c0 16 70 16 70 0M15 75c0 16 70 16 70 0"></path></g><text fill="#19384a" font-size="21" font-weight="650" text-anchor="start" x="84" y="48">Eastern branches</text><text fill="#19384a" font-size="17" font-weight="400" text-anchor="start" x="84" y="77">Operational databases</text><path d="M249 58 H284 V155 H325" fill="none" stroke="#8bafc1" stroke-width="2.5"></path><rect fill="#eef5f8" height="84" rx="6" stroke="#b9d0dc" stroke-width="2" width="240" x="7" y="118"></rect><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(17,135) scale(0.53)"><ellipse cx="50" cy="20" rx="35" ry="12"></ellipse><path d="M15 20v57c0 16 70 16 70 0V20M15 48c0 16 70 16 70 0M15 75c0 16 70 16 70 0"></path></g><text fill="#19384a" font-size="21" font-weight="650" text-anchor="start" x="84" y="151">Western branches</text><text fill="#19384a" font-size="17" font-weight="400" text-anchor="start" x="84" y="180">Operational databases</text><path d="M249 161 H284 V155 H325" fill="none" stroke="#8bafc1" stroke-width="2.5"></path><rect fill="#eef5f8" height="84" rx="6" stroke="#b9d0dc" stroke-width="2" width="240" x="7" y="221"></rect><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(17,238) scale(0.53)"><ellipse cx="50" cy="20" rx="35" ry="12"></ellipse><path d="M15 20v57c0 16 70 16 70 0V20M15 48c0 16 70 16 70 0M15 75c0 16 70 16 70 0"></path></g><text fill="#19384a" font-size="21" font-weight="650" text-anchor="start" x="84" y="254">Online banking</text><text fill="#19384a" font-size="17" font-weight="400" text-anchor="start" x="84" y="283">Operational database</text><path d="M249 264 H284 V155 H325" fill="none" stroke="#8bafc1" stroke-width="2.5"></path><path d="M295,155 L350,155" fill="none" marker-end="url(#arr-d447f52b39)" stroke="#8bafc1" stroke-width="3"></path><text fill="#19384a" font-size="18" font-weight="650" text-anchor="middle" x="326" y="128">ETL</text><rect fill="#eef5f8" height="290" rx="6" stroke="#84b1c9" stroke-width="2" width="344" x="370" y="15"></rect><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(495,34) scale(0.94)"><path d="M5 28 50 4l45 24M13 25v65h74V25M24 41h53M24 58h53M24 75h53M41 41v49M60 41v49"></path></g><text fill="#19384a" font-size="26" font-weight="700" text-anchor="middle" x="542" y="167">Bank data warehouse</text><text fill="#19384a" font-size="20" font-weight="400" text-anchor="middle" x="542" y="205">Cleaned and integrated history</text><text fill="#19384a" font-size="20" font-weight="400" text-anchor="middle" x="542" y="234">Common dates, account keys, units</text><text fill="#19384a" font-size="20" font-weight="400" text-anchor="middle" x="542" y="263">Across regions and reporting periods</text><path d="M735,157 L790,157" fill="none" marker-end="url(#arr-d447f52b39)" stroke="#8bafc1" stroke-width="3"></path><rect fill="#fff" height="275" rx="6" stroke="#bccfd9" stroke-width="2" width="335" x="815" y="26"></rect><text fill="#19384a" font-size="25" font-weight="700" text-anchor="middle" x="982" y="70">Head-office analysis</text><text fill="#19384a" font-size="21" font-weight="400" text-anchor="start" x="848" y="120">Monthly deposits by region</text><text fill="#19384a" font-size="21" font-weight="400" text-anchor="start" x="848" y="170">Weekly transfer volumes</text><text fill="#19384a" font-size="21" font-weight="400" text-anchor="start" x="848" y="220">Multi-year customer trends</text></svg><p class="takeaway">Different workload: fewer analytical users in this example, but each query may scan or summarize a large history. <b>User count is not the definition.</b></p></div><footer class="slide-foot"><span class="credit">Illustrative banking architecture. · <a href="https://aws.amazon.com/what-is/olap/" rel="noopener" target="_blank">AWS: OLAP and OLTP</a></span><b>7 / 60</b></footer></div>
+
+<div data-slide="8" aria-label="Slide 8: Transactional Modeling — OLTP" class="slide" data-chapter="From data to analysis" data-title="Transactional Modeling — OLTP" id="slide-8"><div class="eyebrow"><span>From data to analysis</span><span>IA342 · Week 6</span></div><h2>Transactional Modeling — OLTP</h2><p class="subtitle">Online Transaction Processing: record the day-to-day business activity.</p><div class="slide-body"><p class="small"><b>Typical home: an operational relational database.</b> Many short reads, inserts and updates support daily business; normalized related tables reduce unnecessary repetition.</p><iframe class="activity" height="355" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#oltp" style="height:355px" title="Simulate recording one retail purchase"></iframe><p class="small">A multi-year analytical question may still require joining and summarizing many operational records.</p></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer. Illustrative transaction. · <a href="https://www.postgresql.org/docs/16/tutorial-transactions.html" rel="noopener" target="_blank">PostgreSQL: Transactions</a></span><b>8 / 60</b></footer></div>
+
+<div data-slide="9" aria-label="Slide 9: Analytical Data Modeling — OLAP" class="slide" data-chapter="From data to analysis" data-title="Analytical Data Modeling — OLAP" id="slide-9"><div class="eyebrow"><span>From data to analysis</span><span>IA342 · Week 6</span></div><h2>Analytical Data Modeling — OLAP</h2><p class="subtitle">Online Analytical Processing: summarize and explore the activity.</p><div class="slide-body"><p class="small"><b>Typical home: a data warehouse.</b> Analytical queries group, filter and aggregate many records. Cubes and analytical tables organize the data for reporting.</p><iframe class="activity" height="392" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#olap" style="height:392px" title="Group and filter a synthetic retail report"></iframe></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer. Illustrative retail data. · <a href="https://aws.amazon.com/what-is/olap/" rel="noopener" target="_blank">AWS: OLAP and OLTP</a></span><b>9 / 60</b></footer></div>
+
+<div data-slide="10" aria-label="Slide 10: Why Do We Care About Data Quality?" class="slide" data-chapter="Data quality" data-title="Why Do We Care About Data Quality?" id="slide-10"><div class="eyebrow"><span>Data quality</span><span>IA342 · Week 6</span></div><h2>Why Do We Care About Data Quality?</h2><p class="subtitle">A correctly drawn chart can still summarize incorrect records.</p><div class="slide-body"><iframe class="activity" height="378" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#averages" style="height:378px" title="Compare duplicate and missing-value choices"></iframe><p class="small">The error is in the data or the cleaning decision—not in how the bars or averages are drawn.</p></div><footer class="slide-foot"><span class="credit">Illustrative sales data; B is a confirmed duplicate copy.</span><b>10 / 60</b></footer></div>
+
+<div data-slide="11" aria-label="Slide 11: Be Vigilant: Question the Data" class="slide" data-chapter="Data quality" data-title="Be Vigilant: Question the Data" id="slide-11"><div class="eyebrow"><span>Data quality</span><span>IA342 · Week 6</span></div><h2>Be Vigilant: Question the Data</h2><p class="subtitle">Reuters / CNBC · December 13, 2011</p><div class="slide-body"><img alt="Reuters headline and date retained from the lecture" class="headline-shot" data-asset="assets/old-nar-headline.png" src="../../assets/week-6/old-nar-headline.png" /><div class="columns"><div><ul><li>NAR found that its home-sales estimates needed revision.</li><li>The report described sales appearing in more than one list and new-home sales entering the existing-home series.</li><li>The lesson: check what one record represents before adding files together.</li></ul></div><div><h3>2010 U.S. existing-home sales</h3><table class="compact"><thead><tr><th scope="col">Published estimate</th><th scope="col">Number</th></tr></thead><tbody><tr><td>Before rebenchmarking</td><td>4,908,000</td></tr><tr><td>Revised estimate</td><td>4,190,000</td></tr></tbody></table><p class="small"><b>718,000 fewer</b> estimated sales, about <b>14.6%</b>. This revision included more than just duplicate removal. <b>These are revised counts, not a measured dollar loss.</b></p></div></div></div><footer class="slide-foot"><span class="credit">Reuters / CNBC, Dec. 13, 2011. Revised estimates: NAR, Dec. 21, 2011. · <a href="https://www.calculatedriskblog.com/2011/12/existing-home-sales-revisions.html" rel="noopener" target="_blank">contemporary quotation of NAR’s December 21 release</a></span><b>11 / 60</b></footer></div>
+
+<div data-slide="12" aria-label="Slide 12: Mars Climate Orbiter: A Unit-Conversion Failure" class="slide" data-chapter="Data quality" data-title="Mars Climate Orbiter: A Unit-Conversion Failure" id="slide-12"><div class="eyebrow"><span>Data quality</span><span>IA342 · Week 6</span></div><h2>Mars Climate Orbiter: A Unit-Conversion Failure</h2><p class="subtitle">September 23, 1999 · A mismatch between English and metric units</p><div class="slide-body"><div class="money-case"><div><div class="cost-value">US$125m</div><p class="cost-label">Reported spacecraft value<br />(1999 U.S. dollars)</p><p class="small">The mission was lost on arrival at Mars.</p><p class="contrast-note">The amount was reported for the spacecraft, not the entire Mars exploration program.</p></div><div class="case-chain"><div><b>1 · Different units</b><p>Thruster impulse data were supplied in pound-force seconds (lbf·s). Navigation software expected newton-seconds (N·s).</p></div><div><b>2 · Incorrect trajectory estimates</b><p>The values were used without the required conversion, so the effects of small thruster firings were underestimated.</p></div><div><b>3 · Spacecraft lost</b><p>The orbiter passed too close to Mars, and contact was lost. NASA also identified failures in validation and communication.</p></div></div></div><p class="takeaway"><b>Check units before combining data.</b> A valid number can have the wrong meaning when its unit is misinterpreted.</p></div><footer class="slide-foot"><span class="credit"><a href="https://llis.nasa.gov/llis_lib/pdf/1009464main1_0641-mr.pdf#page=14" rel="noopener" target="_blank">NASA investigation (1999), pp. 6–7, 14</a> · Reported spacecraft value: <a href="https://istcolloq.gsfc.nasa.gov/stuart-madnick/" rel="noopener" target="_blank">The Boston Globe, Oct. 1, 1999 (NASA archive)</a></span><b>12 / 60</b></footer></div>
+
+<div data-slide="13" aria-label="Slide 13: The Data Quality Challenge — City and State" class="slide" data-chapter="Data quality" data-title="The Data Quality Challenge — City and State" id="slide-13"><div class="eyebrow"><span>Data quality</span><span>IA342 · Week 6</span></div><h2>The Data Quality Challenge — City and State</h2><p class="subtitle">Standardize equivalent city and state names before grouping.</p><div class="slide-body"><iframe class="activity" height="382" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#labels" style="height:382px" title="Standardize the Cincinnati variants"></iframe></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer. Illustrative counts: 4, 5 and 3 records.</span><b>13 / 60</b></footer></div>
+
+<div data-slide="14" aria-label="Slide 14: The Data Quality Challenge — Are These the Same Customer?" class="slide" data-chapter="Data quality" data-title="The Data Quality Challenge — Are These the Same Customer?" id="slide-14"><div class="eyebrow"><span>Data quality</span><span>IA342 · Week 6</span></div><h2>The Data Quality Challenge — Are These the Same Customer?</h2><p class="subtitle">Similar names do not prove that two records describe one person.</p><div class="slide-body"><table class="identity-table"><thead><tr><th scope="col">Customer Name</th><th scope="col">Address</th><th scope="col">Phone</th><th scope="col">Email</th></tr></thead><tbody><tr><td>John Smith</td><td>123 Lovely Lane</td><td>(513) 456-7890</td><td>jsmith@hotmail.com</td></tr><tr><td>J Smith Jr.</td><td>123 Lovely Lane</td><td>(513) 602-1234</td><td>jsmith@hotmail.com</td></tr><tr><td>John Smith</td><td>123 Lovely Lane #2</td><td>(513) 602-1234</td><td>coolguy@gmail.com</td></tr></tbody></table><div class="columns"><div><p class="small"><b>Possible matches:</b> two rows share an email address; two share a phone number.</p></div><div><p class="small"><b>Possible differences:</b> “Jr.” and apartment “#2” may describe another person or household.</p></div></div><p class="takeaway">Before a reactivation campaign, would you contact three customers or fewer? The table alone does not settle their identity.</p></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer. Fictional customer records.</span><b>14 / 60</b></footer></div>
+
+<div data-slide="15" aria-label="Slide 15: Excel Disaster #1 — Copy/Paste Errors" class="slide" data-chapter="Data quality" data-title="Excel Disaster #1 — Copy/Paste Errors" id="slide-15"><div class="eyebrow"><span>Data quality</span><span>IA342 · Week 6</span></div><h2>Excel Disaster #1 — Copy/Paste Errors</h2><p class="subtitle">The danger of using an editable Excel file as an operational database.</p><div class="slide-body"><iframe class="activity" height="365" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#copypaste" style="height:365px" title="A misplaced paste in an Excel sales worksheet"></iframe><p class="takeaway"><b>Excel:</b> one paste can overwrite the wrong cells. <b>A database-backed application:</b> controlled forms, permissions and validation can reduce direct cell-editing risks.</p><p class="short-note">A database still accepts a wrong but valid number unless an appropriate business rule catches it.</p></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer. Illustrative Excel editing error. · <a href="https://www.postgresql.org/docs/current/ddl-constraints.html" rel="noopener" target="_blank">PostgreSQL: Constraints</a></span><b>15 / 60</b></footer></div>
+
+<div data-slide="16" aria-label="Slide 16: Excel Disaster #2 — Mixed Data Types" class="slide" data-chapter="Data quality" data-title="Excel Disaster #2 — Mixed Data Types" id="slide-16"><div class="eyebrow"><span>Data quality</span><span>IA342 · Week 6</span></div><h2>Excel Disaster #2 — Mixed Data Types</h2><p class="subtitle">An Excel column can mix numbers, text and dates without a fixed field type.</p><div class="slide-body"><div class="columns"><div><div class="excel-label">Sales.xlsx · one Price column</div><table class="compact"><thead><tr><th scope="col">Excel cell</th><th scope="col">Stored value</th><th scope="col">Data type</th></tr></thead><tbody><tr><td>D2</td><td>1302</td><td>Number</td></tr><tr><td>D3</td><td>not recorded</td><td>Text</td></tr><tr><td>D4</td><td>(empty)</td><td>Blank</td></tr></tbody></table><p class="small">A field name such as <b>Price</b> does not enforce numeric values in every cell. Importing this column may produce text, nulls or failed calculations.</p></div><div><h3>Automatic conversion changes meaning</h3><table class="compact"><thead><tr><th scope="col">Intended identifier</th><th scope="col">Possible Excel result</th></tr></thead><tbody><tr><td><code>00123</code></td><td><code>123</code></td></tr><tr><td><code>SEPT2</code></td><td><code>2-Sep</code></td></tr></tbody></table><p class="small">Choose <b>Text</b> before importing identifiers. Inspect conversion settings and compare the imported values with the source.</p></div></div><p class="takeaway"><b>Database contrast:</b> a declared field type constrains what can be stored. Excel formatting and a CSV header are not database schemas.</p></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer. Illustrative Excel import errors. · <a href="https://support.microsoft.com/en-US/Excel/keeping-leading-zeros-and-large-numbers" rel="noopener" target="_blank">Microsoft: Preserve identifiers</a> · <a href="https://www.postgresql.org/docs/current/ddl-constraints.html" rel="noopener" target="_blank">PostgreSQL: Constraints</a></span><b>16 / 60</b></footer></div>
+
+<div data-slide="17" aria-label="Slide 17: Gene Names Became Dates in Excel" class="slide" data-chapter="Data quality" data-title="Gene Names Became Dates in Excel" id="slide-17"><div class="eyebrow"><span>Data quality</span><span>IA342 · Week 6</span></div><h2>Gene Names Became Dates in Excel</h2><p class="subtitle">Excel’s automatic type conversion can alter a research identifier.</p><div class="slide-body"><div class="columns"><div><h3>Identifiers were silently changed</h3><table class="gene-table"><thead><tr><th>Gene identifier</th><th>Unwanted conversion</th></tr></thead><tbody><tr><td>SEPT2</td><td>2-Sep</td></tr><tr><td>MARCH1</td><td>1-Mar</td></tr><tr><td>2310009E13</td><td>2.31E+13</td></tr></tbody></table><p class="small">A later lookup using the original identifier can fail even though the spreadsheet still opens.</p></div><div><div class="big-percentage">19.6%</div><p><b>704 of 3,597 papers</b> containing the screened Excel gene lists had confirmed gene-name errors.</p><p class="small">Study scope: supplementary files from 18 journals, papers published during 2005–2015. This is not a rate for all research or every current Excel version.</p><p class="small"><b>Recovery:</b> compare against the original source and re-import. Merely changing the corrupted cell back to Text may not restore the identifier.</p></div></div></div><footer class="slide-foot"><span class="credit"><a href="https://link.springer.com/article/10.1186/s13059-016-1044-7" rel="noopener" target="_blank">Ziemann, Eren &amp; El-Osta (2016)</a> · <a href="https://support.microsoft.com/en-US/Excel/keeping-leading-zeros-and-large-numbers" rel="noopener" target="_blank">Microsoft: Preserve identifiers</a></span><b>17 / 60</b></footer></div>
+
+<div data-slide="18" aria-label="Slide 18: Excel Disaster #3 — Deleted or Overwritten Data" class="slide" data-chapter="Data quality" data-title="Excel Disaster #3 — Deleted or Overwritten Data" id="slide-18"><div class="eyebrow"><span>Data quality</span><span>IA342 · Week 6</span></div><h2>Excel Disaster #3 — Deleted or Overwritten Data</h2><p class="subtitle">A row, worksheet or saved file can disappear without protecting its related records.</p><div class="slide-body"><iframe class="activity" height="285" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#deletion" style="height:285px" title="Delete a customer in Excel files versus an enforced database foreign key"></iframe><div class="recovery-pair"><div><h3>Excel files</h3><p>Saving over the only good copy can leave the wrong version as the working file. Recovery depends on available <b>Undo, version history or backups</b>.</p></div><div><h3>Database safeguards</h3><p>Configured constraints can block invalid deletion. Transactions and configured backups support recovery; a database is not automatically immune to mistakes.</p></div></div><p class="short-note">Excel version history is available with supported OneDrive/SharePoint storage. The risk is using an uncontrolled file as the system of record.</p></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer. Illustrative deletion example. · <a href="https://www.postgresql.org/docs/current/ddl-constraints.html" rel="noopener" target="_blank">PostgreSQL: Constraints</a> · <a href="https://www.postgresql.org/docs/current/backup.html" rel="noopener" target="_blank">PostgreSQL: Backup and restore</a> · <a href="https://support.microsoft.com/en-us/office/view-previous-versions-of-office-files-5c1e076f-a9c9-41b8-8ace-f77b9642e2c2" rel="noopener" target="_blank">Microsoft: Version history</a></span><b>18 / 60</b></footer></div>
+
+<div data-slide="19" aria-label="Slide 19: What Makes Data Good for Analysis?" class="slide" data-chapter="Data quality" data-title="What Makes Data Good for Analysis?" id="slide-19"><div class="eyebrow"><span>Data quality</span><span>IA342 · Week 6</span></div><h2>What Makes Data Good for Analysis?</h2><p class="subtitle">Clean · Relevant · Trusted · Usable</p><div class="slide-body"><div class="quality-grid"><article><svg aria-label="Clean" class="diagram" role="img" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>Clean</title><defs><marker id="arr-33957b9ff4" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(0,0) scale(1.0)"><circle cx="50" cy="50" r="36"></circle><path d="m29 51 15 15 30-33"></path></g></svg><div><h3>Clean</h3><p>Values, types and units have been checked; confirmed duplicate copies are handled.</p></div></article><article><svg aria-label="Relevant" class="diagram" role="img" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>Relevant</title><defs><marker id="arr-025ef987c9" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(0,0) scale(1.0)"><circle cx="50" cy="50" r="36"></circle><circle cx="50" cy="50" r="22"></circle><circle cx="50" cy="50" r="7"></circle><path d="m52 48 38-38M76 10h14v14"></path></g></svg><div><h3>Relevant</h3><p>The fields, population and time period match the question you are asking.</p></div></article><article><svg aria-label="Trusted" class="diagram" role="img" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>Trusted</title><defs><marker id="arr-20d5531e48" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(0,0) scale(1.0)"><rect height="23" rx="3" width="25" x="10" y="10"></rect><rect height="23" rx="3" width="25" x="65" y="67"></rect><path d="M35 22h41v29M23 33v45h42m-10-10 10 10-10 10"></path></g></svg><div><h3>Trusted</h3><p>The source and transformations are known; the result can be checked against evidence.</p></div></article><article><svg aria-label="Usable" class="diagram" role="img" viewbox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><title>Usable</title><defs><marker id="arr-832c2861bd" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(0,0) scale(1.0)"><rect height="60" rx="5" width="80" x="8" y="15"></rect><path d="M8 32h80M25 84h49M50 75v9M20 45h23M20 58h15m25-11 10 10 15-20"></path></g></svg><div><h3>Usable</h3><p>The prepared structure works for the intended analysis and can be regenerated.</p></div></article></div><p class="takeaway">“Clean” is not enough when the data describes the wrong population, time period or question.</p></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer.</span><b>19 / 60</b></footer></div>
+
+<div data-slide="20" aria-label="Slide 20: Understanding ETL" class="slide" data-chapter="Prepare the data" data-title="Understanding ETL" id="slide-20"><div class="eyebrow"><span>Prepare the data</span><span>IA342 · Week 6</span></div><h2>Understanding ETL</h2><p class="subtitle">Extract → Transform → Load</p><div class="slide-body"><svg aria-label="Extract reads from raw sources; transform cleans and reshapes; load writes prepared data to a destination." class="diagram" role="img" viewbox="0 0 1168 376" xmlns="http://www.w3.org/2000/svg"><title>Extract reads from raw sources; transform cleans and reshapes; load writes prepared data to a destination.</title><defs><marker id="arr-0f259e6738" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><rect fill="#fff" height="310" rx="6" stroke="#bad0dc" stroke-width="2" width="292" x="22" y="34"></rect><circle cx="63" cy="74" fill="#17688f" r="23"></circle><text font-size="25" font-weight="700" style="fill:white" text-anchor="middle" x="63" y="82">E</text><text fill="#19384a" font-size="24" font-weight="700" text-anchor="start" x="104" y="81">EXTRACT</text><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(122,113) scale(0.95)"><rect height="31" rx="3" width="25" x="4" y="12"></rect><path d="M10 22h13m-13 8h10M8 72h68m-48-15 18 15-18 15M59 16v40m-13-13 13 13 13-13"></path><rect height="23" rx="2" width="19" x="76" y="61"></rect></g><text fill="#19384a" font-size="21" font-weight="400" text-anchor="middle" x="168" y="257">Read from raw sources</text><text fill="#19384a" font-size="21" font-weight="400" text-anchor="middle" x="168" y="290">Collect a defined slice</text><path d="M333,188 L411,188" fill="none" marker-end="url(#arr-0f259e6738)" stroke="#8bafc1" stroke-width="3"></path><rect fill="#fff" height="310" rx="6" stroke="#bad0dc" stroke-width="2" width="292" x="433" y="34"></rect><circle cx="474" cy="74" fill="#17688f" r="23"></circle><text font-size="25" font-weight="700" style="fill:white" text-anchor="middle" x="474" y="82">T</text><text fill="#19384a" font-size="24" font-weight="700" text-anchor="start" x="515" y="81">TRANSFORM</text><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(533,113) scale(0.95)"><path d="M4 22h27l22 28-22 28H4M34 22h27l22 28-22 28H34"></path><path d="M64 38h29M64 62h29"></path></g><text fill="#19384a" font-size="21" font-weight="400" text-anchor="middle" x="579" y="257">Clean and reshape</text><text fill="#19384a" font-size="21" font-weight="400" text-anchor="middle" x="579" y="290">Create analytical meaning</text><path d="M744,188 L822,188" fill="none" marker-end="url(#arr-0f259e6738)" stroke="#8bafc1" stroke-width="3"></path><rect fill="#fff" height="310" rx="6" stroke="#bad0dc" stroke-width="2" width="292" x="846" y="34"></rect><circle cx="887" cy="74" fill="#17688f" r="23"></circle><text font-size="25" font-weight="700" style="fill:white" text-anchor="middle" x="887" y="82">L</text><text fill="#19384a" font-size="24" font-weight="700" text-anchor="start" x="928" y="81">LOAD</text><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(946,113) scale(0.95)"><ellipse cx="50" cy="20" rx="35" ry="12"></ellipse><path d="M15 20v57c0 16 70 16 70 0V20M15 48c0 16 70 16 70 0M15 75c0 16 70 16 70 0"></path></g><text fill="#19384a" font-size="21" font-weight="400" text-anchor="middle" x="992" y="257">Write prepared output</text><text fill="#19384a" font-size="21" font-weight="400" text-anchor="middle" x="992" y="290">Make it available to use</text></svg><p class="takeaway">ETL is a repeatable preparation process—not just opening a file. It separates the source, the transformations and the destination.</p></div><footer class="slide-foot"><span class="credit"><a href="https://aws.amazon.com/what-is/etl/" rel="noopener" target="_blank">AWS: What is ETL?</a></span><b>20 / 60</b></footer></div>
+
+<div data-slide="21" aria-label="Slide 21: Extract — Bring the Raw Data Together" class="slide" data-chapter="Prepare the data" data-title="Extract — Bring the Raw Data Together" id="slide-21"><div class="eyebrow"><span>Prepare the data</span><span>IA342 · Week 6</span></div><h2>Extract — Bring the Raw Data Together</h2><p class="subtitle">Read the required source data while preserving where it came from.</p><div class="slide-body"><div class="stage-explain"><div><svg aria-label="Different source systems are read into a raw or staging area." class="diagram" role="img" viewbox="0 0 660 365" xmlns="http://www.w3.org/2000/svg"><title>Different source systems are read into a raw or staging area.</title><defs><marker id="arr-7108f9b441" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(15,21) scale(0.62)"><ellipse cx="50" cy="20" rx="35" ry="12"></ellipse><path d="M15 20v57c0 16 70 16 70 0V20M15 48c0 16 70 16 70 0M15 75c0 16 70 16 70 0"></path></g><text fill="#19384a" font-size="21" font-weight="600" text-anchor="start" x="93" y="55">Branch databases</text><path d="M315,54 L392,170" fill="none" marker-end="url(#arr-7108f9b441)" stroke="#8bafc1" stroke-width="3"></path><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(15,128) scale(0.62)"><path d="M24 8h37l18 18v63H24zM61 8v20h18M35 44h31M35 58h31M35 72h22"></path></g><text fill="#19384a" font-size="21" font-weight="600" text-anchor="start" x="93" y="162">Files: CSV / Excel</text><path d="M315,161 L392,170" fill="none" marker-end="url(#arr-7108f9b441)" stroke="#8bafc1" stroke-width="3"></path><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(15,235) scale(0.62)"><rect height="31" rx="3" width="25" x="4" y="12"></rect><path d="M10 22h13m-13 8h10M8 72h68m-48-15 18 15-18 15M59 16v40m-13-13 13 13 13-13"></path><rect height="23" rx="2" width="19" x="76" y="61"></rect></g><text fill="#19384a" font-size="21" font-weight="600" text-anchor="start" x="93" y="269">APIs / event logs</text><path d="M315,268 L392,170" fill="none" marker-end="url(#arr-7108f9b441)" stroke="#8bafc1" stroke-width="3"></path><rect fill="#eef5f8" height="158" rx="6" stroke="#b9d0dc" stroke-width="2" width="218" x="413" y="102"></rect><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(480,121) scale(0.66)"><path d="M10 21 50 5l40 16-40 16zM10 21v53l40 21 40-21V21M50 37v58"></path></g><text fill="#19384a" font-size="21" font-weight="650" text-anchor="middle" x="522" y="217">Raw / staging area</text></svg></div><div class="stage-words"><h3><span class="stage-letter">E</span>Extract</h3><ul><li><b>Connect and read:</b> retrieve the needed files, tables or API records.</li><li><b>Choose the scope:</b> all history for the first run, or new records for a later batch.</li><li><b>Keep provenance:</b> record the source, extraction time and coverage.</li></ul><p class="small">In our exercise: connect to the two supplied Diamonds CSV files. Do not overwrite the raw inputs.</p></div></div><p class="takeaway">Extraction obtains the data. It does not, by itself, prove that the values are correct or comparable.</p></div><footer class="slide-foot"><span class="credit"><a href="https://aws.amazon.com/what-is/etl/" rel="noopener" target="_blank">AWS: What is ETL?</a></span><b>21 / 60</b></footer></div>
+
+<div data-slide="22" aria-label="Slide 22: Transform — Turn Records into Usable Information" class="slide" data-chapter="Prepare the data" data-title="Transform — Turn Records into Usable Information" id="slide-22"><div class="eyebrow"><span>Prepare the data</span><span>IA342 · Week 6</span></div><h2>Transform — Turn Records into Usable Information</h2><p class="subtitle">Clean, combine, calculate and summarize—with a checkable result for each operation.</p><div class="slide-body"><div class="transform-grid">
+<article><h3>Clean the values</h3><div class="transform-example"><code>" gia "</code><span>→</span><code>GIA</code></div><p class="small">Trim spaces, then make uppercase. Check units and missing-value codes.</p></article>
+<article><h3>Combine the records</h3><div class="transform-example"><b>10 rows + 12 rows</b><span>→</span><b>22 rows</b></div><p class="small">Union appends batches. Join adds related fields by a matching key.</p></article>
+<article><h3>Calculate a field</h3><div class="transform-example"><b>1,302 ÷ 0.30</b><span>→</span><b>4,340</b></div><p class="small">Price per carat = price ÷ weight. Validate the denominator first.</p></article>
+<article><h3>Aggregate for a question</h3><div class="transform-example"><b>100 + 200 + 50</b><span>→</span><b>350</b></div><p class="small">For example, sum three sales for one month. The detail becomes a summary.</p></article></div>
+<p class="takeaway">Choose transformations for the analysis. A filter changes which records remain; aggregation changes what one output row represents.</p></div><footer class="slide-foot"><span class="credit">Illustrative transformation examples. · <a href="https://aws.amazon.com/what-is/etl/" rel="noopener" target="_blank">AWS: What is ETL?</a></span><b>22 / 60</b></footer></div>
+
+<div data-slide="23" aria-label="Slide 23: Load — Deliver and Check the Prepared Output" class="slide" data-chapter="Prepare the data" data-title="Load — Deliver and Check the Prepared Output" id="slide-23"><div class="eyebrow"><span>Prepare the data</span><span>IA342 · Week 6</span></div><h2>Load — Deliver and Check the Prepared Output</h2><p class="subtitle">An analytical workflow needs a usable destination, not just a saved design.</p><div class="slide-body"><div class="stage-explain"><div><svg aria-label="Prepared data is written to a warehouse table, published data source or prepared file." class="diagram" role="img" viewbox="0 0 680 363" xmlns="http://www.w3.org/2000/svg"><title>Prepared data is written to a warehouse table, published data source or prepared file.</title><defs><marker id="arr-49cd92f27f" markerheight="9" markerwidth="9" orient="auto" refx="7" refy="4.5"><path d="M0 0 L9 4.5 L0 9" fill="none" stroke="#8bafc1" stroke-width="1.6"></path></marker></defs><rect fill="#eef5f8" height="124" rx="6" stroke="#b9d0dc" stroke-width="2" width="192" x="8" y="119"></rect><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(70,132) scale(0.55)"><circle cx="50" cy="50" r="36"></circle><path d="m29 51 15 15 30-33"></path></g><text fill="#19384a" font-size="21" font-weight="650" text-anchor="middle" x="103" y="218">Prepared data</text><path d="M217,180 L349,46" fill="none" marker-end="url(#arr-49cd92f27f)" stroke="#8bafc1" stroke-width="3"></path><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(376,10) scale(0.64)"><path d="M5 28 50 4l45 24M13 25v65h74V25M24 41h53M24 58h53M24 75h53M41 41v49M60 41v49"></path></g><text fill="#19384a" font-size="20" font-weight="650" text-anchor="start" x="453" y="49">Warehouse table</text><path d="M217,180 L349,155" fill="none" marker-end="url(#arr-49cd92f27f)" stroke="#8bafc1" stroke-width="3"></path><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(376,119) scale(0.64)"><ellipse cx="50" cy="20" rx="35" ry="12"></ellipse><path d="M15 20v57c0 16 70 16 70 0V20M15 48c0 16 70 16 70 0M15 75c0 16 70 16 70 0"></path></g><text fill="#19384a" font-size="20" font-weight="650" text-anchor="start" x="453" y="158">Published data source</text><path d="M217,180 L349,264" fill="none" marker-end="url(#arr-49cd92f27f)" stroke="#8bafc1" stroke-width="3"></path><g fill="none" stroke="#17688f" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" transform="translate(376,228) scale(0.64)"><path d="M24 8h37l18 18v63H24zM61 8v20h18M35 44h31M35 58h31M35 72h22"></path></g><text fill="#19384a" font-size="20" font-weight="650" text-anchor="start" x="453" y="267">Prepared file / extract</text></svg></div><div class="stage-words"><h3><span class="stage-letter">L</span>Load</h3><ul><li><b>Write to the target:</b> save the prepared result where analysis will use it.</li><li><b>Choose the write behavior:</b> replace the intended output or append a new batch without double-counting.</li><li><b>Validate:</b> inspect counts, fields and important totals after the run.</li></ul><p class="small">In our exercise: run the flow to produce a published clean data source, then connect the workbook to it.</p></div></div><p class="takeaway">Saving a flow records the process. <b>Running the output</b> creates or updates the prepared data.</p></div><footer class="slide-foot"><span class="credit"><a href="https://aws.amazon.com/what-is/etl/" rel="noopener" target="_blank">AWS: What is ETL?</a> · <a href="https://help.tableau.com/current/prep/en-us/prep_build_flow.htm" rel="noopener" target="_blank">Tableau: Build and organize a flow</a></span><b>23 / 60</b></footer></div>
+
+<div data-slide="24" aria-label="Slide 24: Tableau Data Model — Dimensions" class="slide" data-chapter="ETL and analytical fields" data-title="Tableau Data Model — Dimensions" id="slide-24"><div class="eyebrow"><span>ETL and analytical fields</span><span>IA342 · Week 6</span></div><h2>Tableau Data Model — Dimensions</h2><p class="subtitle">Dimensions describe and organize the records.</p><div class="slide-body"><div class="columns"><div><ul><li>Use dimensions to <b>group, filter, categorize, and build hierarchies</b>.</li><li>Examples in the sales table: Date, CustomerID, Category, ProductName, and AgentName.</li><li>“How many sales <b>by category</b>?” uses Category to define the groups.</li></ul></div><div><h3>Examples in the sales table</h3><table class="compact"><thead><tr><th scope="col">Field</th><th scope="col">Example</th><th scope="col">Role in a view</th></tr></thead><tbody><tr><td>Category</td><td>Shoes</td><td>Group records</td></tr><tr><td>Date</td><td>2/1/12</td><td>Group or filter time</td></tr><tr><td>OrderID</td><td>1</td><td>Identify an order</td></tr><tr><td>AgentName</td><td>Pay, Freda</td><td>Compare agents</td></tr></tbody></table></div></div><p class="takeaway">Dimensions are not limited to text. Dates and numeric IDs can also be dimensions.</p></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer. · <a href="https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles.htm" rel="noopener" target="_blank">Tableau: Dimensions and measures</a></span><b>24 / 60</b></footer></div>
+
+<div data-slide="25" aria-label="Slide 25: Tableau Data Model — Measures" class="slide" data-chapter="ETL and analytical fields" data-title="Tableau Data Model — Measures" id="slide-25"><div class="eyebrow"><span>ETL and analytical fields</span><span>IA342 · Week 6</span></div><h2>Tableau Data Model — Measures</h2><p class="subtitle">Measures provide the quantities and amounts to analyze.</p><div class="slide-body"><div class="columns"><div><ul><li>A measure is typically numerical and is summarized with an aggregation such as <b>SUM, AVG, MIN, or MAX</b>.</li><li>Price and Quantity are measures in the sales table.</li><li>Choose the aggregation for the question; not every measure should be added.</li></ul></div><div><h3>The same sale has different quantities</h3><table class="compact"><thead><tr><th scope="col">Item</th><th scope="col">Unit price</th><th scope="col">Quantity</th><th scope="col">Sales</th></tr></thead><tbody><tr><td>Runners</td><td>79.95</td><td>1</td><td>79.95</td></tr><tr><td>Kneehighs</td><td>10.98</td><td>3</td><td>32.94</td></tr></tbody></table><p class="small"><b>Sales = Price × Quantity</b><br />For these two rows: total sales = 112.89, not the sum of unit prices.</p></div></div><p class="takeaway">“Average price” and “total sales” are different questions, even when they use the same records.</p></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer. Sales = Price × Quantity. · <a href="https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles.htm" rel="noopener" target="_blank">Tableau: Dimensions and measures</a></span><b>25 / 60</b></footer></div>
+
+<div data-slide="26" aria-label="Slide 26: Which Are Dimensions and Which Are Measures?" class="slide" data-chapter="ETL and analytical fields" data-title="Which Are Dimensions and Which Are Measures?" id="slide-26"><div class="eyebrow"><span>ETL and analytical fields</span><span>IA342 · Week 6</span></div><h2>Which Are Dimensions and Which Are Measures?</h2><p class="subtitle">Inspect the sales records, then reveal the two field roles.</p><div class="slide-body"><iframe class="activity" height="485" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#roles" style="height:485px" title="Highlight dimensions and measures in the sales records"></iframe></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer. Nine sales records.</span><b>26 / 60</b></footer></div>
+
+<div data-slide="27" aria-label="Slide 27: Let’s Simplify — Group the Data, Then Summarize It" class="slide" data-chapter="ETL and analytical fields" data-title="Let’s Simplify — Group the Data, Then Summarize It" id="slide-27"><div class="eyebrow"><span>ETL and analytical fields</span><span>IA342 · Week 6</span></div><h2>Let’s Simplify — Group the Data, Then Summarize It</h2><p class="subtitle">Change the dimension or aggregation and read what each bar means.</p><div class="slide-body"><iframe class="activity" height="475" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#roles-viz" style="height:475px" title="Change the grouping dimension and measure"></iframe></div><footer class="slide-foot"><span class="credit">Jeffrey A. Shaffer. Sales = Price × Quantity.</span><b>27 / 60</b></footer></div>
+
+<div data-slide="28" aria-label="Slide 28: Live Connection — Query the Original Database" class="slide" data-chapter="Tableau connections" data-title="Live Connection — Query the Original Database" id="slide-28"><div class="eyebrow"><span>Tableau connections</span><span>IA342 · Week 6</span></div><h2>Live Connection — Query the Original Database</h2><p class="subtitle">Source update → new query → updated dashboard result.</p><div class="slide-body"><p class="small"><b>Live:</b> the dashboard sends queries to the original database. Committed changes can appear when Tableau queries it again; view refresh and caching policies affect when that happens.</p><iframe class="activity" height="363" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#live-query" style="height:363px" title="Live connection: update the database then query the dashboard"></iframe><p class="short-note">Direct connection does not mean constant push updates. Query cost and response time depend on the source and workload.</p></div><footer class="slide-foot"><span class="credit">Illustrative deposit totals. · <a href="https://help.tableau.com/current/pro/desktop/en-us/refreshing_data.htm" rel="noopener" target="_blank">Tableau: Refresh data sources</a> · <a href="https://help.tableau.com/current/online/en-us/data_freshness_policy.htm" rel="noopener" target="_blank">Tableau: Data freshness</a></span><b>28 / 60</b></footer></div>
+
+<div data-slide="29" aria-label="Slide 29: Extract Connection — Query a Hyper Copy" class="slide" data-chapter="Tableau connections" data-title="Extract Connection — Query a Hyper Copy" id="slide-29"><div class="eyebrow"><span>Tableau connections</span><span>IA342 · Week 6</span></div><h2>Extract Connection — Query a Hyper Copy</h2><p class="subtitle">Source update ≠ extract refresh ≠ refreshing the displayed view.</p><div class="slide-body"><p class="small"><b>Extract:</b> Tableau queries a separate <b>.hyper</b> copy optimized for analysis. The original database is not queried for each view interaction, which can improve speed and reduce source workload.</p><iframe class="activity" height="329" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#extract-query" style="height:329px" title="Extract connection: update the source, refresh Hyper, and query the copy"></iframe><p class="short-note"><b>Refresh the extract manually or on a supported schedule.</b> Refreshing only the dashboard still reads the same copy. Actual performance depends on the data and query.</p></div><footer class="slide-foot"><span class="credit">Illustrative deposit totals. · <a href="https://help.tableau.com/current/pro/desktop/en-us/extracting_data.htm" rel="noopener" target="_blank">Tableau: Extracts and Hyper</a> · <a href="https://help.tableau.com/current/online/en-gb/schedule_add.htm" rel="noopener" target="_blank">Tableau: Extract refresh schedules</a></span><b>29 / 60</b></footer></div>
+
+<div data-slide="30" aria-label="Slide 30: Tableau Prep — Save a Flow, Not Just a Clean File" class="slide" data-chapter="Tableau Prep" data-title="Tableau Prep — Save a Flow, Not Just a Clean File" id="slide-30"><div class="eyebrow"><span>Tableau Prep</span><span>IA342 · Week 6</span></div><h2>Tableau Prep — Save a Flow, Not Just a Clean File</h2><p class="subtitle">Build a repeatable data-cleaning process from input to output.</p><div class="slide-body"><div class="simple-flow"><div><b>Input</b><span>Connect to source data</span></div><strong>→</strong><div><b>Saved flow</b><span>Clean · combine · calculate</span></div><strong>→</strong><div><b>Output</b><span>Generate prepared data</span></div></div><div class="columns"><div><h3>A flow is the reusable process</h3><ul><li>It stores the sequence of transformations, not only the final rows.</li><li>Run it again when the input data changes.</li><li>Reuse it with compatible fields and an updated connection or file.</li></ul></div><div><h3>What to find in Tableau Prep</h3><p class="small"><b>Flow pane:</b> connected input, cleaning and output steps.</p><p class="small"><b>Profile / data grid:</b> the current values and distributions.</p><p class="small"><b>Changes pane:</b> the transformations applied in a step.</p><p class="small">Our course uses Prep on the web and manual runs. Prep Builder is the installed application.</p></div></div></div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_build_flow.htm" rel="noopener" target="_blank">Tableau: Build and organize a flow</a></span><b>30 / 60</b></footer></div>
+
+<div data-slide="31" aria-label="Slide 31: Reuse the Same Flow with New Input" class="slide" data-chapter="Tableau Prep" data-title="Reuse the Same Flow with New Input" id="slide-31"><div class="eyebrow"><span>Tableau Prep</span><span>IA342 · Week 6</span></div><h2>Reuse the Same Flow with New Input</h2><p class="subtitle">Change the batch. Keep the cleaning rules. Run again.</p><div class="slide-body"><iframe class="activity" height="390" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#reusable-flow" style="height:390px" title="Reuse the same saved cleaning steps on two compatible input batches"></iframe><p class="short-note">When replacing an input, check field names and data types. After each run, check the generated output.</p></div><footer class="slide-foot"><span class="credit">Illustrative input batches. · <a href="https://help.tableau.com/current/prep/en-us/prep_build_flow.htm" rel="noopener" target="_blank">Tableau: Build and organize a flow</a></span><b>31 / 60</b></footer></div>
+
+<div data-slide="32" aria-label="Slide 32: Data Interpreter" class="slide" data-chapter="Tableau preparation" data-title="Data Interpreter" id="slide-32"><div class="eyebrow"><span>Tableau preparation</span><span>IA342 · Week 6</span></div><h2>Data Interpreter</h2><p class="subtitle">Help Tableau find the real table inside a formatted worksheet.</p><div class="slide-body"><div class="columns"><div><h3>A worksheet is not always a clean table</h3><table class="compact"><thead><tr><th scope="col">Excel row</th><th scope="col">Content</th></tr></thead><tbody><tr><td>1</td><td>Purchases report — May 2016</td></tr><tr><td>2</td><td>(blank row)</td></tr><tr><td>3</td><td>OrderID | Item | Sales</td></tr><tr><td>4</td><td>O101 | Runners | 79.95</td></tr><tr><td>5</td><td>O102 | Socks | 10.98</td></tr></tbody></table><p class="small">The title and blank row are not sales records. Check which row contains field names.</p></div><div><img alt="Tableau screenshot showing Cleaned with Data Interpreter and Review the results" class="reference-shot" data-asset="assets/old-data-interpreter.png" src="../../assets/week-6/old-data-interpreter.png" /><p class="small">In a supported Desktop / Prep Builder input, enable <b>Use Data Interpreter</b> and inspect the detected table. It does not repair every value.</p></div></div><p class="takeaway">Our browser-based lab starts with plain tables. Data Interpreter is a concept demonstration here, not a required Cloud button.</p>
+</div><footer class="slide-foot"><span class="credit">Tableau. · <a href="https://help.tableau.com/current/prep/en-us/prep_get_started.htm" rel="noopener" target="_blank">Official Prep tutorial and web exceptions</a></span><b>32 / 60</b></footer></div>
+
+<div data-slide="33" aria-label="Slide 33: Join Your Data" class="slide" data-chapter="Combine and reshape" data-title="Join Your Data" id="slide-33"><div class="eyebrow"><span>Combine and reshape</span><span>IA342 · Week 6</span></div><h2>Join Your Data</h2><p class="subtitle">Combine related fields by matching a common key.</p><div class="slide-body"><div class="columns"><div><h3>Orders</h3><table class="compact"><thead><tr><th scope="col">Order ID</th><th scope="col">Sales</th></tr></thead><tbody><tr><td>O1</td><td>80</td></tr><tr><td>O2</td><td>30</td></tr><tr><td>O3</td><td>20</td></tr></tbody></table><h3>Returns</h3><table class="compact"><thead><tr><th scope="col">Order ID</th><th scope="col">Returned</th></tr></thead><tbody><tr><td>O2</td><td>Yes</td></tr><tr><td>O4</td><td>Yes</td></tr></tbody></table></div><div><ol class="steps"><li>Add the two tables as separate inputs.</li><li>Drag one step onto the other and choose <b>Join</b>.</li><li>Select <b>Order ID = Order ID</b> as the join clause.</li><li>Inspect matches, unmatched rows, and the join type.</li></ol><p class="small">This example uses <b>Orders + Returns</b>. The small values here make the result easy to check.</p></div></div>
+</div><footer class="slide-foot"><span class="credit">Illustrative Orders and Returns records. · <a href="https://help.tableau.com/current/prep/en-us/prep_combine.htm" rel="noopener" target="_blank">Prep joins and unions</a></span><b>33 / 60</b></footer></div>
+
+<div data-slide="34" aria-label="Slide 34: Types of Join" class="slide" data-chapter="Combine and reshape" data-title="Types of Join" id="slide-34"><div class="eyebrow"><span>Combine and reshape</span><span>IA342 · Week 6</span></div><h2>Types of Join</h2><p class="subtitle">The join type decides which matching and unmatched rows remain.</p><div class="slide-body"><iframe class="activity" height="374" loading="lazy" sandbox="allow-scripts" src="../../assets/week-6/activities.html#join" style="height:374px" title="Compare inner left right and full outer joins"></iframe><p class="small">Check that the key has the expected uniqueness. Multiple matches for one key can produce more rows than you started with.</p></div><footer class="slide-foot"><span class="credit">Illustrative Orders and Returns records.</span><b>34 / 60</b></footer></div>
+
+<div data-slide="35" aria-label="Slide 35: Union Your Data" class="slide" data-chapter="Combine and reshape" data-title="Union Your Data" id="slide-35"><div class="eyebrow"><span>Combine and reshape</span><span>IA342 · Week 6</span></div><h2>Union Your Data</h2><p class="subtitle">Append rows when two tables describe the same kinds of records.</p><div class="slide-body"><div class="three-cards"><article><h3>May purchases</h3><table class="compact"><thead><tr><th scope="col">Order</th><th scope="col">Sales</th></tr></thead><tbody><tr><td>M01</td><td>80</td></tr><tr><td>M02</td><td>30</td></tr></tbody></table></article><article><h3>June purchases</h3><table class="compact"><thead><tr><th scope="col">Order</th><th scope="col">Sales</th></tr></thead><tbody><tr><td>J01</td><td>20</td></tr><tr><td>J02</td><td>50</td></tr></tbody></table></article><article><h3>Union result</h3><table class="compact"><thead><tr><th scope="col">Order</th><th scope="col">Sales</th></tr></thead><tbody><tr><td>M01</td><td>80</td></tr><tr><td>M02</td><td>30</td></tr><tr><td>J01</td><td>20</td></tr><tr><td>J02</td><td>50</td></tr></tbody></table></article></div><p class="small"><b>In Prep:</b> drag one input / clean step onto the other and drop on <b>Union</b>. Check the matched field names and data types. Here, 2 + 2 = 4 rows.</p><p class="small">In the web editor, use a <b>Union step</b>. The Builder-only input / wildcard union is not our browser workflow.</p>
+</div><footer class="slide-foot"><span class="credit">Illustrative monthly purchases. · <a href="https://help.tableau.com/current/prep/en-us/prep_web_auth.htm" rel="noopener" target="_blank">Web versus Builder differences</a></span><b>35 / 60</b></footer></div>
+
+<div data-slide="36" aria-label="Slide 36: Join versus Union" class="slide" data-chapter="Combine and reshape" data-title="Join versus Union" id="slide-36"><div class="eyebrow"><span>Combine and reshape</span><span>IA342 · Week 6</span></div><h2>Join versus Union</h2><p class="subtitle">Use the structure of the result to choose the operation.</p><div class="slide-body"><div class="columns"><div><h3>JOIN · add related columns</h3><table class="compact"><thead><tr><th scope="col">Order</th><th scope="col">Sales</th></tr></thead><tbody><tr><td>O1</td><td>80</td></tr><tr><td>O2</td><td>30</td></tr></tbody></table><p class="small">Match Order ID with a Returns table.</p><table class="compact"><thead><tr><th scope="col">Order</th><th scope="col">Sales</th><th scope="col">Returned</th></tr></thead><tbody><tr><td>O1</td><td>80</td><td>null</td></tr><tr><td>O2</td><td>30</td><td>Yes</td></tr></tbody></table></div><div><h3>UNION · add similar rows</h3><table class="compact"><thead><tr><th scope="col">Month</th><th scope="col">Order</th><th scope="col">Sales</th></tr></thead><tbody><tr><td>May</td><td>M01</td><td>80</td></tr><tr><td>May</td><td>M02</td><td>30</td></tr></tbody></table><p class="small">Append the June purchase records.</p><table class="compact"><thead><tr><th scope="col">Month</th><th scope="col">Order</th><th scope="col">Sales</th></tr></thead><tbody><tr><td>June</td><td>J01</td><td>20</td></tr><tr><td>June</td><td>J02</td><td>50</td></tr></tbody></table></div></div><p class="takeaway">More detail about the same records → join. More records with similar fields → union.</p></div><footer class="slide-foot"><span class="credit">Illustrative tables.</span><b>36 / 60</b></footer></div>
+
+<div data-slide="37" aria-label="Slide 37: Blend Your Data" class="slide" data-chapter="Combine and reshape" data-title="Blend Your Data" id="slide-37"><div class="eyebrow"><span>Combine and reshape</span><span>IA342 · Week 6</span></div><h2>Blend Your Data</h2><p class="subtitle">Keep sources separate and combine their summaries in a Tableau view.</p><div class="slide-body"><div class="columns"><div><h3>Source A · actual sales</h3><table class="compact"><thead><tr><th scope="col">Category</th><th scope="col">Sales</th></tr></thead><tbody><tr><td>Furniture</td><td>90</td></tr><tr><td>Technology</td><td>120</td></tr></tbody></table><h3>Source B · targets</h3><table class="compact"><thead><tr><th scope="col">Category</th><th scope="col">Target</th></tr></thead><tbody><tr><td>Furniture</td><td>100</td></tr><tr><td>Technology</td><td>110</td></tr></tbody></table></div><div><h3>Worksheet comparison</h3><table class="compact"><thead><tr><th scope="col">Category</th><th scope="col">Sales</th><th scope="col">Target</th></tr></thead><tbody><tr><td>Furniture</td><td>90</td><td>100</td></tr><tr><td>Technology</td><td>120</td><td>110</td></tr></tbody></table><p class="small">Category links the summaries. Blending does not create a single row-level preparation table.</p></div></div><p class="takeaway">Blending belongs to worksheet analysis. It combines summaries without creating a single row-level preparation table.</p></div><footer class="slide-foot"><span class="credit">Illustrative sales and target data. · <a href="https://help.tableau.com/current/pro/desktop/en-us/multiple_connections.htm" rel="noopener" target="_blank">Tableau data blending</a></span><b>37 / 60</b></footer></div>
+
+<div data-slide="38" aria-label="Slide 38: Split a Field" class="slide" data-chapter="Combine and reshape" data-title="Split a Field" id="slide-38"><div class="eyebrow"><span>Combine and reshape</span><span>IA342 · Week 6</span></div><h2>Split a Field</h2><p class="subtitle">Separate values using a delimiter or repeated pattern.</p><div class="slide-body"><div class="columns"><div><ol class="steps"><li>Select the <b>Customer Name</b> field.</li><li>Open <b>… → Split Values → Custom Split</b>.</li><li>Choose a space as the separator; inspect which parts are returned.</li><li>Rename the new fields only after checking their meaning.</li></ol></div><div><img alt="Tableau example splitting Claire Gute, Darrin Van Huff, and Sean O’Donnell" class="reference-shot" data-asset="assets/old-split.png" src="../../assets/week-6/old-split.png" /></div></div><p class="takeaway">A space does not reliably mean “first name / last name.” Darrin Van Huff has more than two parts; keep the original name until the split is checked.</p>
+</div><footer class="slide-foot"><span class="credit">Tableau. · <a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Current Prep cleaning and split controls</a></span><b>38 / 60</b></footer></div>
+
+<div data-slide="39" aria-label="Slide 39: Pivot Data" class="slide" data-chapter="Combine and reshape" data-title="Pivot Data" id="slide-39"><div class="eyebrow"><span>Combine and reshape</span><span>IA342 · Week 6</span></div><h2>Pivot Data</h2><p class="subtitle">Convert a wide crosstab into fields that Tableau can group and measure.</p><div class="slide-body"><div class="columns"><div><ol class="steps"><li>Add a <b>Pivot</b> step after the input / clean step.</li><li>Choose <b>Columns to Rows</b>.</li><li>Move <b>Samsung, Nokia, and Apple</b> into the pivoted-fields area.</li><li>Rename <b>Pivot1 Names</b> to Brand and <b>Pivot1 Values</b> to Value.</li></ol></div><div><img alt="lecture’s Quarter by Samsung Nokia Apple crosstab converted to rows" class="reference-shot" data-asset="assets/old-pivot.png" src="../../assets/week-6/old-pivot.png" /></div></div><p class="takeaway">Quarter remains a field. Brand becomes a dimension; Value becomes a measure. Check the original metric and units before interpreting the numbers.</p>
+</div><footer class="slide-foot"><span class="credit">Tableau. Metric and unit are not specified in the example. · <a href="https://help.tableau.com/current/prep/en-us/prep_pivot.htm" rel="noopener" target="_blank">Prep pivot help</a></span><b>39 / 60</b></footer></div>
+
+<div data-slide="40" aria-label="Slide 40: Clean — Make Uppercase" class="slide" data-chapter="Clean field values" data-title="Clean — Make Uppercase" id="slide-40"><div class="eyebrow"><span>Clean field values</span><span>IA342 · Week 6</span></div><h2>Clean — Make Uppercase</h2><p class="subtitle">Convert text to one capitalization style.</p><div class="slide-body"><div class="columns"><div><h3>Before and after</h3><table class="compact"><thead><tr><th scope="col">RATER · before</th><th scope="col">After</th></tr></thead><tbody><tr><td>gia</td><td>GIA</td></tr><tr><td>GIA</td><td>GIA</td></tr><tr><td>hrd</td><td>HRD</td></tr></tbody></table><p class="small">The operation affects the field values, not the number of rows.</p></div><div><ol class="steps"><li>Select the field’s profile card or data-grid header.</li><li>Open the field’s <b>…</b> menu.</li><li>Choose <b>Clean → Make Uppercase</b>.</li><li>Inspect the changed values and the entry in <b>Changes</b>.</li></ol></div></div><p class="takeaway">Use this for rater codes. It changes case, not meaning; it will not correct a spelling error.</p>
+</div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Tableau Prep cleaning help</a></span><b>40 / 60</b></footer></div>
+
+<div data-slide="41" aria-label="Slide 41: Clean — Make Lowercase" class="slide" data-chapter="Clean field values" data-title="Clean — Make Lowercase" id="slide-41"><div class="eyebrow"><span>Clean field values</span><span>IA342 · Week 6</span></div><h2>Clean — Make Lowercase</h2><p class="subtitle">Use a consistent style for labels when lowercase is appropriate.</p><div class="slide-body"><div class="columns"><div><h3>Before and after</h3><table class="compact"><thead><tr><th scope="col">house_type · before</th><th scope="col">After</th></tr></thead><tbody><tr><td>Condo</td><td>condo</td></tr><tr><td>CONDO</td><td>condo</td></tr><tr><td>Townhouse</td><td>townhouse</td></tr></tbody></table><p class="small">The operation affects the field values, not the number of rows.</p></div><div><ol class="steps"><li>Select the field’s profile card or data-grid header.</li><li>Open the field’s <b>…</b> menu.</li><li>Choose <b>Clean → Make Lowercase</b>.</li><li>Inspect the changed values and the entry in <b>Changes</b>.</li></ol></div></div><p class="takeaway">Do not apply lowercase to case-sensitive identifiers or credentials. We are cleaning display categories here.</p>
+</div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Tableau Prep cleaning help</a></span><b>41 / 60</b></footer></div>
+
+<div data-slide="42" aria-label="Slide 42: Clean — Remove Letters" class="slide" data-chapter="Clean field values" data-title="Clean — Remove Letters" id="slide-42"><div class="eyebrow"><span>Clean field values</span><span>IA342 · Week 6</span></div><h2>Clean — Remove Letters</h2><p class="subtitle">Remove letters but retain other characters.</p><div class="slide-body"><div class="columns"><div><h3>Before and after</h3><table class="compact"><thead><tr><th scope="col">Size text · before</th><th scope="col">After</th></tr></thead><tbody><tr><td>12kg</td><td>12</td></tr><tr><td>8kg</td><td>8</td></tr><tr><td>AB-12</td><td>-12</td></tr></tbody></table><p class="small">The operation affects the field values, not the number of rows.</p></div><div><ol class="steps"><li>Select the field’s profile card or data-grid header.</li><li>Open the field’s <b>…</b> menu.</li><li>Choose <b>Clean → Remove Letters</b>.</li><li>Inspect the changed values and the entry in <b>Changes</b>.</li></ol></div></div><p class="takeaway">The unit or identifier letters are lost. Keep them in a separate field when they matter; this is not a general method for parsing every number.</p>
+</div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Tableau Prep cleaning help</a></span><b>42 / 60</b></footer></div>
+
+<div data-slide="43" aria-label="Slide 43: Clean — Remove Numbers" class="slide" data-chapter="Clean field values" data-title="Clean — Remove Numbers" id="slide-43"><div class="eyebrow"><span>Clean field values</span><span>IA342 · Week 6</span></div><h2>Clean — Remove Numbers</h2><p class="subtitle">Remove digits but retain letters and other characters.</p><div class="slide-body"><div class="columns"><div><h3>Before and after</h3><table class="compact"><thead><tr><th scope="col">Label · before</th><th scope="col">After</th></tr></thead><tbody><tr><td>Room12</td><td>Room</td></tr><tr><td>Room8</td><td>Room</td></tr><tr><td>AB-12</td><td>AB-</td></tr></tbody></table><p class="small">The operation affects the field values, not the number of rows.</p></div><div><ol class="steps"><li>Select the field’s profile card or data-grid header.</li><li>Open the field’s <b>…</b> menu.</li><li>Choose <b>Clean → Remove Numbers</b>.</li><li>Inspect the changed values and the entry in <b>Changes</b>.</li></ol></div></div><p class="takeaway">This can destroy identifying information. Room12 and Room8 become identical, so do not apply it blindly to IDs.</p>
+</div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Tableau Prep cleaning help</a></span><b>43 / 60</b></footer></div>
+
+<div data-slide="44" aria-label="Slide 44: Clean — Remove Punctuation" class="slide" data-chapter="Clean field values" data-title="Clean — Remove Punctuation" id="slide-44"><div class="eyebrow"><span>Clean field values</span><span>IA342 · Week 6</span></div><h2>Clean — Remove Punctuation</h2><p class="subtitle">Remove punctuation only when it is not meaningful.</p><div class="slide-body"><div class="columns"><div><h3>Before and after</h3><table class="compact"><thead><tr><th scope="col">Code / numeric text · before</th><th scope="col">After</th></tr></thead><tbody><tr><td>G.I.A.</td><td>GIA</td></tr><tr><td>AB-12</td><td>AB12</td></tr><tr><td>1,302.50</td><td>130250</td></tr></tbody></table><p class="small">The operation affects the field values, not the number of rows.</p></div><div><ol class="steps"><li>Select the field’s profile card or data-grid header.</li><li>Open the field’s <b>…</b> menu.</li><li>Choose <b>Clean → Remove Punctuation</b>.</li><li>Inspect the changed values and the entry in <b>Changes</b>.</li></ol></div></div><p class="takeaway">A decimal point is punctuation too. For price strings, remove known separators deliberately rather than stripping every punctuation mark.</p>
+</div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Tableau Prep cleaning help</a></span><b>44 / 60</b></footer></div>
+
+<div data-slide="45" aria-label="Slide 45: Clean — Trim Spaces" class="slide" data-chapter="Clean field values" data-title="Clean — Trim Spaces" id="slide-45"><div class="eyebrow"><span>Clean field values</span><span>IA342 · Week 6</span></div><h2>Clean — Trim Spaces</h2><p class="subtitle">Remove whitespace at the beginning and end of a string.</p><div class="slide-body"><div class="columns"><div><h3>Before and after</h3><table class="compact"><thead><tr><th scope="col">RATER · before</th><th scope="col">After</th></tr></thead><tbody><tr><td>␠igi␠</td><td>igi</td></tr><tr><td>hrd␠</td><td>hrd</td></tr><tr><td>GIA</td><td>GIA</td></tr></tbody></table><p class="small">The operation affects the field values, not the number of rows.</p></div><div><ol class="steps"><li>Select the field’s profile card or data-grid header.</li><li>Open the field’s <b>…</b> menu.</li><li>Choose <b>Clean → Trim Spaces</b>.</li><li>Inspect the changed values and the entry in <b>Changes</b>.</li></ol></div></div><p class="takeaway">␠ marks a space in this teaching table. Trim does not turn igi into IGI; apply Make Uppercase separately.</p>
+</div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Tableau Prep cleaning help</a></span><b>45 / 60</b></footer></div>
+
+<div data-slide="46" aria-label="Slide 46: Group and Replace — Manual Selection" class="slide" data-chapter="Clean field values" data-title="Group and Replace — Manual Selection" id="slide-46"><div class="eyebrow"><span>Clean field values</span><span>IA342 · Week 6</span></div><h2>Group and Replace — Manual Selection</h2><p class="subtitle">Map known equivalent values to one standard label.</p><div class="slide-body"><div class="columns"><div><h3>Known equivalent rater codes</h3><table class="compact"><thead><tr><th scope="col">Before</th><th scope="col">Standard value</th></tr></thead><tbody><tr><td>GIA</td><td>GIA</td></tr><tr><td>G.I.A.</td><td>GIA</td></tr><tr><td>gia</td><td>GIA</td></tr></tbody></table><p class="small">Group Values is the current menu name. Earlier versions called it <b>Group and Replace</b>.</p></div><div><ol class="steps"><li>Select <b>RATER → … → Group Values → Manual Selection</b>.</li><li>Choose <b>GIA</b> as the standard value.</li><li>Add the known variants to that group.</li><li>Review the result; different rating organizations must remain separate.</li></ol></div></div><p class="takeaway">For our Diamonds activity, Trim Spaces, Make Uppercase, and Remove Punctuation achieve the same known code normalization.</p>
+</div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">current Group Values controls</a></span><b>46 / 60</b></footer></div>
+
+<div data-slide="47" aria-label="Slide 47: Group and Replace — Suggested Matches" class="slide" data-chapter="Clean field values" data-title="Group and Replace — Suggested Matches" id="slide-47"><div class="eyebrow"><span>Clean field values</span><span>IA342 · Week 6</span></div><h2>Group and Replace — Suggested Matches</h2><p class="subtitle">Use suggestions, then inspect the proposed groups.</p><div class="slide-body"><div class="columns"><div><table class="compact"><thead><tr><th scope="col">Method</th><th scope="col">What it compares</th></tr></thead><tbody><tr><td>Pronunciation</td><td>Values that sound alike</td></tr><tr><td>Common Characters</td><td>Shared letters or numbers</td></tr><tr><td>Spelling</td><td>Similar spelling</td></tr></tbody></table><p class="small">A suggested match is not proof that two values mean the same thing.</p></div><div><img alt="Tableau Group and Replace menu listing pronunciation common characters and spelling" class="reference-shot" data-asset="assets/old-group-menu.png" src="../../assets/week-6/old-group-menu.png" /></div></div><p class="small"><b>Try in the house lab:</b> Status → … → <b>Group Values → Pronunciation</b>. Inspect every proposed group; keep “for sale” and “for sale by owner” distinct unless a deliberate broader category is needed.</p>
+</div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Current fuzzy-match documentation</a></span><b>47 / 60</b></footer></div>
+
+<div data-slide="48" aria-label="Slide 48: In Class — Build a Diamonds Cleaning Flow" class="slide" data-chapter="In-class Tableau flow" data-title="In Class — Build a Diamonds Cleaning Flow" id="slide-48"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>In Class — Build a Diamonds Cleaning Flow</h2><p class="subtitle">Use familiar course data with a few deliberately introduced cleaning problems.</p><div class="slide-body"><div class="download-row github-downloads"><div><a class="button" data-github-download="diamonds_batch_a.csv" href="https://raw.githubusercontent.com/JMU-Data/IA342/a35a141a1a319de5ae4f19383c947cbfa1d1f581/docs/assets/week-6/data/diamonds_batch_a.csv" rel="noopener" target="_blank">Download Batch A · 10 rows</a><a class="github-view" href="https://github.com/JMU-Data/IA342/blob/a35a141a1a319de5ae4f19383c947cbfa1d1f581/docs/assets/week-6/data/diamonds_batch_a.csv" rel="noopener" target="_blank">View on GitHub</a></div><div><a class="button" data-github-download="diamonds_batch_b.csv" href="https://raw.githubusercontent.com/JMU-Data/IA342/a35a141a1a319de5ae4f19383c947cbfa1d1f581/docs/assets/week-6/data/diamonds_batch_b.csv" rel="noopener" target="_blank">Download Batch B · 12 rows</a><a class="github-view" href="https://github.com/JMU-Data/IA342/blob/a35a141a1a319de5ae4f19383c947cbfa1d1f581/docs/assets/week-6/data/diamonds_batch_b.csv" rel="noopener" target="_blank">View on GitHub</a></div></div><p aria-live="polite" class="download-status" role="status">Download both raw CSVs from the course GitHub repository.</p><table class="compact"><thead><tr><th scope="col">Example in the inputs</th><th scope="col">Issue to inspect</th></tr></thead><tbody><tr><td><code> g </code>, <code>vs1</code>, <code>G.I.A.</code></td><td>Spaces, capitalization and punctuation</td></tr><tr><td><code>1,302</code>, blank, <code>not recorded</code></td><td>Numeric text and missing price</td></tr><tr><td>IDs 2 and 152 in both files</td><td>Confirmed duplicate copies</td></tr><tr><td>IDs 154 and 155 with identical attributes</td><td>Different IDs: keep both records</td></tr></tbody></table><p class="takeaway"><b>Publish two items:</b> your Diamonds <b>Flow</b> and its clean <b>Data Source</b>. No Diamonds workbook is required.</p><p class="short-note">The screenshots show the instructor’s demonstration. Use your own name and publish in <b>fall2026</b>, not the demo project or Personal Space.</p></div><footer class="slide-foot"><span class="credit">Data: deliberately modified course Diamonds subset. · <a href="https://github.com/xbwei/data-analysis-with-generative-ai/blob/main/diamonds.csv" rel="noopener" target="_blank">course Diamonds</a> · <a href="https://help.tableau.com/current/prep/en-us/prep_get_started.htm" rel="noopener" target="_blank">Official Superstore tutorial</a></span><b>48 / 60</b></footer></div>
+
+<div data-slide="49" aria-label="Slide 49: Connect the Inputs and Add a Union" class="slide practice" data-chapter="In-class Tableau flow" data-title="Connect the Inputs and Add a Union" id="slide-49"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>Connect the Inputs and Add a Union</h2><p class="subtitle">Create the flow in the course project, not Personal Space.</p><div class="slide-body"><div class="practice-layout"><div class="shot-gallery"><label class="shot-select">Screenshot <select aria-label="Choose a screenshot"><option value="0">1. Create a Flow from the project menu.</option><option value="1">2. Connect to Data opens the file connection options.</option><option value="2">3. Keep both CSV files as separate input steps.</option><option value="3">4. Union the inputs, then add a Clean step.</option></select></label><figure class="shot-figure"><button aria-label="Enlarge screenshot: Create a Flow from the project menu." class="shot-zoom" type="button"><img alt="Create a Flow from the project menu." data-asset="assets/screenshots/Screenshot%202026-09-25%20113456.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20113456.png" /></button><figcaption>Create a Flow from the project menu.</figcaption></figure><figure class="shot-figure" hidden=""><button aria-label="Enlarge screenshot: Connect to Data opens the file connection options." class="shot-zoom" type="button"><img alt="Connect to Data opens the file connection options." data-asset="assets/screenshots/Screenshot%202026-09-25%20113525.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20113525.png" /></button><figcaption>Connect to Data opens the file connection options.</figcaption></figure><figure class="shot-figure" hidden=""><button aria-label="Enlarge screenshot: Keep both CSV files as separate input steps." class="shot-zoom" type="button"><img alt="Keep both CSV files as separate input steps." data-asset="assets/screenshots/Screenshot%202026-09-25%20113630.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20113630.png" /></button><figcaption>Keep both CSV files as separate input steps.</figcaption></figure><figure class="shot-figure" hidden=""><button aria-label="Enlarge screenshot: Union the inputs, then add a Clean step." class="shot-zoom" type="button"><img alt="Union the inputs, then add a Clean step." data-asset="assets/screenshots/Screenshot%202026-09-25%20113654.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20113654.png" /></button><figcaption>Union the inputs, then add a Clean step.</figcaption></figure></div><div class="practice-steps"><ol class="steps"><li>Open <b>Explore → fall2026 → New → Flow</b>.</li><li>Choose <b>Connect to Data</b> and upload both CSVs.</li><li>In <b>both inputs</b>, keep IDNO and raw PRICE as <b>String</b>; WEIGHT is numeric.</li><li>Drag one input onto the other and drop on <b>Union</b>. Add a <b>Clean</b> step.</li></ol></div></div><p class="practice-check"><b>Checkpoint:</b> 22 rows and one matched PRICE field. File metadata is not part of record identity.</p></div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_combine.htm" rel="noopener" target="_blank">Prep union steps</a> · <a href="https://help.tableau.com/current/prep/en-us/prep_web_auth.htm" rel="noopener" target="_blank">Web authoring</a></span><b>49 / 60</b></footer></div>
+
+<div data-slide="50" aria-label="Slide 50: Standardize the Text Fields" class="slide practice" data-chapter="In-class Tableau flow" data-title="Standardize the Text Fields" id="slide-50"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>Standardize the Text Fields</h2><p class="subtitle">Apply the Clean functions to known variants in this dataset.</p><div class="slide-body"><div class="practice-layout"><div class="shot-gallery"><label class="shot-select">Screenshot <select aria-label="Choose a screenshot"><option value="0">1. Open the field menu to use the Clean operations.</option><option value="1">2. Create CLARITY_CLEAN and replace missing clarity with Unknown.</option><option value="2">3. Review the text operations in the Changes pane.</option></select></label><figure class="shot-figure"><button aria-label="Enlarge screenshot: Open the field menu to use the Clean operations." class="shot-zoom" type="button"><img alt="Open the field menu to use the Clean operations." data-asset="assets/screenshots/Screenshot%202026-09-25%20113759.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20113759.png" /></button><figcaption>Open the field menu to use the Clean operations.</figcaption></figure><figure class="shot-figure" hidden=""><button aria-label="Enlarge screenshot: Create CLARITY_CLEAN and replace missing clarity with Unknown." class="shot-zoom" type="button"><img alt="Create CLARITY_CLEAN and replace missing clarity with Unknown." data-asset="assets/screenshots/Screenshot%202026-09-25%20114013.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114013.png" /></button><figcaption>Create CLARITY_CLEAN and replace missing clarity with Unknown.</figcaption></figure><figure class="shot-figure" hidden=""><button aria-label="Enlarge screenshot: Review the text operations in the Changes pane." class="shot-zoom" type="button"><img alt="Review the text operations in the Changes pane." data-asset="assets/screenshots/Screenshot%202026-09-25%20114214.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114214.png" /></button><figcaption>Review the text operations in the Changes pane.</figcaption></figure></div><div class="practice-steps"><h3>Use … → Clean</h3><p><b>RATER:</b> Trim Spaces, Make Uppercase, Remove Punctuation.</p><p><b>COLOR and CLARITY:</b> Trim Spaces, Make Uppercase.</p><h3>CLARITY_CLEAN</h3><pre><code>IF ISNULL([CLARITY])
+ OR TRIM([CLARITY]) = ""
+THEN "Unknown"
+ELSE [CLARITY] END</code></pre></div></div><p class="practice-check"><b>Checkpoint:</b> 22 rows. ID 7 stays in the data with clarity <b>Unknown</b>.</p></div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Prep field cleaning and value mapping</a></span><b>50 / 60</b></footer></div>
+
+<div data-slide="51" aria-label="Slide 51: Change Data Types — Prepare a Numeric Price" class="slide practice" data-chapter="In-class Tableau flow" data-title="Change Data Types — Prepare a Numeric Price" id="slide-51"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>Change Data Types — Prepare a Numeric Price</h2><p class="subtitle">Preserve the raw text until the converted values have been checked.</p><div class="slide-body"><div class="practice-layout"><div class="shot-gallery"><div class="shot-select">Tableau Prep · click the screenshot to enlarge</div><figure class="shot-figure"><button aria-label="Enlarge screenshot: Create PRICE_NUM from the raw PRICE text." class="shot-zoom" type="button"><img alt="Create PRICE_NUM from the raw PRICE text." data-asset="assets/screenshots/Screenshot%202026-09-25%20114118.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114118.png" /></button><figcaption>Create PRICE_NUM from the raw PRICE text.</figcaption></figure></div><div class="practice-steps"><ol class="steps"><li>Keep raw <b>PRICE</b> as String.</li><li>Choose <b>… → Create Calculated Field</b>; name it <b>PRICE_NUM</b>.</li><li>Use the formula below and check the result.</li></ol><pre><code>FLOAT(REPLACE(REPLACE(
+ TRIM([PRICE]), "$", ""),
+ ",", ""))</code></pre><p><code>1,302</code> → <b>1302</b><br />Blank and <code>not recorded</code> → <b>null</b>.</p></div></div><p class="practice-check"><b>Checkpoint:</b> PRICE_NUM is numeric. A missing price is not zero; keep the raw field until checked.</p></div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/functions_functions_typeconversion.htm" rel="noopener" target="_blank">Tableau type conversion</a> · <a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Prep calculated fields</a></span><b>51 / 60</b></footer></div>
+
+<div data-slide="52" aria-label="Slide 52: Remove a Field" class="slide practice" data-chapter="In-class Tableau flow" data-title="Remove a Field" id="slide-52"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>Remove a Field</h2><p class="subtitle">Remove an unneeded column, not the records that contain it.</p><div class="slide-body"><div class="practice-layout"><div class="shot-gallery"><div class="shot-select">Tableau Prep · click the screenshot to enlarge</div><figure class="shot-figure"><button aria-label="Enlarge screenshot: Remove the checked raw field through its field menu." class="shot-zoom" type="button"><img alt="Remove the checked raw field through its field menu." data-asset="assets/screenshots/Screenshot%202026-09-25%20114148.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114148.png" /></button><figcaption>Remove the checked raw field through its field menu.</figcaption></figure></div><div class="practice-steps"><ol class="steps"><li>Select the raw <b>PRICE field header</b>.</li><li>Choose <b>… → Remove</b> after verifying PRICE_NUM.</li><li>Remove raw <b>CLARITY</b> after verifying CLARITY_CLEAN.</li><li>Keep both calculated fields; undo an incorrect removal in <b>Changes</b>.</li></ol></div></div><p class="practice-check"><b>Remove Field deletes a column.</b> Exclude on a selected value filters rows. There are still 22 rows.</p></div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_filter.htm" rel="noopener" target="_blank">Keep or remove fields in Prep</a></span><b>52 / 60</b></footer></div>
+
+<div data-slide="53" aria-label="Slide 53: Rename a Field" class="slide practice" data-chapter="In-class Tableau flow" data-title="Rename a Field" id="slide-53"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>Rename a Field</h2><p class="subtitle">Give the checked numeric field the name used by the rest of the flow.</p><div class="slide-body"><div class="practice-layout"><div class="shot-gallery"><div class="shot-select">Tableau Prep · click the screenshot to enlarge</div><figure class="shot-figure"><button aria-label="Enlarge screenshot: Review field removal and renaming in Changes." class="shot-zoom" type="button"><img alt="Review field removal and renaming in Changes." data-asset="assets/screenshots/Screenshot%202026-09-25%20114255.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114255.png" /></button><figcaption>Review field removal and renaming in Changes.</figcaption></figure></div><div class="practice-steps"><ol class="steps"><li>Rename <b>PRICE_NUM</b> to <b>PRICE</b>.</li><li>Rename <b>CLARITY_CLEAN</b> to <b>CLARITY</b>.</li><li>Confirm PRICE remains numeric and IDNO remains String.</li><li>Check the <b>Changes</b> pane.</li></ol><p>The six record fields are <b>IDNO, WEIGHT, COLOR, CLARITY, RATER, PRICE</b>.</p></div></div><p class="practice-check"><b>Checkpoint:</b> names change; values, types and the 22-row count do not.</p></div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Prep field operations</a></span><b>53 / 60</b></footer></div>
+
+<div data-slide="54" aria-label="Slide 54: Remove Duplicate Rows" class="slide practice" data-chapter="In-class Tableau flow" data-title="Remove Duplicate Rows" id="slide-54"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>Remove Duplicate Rows</h2><p class="subtitle">Remove confirmed copies while preserving genuinely different records.</p><div class="slide-body"><div class="practice-layout"><div class="shot-gallery"><label class="shot-select">Screenshot <select aria-label="Choose a screenshot"><option value="0">1. Select the six record fields, then identify duplicate rows.</option><option value="1">2. Keep the Unique category to retain one copy of each record.</option></select></label><figure class="shot-figure"><button aria-label="Enlarge screenshot: Select the six record fields, then identify duplicate rows." class="shot-zoom" type="button"><img alt="Select the six record fields, then identify duplicate rows." data-asset="assets/screenshots/Screenshot%202026-09-25%20114322.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114322.png" /></button><figcaption>Select the six record fields, then identify duplicate rows.</figcaption></figure><figure class="shot-figure" hidden=""><button aria-label="Enlarge screenshot: Keep the Unique category to retain one copy of each record." class="shot-zoom" type="button"><img alt="Keep the Unique category to retain one copy of each record." data-asset="assets/screenshots/Screenshot%202026-09-25%20114552.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114552.png" /></button><figcaption>Keep the Unique category to retain one copy of each record.</figcaption></figure></div><div class="practice-steps"><ol class="steps"><li>Select all <b>six cleaned record fields</b>, including IDNO. Exclude source-file metadata.</li><li>Choose <b>Identify Duplicate Rows</b>.</li><li>In <b>Is Duplicate Row?</b>, select <b>Unique → Keep Only</b>.</li></ol><p>Keep one copy of <b>ID 2</b> and <b>ID 152</b>. Keep <b>both 154 and 155</b>: they have different IDs.</p><p class="small">Fallback: an Aggregate step with all six record fields as Grouped Fields.</p></div></div><p class="practice-check"><b>Checkpoint:</b> 22 → 20 rows. Same attributes do not make different IDs duplicate copies.</p></div><footer class="slide-foot"><span class="credit">IDs 2 and 152 each include a confirmed copied record. · <a href="https://help.tableau.com/current/prep/en-us/prep_remove_duplicates.htm" rel="noopener" target="_blank">Prep duplicate identification</a></span><b>54 / 60</b></footer></div>
+
+<div data-slide="55" aria-label="Slide 55: Filter Values — Keep Only or Exclude" class="slide practice" data-chapter="In-class Tableau flow" data-title="Filter Values — Keep Only or Exclude" id="slide-55"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>Filter Values — Keep Only or Exclude</h2><p class="subtitle">A value filter keeps or removes matching rows.</p><div class="slide-body"><div class="practice-layout"><div class="shot-gallery"><div class="shot-select">Tableau Prep · click the screenshot to enlarge</div><figure class="shot-figure"><button aria-label="Enlarge screenshot: Select null PRICE values and choose Exclude." class="shot-zoom" type="button"><img alt="Select null PRICE values and choose Exclude." data-asset="assets/screenshots/Screenshot%202026-09-25%20114632.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114632.png" /></button><figcaption>Select null PRICE values and choose Exclude.</figcaption></figure></div><div class="practice-steps"><ol class="steps"><li>In the numeric <b>PRICE</b> profile, select <b>Null</b>.</li><li>Choose <b>Exclude</b>.</li><li>Check the rows removed and the entry in <b>Changes</b>.</li></ol><p><b>ID 5</b> has no price.<br /><b>ID 153</b> contains an unparseable price.</p><p><b>Keep Only</b> would instead retain only the selected null prices.</p></div></div><p class="practice-check"><b>Checkpoint:</b> 20 → 18 rows. Do not delete the entire PRICE field.</p></div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_filter.htm" rel="noopener" target="_blank">Prep value filtering</a></span><b>55 / 60</b></footer></div>
+
+<div data-slide="56" aria-label="Slide 56: Filter Ranges and Missing Values" class="slide practice" data-chapter="In-class Tableau flow" data-title="Filter Ranges and Missing Values" id="slide-56"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>Filter Ranges and Missing Values</h2><p class="subtitle">Keep records that can support the required price-per-weight calculation.</p><div class="slide-body"><div class="practice-layout"><div class="shot-gallery"><div class="shot-select">Tableau Prep · click the screenshot to enlarge</div><figure class="shot-figure"><button aria-label="Enlarge screenshot: Apply a calculation filter for positive weight and price." class="shot-zoom" type="button"><img alt="Apply a calculation filter for positive weight and price." data-asset="assets/screenshots/Screenshot%202026-09-25%20114751.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114751.png" /></button><figcaption>Apply a calculation filter for positive weight and price.</figcaption></figure></div><div class="practice-steps"><ol class="steps"><li>Choose <b>WEIGHT → … → Filter → Calculation</b>.</li><li>Apply the condition below.</li><li>Verify that <b>ID 6</b>, with zero weight, is excluded.</li></ol><pre><code>NOT ISNULL([WEIGHT])
+AND [WEIGHT] &gt; 0
+AND [PRICE] &gt; 0</code></pre></div></div><p class="practice-check"><b>Checkpoint:</b> 18 → 17 rows. Keep ID 7 and both IDs 154 and 155.</p></div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_filter.htm" rel="noopener" target="_blank">Prep calculation and null filters</a></span><b>56 / 60</b></footer></div>
+
+<div data-slide="57" aria-label="Slide 57: Create Calculated Fields" class="slide practice" data-chapter="In-class Tableau flow" data-title="Create Calculated Fields" id="slide-57"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>Create Calculated Fields</h2><p class="subtitle">Add a useful measure and a simple row counter.</p><div class="slide-body"><div class="practice-layout"><div class="shot-gallery"><div class="shot-select">Tableau Prep · click the screenshot to enlarge</div><figure class="shot-figure"><button aria-label="Enlarge screenshot: Create PRICE_PER_CARAT with numeric PRICE / WEIGHT." class="shot-zoom" type="button"><img alt="Create PRICE_PER_CARAT with numeric PRICE / WEIGHT." data-asset="assets/screenshots/Screenshot%202026-09-25%20114826.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114826.png" /></button><figcaption>Create PRICE_PER_CARAT with numeric PRICE / WEIGHT.</figcaption></figure></div><div class="practice-steps"><h3>PRICE_PER_CARAT</h3><pre><code>[PRICE] / [WEIGHT]</code></pre><p>For ID 1:<br /><b>1302 ÷ 0.30 = 4340</b>.</p><h3>RECORD_COUNT</h3><pre><code>1</code></pre><p>Create this second field so its sum counts the retained records.</p></div></div><p class="practice-check"><b>Checkpoint:</b> 17 rows. SUM(RECORD_COUNT) = 17. The source price and weight remain available.</p></div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_clean.htm" rel="noopener" target="_blank">Create a calculated field in Prep</a></span><b>57 / 60</b></footer></div>
+
+<div data-slide="58" aria-label="Slide 58: Add an Output" class="slide practice" data-chapter="In-class Tableau flow" data-title="Add an Output" id="slide-58"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>Add an Output</h2><p class="subtitle">The flow describes the work; the output contains the prepared records.</p><div class="slide-body"><div class="practice-layout"><div class="shot-gallery"><div class="shot-select">Tableau Prep · click the screenshot to enlarge</div><figure class="shot-figure"><button aria-label="Enlarge screenshot: Choose a published data source, its project and output name." class="shot-zoom" type="button"><img alt="Choose a published data source, its project and output name." data-asset="assets/screenshots/Screenshot%202026-09-25%20114912.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114912.png" /></button><figcaption>Choose a published data source, its project and output name.</figcaption></figure></div><div class="practice-steps"><ol class="steps"><li>After the final step, choose <b>+ → Output</b>.</li><li>Set <b>Save output to → Published data source</b>.</li><li>Select project <b>fall2026</b> and your output name.</li><li>Use a <b>full refresh / replace</b>, not append.</li></ol><div class="filename-block">firstname_lastname_<wbr />lab6_diamonds_clean</div></div></div><p class="practice-check">The <b>Data Source</b> holds the prepared records. It is a required published item, separate from the Flow.</p></div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_save_share.htm" rel="noopener" target="_blank">Prep output, save, and publish help</a></span><b>58 / 60</b></footer></div>
+
+<div data-slide="59" aria-label="Slide 59: Publish, Run, and Check the Output" class="slide practice" data-chapter="In-class Tableau flow" data-title="Publish, Run, and Check the Output" id="slide-59"><div class="eyebrow"><span>In-class Tableau flow</span><span>IA342 · Week 6</span></div><h2>Publish, Run, and Check the Output</h2><p class="subtitle">A saved draft is not yet the published, runnable flow.</p><div class="slide-body"><div class="practice-layout"><div class="shot-gallery"><label class="shot-select">Screenshot <select aria-label="Choose a screenshot"><option value="0">1. Publish the changed flow before running it.</option><option value="1">2. Publish the flow with your own name in fall2026.</option><option value="2">3. Check that the flow run has Succeeded.</option><option value="3">4. Confirm two separate items: a Data Source and a Flow.</option></select></label><figure class="shot-figure"><button aria-label="Enlarge screenshot: Publish the changed flow before running it." class="shot-zoom" type="button"><img alt="Publish the changed flow before running it." data-asset="assets/screenshots/Screenshot%202026-09-25%20114931.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20114931.png" /></button><figcaption>Publish the changed flow before running it.</figcaption></figure><figure class="shot-figure" hidden=""><button aria-label="Enlarge screenshot: Publish the flow with your own name in fall2026." class="shot-zoom" type="button"><img alt="Publish the flow with your own name in fall2026." data-asset="assets/screenshots/Screenshot%202026-09-25%20115005.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20115005.png" /></button><figcaption>Publish the flow with your own name in fall2026.</figcaption></figure><figure class="shot-figure" hidden=""><button aria-label="Enlarge screenshot: Check that the flow run has Succeeded." class="shot-zoom" type="button"><img alt="Check that the flow run has Succeeded." data-asset="assets/screenshots/Screenshot%202026-09-25%20115543.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20115543.png" /></button><figcaption>Check that the flow run has Succeeded.</figcaption></figure><figure class="shot-figure" hidden=""><button aria-label="Enlarge screenshot: Confirm two separate items: a Data Source and a Flow." class="shot-zoom" type="button"><img alt="Confirm two separate items: a Data Source and a Flow." data-asset="assets/screenshots/Screenshot%202026-09-25%20115606.png" src="../../assets/week-6/screenshots/Screenshot%202026-09-25%20115606.png" /></button><figcaption>Confirm two separate items: a Data Source and a Flow.</figcaption></figure></div><div class="practice-steps"><ol class="steps"><li>Publish the <b>Flow</b> under your own name in <b>fall2026</b>.</li><li>Choose <b>Run / Run Now</b>. Check <b>Succeeded</b>.</li><li>Open the project and confirm <b>both the Flow and Data Source</b> are present.</li></ol><div class="filename-block">firstname_lastname_<wbr />lab6_diamonds_flow</div><p><b>Output:</b> 17 records<br />GIA 6 · IGI 5 · HRD 6<br />Keep IDs 7, 154, 155.</p></div></div><p class="practice-check"><b>Monday submission:</b> one published Diamonds Flow + one published clean Data Source. A saved draft is not enough.</p></div><footer class="slide-foot"><span class="credit"><a href="https://help.tableau.com/current/prep/en-us/prep_web_auth.htm" rel="noopener" target="_blank">Tableau draft, publish, and run behavior</a></span><b>59 / 60</b></footer></div>
+
+<div data-slide="60" aria-label="Slide 60: Lab — Clean House Data and Build a Dashboard" class="slide" data-chapter="Independent lab" data-title="Lab — Clean House Data and Build a Dashboard" id="slide-60"><div class="eyebrow"><span>Independent lab</span><span>IA342 · Week 6</span></div><h2>Lab — Clean House Data and Build a Dashboard</h2><p class="subtitle">Apply the same operations independently; do not overwrite the in-class flow.</p><div class="slide-body"><div class="submission-columns"><div><h3>Monday · 2 published items</h3><p><b>Diamonds Flow</b><br />The saved cleaning process.</p><p><b>Diamonds Data Source</b><br />The 17-record output generated by that flow.</p><div class="part-points">30 points</div></div><div><h3>Wednesday · 3 published items</h3><p><b>House Flow + House Data Source</b><br />Prepare the housing data independently.</p><p><b>Workbook: three Worksheets + Dashboard</b><br />Year-built line chart, lot-size bars and unit-price map; combine them in a Dashboard.</p><div class="part-points">40 points preparation + 30 points visualization</div></div></div><p class="takeaway"><b>Five published items:</b> 2 Flows + 2 Data Sources + 1 Workbook. The three Worksheets and Dashboard are inside the Workbook.</p><p class="download-row"><a class="button" data-open-lab="" href="../../assignments/lab-6/">Open the Wednesday lab instructions</a></p><p class="short-note">Publish all five in fall2026 before the announced deadline. There is no Canvas submission.</p></div><footer class="slide-foot"><span class="credit"><a href="https://github.com/xbwei/machine_learning_in_rapidminer/blob/master/house_price_full.xlsx" rel="noopener" target="_blank">House-price Excel data</a></span><b>60 / 60</b></footer></div>
+  </div>
+</div>
+
+<div class="media-modal" hidden="" id="mediaModal">
+  <div class="media-panel photo">
+    <header>
+      <b id="mediaTitle">Image Preview</b>
+      <button id="closeMedia" onclick="closeMedia()">Close</button>
+    </header>
+    <div id="mediaTarget"></div>
+  </div>
+</div>
+
+<script>
+var currentSlide = 1;
+var totalSlides = 60;
+
+function updateDeck() {
+  var slides = document.querySelectorAll('#lectureDeck .slide');
+  slides.forEach(function(s, idx) {
+    if ((idx + 1) === currentSlide) {
+      s.classList.add('active');
+      s.style.display = 'block';
+    } else {
+      s.classList.remove('active');
+      s.style.display = 'none';
+    }
+  });
+
+  var counterEl = document.getElementById('slideCounter');
+  if (counterEl) {
+    counterEl.textContent = 'Slide ' + currentSlide + ' of ' + totalSlides;
+  }
+
+  var barEl = document.getElementById('progressBar');
+  if (barEl) {
+    barEl.style.width = ((currentSlide / totalSlides) * 100) + '%';
+  }
+
+  var prevBtn = document.getElementById('prevBtn');
+  if (prevBtn) prevBtn.disabled = (currentSlide === 1);
+
+  var nextBtn = document.getElementById('nextBtn');
+  if (nextBtn) nextBtn.disabled = (currentSlide === totalSlides);
+
+  if (window.history && window.history.replaceState) {
+    window.history.replaceState(null, null, '#slide-' + currentSlide);
+  }
+}
+
+function changeSlide(direction) {
+  var next = currentSlide + direction;
+  if (next >= 1 && next <= totalSlides) {
+    currentSlide = next;
+    updateDeck();
+  }
+}
+
+function goToSlide(slideNum) {
+  if (slideNum >= 1 && slideNum <= totalSlides) {
+    currentSlide = slideNum;
+    updateDeck();
+  }
+}
+
+function toggleFullScreen() {
+  var deck = document.getElementById('lectureDeck');
+  if (!deck) return;
+  if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+    if (deck.requestFullscreen) deck.requestFullscreen();
+    else if (deck.webkitRequestFullscreen) deck.webkitRequestFullscreen();
+  } else {
+    if (document.exitFullscreen) document.exitFullscreen();
+    else if (deck.webkitExitFullscreen) deck.webkitExitFullscreen();
+  }
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.target.tagName === 'INPUT' || event.target.tagName === 'TEXTAREA' || event.target.tagName === 'SELECT') return;
+
+  if (event.key === 'Escape') {
+    var modal = document.getElementById('mediaModal');
+    if (modal && !modal.hidden) {
+      closeMedia();
+      return;
+    }
+  }
+
+  if (event.key === 'ArrowRight' || event.key === ' ' || event.key === 'PageDown') {
+    event.preventDefault();
+    changeSlide(1);
+  } else if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+    event.preventDefault();
+    changeSlide(-1);
+  } else if (event.key === 'Home') {
+    event.preventDefault();
+    goToSlide(1);
+  } else if (event.key === 'End') {
+    event.preventDefault();
+    goToSlide(totalSlides);
+  }
+});
+
+// Setup Screenshot Galleries and Zoom
+document.querySelectorAll('.shot-gallery').forEach(function(g) {
+  var select = g.querySelector('select');
+  if (select) {
+    select.addEventListener('change', function() {
+      var val = Number(select.value);
+      g.querySelectorAll('figure').forEach(function(f, idx) {
+        f.hidden = (idx !== val);
+      });
+    });
+  }
+  g.querySelectorAll('.shot-zoom').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var img = btn.querySelector('img');
+      if (img) openMedia(img.src, img.alt);
+    });
+  });
+});
+
+function openMedia(src, title) {
+  var modal = document.getElementById('mediaModal');
+  var target = document.getElementById('mediaTarget');
+  var titleEl = document.getElementById('mediaTitle');
+  if (!modal || !target) return;
+  titleEl.textContent = title || 'Image Preview';
+  target.innerHTML = '<img src="' + src + '" alt="' + (title || '') + '" />';
+  modal.hidden = false;
+  document.getElementById('closeMedia').focus();
+}
+
+function closeMedia() {
+  var modal = document.getElementById('mediaModal');
+  var target = document.getElementById('mediaTarget');
+  if (!modal) return;
+  modal.hidden = true;
+  if (target) target.innerHTML = '';
+}
+
+// GitHub raw download trigger
+document.querySelectorAll('[data-github-download]').forEach(function(a) {
+  a.addEventListener('click', async function(e) {
+    e.preventDefault();
+    var status = a.closest('.slide-body').querySelector('.download-status');
+    if (status) status.textContent = 'Downloading ' + a.dataset.githubDownload + ' from GitHub…';
+    try {
+      var r = await fetch(a.href, { credentials: 'omit', signal: AbortSignal.timeout(15000) });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      var data = await r.text();
+      var url = URL.createObjectURL(new Blob([data], { type: 'text/csv;charset=utf-8' }));
+      var dl = document.createElement('a');
+      dl.href = url;
+      dl.download = a.dataset.githubDownload;
+      document.body.append(dl);
+      dl.click();
+      dl.remove();
+      setTimeout(function() { URL.revokeObjectURL(url); }, 30000);
+      if (status) status.textContent = 'Downloaded ' + a.dataset.githubDownload + ' from GitHub.';
+    } catch (error) {
+      if (status) status.textContent = 'Download did not complete. Open "View on GitHub" and choose Download raw file. ' + error.message;
+      window.open(a.href, '_blank');
+    }
+  });
+});
+
+window.addEventListener('DOMContentLoaded', function() {
+  var hash = window.location.hash;
+  if (hash && hash.indexOf('#slide-') === 0) {
+    var sNum = parseInt(hash.replace('#slide-', ''), 10);
+    if (!isNaN(sNum) && sNum >= 1 && sNum <= totalSlides) {
+      currentSlide = sNum;
+    }
+  }
+  updateDeck();
+});
+</script>
+
+<hr />
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="../../">Return to Course Home</a></td>
+      <td><a href="../../assignments/lab-6/">Go to Lab 6</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
