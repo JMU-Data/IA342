@@ -74,6 +74,15 @@ title: "Home - IA 342"
     <p style="margin-bottom: 0; color: #57606a;">Get Started with Tableau Online (Diamonds Data Source, Worksheets, and Interactive Dashboard).</p>
   </a>
 
+  <a href="modules/module-6/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #2da44e; display: flex; align-items: center; gap: 0.5rem;">🚀 Module 6</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Data Cleaning and Process (Data Quality, ETL, and Tableau Prep Flow).</p>
+  </a>
+
+  <a href="assignments/lab-6/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">📝 Lab 6</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Clean Data in Tableau Flow (Diamonds Flow & Data Source, House Flow, Data Source, and Dashboard).</p>
+  </a>
 </div>
 
 ## Course Overview
