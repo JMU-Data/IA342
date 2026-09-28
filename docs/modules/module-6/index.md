@@ -736,10 +736,6 @@ title: "Module 6: Data Cleaning and Process - IA 342"
   box-shadow: none;
 }
 
-[hidden] {
-  display: none !important;
-}
-
 .shot-preview-card {
   background: #f8fafc;
   border: 1px solid #c9dce5;
@@ -764,6 +760,7 @@ title: "Module 6: Data Cleaning and Process - IA 342"
 }
 
 .media-modal {
+  position: fixed;
   inset: 0;
   z-index: 99999;
   background: rgba(16, 30, 45, 0.92);
