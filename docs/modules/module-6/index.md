@@ -208,10 +208,26 @@ title: "Module 6: Data Cleaning and Process - IA 342"
 .small { font-size: 18px; line-height: 1.4; }
 .short-note { font-size: 16px; line-height: 1.35; color: #536d7c; margin-top: 12px; }
 
-.columns {
+.columns,
+.slide .columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.columns > div,
+.slide .columns > div {
+  min-width: 0;
+}
+
+.columns::before,
+.columns::after,
+.slide .columns::before,
+.slide .columns::after {
+  display: none !important;
+  content: none !important;
 }
 
 .cover .cover-topic {
