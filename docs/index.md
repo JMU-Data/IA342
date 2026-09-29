@@ -83,6 +83,11 @@ title: "Home - IA 342"
     <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">📝 Lab 6</h3>
     <p style="margin-bottom: 0; color: #57606a;">Clean Data in Tableau Flow (Diamonds Flow & Data Source, House Flow, Data Source, and Dashboard).</p>
   </a>
+
+  <a href="assignments/mini-project/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #d73a49; display: flex; align-items: center; gap: 0.5rem;">🎯 Mini Project</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Exploring Your Assigned State with ArcGIS (Thematic Map, Analysis Map, Widget & Dashboard).</p>
+  </a>
 </div>
 
 ## Course Overview
