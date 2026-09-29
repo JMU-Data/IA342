@@ -106,7 +106,7 @@ In the event of inclement weather or university closures, we will follow the off
 | **Week 4**<br>Sep 14 – 18 | **Color Theory for Data Visualization**<br>Hue, saturation, value; sequential, diverging, categorical & alerting palettes; color vision deficiency & accessibility | **ArcGIS Business Analyst: Spatial Analysis + Dashboard → URL**<br>Suitability analysis (core), benchmark comparison / nearby analysis, export analysis layers, build interactive dashboard (map, indicators, charts), and publish URL | Spatial analysis & interactive dashboard (URL) |
 | **Week 5**<br>Sep 21 – 25 | **Choosing and Critiquing Graphs**<br>Chart-selection principles; histograms, box plots, scatter/line/bar charts, axes/scales; identifying misleading visualizations | **Get Started with Tableau**<br>Data connection, basic sheets (bar, scatter), simple dashboard construction, and publishing workflow | Visual critique & core Tableau workflow |
 | **Week 6**<br>Sep 28 – Oct 2 | **Data Preparation for Visual Analytics**<br>ETL pipelines, data quality, OLTP vs. OLAP, dimensions vs. measures, live vs. extract connections | **Tableau Prep / Tableau Flow**<br>Clean, transform, null handling, standardizing values, calculated fields, split, union, join, and outputting clean data | Data cleaning & preparation pipelines |
-| **Week 7**<br>Oct 5 – 9 | **MINI PROJECT: ArcGIS Spatial Visualization**<br>Project kickoff, clinic, and instructor support *(No new lecture)* | **Mini Project Clinic & Studio**<br>Gun Violence Archive spatial analysis and demographic integration in ArcGIS Business Analyst | *Fall Break begins Wed, Oct 7*<br>*(Mon session: Project Clinic)*<br>**Mini Project Due** |
+| **Week 7**<br>Oct 5 – 9 | **MINI PROJECT: ArcGIS Spatial Visualization**<br>Project kickoff, clinic, and instructor support *(No new lecture)* | **Mini Project Clinic & Studio**<br>[IA342 Mini Project](../assignments/mini-project/): Explore a randomly assigned U.S. state in ArcGIS Business Analyst & ArcGIS Dashboards with a thematic map, one analysis-result map (Benchmark, Suitability, or Nearby), interactive widget, and concise write-up | *Fall Break begins Wed, Oct 7*<br>*(Mon session: Project Clinic)*<br>**Mini Project Due** (Tue, Oct 6) → Public Dashboard URL |
 | **Week 8**<br>Oct 12 – 16 | **Cloud-Connected BI & Multi-Table Data**<br>Relational DB vs. analytical warehouse, PK/FK, joins vs. relationships, cardinality, LOD, duplicate-row risks | **Cloud-Connected BI**<br>• Mon: Tableau + Relational DB (Cloud PostgreSQL)<br>• Wed: Tableau + BigQuery Warehouse (TICKIT multi-table data model) | Lab-heavy week:<br>Relational DB & BigQuery |
 | **Week 9**<br>Oct 19 – 23 | **Visual Analytics in Tableau**<br>Drill-down, sort, group, sets, filters, trend/reference lines, parameters, and interactive exploration | **Visual Analytics in Tableau**<br>Parameters, sets, set actions, tooltips, interactive scatter plots, and Tableau mapping exercise | Advanced interactivity & spatial views in Tableau |
 | **Week 10**<br>Oct 26 – 30 | **Dashboard Design**<br>Directed vs. exploratory discovery, KPIs, visual hierarchy, layout containers, eye-scanning, 5-second test, Shaffer 4Cs, Tufte/KISS principles | **Tableau Dashboard Design**<br>Multiple coordinated views, dashboard layout, interactivity, dynamic titles, device layouts, and publishing | Usability & visual hierarchy |
@@ -122,11 +122,17 @@ In the event of inclement weather or university closures, we will follow the off
 
 ### Project Overviews
 
-#### Mini Project: ArcGIS Gun Violence Spatial Visualization
-- **Platform:** ArcGIS Business Analyst / ArcGIS StoryMaps
-- **Data:** Instructor-provided Gun Violence Archive dataset + demographic contextual variable(s)
-- **Core Requirements:** Assigned state/study area analysis, meaningful thematic map, spatial analysis tool, infographic/report, and public StoryMap with analytical findings.
-- **Focus:** Map design, spatial visualization, color selection, and synthesis.
+#### [Mini Project: Exploring Your Assigned State with ArcGIS](../assignments/mini-project/)
+- **Platform:** ArcGIS Business Analyst / ArcGIS Dashboards
+- **Study Area & Data:** Randomly assigned U.S. state at county/county-equivalent level; at least two relevant Business Analyst variables
+- **Core Requirements:**
+  - One thematic map (choropleth or proportional-symbol map)
+  - One analysis-result map (Benchmark comparisons, Suitability analysis, Nearby analysis, or another appropriate Business Analyst workflow)
+  - One data-driven widget with meaningful dashboard interaction
+  - Integrated concise write-up (~150–250 words)
+- **Submission:** One public ArcGIS Dashboard viewing URL submitted to Canvas (Due: Tuesday, Oct 6, 2026, at the time specified in Canvas)
+- **Policies:** Anonymous public access required (inaccessible dashboard receives 0/100); late submissions and late resubmissions are not accepted
+- **Weight:** 10% of course grade
 
 #### Final Project: COVID-19 Visual Analytics Project
 - **Platform:** Tableau Desktop / Tableau Public
