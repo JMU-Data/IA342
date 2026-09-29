@@ -390,31 +390,75 @@
       "title": "Mini Project — Exploring Your Assigned State with ArcGIS",
       "assignment": "mini-project",
       "use_for_grading": true,
-      "scoring": "free_form",
+      "scoring": "ratings",
       "criteria": [
         {
           "key": "thematic-map",
           "description": "Map 1: Thematic map — Correct assigned state and geographic level; appropriate variable and map type; effective contribution to the topic; suitable colors, classification or symbol sizing, legend, and readable presentation.",
           "points": 25.0,
-          "ratings": []
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 25.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         },
         {
           "key": "analysis-result-map",
           "description": "Map 2: Analysis-result map — Appropriate and correctly configured analysis; meaningful use of selected data, sites, or criteria; results that support the topic; accurate interpretation of output (benchmark, suitability, or nearby); effective map design.",
           "points": 25.0,
-          "ratings": []
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 25.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         },
         {
           "key": "widget-and-interaction",
           "description": "Widget and interaction — Relevant and correctly calculated information, clear labels and units, effective visual design (15 pts); working interaction that meaningfully updates the widget (10 pts).",
           "points": 25.0,
-          "ratings": []
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 25.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         },
         {
           "key": "write-up",
           "description": "Write-up — Clear topic and purpose; identifiable data; explanations of both maps and widget; analysis settings and design rationale; specific findings with place names/values and a limitation (~150–250 words).",
           "points": 25.0,
-          "ratings": []
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 25.0
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0.0
+            }
+          ]
         }
       ]
     }
