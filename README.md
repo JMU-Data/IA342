@@ -67,3 +67,11 @@ IA 342 is a core component of the Intelligence Analysis curriculum at James Madi
 This repository (`JMU-Data/IA342`) serves as the canonical public source for course materials, built with a "source-first, web-published" approach via GitHub Pages. The materials here are designed for transparency and reuse. 
 
 To protect student privacy and maintain operational security, this repository strictly contains public-facing content. All private grading, student submissions, personally identifiable information (PII), and Canvas LMS automation scripts are managed entirely outside this environment.
+
+## License
+
+Code in this repository is licensed under the [MIT License](LICENSE-CODE).  
+Course materials, documentation, slides, and other original educational content are licensed under the [Creative Commons Attribution 4.0 International (CC BY 4.0) License](LICENSE-CONTENT), unless otherwise noted.
+
+Third-party datasets, images, figures, software, and other externally sourced materials retain their original licenses or terms and are not automatically covered by these repository licenses.
+
