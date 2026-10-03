@@ -1,0 +1,8 @@
+# Repository Licensing
+
+This repository uses a dual-license structure:
+
+- Source code, scripts, notebooks, SQL, tests, and other executable/code components are licensed under the MIT License. See LICENSE-CODE.
+- Original course materials, documentation, lab instructions, slides, figures, and other educational content are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License. See LICENSE-CONTENT.
+
+Third-party datasets, images, figures, software, and other externally sourced materials retain their original licenses and terms and are not automatically covered by these repository licenses.
