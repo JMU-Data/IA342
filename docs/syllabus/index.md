@@ -5,6 +5,9 @@ title: "Syllabus - IA 342"
 
 # Syllabus - Fall 2026
 
+**Last updated: October 7, 2026**  
+*Revision: Weeks 8–17 schedule, final-project workflow, and AI-use policy. The revised AI policy applies to coursework assigned on or after this date; previously completed work is governed by its original instructions.*
+
 **Course:** IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis  
 **Term:** Fall 2026  
 **Instructor:** Dr. Xuebin Wei  
@@ -30,10 +33,10 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
   **Access:** [Official Textbook URL](https://www.taylorfrancis.com/books/mono/10.1201/9781003437611/social-data-analytics-cloud-ai-xuebin-wei-xinyue-ye) *(Freely accessible via JMU Wi-Fi or by logging in with a JMU account.)*
 - **Google Account (Required):** Students must register/create a Google account using their official **James Madison University email address** (`@dukes.jmu.edu` or `@jmu.edu`). This is required for the instructor to grant access to the shared Google Cloud credits pool and enroll students in Google AI Skills modules.
 - **ArcGIS & Tableau (Required):** Provided through JMU institutional licensing and SSO.
-- **AI Tools (Optional / Recommended):** Generative AI tools (such as Google Gemini, ChatGPT, Claude, GitHub Copilot) may be used as analytical assistants. 
-  - **Policy Update:** Activating paid/student tiers (such as the Gemini Student Plan) is **completely optional**.
-  - **Grading:** Having or not having AI Pro / advanced tiers **will have ZERO impact on your course grade**.
-  - **Privacy:** If you choose to activate student promotions that require third-party verification, **we strongly advise against uploading sensitive records (e.g., academic transcripts)**. Use at most a course schedule.
+- **AI Tools (Course-Designated Use Only):** Use only the AI tools and features explicitly authorized in the instructions for the relevant course activity. See the [AI Policy](#ai-policy) below.
+  - **Fair access:** No paid AI subscription, student promotion, or advanced tier is required. Subscription status does not affect grading.
+  - **Scope of permission:** Access to an AI tool, including an AI feature inside another application, does not itself authorize its use for coursework.
+  - **Privacy:** Do not upload credentials, academic records, or private personal data to AI tools. Use only data authorized for the activity.
 
 ## Email Communication Policy
 
@@ -43,7 +46,15 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 
 ## AI Policy
 
-AI tools (such as Google Gemini, ChatGPT, Copilot, etc.) are recommended and permitted as analytical assistants in the course workflow. No paid subscription is required. However, **students remain entirely responsible** for the final visual design, data interpretation, and verification of all outputs. You must ensure the accuracy, ethical presentation, and integrity of your work.
+**Updated October 7, 2026 — Only course-designated AI use is permitted.**
+
+To maintain fairness and a common learning experience, **you may use only the AI tools, features, and uses explicitly authorized for the relevant assignment or in-class activity. You may NOT use other AI assistants, models, agents, or AI automation to complete that work.** If the activity does not explicitly authorize AI assistance, do not use it; ask the instructor before using an unlisted tool or feature.
+
+Permission is specific to the activity. For example, Gemini Canvas is designated for the Week 12 Canvas exercise; that does not authorize Gemini or other AI tools for every lab or the final project. An instructor demonstration or a mention of a tool, including Spark, is not permission to use it in graded work. Ordinary non-generative Tableau analysis and data-preparation functions taught in class remain permitted.
+
+**No paid AI subscription is required.** Paid or advanced access does not expand the tools or uses permitted by an assignment. Students with and without subscriptions are assessed against the same learning goals and requirements.
+
+When AI assistance is authorized, identify the tool and how you used it in the assignment's explanation. **You remain responsible for checking the data, calculations, chart choices, interactions, and interpretations.** Do not submit invented data or unverified AI output. Do not upload credentials, academic records, or private personal data; use only the data authorized for the activity. The normal academic-integrity requirements continue to apply.
 
 ## Grading Breakdown
 
@@ -65,6 +76,7 @@ AI tools (such as Google Gemini, ChatGPT, Copilot, etc.) are recommended and per
 
 - **Before Deadline:** You are allowed to resubmit assignments multiple times before the deadline. Only the final pre-deadline submission will be graded.
 - **Late Penalty:** Late submissions incur a **10% penalty per day**, capped at a maximum 40% penalty, unless prior approval is obtained from the instructor.
+- **Week 8 Lab Exception:** Database access is limited to October 12–18, 2026. Submit one PDF by Sunday, October 18, at 11:59 p.m. Eastern Time. **Late submissions are not accepted for this lab.**
 - **Final Exam Week:** **No late submissions** are accepted during final exam week.
 - **Projects:** Late submissions/resubmissions of the class projects will not be accepted.
 
@@ -96,7 +108,9 @@ In the event of inclement weather or university closures, we will follow the off
 
 ## Course Schedule (Fall 2026)
 
-*Schedule updated: August 29, 2026*
+*Schedule updated: October 7, 2026*
+
+Weeks 9–11 follow a consistent pattern: **Monday combines a focused explanation with a guided in-class exercise; Wednesday is an independent lab with instructor support.** Week 8 is one extended lab with no separate lecture. In this course, Tableau Online refers to the course Tableau Cloud site. Tableau Flow means a Tableau Prep data-preparation flow; Google Flow in Week 13 is the separate video-generation tool.
 
 | Week / Dates | Lecture / Topic Focus | Hands-on Lab & Activities | Notes & Milestones |
 | :--- | :--- | :--- | :--- |
@@ -107,16 +121,16 @@ In the event of inclement weather or university closures, we will follow the off
 | **Week 5**<br>Sep 21 – 25 | **Choosing and Critiquing Graphs**<br>Chart-selection principles; histograms, box plots, scatter/line/bar charts, axes/scales; identifying misleading visualizations | **Get Started with Tableau**<br>Data connection, basic sheets (bar, scatter), simple dashboard construction, and publishing workflow | Visual critique & core Tableau workflow |
 | **Week 6**<br>Sep 28 – Oct 2 | **Data Preparation for Visual Analytics**<br>ETL pipelines, data quality, OLTP vs. OLAP, dimensions vs. measures, live vs. extract connections | **Tableau Prep / Tableau Flow**<br>Clean, transform, null handling, standardizing values, calculated fields, split, union, join, and outputting clean data | Data cleaning & preparation pipelines |
 | **Week 7**<br>Oct 5 – 9 | **MINI PROJECT: ArcGIS Spatial Visualization**<br>Project kickoff, clinic, and instructor support *(No new lecture)* | **Mini Project Clinic & Studio**<br>[IA342 Mini Project](../assignments/mini-project/): Explore a randomly assigned U.S. state in ArcGIS Business Analyst & ArcGIS Dashboards with a thematic map, one analysis-result map (Benchmark, Suitability, or Nearby), interactive widget, and concise write-up | *Fall Break begins Wed, Oct 7*<br>*(Mon session: Project Clinic)*<br>**Mini Project Due** (Tue, Oct 6) → Public Dashboard URL |
-| **Week 8**<br>Oct 12 – 16 | **Cloud-Connected BI & Multi-Table Data**<br>Relational DB vs. analytical warehouse, PK/FK, joins vs. relationships, cardinality, LOD, duplicate-row risks | **Cloud-Connected BI**<br>• Mon: Tableau + Relational DB (Cloud PostgreSQL)<br>• Wed: Tableau + BigQuery Warehouse (TICKIT multi-table data model) | Lab-heavy week:<br>Relational DB & BigQuery |
-| **Week 9**<br>Oct 19 – 23 | **Visual Analytics in Tableau**<br>Drill-down, sort, group, sets, filters, trend/reference lines, parameters, and interactive exploration | **Visual Analytics in Tableau**<br>Parameters, sets, set actions, tooltips, interactive scatter plots, and Tableau mapping exercise | Advanced interactivity & spatial views in Tableau |
-| **Week 10**<br>Oct 26 – 30 | **Dashboard Design**<br>Directed vs. exploratory discovery, KPIs, visual hierarchy, layout containers, eye-scanning, 5-second test, Shaffer 4Cs, Tufte/KISS principles | **Tableau Dashboard Design**<br>Multiple coordinated views, dashboard layout, interactivity, dynamic titles, device layouts, and publishing | Usability & visual hierarchy |
-| **Week 11**<br>Nov 2 – 6 | **Calculations in Tableau**<br>Basic calculations, date/string/logical functions, aggregate calculations, table calculations (scope/direction), LOD expressions (FIXED, INCLUDE, EXCLUDE) | **Calculations in Tableau**<br>Calculated metrics, rates, moving averages, table calculations, and LOD expressions in dashboards | Advanced calculation logic & LOD |
-| **Week 12**<br>Nov 9 – 13 | **AI-Generated Dashboards + Tableau Public**<br>AI visualization capabilities & human evaluation (correctness, chart choice, aggregation, 5-second test) | **AI-Assisted Dashboards & Tableau Public**<br>• Mon: Gemini Canvas / Spark AI dashboard generation & critique<br>• Wed: Tableau Public publishing & comparative evaluation (AI vs. Tableau) | AI vs. BI comparison & Tableau Public workflow |
+| **Week 8**<br>Oct 12 – 16 | **Extended Lab: Ticket Sales with PostgreSQL and Tableau**<br>No separate lecture; single-table analysis, keys, joins vs. relationships, and multi-table data | **One lab across both meetings**<br>• Mon: Guided PostgreSQL connection, table relationships, data checks, and working Data Source<br>• Wed: Independent charts, annotations, bullet graph, Sunburst, map, and dashboard | **Database access: Oct 12–18 only**<br>One PDF due Sun, Oct 18, 11:59 p.m. Eastern Time.<br>**Late submissions are not accepted.** |
+| **Week 9**<br>Oct 19 – 23 | **Visual Analytics in Tableau**<br>Drill-down, sort, group, sets, filters, trend/reference lines, parameters, and interactive exploration | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Visual Analytics lab**<br>Parameters, sets, set actions, tooltips, interactive scatter plots, and mapping | Meaningful interaction and evidence-based exploration |
+| **Week 10**<br>Oct 26 – 30 | **Dashboard Design**<br>Directed vs. exploratory discovery, KPIs, visual hierarchy, layout containers, eye-scanning, 5-second test, Shaffer 4Cs, Tufte/KISS principles | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Dashboard Design lab**<br>Coordinated views, layout, interactivity, dynamic titles, device layouts, and publishing | Usability, visual hierarchy, and consistent filter behavior |
+| **Week 11**<br>Nov 2 – 6 | **Calculations in Tableau**<br>Basic calculations, date/string/logical functions, aggregate calculations, table calculations (scope/direction), LOD expressions (FIXED, INCLUDE, EXCLUDE) | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Calculations lab**<br>Calculated metrics, rates, moving averages, table calculations, and LOD; verify aggregation and denominators | Calculations must be used and interpreted in the visualizations |
+| **Week 12**<br>Nov 9 – 13 | **Tableau Public and Gemini Canvas**<br>Lightweight dashboard creation, sharing, and human evaluation | **Mon: Tableau Public**<br>Store instructor-provided public data in your Google Drive, connect to it, build a small dashboard, and publish.<br>**Wed: Gemini Canvas**<br>Upload approved public data, generate a lightweight dashboard, check its values/interactions, and share it. | No Colab component or required Spark work.<br>Canvas sharing is sufficient; personal GitHub publishing is optional, not required.<br>Tableau Public is a Week 12 exercise, not the final-project platform. |
 | **Week 13**<br>Nov 16 – 20 | **AI Video Visualization & Analytical Storytelling**<br>AI video as visual communication; storytelling accuracy vs. hallucination risks | **AI Video & Analytical Storytelling**<br>• Mon: Google Flow (visual/video synthesis supporting analytical findings)<br>• Wed: Google Vids (assembling analytical video briefing) | Multimodal visual communication |
 | **Week 14**<br>Nov 23 – 27 | **Thanksgiving Holiday**<br>*(No Classes)* | — | University Closed |
-| **Week 15**<br>Nov 30 – Dec 4 | **Final Project Workshop: Week 1**<br>Analytical question scoping, data pipeline, and visual planning *(No new lecture)* | **Data Pipeline & Visual Scoping**<br>Clean and join COVID-19 dataset with approved contextual dataset (Colab/Pandas or Tableau Prep); initial Tableau sheets | Final Project data engineering & planning |
-| **Week 16**<br>Dec 7 – 11 | **Final Project Workshop: Week 2**<br>Dashboard design studio & instructor consultation *(No new lecture)* | **Tableau Public Dashboard Finalization**<br>Build required map, temporal trend, comparison/distribution views, LOD calculations, interactivity, and interpretation | Final Project Studio & Link Testing |
-| **Week 17**<br>Dec 12 – 18 | **Final Exam Week**<br>Final project submission only *(No presentations)* | **Final Project Submission** | **Final Project Due**<br>*(Tableau Public Dashboard)* |
+| **Week 15**<br>Nov 30 – Dec 4 | **Final Project Workshop: Data Collection and Preparation**<br>Source selection, data quality, geographic/temporal alignment, and data fusion *(No new lecture)* | **Google Drive → Tableau Flow → Data Source**<br>Collect and retain raw data in Google Drive; clean and combine data in a Tableau Flow; publish and run the Flow in Tableau Online to generate a published Data Source. | First workshop outcome: published Flow and its generated Data Source.<br>Use Tableau Flow, not Colab or Gemini Canvas, for the required preparation workflow. |
+| **Week 16**<br>Dec 7 – 11 | **Final Project Workshop: Visual Analytics and Dashboard**<br>Calculation checks, interaction, design, and interpretation *(No new lecture)* | **Data Source → Workbook → Dashboard**<br>Build the Workbook from your own Flow output; include Tableau calculations, visual analytics, meaningful interactivity, maps/charts, and a coherent dashboard; publish in the course Tableau Online project. | Test calculations, filters, views, and all three published items. |
+| **Week 17**<br>Dec 12 – 18 | **Final Exam Week**<br>Final project submission only *(No presentations)* | **Final Project Submission in Tableau Online**<br>Published **Flow + Data Source + Workbook**; the Workbook contains the required calculations, analytical views, and dashboard. | **Final Project Due** at the time announced in the final-project assignment.<br>**Late submissions are not accepted.** |
 
 ---
 
@@ -134,18 +148,34 @@ In the event of inclement weather or university closures, we will follow the off
 - **Policies:** Anonymous public access required (inaccessible dashboard receives 0/100); late submissions and late resubmissions are not accepted
 - **Weight:** 10% of course grade
 
-#### Final Project: COVID-19 Visual Analytics Project
-- **Platform:** Tableau Desktop / Tableau Public
-- **Data:** Instructor-provided primary COVID-19 dataset + one approved contextual dataset (e.g., population, poverty, income, education, unemployment).
-- **Data Processing:** Google Colab (Pandas) preferred, or Tableau Prep.
-- **Required Dashboard Elements:**
-  - At least one thematic map
-  - At least one temporal / trend visualization
-  - At least one comparison or distribution visualization
-  - At least one meaningful calculation (calculated field, table calculation, or LOD)
-  - At least one interactive feature (filter, parameter, set action, or equivalent)
-  - Clear, evidence-based analytical interpretation
-- **Submission:** Published interactive Tableau Public dashboard (No live presentation). Optional AI-generated visual assets (images/video) may support the story.
+#### Final Project: COVID-19 Visual Analytics in Tableau Online
+
+**Platform:** The course Tableau Online (Tableau Cloud) site. Tableau Public is not the final-project submission platform.
+
+**Data:** Obtain the primary COVID-19 data and one approved contextual dataset (e.g., population, poverty, income, education, or unemployment) from instructor-designated or approved sources. Retain the raw files in your Google Drive and identify their sources, dates, and geographic coverage.
+
+**Week 15 — Data collection, cleaning, and fusion:** Build a Tableau Flow that connects to the raw data, cleans fields and data types, and combines the datasets using appropriate keys and levels of detail. Check unmatched records and repeated values rather than assuming that a successful join is correct. Publish the Flow in the course project and run it to produce your published Data Source. The required preparation work must be visible in the Flow; Colab code or a Canvas-generated file is not a substitute.
+
+**Week 16 — Calculations, visual analytics, and dashboard design:** Create your Workbook from your own Flow-generated Data Source. Include:
+
+- At least one thematic map.
+- At least one temporal / trend visualization.
+- At least one comparison or distribution visualization.
+- At least one meaningful calculation **created in Tableau and used in a visualization** (calculated field, table calculation, or LOD expression).
+- At least one meaningful interactive feature (filter, parameter, set action, or equivalent), with consistent behavior across the affected views.
+- A coherent dashboard with clear labels, units, sources, and evidence-based analytical interpretation.
+
+**Required final items — publish all three in the course Tableau Online project:**
+
+| Item | Required evidence |
+|---|---|
+| **Flow** | Published data-preparation workflow showing the collection inputs, cleaning, and data fusion; successfully run to generate its output. A saved draft alone is not sufficient. |
+| **Data Source** | Published output actually generated by that Flow, with the intended fields and level of detail. |
+| **Workbook** | Uses that Data Source and contains the Tableau calculations, analytical worksheets, meaningful interactivity, and final dashboard. |
+
+Follow the final-project assignment for naming and the exact deadline. A Tableau Public link, a PDF-only report, or separate screenshots do not replace these three required items. There is no live presentation. **Late submissions are not accepted.**
+
+AI use follows the activity-specific AI policy above; the Week 12 Canvas exercise is not blanket permission to use AI for the final project.
 
 ---
 [Return to Course Home](../)
