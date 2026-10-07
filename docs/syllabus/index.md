@@ -43,7 +43,7 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 
 ## AI Policy
 
-**Updated October 7, 2026.** To ensure fairness, students may use **only AI tools and features explicitly authorized for each course activity**. Students must verify and disclose authorized AI-assisted work and must not share sensitive or private information with AI tools.
+**Updated October 7, 2026.** To ensure fairness, students may use **only AI tools and features explicitly authorized for each course activity**. **You are responsible for what you create with AI**, including the accuracy of your data, calculations, visualizations, and interpretations. Disclose any authorized AI use and do not share sensitive or private information with AI tools.
 
 ## Grading Breakdown
 
