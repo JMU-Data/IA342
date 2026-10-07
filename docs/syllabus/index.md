@@ -33,7 +33,7 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
   **Access:** [Official Textbook URL](https://www.taylorfrancis.com/books/mono/10.1201/9781003437611/social-data-analytics-cloud-ai-xuebin-wei-xinyue-ye) *(Freely accessible via JMU Wi-Fi or by logging in with a JMU account.)*
 - **Google Account (Required):** Students must register/create a Google account using their official **James Madison University email address** (`@dukes.jmu.edu` or `@jmu.edu`). This is required for the instructor to grant access to the shared Google Cloud credits pool and enroll students in Google AI Skills modules.
 - **ArcGIS & Tableau (Required):** Provided through JMU institutional licensing and SSO.
-- **AI Tools:** Use only AI tools and features explicitly authorized for the relevant course activity. No paid AI subscription is required. See [AI Policy](#ai-policy).
+- **AI Tools:** Use only AI tools and features explicitly authorized for the relevant course activity. Google AI Pro is optional. See [AI Policy](#ai-policy).
 
 ## Email Communication Policy
 
@@ -43,9 +43,7 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 
 ## AI Policy
 
-**Updated October 7, 2026.** To ensure fairness, students may use **only AI tools and features explicitly authorized in the relevant course activity's instructions**. If AI is not authorized for an activity, do not use it. No paid AI subscription is required.
-
-When AI use is permitted, disclose how it was used and verify the accuracy of submitted work. Do not upload sensitive or private information to AI tools.
+**Updated October 7, 2026.** To ensure fairness, students may use **only AI tools and features explicitly authorized for each course activity**. Students must verify and disclose authorized AI-assisted work and must not share sensitive or private information with AI tools.
 
 ## Grading Breakdown
 
