@@ -6,7 +6,7 @@ title: "Syllabus - IA 342"
 # Syllabus - Fall 2026
 
 **Last updated: October 8, 2026**  
-*Week 8 workflow and deadline corrected October 8; other policies retain their stated effective dates.*
+*Revision: Week 8 workflow/deadline and grading, feedback, and resubmission rules. The AI use policy retains its October 7, 2026 update date.*
 
 **Course:** IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis  
 **Term:** Fall 2026  
@@ -63,10 +63,22 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 
 ## Resubmission / Late Work / Project Policy
 
-- **Before Deadline:** You are allowed to resubmit assignments multiple times before the deadline. Only the final pre-deadline submission will be graded.
+- **Before Deadline:** You may submit or revise your work multiple times before the deadline without a late penalty. The latest on-time version is used unless you choose to have a permitted later revision evaluated.
 - **Late Penalty:** Late submissions incur a **10% penalty per day**, capped at a maximum 40% penalty, unless prior approval is obtained from the instructor.
 - **Final Exam Week:** **No late submissions** are accepted during final exam week.
 - **Projects:** Late submissions/resubmissions of the class projects will not be accepted.
+
+## Automated Checks, Feedback, and Submission Timing
+
+*Updated October 8, 2026.*
+
+**Deterministic checks and instructor grading.** The instructor uses Python scripts for deterministic assignment checks, not generative AI to grade or modify student work. These scripts may post automatic comments that flag items for the instructor's manual review. Automated comments are not final grading decisions. The instructor determines grades and provides grading comments explaining point deductions.
+
+**Feedback does not require a revision.** Automatic check comments and instructor grading comments explain the review results; they do not mean you must revise and resubmit your work.
+
+**Late revisions, including after grading.** For labs and other assignments that permit late work, you may submit a revision after the deadline, including after a grade has been posted. If you want that revised version evaluated, the syllabus late penalty (**10% per day, up to 40%**) applies. A higher unpenalized score does not guarantee a higher final score after the penalty; resubmission is your choice. **Projects and final-exam-week submissions remain subject to their separate no-late/no-resubmission restrictions.**
+
+**Effective submission time.** For the version of an assignment being graded, the official submission time is the **later of the Canvas submission timestamp and the latest modification timestamp of any required external work used in that version** (for example, GitHub files or Tableau Flows, Data Sources, and Workbooks). A GitHub or Tableau change made after the deadline is a **late revision if the updated work is used for grading**, even when the Canvas submission was on time. Do not overwrite on-time work after the deadline if you want the original version evaluated; an earlier Canvas timestamp does not make later edits on time.
 
 ## Technical Assignment Support
 
