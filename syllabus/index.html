@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Syllabus - IA 342","url":"https://jmu-data.github.io/IA342/syllabus/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/IA342/assets/css/style.css?v=529477d6640325627dcb1092ed6c3a10247fe0b7">
+    <link rel="stylesheet" href="/IA342/assets/css/style.css?v=b520a79ecc3cfd52576339ec3415f9e71820349d">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -43,8 +43,8 @@
 
       <h1 id="syllabus---fall-2026">Syllabus - Fall 2026</h1>
 
-<p><strong>Last updated: October 7, 2026</strong><br />
-<em>Revision: Weeks 8–17 schedule, final-project workflow, and AI-use policy. The revised AI policy applies to coursework assigned on or after this date; previously completed work is governed by its original instructions.</em></p>
+<p><strong>Last updated: October 8, 2026</strong><br />
+<em>Revision: Week 8 workflow/deadline and grading, feedback, and resubmission rules. The AI use policy retains its October 7, 2026 update date.</em></p>
 
 <p><strong>Course:</strong> IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis<br />
 <strong>Term:</strong> Fall 2026<br />
@@ -151,12 +151,23 @@
 <h2 id="resubmission--late-work--project-policy">Resubmission / Late Work / Project Policy</h2>
 
 <ul>
-  <li><strong>Before Deadline:</strong> You are allowed to resubmit assignments multiple times before the deadline. Only the final pre-deadline submission will be graded.</li>
+  <li><strong>Before Deadline:</strong> You may submit or revise your work multiple times before the deadline without a late penalty. The latest on-time version is used unless you choose to have a permitted later revision evaluated.</li>
   <li><strong>Late Penalty:</strong> Late submissions incur a <strong>10% penalty per day</strong>, capped at a maximum 40% penalty, unless prior approval is obtained from the instructor.</li>
-  <li><strong>Week 8 Lab Exception:</strong> Database access is limited to October 12–18, 2026. Submit one PDF by Sunday, October 18, at 11:59 p.m. Eastern Time. <strong>Late submissions are not accepted for this lab.</strong></li>
   <li><strong>Final Exam Week:</strong> <strong>No late submissions</strong> are accepted during final exam week.</li>
   <li><strong>Projects:</strong> Late submissions/resubmissions of the class projects will not be accepted.</li>
 </ul>
+
+<h2 id="automated-checks-feedback-and-submission-timing">Automated Checks, Feedback, and Submission Timing</h2>
+
+<p><em>Updated October 8, 2026.</em></p>
+
+<p><strong>Deterministic checks and instructor grading.</strong> The instructor uses Python scripts for deterministic assignment checks, not generative AI to grade or modify student work. These scripts may post automatic comments that flag items for the instructor’s manual review. Automated comments are not final grading decisions. The instructor determines grades and provides grading comments explaining point deductions.</p>
+
+<p><strong>Feedback does not require a revision.</strong> Automatic check comments and instructor grading comments explain the review results; they do not mean you must revise and resubmit your work.</p>
+
+<p><strong>Late revisions, including after grading.</strong> For labs and other assignments that permit late work, you may submit a revision after the deadline, including after a grade has been posted. If you want that revised version evaluated, the syllabus late penalty (<strong>10% per day, up to 40%</strong>) applies. A higher unpenalized score does not guarantee a higher final score after the penalty; resubmission is your choice. <strong>Projects and final-exam-week submissions remain subject to their separate no-late/no-resubmission restrictions.</strong></p>
+
+<p><strong>Effective submission time.</strong> For the version of an assignment being graded, the official submission time is the <strong>later of the Canvas submission timestamp and the latest modification timestamp of any required external work used in that version</strong> (for example, GitHub files or Tableau Flows, Data Sources, and Workbooks). A GitHub or Tableau change made after the deadline is a <strong>late revision if the updated work is used for grading</strong>, even when the Canvas submission was on time. Do not overwrite on-time work after the deadline if you want the original version evaluated; an earlier Canvas timestamp does not make later edits on time.</p>
 
 <h2 id="technical-assignment-support">Technical Assignment Support</h2>
 
@@ -188,7 +199,7 @@
 
 <h2 id="course-schedule-fall-2026">Course Schedule (Fall 2026)</h2>
 
-<p><em>Schedule updated: October 7, 2026</em></p>
+<p><em>Schedule updated: October 8, 2026</em></p>
 
 <p>Weeks 9–11 follow a consistent pattern: <strong>Monday combines a focused explanation with a guided in-class exercise; Wednesday is an independent lab with instructor support.</strong> Week 8 is one extended lab with no separate lecture. In this course, Tableau Online refers to the course Tableau Cloud site. Tableau Flow means a Tableau Prep data-preparation flow; Google Flow in Week 13 is the separate video-generation tool.</p>
 
@@ -246,9 +257,9 @@
     </tr>
     <tr>
       <td style="text-align: left"><strong>Week 8</strong><br />Oct 12 – 16</td>
-      <td style="text-align: left"><strong>Extended Lab: Ticket Sales with PostgreSQL and Tableau</strong><br />No separate lecture; single-table analysis, keys, joins vs. relationships, and multi-table data</td>
-      <td style="text-align: left"><strong>One lab across both meetings</strong><br />• Mon: Guided PostgreSQL connection, table relationships, data checks, and working Data Source<br />• Wed: Independent charts, annotations, bullet graph, Sunburst, map, and dashboard</td>
-      <td style="text-align: left"><strong>Database access: Oct 12–18 only</strong><br />One PDF due Sun, Oct 18, 11:59 p.m. Eastern Time.<br /><strong>Late submissions are not accepted.</strong></td>
+      <td style="text-align: left"><strong>Extended Lab: Tableau Flow and Ticket Sales Analysis</strong><br />No separate lecture; database joins, data checks, and calculated fields</td>
+      <td style="text-align: left"><strong>One lab across both meetings</strong><br />• Mon: Guided PostgreSQL connection through Tableau Flow; join TICKIT tables, clean data, calculate fields, publish and run the Flow to generate a Data Source<br />• Wed: Short instructor demonstration, followed by hands-on chart building and dashboard practice using the published Data Source; publish the Workbook</td>
+      <td style="text-align: left"><strong>Database access: Oct 12–16 only</strong><br />Publish Flow + generated Data Source + Workbook in <code class="language-plaintext highlighter-rouge">fall2026</code>; upload one PDF to Canvas by Fri, Oct 16, 11:59 p.m. Eastern Time.<br />Late work follows the standard syllabus penalty; after database access ends, students must use alternative TICKIT files if they need to rebuild the source.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>Week 9</strong><br />Oct 19 – 23</td>
