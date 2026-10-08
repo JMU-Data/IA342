@@ -5,7 +5,7 @@ title: "Syllabus - IA 342"
 
 # Syllabus - Fall 2026
 
-**Last updated: October 7, 2026**  
+**Last updated: October 8, 2026**  
 *Revision: Weeks 8–17 schedule, final-project workflow, and AI-use policy. The revised AI policy applies to coursework assigned on or after this date; previously completed work is governed by its original instructions.*
 
 **Course:** IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis  
@@ -65,7 +65,7 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 
 - **Before Deadline:** You are allowed to resubmit assignments multiple times before the deadline. Only the final pre-deadline submission will be graded.
 - **Late Penalty:** Late submissions incur a **10% penalty per day**, capped at a maximum 40% penalty, unless prior approval is obtained from the instructor.
-- **Week 8 Lab Exception:** Database access is limited to October 12–18, 2026. Submit one PDF by Sunday, October 18, at 11:59 p.m. Eastern Time. **Late submissions are not accepted for this lab.**
+- **Week 8 Lab Exception:** Database access is limited to October 12–16, 2026. Publish your Tableau Flow, its generated Data Source, and Workbook in the course project; submit one PDF to Canvas by **Friday, October 16, at 11:59 p.m. Eastern Time**. **Late submissions are not accepted for this lab.**
 - **Final Exam Week:** **No late submissions** are accepted during final exam week.
 - **Projects:** Late submissions/resubmissions of the class projects will not be accepted.
 
@@ -97,7 +97,7 @@ In the event of inclement weather or university closures, we will follow the off
 
 ## Course Schedule (Fall 2026)
 
-*Schedule updated: October 7, 2026*
+*Schedule updated: October 8, 2026*
 
 Weeks 9–11 follow a consistent pattern: **Monday combines a focused explanation with a guided in-class exercise; Wednesday is an independent lab with instructor support.** Week 8 is one extended lab with no separate lecture. In this course, Tableau Online refers to the course Tableau Cloud site. Tableau Flow means a Tableau Prep data-preparation flow; Google Flow in Week 13 is the separate video-generation tool.
 
@@ -110,7 +110,7 @@ Weeks 9–11 follow a consistent pattern: **Monday combines a focused explanatio
 | **Week 5**<br>Sep 21 – 25 | **Choosing and Critiquing Graphs**<br>Chart-selection principles; histograms, box plots, scatter/line/bar charts, axes/scales; identifying misleading visualizations | **Get Started with Tableau**<br>Data connection, basic sheets (bar, scatter), simple dashboard construction, and publishing workflow | Visual critique & core Tableau workflow |
 | **Week 6**<br>Sep 28 – Oct 2 | **Data Preparation for Visual Analytics**<br>ETL pipelines, data quality, OLTP vs. OLAP, dimensions vs. measures, live vs. extract connections | **Tableau Prep / Tableau Flow**<br>Clean, transform, null handling, standardizing values, calculated fields, split, union, join, and outputting clean data | Data cleaning & preparation pipelines |
 | **Week 7**<br>Oct 5 – 9 | **MINI PROJECT: ArcGIS Spatial Visualization**<br>Project kickoff, clinic, and instructor support *(No new lecture)* | **Mini Project Clinic & Studio**<br>[IA342 Mini Project](../assignments/mini-project/): Explore a randomly assigned U.S. state in ArcGIS Business Analyst & ArcGIS Dashboards with a thematic map, one analysis-result map (Benchmark, Suitability, or Nearby), interactive widget, and concise write-up | *Fall Break begins Wed, Oct 7*<br>*(Mon session: Project Clinic)*<br>**Mini Project Due** (Tue, Oct 6) → Public Dashboard URL |
-| **Week 8**<br>Oct 12 – 16 | **Extended Lab: Ticket Sales with PostgreSQL and Tableau**<br>No separate lecture; single-table analysis, keys, joins vs. relationships, and multi-table data | **One lab across both meetings**<br>• Mon: Guided PostgreSQL connection, table relationships, data checks, and working Data Source<br>• Wed: Independent charts, annotations, bullet graph, Sunburst, map, and dashboard | **Database access: Oct 12–18 only**<br>One PDF due Sun, Oct 18, 11:59 p.m. Eastern Time.<br>**Late submissions are not accepted.** |
+| **Week 8**<br>Oct 12 – 16 | **Extended Lab: Tableau Flow and Ticket Sales Analysis**<br>No separate lecture; database joins, data checks, and calculated fields | **One lab across both meetings**<br>• Mon: Guided PostgreSQL connection through Tableau Flow; join TICKIT tables, clean data, calculate fields, publish and run the Flow to generate a Data Source<br>• Wed: Independently build worksheets, visualizations, and a dashboard from the published Data Source; publish the Workbook | **Database access: Oct 12–16 only**<br>Publish Flow + generated Data Source + Workbook in `fall2026`; upload one PDF to Canvas by Fri, Oct 16, 11:59 p.m. Eastern Time.<br>**Late submissions are not accepted.** |
 | **Week 9**<br>Oct 19 – 23 | **Visual Analytics in Tableau**<br>Drill-down, sort, group, sets, filters, trend/reference lines, parameters, and interactive exploration | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Visual Analytics lab**<br>Parameters, sets, set actions, tooltips, interactive scatter plots, and mapping | Meaningful interaction and evidence-based exploration |
 | **Week 10**<br>Oct 26 – 30 | **Dashboard Design**<br>Directed vs. exploratory discovery, KPIs, visual hierarchy, layout containers, eye-scanning, 5-second test, Shaffer 4Cs, Tufte/KISS principles | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Dashboard Design lab**<br>Coordinated views, layout, interactivity, dynamic titles, device layouts, and publishing | Usability, visual hierarchy, and consistent filter behavior |
 | **Week 11**<br>Nov 2 – 6 | **Calculations in Tableau**<br>Basic calculations, date/string/logical functions, aggregate calculations, table calculations (scope/direction), LOD expressions (FIXED, INCLUDE, EXCLUDE) | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Calculations lab**<br>Calculated metrics, rates, moving averages, table calculations, and LOD; verify aggregation and denominators | Calculations must be used and interpreted in the visualizations |
