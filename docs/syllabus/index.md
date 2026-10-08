@@ -6,7 +6,7 @@ title: "Syllabus - IA 342"
 # Syllabus - Fall 2026
 
 **Last updated: October 8, 2026**  
-*Revision: Weeks 8–17 schedule, final-project workflow, and AI-use policy. The revised AI policy applies to coursework assigned on or after this date; previously completed work is governed by its original instructions.*
+*Week 8 workflow and deadline corrected October 8; other policies retain their stated effective dates.*
 
 **Course:** IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis  
 **Term:** Fall 2026  
