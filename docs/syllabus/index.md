@@ -5,8 +5,8 @@ title: "Syllabus - IA 342"
 
 # Syllabus - Fall 2026
 
-**Last updated: October 7, 2026**  
-*Revision: Weeks 8–17 schedule, final-project workflow, and AI-use policy. The revised AI policy applies to coursework assigned on or after this date; previously completed work is governed by its original instructions.*
+**Last updated: October 8, 2026**  
+*Revision: Week 8 workflow/deadline and grading, feedback, and resubmission rules. The AI use policy retains its October 7, 2026 update date.*
 
 **Course:** IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis  
 **Term:** Fall 2026  
@@ -63,11 +63,22 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 
 ## Resubmission / Late Work / Project Policy
 
-- **Before Deadline:** You are allowed to resubmit assignments multiple times before the deadline. Only the final pre-deadline submission will be graded.
+- **Before Deadline:** You may submit or revise your work multiple times before the deadline without a late penalty. The latest on-time version is used unless you choose to have a permitted later revision evaluated.
 - **Late Penalty:** Late submissions incur a **10% penalty per day**, capped at a maximum 40% penalty, unless prior approval is obtained from the instructor.
-- **Week 8 Lab Exception:** Database access is limited to October 12–18, 2026. Submit one PDF by Sunday, October 18, at 11:59 p.m. Eastern Time. **Late submissions are not accepted for this lab.**
 - **Final Exam Week:** **No late submissions** are accepted during final exam week.
 - **Projects:** Late submissions/resubmissions of the class projects will not be accepted.
+
+## Automated Checks, Feedback, and Submission Timing
+
+*Updated October 8, 2026.*
+
+**Deterministic checks and instructor grading.** The instructor uses Python scripts for deterministic assignment checks, not generative AI to grade or modify student work. These scripts may post automatic comments that flag items for the instructor's manual review. Automated comments are not final grading decisions. The instructor determines grades and provides grading comments explaining point deductions.
+
+**Feedback does not require a revision.** Automatic check comments and instructor grading comments explain the review results; they do not mean you must revise and resubmit your work.
+
+**Late revisions, including after grading.** For labs and other assignments that permit late work, you may submit a revision after the deadline, including after a grade has been posted. If you want that revised version evaluated, the syllabus late penalty (**10% per day, up to 40%**) applies. A higher unpenalized score does not guarantee a higher final score after the penalty; resubmission is your choice. **Projects and final-exam-week submissions remain subject to their separate no-late/no-resubmission restrictions.**
+
+**Effective submission time.** For the version of an assignment being graded, the official submission time is the **later of the Canvas submission timestamp and the latest modification timestamp of any required external work used in that version** (for example, GitHub files or Tableau Flows, Data Sources, and Workbooks). A GitHub or Tableau change made after the deadline is a **late revision if the updated work is used for grading**, even when the Canvas submission was on time. Do not overwrite on-time work after the deadline if you want the original version evaluated; an earlier Canvas timestamp does not make later edits on time.
 
 ## Technical Assignment Support
 
@@ -97,7 +108,7 @@ In the event of inclement weather or university closures, we will follow the off
 
 ## Course Schedule (Fall 2026)
 
-*Schedule updated: October 7, 2026*
+*Schedule updated: October 8, 2026*
 
 Weeks 9–11 follow a consistent pattern: **Monday combines a focused explanation with a guided in-class exercise; Wednesday is an independent lab with instructor support.** Week 8 is one extended lab with no separate lecture. In this course, Tableau Online refers to the course Tableau Cloud site. Tableau Flow means a Tableau Prep data-preparation flow; Google Flow in Week 13 is the separate video-generation tool.
 
@@ -110,7 +121,7 @@ Weeks 9–11 follow a consistent pattern: **Monday combines a focused explanatio
 | **Week 5**<br>Sep 21 – 25 | **Choosing and Critiquing Graphs**<br>Chart-selection principles; histograms, box plots, scatter/line/bar charts, axes/scales; identifying misleading visualizations | **Get Started with Tableau**<br>Data connection, basic sheets (bar, scatter), simple dashboard construction, and publishing workflow | Visual critique & core Tableau workflow |
 | **Week 6**<br>Sep 28 – Oct 2 | **Data Preparation for Visual Analytics**<br>ETL pipelines, data quality, OLTP vs. OLAP, dimensions vs. measures, live vs. extract connections | **Tableau Prep / Tableau Flow**<br>Clean, transform, null handling, standardizing values, calculated fields, split, union, join, and outputting clean data | Data cleaning & preparation pipelines |
 | **Week 7**<br>Oct 5 – 9 | **MINI PROJECT: ArcGIS Spatial Visualization**<br>Project kickoff, clinic, and instructor support *(No new lecture)* | **Mini Project Clinic & Studio**<br>[IA342 Mini Project](../assignments/mini-project/): Explore a randomly assigned U.S. state in ArcGIS Business Analyst & ArcGIS Dashboards with a thematic map, one analysis-result map (Benchmark, Suitability, or Nearby), interactive widget, and concise write-up | *Fall Break begins Wed, Oct 7*<br>*(Mon session: Project Clinic)*<br>**Mini Project Due** (Tue, Oct 6) → Public Dashboard URL |
-| **Week 8**<br>Oct 12 – 16 | **Extended Lab: Ticket Sales with PostgreSQL and Tableau**<br>No separate lecture; single-table analysis, keys, joins vs. relationships, and multi-table data | **One lab across both meetings**<br>• Mon: Guided PostgreSQL connection, table relationships, data checks, and working Data Source<br>• Wed: Independent charts, annotations, bullet graph, Sunburst, map, and dashboard | **Database access: Oct 12–18 only**<br>One PDF due Sun, Oct 18, 11:59 p.m. Eastern Time.<br>**Late submissions are not accepted.** |
+| **Week 8**<br>Oct 12 – 16 | **Extended Lab: Tableau Flow and Ticket Sales Analysis**<br>No separate lecture; database joins, data checks, and calculated fields | **One lab across both meetings**<br>• Mon: Guided PostgreSQL connection through Tableau Flow; join TICKIT tables, clean data, calculate fields, publish and run the Flow to generate a Data Source<br>• Wed: Short instructor demonstration, followed by hands-on chart building and dashboard practice using the published Data Source; publish the Workbook | **Database access: Oct 12–16 only**<br>Publish Flow + generated Data Source + Workbook in `fall2026`; upload one PDF to Canvas by Fri, Oct 16, 11:59 p.m. Eastern Time.<br>Late work follows the standard syllabus penalty; after database access ends, students must use alternative TICKIT files if they need to rebuild the source. |
 | **Week 9**<br>Oct 19 – 23 | **Visual Analytics in Tableau**<br>Drill-down, sort, group, sets, filters, trend/reference lines, parameters, and interactive exploration | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Visual Analytics lab**<br>Parameters, sets, set actions, tooltips, interactive scatter plots, and mapping | Meaningful interaction and evidence-based exploration |
 | **Week 10**<br>Oct 26 – 30 | **Dashboard Design**<br>Directed vs. exploratory discovery, KPIs, visual hierarchy, layout containers, eye-scanning, 5-second test, Shaffer 4Cs, Tufte/KISS principles | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Dashboard Design lab**<br>Coordinated views, layout, interactivity, dynamic titles, device layouts, and publishing | Usability, visual hierarchy, and consistent filter behavior |
 | **Week 11**<br>Nov 2 – 6 | **Calculations in Tableau**<br>Basic calculations, date/string/logical functions, aggregate calculations, table calculations (scope/direction), LOD expressions (FIXED, INCLUDE, EXCLUDE) | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Calculations lab**<br>Calculated metrics, rates, moving averages, table calculations, and LOD; verify aggregation and denominators | Calculations must be used and interpreted in the visualizations |
