@@ -50,7 +50,7 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 - **Attendance:** 20%
 - **Labs:** 40%
 - **Mini Project:** 10%
-- **Google AI Skills:** 10% ([Google Skills Hands-on Lab Assignment](../assignments/google-skills/): this is a **100-point Canvas assignment**. One distinct passed hands-on Lab = **30/100 points**; two = **60/100**; three or more = **100/100**. Only activities with **Type: Lab** and **Passed** status count. Students must use the JMU-email-registered Google account enrolled in the instructor's **shared 5,000-credit pool**. The Lab completions and single screenshot upload are both due **Dec 12, 2026, at 11:59 PM ET**.)
+- **Google AI Skills:** 10% ([Google Skills Hands-on Lab Assignment](../assignments/google-skills/): this is a **100-point Canvas assignment**. One distinct passed hands-on Lab = **30/100 points**; two = **60/100**; three or more = **100/100**. Only activities with **Type: Lab** and **Passed** status count. Students must use the JMU-email-registered Google account enrolled in the instructor's **shared 5,000-credit pool**. The Lab completions and single screenshot upload must both be completed **by the due date and time shown in Canvas**; late work is not accepted.)
 - **Final Project:** 20%
 
 ## Letter-Grade Scale
