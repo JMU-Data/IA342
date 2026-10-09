@@ -31,7 +31,7 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 
 - **Textbook:** Wei, Xuebin, and Xinyue Ye. *Social Data Analytics in the Cloud with AI*. CRC Press / Routledge, 2024.  
   **Access:** [Official Textbook URL](https://www.taylorfrancis.com/books/mono/10.1201/9781003437611/social-data-analytics-cloud-ai-xuebin-wei-xinyue-ye) *(Freely accessible via JMU Wi-Fi or by logging in with a JMU account.)*
-- **Google Account (Required):** Students must register/create a Google account using their official **James Madison University email address** (`@dukes.jmu.edu` or `@jmu.edu`). This is required for the instructor to grant access to the shared Google Cloud credits pool and enroll students in Google AI Skills modules.
+- **Google Account (Required):** Students must use the **Google account registered with their JMU email address** (`@dukes.jmu.edu` or `@jmu.edu`) that the instructor enrolled in the **shared 5,000 Google Skills credit pool**. Do not use a different, unenrolled personal Gmail account for the Google Skills assignment; check access to the course program and credits before starting.
 - **ArcGIS & Tableau (Required):** Provided through JMU institutional licensing and SSO.
 - **AI Tools:** Use only AI tools and features explicitly authorized for the relevant course activity. Google AI Pro is optional. See [AI Policy](#ai-policy).
 
@@ -50,7 +50,7 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 - **Attendance:** 20%
 - **Labs:** 40%
 - **Mini Project:** 10%
-- **Google AI Skills:** 10% ([Google Skills Hands-on Lab Assignment](../assignments/google-skills/): 1 passed Lab = 3%, 2 passed Labs = 6%, 3 or more = 10%. Only activities with Type: Lab and Passed status count; screenshot evidence is due Dec 12, 2026, at 11:59 PM ET.)
+- **Google AI Skills:** 10% ([Google Skills Hands-on Lab Assignment](../assignments/google-skills/): this is a **100-point Canvas assignment**. One distinct passed hands-on Lab = **30/100 points**; two = **60/100**; three or more = **100/100**. Only activities with **Type: Lab** and **Passed** status count. Students must use the JMU-email-registered Google account enrolled in the instructor's **shared 5,000-credit pool**. The Lab completions and single screenshot upload are both due **Dec 12, 2026, at 11:59 PM ET**.)
 - **Final Project:** 20%
 
 ## Letter-Grade Scale
