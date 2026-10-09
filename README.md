@@ -27,6 +27,7 @@
 - [Lab 5](docs/assignments/lab-5/index.md)
 - [Module 6](docs/modules/module-6/index.md)
 - [Lab 6](docs/assignments/lab-6/index.md)
+- [Google Skills Hands-on Lab Assignment](docs/assignments/google-skills/index.md)
 
 ## Course Overview
 

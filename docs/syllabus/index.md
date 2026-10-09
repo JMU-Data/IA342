@@ -50,7 +50,7 @@ IA 342 focuses on Data Visualization, Business Intelligence, Visual Analytics, a
 - **Attendance:** 20%
 - **Labs:** 40%
 - **Mini Project:** 10%
-- **Google AI Skills:** 10% (Requires completing at least three Google AI Skills modules. The instructor will share a 5,000 Google Cloud credits pool with students.)
+- **Google AI Skills:** 10% ([Google Skills Hands-on Lab Assignment](../assignments/google-skills/): 1 passed Lab = 3%, 2 passed Labs = 6%, 3 or more = 10%. Only activities with Type: Lab and Passed status count; screenshot evidence is due Dec 12, 2026, at 11:59 PM ET.)
 - **Final Project:** 20%
 
 ## Letter-Grade Scale
