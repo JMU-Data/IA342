@@ -36,7 +36,7 @@ Complete up to **three or more distinct hands-on Labs** in [Google Skills](https
 3. For each Lab you want to count, verify the activity **name**, **Type: Lab**, **Date finished**, and **Passed** checkmark.
 4. Open the profile menu so your **full name** is visible at the same time as your completed Lab rows.
 
-**You do not need a 100% score.** A result such as **95% with the green Passed checkmark** qualifies.
+**Only the green Passed checkmark matters.** There is **no minimum percentage score** for this assignment. If Google Skills marks a hands-on Lab as **Passed**, it counts—regardless of the score displayed. **You do not need a 100% score.**
 
 **Example 2 — Progress: the account name and three distinct passed Labs are visible.**
 
