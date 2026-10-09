@@ -7,7 +7,7 @@ title: "Google Skills Hands-on Labs - IA 342"
 
 **IA342 · Fall 2026 · 100 Canvas points · Google AI Skills (10% of your final course grade)**
 
-**Deadline: Saturday, December 12, 2026, at 11:59 PM Eastern Time.** All qualifying Labs must be **completed and passed**, and your evidence screenshot must be **uploaded to Canvas**, before this deadline. **No late submissions are accepted.**
+**Deadline:** Follow the **due date and time shown in Canvas**. All qualifying Labs must be **completed and passed**, and your evidence screenshot must be **uploaded to Canvas**, by that deadline. **Late Lab completions and late Canvas submissions are not accepted.**
 
 ## Assignment
 
@@ -68,6 +68,6 @@ You may adjust browser zoom so the relevant rows and your name fit on one screen
 
 Only distinct Labs showing **Type: Lab** and **Passed** before the deadline count. Any Lab completed after the deadline, unpassed activity, non-Lab format, or unverifiable Lab does not count. If the required identity or completion details are missing from the screenshot, credit for affected Labs cannot be verified.
 
-**Complete both requirements by December 12, 2026, at 11:59 PM ET:** (1) finish and pass the qualifying Labs; (2) upload your one screenshot to Canvas. Late submissions or late Lab completions are not accepted.
+**Complete both requirements by the due date and time shown in Canvas:** (1) finish and pass the qualifying Labs; (2) upload your one screenshot to Canvas. Late submissions or late Lab completions are not accepted.
 
 [Return to the IA342 course home](../../)
