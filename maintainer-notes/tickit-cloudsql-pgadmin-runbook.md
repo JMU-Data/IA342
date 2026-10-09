@@ -138,7 +138,7 @@ function Repair-TickitFile {
   param([string]$Source, [string]$Target,
         [char]$Separator, [int]$Columns, [int]$ExpectedRows)
   $raw = [System.IO.File]::ReadAllText($Source)
-  $rows = @($raw.Replace([char]13, '').Split([char]10) |
+  $rows = @($raw.Replace([string][char]13, '').Split([char]10) |
             Where-Object { $_ -ne '' })
   $bad = @($rows | Where-Object {
     $_.Split([char]$Separator).Count -ne $Columns
