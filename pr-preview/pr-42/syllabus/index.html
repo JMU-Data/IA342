@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Syllabus - IA 342","url":"https://jmu-data.github.io/IA342/pr-preview/pr-42/syllabus/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/IA342/pr-preview/pr-42/assets/css/style.css?v=be9c93e48c15a72b405bf4c9c30ea02e483db971">
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-42/assets/css/style.css?v=dad471cfbdc7df38c28829eb2ac7573b609a718c">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -44,7 +44,7 @@
       <h1 id="syllabus---fall-2026">Syllabus - Fall 2026</h1>
 
 <p><strong>Last updated: October 9, 2026</strong><br />
-<em>Revision: Week 8 uses a published Tableau Extract and three Tableau Cloud deliverables, without a PDF submission. The AI use policy retains its October 7, 2026 update date.</em></p>
+<em>Revision: Week 8 uses a Live multi-table Data Source with Relationships; students publish a Data Source and Workbook and submit one PDF. The AI use policy retains its October 7, 2026 update date.</em></p>
 
 <p><strong>Course:</strong> IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis<br />
 <strong>Term:</strong> Fall 2026<br />
@@ -257,9 +257,9 @@
     </tr>
     <tr>
       <td style="text-align: left"><strong>Week 8</strong><br />Oct 12 – 16</td>
-      <td style="text-align: left"><strong>Extended Lab: Tableau Flow and Ticket Sales Analysis</strong><br />No separate lecture; database joins, data checks, and calculated fields</td>
-      <td style="text-align: left"><strong>One lab across both meetings</strong><br />• Mon: Guided PostgreSQL connection through Tableau Flow; join TICKIT tables, clean data, complete Flow calculations, publish and run the Flow to generate an Extract Data Source<br />• Wed: Short instructor demonstration, then build five chart worksheets and an interactive dashboard in a Workbook using the published Extract</td>
-      <td style="text-align: left"><strong>Database access: Oct 12–16 only; instance stops after the Friday deadline.</strong><br />Publish <strong>Flow + Extract Data Source + Workbook</strong> in <code class="language-plaintext highlighter-rouge">fall2026</code> by Fri, Oct 16, 11:59 p.m. Eastern Time. <strong>No PDF or Canvas upload for this lab.</strong><br />Existing Extracts remain usable after shutdown; students who must rerun an unfinished Flow are responsible for replacing its database Inputs with AWS TICKIT files. Late penalties follow the syllabus.<br /><small>Instructor setup reference: <a href="https://github.com/JMU-Data/IA342/blob/main/maintainer-notes/tickit-cloudsql-pgadmin-runbook.md">TICKIT Cloud SQL / pgAdmin runbook</a>.</small></td>
+      <td style="text-align: left"><strong>Extended Lab: Tableau Relationships and Ticket Sales Analysis</strong><br />No separate lecture; table grain, relationships, and calculated fields</td>
+      <td style="text-align: left"><strong>One lab across both meetings</strong><br />• Mon: Connect PostgreSQL directly to a published Data Source; define six logical tables and five Relationships, check cardinality and totals, create calculations, and publish with a Live connection<br />• Wed: Short demonstration and hands-on visualization practice; create five chart worksheets and a dashboard in a Workbook, then export results to PDF</td>
+      <td style="text-align: left"><strong>Database access: Oct 12–16 only; instance stops after the Friday deadline.</strong><br />Publish <strong>Data Source + Workbook</strong> in <code class="language-plaintext highlighter-rouge">fall2026</code> and submit <strong>one PDF</strong> to Canvas by Fri, Oct 16, 11:59 p.m. Eastern Time.<br />Complete the work in class where possible. After shutdown, unfinished work requires preparing the original TICKIT files as separate tables and rebuilding the Relationships Data Source. Normal late penalties apply.<br /><small>Instructor setup reference: <a href="https://github.com/JMU-Data/IA342/blob/main/maintainer-notes/tickit-cloudsql-pgadmin-runbook.md">TICKIT Cloud SQL / pgAdmin runbook</a>.</small></td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>Week 9</strong><br />Oct 19 – 23</td>
