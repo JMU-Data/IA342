@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Lab 8: Ticket Sales Visualization with Tableau Relationships - IA342 | IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Lab 8: Ticket Sales Visualization with Tableau Relationships - IA342" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<meta property="og:description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<link rel="canonical" href="https://jmu-data.github.io/IA342/pr-preview/pr-42/assignments/lab-8/" />
+<meta property="og:url" content="https://jmu-data.github.io/IA342/pr-preview/pr-42/assignments/lab-8/" />
+<meta property="og:site_name" content="IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Lab 8: Ticket Sales Visualization with Tableau Relationships - IA342" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Lab 8: Ticket Sales Visualization with Tableau Relationships - IA342","url":"https://jmu-data.github.io/IA342/pr-preview/pr-42/assignments/lab-8/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-42/assets/css/style.css?v=396c95b4846a31d0c5141b648657cebdfc84797d">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/IA342/pr-preview/pr-42/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://jmu-data.github.io/IA342/pr-preview/pr-42/">IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</a></h1>
+      
+
+      <h1 id="week-8-lab--ticket-sales-visualization-with-tableau-relationships">Week 8 Lab — Ticket Sales Visualization with Tableau Relationships</h1>
+
+<p><strong>IA342 · Week 8 · October 12 and 14, 2026</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Requirement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Monday</td>
+      <td>Create and publish a Live <strong>Data Source</strong> with six related tables</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td>Create five charts and one <strong>Dashboard</strong> in a Workbook</td>
+    </tr>
+    <tr>
+      <td>Deadline</td>
+      <td><strong>Friday, October 16, 2026, 11:59 p.m. Eastern Time</strong></td>
+    </tr>
+    <tr>
+      <td>Submission</td>
+      <td>Publish your <strong>Data Source and Workbook</strong> in <code class="language-plaintext highlighter-rouge">fall2026</code>, and submit <strong>one PDF</strong> to Canvas</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Strongly recommended:</strong> finish the Data Source on Monday and the Dashboard/PDF on Wednesday. The class PostgreSQL database will be stopped after Friday’s deadline. Starting again from raw files later is much more tedious.</p>
+
+<p>Name your work <code class="language-plaintext highlighter-rouge">firstname_lastname_week8_tickit_data</code>, <code class="language-plaintext highlighter-rouge">firstname_lastname_week8_tickit_workbook</code>, and <code class="language-plaintext highlighter-rouge">firstname_lastname_week8_tickit.pdf</code>. Substitute your own first and last names.</p>
+
+<h2 id="dataset">Dataset</h2>
+
+<p>Use the class PostgreSQL connection: database <strong><code class="language-plaintext highlighter-rouge">postgres</code></strong>, schema <strong><code class="language-plaintext highlighter-rouge">public</code></strong>, username <strong><code class="language-plaintext highlighter-rouge">demo</code></strong>. Find the server address and password in <strong>Canvas</strong>; do not put credentials in your PDF or public files.</p>
+
+<ul>
+  <li><a href="https://dataedo.com/samples/html/Tickit/doc/Tickit_16/modules/Tickit_diagram_136/module.html">TICKIT ER diagram</a></li>
+  <li><a href="https://docs.aws.amazon.com/redshift/latest/gsg/samples/tickitdb.zip">AWS TICKIT data download (ZIP)</a> · <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_sampledb.html">Table and field definitions</a></li>
+</ul>
+
+<p>The full TICKIT database has seven tables, but <strong>this Lab uses six</strong>: <code class="language-plaintext highlighter-rouge">sales</code>, <code class="language-plaintext highlighter-rouge">listing</code>, <code class="language-plaintext highlighter-rouge">event</code>, <code class="language-plaintext highlighter-rouge">category</code>, <code class="language-plaintext highlighter-rouge">venue</code>, and <code class="language-plaintext highlighter-rouge">users</code>. The seventh table, <code class="language-plaintext highlighter-rouge">date</code>, is not needed.</p>
+
+<hr />
+
+<h1 id="monday--build-the-data-source">Monday — Build the Data Source</h1>
+
+<h2 id="1-connect-to-postgresql">1. Connect to PostgreSQL</h2>
+
+<p>In Tableau Cloud, open the <strong><code class="language-plaintext highlighter-rouge">fall2026</code></strong> project → <strong>New → Published Data Source</strong> → <strong>PostgreSQL</strong>. Enter the Canvas connection details and choose <code class="language-plaintext highlighter-rouge">postgres</code> / <code class="language-plaintext highlighter-rouge">public</code>.</p>
+
+<h2 id="2-add-six-separate-tables">2. Add six separate tables</h2>
+
+<p>Drag <code class="language-plaintext highlighter-rouge">sales</code>, <code class="language-plaintext highlighter-rouge">listing</code>, <code class="language-plaintext highlighter-rouge">event</code>, <code class="language-plaintext highlighter-rouge">category</code>, <code class="language-plaintext highlighter-rouge">venue</code>, and <code class="language-plaintext highlighter-rouge">users</code> onto the top-level <strong>Data Source</strong> canvas. Keep them as <strong>separate logical tables</strong> connected by Relationships—not physical joins or a Tableau Flow.</p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/01-relationships.png" alt="Six-table Tableau Relationships model" /></p>
+
+<h2 id="3-define-five-relationships">3. Define five Relationships</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Relationship fields</th>
+      <th>Cardinality</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sales.listid</code> = <code class="language-plaintext highlighter-rouge">listing.listid</code></td>
+      <td>Many → One</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">listing.eventid</code> = <code class="language-plaintext highlighter-rouge">event.eventid</code></td>
+      <td>Many → One</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">event.catid</code> = <code class="language-plaintext highlighter-rouge">category.catid</code></td>
+      <td>Many → One</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">event.venueid</code> = <code class="language-plaintext highlighter-rouge">venue.venueid</code></td>
+      <td>Many → One</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sales.sellerid</code> = <code class="language-plaintext highlighter-rouge">users.userid</code></td>
+      <td>Many → One</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Use <code class="language-plaintext highlighter-rouge">sales.sellerid</code> (seller), <strong>not</strong> <code class="language-plaintext highlighter-rouge">sales.buyerid</code>. Your canvas should have <strong>six tables and five relationship lines</strong>.</p>
+
+<h2 id="4-set-one-to-many-relationships">4. Set One-to-Many Relationships</h2>
+
+<p>For each relationship, set the <strong>Many</strong> side and the <strong>One</strong> side as shown in the table and example screenshot. Keep <strong>Some records match</strong> as the matching setting.</p>
+
+<h2 id="5-organize-the-fields">5. Organize the fields</h2>
+
+<p>In the Data Source <strong>Scratchpad</strong>, change IDs such as <code class="language-plaintext highlighter-rouge">Salesid</code> to <strong>Dimensions</strong>. Assign <code class="language-plaintext highlighter-rouge">Venuecity</code> the geographic role <strong>City</strong> and <code class="language-plaintext highlighter-rouge">Venuestate</code> <strong>State/Province</strong>. Set monetary fields (<code class="language-plaintext highlighter-rouge">Pricepaid</code>, <code class="language-plaintext highlighter-rouge">Commission</code>, <code class="language-plaintext highlighter-rouge">Totalprice</code>) to <strong>USD ($)</strong>.</p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/02-usd-format.png" alt="Set monetary field formatting to USD" /></p>
+
+<h2 id="6-create-two-calculated-fields">6. Create two calculated fields</h2>
+
+<p>Use <strong>Create Calculated Field</strong> and enter the exact names (including underscores and capitalization):</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">Seller_Proceeds</code></strong> — used in the map:</p>
+
+<pre><code class="language-tableau">[Pricepaid] - [Commission]
+</code></pre>
+
+<p><strong><code class="language-plaintext highlighter-rouge">Realized_Price_per_Ticket</code></strong> — used in the Scatter Plot tooltip:</p>
+
+<pre><code class="language-tableau">IF [Qtysold] &gt; 0 THEN
+    [Pricepaid] / [Qtysold]
+END
+</code></pre>
+
+<p>Both calculations use fields from <code class="language-plaintext highlighter-rouge">sales</code>. <code class="language-plaintext highlighter-rouge">Pricepaid</code> is already the <strong>total amount paid per sale</strong>, so do not multiply it by <code class="language-plaintext highlighter-rouge">Qtysold</code>.</p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/03-seller-proceeds.png" alt="Formula for Seller_Proceeds" /></p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/04-realized-ticket-price.png" alt="Formula for Realized_Price_per_Ticket" /></p>
+
+<h2 id="7-create-two-hierarchies">7. Create two Hierarchies</h2>
+
+<ul>
+  <li>In <code class="language-plaintext highlighter-rouge">category</code>, <strong>drag <code class="language-plaintext highlighter-rouge">Catname</code> onto <code class="language-plaintext highlighter-rouge">Catgroup</code></strong> to create a hierarchy. Name it <strong><code class="language-plaintext highlighter-rouge">Category</code></strong> (<code class="language-plaintext highlighter-rouge">Catgroup → Catname</code>).</li>
+  <li>In <code class="language-plaintext highlighter-rouge">venue</code>, <strong>drag <code class="language-plaintext highlighter-rouge">Venuecity</code> onto <code class="language-plaintext highlighter-rouge">Venuestate</code></strong>. Name the hierarchy <strong><code class="language-plaintext highlighter-rouge">Venue_Location</code></strong> (<code class="language-plaintext highlighter-rouge">Venuestate → Venuecity</code>).</li>
+</ul>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/05-category-hierarchy.png" alt="Build the Category hierarchy" /></p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/06-location-hierarchy.png" alt="Build the Venue_Location hierarchy" /></p>
+
+<h2 id="8-quick-data-check">8. Quick Data Check</h2>
+
+<p>In the Scratchpad, drag fields onto <strong>Marks → Text</strong> to see their results:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">sales</code>: drag <strong><code class="language-plaintext highlighter-rouge">Salesid</code> → Count</strong> and <strong><code class="language-plaintext highlighter-rouge">Pricepaid</code> → Sum</strong> to Text. Expected sales count: <strong>172,456</strong>.</li>
+  <li>Clear the Text shelf, then use <code class="language-plaintext highlighter-rouge">listing</code>: drag <strong><code class="language-plaintext highlighter-rouge">Listid</code> → Count</strong> and <strong><code class="language-plaintext highlighter-rouge">Totalprice</code> → Sum</strong> to Text. Expected listing count: <strong>192,497</strong>.</li>
+</ul>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/07-quick-table-check.png" alt="Scratchpad Text marks displaying a table count and total" /></p>
+
+<h2 id="9-publish-the-data-source">9. Publish the Data Source</h2>
+
+<p>Select <strong>Live</strong> and publish as <strong><code class="language-plaintext highlighter-rouge">firstname_lastname_week8_tickit_data</code></strong> to <strong><code class="language-plaintext highlighter-rouge">fall2026</code></strong>. In the Publish dialog, <strong>check <code class="language-plaintext highlighter-rouge">Embed credentials</code></strong>, so your Workbook can reuse this connection. Confirm the Data Source appears in the course project.</p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/08-publish-credentials.png" alt="Select fall2026 and Embed credentials before publishing" /></p>
+
+<hr />
+
+<h1 id="wednesday--build-the-workbook-and-dashboard">Wednesday — Build the Workbook and Dashboard</h1>
+
+<p><strong>Screenshot note:</strong> Screenshots illustrate Tableau controls. Some show draft chart titles; use the field names and final titles specified in these instructions.</p>
+
+<h2 id="10-open-your-workbook">10. Open your Workbook</h2>
+
+<p>In <code class="language-plaintext highlighter-rouge">fall2026</code>, open your published Data Source → <strong>New Workbook</strong>. Save as <strong><code class="language-plaintext highlighter-rouge">firstname_lastname_week8_tickit_workbook</code></strong>. Use this Data Source for all five worksheets.</p>
+
+<h2 id="11-chart-1--sales-revenue-by-category-bar-chart">11. Chart 1 — Sales Revenue by Category (Bar Chart)</h2>
+
+<p>Create <strong><code class="language-plaintext highlighter-rouge">01_Category_Revenue</code></strong>:</p>
+
+<ol>
+  <li>Drag the <strong>Category</strong> hierarchy to <strong>Rows</strong>, expand it to <code class="language-plaintext highlighter-rouge">Catname</code>.</li>
+  <li>Drag <strong><code class="language-plaintext highlighter-rouge">Pricepaid</code> → SUM</strong> to <strong>Columns</strong>; choose <strong>Bar</strong>.</li>
+  <li>Sort categories by revenue, show the dollar amount on <strong>Label</strong>, and add <strong>Percent of Total</strong> using <strong>Quick Table Calculation</strong>. Format the percent to <strong>one decimal place</strong>.</li>
+  <li>Give the chart the title <strong>Sales Revenue by Event Category</strong>.</li>
+</ol>
+
+<p><strong>In-class check:</strong> Which event category has the highest total <code class="language-plaintext highlighter-rouge">Pricepaid</code>?</p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/09-category-revenue.png" alt="Example category revenue labels and tooltip" /></p>
+
+<h2 id="12-chart-2--distribution-by-listing-total-price-histogram">12. Chart 2 — Distribution by Listing Total Price (Histogram)</h2>
+
+<p>Create <strong><code class="language-plaintext highlighter-rouge">02_Listing_Price_Distribution</code></strong>:</p>
+
+<ol>
+  <li>In the <strong><code class="language-plaintext highlighter-rouge">listing</code></strong> table, <strong>select <code class="language-plaintext highlighter-rouge">Totalprice</code> first</strong>, then <strong>Create → Bins</strong>.</li>
+  <li>Name it <strong><code class="language-plaintext highlighter-rouge">Totalprice (bin)</code></strong>. Set <strong>Bin Size = 500</strong>.</li>
+  <li>Put <strong><code class="language-plaintext highlighter-rouge">Totalprice (bin)</code></strong> on <strong>Columns</strong> and <strong><code class="language-plaintext highlighter-rouge">Salesid</code> → COUNT</strong> on <strong>Rows</strong>. Choose <strong>Bar</strong>.</li>
+  <li>Try bin sizes <strong>250</strong>, <strong>500</strong>, and <strong>1,000</strong>; return to <strong>500</strong> for the final chart.</li>
+  <li>Title it <strong>Sales Transactions by Listing Value — USD 500 Bins</strong>.</li>
+</ol>
+
+<p>The bars count sales transactions associated with listings in each dollar-value bin.</p>
+
+<p><strong>In-class check:</strong> Which $500 listing-value bin contains the most <code class="language-plaintext highlighter-rouge">Salesid</code> records?</p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/10-listing-price-bins.png" alt="Edit Totalprice bins with size 500" /></p>
+
+<h2 id="13-chart-2--add-running-total-percentage-and-a-line">13. Chart 2 — Add Running Total, Percentage, and a Line</h2>
+
+<p>Stay in <strong><code class="language-plaintext highlighter-rouge">02_Listing_Price_Distribution</code></strong>:</p>
+
+<ol>
+  <li>Copy <strong><code class="language-plaintext highlighter-rouge">CNT(Salesid)</code></strong> to <strong>Rows</strong> again. You will see <strong>two charts</strong>, one above the other.</li>
+  <li>On the <strong>second</strong> <code class="language-plaintext highlighter-rouge">CNT(Salesid)</code> pill, choose <strong>Quick Table Calculation → Running Total</strong>.</li>
+  <li>On that same second pill, open <strong>Edit Table Calculation</strong>, check <strong>Add secondary calculation</strong>, and choose <strong>Percent of Total</strong>. Set <strong>Compute Using → Table (Across)</strong> for both.</li>
+  <li>On the Marks cards, keep the <strong>first chart = Bar</strong> and change the <strong>second chart = Line</strong>.</li>
+  <li>On the second measure pill, choose <strong>Dual Axis</strong> to combine the charts. Keep the <strong>left axis as the number of sales</strong> and the <strong>right axis as a percentage</strong>.</li>
+  <li>Set <strong>Bar = blue</strong> and <strong>Line = yellow</strong>. The line should rise toward <strong>100%</strong> across the bins.</li>
+</ol>
+
+<p>The two axes use different units (count and percentage), so <strong>do not synchronize their numeric scales</strong>.</p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/11-cumulative-calculation.png" alt="Running Total with Percent of Total secondary calculation" /></p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/12-dual-axis-configuration.png" alt="Set the histogram and line to Dual Axis" /></p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/13-bar-line-colors.png" alt="Blue bars and orange-yellow cumulative line" /></p>
+
+<h2 id="14-chart-3--average-listing-vs-sale-amount-scatter-plot">14. Chart 3 — Average Listing vs. Sale Amount (Scatter Plot)</h2>
+
+<p>Create <strong><code class="language-plaintext highlighter-rouge">03_Venue_Amount_Comparison</code></strong>:</p>
+
+<ol>
+  <li>Put <strong><code class="language-plaintext highlighter-rouge">AVG(Totalprice)</code></strong> on <strong>Columns</strong> and <strong><code class="language-plaintext highlighter-rouge">AVG(Pricepaid)</code></strong> on <strong>Rows</strong>.</li>
+  <li>Put <strong><code class="language-plaintext highlighter-rouge">Venueid</code></strong> on <strong>Detail</strong> and <strong><code class="language-plaintext highlighter-rouge">Catname</code></strong> on <strong>Color</strong>. Choose <strong>Circle</strong> marks.</li>
+  <li>Add <strong><code class="language-plaintext highlighter-rouge">AVG(Realized_Price_per_Ticket)</code></strong> and venue details to the <strong>Tooltip</strong>.</li>
+  <li>From <strong>Analytics</strong>, add a <strong>Linear Trend Line</strong>.</li>
+  <li>Try changing the axis range/scale, then return to <strong>linear axes</strong>. Right-click an interesting high-value dot → <strong>Annotate → Mark</strong>.</li>
+  <li>Title: <strong>Average Listing Amount vs. Average Sale Amount by Venue and Category</strong>.</li>
+</ol>
+
+<p><strong>In-class check:</strong> Which venue has the highest average sale amount in this chart?</p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/14-scatter-plot.png" alt="Scatter Plot: compare average listing and sales amount by venue and category" /></p>
+
+<h2 id="15-chart-4--sales-vs-listings-by-seller-bullet-graph">15. Chart 4 — Sales vs. Listings by Seller (Bullet Graph)</h2>
+
+<p>Create <strong><code class="language-plaintext highlighter-rouge">04_Sales_vs_Listings_by_Seller</code></strong>:</p>
+
+<ol>
+  <li>Select <strong><code class="language-plaintext highlighter-rouge">users.Lastname</code></strong>, <strong><code class="language-plaintext highlighter-rouge">listing.Totalprice</code></strong>, and <strong><code class="language-plaintext highlighter-rouge">sales.Pricepaid</code></strong> together.</li>
+  <li>Choose <strong>Show Me → Bullet Graph</strong>.</li>
+  <li>Check that the <strong>bar represents <code class="language-plaintext highlighter-rouge">SUM(Pricepaid)</code></strong> and the reference marker shows <strong><code class="language-plaintext highlighter-rouge">SUM(Totalprice)</code></strong>.</li>
+  <li>Sort the sellers by <strong><code class="language-plaintext highlighter-rouge">SUM(Pricepaid)</code></strong>, highest first.</li>
+  <li>Drag <strong><code class="language-plaintext highlighter-rouge">Lastname</code> → Filters → Top/Bottom → Top 10 by <code class="language-plaintext highlighter-rouge">SUM(Totalprice)</code></strong>.</li>
+  <li>Title: <strong>Sales Revenue vs. Total Listing Value by Seller</strong>.</li>
+</ol>
+
+<p><strong>In-class check:</strong> Among the displayed Top 10 seller last names, which has the highest total <code class="language-plaintext highlighter-rouge">Pricepaid</code>?</p>
+
+<p><strong>Note:</strong> One last name may represent more than one person. Listing value and sales revenue describe different totals; this chart is a comparison, not profit.</p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/15-bullet-chart-selection.png" alt="Select Lastname, Totalprice, and Pricepaid for the Bullet Graph" /></p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/16-bullet-top-10.png" alt="Select Top 10 Lastname values by SUM Totalprice" /></p>
+
+<h2 id="16-chart-5--seller-proceeds-by-city-symbol-map">16. Chart 5 — Seller Proceeds by City (Symbol Map)</h2>
+
+<p>Create <strong><code class="language-plaintext highlighter-rouge">05_Proceeds_by_Venue_City</code></strong>:</p>
+
+<ol>
+  <li>Select <strong><code class="language-plaintext highlighter-rouge">Venuecity</code></strong> and <strong><code class="language-plaintext highlighter-rouge">Seller_Proceeds</code></strong>.</li>
+  <li>Choose <strong>Show Me → Symbol Map</strong>.</li>
+  <li>Put <strong><code class="language-plaintext highlighter-rouge">SUM(Seller_Proceeds)</code></strong> on <strong>Size</strong>, keep <strong><code class="language-plaintext highlighter-rouge">Venuestate</code></strong> on <strong>Detail</strong> for location context, and show the city/proceeds in the Tooltip.</li>
+  <li>Title: <strong>Seller Proceeds by Event Venue City</strong>.</li>
+</ol>
+
+<p><strong>In-class check:</strong> Which venue city has the highest total <code class="language-plaintext highlighter-rouge">Seller_Proceeds</code>?</p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/17-seller-proceeds-map.png" alt="Symbol map made with Venuecity and Seller_Proceeds" /></p>
+
+<h2 id="17-build-the-dashboard">17. Build the Dashboard</h2>
+
+<p>Create <strong><code class="language-plaintext highlighter-rouge">Ticket Sales Dashboard</code></strong> and place the five worksheets as shown:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Chart</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Top left</td>
+      <td>Category Revenue</td>
+    </tr>
+    <tr>
+      <td>Top right</td>
+      <td>Histogram + cumulative line</td>
+    </tr>
+    <tr>
+      <td><strong>Middle left</strong></td>
+      <td><strong>Seller Bullet Graph</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Middle right</strong></td>
+      <td><strong>Venue Scatter Plot</strong></td>
+    </tr>
+    <tr>
+      <td>Bottom</td>
+      <td>Symbol Map</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Keep each chart’s <strong>legend close to that chart</strong>. Add a simple <strong>Username filter</strong> and try selecting a seller to see which event cities appear on the map. Use the chart’s <strong>Use as Filter</strong> option if you want the Bullet Graph to filter the other views. Return to the complete Dashboard view before exporting.</p>
+
+<p><img src="/IA342/pr-preview/pr-42/assets/week-8/screenshots/18-dashboard-layout.png" alt="Five-view Dashboard with Bullet on middle left and Scatter on middle right" /></p>
+
+<h2 id="18-publish-and-submit">18. Publish and Submit</h2>
+
+<ol>
+  <li><strong>Publish</strong> the Workbook in <code class="language-plaintext highlighter-rouge">fall2026</code> with all <strong>five Worksheets and one Dashboard</strong>.</li>
+  <li>From the Dashboard choose <strong>Download → PDF</strong>. Check that the five charts, labels, and legends are readable.</li>
+  <li>Submit <strong>one PDF</strong> to the Week 8 assignment in <strong>Canvas</strong>. No written answers to the in-class questions are required.</li>
+</ol>
+
+<p><strong>Final deliverables:</strong> <strong>Published Data Source + Published Workbook + one PDF</strong>. The instructor checks the Tableau items separately; only the PDF is uploaded to Canvas.</p>
+
+<h2 id="grading--100-points">Grading — 100 points</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th style="text-align: right">Points</th>
+      <th>Main requirement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Published Data Source</strong></td>
+      <td style="text-align: right"><strong>35</strong></td>
+      <td>Six tables, five Relationships, fields, hierarchies, and calculated fields</td>
+    </tr>
+    <tr>
+      <td><strong>Published Workbook</strong></td>
+      <td style="text-align: right"><strong>15</strong></td>
+      <td>Five worksheets, one Dashboard, uses your published Data Source</td>
+    </tr>
+    <tr>
+      <td><strong>PDF report</strong></td>
+      <td style="text-align: right"><strong>50</strong></td>
+      <td>Readable final Dashboard and accurate charts, labels, and comparisons</td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td style="text-align: right"><strong>100</strong></td>
+      <td>Data Source + Workbook + PDF</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The instructor may award partial credit when work is incomplete or inaccurate.</p>
+
+<h2 id="if-the-class-database-is-no-longer-available">If the Class Database Is No Longer Available</h2>
+
+<p>The course PostgreSQL database will be stopped after <strong>Friday, October 16, 2026, at 11:59 p.m. Eastern Time</strong>. Because the classroom Data Source uses a <strong>Live</strong> connection, it cannot query the stopped database.</p>
+
+<p>If you have not finished, you must download the <a href="https://docs.aws.amazon.com/redshift/latest/gsg/samples/tickitdb.zip">AWS TICKIT data ZIP</a> and create a replacement Data Source from the original files yourself. <strong>Tableau Cloud accepts the TXT files directly</strong>; Excel conversion and Tableau Flow are not needed.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>File</th>
+      <th>Original table</th>
+      <th>Delimiter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">sales_tab.txt</code></td>
+      <td><code class="language-plaintext highlighter-rouge">sales</code></td>
+      <td>Tab</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">listings_pipe.txt</code></td>
+      <td><code class="language-plaintext highlighter-rouge">listing</code></td>
+      <td>Pipe (<code class="language-plaintext highlighter-rouge">\|</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">allevents_pipe.txt</code></td>
+      <td><code class="language-plaintext highlighter-rouge">event</code></td>
+      <td>Pipe (<code class="language-plaintext highlighter-rouge">\|</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">category_pipe.txt</code></td>
+      <td><code class="language-plaintext highlighter-rouge">category</code></td>
+      <td>Pipe (<code class="language-plaintext highlighter-rouge">\|</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">venue_pipe.txt</code></td>
+      <td><code class="language-plaintext highlighter-rouge">venue</code></td>
+      <td>Pipe (<code class="language-plaintext highlighter-rouge">\|</code>)</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">allusers_pipe.txt</code></td>
+      <td><code class="language-plaintext highlighter-rouge">users</code></td>
+      <td>Pipe (<code class="language-plaintext highlighter-rouge">\|</code>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The seventh file, <code class="language-plaintext highlighter-rouge">date2008_pipe.txt</code>, is not needed for this lab.</p>
+
+<p>These files <strong>do not have column headers</strong>. After uploading them as separate tables in <strong>one Data Source</strong>, set the correct Tab/pipe delimiters and rename the imported columns <strong>in their original order</strong>, using the <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_sampledb.html">AWS field definitions</a>. Then set field types, rebuild the five Relationships, create the calculated fields/hierarchies, reconnect your Workbook, and export/submit your PDF. This extra work is your responsibility.</p>
+
+<p>The usual syllabus late penalty applies: <strong>10% per day, up to 40%</strong>, unless the instructor has approved an exception. The database will not be restarted solely for late submissions.</p>
+
+<hr />
+
+<table>
+  <tbody>
+    <tr>
+      <td><a href="../../">Return to Course Home</a></td>
+      <td><a href="../../syllabus/">Return to Syllabus</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/JMU-Data/IA342/edit/gh-pages/assignments/lab-8/index.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
