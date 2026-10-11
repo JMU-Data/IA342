@@ -56,11 +56,7 @@ Start with **`sales`**. Drag **`listing`** next to it on the top-level Data Sour
 
 *The screenshot shows the two tables, the relationship fields, and the Many → One settings.*
 
-Now add **`event`**, **`category`**, **`venue`**, and **`users`** as separate logical tables. When all the relationships in Step 3 are complete, the Data Source should look like this:
-
-![Next, connect all six TICKIT tables in the logical Data Source model](screenshots/Screenshot%202026-10-11%20105146.png)
-
-*Six separate tables and five relationship lines — not a flattened physical Join or Tableau Flow. Notice the seller relationship with `users`.*
+Next add **`event`**, **`category`**, **`venue`**, and **`users`** as separate logical tables. Complete their Relationships in Step 3.
 
 ## 3. Define five Relationships
 
@@ -73,6 +69,10 @@ Now add **`event`**, **`category`**, **`venue`**, and **`users`** as separate lo
 | `sales.sellerid` = `users.userid` | Many → One |
 
 Use `sales.sellerid` (seller), **not** `sales.buyerid`. Your canvas should have **six tables and five relationship lines**.
+
+![Six-table TICKIT data model, highlighting sales.Sellerid = users.Userid](screenshots/Screenshot%202026-10-11%20105146.png)
+
+*This finished model shows how `sales.Sellerid` connects to `users.Userid`, along with the other four Relationships.*
 
 ## 4. Set One-to-Many Relationships
 
