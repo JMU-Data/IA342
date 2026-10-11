@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Lab 8: Ticket Sales Visualization with Tableau Relationships - IA342","url":"https://jmu-data.github.io/IA342/pr-preview/pr-42/assignments/lab-8/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/IA342/pr-preview/pr-42/assets/css/style.css?v=bf28cab7a27653b1dd4056bde8e607b74a6ed614">
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-42/assets/css/style.css?v=87709273885931e383a149b7be6d9725b293a3fb">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -142,11 +142,7 @@
 
 <p><em>The screenshot shows the two tables, the relationship fields, and the Many → One settings.</em></p>
 
-<p>Now add <strong><code class="language-plaintext highlighter-rouge">event</code></strong>, <strong><code class="language-plaintext highlighter-rouge">category</code></strong>, <strong><code class="language-plaintext highlighter-rouge">venue</code></strong>, and <strong><code class="language-plaintext highlighter-rouge">users</code></strong> as separate logical tables. When all the relationships in Step 3 are complete, the Data Source should look like this:</p>
-
-<p><img src="screenshots/Screenshot%202026-10-11%20105146.png" alt="Next, connect all six TICKIT tables in the logical Data Source model" /></p>
-
-<p><em>Six separate tables and five relationship lines — not a flattened physical Join or Tableau Flow. Notice the seller relationship with <code class="language-plaintext highlighter-rouge">users</code>.</em></p>
+<p>Next add <strong><code class="language-plaintext highlighter-rouge">event</code></strong>, <strong><code class="language-plaintext highlighter-rouge">category</code></strong>, <strong><code class="language-plaintext highlighter-rouge">venue</code></strong>, and <strong><code class="language-plaintext highlighter-rouge">users</code></strong> as separate logical tables. Complete their Relationships in Step 3.</p>
 
 <h2 id="3-define-five-relationships">3. Define five Relationships</h2>
 
@@ -182,6 +178,10 @@
 </table>
 
 <p>Use <code class="language-plaintext highlighter-rouge">sales.sellerid</code> (seller), <strong>not</strong> <code class="language-plaintext highlighter-rouge">sales.buyerid</code>. Your canvas should have <strong>six tables and five relationship lines</strong>.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-11%20105146.png" alt="Six-table TICKIT data model, highlighting sales.Sellerid = users.Userid" /></p>
+
+<p><em>This finished model shows how <code class="language-plaintext highlighter-rouge">sales.Sellerid</code> connects to <code class="language-plaintext highlighter-rouge">users.Userid</code>, along with the other four Relationships.</em></p>
 
 <h2 id="4-set-one-to-many-relationships">4. Set One-to-Many Relationships</h2>
 
