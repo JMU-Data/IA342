@@ -5,8 +5,8 @@ title: "Syllabus - IA 342"
 
 # Syllabus - Fall 2026
 
-**Last updated: October 9, 2026**  
-*Revision: Week 8 uses a Live multi-table Data Source with Relationships; students publish a Data Source and Workbook and submit one PDF. The AI use policy retains its October 7, 2026 update date.*
+**Last updated: October 11, 2026**  
+*Revision: Week 12 now uses FBI NIBRS data to compare traditional BI with AI-generated dashboards; the final project uses independently assigned-state NIBRS analysis in Tableau Online. The Week 8 workflow and October 7 AI policy remain unchanged.*
 
 **Course:** IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis  
 **Term:** Fall 2026  
@@ -108,7 +108,7 @@ In the event of inclement weather or university closures, we will follow the off
 
 ## Course Schedule (Fall 2026)
 
-*Schedule updated: October 9, 2026*
+*Schedule updated: October 11, 2026*
 
 Weeks 9–11 follow a consistent pattern: **Monday combines a focused explanation with a guided in-class exercise; Wednesday is an independent lab with instructor support.** Week 8 is one extended lab with no separate lecture. In this course, Tableau Online refers to the course Tableau Cloud site. Tableau Flow means a Tableau Prep data-preparation flow; Google Flow in Week 13 is the separate video-generation tool.
 
@@ -125,55 +125,9 @@ Weeks 9–11 follow a consistent pattern: **Monday combines a focused explanatio
 | **Week 9**<br>Oct 19 – 23 | **Visual Analytics in Tableau**<br>Drill-down, sort, group, sets, filters, trend/reference lines, parameters, and interactive exploration | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Visual Analytics lab**<br>Parameters, sets, set actions, tooltips, interactive scatter plots, and mapping | Meaningful interaction and evidence-based exploration |
 | **Week 10**<br>Oct 26 – 30 | **Dashboard Design**<br>Directed vs. exploratory discovery, KPIs, visual hierarchy, layout containers, eye-scanning, 5-second test, Shaffer 4Cs, Tufte/KISS principles | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Dashboard Design lab**<br>Coordinated views, layout, interactivity, dynamic titles, device layouts, and publishing | Usability, visual hierarchy, and consistent filter behavior |
 | **Week 11**<br>Nov 2 – 6 | **Calculations in Tableau**<br>Basic calculations, date/string/logical functions, aggregate calculations, table calculations (scope/direction), LOD expressions (FIXED, INCLUDE, EXCLUDE) | **Mon: Explanation + guided in-class exercise**<br>**Wed: Independent Calculations lab**<br>Calculated metrics, rates, moving averages, table calculations, and LOD; verify aggregation and denominators | Calculations must be used and interpreted in the visualizations |
-| **Week 12**<br>Nov 9 – 13 | **Tableau Public and Gemini Canvas**<br>Lightweight dashboard creation, sharing, and human evaluation | **Mon: Tableau Public**<br>Store instructor-provided public data in your Google Drive, connect to it, build a small dashboard, and publish.<br>**Wed: Gemini Canvas**<br>Upload approved public data, generate a lightweight dashboard, check its values/interactions, and share it. | Share the Canvas dashboard; personal GitHub publishing is optional.<br>Tableau Public is for this exercise; the final project uses Tableau Online. |
+| **Week 12**<br>Nov 9 – 13 | **FBI NIBRS Dashboards: Tableau Public and Gemini Canvas**<br>Traditional BI vs. AI-generated visualization; verification of data, joins, maps, and analytical claims | **Mon: Tableau Public (Virginia 2025 NIBRS)**<br>Download the two instructor-provided public CSVs (county/month/offense summary and offense-type lookup), store them in Google Drive, connect from Drive, relate the data using `offense_code`, and publish a small interactive Tableau Public dashboard.<br>**Wed: Gemini Canvas**<br>Use the **same two CSVs** to generate a lightweight dashboard that supports **in-browser CSV uploads and automatic chart updates**. Verify that it parses the actual files and joins on `offense_code` (without inventing data); compare its totals, time trends, categories, and geographic interpretation against Tableau. Export a standalone HTML dashboard and publish it through GitHub / GitHub Pages with a short AI validation summary. | **Learning objective:** Judge AI-generated visualizations against the source data and independently checked BI results; do not assume either tool is automatically correct.<br>Required Wednesday submission: working standalone static HTML/GitHub link (including CSV upload and data refresh) and concise validation summary; no embedded API keys, fabricated data, or Gemini API calls. After submitting, **Add Gemini Features** may be explored inside Gemini Canvas as an optional demonstration only—do not add them to the submitted HTML.<br>Tableau Public is for Week 12; the final project uses course Tableau Online. |
 | **Week 13**<br>Nov 16 – 20 | **AI Video Visualization & Analytical Storytelling**<br>AI video as visual communication; storytelling accuracy vs. hallucination risks | **AI Video & Analytical Storytelling**<br>• Mon: Google Flow (visual/video synthesis supporting analytical findings)<br>• Wed: Google Vids (assembling analytical video briefing) | Multimodal visual communication |
 | **Week 14**<br>Nov 23 – 27 | **Thanksgiving Holiday**<br>*(No Classes)* | — | University Closed |
-| **Week 15**<br>Nov 30 – Dec 4 | **Final Project Workshop: Data Collection and Preparation**<br>Source selection, data quality, geographic/temporal alignment, and data fusion *(No new lecture)* | **Google Drive → Tableau Flow → Data Source**<br>Collect and retain raw data in Google Drive; clean and combine data in a Tableau Flow; publish and run the Flow in Tableau Online to generate a published Data Source. | First workshop outcome: published Flow and its generated Data Source. |
-| **Week 16**<br>Dec 7 – 11 | **Final Project Workshop: Visual Analytics and Dashboard**<br>Calculation checks, interaction, design, and interpretation *(No new lecture)* | **Data Source → Workbook → Dashboard**<br>Build the Workbook from your own Flow output; include Tableau calculations, visual analytics, meaningful interactivity, maps/charts, and a coherent dashboard; publish in the course Tableau Online project. | Test calculations, filters, views, and all three published items. |
+| **Week 15**<br>Nov 30 – Dec 4 | **Final Project Workshop: FBI NIBRS Data Preparation**<br>Assigned-state crime data, reporting coverage, join keys, and record grain *(No new lecture)* | **Assigned-state NIBRS CSVs → Tableau Flow → Data Source**<br>Download the 2025 FBI NIBRS raw CSVs for your randomly assigned state. Use the core agency, incident, offense, and offense-type tables; additional NIBRS tables are optional. Organize raw files in Google Drive if useful. Clean and combine the data in a Tableau Flow, validate join matches and incident-versus-offense counts, then publish and run the Flow in Tableau Online. | First workshop outcome: published Flow and its Flow-generated Data Source. No student PostgreSQL database setup is required. |
+| **Week 16**<br>Dec 7 – 11 | **Final Project Workshop: Crime Visual Analytics and Dashboard**<br>Tableau calculations, geographic/temporal patterns, interactivity, and defensible interpretation *(No new lecture)* | **Data Source → Workbook → Dashboard**<br>Choose a meaningful crime-analysis topic within your assigned state. Build from your own Flow output; use Tableau calculations, a map where geographic attribution is defensible, time trends, comparisons, and meaningful interactive filters/actions. Label reported offenses correctly and explain reporting/geographic limitations. Publish the Workbook in the course Tableau Online project. | Test calculations, mapping, filters, views, and the published Flow, Data Source, and Workbook. |
 | **Week 17**<br>Dec 12 – 18 | **Final Exam Week**<br>Final project submission only *(No presentations)* | **Final Project Submission in Tableau Online**<br>Published **Flow + Data Source + Workbook**; the Workbook contains the required calculations, analytical views, and dashboard. | **Final Project Due** at the time announced in the final-project assignment.<br>**Late submissions are not accepted.** |
-
----
-
-### Project Overviews
-
-#### [Mini Project: Exploring Your Assigned State with ArcGIS](../assignments/mini-project/)
-- **Platform:** ArcGIS Business Analyst / ArcGIS Dashboards
-- **Study Area & Data:** Randomly assigned U.S. state at county/county-equivalent level; at least two relevant Business Analyst variables
-- **Core Requirements:**
-  - One thematic map (choropleth or proportional-symbol map)
-  - One analysis-result map (Benchmark comparisons, Suitability analysis, Nearby analysis, or another appropriate Business Analyst workflow)
-  - One data-driven widget with meaningful dashboard interaction
-  - Integrated concise write-up (~150–250 words)
-- **Submission:** One public ArcGIS Dashboard viewing URL submitted to Canvas (Due: Tuesday, Oct 6, 2026, at the time specified in Canvas)
-- **Policies:** Anonymous public access required (inaccessible dashboard receives 0/100); late submissions and late resubmissions are not accepted
-- **Weight:** 10% of course grade
-
-#### Final Project: COVID-19 Visual Analytics in Tableau Online
-
-**Platform:** The course Tableau Online (Tableau Cloud) site. Tableau Public is not the final-project submission platform.
-
-**Data:** Obtain the primary COVID-19 data and one approved contextual dataset (e.g., population, poverty, income, education, or unemployment) from instructor-designated or approved sources. Retain the raw files in your Google Drive and identify their sources, dates, and geographic coverage.
-
-**Week 15 — Data collection, cleaning, and fusion:** Build a Tableau Flow that connects to the raw data, cleans fields and data types, and combines the datasets using appropriate keys and levels of detail. Check unmatched records and repeated values rather than assuming that a successful join is correct. Publish the Flow in the course project and run it to produce your published Data Source. The required preparation work must be visible in the Flow.
-
-**Week 16 — Calculations, visual analytics, and dashboard design:** Create your Workbook from your own Flow-generated Data Source. Include:
-
-- At least one thematic map.
-- At least one temporal / trend visualization.
-- At least one comparison or distribution visualization.
-- At least one meaningful calculation **created in Tableau and used in a visualization** (calculated field, table calculation, or LOD expression).
-- At least one meaningful interactive feature (filter, parameter, set action, or equivalent), with consistent behavior across the affected views.
-- A coherent dashboard with clear labels, units, sources, and evidence-based analytical interpretation.
-
-**Required final items — publish all three in the course Tableau Online project:**
-
-| Item | Required evidence |
-|---|---|
-| **Flow** | Published data-preparation workflow showing the collection inputs, cleaning, and data fusion; successfully run to generate its output. A saved draft alone is not sufficient. |
-| **Data Source** | Published output actually generated by that Flow, with the intended fields and level of detail. |
-| **Workbook** | Uses that Data Source and contains the Tableau calculations, analytical worksheets, meaningful interactivity, and final dashboard. |
-
-Follow the final-project assignment for naming and the exact deadline. A Tableau Public link, a PDF-only report, or separate screenshots do not replace these three required items. There is no live presentation. **Late submissions are not accepted.**
-
----
-[Return to Course Home](../)
