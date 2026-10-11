@@ -33,13 +33,34 @@ The full TICKIT database has seven tables, but **this Lab uses six**: `sales`, `
 
 ## 1. Connect to PostgreSQL
 
-In Tableau Cloud, open the **`fall2026`** project → **New → Published Data Source** → **PostgreSQL**. Enter the Canvas connection details and choose `postgres` / `public`.
+In Tableau Cloud, open the **`fall2026`** project → **New → Published Data Source** → **Connectors → PostgreSQL**. Enter:
+
+| Connection setting | Value |
+|---|---|
+| **Server** | Get the current server address from **Canvas** |
+| **Port** | `5432` |
+| **Database** | `postgres` |
+| **Username** | `demo` |
+| **Password** | Get the current password from **Canvas** |
+| **Require SSL** | **Checked** |
+
+Choose schema **`public`** after connecting. Click **Sign In**. Use the course settings supplied in Canvas, even if an example screenshot shows an older connection.
+
+![PostgreSQL connection screen: enter the server and password supplied through Canvas](screenshots/Screenshot%202026-10-11%20104717.png)
 
 ## 2. Add six separate tables
 
-Drag `sales`, `listing`, `event`, `category`, `venue`, and `users` onto the top-level **Data Source** canvas. Keep them as **separate logical tables** connected by Relationships—not physical joins or a Tableau Flow.
+Start with **`sales`**. Drag **`listing`** next to it on the top-level Data Source canvas and connect **`sales.Listid = listing.Listid`**. A sale may belong to a listing, so `sales` is **Many** and `listing` is **One**.
 
-![Six-table Tableau Relationships model](../../assets/week-8/screenshots/01-relationships.png)
+![First, connect sales and listing using Listid (Many to One)](screenshots/Screenshot%202026-10-11%20104846.png)
+
+*The screenshot shows the two tables, the relationship fields, and the Many → One settings.*
+
+Now add **`event`**, **`category`**, **`venue`**, and **`users`** as separate logical tables. When all the relationships in Step 3 are complete, the Data Source should look like this:
+
+![Next, connect all six TICKIT tables in the logical Data Source model](screenshots/Screenshot%202026-10-11%20105146.png)
+
+*Six separate tables and five relationship lines — not a flattened physical Join or Tableau Flow. Notice the seller relationship with `users`.*
 
 ## 3. Define five Relationships
 
@@ -55,25 +76,43 @@ Use `sales.sellerid` (seller), **not** `sales.buyerid`. Your canvas should have 
 
 ## 4. Set One-to-Many Relationships
 
-For each relationship, set the **Many** side and the **One** side as shown in the table and example screenshot. Keep **Some records match** as the matching setting. 
+For each relationship, use the **Many → One** direction in Step 3 and keep **Some records match** on both sides. For example, several sales can share the same listing ID. The first screenshot in Step 2 shows where to select these options.
 
 ## 5. Organize the fields
 
-In the Data Source **Scratchpad**, change IDs such as `Salesid` to **Dimensions**. Assign `Venuecity` the geographic role **City** and `Venuestate` **State/Province**. Set monetary fields (`Pricepaid`, `Commission`, `Totalprice`) to **USD ($)**.
+**Move IDs to Dimensions.** In the Data Source Scratchpad, right-click an ID such as **`Salesid`** and choose **Convert to Dimension**; it identifies a record rather than an amount of money.
 
-![Set monetary field formatting to USD](../../assets/week-8/screenshots/02-usd-format.png)
+![Move Salesid to Dimensions](screenshots/sealsid%20to%20dimesion.png)
+
+*The `Salesid` field now appears as a Dimension.*
+
+**Set geographic data types (roles).** Assign **`Venuecity` → City** and **`Venuestate` → State/Province**, so Tableau can place event venues on a map.
+
+![Assign Tableau geographic roles to Venuecity and Venuestate](screenshots/Screenshot%202026-10-11%20105421.png)
+
+*The globe icons indicate geographic fields.*
+
+**Format dollar amounts.** Set **`Pricepaid`**, **`Commission`**, and **`Totalprice`** to **USD ($)**.
+
+![Set Default Properties / Number Format to USD](screenshots/Screenshot%202026-10-11%20105539.png)
+
+*Choose USD currency formatting for the money fields.*
 
 ## 6. Create two calculated fields
 
-Use **Create Calculated Field** and enter the exact names (including underscores and capitalization):
+In the Scratchpad choose **Create Calculated Field**. Use the exact names, underscores, and input-field capitalization below.
 
-**`Seller_Proceeds`** — used in the map:
+**`Seller_Proceeds`** — amount received after commission, used for the map in Chart 5:
 
 ```tableau
 [Pricepaid] - [Commission]
 ```
 
-**`Realized_Price_per_Ticket`** — used in the Scatter Plot tooltip:
+![Formula and exact name of Seller_Proceeds](screenshots/Screenshot%202026-10-11%20105819.png)
+
+*This is sale revenue after commission, not a complete calculation of profit.*
+
+**`Realized_Price_per_Ticket`** — the realized amount per ticket, used in the **Chart 3 Scatter Plot Tooltip**:
 
 ```tableau
 IF [Qtysold] > 0 THEN
@@ -81,41 +120,55 @@ IF [Qtysold] > 0 THEN
 END
 ```
 
-Both calculations use fields from `sales`. `Pricepaid` is already the **total amount paid per sale**, so do not multiply it by `Qtysold`.
+![Formula and exact name of Realized_Price_per_Ticket](screenshots/Screenshot%202026-10-11%20105911.png)
 
-![Formula for Seller_Proceeds](../../assets/week-8/screenshots/03-seller-proceeds.png)
+*Keep this field: the new Chart 3 screenshot shows its value in the Tooltip.*
 
-![Formula for Realized_Price_per_Ticket](../../assets/week-8/screenshots/04-realized-ticket-price.png)
+`Pricepaid` is already the total amount paid for a sale; do **not** multiply it by `Qtysold`.
 
 ## 7. Create two Hierarchies
 
-- In `category`, **drag `Catname` onto `Catgroup`** to create a hierarchy. Name it **`Category`** (`Catgroup → Catname`).
-- In `venue`, **drag `Venuecity` onto `Venuestate`**. Name the hierarchy **`Venue_Location`** (`Venuestate → Venuecity`).
+A **Hierarchy** groups related dimensions into levels. Use the **+** control to explore a broad level first, then drill down into more detail **on the same chart** — for example, category group → category name, or state → city.
 
-![Build the Category hierarchy](../../assets/week-8/screenshots/05-category-hierarchy.png)
+**Category Hierarchy:** in `category`, drag **`Catname` onto `Catgroup`**. Name it **`Category`** (`Catgroup → Catname`).
 
-![Build the Venue_Location hierarchy](../../assets/week-8/screenshots/06-location-hierarchy.png)
+![Create the Category hierarchy by dragging Catname onto Catgroup](screenshots/Screenshot%202026-10-11%20110014.png)
+
+*Expand Category in Chart 1 to compare group totals with individual category names.*
+
+**Venue Hierarchy:** in `venue`, drag **`Venuecity` onto `Venuestate`**. Name it **`Venue_Location`** (`Venuestate → Venuecity`).
+
+![Create the Venue_Location hierarchy by dragging Venuecity onto Venuestate](screenshots/Screenshot%202026-10-11%20110105.png)
+
+*Expand from state to city to explore where events were held.*
 
 ## 8. Quick Data Check
 
-In the Scratchpad, drag fields onto **Marks → Text** to see their results:
+Use **Scratchpad → Marks → Text** to compare counts and totals **without creating another worksheet**. The two screenshots illustrate why Sales and Listing are separate tables.
 
-- `sales`: drag **`Salesid` → Count** and **`Pricepaid` → Sum** to Text. Expected sales count: **172,456**.
-- Clear the Text shelf, then use `listing`: drag **`Listid` → Count** and **`Totalprice` → Sum** to Text. Expected listing count: **192,497**.
+First put **`CNT(Salesid)`** and **`SUM(Totalprice)`** on **Text**.
 
-![Scratchpad Text marks displaying a table count and total](../../assets/week-8/screenshots/07-quick-table-check.png)
+![Scratchpad: CNT(Salesid) and SUM(Totalprice) displayed on Text](screenshots/Screenshot%202026-10-11%20110437.png)
+
+*In the original sample, this shows **172,456 sales** and the aggregate listing value.*
+
+Next replace **`CNT(Salesid)`** with **`CNT(Listid (Listing))`**, keeping **`SUM(Totalprice)`**.
+
+![Scratchpad: CNT(Listid) and SUM(Totalprice) displayed on Text](screenshots/Screenshot%202026-10-11%20110535.png)
+
+*Now you see **192,497 listings**. The listing total remains the same: Relationships do not simply repeat the full listing amount once per sale.*
 
 ## 9. Publish the Data Source
 
 Select **Live** and publish as **`firstname_lastname_week8_tickit_data`** to **`fall2026`**. In the Publish dialog, **check `Embed credentials`**, so your Workbook can reuse this connection. Confirm the Data Source appears in the course project.
 
-![Select fall2026 and Embed credentials before publishing](../../assets/week-8/screenshots/08-publish-credentials.png)
+![Select fall2026 and Embed credentials before publishing](screenshots/Screenshot%202026-10-11%20110635.png)
 
 ---
 
 # Wednesday — Build the Workbook and Dashboard
 
-**Screenshot note:** Screenshots illustrate Tableau controls. Some show draft chart titles; use the field names and final titles specified in these instructions.
+**Screenshot note:** Use the field names and final chart titles in the written instructions if an intermediate screenshot shows a draft title.
 
 ## 10. Open your Workbook
 
@@ -123,98 +176,141 @@ In `fall2026`, open your published Data Source → **New Workbook**. Save as **`
 
 ## 11. Chart 1 — Sales Revenue by Category (Bar Chart)
 
-Create **`01_Category_Revenue`**:
+Create **`01_Category_Revenue`**. Place the **Category** Hierarchy on **Rows** and **`SUM(Pricepaid)`** on **Columns**; choose **Bar** and sort by revenue.
 
-1. Drag the **Category** hierarchy to **Rows**, expand it to `Catname`.
-2. Drag **`Pricepaid` → SUM** to **Columns**; choose **Bar**.
-3. Sort categories by revenue, show the dollar amount on **Label**, and add **Percent of Total** using **Quick Table Calculation**. Format the percent to **one decimal place**.
-4. Give the chart the title **Sales Revenue by Event Category**.
+Expand the **+** next to Category to move from `Catgroup` to `Catname`. Try both levels to see how revenue changes when grouped differently. If a **Null** category appears, you may use **Exclude** for this worksheet.
+
+To display each category's share of total revenue, use **Quick Table Calculation → Percent of Total** on the revenue measure.
+
+![Choose Percent of Total for the category revenue chart](screenshots/Screenshot%202026-10-11%20111638.png)
+
+*The calculation displays each category's contribution to the total revenue in the view.*
+
+Show the percentage on **Label** and title the chart **Sales Revenue by Event Category**.
+
+![Completed category revenue bar chart with percentage labels](screenshots/Screenshot%202026-10-11%20111905.png)
+
+*You should see category bars and their revenue percentages.*
 
 **In-class check:** Which event category has the highest total `Pricepaid`?
 
-![Example category revenue labels and tooltip](../../assets/week-8/screenshots/09-category-revenue.png)
-
 ## 12. Chart 2 — Distribution by Listing Total Price (Histogram)
 
-Create **`02_Listing_Price_Distribution`**:
+Create **`02_Listing_Price_Distribution`**.
 
-1. In the **`listing`** table, **select `Totalprice` first**, then **Create → Bins**.
-2. Name it **`Totalprice (bin)`**. Set **Bin Size = 500**.
-3. Put **`Totalprice (bin)`** on **Columns** and **`Salesid` → COUNT** on **Rows**. Choose **Bar**.
-4. Try bin sizes **250**, **500**, and **1,000**; return to **500** for the final chart.
-5. Title it **Sales Transactions by Listing Value — USD 500 Bins**.
+1. In the **`listing`** table, first select **`Totalprice`**, then choose **Create → Bins**.
+2. Name the new field **`Totalprice (bin)`** and set **Bin Size = 500**.
 
-The bars count sales transactions associated with listings in each dollar-value bin.
+![Create Totalprice bins with a size of USD 500](screenshots/Screenshot%202026-10-11%20112443.png)
 
-**In-class check:** Which $500 listing-value bin contains the most `Salesid` records?
+*This groups each listing's total price into $500 intervals — not individual ticket prices.*
 
-![Edit Totalprice bins with size 500](../../assets/week-8/screenshots/10-listing-price-bins.png)
+3. Put **`Totalprice (bin)`** on **Columns** and **`CNT(Salesid)`** on **Rows**. Choose **Bar**.
+4. Try bin sizes **250**, **500**, and **1,000**; return to **500** for the final version.
+5. Title the chart **Sales Transactions by Listing Value — USD 500 Bins**.
+
+*Each bar counts sales transactions associated with listings in that price interval.*
+
+**In-class check:** Which $500 listing-value bin contains the most sales transactions?
 
 ## 13. Chart 2 — Add Running Total, Percentage, and a Line
 
-Stay in **`02_Listing_Price_Distribution`**:
+Continue working in **`02_Listing_Price_Distribution`** — this is still **one worksheet**, not an additional chart submission.
 
-1. Copy **`CNT(Salesid)`** to **Rows** again. You will see **two charts**, one above the other.
-2. On the **second** `CNT(Salesid)` pill, choose **Quick Table Calculation → Running Total**.
-3. On that same second pill, open **Edit Table Calculation**, check **Add secondary calculation**, and choose **Percent of Total**. Set **Compute Using → Table (Across)** for both.
-4. On the Marks cards, keep the **first chart = Bar** and change the **second chart = Line**.
-5. On the second measure pill, choose **Dual Axis** to combine the charts. Keep the **left axis as the number of sales** and the **right axis as a percentage**.
-6. Set **Bar = blue** and **Line = yellow**. The line should rise toward **100%** across the bins.
+1. Drag another copy of **`CNT(Salesid)`** to **Rows**. Tableau will temporarily display two charts. On the second measure choose **Quick Table Calculation → Running Total**.
 
-The two axes use different units (count and percentage), so **do not synchronize their numeric scales**.
+![Use Quick Table Calculation: Running Total on the second count](screenshots/Screenshot%202026-10-11%20112643.png)
 
-![Running Total with Percent of Total secondary calculation](../../assets/week-8/screenshots/11-cumulative-calculation.png)
+*Running Total accumulates sales counts from the smallest to the largest price bin.*
 
-![Set the histogram and line to Dual Axis](../../assets/week-8/screenshots/12-dual-axis-configuration.png)
+2. Open **Edit Table Calculation** on the second measure. Select **Add secondary calculation → Percent of Total** and use **Table (Across)** for the bin direction.
 
-![Blue bars and orange-yellow cumulative line](../../assets/week-8/screenshots/13-bar-line-colors.png)
+![Add Percent of Total as a secondary calculation](screenshots/Screenshot%202026-10-11%20113205.png)
+
+*The second measure is now a cumulative **percentage** instead of a raw count.*
+
+3. In the **Marks** cards, keep the first measure as **Bar** and change the second to **Line**. Then choose **Dual Axis** on the second measure.
+
+![Combine the bar chart and cumulative line with Dual Axis](screenshots/Screenshot%202026-10-11%20113235.png)
+
+*The left axis shows transaction counts; the right axis shows percentages. Do not synchronize these different numeric units.*
+
+4. Set the **bars to blue** and the **line to yellow/orange**, as in the example.
+
+![Blue sales-count bars with a yellow-orange cumulative percentage line](screenshots/Screenshot%202026-10-11%20113313.png)
+
+*The cumulative line should rise toward 100% as listing-value bins increase.*
 
 ## 14. Chart 3 — Average Listing vs. Sale Amount (Scatter Plot)
 
-Create **`03_Venue_Amount_Comparison`**:
+Create **`03_Venue_Amount_Comparison`**.
 
-1. Put **`AVG(Totalprice)`** on **Columns** and **`AVG(Pricepaid)`** on **Rows**.
-2. Put **`Venueid`** on **Detail** and **`Catname`** on **Color**. Choose **Circle** marks.
-3. Add **`AVG(Realized_Price_per_Ticket)`** and venue details to the **Tooltip**.
-4. From **Analytics**, add a **Linear Trend Line**.
-5. Try changing the axis range/scale, then return to **linear axes**. Right-click an interesting high-value dot → **Annotate → Mark**.
-6. Title: **Average Listing Amount vs. Average Sale Amount by Venue and Category**.
+1. Put **`AVG(Totalprice)`** on **Columns** and **`AVG(Pricepaid)`** on **Rows**. Add **`Venueid`** to **Detail** and **`Catname`** to **Color**; choose **Circle** marks.
 
-**In-class check:** Which venue has the highest average sale amount in this chart?
+![Create the scatter plot with average listing and sale amounts](screenshots/Screenshot%202026-10-11%20113800.png)
 
-![Scatter Plot: compare average listing and sales amount by venue and category](../../assets/week-8/screenshots/14-scatter-plot.png)
+*Each dot represents a venue/category combination.*
+
+2. On **Color → Edit Colors**, choose Tableau's **Color Blind** palette for the event categories.
+
+3. Add **`AVG(Realized_Price_per_Ticket)`**, `Venuename`, `Venuecity`, and `Venuestate` to the **Tooltip** before annotating any marks.
+
+![Scatter plot Tooltip showing AVG(Realized_Price_per_Ticket) and venue details](screenshots/Screenshot%202026-10-11%20141551.png)
+
+*Hover over a dot to check the listing amount, sale amount, realized price per ticket, and venue.*
+
+4. From **Analytics**, add a **Trend Line**. Keep **Linear** as the model type. In **Trend Lines Options**, **uncheck `Allow a trend line per color`** to use one overall trend line.
+
+![Linear Trend Line options: Allow a trend line per color unchecked](screenshots/Screenshot%202026-10-11%20113858.png)
+
+*One trend line summarizes the overall relationship between the two measures.*
+
+5. Try changing the axis range or scale, then return to **linear axes**. Right-click an interesting high-value dot and choose **Annotate → Mark**.
+
+![Choose Annotate Mark for a scatter plot point](screenshots/Screenshot%202026-10-11%20114118.png)
+
+*The mark annotation identifies a selected venue/category after its Tooltip fields are available.*
+
+6. Title the chart **Average Listing Amount vs. Average Sale Amount by Venue and Category**.
+
+**In-class check:** Which venue has the highest average sale amount in this view?
 
 ## 15. Chart 4 — Sales vs. Listings by Seller (Bullet Graph)
 
-Create **`04_Sales_vs_Listings_by_Seller`**:
+Create **`04_Sales_vs_Listings_by_Seller`**.
 
-1. Select **`users.Lastname`**, **`listing.Totalprice`**, and **`sales.Pricepaid`** together.
-2. Choose **Show Me → Bullet Graph**.
-3. Check that the **bar represents `SUM(Pricepaid)`** and the reference marker shows **`SUM(Totalprice)`**.
-4. Sort the sellers by **`SUM(Pricepaid)`**, highest first.
-5. Drag **`Lastname` → Filters → Top/Bottom → Top 10 by `SUM(Totalprice)`**.
-6. Title: **Sales Revenue vs. Total Listing Value by Seller**.
+1. Select **`users.Lastname`**, **`listing.Totalprice`**, and **`sales.Pricepaid`** together. Choose **Show Me → Bullet Graph**.
 
-**In-class check:** Among the displayed Top 10 seller last names, which has the highest total `Pricepaid`?
+![Select Lastname, Totalprice, and Pricepaid and choose Bullet Graph](screenshots/Screenshot%202026-10-11%20115629.png)
 
-**Note:** One last name may represent more than one person. Listing value and sales revenue describe different totals; this chart is a comparison, not profit.
+*Use Lastname for the seller grouping. The screenshot may show an earlier draft title; follow the final title below.*
 
-![Select Lastname, Totalprice, and Pricepaid for the Bullet Graph](../../assets/week-8/screenshots/15-bullet-chart-selection.png)
+2. Verify that the bar shows **`SUM(Pricepaid)`** and the reference marker shows **`SUM(Totalprice)`**. Sort sellers by **`SUM(Pricepaid)`**, highest first.
 
-![Select Top 10 Lastname values by SUM Totalprice](../../assets/week-8/screenshots/16-bullet-top-10.png)
+3. Put **`Lastname`** on **Filters → Top/Bottom → Top 10 by `SUM(Totalprice)`**.
+
+![Top 10 seller last names filtered by SUM(Totalprice)](screenshots/Screenshot%202026-10-11%20135108.png)
+
+*Compare the two dollar amounts for the ten selected last names.*
+
+4. Title the chart **Sales Revenue vs. Total Listing Value by Seller**.
+
+**In-class check:** Among the displayed Top 10 last names, which has the highest `SUM(Pricepaid)`?
+
+**Note:** A last name may represent multiple sellers. Listing value and sales revenue are different amounts; neither is seller profit.
 
 ## 16. Chart 5 — Seller Proceeds by City (Symbol Map)
 
-Create **`05_Proceeds_by_Venue_City`**:
+Create **`05_Proceeds_by_Venue_City`**.
 
-1. Select **`Venuecity`** and **`Seller_Proceeds`**.
-2. Choose **Show Me → Symbol Map**.
-3. Put **`SUM(Seller_Proceeds)`** on **Size**, keep **`Venuestate`** on **Detail** for location context, and show the city/proceeds in the Tooltip.
-4. Title: **Seller Proceeds by Event Venue City**.
+1. Select **`Venuecity`** and **`Seller_Proceeds`**, then choose **Show Me → Symbol Map**.
+2. Put **`SUM(Seller_Proceeds)`** on **Size** and **`Venuestate`** on **Detail** for geographic context. Title the map **Seller Proceeds by Event Venue City**.
+
+![Symbol Map showing Seller_Proceeds by event venue city](screenshots/Screenshot%202026-10-11%20115919.png)
+
+*Larger marks indicate more Seller_Proceeds for the corresponding event venue city.*
 
 **In-class check:** Which venue city has the highest total `Seller_Proceeds`?
-
-![Symbol map made with Venuecity and Seller_Proceeds](../../assets/week-8/screenshots/17-seller-proceeds-map.png)
 
 ## 17. Build the Dashboard
 
@@ -228,9 +324,11 @@ Create **`Ticket Sales Dashboard`** and place the five worksheets as shown:
 | **Middle right** | **Venue Scatter Plot** |
 | Bottom | Symbol Map |
 
-Keep each chart's **legend close to that chart**. Add a simple **Username filter** and try selecting a seller to see which event cities appear on the map. Use the chart's **Use as Filter** option if you want the Bullet Graph to filter the other views. Return to the complete Dashboard view before exporting.
+Keep each chart's **legend close to its chart**. Try a simple **Username/Lastname filter** or **Use as Filter** on the Seller Bullet Graph to see where those sellers' events took place. Clear selections before exporting.
 
-![Five-view Dashboard with Bullet on middle left and Scatter on middle right](../../assets/week-8/screenshots/18-dashboard-layout.png)
+![Updated five-view Dashboard with Realized_Price_per_Ticket in the scatter Tooltip](screenshots/Screenshot%202026-10-11%20141606.png)
+
+*The updated Dashboard includes all five charts, and the Scatter Tooltip displays the realized per-ticket price.*
 
 ## 18. Publish and Submit
 
