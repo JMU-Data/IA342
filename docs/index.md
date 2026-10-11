@@ -89,6 +89,11 @@ title: "Home - IA 342"
     <p style="margin-bottom: 0; color: #57606a;">Exploring Your Assigned State with ArcGIS (Thematic Map, Analysis Map, Widget & Dashboard).</p>
   </a>
 
+  <a href="assignments/lab-8/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">📝 Lab 8</h3>
+    <p style="margin-bottom: 0; color: #57606a;">TICKIT Ticket Sales: PostgreSQL Relationships, five Tableau charts, and a Dashboard.</p>
+  </a>
+
   <a href="assignments/google-skills/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow: 0.2s;">
     <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">🧪 Google Skills Hands-on Labs</h3>
     <p style="margin-bottom: 0; color: #57606a;">Pass three distinct Google Skills hands-on Labs for full credit and upload one screenshot by the Canvas deadline.</p>
