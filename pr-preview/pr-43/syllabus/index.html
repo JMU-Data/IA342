@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Syllabus - IA 342","url":"https://jmu-data.github.io/IA342/pr-preview/pr-43/syllabus/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/IA342/pr-preview/pr-43/assets/css/style.css?v=e93c2c6e19538f00be22ad7e0c8c09b2d0eb953c">
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-43/assets/css/style.css?v=5fdc4f32d77acfb8e6fb59d88cf3795f285bd4cb">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -317,80 +317,6 @@
     </tr>
   </tbody>
 </table>
-
-<hr />
-
-<h3 id="project-overviews">Project Overviews</h3>
-
-<h4 id="mini-project-exploring-your-assigned-state-with-arcgis"><a href="../assignments/mini-project/">Mini Project: Exploring Your Assigned State with ArcGIS</a></h4>
-<ul>
-  <li><strong>Platform:</strong> ArcGIS Business Analyst / ArcGIS Dashboards</li>
-  <li><strong>Study Area &amp; Data:</strong> Randomly assigned U.S. state at county/county-equivalent level; at least two relevant Business Analyst variables</li>
-  <li><strong>Core Requirements:</strong>
-    <ul>
-      <li>One thematic map (choropleth or proportional-symbol map)</li>
-      <li>One analysis-result map (Benchmark comparisons, Suitability analysis, Nearby analysis, or another appropriate Business Analyst workflow)</li>
-      <li>One data-driven widget with meaningful dashboard interaction</li>
-      <li>Integrated concise write-up (~150–250 words)</li>
-    </ul>
-  </li>
-  <li><strong>Submission:</strong> One public ArcGIS Dashboard viewing URL submitted to Canvas (Due: Tuesday, Oct 6, 2026, at the time specified in Canvas)</li>
-  <li><strong>Policies:</strong> Anonymous public access required (inaccessible dashboard receives 0/100); late submissions and late resubmissions are not accepted</li>
-  <li><strong>Weight:</strong> 10% of course grade</li>
-</ul>
-
-<h4 id="final-project-fbi-nibrs-crime-visual-analytics-in-tableau-online">Final Project: FBI NIBRS Crime Visual Analytics in Tableau Online</h4>
-
-<p><strong>Platform:</strong> The course Tableau Online (Tableau Cloud) site. Tableau Public and Gemini Canvas are Week 12 practice tools, not final-project submission platforms.</p>
-
-<p><strong>Study area and data:</strong> Each student works with a <strong>different, randomly assigned U.S. state</strong> and downloads that state’s <strong>2025 FBI National Incident-Based Reporting System (NIBRS)</strong> raw CSV data. Unlike Week 12’s instructor-prepared Virginia summary, the final project uses original records. Use these four core tables: <code class="language-plaintext highlighter-rouge">agencies</code>, <code class="language-plaintext highlighter-rouge">NIBRS_incident</code>, <code class="language-plaintext highlighter-rouge">NIBRS_OFFENSE</code>, and <code class="language-plaintext highlighter-rouge">NIBRS_OFFENSE_TYPE</code>. Additional NIBRS tables are optional when they support the student’s analytical topic. Retain the source details and identify the reporting year, geographic coverage, and limitations. Google Drive is recommended for organizing raw files but is not an additional required submission. <strong>Students do not need to create a PostgreSQL database.</strong></p>
-
-<p><strong>Analytical purpose:</strong> Investigate a coherent crime or public-safety topic in the assigned state, such as offense patterns, monthly variation, offense types, or reporting-jurisdiction comparisons. The dashboard should support a defensible interpretation rather than simply reproduce unrelated charts.</p>
-
-<p><strong>Week 15 — Data collection, cleaning, and fusion:</strong> Build a Tableau Flow that connects to the original state-level CSVs, cleans relevant codes, dates, and data types, and combines tables using appropriate keys (for example, <code class="language-plaintext highlighter-rouge">agency_id</code>, <code class="language-plaintext highlighter-rouge">incident_id</code>, and <code class="language-plaintext highlighter-rouge">offense_code</code>). Check unmatched keys, duplicate or multiplied records, and the intended grain. One incident may contain multiple offenses: <strong>offense counts and distinct incident counts are not interchangeable</strong>. Publish the Flow in the course project and run it to generate a published Data Source; merely saving a draft is insufficient.</p>
-
-<p><strong>Week 16 — Calculations, visual analytics, and dashboard design:</strong> Create a Workbook using the published Flow-generated Data Source. Include:</p>
-
-<ul>
-  <li>At least one geographically meaningful map (county, independent city, or reporting-jurisdiction level where the available data supports it); clearly identify any unmapped or ambiguous jurisdictions.</li>
-  <li>At least one temporal / trend visualization based on actual reporting dates.</li>
-  <li>At least one comparison or distribution visualization of offense types or another clearly defined dimension.</li>
-  <li>At least one meaningful calculation <strong>created in Tableau and used in a visualization</strong> (calculated field, table calculation, or LOD expression).</li>
-  <li>At least one meaningful interactive feature (filter, parameter, set action, or equivalent), with consistent behavior across the affected views.</li>
-  <li>A coherent dashboard with clear labels, units, sources, evidence-based findings, and relevant data limitations.</li>
-</ul>
-
-<p><strong>Interpretation safeguards:</strong> NIBRS records are <strong>reported offenses</strong>, not a complete census of all crimes. Different agencies and states may differ in reporting coverage. An agency’s associated county or city is not necessarily the exact crime location; do not invent coordinates or treat a jurisdiction map as an incident-location map. Do not calculate population-based crime rates without a defensible denominator and matching geographic coverage.</p>
-
-<p><strong>Required final items — publish all three in the course Tableau Online project:</strong></p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Item</th>
-      <th>Required evidence</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Flow</strong></td>
-      <td>Published data-preparation workflow showing the original NIBRS inputs, cleaning, and joins; successfully run to generate its output. A saved draft alone is insufficient.</td>
-    </tr>
-    <tr>
-      <td><strong>Data Source</strong></td>
-      <td>Published output actually generated by that Flow, with the intended fields and grain.</td>
-    </tr>
-    <tr>
-      <td><strong>Workbook</strong></td>
-      <td>Uses that Data Source and contains the Tableau calculations, analytical worksheets, meaningful interactivity, and final dashboard.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Follow the final-project assignment for naming and the exact deadline. A Tableau Public link, GitHub Pages URL, PDF-only report, or screenshots do not replace these three required items. There is no live presentation. <strong>Late submissions are not accepted.</strong></p>
-
-<hr />
-<p><a href="../">Return to Course Home</a></p>
 
 
       
