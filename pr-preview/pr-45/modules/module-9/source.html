@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Visual Analytics in Tableau | IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Visual Analytics in Tableau" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<meta property="og:description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<link rel="canonical" href="https://jmu-data.github.io/IA342/pr-preview/pr-45/modules/module-9/source.html" />
+<meta property="og:url" content="https://jmu-data.github.io/IA342/pr-preview/pr-45/modules/module-9/source.html" />
+<meta property="og:site_name" content="IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Visual Analytics in Tableau" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Visual Analytics in Tableau","url":"https://jmu-data.github.io/IA342/pr-preview/pr-45/modules/module-9/source.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-45/assets/css/style.css?v=23bf9d83cc08c18cd06e3f8ab322c1e11cd570e5">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/IA342/pr-preview/pr-45/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://jmu-data.github.io/IA342/pr-preview/pr-45/">IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</a></h1>
+      
+
+      <h2 id="01--visual-analytics-in-tableau">01 — Visual Analytics in Tableau</h2>
+
+<div class="cover-layout"><div class="cover-copy"><p class="cover-course">IA342 · DATA VISUALIZATION</p><h1>Visual Analytics<br /><span>in Tableau</span></h1><p class="cover-topics">Dimensions · Hierarchies · Groups · Sets<br />Filters · Parameters · Actions</p><div class="cover-author"><strong>Dr. Xuebin Wei</strong><span>Week 9 · Fall 2026</span></div><p class="cover-data">Diamonds · Existing Lab 5 Data Source</p></div><div class="cover-chart"><p>PRICE × WEIGHT</p><svg viewBox="0 0 490 390" role="img" aria-label="Price versus Weight for the 308 course Diamonds records"><title>Diamonds: Price and Weight</title><line x1="60" y1="333.0" x2="468" y2="333.0" stroke="#d9e5ec" /><text x="50" y="337.0" text-anchor="end" font-size="13" fill="#536d7c">0k</text><line x1="60" y1="263.0571428571429" x2="468" y2="263.0571428571429" stroke="#d9e5ec" /><text x="50" y="267.0571428571429" text-anchor="end" font-size="13" fill="#536d7c">4k</text><line x1="60" y1="193.11428571428573" x2="468" y2="193.11428571428573" stroke="#d9e5ec" /><text x="50" y="197.11428571428573" text-anchor="end" font-size="13" fill="#536d7c">8k</text><line x1="60" y1="123.17142857142858" x2="468" y2="123.17142857142858" stroke="#d9e5ec" /><text x="50" y="127.17142857142858" text-anchor="end" font-size="13" fill="#536d7c">12k</text><line x1="60" y1="53.228571428571456" x2="468" y2="53.228571428571456" stroke="#d9e5ec" /><text x="50" y="57.228571428571456" text-anchor="end" font-size="13" fill="#536d7c">16k</text><text x="60.0" y="356" text-anchor="middle" font-size="13" fill="#536d7c">0.0</text><text x="162.0" y="356" text-anchor="middle" font-size="13" fill="#536d7c">0.3</text><text x="264.0" y="356" text-anchor="middle" font-size="13" fill="#536d7c">0.6</text><text x="366.0" y="356" text-anchor="middle" font-size="13" fill="#536d7c">0.9</text><text x="468.0" y="356" text-anchor="middle" font-size="13" fill="#536d7c">1.2</text><circle cx="162.00" cy="310.23" r="3.2" fill="#17688f" opacity="0.60"><title>ID 1: 0.3 carat; price 1302</title></circle><circle cx="162.00" cy="306.60" r="3.2" fill="#17688f" opacity="0.60"><title>ID 2: 0.3 carat; price 1510</title></circle><circle cx="162.00" cy="306.60" r="3.2" fill="#17688f" opacity="0.60"><title>ID 3: 0.3 carat; price 1510</title></circle><circle cx="162.00" cy="310.97" r="3.2" fill="#17688f" opacity="0.60"><title>ID 4: 0.3 carat; price 1260</title></circle><circle cx="165.40" cy="304.31" r="3.2" fill="#17688f" opacity="0.60"><title>ID 5: 0.31 carat; price 1641</title></circle><circle cx="165.40" cy="305.81" r="3.2" fill="#17688f" opacity="0.60"><title>ID 6: 0.31 carat; price 1555</title></circle><circle cx="165.40" cy="308.05" r="3.2" fill="#17688f" opacity="0.60"><title>ID 7: 0.31 carat; price 1427</title></circle><circle cx="165.40" cy="308.05" r="3.2" fill="#17688f" opacity="0.60"><title>ID 8: 0.31 carat; price 1427</title></circle><circle cx="165.40" cy="313.31" r="3.2" fill="#17688f" opacity="0.60"><title>ID 9: 0.31 carat; price 1126</title></circle><circle cx="165.40" cy="313.31" r="3.2" fill="#17688f" opacity="0.60"><title>ID 10: 0.31 carat; price 1126</title></circle><circle cx="168.80" cy="307.33" r="3.2" fill="#17688f" opacity="0.60"><title>ID 11: 0.32 carat; price 1468</title></circle><circle cx="168.80" cy="311.98" r="3.2" fill="#17688f" opacity="0.60"><title>ID 12: 0.32 carat; price 1202</title></circle><circle cx="172.20" cy="309.80" r="3.2" fill="#17688f" opacity="0.60"><title>ID 13: 0.33 carat; price 1327</title></circle><circle cx="172.20" cy="313.80" r="3.2" fill="#17688f" opacity="0.60"><title>ID 14: 0.33 carat; price 1098</title></circle><circle cx="175.60" cy="303.40" r="3.2" fill="#17688f" opacity="0.60"><title>ID 15: 0.34 carat; price 1693</title></circle><circle cx="175.60" cy="305.88" r="3.2" fill="#17688f" opacity="0.60"><title>ID 16: 0.34 carat; price 1551</title></circle><circle cx="175.60" cy="308.35" r="3.2" fill="#17688f" opacity="0.60"><title>ID 17: 0.34 carat; price 1410</title></circle><circle cx="175.60" cy="310.81" r="3.2" fill="#17688f" opacity="0.60"><title>ID 18: 0.34 carat; price 1269</title></circle><circle cx="175.60" cy="309.99" r="3.2" fill="#17688f" opacity="0.60"><title>ID 19: 0.34 carat; price 1316</title></circle><circle cx="175.60" cy="311.63" r="3.2" fill="#17688f" opacity="0.60"><title>ID 20: 0.34 carat; price 1222</title></circle><circle cx="179.00" cy="302.61" r="3.2" fill="#17688f" opacity="0.60"><title>ID 21: 0.35 carat; price 1738</title></circle><circle cx="179.00" cy="305.15" r="3.2" fill="#17688f" opacity="0.60"><title>ID 22: 0.35 carat; price 1593</title></circle><circle cx="179.00" cy="307.70" r="3.2" fill="#17688f" opacity="0.60"><title>ID 23: 0.35 carat; price 1447</title></circle><circle cx="179.00" cy="311.06" r="3.2" fill="#17688f" opacity="0.60"><title>ID 24: 0.35 carat; price 1255</title></circle><circle cx="182.40" cy="304.41" r="3.2" fill="#17688f" opacity="0.60"><title>ID 25: 0.36 carat; price 1635</title></circle><circle cx="182.40" cy="307.03" r="3.2" fill="#17688f" opacity="0.60"><title>ID 26: 0.36 carat; price 1485</title></circle><circle cx="185.80" cy="308.17" r="3.2" fill="#17688f" opacity="0.60"><title>ID 27: 0.37 carat; price 1420</title></circle><circle cx="185.80" cy="308.17" r="3.2" fill="#17688f" opacity="0.60"><title>ID 28: 0.37 carat; price 1420</title></circle><circle cx="196.00" cy="299.58" r="3.2" fill="#17688f" opacity="0.60"><title>ID 29: 0.4 carat; price 1911</title></circle><circle cx="196.00" cy="306.33" r="3.2" fill="#17688f" opacity="0.60"><title>ID 30: 0.4 carat; price 1525</title></circle><circle cx="199.40" cy="298.80" r="3.2" fill="#17688f" opacity="0.60"><title>ID 31: 0.41 carat; price 1956</title></circle><circle cx="206.20" cy="302.45" r="3.2" fill="#17688f" opacity="0.60"><title>ID 32: 0.43 carat; price 1747</title></circle><circle cx="213.00" cy="305.51" r="3.2" fill="#17688f" opacity="0.60"><title>ID 33: 0.45 carat; price 1572</title></circle><circle cx="216.40" cy="281.56" r="3.2" fill="#17688f" opacity="0.60"><title>ID 34: 0.46 carat; price 2942</title></circle><circle cx="223.20" cy="288.73" r="3.2" fill="#17688f" opacity="0.60"><title>ID 35: 0.48 carat; price 2532</title></circle><circle cx="230.00" cy="271.78" r="3.2" fill="#17688f" opacity="0.60"><title>ID 36: 0.5 carat; price 3501</title></circle><circle cx="230.00" cy="271.78" r="3.2" fill="#17688f" opacity="0.60"><title>ID 37: 0.5 carat; price 3501</title></circle><circle cx="230.00" cy="271.78" r="3.2" fill="#17688f" opacity="0.60"><title>ID 38: 0.5 carat; price 3501</title></circle><circle cx="230.00" cy="275.42" r="3.2" fill="#17688f" opacity="0.60"><title>ID 39: 0.5 carat; price 3293</title></circle><circle cx="230.00" cy="280.26" r="3.2" fill="#17688f" opacity="0.60"><title>ID 40: 0.5 carat; price 3016</title></circle><circle cx="233.40" cy="270.63" r="3.2" fill="#17688f" opacity="0.60"><title>ID 41: 0.51 carat; price 3567</title></circle><circle cx="233.40" cy="276.96" r="3.2" fill="#17688f" opacity="0.60"><title>ID 42: 0.51 carat; price 3205</title></circle><circle cx="236.80" cy="271.97" r="3.2" fill="#17688f" opacity="0.60"><title>ID 43: 0.52 carat; price 3490</title></circle><circle cx="236.80" cy="269.44" r="3.2" fill="#17688f" opacity="0.60"><title>ID 44: 0.52 carat; price 3635</title></circle><circle cx="236.80" cy="269.44" r="3.2" fill="#17688f" opacity="0.60"><title>ID 45: 0.52 carat; price 3635</title></circle><circle cx="236.80" cy="273.23" r="3.2" fill="#17688f" opacity="0.60"><title>ID 46: 0.52 carat; price 3418</title></circle><circle cx="240.20" cy="264.44" r="3.2" fill="#17688f" opacity="0.60"><title>ID 47: 0.53 carat; price 3921</title></circle><circle cx="240.20" cy="268.29" r="3.2" fill="#17688f" opacity="0.60"><title>ID 48: 0.53 carat; price 3701</title></circle><circle cx="240.20" cy="272.15" r="3.2" fill="#17688f" opacity="0.60"><title>ID 49: 0.53 carat; price 3480</title></circle><circle cx="240.20" cy="273.43" r="3.2" fill="#17688f" opacity="0.60"><title>ID 50: 0.53 carat; price 3407</title></circle><circle cx="243.60" cy="267.13" r="3.2" fill="#17688f" opacity="0.60"><title>ID 51: 0.54 carat; price 3767</title></circle><circle cx="243.60" cy="261.90" r="3.2" fill="#17688f" opacity="0.60"><title>ID 52: 0.54 carat; price 4066</title></circle><circle cx="247.00" cy="260.64" r="3.2" fill="#17688f" opacity="0.60"><title>ID 53: 0.55 carat; price 4138</title></circle><circle cx="247.00" cy="269.96" r="3.2" fill="#17688f" opacity="0.60"><title>ID 54: 0.55 carat; price 3605</title></circle><circle cx="247.00" cy="271.29" r="3.2" fill="#17688f" opacity="0.60"><title>ID 55: 0.55 carat; price 3529</title></circle><circle cx="250.40" cy="268.88" r="3.2" fill="#17688f" opacity="0.60"><title>ID 56: 0.56 carat; price 3667</title></circle><circle cx="250.40" cy="282.43" r="3.2" fill="#17688f" opacity="0.60"><title>ID 57: 0.56 carat; price 2892</title></circle><circle cx="253.80" cy="269.16" r="3.2" fill="#17688f" opacity="0.60"><title>ID 58: 0.57 carat; price 3651</title></circle><circle cx="260.60" cy="267.03" r="3.2" fill="#17688f" opacity="0.60"><title>ID 59: 0.59 carat; price 3773</title></circle><circle cx="264.00" cy="257.97" r="3.2" fill="#17688f" opacity="0.60"><title>ID 60: 0.6 carat; price 4291</title></circle><circle cx="270.80" cy="230.80" r="3.2" fill="#17688f" opacity="0.60"><title>ID 61: 0.62 carat; price 5845</title></circle><circle cx="274.20" cy="256.05" r="3.2" fill="#17688f" opacity="0.60"><title>ID 62: 0.63 carat; price 4401</title></circle><circle cx="277.60" cy="249.79" r="3.2" fill="#17688f" opacity="0.60"><title>ID 63: 0.64 carat; price 4759</title></circle><circle cx="284.40" cy="257.81" r="3.2" fill="#17688f" opacity="0.60"><title>ID 64: 0.66 carat; price 4300</title></circle><circle cx="298.00" cy="236.65" r="3.2" fill="#17688f" opacity="0.60"><title>ID 65: 0.7 carat; price 5510</title></circle><circle cx="298.00" cy="243.44" r="3.2" fill="#17688f" opacity="0.60"><title>ID 66: 0.7 carat; price 5122</title></circle><circle cx="298.00" cy="243.44" r="3.2" fill="#17688f" opacity="0.60"><title>ID 67: 0.7 carat; price 5122</title></circle><circle cx="298.00" cy="265.49" r="3.2" fill="#17688f" opacity="0.60"><title>ID 68: 0.7 carat; price 3861</title></circle><circle cx="301.40" cy="230.17" r="3.2" fill="#17688f" opacity="0.60"><title>ID 69: 0.71 carat; price 5881</title></circle><circle cx="301.40" cy="235.32" r="3.2" fill="#17688f" opacity="0.60"><title>ID 70: 0.71 carat; price 5586</title></circle><circle cx="301.40" cy="242.20" r="3.2" fill="#17688f" opacity="0.60"><title>ID 71: 0.71 carat; price 5193</title></circle><circle cx="301.40" cy="242.20" r="3.2" fill="#17688f" opacity="0.60"><title>ID 72: 0.71 carat; price 5193</title></circle><circle cx="304.80" cy="240.97" r="3.2" fill="#17688f" opacity="0.60"><title>ID 73: 0.72 carat; price 5263</title></circle><circle cx="332.00" cy="237.86" r="3.2" fill="#17688f" opacity="0.60"><title>ID 74: 0.8 carat; price 5441</title></circle><circle cx="338.80" cy="246.48" r="3.2" fill="#17688f" opacity="0.60"><title>ID 75: 0.82 carat; price 4948</title></circle><circle cx="345.60" cy="233.24" r="3.2" fill="#17688f" opacity="0.60"><title>ID 76: 0.84 carat; price 5705</title></circle><circle cx="349.00" cy="214.01" r="3.2" fill="#17688f" opacity="0.60"><title>ID 77: 0.85 carat; price 6805</title></circle><circle cx="352.40" cy="212.66" r="3.2" fill="#17688f" opacity="0.60"><title>ID 78: 0.86 carat; price 6882</title></circle><circle cx="362.60" cy="215.69" r="3.2" fill="#17688f" opacity="0.60"><title>ID 79: 0.89 carat; price 6709</title></circle><circle cx="366.00" cy="216.16" r="3.2" fill="#17688f" opacity="0.60"><title>ID 80: 0.9 carat; price 6682</title></circle><circle cx="230.00" cy="271.78" r="3.2" fill="#17688f" opacity="0.60"><title>ID 81: 0.5 carat; price 3501</title></circle><circle cx="230.00" cy="272.99" r="3.2" fill="#17688f" opacity="0.60"><title>ID 82: 0.5 carat; price 3432</title></circle><circle cx="233.40" cy="265.66" r="3.2" fill="#17688f" opacity="0.60"><title>ID 83: 0.51 carat; price 3851</title></circle><circle cx="247.00" cy="269.96" r="3.2" fill="#17688f" opacity="0.60"><title>ID 84: 0.55 carat; price 3605</title></circle><circle cx="250.40" cy="264.81" r="3.2" fill="#17688f" opacity="0.60"><title>ID 85: 0.56 carat; price 3900</title></circle><circle cx="253.80" cy="273.29" r="3.2" fill="#17688f" opacity="0.60"><title>ID 86: 0.57 carat; price 3415</title></circle><circle cx="264.00" cy="257.97" r="3.2" fill="#17688f" opacity="0.60"><title>ID 87: 0.6 carat; price 4291</title></circle><circle cx="274.20" cy="219.13" r="3.2" fill="#17688f" opacity="0.60"><title>ID 88: 0.63 carat; price 6512</title></circle><circle cx="298.00" cy="231.58" r="3.2" fill="#17688f" opacity="0.60"><title>ID 89: 0.7 carat; price 5800</title></circle><circle cx="298.00" cy="223.10" r="3.2" fill="#17688f" opacity="0.60"><title>ID 90: 0.7 carat; price 6285</title></circle><circle cx="298.00" cy="243.44" r="3.2" fill="#17688f" opacity="0.60"><title>ID 91: 0.7 carat; price 5122</title></circle><circle cx="298.00" cy="243.44" r="3.2" fill="#17688f" opacity="0.60"><title>ID 92: 0.7 carat; price 5122</title></circle><circle cx="298.00" cy="243.44" r="3.2" fill="#17688f" opacity="0.60"><title>ID 93: 0.7 carat; price 5122</title></circle><circle cx="298.00" cy="243.44" r="3.2" fill="#17688f" opacity="0.60"><title>ID 94: 0.7 carat; price 5122</title></circle><circle cx="301.40" cy="221.58" r="3.2" fill="#17688f" opacity="0.60"><title>ID 95: 0.71 carat; price 6372</title></circle><circle cx="301.40" cy="230.17" r="3.2" fill="#17688f" opacity="0.60"><title>ID 96: 0.71 carat; price 5881</title></circle><circle cx="301.40" cy="242.20" r="3.2" fill="#17688f" opacity="0.60"><title>ID 97: 0.71 carat; price 5193</title></circle><circle cx="304.80" cy="228.77" r="3.2" fill="#17688f" opacity="0.60"><title>ID 98: 0.72 carat; price 5961</title></circle><circle cx="304.80" cy="234.00" r="3.2" fill="#17688f" opacity="0.60"><title>ID 99: 0.72 carat; price 5662</title></circle><circle cx="308.20" cy="232.67" r="3.2" fill="#17688f" opacity="0.60"><title>ID 100: 0.73 carat; price 5738</title></circle><circle cx="308.20" cy="245.05" r="3.2" fill="#17688f" opacity="0.60"><title>ID 101: 0.73 carat; price 5030</title></circle><circle cx="308.20" cy="245.05" r="3.2" fill="#17688f" opacity="0.60"><title>ID 102: 0.73 carat; price 5030</title></circle><circle cx="308.20" cy="250.35" r="3.2" fill="#17688f" opacity="0.60"><title>ID 103: 0.73 carat; price 4727</title></circle><circle cx="308.20" cy="259.19" r="3.2" fill="#17688f" opacity="0.60"><title>ID 104: 0.73 carat; price 4221</title></circle><circle cx="311.60" cy="231.32" r="3.2" fill="#17688f" opacity="0.60"><title>ID 105: 0.74 carat; price 5815</title></circle><circle cx="311.60" cy="252.83" r="3.2" fill="#17688f" opacity="0.60"><title>ID 106: 0.74 carat; price 4585</title></circle><circle cx="315.00" cy="204.17" r="3.2" fill="#17688f" opacity="0.60"><title>ID 107: 0.75 carat; price 7368</title></circle><circle cx="315.00" cy="251.39" r="3.2" fill="#17688f" opacity="0.60"><title>ID 108: 0.75 carat; price 4667</title></circle><circle cx="315.00" cy="256.85" r="3.2" fill="#17688f" opacity="0.60"><title>ID 109: 0.75 carat; price 4355</title></circle><circle cx="318.40" cy="160.15" r="3.2" fill="#17688f" opacity="0.60"><title>ID 110: 0.76 carat; price 9885</title></circle><circle cx="321.80" cy="212.02" r="3.2" fill="#17688f" opacity="0.60"><title>ID 111: 0.77 carat; price 6919</title></circle><circle cx="325.20" cy="238.82" r="3.2" fill="#17688f" opacity="0.60"><title>ID 112: 0.78 carat; price 5386</title></circle><circle cx="332.00" cy="248.51" r="3.2" fill="#17688f" opacity="0.60"><title>ID 113: 0.8 carat; price 4832</title></circle><circle cx="342.20" cy="207.87" r="3.2" fill="#17688f" opacity="0.60"><title>ID 114: 0.83 carat; price 7156</title></circle><circle cx="366.00" cy="198.71" r="3.2" fill="#17688f" opacity="0.60"><title>ID 115: 0.9 carat; price 7680</title></circle><circle cx="400.00" cy="60.54" r="3.2" fill="#17688f" opacity="0.60"><title>ID 116: 1.0 carat; price 15582</title></circle><circle cx="400.00" cy="133.33" r="3.2" fill="#17688f" opacity="0.60"><title>ID 117: 1.0 carat; price 11419</title></circle><circle cx="400.00" cy="147.86" r="3.2" fill="#17688f" opacity="0.60"><title>ID 118: 1.0 carat; price 10588</title></circle><circle cx="400.00" cy="162.39" r="3.2" fill="#17688f" opacity="0.60"><title>ID 119: 1.0 carat; price 9757</title></circle><circle cx="400.00" cy="89.72" r="3.2" fill="#17688f" opacity="0.60"><title>ID 120: 1.0 carat; price 13913</title></circle><circle cx="400.00" cy="147.86" r="3.2" fill="#17688f" opacity="0.60"><title>ID 121: 1.0 carat; price 10588</title></circle><circle cx="400.00" cy="145.68" r="3.2" fill="#17688f" opacity="0.60"><title>ID 122: 1.0 carat; price 10713</title></circle><circle cx="400.00" cy="167.24" r="3.2" fill="#17688f" opacity="0.60"><title>ID 123: 1.0 carat; price 9480</title></circle><circle cx="400.00" cy="159.96" r="3.2" fill="#17688f" opacity="0.60"><title>ID 124: 1.0 carat; price 9896</title></circle><circle cx="400.00" cy="164.80" r="3.2" fill="#17688f" opacity="0.60"><title>ID 125: 1.0 carat; price 9619</title></circle><circle cx="400.00" cy="172.67" r="3.2" fill="#17688f" opacity="0.60"><title>ID 126: 1.0 carat; price 9169</title></circle><circle cx="400.00" cy="172.08" r="3.2" fill="#17688f" opacity="0.60"><title>ID 127: 1.0 carat; price 9203</title></circle><circle cx="400.00" cy="179.34" r="3.2" fill="#17688f" opacity="0.60"><title>ID 128: 1.0 carat; price 8788</title></circle><circle cx="400.00" cy="191.45" r="3.2" fill="#17688f" opacity="0.60"><title>ID 129: 1.0 carat; price 8095</title></circle><circle cx="400.00" cy="196.30" r="3.2" fill="#17688f" opacity="0.60"><title>ID 130: 1.0 carat; price 7818</title></circle><circle cx="403.40" cy="53.09" r="3.2" fill="#17688f" opacity="0.60"><title>ID 131: 1.01 carat; price 16008</title></circle><circle cx="403.40" cy="146.04" r="3.2" fill="#17688f" opacity="0.60"><title>ID 132: 1.01 carat; price 10692</title></circle><circle cx="403.40" cy="160.71" r="3.2" fill="#17688f" opacity="0.60"><title>ID 133: 1.01 carat; price 9853</title></circle><circle cx="403.40" cy="153.39" r="3.2" fill="#17688f" opacity="0.60"><title>ID 134: 1.01 carat; price 10272</title></circle><circle cx="403.40" cy="165.61" r="3.2" fill="#17688f" opacity="0.60"><title>ID 135: 1.01 carat; price 9573</title></circle><circle cx="403.40" cy="172.95" r="3.2" fill="#17688f" opacity="0.60"><title>ID 136: 1.01 carat; price 9153</title></circle><circle cx="403.40" cy="177.85" r="3.2" fill="#17688f" opacity="0.60"><title>ID 137: 1.01 carat; price 8873</title></circle><circle cx="403.40" cy="177.85" r="3.2" fill="#17688f" opacity="0.60"><title>ID 138: 1.01 carat; price 8873</title></circle><circle cx="403.40" cy="185.16" r="3.2" fill="#17688f" opacity="0.60"><title>ID 139: 1.01 carat; price 8455</title></circle><circle cx="403.40" cy="194.95" r="3.2" fill="#17688f" opacity="0.60"><title>ID 140: 1.01 carat; price 7895</title></circle><circle cx="406.80" cy="151.64" r="3.2" fill="#17688f" opacity="0.60"><title>ID 141: 1.02 carat; price 10372</title></circle><circle cx="406.80" cy="163.98" r="3.2" fill="#17688f" opacity="0.60"><title>ID 142: 1.02 carat; price 9666</title></circle><circle cx="406.80" cy="156.57" r="3.2" fill="#17688f" opacity="0.60"><title>ID 143: 1.02 carat; price 10090</title></circle><circle cx="410.20" cy="142.41" r="3.2" fill="#17688f" opacity="0.60"><title>ID 144: 1.03 carat; price 10900</title></circle><circle cx="413.60" cy="148.16" r="3.2" fill="#17688f" opacity="0.60"><title>ID 145: 1.04 carat; price 10571</title></circle><circle cx="413.60" cy="165.78" r="3.2" fill="#17688f" opacity="0.60"><title>ID 146: 1.04 carat; price 9563</title></circle><circle cx="417.00" cy="179.46" r="3.2" fill="#17688f" opacity="0.60"><title>ID 147: 1.05 carat; price 8781</title></circle><circle cx="420.40" cy="162.64" r="3.2" fill="#17688f" opacity="0.60"><title>ID 148: 1.06 carat; price 9743</title></circle><circle cx="420.40" cy="170.35" r="3.2" fill="#17688f" opacity="0.60"><title>ID 149: 1.06 carat; price 9302</title></circle><circle cx="423.80" cy="176.59" r="3.2" fill="#17688f" opacity="0.60"><title>ID 150: 1.07 carat; price 8945</title></circle><circle cx="434.00" cy="164.33" r="3.2" fill="#17688f" opacity="0.60"><title>ID 151: 1.1 carat; price 9646</title></circle><circle cx="121.20" cy="318.61" r="3.2" fill="#17688f" opacity="0.60"><title>ID 152: 0.18 carat; price 823</title></circle><circle cx="121.20" cy="319.62" r="3.2" fill="#17688f" opacity="0.60"><title>ID 153: 0.18 carat; price 765</title></circle><circle cx="121.20" cy="318.96" r="3.2" fill="#17688f" opacity="0.60"><title>ID 154: 0.18 carat; price 803</title></circle><circle cx="121.20" cy="318.96" r="3.2" fill="#17688f" opacity="0.60"><title>ID 155: 0.18 carat; price 803</title></circle><circle cx="121.20" cy="320.67" r="3.2" fill="#17688f" opacity="0.60"><title>ID 156: 0.18 carat; price 705</title></circle><circle cx="121.20" cy="320.32" r="3.2" fill="#17688f" opacity="0.60"><title>ID 157: 0.18 carat; price 725</title></circle><circle cx="124.60" cy="316.09" r="3.2" fill="#17688f" opacity="0.60"><title>ID 158: 0.19 carat; price 967</title></circle><circle cx="124.60" cy="314.64" r="3.2" fill="#17688f" opacity="0.60"><title>ID 159: 0.19 carat; price 1050</title></circle><circle cx="124.60" cy="316.09" r="3.2" fill="#17688f" opacity="0.60"><title>ID 160: 0.19 carat; price 967</title></circle><circle cx="124.60" cy="317.91" r="3.2" fill="#17688f" opacity="0.60"><title>ID 161: 0.19 carat; price 863</title></circle><circle cx="124.60" cy="319.01" r="3.2" fill="#17688f" opacity="0.60"><title>ID 162: 0.19 carat; price 800</title></circle><circle cx="124.60" cy="318.28" r="3.2" fill="#17688f" opacity="0.60"><title>ID 163: 0.19 carat; price 842</title></circle><circle cx="124.60" cy="319.01" r="3.2" fill="#17688f" opacity="0.60"><title>ID 164: 0.19 carat; price 800</title></circle><circle cx="124.60" cy="319.75" r="3.2" fill="#17688f" opacity="0.60"><title>ID 165: 0.19 carat; price 758</title></circle><circle cx="128.00" cy="317.61" r="3.2" fill="#17688f" opacity="0.60"><title>ID 166: 0.2 carat; price 880</title></circle><circle cx="128.00" cy="317.61" r="3.2" fill="#17688f" opacity="0.60"><title>ID 167: 0.2 carat; price 880</title></circle><circle cx="128.00" cy="320.67" r="3.2" fill="#17688f" opacity="0.60"><title>ID 168: 0.2 carat; price 705</title></circle><circle cx="128.00" cy="321.84" r="3.2" fill="#17688f" opacity="0.60"><title>ID 169: 0.2 carat; price 638</title></circle><circle cx="131.40" cy="316.93" r="3.2" fill="#17688f" opacity="0.60"><title>ID 170: 0.21 carat; price 919</title></circle><circle cx="131.40" cy="312.91" r="3.2" fill="#17688f" opacity="0.60"><title>ID 171: 0.21 carat; price 1149</title></circle><circle cx="131.40" cy="314.52" r="3.2" fill="#17688f" opacity="0.60"><title>ID 172: 0.21 carat; price 1057</title></circle><circle cx="131.40" cy="316.93" r="3.2" fill="#17688f" opacity="0.60"><title>ID 173: 0.21 carat; price 919</title></circle><circle cx="134.80" cy="312.05" r="3.2" fill="#17688f" opacity="0.60"><title>ID 174: 0.22 carat; price 1198</title></circle><circle cx="138.20" cy="311.18" r="3.2" fill="#17688f" opacity="0.60"><title>ID 175: 0.23 carat; price 1248</title></circle><circle cx="138.20" cy="312.94" r="3.2" fill="#17688f" opacity="0.60"><title>ID 176: 0.23 carat; price 1147</title></circle><circle cx="138.20" cy="315.60" r="3.2" fill="#17688f" opacity="0.60"><title>ID 177: 0.23 carat; price 995</title></circle><circle cx="141.60" cy="313.63" r="3.2" fill="#17688f" opacity="0.60"><title>ID 178: 0.24 carat; price 1108</title></circle><circle cx="145.00" cy="307.03" r="3.2" fill="#17688f" opacity="0.60"><title>ID 179: 0.25 carat; price 1485</title></circle><circle cx="145.00" cy="310.57" r="3.2" fill="#17688f" opacity="0.60"><title>ID 180: 0.25 carat; price 1283</title></circle><circle cx="145.00" cy="312.91" r="3.2" fill="#17688f" opacity="0.60"><title>ID 181: 0.25 carat; price 1149</title></circle><circle cx="145.00" cy="314.08" r="3.2" fill="#17688f" opacity="0.60"><title>ID 182: 0.25 carat; price 1082</title></circle><circle cx="148.40" cy="306.09" r="3.2" fill="#17688f" opacity="0.60"><title>ID 183: 0.26 carat; price 1539</title></circle><circle cx="148.40" cy="309.13" r="3.2" fill="#17688f" opacity="0.60"><title>ID 184: 0.26 carat; price 1365</title></circle><circle cx="148.40" cy="310.97" r="3.2" fill="#17688f" opacity="0.60"><title>ID 185: 0.26 carat; price 1260</title></circle><circle cx="148.40" cy="313.40" r="3.2" fill="#17688f" opacity="0.60"><title>ID 186: 0.26 carat; price 1121</title></circle><circle cx="151.80" cy="305.11" r="3.2" fill="#17688f" opacity="0.60"><title>ID 187: 0.27 carat; price 1595</title></circle><circle cx="151.80" cy="311.44" r="3.2" fill="#17688f" opacity="0.60"><title>ID 188: 0.27 carat; price 1233</title></circle><circle cx="155.20" cy="312.03" r="3.2" fill="#17688f" opacity="0.60"><title>ID 189: 0.28 carat; price 1199</title></circle><circle cx="158.60" cy="307.28" r="3.2" fill="#17688f" opacity="0.60"><title>ID 190: 0.29 carat; price 1471</title></circle><circle cx="158.60" cy="311.35" r="3.2" fill="#17688f" opacity="0.60"><title>ID 191: 0.29 carat; price 1238</title></circle><circle cx="162.00" cy="305.37" r="3.2" fill="#17688f" opacity="0.60"><title>ID 192: 0.3 carat; price 1580</title></circle><circle cx="162.00" cy="307.49" r="3.2" fill="#17688f" opacity="0.60"><title>ID 193: 0.3 carat; price 1459</title></circle><circle cx="162.00" cy="307.49" r="3.2" fill="#17688f" opacity="0.60"><title>ID 194: 0.3 carat; price 1459</title></circle><circle cx="162.00" cy="311.70" r="3.2" fill="#17688f" opacity="0.60"><title>ID 195: 0.3 carat; price 1218</title></circle><circle cx="162.00" cy="310.29" r="3.2" fill="#17688f" opacity="0.60"><title>ID 196: 0.3 carat; price 1299</title></circle><circle cx="165.40" cy="304.53" r="3.2" fill="#17688f" opacity="0.60"><title>ID 197: 0.31 carat; price 1628</title></circle><circle cx="165.40" cy="304.53" r="3.2" fill="#17688f" opacity="0.60"><title>ID 198: 0.31 carat; price 1628</title></circle><circle cx="165.40" cy="309.62" r="3.2" fill="#17688f" opacity="0.60"><title>ID 199: 0.31 carat; price 1337</title></circle><circle cx="168.80" cy="307.44" r="3.2" fill="#17688f" opacity="0.60"><title>ID 200: 0.32 carat; price 1462</title></circle><circle cx="172.20" cy="306.72" r="3.2" fill="#17688f" opacity="0.60"><title>ID 201: 0.33 carat; price 1503</title></circle><circle cx="175.60" cy="302.00" r="3.2" fill="#17688f" opacity="0.60"><title>ID 202: 0.34 carat; price 1773</title></circle><circle cx="175.60" cy="304.39" r="3.2" fill="#17688f" opacity="0.60"><title>ID 203: 0.34 carat; price 1636</title></circle><circle cx="179.00" cy="301.16" r="3.2" fill="#17688f" opacity="0.60"><title>ID 204: 0.35 carat; price 1821</title></circle><circle cx="179.00" cy="306.07" r="3.2" fill="#17688f" opacity="0.60"><title>ID 205: 0.35 carat; price 1540</title></circle><circle cx="196.00" cy="293.20" r="3.2" fill="#17688f" opacity="0.60"><title>ID 206: 0.4 carat; price 2276</title></circle><circle cx="199.40" cy="304.74" r="3.2" fill="#17688f" opacity="0.60"><title>ID 207: 0.41 carat; price 1616</title></circle><circle cx="199.40" cy="306.67" r="3.2" fill="#17688f" opacity="0.60"><title>ID 208: 0.41 carat; price 1506</title></circle><circle cx="219.80" cy="286.65" r="3.2" fill="#17688f" opacity="0.60"><title>ID 209: 0.47 carat; price 2651</title></circle><circle cx="223.20" cy="291.33" r="3.2" fill="#17688f" opacity="0.60"><title>ID 210: 0.48 carat; price 2383</title></circle><circle cx="230.00" cy="269.14" r="3.2" fill="#17688f" opacity="0.60"><title>ID 211: 0.5 carat; price 3652</title></circle><circle cx="233.40" cy="267.92" r="3.2" fill="#17688f" opacity="0.60"><title>ID 212: 0.51 carat; price 3722</title></circle><circle cx="233.40" cy="267.92" r="3.2" fill="#17688f" opacity="0.60"><title>ID 213: 0.51 carat; price 3722</title></circle><circle cx="236.80" cy="278.88" r="3.2" fill="#17688f" opacity="0.60"><title>ID 214: 0.52 carat; price 3095</title></circle><circle cx="247.00" cy="268.20" r="3.2" fill="#17688f" opacity="0.60"><title>ID 215: 0.55 carat; price 3706</title></circle><circle cx="250.40" cy="261.83" r="3.2" fill="#17688f" opacity="0.60"><title>ID 216: 0.56 carat; price 4070</title></circle><circle cx="250.40" cy="272.32" r="3.2" fill="#17688f" opacity="0.60"><title>ID 217: 0.56 carat; price 3470</title></circle><circle cx="257.20" cy="248.53" r="3.2" fill="#17688f" opacity="0.60"><title>ID 218: 0.58 carat; price 4831</title></circle><circle cx="257.20" cy="259.40" r="3.2" fill="#17688f" opacity="0.60"><title>ID 219: 0.58 carat; price 4209</title></circle><circle cx="257.20" cy="266.19" r="3.2" fill="#17688f" opacity="0.60"><title>ID 220: 0.58 carat; price 3821</title></circle><circle cx="298.00" cy="234.96" r="3.2" fill="#17688f" opacity="0.60"><title>ID 221: 0.7 carat; price 5607</title></circle><circle cx="298.00" cy="239.87" r="3.2" fill="#17688f" opacity="0.60"><title>ID 222: 0.7 carat; price 5326</title></circle><circle cx="301.40" cy="225.29" r="3.2" fill="#17688f" opacity="0.60"><title>ID 223: 0.71 carat; price 6160</title></circle><circle cx="318.40" cy="226.42" r="3.2" fill="#17688f" opacity="0.60"><title>ID 224: 0.76 carat; price 6095</title></circle><circle cx="325.20" cy="229.19" r="3.2" fill="#17688f" opacity="0.60"><title>ID 225: 0.78 carat; price 5937</title></circle><circle cx="400.00" cy="169.65" r="3.2" fill="#17688f" opacity="0.60"><title>ID 226: 1.0 carat; price 9342</title></circle><circle cx="403.40" cy="163.16" r="3.2" fill="#17688f" opacity="0.60"><title>ID 227: 1.01 carat; price 9713</title></circle><circle cx="403.40" cy="177.85" r="3.2" fill="#17688f" opacity="0.60"><title>ID 228: 1.01 carat; price 8873</title></circle><circle cx="403.40" cy="190.05" r="3.2" fill="#17688f" opacity="0.60"><title>ID 229: 1.01 carat; price 8175</title></circle><circle cx="230.00" cy="266.94" r="3.2" fill="#17688f" opacity="0.60"><title>ID 230: 0.5 carat; price 3778</title></circle><circle cx="230.00" cy="272.99" r="3.2" fill="#17688f" opacity="0.60"><title>ID 231: 0.5 carat; price 3432</title></circle><circle cx="233.40" cy="265.66" r="3.2" fill="#17688f" opacity="0.60"><title>ID 232: 0.51 carat; price 3851</title></circle><circle cx="236.80" cy="274.49" r="3.2" fill="#17688f" opacity="0.60"><title>ID 233: 0.52 carat; price 3346</title></circle><circle cx="236.80" cy="278.27" r="3.2" fill="#17688f" opacity="0.60"><title>ID 234: 0.52 carat; price 3130</title></circle><circle cx="240.20" cy="263.14" r="3.2" fill="#17688f" opacity="0.60"><title>ID 235: 0.53 carat; price 3995</title></circle><circle cx="240.20" cy="268.29" r="3.2" fill="#17688f" opacity="0.60"><title>ID 236: 0.53 carat; price 3701</title></circle><circle cx="247.00" cy="271.29" r="3.2" fill="#17688f" opacity="0.60"><title>ID 237: 0.55 carat; price 3529</title></circle><circle cx="250.40" cy="268.88" r="3.2" fill="#17688f" opacity="0.60"><title>ID 238: 0.56 carat; price 3667</title></circle><circle cx="250.40" cy="277.01" r="3.2" fill="#17688f" opacity="0.60"><title>ID 239: 0.56 carat; price 3202</title></circle><circle cx="253.80" cy="276.07" r="3.2" fill="#17688f" opacity="0.60"><title>ID 240: 0.57 carat; price 3256</title></circle><circle cx="253.80" cy="273.29" r="3.2" fill="#17688f" opacity="0.60"><title>ID 241: 0.57 carat; price 3415</title></circle><circle cx="257.20" cy="266.69" r="3.2" fill="#17688f" opacity="0.60"><title>ID 242: 0.58 carat; price 3792</title></circle><circle cx="264.00" cy="264.37" r="3.2" fill="#17688f" opacity="0.60"><title>ID 243: 0.6 carat; price 3925</title></circle><circle cx="264.00" cy="273.18" r="3.2" fill="#17688f" opacity="0.60"><title>ID 244: 0.6 carat; price 3421</title></circle><circle cx="264.00" cy="264.37" r="3.2" fill="#17688f" opacity="0.60"><title>ID 245: 0.6 carat; price 3925</title></circle><circle cx="267.40" cy="269.77" r="3.2" fill="#17688f" opacity="0.60"><title>ID 246: 0.61 carat; price 3616</title></circle><circle cx="270.80" cy="269.79" r="3.2" fill="#17688f" opacity="0.60"><title>ID 247: 0.62 carat; price 3615</title></circle><circle cx="277.60" cy="266.82" r="3.2" fill="#17688f" opacity="0.60"><title>ID 248: 0.64 carat; price 3785</title></circle><circle cx="281.00" cy="269.30" r="3.2" fill="#17688f" opacity="0.60"><title>ID 249: 0.65 carat; price 3643</title></circle><circle cx="284.40" cy="257.81" r="3.2" fill="#17688f" opacity="0.60"><title>ID 250: 0.66 carat; price 4300</title></circle><circle cx="298.00" cy="212.93" r="3.2" fill="#17688f" opacity="0.60"><title>ID 251: 0.7 carat; price 6867</title></circle><circle cx="298.00" cy="223.10" r="3.2" fill="#17688f" opacity="0.60"><title>ID 252: 0.7 carat; price 6285</title></circle><circle cx="298.00" cy="231.58" r="3.2" fill="#17688f" opacity="0.60"><title>ID 253: 0.7 carat; price 5800</title></circle><circle cx="298.00" cy="236.65" r="3.2" fill="#17688f" opacity="0.60"><title>ID 254: 0.7 carat; price 5510</title></circle><circle cx="298.00" cy="257.01" r="3.2" fill="#17688f" opacity="0.60"><title>ID 255: 0.7 carat; price 4346</title></circle><circle cx="301.40" cy="221.58" r="3.2" fill="#17688f" opacity="0.60"><title>ID 256: 0.71 carat; price 6372</title></circle><circle cx="301.40" cy="242.20" r="3.2" fill="#17688f" opacity="0.60"><title>ID 257: 0.71 carat; price 5193</title></circle><circle cx="304.80" cy="234.00" r="3.2" fill="#17688f" opacity="0.60"><title>ID 258: 0.72 carat; price 5662</title></circle><circle cx="308.20" cy="239.75" r="3.2" fill="#17688f" opacity="0.60"><title>ID 259: 0.73 carat; price 5333</title></circle><circle cx="308.20" cy="227.37" r="3.2" fill="#17688f" opacity="0.60"><title>ID 260: 0.73 carat; price 6041</title></circle><circle cx="311.60" cy="231.32" r="3.2" fill="#17688f" opacity="0.60"><title>ID 261: 0.74 carat; price 5815</title></circle><circle cx="332.00" cy="182.43" r="3.2" fill="#17688f" opacity="0.60"><title>ID 262: 0.8 carat; price 8611</title></circle><circle cx="332.00" cy="212.26" r="3.2" fill="#17688f" opacity="0.60"><title>ID 263: 0.8 carat; price 6905</title></circle><circle cx="332.00" cy="212.26" r="3.2" fill="#17688f" opacity="0.60"><title>ID 264: 0.8 carat; price 6905</title></circle><circle cx="332.00" cy="220.81" r="3.2" fill="#17688f" opacity="0.60"><title>ID 265: 0.8 carat; price 6416</title></circle><circle cx="332.00" cy="227.19" r="3.2" fill="#17688f" opacity="0.60"><title>ID 266: 0.8 carat; price 6051</title></circle><circle cx="335.40" cy="180.61" r="3.2" fill="#17688f" opacity="0.60"><title>ID 267: 0.81 carat; price 8715</title></circle><circle cx="335.40" cy="210.81" r="3.2" fill="#17688f" opacity="0.60"><title>ID 268: 0.81 carat; price 6988</title></circle><circle cx="335.40" cy="210.81" r="3.2" fill="#17688f" opacity="0.60"><title>ID 269: 0.81 carat; price 6988</title></circle><circle cx="335.40" cy="219.43" r="3.2" fill="#17688f" opacity="0.60"><title>ID 270: 0.81 carat; price 6495</title></circle><circle cx="335.40" cy="204.34" r="3.2" fill="#17688f" opacity="0.60"><title>ID 271: 0.81 carat; price 7358</title></circle><circle cx="338.80" cy="218.08" r="3.2" fill="#17688f" opacity="0.60"><title>ID 272: 0.82 carat; price 6572</title></circle><circle cx="338.80" cy="209.34" r="3.2" fill="#17688f" opacity="0.60"><title>ID 273: 0.82 carat; price 7072</title></circle><circle cx="349.00" cy="186.84" r="3.2" fill="#17688f" opacity="0.60"><title>ID 274: 0.85 carat; price 8359</title></circle><circle cx="349.00" cy="214.01" r="3.2" fill="#17688f" opacity="0.60"><title>ID 275: 0.85 carat; price 6805</title></circle><circle cx="349.00" cy="198.17" r="3.2" fill="#17688f" opacity="0.60"><title>ID 276: 0.85 carat; price 7711</title></circle><circle cx="352.40" cy="230.97" r="3.2" fill="#17688f" opacity="0.60"><title>ID 277: 0.86 carat; price 5835</title></circle><circle cx="400.00" cy="92.13" r="3.2" fill="#17688f" opacity="0.60"><title>ID 278: 1.0 carat; price 13775</title></circle><circle cx="400.00" cy="87.31" r="3.2" fill="#17688f" opacity="0.60"><title>ID 279: 1.0 carat; price 14051</title></circle><circle cx="400.00" cy="133.33" r="3.2" fill="#17688f" opacity="0.60"><title>ID 280: 1.0 carat; price 11419</title></circle><circle cx="400.00" cy="147.86" r="3.2" fill="#17688f" opacity="0.60"><title>ID 281: 1.0 carat; price 10588</title></circle><circle cx="400.00" cy="128.49" r="3.2" fill="#17688f" opacity="0.60"><title>ID 282: 1.0 carat; price 11696</title></circle><circle cx="400.00" cy="147.86" r="3.2" fill="#17688f" opacity="0.60"><title>ID 283: 1.0 carat; price 10588</title></circle><circle cx="400.00" cy="150.27" r="3.2" fill="#17688f" opacity="0.60"><title>ID 284: 1.0 carat; price 10450</title></circle><circle cx="400.00" cy="159.96" r="3.2" fill="#17688f" opacity="0.60"><title>ID 285: 1.0 carat; price 9896</title></circle><circle cx="400.00" cy="172.08" r="3.2" fill="#17688f" opacity="0.60"><title>ID 286: 1.0 carat; price 9203</title></circle><circle cx="400.00" cy="167.24" r="3.2" fill="#17688f" opacity="0.60"><title>ID 287: 1.0 carat; price 9480</title></circle><circle cx="400.00" cy="174.49" r="3.2" fill="#17688f" opacity="0.60"><title>ID 288: 1.0 carat; price 9065</title></circle><circle cx="400.00" cy="179.34" r="3.2" fill="#17688f" opacity="0.60"><title>ID 289: 1.0 carat; price 8788</title></circle><circle cx="400.00" cy="179.34" r="3.2" fill="#17688f" opacity="0.60"><title>ID 290: 1.0 carat; price 8788</title></circle><circle cx="400.00" cy="186.61" r="3.2" fill="#17688f" opacity="0.60"><title>ID 291: 1.0 carat; price 8372</title></circle><circle cx="400.00" cy="191.45" r="3.2" fill="#17688f" opacity="0.60"><title>ID 292: 1.0 carat; price 8095</title></circle><circle cx="400.00" cy="196.30" r="3.2" fill="#17688f" opacity="0.60"><title>ID 293: 1.0 carat; price 7818</title></circle><circle cx="403.40" cy="89.79" r="3.2" fill="#17688f" opacity="0.60"><title>ID 294: 1.01 carat; price 13909</title></circle><circle cx="403.40" cy="131.37" r="3.2" fill="#17688f" opacity="0.60"><title>ID 295: 1.01 carat; price 11531</title></circle><circle cx="403.40" cy="146.04" r="3.2" fill="#17688f" opacity="0.60"><title>ID 296: 1.01 carat; price 10692</title></circle><circle cx="403.40" cy="126.48" r="3.2" fill="#17688f" opacity="0.60"><title>ID 297: 1.01 carat; price 11811</title></circle><circle cx="403.40" cy="153.39" r="3.2" fill="#17688f" opacity="0.60"><title>ID 298: 1.01 carat; price 10272</title></circle><circle cx="403.40" cy="158.27" r="3.2" fill="#17688f" opacity="0.60"><title>ID 299: 1.01 carat; price 9993</title></circle><circle cx="403.40" cy="170.51" r="3.2" fill="#17688f" opacity="0.60"><title>ID 300: 1.01 carat; price 9293</title></circle><circle cx="403.40" cy="168.06" r="3.2" fill="#17688f" opacity="0.60"><title>ID 301: 1.01 carat; price 9433</title></circle><circle cx="403.40" cy="172.95" r="3.2" fill="#17688f" opacity="0.60"><title>ID 302: 1.01 carat; price 9153</title></circle><circle cx="403.40" cy="177.85" r="3.2" fill="#17688f" opacity="0.60"><title>ID 303: 1.01 carat; price 8873</title></circle><circle cx="403.40" cy="190.05" r="3.2" fill="#17688f" opacity="0.60"><title>ID 304: 1.01 carat; price 8175</title></circle><circle cx="406.80" cy="144.22" r="3.2" fill="#17688f" opacity="0.60"><title>ID 305: 1.02 carat; price 10796</title></circle><circle cx="420.40" cy="160.07" r="3.2" fill="#17688f" opacity="0.60"><title>ID 306: 1.06 carat; price 9890</title></circle><circle cx="406.80" cy="176.35" r="3.2" fill="#17688f" opacity="0.60"><title>ID 307: 1.02 carat; price 8959</title></circle><circle cx="430.60" cy="173.76" r="3.2" fill="#17688f" opacity="0.60"><title>ID 308: 1.09 carat; price 9107</title></circle><text x="60" y="15" font-size="14" fill="#19384a">PRICE</text><text x="264.0" y="385" text-anchor="middle" font-size="14" fill="#19384a">WEIGHT (carat)</text></svg><small>Diamonds · 308 records</small></div></div>
+
+<hr />
+
+<h2 id="02--visual-analytics">02 — Visual Analytics</h2>
+
+<p>Visual analytics combines graphical views with operations that change how data is summarized, organized, selected, and inspected.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Operation</th>
+      <th>Main function</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Drill Down</td>
+      <td>Change the level of detail</td>
+      <td>Clarity → individual diamond</td>
+    </tr>
+    <tr>
+      <td>Sort / Group</td>
+      <td>Reorder or combine categories</td>
+      <td>Rank average prices; combine VS1 and VS2</td>
+    </tr>
+    <tr>
+      <td>Set / Filter</td>
+      <td>Define membership or restrict data</td>
+      <td>Color selected IDs; show one rater</td>
+    </tr>
+    <tr>
+      <td>Trend / Reference Line</td>
+      <td>Fit a relationship or add a benchmark</td>
+      <td>Price–weight fit; average price</td>
+    </tr>
+    <tr>
+      <td>Parameter / Action</td>
+      <td>Use an adjustable value or a selection</td>
+      <td>Change a threshold by typing or clicking</td>
+    </tr>
+    <tr>
+      <td>Tooltip / Data Guide</td>
+      <td>Inspect supporting details</td>
+      <td>Read a record; inspect an explanation</td>
+    </tr>
+  </tbody>
+</table>
+
+<p class="operation-result"><b>In Tableau Online:</b> open your published <b>Lab 5 Diamonds Data Source</b> and choose <b>New Workbook</b>. Save the Week 9 work separately; keep your Lab 5 Workbook unchanged.</p>
+
+<hr />
+
+<h2 id="03--example--connect-to-the-lab-5-data-source">03 — Example — Connect to the Lab 5 Data Source</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 095806.png" alt="Choose the existing published Lab 5 Diamonds data source" data-asset="assets/screenshots/Screenshot 2026-10-14 095806.png" /></div><figcaption>Under On This Site, select your published Lab 5 Diamonds data source, then Connect.</figcaption></figure></div>
+
+<hr />
+
+<h2 id="04--dimensions--measures--field-roles">04 — Dimensions / Measures — Field Roles</h2>
+
+<div class="activity-layout"><div class="concept-text"><p><b>Dimensions</b> partition records into categories: <code>CLARITY</code>, <code>RATER</code>, or individual <code>IDNO</code> values.</p><p><b>Measures</b> provide values to aggregate within those groups: <code>AVG(PRICE)</code>, <code>SUM(PRICE)</code>.</p><p><b>Data type</b> describes the stored values: number, text, date, and so on.</p><table><tr><th>Role</th><th>Display choice</th></tr><tr><td>Dimension</td><td>Discrete; numeric/date dimensions may also be continuous</td></tr><tr><td>Measure</td><td>Continuous or discrete</td></tr></table><p class="small-note">A numeric identifier is not an amount to sum. Blue/green is not the Dimension/Measure distinction.</p></div><div class="concept-visual"><iframe class="concept-activity" data-activity="roles" src="assets/activities.html#roles" title="Compare types and analytical roles in the same Diamonds records" height="480" sandbox="allow-scripts"></iframe></div></div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="05--aggregation-and-level-of-detail">05 — Aggregation and Level of Detail</h2>
+
+<div class="activity-layout">
+<div class="concept-text">
+
+Columns: **AVG(WEIGHT)**. Rows: **AVG(PRICE)**.
+
+1. **No dimension:** one average pair.
+2. **RATER / CLARITY on Detail:** one pair per category.
+3. **IDNO on Detail:** one pair per record.
+
+Changing **AVG → SUM** changes the computation, not the grouping. At one row per ID, both return the same value.
+
+The HTML control **replaces** the Detail field. In Tableau, remove the old dimension before adding the next.
+
+Some record-level marks overlap.
+
+</div>
+<div class="concept-visual">
+
+<iframe class="concept-activity" src="assets/activities.html#aggregation" title="Change the dimension and aggregation in a Diamonds scatter plot" height="480" sandbox="allow-scripts"></iframe>
+
+</div>
+</div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/calculations_aggregation.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="06--discrete--continuous--numeric-id">06 — Discrete / Continuous — Numeric ID</h2>
+
+<p class="concept-lead"><b>Discrete:</b> separate values with individual headers. <b>Continuous:</b> values located along an axis.<br /><b>IDNO is a dimension in both views;</b> AVG(PRICE) is the measure. Bar and Line are separate Marks choices.</p>
+<iframe class="concept-activity wide-concept" data-activity="display" src="assets/activities.html#display" title="Compare discrete ID headers and a continuous ID axis" height="422" sandbox="allow-scripts"></iframe>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/datafields_typesandroles_convertdisctocont.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="07--example--discrete-idno-in-tableau">07 — Example — Discrete IDNO in Tableau</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 100111.png" alt="Discrete IDNO displayed as separate headers in Tableau" data-asset="assets/screenshots/Screenshot 2026-10-14 100111.png" /></div><figcaption>Columns: IDNO (discrete). Rows: SUM(PRICE). Each ID has its own header.</figcaption></figure></div>
+
+<hr />
+
+<h2 id="08--discrete--continuous--dates">08 — Discrete / Continuous — Dates</h2>
+
+<p class="concept-lead"><b>Weekday part:</b> Monday is one category across weeks. <b>Daily date value:</b> each dated Monday remains separate.<br />WEEKDAY alone has at most seven categories. Here we change the date level and its blue/green display together.</p>
+<iframe class="concept-activity wide-concept" data-activity="weekday" src="assets/activities.html#weekday" title="Seven weekday categories versus fourteen or twenty-one actual dates" height="432" sandbox="allow-scripts"></iframe>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/dates_levels.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="09--drill-down--date-hierarchies">09 — Drill Down — Date Hierarchies</h2>
+
+<div class="activity-layout">
+<div class="concept-text">
+
+**Drill down** adds a finer level of detail. **Drill up** regroups it at a higher level.
+
+`Year → Quarter → Month → Day`
+
+Use **+** and **−** to move between the available levels.
+
+In this example, all 24 monthly rows stay included. A year total splits into quarters, then months; the total stays unchanged.
+
+For discrete dates, **+** adds the next level while keeping its parent.
+
+Drilling down is different from filtering to one year.
+
+</div>
+<div class="concept-visual">
+
+<iframe class="concept-activity" src="assets/activities.html#dates" title="Expand year totals to quarters and months" height="495" sandbox="allow-scripts"></iframe></div>
+</div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/qs_hierarchies.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="10--date-grouping--month-vs-year--month">10 — Date Grouping — MONTH vs YEAR + MONTH</h2>
+
+<div class="activity-layout"><div class="concept-text"><p><b>MONTH(Order Date) alone</b> groups all January records together, irrespective of year.</p><p><b>YEAR(Order Date) + MONTH(Order Date)</b> creates two levels of discrete headers: Year, then Month.</p><p>Read the <b>Columns shelf</b> and the header structure together. January under 2024 is a different group from January under 2025.</p><p class="key-statement">Both examples are discrete. The added Year grouping—not a color change—separates the years.</p><p class="small-note">A month-level date value can also retain the year in one field. Blue/green alone does not determine which date components are retained.</p></div><div class="concept-visual"><iframe class="concept-activity" data-activity="dateparts" src="assets/activities.html#dateparts" title="One MONTH header versus nested YEAR and MONTH column headers" height="480" sandbox="allow-scripts"></iframe></div></div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/dates_levels.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="11--drill-down--a-custom-hierarchy">11 — Drill Down — A Custom Hierarchy</h2>
+
+<div class="activity-layout">
+<div class="concept-text"><p>A <b>hierarchy</b> organizes dimensions into an ordered path from summary to detail.</p><p><code>CLARITY → IDNO</code></p><p>At CLARITY level, one bar summarizes a category. Expanding adds a bar for each ID within that category.</p><p>Collapsing recomputes the average from those records. It does not sum the child prices or remove them.</p><p class="key-statement">Drill down changes the <b>grouping level</b>.<br />A filter changes the <b>included subset</b>.</p><p class="small-note">Diamonds has no date field. The same hierarchical idea applies to categorical dimensions.</p>
+
+</div>
+<div class="concept-visual">
+<iframe class="concept-activity" data-activity="hierarchy" height="480" sandbox="allow-scripts" src="assets/activities.html#hierarchy" title="Expand clarity categories into individual diamond records"></iframe>
+
+</div>
+</div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/qs_hierarchies.htm" rel="noopener" target="_blank">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="12--example--expand-clarity-to-idno">12 — Example — Expand CLARITY to IDNO</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 100254.png" alt="Expanded CLARITY → IDNO hierarchy in Tableau" data-asset="assets/screenshots/Screenshot 2026-10-14 100254.png" /></div><figcaption>Rows: CLARITY → IDNO. Columns: SUM(PRICE). Expand the hierarchy to display individual IDs.</figcaption></figure></div>
+
+<hr />
+
+<h2 id="13--sort--field-and-nested-sorts">13 — Sort — Field and Nested Sorts</h2>
+
+<div class="activity-layout">
+<div class="concept-text"><p><b>Sort</b> changes member order while leaving their aggregate values unchanged.</p><p>Here the outer dimension is <b>COLOR</b>; the inner dimension is <b>CLARITY</b>. The measure is <b>AVG(PRICE)</b>.</p><p><b>Field sort:</b> one CLARITY ordering computed over the retained records, repeated in each COLOR pane.</p><p><b>Nested sort:</b> a separate ranking of CLARITY inside each COLOR pane.</p><p class="key-statement">The same label can have a different position in each pane under a nested sort.</p>
+
+</div>
+<div class="concept-visual">
+<iframe class="concept-activity" data-activity="sort" height="490" sandbox="allow-scripts" src="assets/activities.html#sort" title="Animated field sorting versus nested sorting"></iframe>
+</div>
+</div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/sortgroup_sorting_computed_howto.htm" rel="noopener" target="_blank">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="14--example--sort-by-avgprice">14 — Example — Sort by AVG(PRICE)</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 100413.png" alt="Field sorting with COLOR and CLARITY in Tableau" data-asset="assets/screenshots/Screenshot 2026-10-14 100413.png" /></div><figcaption>Open the CLARITY header menu and choose Field → AVG(Price).</figcaption></figure></div>
+
+<hr />
+
+<h2 id="15--group--combine-category-members">15 — Group — Combine Category Members</h2>
+
+<div class="activity-layout"><div class="concept-text"><p>A <b>Group</b> creates a new categorical dimension by assigning several existing members to one label.</p><p><code>VS1 + VS2 → VS</code></p><p>The grouped chart combines the underlying records and recomputes the measure.</p><p>It does not delete rows or turn distinct diamonds into duplicate records.</p><p class="key-statement">Group result: <b>a category label</b>.<br />Set result: <b>IN / OUT membership</b>.</p><p class="small-note">The merged average weights every source row equally. Bins and rule-based calculated categories are other grouping techniques—not the Group command itself.</p>
+
+</div><div class="concept-visual"><iframe class="concept-activity" data-activity="group" src="assets/activities.html#group" title="Merge VS1 and VS2 into a group and recompute the measure" height="490" sandbox="allow-scripts"></iframe>
+</div></div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/sortgroup_groups_creating.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="16--example--a-calculated-size-category">16 — Example — A Calculated Size Category</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 102043.png" alt="Calculated size_class field" data-asset="assets/screenshots/Screenshot 2026-10-14 102043.png" /></div><figcaption>size_class tests WEIGHT &gt; 0.5 and returns big or small. This is a calculated category, not the Group command.</figcaption></figure></div>
+
+<hr />
+
+<h2 id="17--example--color-by-size_class">17 — Example — Color by size_class</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 102100.png" alt="size_class colors the Price–Weight scatter plot" data-asset="assets/screenshots/Screenshot 2026-10-14 102100.png" /></div><figcaption>Place size_class on Color and IDNO on Detail in the Price–Weight scatter plot.</figcaption></figure></div>
+
+<hr />
+
+<h2 id="18--set--top-5-by-price">18 — Set — Top 5 by Price</h2>
+
+<div class="activity-layout"><div class="concept-text"><p>A <b>Set</b> identifies a subset of dimension members. Each ID is <b>IN</b> or <b>OUT</b>.</p><h3>One example: Top 5 by Price</h3><p>Rank <code>IDNO</code> members by <code>AVG(PRICE)</code>. The five highest belong to the set.</p><p>Use that membership on <b>Color</b>: the five members stand out; the others remain visible.</p><p class="key-statement">The set contains <b>IDs</b>, not five new price categories. It does not merge those five marks.</p><p class="small-note">In Tableau Online, use the available <b>Create Set</b> workflow to select members. The Tableau screenshot uses a fixed set named <b>big</b>; the HTML example demonstrates a separate Top 5 membership rule. Put a set on Color to see IN/OUT.</p>
+
+</div><div class="concept-visual"><iframe class="concept-activity" data-activity="membership" src="assets/activities.html#membership" title="One Top 5 by Price set with IN and OUT diamond records" height="490" sandbox="allow-scripts"></iframe>
+</div></div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/sortgroup_sets_create.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="19--example--set-membership-in--out">19 — Example — Set Membership: IN / OUT</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 102949.png" alt="Fixed set named big, showing IN / OUT membership" data-asset="assets/screenshots/Screenshot 2026-10-14 102949.png" /></div><figcaption>The set big is on Color. IDNO remains on Detail, and OUT records stay visible.</figcaption></figure></div>
+
+<hr />
+
+<h2 id="20--filters--levels-and-execution-order">20 — Filters — Levels and Execution Order</h2>
+
+<p class="concept-lead">A <b>filter</b> limits the data or results used in an analysis. Its level determines <b>when</b> the restriction is applied.</p>
+<table class="filter-levels"><thead><tr><th>Execution order ↓</th><th>What this level does</th><th>Example</th></tr></thead><tbody>
+ <tr><td><span class="stage-number">1</span><b>Extract filter</b></td><td>Limits the rows copied into an extract when it is built.</td><td>Keep only a selected date range in the extract.</td></tr>
+ <tr><td><span class="stage-number">2</span><b>Data source filter</b></td><td>Restricts rows available to worksheets using that source.</td><td>COVID source: counts ≥ 0.</td></tr>
+ <tr><td><span class="stage-number">3</span><b>Context filter</b></td><td>Defines a worksheet subset before dependent filters.</td><td>GIA first, then Top 5 within GIA.</td></tr>
+ <tr><td><span class="stage-number">4</span><b>Dimension filter</b></td><td>Selects dimension members before the view's aggregation.</td><td>Keep CLARITY = VS1.</td></tr>
+ <tr><td><span class="stage-number">5</span><b>Measure filter</b></td><td>Tests aggregated measures at the view's level of detail.</td><td>Keep AVG(PRICE) &gt; 2,500.</td></tr>
+ <tr><td><span class="stage-number">6</span><b>Table calculation filter</b></td><td>Hides marks after table calculations; their input data stay included.</td><td>Hide a calculated result without recomputing the others.</td></tr>
+</tbody></table>
+<p class="order-bottom"><b>The level—not the order in which you add filters—determines execution.</b></p>
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/order_of_operations.htm" target="_blank" rel="noopener">Tableau Help: Order of operations</a> · <a href="https://help.tableau.com/current/pro/desktop/en-us/filtering_context.htm" target="_blank" rel="noopener">Context filters</a></p>
+
+<hr />
+
+<h2 id="21--trend-lines--fit-the-displayed-data">21 — Trend Lines — Fit the Displayed Data</h2>
+
+<div class="activity-layout">
+<div class="concept-text">
+
+A linear trend line fits:
+
+`fitted PRICE = intercept + slope × WEIGHT`
+
+**Slope** summarizes the direction and rate of change. **R²** summarizes fit to these plotted values; it is not proof of causation.
+
+### In Tableau
+
+Keep **IDNO on Detail**. Remove categorical Color for one overall fit, then use **Analytics → Trend Line → Linear**.
+
+Filter by RATER to recompute the fit. In Tableau, use **one fit without color factors**, allow a free intercept, and turn off confidence bands to match this example.
+
+
+
+</div>
+<div class="concept-visual">
+
+<iframe class="concept-activity" src="assets/activities.html#trend" title="Filter the actual Diamonds data and recompute a linear fit" height="480" sandbox="allow-scripts"></iframe>
+</div>
+</div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/trendlines_add.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="22--example--trend-and-reference-lines">22 — Example — Trend and Reference Lines</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103124.png" alt="Analytics pane: reference and trend lines on the Diamonds view" data-asset="assets/screenshots/Screenshot 2026-10-14 103124.png" /></div><figcaption>The Analytics pane provides Trend Line and Reference Line; this view includes both.</figcaption></figure></div>
+
+<hr />
+
+<h2 id="23--reference-lines--value-and-scope">23 — Reference Lines — Value and Scope</h2>
+
+<p>A <strong>reference line</strong> locates a benchmark on a <strong>continuous axis</strong>. Unlike a trend line, it does not fit the relationship between two measures.</p>
+
+<div class="columns tech-columns"><div>
+
+### Choose the reference value
+
+- **Constant:** a specified value, such as WEIGHT = 1.0.
+- **Statistic:** a mean or median of the relevant plotted values.
+- **Parameter:** a value the viewer controls.
+
+A **reference band** covers an interval; a **distribution band** uses statistical ranges.
+
+
+</div><div>
+
+### Choose its scope
+
+| Scope | How many references? |
+|---|---|
+| Entire Table | One for the view |
+| Per Pane | One for each pane |
+| Per Cell | One for each cell |
+
+In **Price vs Weight**, add a horizontal mean-PRICE line. Then add RATER to Columns and compare Entire Table with Per Pane.
+
+</div></div>
+
+<p class="operation-result">An average of displayed group marks may differ from the overall row-level mean when group sizes differ. At the IDNO level here, each mark corresponds to one record.</p>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/reference_lines.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="24--parameters--one-adjustable-value">24 — Parameters — One Adjustable Value</h2>
+
+<div class="activity-layout"><div class="concept-text"><p>A <b>parameter</b> stores one current number, text value, or date.</p><p>It affects a view only through an object that uses it.</p><p>Here <b>price level</b> controls a reference line and this category:</p><pre><code>IF [PRICE] &gt; [price level] THEN
+  'Above threshold'
+ELSE
+  'At or below threshold'
+END</code></pre><p class="key-statement">One number → two effects.<br />The record values stay unchanged.</p>
+
+</div><div class="concept-visual"><iframe class="concept-activity" data-activity="parameter" src="assets/activities.html#parameter" title="One price parameter controls a benchmark and a category calculation" height="495" sandbox="allow-scripts"></iframe>
+</div></div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/parameters_create.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="25--example--create-a-numeric-parameter">25 — Example — Create a Numeric Parameter</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103227.png" alt="Numeric size value parameter setup" data-asset="assets/screenshots/Screenshot 2026-10-14 103227.png" /></div><figcaption>size value: Float; current value 1; Range from 0 to 2; step size 0.1.</figcaption></figure></div>
+
+<hr />
+
+<h2 id="26--example--use-the-parameter-in-a-calculation">26 — Example — Use the Parameter in a Calculation</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103311.png" alt="size_class calculation using the size value parameter" data-asset="assets/screenshots/Screenshot 2026-10-14 103311.png" /></div><figcaption>Replace 0.5 with [size value] in size_class. The classification now uses the parameter.</figcaption></figure></div>
+
+<hr />
+
+<h2 id="27--example--a-parameter-based-reference-line">27 — Example — A Parameter-Based Reference Line</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103338.png" alt="Edit Reference Line settings in Tableau" data-asset="assets/screenshots/Screenshot 2026-10-14 103338.png" /></div><figcaption>Set the reference line Value to size value. This example uses Table scope.</figcaption></figure></div>
+
+<hr />
+
+<h2 id="28--actions--connect-interaction-to-results">28 — Actions — Connect Interaction to Results</h2>
+
+<p class="concept-lead">An <b>action</b> connects a user's interaction in a source view to a defined response in a target.</p>
+<div aria-label="Source interaction, action rule, and target response" class="action-steps">
+<div><span>USER INTERACTION</span><b>Select · Hover · Menu</b></div><strong aria-hidden="true">→</strong>
+<div><span>ACTION RULE</span><b>What should change?</b></div><strong aria-hidden="true">→</strong>
+<div><span>TARGET</span><b>A view, a set, or a parameter</b></div>
+</div>
+<table class="action-summary"><thead><tr><th>Action type</th><th>Target</th><th>Example result</th></tr></thead><tbody>
+<tr><td><b>Filter</b></td><td>Another worksheet</td><td>Select a state → show only that state's counties.</td></tr>
+<tr><td><b>Change Set Values</b></td><td>An existing set</td><td>Select counties → update membership; a calculation or Color uses the set.</td></tr>
+<tr><td><b>Change Parameter</b></td><td>An existing parameter</td><td>Select a price → update <b>price level</b> → move its reference line.</td></tr>
+</tbody></table>
+<p class="action-other">Other actions highlight related marks or navigate to a sheet or URL.</p>
+<p class="operation-result"><b>Action = trigger + target + response.</b> Groups supply category values; they are not a separate action type.</p>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/actions.htm" rel="noopener" target="_blank">Tableau Help: Actions</a> · <a href="https://help.tableau.com/current/pro/desktop/en-us/actions_sets.htm" rel="noopener" target="_blank">Set actions</a> · <a href="https://help.tableau.com/current/pro/desktop/en-us/actions_parameters.htm" rel="noopener" target="_blank">Parameter actions</a></p>
+
+<hr />
+
+<h2 id="29--tooltips--detail-and-a-filtered-view">29 — Tooltips — Detail and a Filtered View</h2>
+
+<div class="activity-layout">
+<div class="concept-text">
+
+For an ordinary tooltip, use **Marks → Tooltip → Insert** to include IDNO, PRICE, WEIGHT, CLARITY, and RATER.
+
+**Viz in Tooltip** displays a filtered image of another worksheet—not a second interactive worksheet:
+
+`source mark → filter fields → target view`
+
+The county bar supplies its geographic identity. The target line chart recomputes that county's weekly values.
+
+Turn off the filter in this example: every source bar then shows the same combined series.
+
+
+
+</div>
+<div class="concept-visual">
+
+<iframe class="concept-activity" src="assets/activities.html#tooltip" title="Hover a county bar and update its weekly tooltip chart" height="460" sandbox="allow-scripts"></iframe>
+</div>
+</div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/viz_in_tooltip.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+
+<hr />
+
+<h2 id="30--example--insert-a-view-into-a-tooltip">30 — Example — Insert a View into a Tooltip</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103557.png" alt="Editing a Viz in Tooltip in Tableau" data-asset="assets/screenshots/Screenshot 2026-10-14 103557.png" /></div><figcaption>The tooltip inserts Sheet 2 with All Fields filtering and a 300 × 300 display area.</figcaption></figure></div>
+
+<hr />
+
+<h2 id="31--data-guide-and-explain-data">31 — Data Guide and Explain Data</h2>
+
+<div class="columns tech-columns guide-concept-columns"><div>
+<p><b>Data Guide</b> provides view context: filters, fields, summaries, and detected outliers.</p>
+<p><b>Explain Data</b> evaluates statistical explanations for a selected mark. It does not establish the cause of the observed result.</p>
+<p class="operation-result">Use Data Guide where enabled; explanations vary with the view and selection.</p>
+</div><div><h3>In Tableau</h3><ol>
+<li>Restore <b>CLARITY</b> on Rows and <b>AVG(PRICE)</b> on Columns.</li>
+<li>Select IF and open Data Guide.</li>
+<li>Inspect the proposed contributing measures.</li>
+<li>Compare the underlying WEIGHT and PRICE values and active filters.</li>
+</ol></div></div>
+
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/data_guide.htm" target="_blank" rel="noopener">Tableau Help</a></p>
+<style id="filter-action-concepts">.slide .action-steps{display:grid;grid-template-columns:1fr 32px 1fr 32px 1.2fr;gap:12px;align-items:center;margin:15px 0 17px}.slide .action-steps>div{border:1px solid var(--line);padding:14px 16px;background:#f6fafc;min-height:84px}.slide .action-steps span{display:block;font-size:13px;letter-spacing:.07em;color:var(--muted);font-weight:650;margin-bottom:8px}.slide .action-steps b{font-size:21px;line-height:1.25}.slide .action-steps>strong{text-align:center;color:var(--blue);font-size:28px}.slide .action-summary{font-size:20px;line-height:1.33;margin:0}.slide .action-summary th{font-size:20px}.slide .action-summary td,.slide .action-summary th{padding:12px 13px}.slide .action-summary td:first-child{width:25%}.slide .action-summary td:nth-child(2){width:22%}.slide .action-other{font-size:18px;line-height:1.4;margin:13px 0 0}.slide .filter-levels{font-size:19px;line-height:1.22;margin:13px 0 0}.slide .filter-levels th{font-size:19px}.slide .filter-levels td,.slide .filter-levels th{padding:8px 12px}.slide .filter-levels td:first-child{width:29%;white-space:nowrap}.slide .filter-levels td:nth-child(2){width:42%}.slide .filter-levels td:last-child{color:var(--muted)}.slide .stage-number{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border:1px solid #98b7c8;color:var(--blue);font-size:15px;margin-right:10px;border-radius:50%;vertical-align:middle}.slide .order-bottom{font-size:20px;line-height:1.3;margin:16px 0 0;border-left:3px solid var(--blue);padding:9px 13px;background:var(--pale)}</style>
+
+<hr />
+
+<h2 id="32--example--inspect-a-mark-with-data-guide">32 — Example — Inspect a Mark with Data Guide</h2>
+
+<div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103446.png" alt="Data Guide explaining selected Clarity data" data-asset="assets/screenshots/Screenshot 2026-10-14 103446.png" /></div><figcaption>Select IF in the CLARITY view and inspect the comparison in the Data Guide panel.</figcaption></figure></div>
+
+<style id="week9-example-slides">
+/* One full-size, unaltered Tableau capture per example slide. */
+.slide.example-slide h2{font-size:32px;line-height:1.16;margin:14px 0 0;letter-spacing:-.018em}
+.slide.example-slide .slide-body{left:48px;right:48px;top:122px;bottom:55px}
+.example-figure{margin:0;height:100%;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:12px;background:white}
+.example-figure .example-image-frame{min-height:0;display:flex;align-items:center;justify-content:center}
+.example-figure img{display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;cursor:default;border:0}
+.slide .example-figure figcaption{font-size:20px;line-height:1.32;color:var(--muted);text-align:left;margin:0;padding:0}
+.slide .guide-concept-columns{gap:50px;padding-top:9px}
+.slide .guide-concept-columns p{font-size:24px;line-height:1.48;margin-bottom:25px}
+.slide .guide-concept-columns .operation-result{font-size:21px;line-height:1.4;margin-top:25px}
+.slide .guide-concept-columns ol{font-size:23px;line-height:1.42;padding-left:27px}
+.slide .guide-concept-columns li{margin-bottom:22px}
+
+.example-slide-content{height:535px}
+</style>
+
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/JMU-Data/IA342/edit/gh-pages/modules/module-9/source.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
