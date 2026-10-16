@@ -233,7 +233,35 @@ Drilling down is different from filtering to one year.
 
 ---
 
-## 21 — Trend Lines — Fit the Displayed Data
+## 21 — Filters — Aggregation and Comparison
+
+<p class="concept-lead">When a <b>continuous measure</b> such as PRICE is dragged to <b>Filters</b>, Tableau asks two questions: <b>what values are tested?</b> and <b>which results pass?</b></p>
+<div class="columns tech-columns"><div>
+<h3>1. Aggregation — what is tested?</h3>
+<ul>
+<li><b>All Values:</b> individual diamond PRICE values (row-level).</li>
+<li><b>Average:</b> AVG(PRICE) for each group in the view.</li>
+<li><b>Sum:</b> SUM(PRICE) for each group; group size matters.</li>
+</ul>
+</div><div>
+<h3>2. Comparison — which values pass?</h3>
+<ul>
+<li><b>Range of Values:</b> between 2,000 and 4,000 (inclusive).</li>
+<li><b>At Least:</b> 2,500 or higher.</li>
+<li><b>At Most:</b> 2,500 or lower.</li>
+<li><b>Special:</b> null / non-null values.</li>
+</ul>
+</div></div>
+<table class="filter-levels"><thead><tr><th>PRICE filter: At Least 2,500</th><th>What remains if the view groups by CLARITY?</th><th>Effect</th></tr></thead><tbody>
+<tr><td><b>All Values</b></td><td>Only diamonds with PRICE ≥ 2,500 contribute to each CLARITY group.</td><td>Row-level filtering</td></tr>
+<tr><td><b>Average</b></td><td>Only CLARITY groups with AVG(PRICE) ≥ 2,500 remain; their contributing records are still used in the average.</td><td>Aggregate measure filtering</td></tr>
+</tbody></table>
+<p class="order-bottom"><b>Contrast:</b> a dimension filter such as CLARITY = VS1 selects category members before the view is aggregated. Aggregation and comparison are <b>settings</b> for a quantitative filter, not new stages in Slide 20.</p>
+<p class="credit"><a href="https://help.tableau.com/current/pro/desktop/en-us/filtering.htm" target="_blank" rel="noopener">Tableau Help: Filtering measures</a> · <a href="https://help.tableau.com/current/pro/desktop/en-us/order_of_operations.htm" target="_blank" rel="noopener">Order of operations</a></p>
+
+---
+
+## 22 — Trend Lines — Fit the Displayed Data
 
 <div class="activity-layout">
 <div class="concept-text">
@@ -263,13 +291,13 @@ Filter by RATER to recompute the fit. In Tableau, use **one fit without color fa
 
 ---
 
-## 22 — Example — Trend and Reference Lines
+## 23 — Example — Trend and Reference Lines
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103124.png" alt="Analytics pane: reference and trend lines on the Diamonds view" data-asset="assets/screenshots/Screenshot 2026-10-14 103124.png"></div><figcaption>The Analytics pane provides Trend Line and Reference Line; this view includes both.</figcaption></figure></div>
 
 ---
 
-## 23 — Reference Lines — Value and Scope
+## 24 — Reference Lines — Value and Scope
 
 A **reference line** locates a benchmark on a **continuous axis**. Unlike a trend line, it does not fit the relationship between two measures.
 
@@ -304,7 +332,7 @@ In **Price vs Weight**, add a horizontal mean-PRICE line. Then add RATER to Colu
 
 ---
 
-## 24 — Parameters — One Adjustable Value
+## 25 — Parameters — One Adjustable Value
 
 <div class="activity-layout"><div class="concept-text"><p>A <b>parameter</b> stores one current number, text value, or date.</p><p>It affects a view only through an object that uses it.</p><p>Here <b>price level</b> controls a reference line and this category:</p><pre><code>IF [PRICE] &gt; [price level] THEN
   'Above threshold'
@@ -319,25 +347,25 @@ END</code></pre><p class="key-statement">One number → two effects.<br>The reco
 
 ---
 
-## 25 — Example — Create a Numeric Parameter
+## 26 — Example — Create a Numeric Parameter
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103227.png" alt="Numeric size value parameter setup" data-asset="assets/screenshots/Screenshot 2026-10-14 103227.png"></div><figcaption>size value: Float; current value 1; Range from 0 to 2; step size 0.1.</figcaption></figure></div>
 
 ---
 
-## 26 — Example — Use the Parameter in a Calculation
+## 27 — Example — Use the Parameter in a Calculation
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103311.png" alt="size_class calculation using the size value parameter" data-asset="assets/screenshots/Screenshot 2026-10-14 103311.png"></div><figcaption>Replace 0.5 with [size value] in size_class. The classification now uses the parameter.</figcaption></figure></div>
 
 ---
 
-## 27 — Example — A Parameter-Based Reference Line
+## 28 — Example — A Parameter-Based Reference Line
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103338.png" alt="Edit Reference Line settings in Tableau" data-asset="assets/screenshots/Screenshot 2026-10-14 103338.png"></div><figcaption>Set the reference line Value to size value. This example uses Table scope.</figcaption></figure></div>
 
 ---
 
-## 28 — Actions — Connect Interaction to Results
+## 29 — Actions — Connect Interaction to Results
 
 <p class="concept-lead">An <b>action</b> connects a user's interaction in a source view to a defined response in a target.</p>
 <div aria-label="Source interaction, action rule, and target response" class="action-steps">
@@ -357,7 +385,7 @@ END</code></pre><p class="key-statement">One number → two effects.<br>The reco
 
 ---
 
-## 29 — Tooltips — Detail and a Filtered View
+## 30 — Tooltips — Detail and a Filtered View
 
 <div class="activity-layout">
 <div class="concept-text">
@@ -385,13 +413,13 @@ Turn off the filter in this example: every source bar then shows the same combin
 
 ---
 
-## 30 — Example — Insert a View into a Tooltip
+## 31 — Example — Insert a View into a Tooltip
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103557.png" alt="Editing a Viz in Tooltip in Tableau" data-asset="assets/screenshots/Screenshot 2026-10-14 103557.png"></div><figcaption>The tooltip inserts Sheet 2 with All Fields filtering and a 300 × 300 display area.</figcaption></figure></div>
 
 ---
 
-## 31 — Data Guide and Explain Data
+## 32 — Data Guide and Explain Data
 
 <div class="columns tech-columns guide-concept-columns"><div>
 <p><b>Data Guide</b> provides view context: filters, fields, summaries, and detected outliers.</p>
@@ -409,7 +437,7 @@ Turn off the filter in this example: every source bar then shows the same combin
 
 ---
 
-## 32 — Example — Inspect a Mark with Data Guide
+## 33 — Example — Inspect a Mark with Data Guide
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103446.png" alt="Data Guide explaining selected Clarity data" data-asset="assets/screenshots/Screenshot 2026-10-14 103446.png"></div><figcaption>Select IF in the CLARITY view and inspect the comparison in the Data Guide panel.</figcaption></figure></div>
 
