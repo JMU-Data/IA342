@@ -233,7 +233,26 @@ Drilling down is different from filtering to one year.
 
 ---
 
-## 21 — Trend Lines — Fit the Displayed Data
+## 21 — Filters — Same Threshold, Different Results
+
+<p class="filter-comparison-lead">Both views apply an <b>AVG(PRICE) &gt; 2,500</b> condition. Why do they display different rows?</p>
+<div class="filter-comparison-grid">
+<figure class="filter-comparison-panel">
+<h3>Measure filter: AVG(PRICE)</h3>
+<a class="filter-comparison-image" href="assets/screenshots/Screenshot 2026-10-16 092046.png" target="_blank" rel="noopener" aria-label="Open Screenshot 2026-10-16 092046.png at full resolution"><img src="assets/screenshots/Screenshot 2026-10-16 092046.png" data-asset="assets/screenshots/Screenshot 2026-10-16 092046.png" alt="Tableau worksheet with AVG(Price) on Filters; IF and Color E, below 2500, is absent."></a>
+<figcaption>Tests each displayed <b>CLARITY × COLOR</b> combination. <b>IF / E</b> (2,231.4) fails the threshold and disappears.</figcaption>
+</figure>
+<figure class="filter-comparison-panel">
+<h3>Dimension condition: CLARITY</h3>
+<a class="filter-comparison-image" href="assets/screenshots/Screenshot 2026-10-16 092233.png" target="_blank" rel="noopener" aria-label="Open Screenshot 2026-10-16 092233.png at full resolution"><img src="assets/screenshots/Screenshot 2026-10-16 092233.png" data-asset="assets/screenshots/Screenshot 2026-10-16 092233.png" alt="Tableau worksheet with Clarity on Filters; IF and Color E, averaging 2231.4, is still visible."></a>
+<figcaption><b>CLARITY → Condition → By Field → AVG(PRICE)</b> tests each entire CLARITY group. <b>IF / E</b> remains because IF qualifies overall.</figcaption>
+</figure>
+</div>
+<p class="filter-comparison-takeaway"><b>Aggregation</b> chooses what to test (e.g., All Values vs Average); <b>comparison</b> chooses the rule (Range / At Least / At Most). The <b>filter level of detail</b> determines which rows remain. <span>Click either screenshot to enlarge.</span></p>
+
+---
+
+## 22 — Trend Lines — Fit the Displayed Data
 
 <div class="activity-layout">
 <div class="concept-text">
@@ -263,13 +282,13 @@ Filter by RATER to recompute the fit. In Tableau, use **one fit without color fa
 
 ---
 
-## 22 — Example — Trend and Reference Lines
+## 23 — Example — Trend and Reference Lines
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103124.png" alt="Analytics pane: reference and trend lines on the Diamonds view" data-asset="assets/screenshots/Screenshot 2026-10-14 103124.png"></div><figcaption>The Analytics pane provides Trend Line and Reference Line; this view includes both.</figcaption></figure></div>
 
 ---
 
-## 23 — Reference Lines — Value and Scope
+## 24 — Reference Lines — Value and Scope
 
 A **reference line** locates a benchmark on a **continuous axis**. Unlike a trend line, it does not fit the relationship between two measures.
 
@@ -304,7 +323,7 @@ In **Price vs Weight**, add a horizontal mean-PRICE line. Then add RATER to Colu
 
 ---
 
-## 24 — Parameters — One Adjustable Value
+## 25 — Parameters — One Adjustable Value
 
 <div class="activity-layout"><div class="concept-text"><p>A <b>parameter</b> stores one current number, text value, or date.</p><p>It affects a view only through an object that uses it.</p><p>Here <b>price level</b> controls a reference line and this category:</p><pre><code>IF [PRICE] &gt; [price level] THEN
   'Above threshold'
@@ -319,25 +338,25 @@ END</code></pre><p class="key-statement">One number → two effects.<br>The reco
 
 ---
 
-## 25 — Example — Create a Numeric Parameter
+## 26 — Example — Create a Numeric Parameter
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103227.png" alt="Numeric size value parameter setup" data-asset="assets/screenshots/Screenshot 2026-10-14 103227.png"></div><figcaption>size value: Float; current value 1; Range from 0 to 2; step size 0.1.</figcaption></figure></div>
 
 ---
 
-## 26 — Example — Use the Parameter in a Calculation
+## 27 — Example — Use the Parameter in a Calculation
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103311.png" alt="size_class calculation using the size value parameter" data-asset="assets/screenshots/Screenshot 2026-10-14 103311.png"></div><figcaption>Replace 0.5 with [size value] in size_class. The classification now uses the parameter.</figcaption></figure></div>
 
 ---
 
-## 27 — Example — A Parameter-Based Reference Line
+## 28 — Example — A Parameter-Based Reference Line
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103338.png" alt="Edit Reference Line settings in Tableau" data-asset="assets/screenshots/Screenshot 2026-10-14 103338.png"></div><figcaption>Set the reference line Value to size value. This example uses Table scope.</figcaption></figure></div>
 
 ---
 
-## 28 — Actions — Connect Interaction to Results
+## 29 — Actions — Connect Interaction to Results
 
 <p class="concept-lead">An <b>action</b> connects a user's interaction in a source view to a defined response in a target.</p>
 <div aria-label="Source interaction, action rule, and target response" class="action-steps">
@@ -357,7 +376,7 @@ END</code></pre><p class="key-statement">One number → two effects.<br>The reco
 
 ---
 
-## 29 — Tooltips — Detail and a Filtered View
+## 30 — Tooltips — Detail and a Filtered View
 
 <div class="activity-layout">
 <div class="concept-text">
@@ -385,13 +404,13 @@ Turn off the filter in this example: every source bar then shows the same combin
 
 ---
 
-## 30 — Example — Insert a View into a Tooltip
+## 31 — Example — Insert a View into a Tooltip
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103557.png" alt="Editing a Viz in Tooltip in Tableau" data-asset="assets/screenshots/Screenshot 2026-10-14 103557.png"></div><figcaption>The tooltip inserts Sheet 2 with All Fields filtering and a 300 × 300 display area.</figcaption></figure></div>
 
 ---
 
-## 31 — Data Guide and Explain Data
+## 32 — Data Guide and Explain Data
 
 <div class="columns tech-columns guide-concept-columns"><div>
 <p><b>Data Guide</b> provides view context: filters, fields, summaries, and detected outliers.</p>
@@ -409,7 +428,7 @@ Turn off the filter in this example: every source bar then shows the same combin
 
 ---
 
-## 32 — Example — Inspect a Mark with Data Guide
+## 33 — Example — Inspect a Mark with Data Guide
 
 <div class="example-slide-content"><figure class="example-figure"><div class="example-image-frame"><img src="assets/screenshots/Screenshot 2026-10-14 103446.png" alt="Data Guide explaining selected Clarity data" data-asset="assets/screenshots/Screenshot 2026-10-14 103446.png"></div><figcaption>Select IF in the CLARITY view and inspect the comparison in the Data Guide panel.</figcaption></figure></div>
 
@@ -428,4 +447,16 @@ Turn off the filter in this example: every source bar then shows the same combin
 .slide .guide-concept-columns li{margin-bottom:22px}
 
 .example-slide-content{height:535px}
+</style>
+
+<style id="filter-comparison-styles">
+.slide .filter-comparison-lead{font-size:21px;line-height:1.3;margin:0 0 12px}
+.slide .filter-comparison-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.slide .filter-comparison-panel{margin:0;min-width:0}
+.slide .filter-comparison-panel h3{font-size:23px;margin:0 0 8px;line-height:1.25}
+.slide .filter-comparison-image{display:flex;align-items:center;justify-content:center;height:258px;background:white;border:1px solid var(--line);text-decoration:none;overflow:hidden}
+.slide .filter-comparison-image img{display:block;width:100%;height:100%;object-fit:contain;max-width:100%;max-height:100%}
+.slide .filter-comparison-panel figcaption{font-size:18px;line-height:1.34;margin:9px 0 0;color:var(--ink)}
+.slide .filter-comparison-takeaway{font-size:19px;line-height:1.33;margin:13px 0 0;padding:9px 12px;border-left:3px solid var(--blue);background:var(--pale)}
+.slide .filter-comparison-takeaway span{font-size:16px;color:var(--muted)}
 </style>
