@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Module 10: Dashboard Design - IA342"
+---
+
 # IA342 — Week 10: Dashboard Design
 
 **Instructor:** Dr. Xuebin Wei  

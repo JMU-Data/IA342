@@ -105,6 +105,17 @@ title: "Home - IA 342"
     <p style="margin-bottom: 0; color: #57606a;">Visual Analytics with Diamonds and Canvas-hosted COVID data.</p>
   </a>
 
+
+  <a href="modules/module-10/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow: 0.2s;">
+    <h3 style="margin-top: 0; color: #2da44e; display: flex; align-items: center; gap: 0.5rem;">🚀 Module 10</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Dashboard Design: purpose, layout, visual hierarchy, interactions, and storytelling.</p>
+  </a>
+
+  <a href="assignments/lab-10/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow: 0.2s;">
+    <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">📝 Lab 10</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Build and publish a Tableau dashboard. Due Friday, October 30, 2026 at 11:59 PM EDT.</p>
+  </a>
+
   <a href="assignments/google-skills/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow: 0.2s;">
     <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">🧪 Google Skills Hands-on Labs</h3>
     <p style="margin-bottom: 0; color: #57606a;">Pass three distinct Google Skills hands-on Labs for full credit and upload one screenshot by the Canvas deadline.</p>

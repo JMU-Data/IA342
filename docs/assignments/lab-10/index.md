@@ -1,7 +1,14 @@
+---
+layout: default
+title: "Lab 10: Dashboard Design in Tableau - IA342"
+---
+
 # Lab 10 — Dashboard Design in Tableau
 
 **IA342 · Week 10 · October 26–30, 2026**  
 **Monday:** create five worksheets · **Wednesday:** design, test, and publish one interactive dashboard
+
+**Deadline:** Friday, October 30, 2026, **11:59 PM Eastern Time (EDT)**.
 
 ## Objectives
 
@@ -219,7 +226,7 @@ After the five sheets are placed and the dashboard works, use the worksheet tab 
 1. **Publish / Save** the completed workbook in the **`fall2026`** Tableau Online project as **`firstname_lastname_lab10`** (replace with your own name). This is the **only new published item** for Lab 10.
 2. Open the published dashboard in **viewing mode**. Confirm that the **Default** view looks complete, the **state map updates the other charts**, and your titles and legends are readable.
 3. Open the **Phone** layout (or use the Tableau mobile app on your phone if you want). Installing the Tableau app is **optional**; it is not a separate submission requirement.
-4. Keep the workbook linked to your **existing Week 9 COVID Data Source**. **Do not publish an additional Data Source** and **do not upload a file to Canvas**. The published workbook is the submission. Follow the deadline and late policy shown in Canvas/the syllabus.
+4. Keep the workbook linked to your **existing Week 9 COVID Data Source**. **Do not publish an additional Data Source** and **do not upload a file to Canvas**. The published workbook is the submission. The deadline is **Friday, October 30, 2026 at 11:59 PM EDT**; the course late policy applies.
 
 ![Final example — published dashboard in viewing mode with the source map, detail views, titles and totals.](screenshots/Screenshot%202026-10-22%20155354.png)
 
