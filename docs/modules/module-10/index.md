@@ -45,8 +45,6 @@ We will use a real research dashboard, then compare public examples that show wh
 
 **Source / attribution:** Xuebin Wei, Mingshu Wang, and Menno-Jan Kraak, “Where we are in fighting against COVID-19”; Tableau Public dashboard.
 
-> **Instructor notes:** Start with three concrete questions: What is the subject? What can be compared? What would you select first?
-
 ---
 
 ## Slide 02 — What is a dashboard?
@@ -60,8 +58,6 @@ MonitorCompareInvestigate
 A screen full of unrelated charts is not automatically a dashboard.
 
 **Source / attribution:** Paraphrased from Stephen Few, “Dashboard Confusion,” and The Big Book of Dashboards.
-
-> **Instructor notes:** Ask whether “one screen” and “at a glance” are always required. Keep the distinction between monitoring and interactive analysis.
 
 ---
 
@@ -85,8 +81,6 @@ The reader does not need to invent the first question. The dashboard points to t
 
 **Source / attribution:** Directed discovery: show the answer to a pre-known question. Example from The Big Book of Dashboards.
 
-> **Instructor notes:** This is the concrete replacement for the abstract arrows. The question, evidence, and action are visible in one example.
-
 ---
 
 ## Slide 04 — Exploratory discovery: follow a question into the data
@@ -109,8 +103,6 @@ Select an indicator and a location. Inspect the detail view.
 
 **Source / attribution:** NASA Goddard Space Flight Center, [Earth Observation Dashboard tutorial (2020)](https://svs.gsfc.nasa.gov/13650/).
 
-> **Instructor notes:** Compare this exploratory interface with the inspection example on Slide 3. The map, indicator menu, and visible instructions offer several paths. This is a static historical screenshot, not an embedded live dashboard. The indicator counts shown belong to that historical interface.
-
 ---
 
 ## Slide 05 — Who will use it—and what do they need to know?
@@ -131,8 +123,6 @@ Choose the information and controls that help this person answer that question.
 
 **Source / attribution:** Andy Kriebel, [A New Way to Visualize an Income Statement](https://www.vizwiz.com/2017/07/income-statement.html) (2017). Historical design example.
 
-> **Instructor notes:** Point first to a monthly variance-to-budget line, then to the region, channel, and product filters. Explain PY as prior year and YTD as year to date. The design lesson is simple: identify the reader’s question before selecting charts. A finance audience may know these terms; a general audience may not.
-
 ---
 
 ## Slide 06 — Explicit · Specific · Consistent
@@ -149,8 +139,6 @@ Choose the information and controls that help this person answer that question.
 
 **Source / attribution:** Tableau, [Best Practices for Effective Dashboards](https://help.tableau.com/current/pro/desktop/en-us/dashboards_best_practices.htm). Supporting attributes adapted from Stephen Few.
 
-> **Instructor notes:** Point to the title, the large map, the segment grid, and the color legend. The table adds sales and average profit by product sub-category. The example uses fictional Superstore data; discuss design rather than real business performance. Keep each principle tied to a visible element.
-
 ---
 
 ## Slide 07 — Figure 1(a): compare five countries
@@ -163,8 +151,6 @@ Choose the information and controls that help this person answer that question.
 
 **Source / attribution:** Wei, X., Wang, M., & Kraak, M.-J. (2020), [Where we are in fighting against COVID-19](https://doi.org/10.1177/0308518X20931515), Figure 1. Original figure supplied by the author.
 
-> **Instructor notes:** This is a panel from the original figure supplied in the chat, not today’s Tableau default view. The screenshot was updated May 11, 2020. The time axis is weeks since the first case. Read cases, deaths, accumulated values, and per-million measures from their own labels; they are not interchangeable. The paper describes this as the group with the highest COVID-19 mortality; do not silently restate it as a mortality-rate ranking.
-
 ---
 
 ## Slide 08 — Figure 1(b): change the comparison group
@@ -176,8 +162,6 @@ Choose the information and controls that help this person answer that question.
 **The selection changes; the layout stays familiar.** Compare the time patterns and read each panel’s scale.
 
 **Source / attribution:** Wei, X., Wang, M., & Kraak, M.-J. (2020), [Where we are in fighting against COVID-19](https://doi.org/10.1177/0308518X20931515), Figure 1. Original figure supplied by the author.
-
-> **Instructor notes:** This is a panel from the original figure supplied in the chat, not today’s Tableau default view. The screenshot was updated May 11, 2020. The time axis is weeks since the first case. Read cases, deaths, accumulated values, and per-million measures from their own labels; they are not interchangeable. The original selection is Singapore, South Korea, Japan, and China. This is the paper’s second panel, not a recreation or an edited data view. The scales differ between the two screenshots.
 
 ---
 
@@ -197,8 +181,6 @@ Choose the information and controls that help this person answer that question.
 
 **Source / attribution:** Tableau, [Build Accessible Dashboards](https://help.tableau.com/current/pro/desktop/en-us/accessibility_dashboards.htm). Official before/after example.
 
-> **Instructor notes:** Pause on this version before showing the next page. Ask for specific reading problems rather than a general preference. The next page is Tableau’s published redesign.
-
 ---
 
 ## Slide 10 — After: make the same task easier
@@ -217,8 +199,6 @@ Explain what became easier—not just which version looks better.
 
 **Source / attribution:** Tableau, [Build Accessible Dashboards](https://help.tableau.com/current/pro/desktop/en-us/accessibility_dashboards.htm). Official before/after example.
 
-> **Instructor notes:** This redesign changes the aggregation and selected product categories as well as the styling. Explain those changes; it is not only a new color palette. This pair appears once in the lecture.
-
 ---
 
 ## Slide 11 — Compare: where does the reading effort go?
@@ -234,8 +214,6 @@ Explain what became easier—not just which version looks better.
 - What can be removed without removing information?
 
 **Source / attribution:** Robert Allison, public “blinged” oil dashboard.
-
-> **Instructor notes:** Discuss 3D perspective, gradients, saturated backgrounds, and competing color.
 
 ---
 
@@ -254,8 +232,6 @@ Explain what became easier—not just which version looks better.
 **Still ask:** What would you improve next?
 
 **Source / attribution:** Robert Allison, public “unblinged” oil dashboard.
-
-> **Instructor notes:** The redesign is not perfect. The lesson is that small visual changes can reduce reading effort.
 
 ---
 
@@ -276,8 +252,6 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 **Source / attribution:** TARGIT balanced-scorecard demonstration; public video cited in sources.
 
-> **Instructor notes:** Do not teach “never use gauges.” Teach that a widget must justify its space and support the task.
-
 ---
 
 ## Slide 14 — The same space can show value and context
@@ -296,8 +270,6 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 **Source / attribution:** Stephen Few, Information Dashboard Design. Example retained for classroom comparison.
 
-> **Instructor notes:** Compare this page directly with the gauge page. More information is not automatically clutter when it is organized around the reader’s question.
-
 ---
 
 ## Slide 15 — 1 · Position: place the starting point where it is easy to find
@@ -315,8 +287,6 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 **Direct rule:** put the main question or signal near the top or top-left.
 
 **Source / attribution:** Complaints Dashboard on Tableau Public; featured in The Big Book of Dashboards.
-
-> **Instructor notes:** The top-left rule is a starting point, not a law. Position should match importance and frequency of use.
 
 ---
 
@@ -337,8 +307,6 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 **Source / attribution:** Robert Allison, revised oil dashboard.
 
-> **Instructor notes:** Ask students to identify the first object they notice and whether it deserves that attention.
-
 ---
 
 ## Slide 17 — 3 · Grouping: keep related information together
@@ -358,8 +326,6 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 **Source / attribution:** Web Analytics chapter, The Big Book of Dashboards.
 
-> **Instructor notes:** Ask which views belong together and which view would be least useful if isolated.
-
 ---
 
 ## Slide 18 — Apply the four decisions to the research dashboard
@@ -377,8 +343,6 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 **4 · Proportion**The main comparisons receive enough space; the five-item limit protects readability.
 
 **Source / attribution:** Wei, Wang, and Kraak (2020); public Tableau dashboard.
-
-> **Instructor notes:** Say the four words aloud and point to the matching numbered explanation. The labels remove ambiguity.
 
 ---
 
@@ -398,8 +362,6 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 **Source / attribution:** Nielsen Norman Group, F-shaped pattern in reading digital content.
 
-> **Instructor notes:** The old lecture made the same qualification: the pattern is partly a product of text-heavy pages.
-
 ---
 
 ## Slide 20 — Watch the F pattern develop
@@ -415,8 +377,6 @@ Watch Nielsen Norman Group's **2:40 F-pattern explanation** here. Notice the fir
 [Open the F-pattern video on YouTube if embedded playback is blocked](https://www.youtube.com/watch?v=XU1-Rz2Q7-E)
 
 **Source / attribution:** Nielsen Norman Group, “F-Pattern in Reading Digital Content.”
-
-> **Instructor notes:** This video is specifically about the F pattern. It replaces the earlier unrelated video.
 
 ---
 
@@ -436,8 +396,6 @@ Watch Nielsen Norman Group's **2:40 F-pattern explanation** here. Notice the fir
 Looking at a region is not the same as understanding it.
 
 **Source / attribution:** Tableau, “Eye-Tracking Study: Five Key Learnings.”
-
-> **Instructor notes:** Use the image as evidence about attention—not as proof of comprehension or a universal scan path.
 
 ---
 
@@ -459,8 +417,6 @@ Then ask a reader to answer a real question. Looking is not the same as understa
 
 **Source / attribution:** Agency Utilization Rollup, *The Big Book of Dashboards*; Tableau eye-tracking discussion.
 
-> **Instructor notes:** The original lesson calls attention to the headline numbers and lower-right area chart. Use those two visible features, not a second copy of this dashboard. This is an example of attention, not proof of a universal scan path.
-
 ---
 
 ## Slide 23 — What makes a dashboard actionable?
@@ -478,8 +434,6 @@ Then ask a reader to answer a real question. Looking is not the same as understa
 **5 · Next step**What should the reader select, investigate, or decide?
 
 **Source / attribution:** Classroom paraphrase of the five actionable-visualization checks in the prior lecture.
-
-> **Instructor notes:** Use the five pages that follow as examples. The value is in the example, not the wording alone.
 
 ---
 
@@ -499,8 +453,6 @@ A question can also be implied by a clear topic and layout—but the reader must
 
 **Source / attribution:** Public Tableau example credited to Pooja Gandhi in the prior lecture.
 
-> **Instructor notes:** The purpose is concrete. Students should be able to repeat it without explanation.
-
 ---
 
 ## Slide 25 — 2 · Make the needed evidence available
@@ -518,8 +470,6 @@ A question can also be implied by a clear topic and layout—but the reader must
 Do not claim causation from a small observational example. The point is that the question cannot be answered without the second dataset.
 
 **Source / attribution:** Jeffrey Shaffer, Halloween data project.
-
-> **Instructor notes:** Use the example to discuss data availability and compatibility, not to prove that rain caused the result.
 
 ---
 
@@ -539,8 +489,6 @@ A general public dashboard would need simpler language and more explanation.
 
 **Source / attribution:** Andy Kriebel, public Profit & Loss / income-statement Tableau examples.
 
-> **Instructor notes:** This is a specific audience example. Do not turn it into an accounting lesson.
-
 ---
 
 ## Slide 27 — 4 · Make the important result easy to see
@@ -559,8 +507,6 @@ The reader should not need a long explanation to find the main result.
 
 **Source / attribution:** Andy Kriebel, “Which Regions are Most Profitable?” public Tableau example.
 
-> **Instructor notes:** Avoid the phrase “verbal rescue.” Say plainly: the main result should not require a long explanation.
-
 ---
 
 ## Slide 28 — 5 · Make the next interaction clear
@@ -578,8 +524,6 @@ The reader should not need a long explanation to find the main result.
 Interaction may use a **mouse, touch, keyboard, or another accessible control**. The instruction should describe the action, not assume one device.
 
 **Source / attribution:** Complaints Dashboard, Jeffrey Shaffer / The Big Book of Dashboards.
-
-> **Instructor notes:** Use device-neutral wording in the lecture and the lab: select, activate, clear—not only click.
 
 ---
 
@@ -601,8 +545,6 @@ Show for 5 secondsReveal for discussionReset
 
 **Source / attribution:** Classroom first-look exercise. Example: Jeffrey A. Shaffer, *Complaints Dashboard*, [The Big Book of Dashboards](https://www.bigbookofdashboards.com/dashboards.html).
 
-> **Instructor notes:** Start with the image covered. Select Show for 5 seconds: the image appears, the countdown runs, and the image is automatically covered again. Reveal for discussion cancels the countdown. Reset covers the image and restores the start state. Leaving the slide or hiding the browser tab cancels an active attempt; start again when the class is ready. The controls support pointer, touch, and keyboard activation.
-
 ---
 
 ## Slide 30 — Three “five” rules for this class
@@ -618,8 +560,6 @@ Show for 5 secondsReveal for discussionReset
 These are classroom starting rules—not universal laws. Break one only when the task gives you a clear reason.
 
 **Source / attribution:** Five views or fewer and the five-second test come from the prior lecture. The limited-color rule is a course design heuristic.
-
-> **Instructor notes:** Be explicit: “prominent colors” means the colors competing for attention, not every tint used for backgrounds or accessibility.
 
 ---
 
@@ -649,8 +589,6 @@ Help the audience connect the pieces.
 
 **Source / attribution:** Illustration detail: Staying Alive UK, reproduced in the supplied lecture. Numbers-and-stories teaching connection adapted from Jeffrey A. Shaffer.
 
-> **Instructor notes:** The prior lecture uses a math/stories contrast and notes that left/right-brain language is more complicated. Keep the illustration as a metaphor, not as a claim that people or tasks belong to separate brain halves. The original infographic’s dopamine and two-brain-area statements are not reproduced. This is a brief bridge to the next topic, not a competing alternative to dashboard design.
-
 ---
 
 ## Slide 32 — Attract · Engage · Punchline
@@ -667,8 +605,6 @@ Storytelling changes emphasis and sequence. It does not excuse weak evidence.
 
 **Source / attribution:** Adapted from the Attract–Engage–Punchline framework in the prior lecture.
 
-> **Instructor notes:** Use one concrete example for all three parts. Do not leave the terms as abstract slogans.
-
 ---
 
 ## Slide 33 — Watch a data story unfold
@@ -682,8 +618,6 @@ Watch how the speaker keeps the axes stable, directs attention at the right mome
 [Open the full BBC video](https://www.youtube.com/watch?v=jbkSRLYSojo)
 
 **Source / attribution:** BBC, Hans Rosling: “200 Countries, 200 Years, 4 Minutes.”
-
-> **Instructor notes:** Use only the selected segment. Ask students what the narration adds that the animation alone would not provide.
 
 ---
 
@@ -707,8 +641,6 @@ Watch how the speaker keeps the axes stable, directs attention at the right mome
 
 **Source / attribution:** Course review checklist synthesized from the lecture examples.
 
-> **Instructor notes:** Close with this page. The lab handout contains the construction and grading details.
-
 ---
 
 ## Slide 35 — Sources and public examples
@@ -731,7 +663,6 @@ Public availability does not place an image in the public domain. Retain creator
 
 **Source / attribution:** Source record for the IA342 Week 10 instructor-review draft.
 
-> **Instructor notes:** This is the final source page. This is an instructor-review PR; do not merge or publish to Canvas without Owner approval.
 
 ---
 
