@@ -3,23 +3,31 @@ layout: default
 title: "Module 10: Dashboard Design - IA342"
 ---
 
-# IA342 — Week 10: Dashboard Design
+<link rel="stylesheet" href="assets/slide-deck.css">
 
-**Instructor:** Dr. Xuebin Wei  
-**Week:** October 26–30, 2026  
-**Status:** Instructor-review draft — not published.
+<div class="ia342-lecture-head">
+  <h1>IA342 · Week 10 — Dashboard Design</h1>
+  <p><strong>Dr. Xuebin Wei</strong> · October 26–30, 2026 · <a href="../../assignments/lab-10/">Lab 10 instructions</a></p>
+</div>
 
-**Companion:** [Lab 10 — Dashboard Design in Tableau](../../assignments/lab-10/)
+<div id="ia342-lecture-deck" class="ia342-deck" role="region" aria-label="IA342 Week 10 classroom slide deck">
+  <div class="ia342-toolbar">
+    <span class="ia342-toolbar-title">IA342 · Dashboard Design</span>
+    <div class="ia342-toolbar-controls">
+      <button type="button" id="ia342-prev" aria-label="Previous slide">← Previous</button>
+      <span id="ia342-slide-count" aria-live="polite">Slide 1 / 35</span>
+      <button type="button" id="ia342-next" aria-label="Next slide">Next →</button>
+      <button type="button" id="ia342-fullscreen" aria-label="Toggle fullscreen presentation">Fullscreen</button>
+    </div>
+  </div>
+  <div class="ia342-progress-track" aria-hidden="true"><span id="ia342-progress"></span></div>
+  <div class="ia342-stage" id="ia342-slide-stage" tabindex="0" aria-label="Current lecture slide"></div>
+  <div class="ia342-deck-foot">
+    <span id="ia342-topic">Dashboard Design</span>
+    <span>← → / Space / Page Up–Down · Home / End</span>
+  </div>
+</div>
 
-## Teaching plan
-
-**Monday:** dashboard definitions and discovery → reader and task → supporting qualities → design comparisons → layout and attention → actionable dashboards → five-second review. The final storytelling pages introduce the next step.
-
-**Wednesday:** use the separate Lab handout for building, testing, and publishing the dashboard.
-
-The figures below are stored as separate images under `assets/figures/` for reliable display and source-first maintenance.
-
----
 
 ## Slide 01 — Dashboard Design
 
@@ -398,11 +406,13 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 <!-- chapter: Layout & attention -->
 
-Play the official 3-minute F-pattern video
+Watch Nielsen Norman Group's **2:40 F-pattern explanation** here. Notice the first horizontal scan, the shorter second scan, and attention moving down the left side.
 
-Watch where people look first, where the second horizontal scan appears, and how attention moves down the left side.
+<div class="ia342-video">
+  <iframe title="F-Pattern in Reading Digital Content — Nielsen Norman Group" src="about:blank" data-src="https://www.youtube-nocookie.com/embed/XU1-Rz2Q7-E?rel=0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
 
-[Open on YouTube](https://www.youtube.com/watch?v=XU1-Rz2Q7-E)
+[Open the F-pattern video on YouTube if embedded playback is blocked](https://www.youtube.com/watch?v=XU1-Rz2Q7-E)
 
 **Source / attribution:** Nielsen Norman Group, “F-Pattern in Reading Digital Content.”
 
@@ -726,3 +736,6 @@ Public availability does not place an image in the public domain. Retain creator
 ---
 
 <!-- Revision: 2026-10-21-figure-panels-dedup-old-lab-screenshots. Original Figure 1(a)/(b) inserted from the author-supplied image. -->
+
+<div id="ia342-slides-end"></div>
+<script src="assets/slide-deck.js" defer></script>
