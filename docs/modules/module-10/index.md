@@ -9,7 +9,7 @@ title: "Module 10: Dashboard Design - IA342"
 **Week:** October 26–30, 2026  
 **Status:** Instructor-review draft — not published.
 
-**Companion files:** [Lecture HTML](IA342-Week10-Lecture-Draft.html) · [Lab source](Wednesday-Lab.md) · [Lab HTML](IA342-Week10-Lab-Draft.html)
+**Companion:** [Lab 10 — Dashboard Design in Tableau](../../assignments/lab-10/)
 
 ## Teaching plan
 
@@ -17,7 +17,7 @@ title: "Module 10: Dashboard Design - IA342"
 
 **Wednesday:** use the separate Lab handout for building, testing, and publishing the dashboard.
 
-Images are embedded in the companion HTML. The links below open each image at its slide; no separate assets folder is required.
+The figures below are stored as separate images under `assets/figures/` for reliable display and source-first maintenance.
 
 ---
 
@@ -31,9 +31,9 @@ Make the question, evidence, and next step easy to see.
 
 We will use a real research dashboard, then compare public examples that show why layout, hierarchy, interaction, and testing matter.
 
-Open large live dashboard[Open the paper](https://doi.org/10.1177/0308518X20931515)
+[Open the Tableau dashboard](https://public.tableau.com/app/profile/xuebin.wei/viz/covid19_15842259755690/Dashboard) · [Read the paper](https://doi.org/10.1177/0308518X20931515)
 
-[View image: Historical static screenshot of Xuebin Wei’s COVID-19 Tableau dashboard; dashboard labels show February 13, 2021.](IA342-Week10-Lecture-Draft.html#slide-1)
+![Historical static screenshot of Xuebin Wei’s COVID-19 Tableau dashboard; dashboard labels show February 13, 2021.](assets/figures/slide-1.png)
 
 **Source / attribution:** Xuebin Wei, Mingshu Wang, and Menno-Jan Kraak, “Where we are in fighting against COVID-19”; Tableau Public dashboard.
 
@@ -61,7 +61,7 @@ A screen full of unrelated charts is not automatically a dashboard.
 
 <!-- chapter: Foundations -->
 
-[View image: Inspection dashboard with actual vs expected, 14-day trend, and days since last inspection](IA342-Week10-Lecture-Draft.html#slide-3)
+![Inspection dashboard with actual vs expected, 14-day trend, and days since last inspection](assets/figures/slide-3.png)
 
 ### Known question
 
@@ -85,7 +85,7 @@ The reader does not need to invent the first question. The dashboard points to t
 
 <!-- chapter: Foundations -->
 
-[View image: NASA, ESA, and JAXA Earth Observing Dashboard: indicator list, world map, and instructions.](IA342-Week10-Lecture-Draft.html#slide-4)
+![NASA, ESA, and JAXA Earth Observing Dashboard: indicator list, world map, and instructions.](assets/figures/slide-4.png)
 
 ### Start with air quality.
 
@@ -109,7 +109,7 @@ Select an indicator and a location. Inspect the detail view.
 
 <!-- chapter: Foundations -->
 
-[View image: Andy Kriebel’s Year-to-Date Income Statement, with region, channel, and product controls and comparisons to prior year and budget.](IA342-Week10-Lecture-Draft.html#slide-5)
+![Andy Kriebel’s Year-to-Date Income Statement, with region, channel, and product controls and comparisons to prior year and budget.](assets/figures/slide-5.png)
 
 ### A finance manager reviewing results
 
@@ -131,7 +131,7 @@ Choose the information and controls that help this person answer that question.
 
 <!-- chapter: Foundations -->
 
-[View image: Tableau Superstore sample with Profit by State, Profit by Segment, and Sales and Average Profit by Sub-Category.](IA342-Week10-Lecture-Draft.html#slide-6)
+![Tableau Superstore sample with Profit by State, Profit by Segment, and Sales and Average Profit by Sub-Category.](assets/figures/slide-6.png)
 
 **1 · Explicit**“Profit by State” and the profit legend tell the reader what the map shows.
 
@@ -149,7 +149,7 @@ Choose the information and controls that help this person answer that question.
 
 <!-- chapter: Foundations -->
 
-[View image: Original paper Figure 1(a): United States, United Kingdom, France, Italy, and Spain, updated May 11, 2020.](IA342-Week10-Lecture-Draft.html#slide-7)
+![Original paper Figure 1(a): United States, United Kingdom, France, Italy, and Spain, updated May 11, 2020.](assets/figures/slide-7.png)
 
 **Look at the same week after the first case.** What do the new and accumulated counts each add?
 
@@ -163,7 +163,7 @@ Choose the information and controls that help this person answer that question.
 
 <!-- chapter: Foundations -->
 
-[View image: Original paper Figure 1(b): Singapore, South Korea, Japan, and China, updated May 11, 2020.](IA342-Week10-Lecture-Draft.html#slide-8)
+![Original paper Figure 1(b): Singapore, South Korea, Japan, and China, updated May 11, 2020.](assets/figures/slide-8.png)
 
 **The selection changes; the layout stays familiar.** Compare the time patterns and read each panel’s scale.
 
@@ -177,7 +177,7 @@ Choose the information and controls that help this person answer that question.
 
 <!-- chapter: Compare designs -->
 
-[View image: Tableau accessibility example before redesign](IA342-Week10-Lecture-Draft.html#slide-9)
+![Tableau accessibility example before redesign](assets/figures/slide-9.png)
 
 ### Find the reading problems
 
@@ -197,7 +197,7 @@ Choose the information and controls that help this person answer that question.
 
 <!-- chapter: Compare designs -->
 
-[View image: Tableau accessibility example after redesign](IA342-Week10-Lecture-Draft.html#slide-10)
+![Tableau accessibility example after redesign](assets/figures/slide-10.png)
 
 ### Connect each change to a problem
 
@@ -217,7 +217,7 @@ Explain what became easier—not just which version looks better.
 
 <!-- chapter: Compare designs -->
 
-[View image: Robert Allison historical oil dashboard before redesign](IA342-Week10-Lecture-Draft.html#slide-11)
+![Robert Allison historical oil dashboard before redesign](assets/figures/slide-11.png)
 
 ### Look before judging
 
@@ -235,7 +235,7 @@ Explain what became easier—not just which version looks better.
 
 <!-- chapter: Compare designs -->
 
-[View image: Robert Allison revised oil dashboard](IA342-Week10-Lecture-Draft.html#slide-12)
+![Robert Allison revised oil dashboard](assets/figures/slide-12.png)
 
 ### What became easier?
 
@@ -255,7 +255,7 @@ Explain what became easier—not just which version looks better.
 
 <!-- chapter: Compare designs -->
 
-[View image: Balanced scorecard with eight large gauges](IA342-Week10-Lecture-Draft.html#slide-13)
+![Balanced scorecard with eight large gauges](assets/figures/slide-13.png)
 
 ### Ask four direct questions
 
@@ -276,7 +276,7 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 <!-- chapter: Compare designs -->
 
-[View image: CIO dashboard with compact measures, trends, and reference markers](IA342-Week10-Lecture-Draft.html#slide-14)
+![CIO dashboard with compact measures, trends, and reference markers](assets/figures/slide-14.png)
 
 ### Small charts can still give useful context
 
@@ -296,7 +296,7 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 <!-- chapter: Layout & attention -->
 
-[View image: Complaints Dashboard with title and totals at top, controls at top right, and state selector](IA342-Week10-Lecture-Draft.html#slide-15)
+![Complaints Dashboard with title and totals at top, controls at top right, and state selector](assets/figures/slide-15.jpg)
 
 ### Read the page in order
 
@@ -316,7 +316,7 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 <!-- chapter: Layout & attention -->
 
-[View image: Revised oil dashboard with quiet background and selective color](IA342-Week10-Lecture-Draft.html#slide-16)
+![Revised oil dashboard with quiet background and selective color](assets/figures/slide-16.png)
 
 ### Use emphasis for meaning
 
@@ -337,7 +337,7 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 <!-- chapter: Layout & attention -->
 
-[View image: Website Analytics dashboard with totals, time, topics, and location grouped by question](IA342-Week10-Lecture-Draft.html#slide-17)
+![Website Analytics dashboard with totals, time, topics, and location grouped by question](assets/figures/slide-17.png)
 
 ### One subject, four related views
 
@@ -358,7 +358,7 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 <!-- chapter: Layout & attention -->
 
-[View image: Historical static screenshot of Xuebin Wei’s COVID-19 Tableau dashboard; dashboard labels show February 13, 2021.](IA342-Week10-Lecture-Draft.html#slide-18)
+![Historical static screenshot of Xuebin Wei’s COVID-19 Tableau dashboard; dashboard labels show February 13, 2021.](assets/figures/slide-18.png)
 
 **1 · Position**Scope and controls frame the comparison.
 
@@ -378,7 +378,7 @@ A gauge can be appropriate. Decoration alone is not a reason to use one.
 
 <!-- chapter: Layout & attention -->
 
-[View image: Nielsen Norman Group heatmaps showing F-shaped scanning on text-heavy pages](IA342-Week10-Lecture-Draft.html#slide-19)
+![Nielsen Norman Group heatmaps showing F-shaped scanning on text-heavy pages](assets/figures/slide-19.png)
 
 ### Typical sequence
 
@@ -414,7 +414,7 @@ Watch where people look first, where the second horizontal scan appears, and how
 
 <!-- chapter: Layout & attention -->
 
-[View image: Tableau eye-tracking research illustration over a dashboard](IA342-Week10-Lecture-Draft.html#slide-21)
+![Tableau eye-tracking research illustration over a dashboard](assets/figures/slide-21.jpg)
 
 ### What the study can show
 
@@ -435,7 +435,7 @@ Looking at a region is not the same as understanding it.
 
 <!-- chapter: Layout & attention -->
 
-[View image: Agency Utilization Rollup dashboard with large numbers across the top and colored trend at bottom right](IA342-Week10-Lecture-Draft.html#slide-22)
+![Agency Utilization Rollup dashboard with large numbers across the top and colored trend at bottom right](assets/figures/slide-22.jpg)
 
 ### Notice two areas
 
@@ -477,7 +477,7 @@ Then ask a reader to answer a real question. Looking is not the same as understa
 
 <!-- chapter: Actionable dashboards -->
 
-[View image: Valentine spending dashboard with the question in the title](IA342-Week10-Lecture-Draft.html#slide-24)
+![Valentine spending dashboard with the question in the title](assets/figures/slide-24.png)
 
 ### The title states the question
 
@@ -497,7 +497,7 @@ A question can also be implied by a clear topic and layout—but the reader must
 
 <!-- chapter: Actionable dashboards -->
 
-[View image: Halloween dashboard combining candy counts and rainfall](IA342-Week10-Lecture-Draft.html#slide-25)
+![Halloween dashboard combining candy counts and rainfall](assets/figures/slide-25.png)
 
 ### One question needs two sources
 
@@ -517,7 +517,7 @@ Do not claim causation from a small observational example. The point is that the
 
 <!-- chapter: Actionable dashboards -->
 
-[View image: Year-to-date income statement dashboard](IA342-Week10-Lecture-Draft.html#slide-26)
+![Year-to-date income statement dashboard](assets/figures/slide-26.png)
 
 ### Audience changes the vocabulary
 
@@ -537,7 +537,7 @@ A general public dashboard would need simpler language and more explanation.
 
 <!-- chapter: Actionable dashboards -->
 
-[View image: Profitability dashboard showing unprofitable states, ranked regions, and quarterly trends](IA342-Week10-Lecture-Draft.html#slide-27)
+![Profitability dashboard showing unprofitable states, ranked regions, and quarterly trends](assets/figures/slide-27.png)
 
 ### The answer appears in three ways
 
@@ -557,7 +557,7 @@ The reader should not need a long explanation to find the main result.
 
 <!-- chapter: Actionable dashboards -->
 
-[View image: Complaints state map labeled click to filter](IA342-Week10-Lecture-Draft.html#slide-28)
+![Complaints state map labeled click to filter](assets/figures/slide-28.jpg)
 
 ### Tell the reader what to do
 
@@ -577,7 +577,7 @@ Interaction may use a **mouse, touch, keyboard, or another accessible control**.
 
 <!-- chapter: Test & review -->
 
-[View activity image: Complaints Dashboard used for the five-second first-look test](IA342-Week10-Lecture-Draft.html#slide-29)
+![Complaints Dashboard used for the five-second first-look test](assets/figures/slide-29.jpg)
 
 ### Look. Then explain.
 
@@ -625,7 +625,7 @@ Show the values, comparisons, and changes.
 
 Keep the evidence accurate.
 
-[View image: Brain illustration detail from the supplied storytelling slide, used as a metaphor for connecting numbers and narrative.](IA342-Week10-Lecture-Draft.html#slide-31)
+![Brain illustration detail from the supplied storytelling slide, used as a metaphor for connecting numbers and narrative.](assets/figures/slide-31.png)
 
 STORY
 
@@ -721,7 +721,7 @@ Public availability does not place an image in the public domain. Retain creator
 
 **Source / attribution:** Source record for the IA342 Week 10 instructor-review draft.
 
-> **Instructor notes:** This is the final source page. GitHub and Canvas remain unchanged until approval.
+> **Instructor notes:** This is the final source page. This is an instructor-review PR; do not merge or publish to Canvas without Owner approval.
 
 ---
 
