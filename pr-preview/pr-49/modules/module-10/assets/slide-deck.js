@@ -48,14 +48,6 @@
         section.appendChild(item);
         stage.appendChild(section);
         slides.push(section);
-      } else if (section && item.nodeType === 1 && item.tagName === "BLOCKQUOTE" && /^Instructor notes:/i.test(item.textContent.trim())) {
-        var details = document.createElement("details");
-        details.className = "ia342-speaker-notes";
-        var summary = document.createElement("summary");
-        summary.textContent = "Instructor notes";
-        details.appendChild(summary);
-        details.appendChild(item);
-        section.appendChild(details);
       } else if (section) {
         if (item.nodeType === 1 && item.tagName === "P" && /^Source\s*\/\s*attribution:/i.test(item.textContent.trim())) {
           item.classList.add("ia342-credit");
@@ -128,7 +120,7 @@
     document.addEventListener("keydown", function (event) {
       if (event.altKey || event.metaKey || event.ctrlKey || event.shiftKey) return;
       var target = event.target;
-      if (target && target.closest && target.closest("input, textarea, select, button, summary, [contenteditable='true']")) return;
+      if (target && target.closest && target.closest("input, textarea, select, button, [contenteditable='true']")) return;
       var key = event.key;
       if (key === "ArrowRight" || key === "PageDown" || key === " ") {
         if (key === " " && target && target.closest && target.closest("a")) return;
