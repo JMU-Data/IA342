@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Module 10: Dashboard Design - IA342 | IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Module 10: Dashboard Design - IA342" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<meta property="og:description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<link rel="canonical" href="https://jmu-data.github.io/IA342/modules/module-10/" />
+<meta property="og:url" content="https://jmu-data.github.io/IA342/modules/module-10/" />
+<meta property="og:site_name" content="IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Module 10: Dashboard Design - IA342" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Module 10: Dashboard Design - IA342","url":"https://jmu-data.github.io/IA342/modules/module-10/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/IA342/assets/css/style.css?v=5495f341aaf9d9541d7e973ca3b1b72e958bbb21">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/IA342/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://jmu-data.github.io/IA342/">IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</a></h1>
+      
+
+      <link rel="stylesheet" href="assets/slide-deck.css" />
+
+<div class="ia342-lecture-head">
+  <h1>IA342 · Week 10 — Dashboard Design</h1>
+  <p><strong>Dr. Xuebin Wei</strong> · October 26–30, 2026 · <a href="../../assignments/lab-10/">Lab 10 instructions</a></p>
+</div>
+
+<div id="ia342-lecture-deck" class="ia342-deck" role="region" aria-label="IA342 Week 10 classroom slide deck">
+  <div class="ia342-toolbar">
+    <span class="ia342-toolbar-title">IA342 · Dashboard Design</span>
+    <div class="ia342-toolbar-controls">
+      <button type="button" id="ia342-prev" aria-label="Previous slide">← Previous</button>
+      <span id="ia342-slide-count" aria-live="polite">Slide 1 / 35</span>
+      <button type="button" id="ia342-next" aria-label="Next slide">Next →</button>
+      <button type="button" id="ia342-fullscreen" aria-label="Toggle fullscreen presentation">Fullscreen</button>
+    </div>
+  </div>
+  <div class="ia342-progress-track" aria-hidden="true"><span id="ia342-progress"></span></div>
+  <div class="ia342-stage" id="ia342-slide-stage" tabindex="0" aria-label="Current lecture slide"></div>
+  <div class="ia342-deck-foot">
+    <span id="ia342-topic">Dashboard Design</span>
+    <span>← → / Space / Page Up–Down · Home / End</span>
+  </div>
+</div>
+
+<h2 id="slide-01--dashboard-design">Slide 01 — Dashboard Design</h2>
+
+<!-- chapter: Foundations -->
+
+<h3 id="ia342--week-10">IA342 · Week 10</h3>
+
+<p>Make the question, evidence, and next step easy to see.</p>
+
+<p>We will use a real research dashboard, then compare public examples that show why layout, hierarchy, interaction, and testing matter.</p>
+
+<p><a href="https://public.tableau.com/app/profile/xuebin.wei/viz/covid19_15842259755690/Dashboard">Open the Tableau dashboard</a> · <a href="https://doi.org/10.1177/0308518X20931515">Read the paper</a></p>
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-1.png" alt="Historical static screenshot of Xuebin Wei’s COVID-19 Tableau dashboard; dashboard labels show February 13, 2021." /></p>
+
+<p><strong>Source / attribution:</strong> Xuebin Wei, Mingshu Wang, and Menno-Jan Kraak, “Where we are in fighting against COVID-19”; Tableau Public dashboard.</p>
+
+<hr />
+
+<h2 id="slide-02--what-is-a-dashboard">Slide 02 — What is a dashboard?</h2>
+
+<!-- chapter: Foundations -->
+
+<p>A dashboard is a <strong>coordinated visual display</strong> that puts the information needed for a purpose in one place.</p>
+
+<p>MonitorCompareInvestigate</p>
+
+<p>A screen full of unrelated charts is not automatically a dashboard.</p>
+
+<p><strong>Source / attribution:</strong> Paraphrased from Stephen Few, “Dashboard Confusion,” and The Big Book of Dashboards.</p>
+
+<hr />
+
+<h2 id="slide-03--directed-discovery-show-the-answer-to-a-known-question">Slide 03 — Directed discovery: show the answer to a known question</h2>
+
+<!-- chapter: Foundations -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-3.png" alt="Inspection dashboard with actual vs expected, 14-day trend, and days since last inspection" /></p>
+
+<h3 id="known-question">Known question</h3>
+
+<p>Which station needs attention now?</p>
+
+<h3 id="visible-answer">Visible answer</h3>
+
+<p><strong>19 days</strong> since the last inspection, marked in red.</p>
+
+<p>The reader does not need to invent the first question. The dashboard points to the exception.</p>
+
+<p><strong>Next step:</strong> check the station marked in red.</p>
+
+<p><strong>Source / attribution:</strong> Directed discovery: show the answer to a pre-known question. Example from The Big Book of Dashboards.</p>
+
+<hr />
+
+<h2 id="slide-04--exploratory-discovery-follow-a-question-into-the-data">Slide 04 — Exploratory discovery: follow a question into the data</h2>
+
+<!-- chapter: Foundations -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-4.png" alt="NASA, ESA, and JAXA Earth Observing Dashboard: indicator list, world map, and instructions." /></p>
+
+<h3 id="start-with-air-quality">Start with air quality.</h3>
+
+<p>Select an indicator and a location. Inspect the detail view.</p>
+
+<h3 id="then-ask-another-question">Then ask another question.</h3>
+
+<ul>
+  <li>Does another location show the same pattern?</li>
+  <li>What changes when you choose a different indicator?</li>
+  <li>What does the time series add to the map?</li>
+</ul>
+
+<p><strong>The reader chooses the next comparison.</strong></p>
+
+<p><strong>Source / attribution:</strong> NASA Goddard Space Flight Center, <a href="https://svs.gsfc.nasa.gov/13650/">Earth Observation Dashboard tutorial (2020)</a>.</p>
+
+<hr />
+
+<h2 id="slide-05--who-will-use-itand-what-do-they-need-to-know">Slide 05 — Who will use it—and what do they need to know?</h2>
+
+<!-- chapter: Foundations -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-5.png" alt="Andy Kriebel’s Year-to-Date Income Statement, with region, channel, and product controls and comparisons to prior year and budget." /></p>
+
+<h3 id="a-finance-manager-reviewing-results">A finance manager reviewing results</h3>
+
+<p><strong>Question:</strong> Which results missed the budget?</p>
+
+<p><strong>What the dashboard shows:</strong> the actual result, last year’s result, and the monthly difference from budget.</p>
+
+<p><strong>What the filters do:</strong> let the manager check a region, sales channel, or product.</p>
+
+<p>Choose the information and controls that help this person answer that question.</p>
+
+<p><strong>Source / attribution:</strong> Andy Kriebel, <a href="https://www.vizwiz.com/2017/07/income-statement.html">A New Way to Visualize an Income Statement</a> (2017). Historical design example.</p>
+
+<hr />
+
+<h2 id="slide-06--explicit--specific--consistent">Slide 06 — Explicit · Specific · Consistent</h2>
+
+<!-- chapter: Foundations -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-6.png" alt="Tableau Superstore sample with Profit by State, Profit by Segment, and Sales and Average Profit by Sub-Category." /></p>
+
+<p><strong>1 · Explicit</strong>“Profit by State” and the profit legend tell the reader what the map shows.</p>
+
+<p><strong>2 · Specific</strong>The map, segment comparison, and product table help locate where profit differs.</p>
+
+<p><strong>3 · Consistent</strong>The map and segment view use the same orange-to-blue profit scale.</p>
+
+<p><strong>Source / attribution:</strong> Tableau, <a href="https://help.tableau.com/current/pro/desktop/en-us/dashboards_best_practices.htm">Best Practices for Effective Dashboards</a>. Supporting attributes adapted from Stephen Few.</p>
+
+<hr />
+
+<h2 id="slide-07--figure-1a-compare-five-countries">Slide 07 — Figure 1(a): compare five countries</h2>
+
+<!-- chapter: Foundations -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-7.png" alt="Original paper Figure 1(a): United States, United Kingdom, France, Italy, and Spain, updated May 11, 2020." /></p>
+
+<p><strong>Look at the same week after the first case.</strong> What do the new and accumulated counts each add?</p>
+
+<p><strong>Source / attribution:</strong> Wei, X., Wang, M., &amp; Kraak, M.-J. (2020), <a href="https://doi.org/10.1177/0308518X20931515">Where we are in fighting against COVID-19</a>, Figure 1. Original figure supplied by the author.</p>
+
+<hr />
+
+<h2 id="slide-08--figure-1b-change-the-comparison-group">Slide 08 — Figure 1(b): change the comparison group</h2>
+
+<!-- chapter: Foundations -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-8.png" alt="Original paper Figure 1(b): Singapore, South Korea, Japan, and China, updated May 11, 2020." /></p>
+
+<p><strong>The selection changes; the layout stays familiar.</strong> Compare the time patterns and read each panel’s scale.</p>
+
+<p><strong>Source / attribution:</strong> Wei, X., Wang, M., &amp; Kraak, M.-J. (2020), <a href="https://doi.org/10.1177/0308518X20931515">Where we are in fighting against COVID-19</a>, Figure 1. Original figure supplied by the author.</p>
+
+<hr />
+
+<h2 id="slide-09--before-what-makes-this-dashboard-hard-to-read">Slide 09 — Before: what makes this dashboard hard to read?</h2>
+
+<!-- chapter: Compare designs -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-9.png" alt="Tableau accessibility example before redesign" /></p>
+
+<h3 id="find-the-reading-problems">Find the reading problems</h3>
+
+<ul>
+  <li>Pale text is hard to distinguish from the background.</li>
+  <li>Many colors compete for attention.</li>
+  <li>Crowded marks make comparison difficult.</li>
+</ul>
+
+<p><strong>Before moving on:</strong> name two changes you would make.</p>
+
+<p><strong>Source / attribution:</strong> Tableau, <a href="https://help.tableau.com/current/pro/desktop/en-us/accessibility_dashboards.htm">Build Accessible Dashboards</a>. Official before/after example.</p>
+
+<hr />
+
+<h2 id="slide-10--after-make-the-same-task-easier">Slide 10 — After: make the same task easier</h2>
+
+<!-- chapter: Compare designs -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-10.png" alt="Tableau accessibility example after redesign" /></p>
+
+<h3 id="connect-each-change-to-a-problem">Connect each change to a problem</h3>
+
+<ul>
+  <li>Darker text makes labels easier to read.</li>
+  <li>Fewer displayed groups make comparisons less crowded.</li>
+  <li>Shapes and labels add meaning alongside color.</li>
+</ul>
+
+<p>Explain what became easier—not just which version looks better.</p>
+
+<p><strong>Source / attribution:</strong> Tableau, <a href="https://help.tableau.com/current/pro/desktop/en-us/accessibility_dashboards.htm">Build Accessible Dashboards</a>. Official before/after example.</p>
+
+<hr />
+
+<h2 id="slide-11--compare-where-does-the-reading-effort-go">Slide 11 — Compare: where does the reading effort go?</h2>
+
+<!-- chapter: Compare designs -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-11.png" alt="Robert Allison historical oil dashboard before redesign" /></p>
+
+<h3 id="look-before-judging">Look before judging</h3>
+
+<ul>
+  <li>Where do your eyes go first?</li>
+  <li>Which comparisons are difficult?</li>
+  <li>What can be removed without removing information?</li>
+</ul>
+
+<p><strong>Source / attribution:</strong> Robert Allison, public “blinged” oil dashboard.</p>
+
+<hr />
+
+<h2 id="slide-12--compare-reduce-effort-preserve-meaning">Slide 12 — Compare: reduce effort, preserve meaning</h2>
+
+<!-- chapter: Compare designs -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-12.png" alt="Robert Allison revised oil dashboard" /></p>
+
+<h3 id="what-became-easier">What became easier?</h3>
+
+<ul>
+  <li>Bars share a common baseline.</li>
+  <li>The background stops competing with the data.</li>
+  <li>Selective color carries more meaning.</li>
+</ul>
+
+<p><strong>Still ask:</strong> What would you improve next?</p>
+
+<p><strong>Source / attribution:</strong> Robert Allison, public “unblinged” oil dashboard.</p>
+
+<hr />
+
+<h2 id="slide-13--a-widget-must-earn-its-space">Slide 13 — A widget must earn its space</h2>
+
+<!-- chapter: Compare designs -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-13.png" alt="Balanced scorecard with eight large gauges" /></p>
+
+<h3 id="ask-four-direct-questions">Ask four direct questions</h3>
+
+<ul>
+  <li>Can the values be compared quickly?</li>
+  <li>Is there a trend or reference period?</li>
+  <li>Are the red–yellow–green thresholds defined?</li>
+  <li>How much screen area is used for one number?</li>
+</ul>
+
+<p>A gauge can be appropriate. Decoration alone is not a reason to use one.</p>
+
+<p><strong>Source / attribution:</strong> TARGIT balanced-scorecard demonstration; public video cited in sources.</p>
+
+<hr />
+
+<h2 id="slide-14--the-same-space-can-show-value-and-context">Slide 14 — The same space can show value and context</h2>
+
+<!-- chapter: Compare designs -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-14.png" alt="CIO dashboard with compact measures, trends, and reference markers" /></p>
+
+<h3 id="small-charts-can-still-give-useful-context">Small charts can still give useful context</h3>
+
+<ul>
+  <li>Show the current value beside a target or comparison.</li>
+  <li>Add a recent trend.</li>
+  <li>Mark the exceptions that need attention.</li>
+</ul>
+
+<p><strong>Give the main comparison enough space.</strong> Supporting details do not need equally large panels.</p>
+
+<p><strong>Source / attribution:</strong> Stephen Few, Information Dashboard Design. Example retained for classroom comparison.</p>
+
+<hr />
+
+<h2 id="slide-15--1--position-place-the-starting-point-where-it-is-easy-to-find">Slide 15 — 1 · Position: place the starting point where it is easy to find</h2>
+
+<!-- chapter: Layout & attention -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-15.jpg" alt="Complaints Dashboard with title and totals at top, controls at top right, and state selector" /></p>
+
+<h3 id="read-the-page-in-order">Read the page in order</h3>
+
+<ol>
+  <li>Title and totals establish the subject.</li>
+  <li>Controls define the current scope.</li>
+  <li>Time and geography support the next comparison.</li>
+</ol>
+
+<p><strong>Direct rule:</strong> put the main question or signal near the top or top-left.</p>
+
+<p><strong>Source / attribution:</strong> Complaints Dashboard on Tableau Public; featured in The Big Book of Dashboards.</p>
+
+<hr />
+
+<h2 id="slide-16--2--emphasis-make-the-important-comparison-stand-out">Slide 16 — 2 · Emphasis: make the important comparison stand out</h2>
+
+<!-- chapter: Layout & attention -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-16.png" alt="Revised oil dashboard with quiet background and selective color" /></p>
+
+<h3 id="use-emphasis-for-meaning">Use emphasis for meaning</h3>
+
+<ul>
+  <li>Quiet background</li>
+  <li>Common baselines</li>
+  <li>One selective highlight</li>
+  <li>Readable titles and units</li>
+</ul>
+
+<p><strong>Direct rule:</strong> use color and formatting to direct attention, not to decorate every object.</p>
+
+<p><strong>Source / attribution:</strong> Robert Allison, revised oil dashboard.</p>
+
+<hr />
+
+<h2 id="slide-17--3--grouping-keep-related-information-together">Slide 17 — 3 · Grouping: keep related information together</h2>
+
+<!-- chapter: Layout & attention -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-17.png" alt="Website Analytics dashboard with totals, time, topics, and location grouped by question" /></p>
+
+<h3 id="one-subject-four-related-views">One subject, four related views</h3>
+
+<ul>
+  <li>Totals establish scale.</li>
+  <li>The trend shows change over time.</li>
+  <li>Topics explain what people viewed.</li>
+  <li>The map shows where visitors came from.</li>
+</ul>
+
+<p><strong>Direct rule:</strong> keep a chart, its legend, and its explanation close together.</p>
+
+<p><strong>Source / attribution:</strong> Web Analytics chapter, The Big Book of Dashboards.</p>
+
+<hr />
+
+<h2 id="slide-18--apply-the-four-decisions-to-the-research-dashboard">Slide 18 — Apply the four decisions to the research dashboard</h2>
+
+<!-- chapter: Layout & attention -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-18.png" alt="Historical static screenshot of Xuebin Wei’s COVID-19 Tableau dashboard; dashboard labels show February 13, 2021." /></p>
+
+<p><strong>1 · Position</strong>Scope and controls frame the comparison.</p>
+
+<p><strong>2 · Emphasis</strong>Selected countries and measures stand out.</p>
+
+<p><strong>3 · Grouping</strong>Cases, deaths, titles, and controls stay with the views they explain.</p>
+
+<p><strong>4 · Proportion</strong>The main comparisons receive enough space; the five-item limit protects readability.</p>
+
+<p><strong>Source / attribution:</strong> Wei, Wang, and Kraak (2020); public Tableau dashboard.</p>
+
+<hr />
+
+<h2 id="slide-19--the-f-pattern-a-common-scan-on-text-heavy-pages">Slide 19 — The F pattern: a common scan on text-heavy pages</h2>
+
+<!-- chapter: Layout & attention -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-19.png" alt="Nielsen Norman Group heatmaps showing F-shaped scanning on text-heavy pages" /></p>
+
+<h3 id="typical-sequence">Typical sequence</h3>
+
+<ol>
+  <li>Long horizontal scan near the top.</li>
+  <li>Shorter horizontal scan lower down.</li>
+  <li>Vertical scan down the left side.</li>
+</ol>
+
+<p><strong>Important:</strong> this is a common pattern, not a required dashboard template.</p>
+
+<p><strong>Source / attribution:</strong> Nielsen Norman Group, F-shaped pattern in reading digital content.</p>
+
+<hr />
+
+<h2 id="slide-20--watch-the-f-pattern-develop">Slide 20 — Watch the F pattern develop</h2>
+
+<!-- chapter: Layout & attention -->
+
+<p>Watch Nielsen Norman Group’s <strong>2:40 F-pattern explanation</strong> here. Notice the first horizontal scan, the shorter second scan, and attention moving down the left side.</p>
+
+<div class="ia342-video">
+  <iframe title="F-Pattern in Reading Digital Content — Nielsen Norman Group" src="about:blank" data-src="https://www.youtube-nocookie.com/embed/XU1-Rz2Q7-E?rel=0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+</div>
+
+<p><a href="https://www.youtube.com/watch?v=XU1-Rz2Q7-E">Open the F-pattern video on YouTube if embedded playback is blocked</a></p>
+
+<p><strong>Source / attribution:</strong> Nielsen Norman Group, “F-Pattern in Reading Digital Content.”</p>
+
+<hr />
+
+<h2 id="slide-21--dashboard-eye-tracking-attention-can-move">Slide 21 — Dashboard eye tracking: attention can move</h2>
+
+<!-- chapter: Layout & attention -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-21.jpg" alt="Tableau eye-tracking research illustration over a dashboard" /></p>
+
+<h3 id="what-the-study-can-show">What the study can show</h3>
+
+<ul>
+  <li>Large values attract attention.</li>
+  <li>Strong contrast can override position.</li>
+  <li>Repeated forms may receive less sustained attention.</li>
+  <li>A distinctive chart can redirect the gaze.</li>
+</ul>
+
+<p>Looking at a region is not the same as understanding it.</p>
+
+<p><strong>Source / attribution:</strong> Tableau, “Eye-Tracking Study: Five Key Learnings.”</p>
+
+<hr />
+
+<h2 id="slide-22--what-grabs-attention-in-this-dashboard">Slide 22 — What grabs attention in this dashboard?</h2>
+
+<!-- chapter: Layout & attention -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-22.jpg" alt="Agency Utilization Rollup dashboard with large numbers across the top and colored trend at bottom right" /></p>
+
+<h3 id="notice-two-areas">Notice two areas</h3>
+
+<p><strong>The top row:</strong> large numbers stand out.</p>
+
+<p><strong>The lower right:</strong> the colored area chart also attracts attention.</p>
+
+<p><strong>Design lesson:</strong> use size and contrast for the information that matters most.</p>
+
+<p>Then ask a reader to answer a real question. Looking is not the same as understanding.</p>
+
+<p><strong>Source / attribution:</strong> Agency Utilization Rollup, <em>The Big Book of Dashboards</em>; Tableau eye-tracking discussion.</p>
+
+<hr />
+
+<h2 id="slide-23--what-makes-a-dashboard-actionable">Slide 23 — What makes a dashboard actionable?</h2>
+
+<!-- chapter: Actionable dashboards -->
+
+<p><strong>1 · Purpose</strong>What question does this answer?</p>
+
+<p><strong>2 · Evidence</strong>Do we have the data needed?</p>
+
+<p><strong>3 · Audience</strong>Who will use it?</p>
+
+<p><strong>4 · Insight</strong>Can the important result be seen?</p>
+
+<p><strong>5 · Next step</strong>What should the reader select, investigate, or decide?</p>
+
+<p><strong>Source / attribution:</strong> Classroom paraphrase of the five actionable-visualization checks in the prior lecture.</p>
+
+<hr />
+
+<h2 id="slide-24--1--make-the-purpose-obvious">Slide 24 — 1 · Make the purpose obvious</h2>
+
+<!-- chapter: Actionable dashboards -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-24.png" alt="Valentine spending dashboard with the question in the title" /></p>
+
+<h3 id="the-title-states-the-question">The title states the question</h3>
+
+<p>How has Valentine’s Day spending changed over time?</p>
+
+<p>Every small multiple contributes to that one question.</p>
+
+<p>A question can also be implied by a clear topic and layout—but the reader must still know what the display is for.</p>
+
+<p><strong>Source / attribution:</strong> Public Tableau example credited to Pooja Gandhi in the prior lecture.</p>
+
+<hr />
+
+<h2 id="slide-25--2--make-the-needed-evidence-available">Slide 25 — 2 · Make the needed evidence available</h2>
+
+<!-- chapter: Actionable dashboards -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-25.png" alt="Halloween dashboard combining candy counts and rainfall" /></p>
+
+<h3 id="one-question-needs-two-sources">One question needs two sources</h3>
+
+<ul>
+  <li>Candy counts describe activity.</li>
+  <li>Weather adds context.</li>
+  <li>Dates, units, and missing observations must align.</li>
+</ul>
+
+<p>Do not claim causation from a small observational example. The point is that the question cannot be answered without the second dataset.</p>
+
+<p><strong>Source / attribution:</strong> Jeffrey Shaffer, Halloween data project.</p>
+
+<hr />
+
+<h2 id="slide-26--3--design-for-the-person-who-will-use-it">Slide 26 — 3 · Design for the person who will use it</h2>
+
+<!-- chapter: Actionable dashboards -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-26.png" alt="Year-to-date income statement dashboard" /></p>
+
+<h3 id="audience-changes-the-vocabulary">Audience changes the vocabulary</h3>
+
+<p>A finance reader can use gross sales, cost of goods sold, budget variance, and net profit.</p>
+
+<p>A general public dashboard would need simpler language and more explanation.</p>
+
+<p><strong>Same data does not mean the same dashboard for every reader.</strong></p>
+
+<p><strong>Source / attribution:</strong> Andy Kriebel, public Profit &amp; Loss / income-statement Tableau examples.</p>
+
+<hr />
+
+<h2 id="slide-27--4--make-the-important-result-easy-to-see">Slide 27 — 4 · Make the important result easy to see</h2>
+
+<!-- chapter: Actionable dashboards -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-27.png" alt="Profitability dashboard showing unprofitable states, ranked regions, and quarterly trends" /></p>
+
+<h3 id="the-answer-appears-in-three-ways">The answer appears in three ways</h3>
+
+<ul>
+  <li>The map shows where losses occur.</li>
+  <li>Sorted bars compare regions.</li>
+  <li>The line chart shows when performance changes.</li>
+</ul>
+
+<p>The reader should not need a long explanation to find the main result.</p>
+
+<p><strong>Source / attribution:</strong> Andy Kriebel, “Which Regions are Most Profitable?” public Tableau example.</p>
+
+<hr />
+
+<h2 id="slide-28--5--make-the-next-interaction-clear">Slide 28 — 5 · Make the next interaction clear</h2>
+
+<!-- chapter: Actionable dashboards -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-28.jpg" alt="Complaints state map labeled click to filter" /></p>
+
+<h3 id="tell-the-reader-what-to-do">Tell the reader what to do</h3>
+
+<ul>
+  <li>Select a state.</li>
+  <li>See the related views update.</li>
+  <li>Clear the selection to return to the overview.</li>
+</ul>
+
+<p>Interaction may use a <strong>mouse, touch, keyboard, or another accessible control</strong>. The instruction should describe the action, not assume one device.</p>
+
+<p><strong>Source / attribution:</strong> Complaints Dashboard, Jeffrey Shaffer / The Big Book of Dashboards.</p>
+
+<hr />
+
+<h2 id="slide-29--the-five-second-test">Slide 29 — The five-second test</h2>
+
+<!-- chapter: Test & review -->
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-29.jpg" alt="Complaints Dashboard used for the five-second first-look test" /></p>
+
+<h3 id="look-then-explain">Look. Then explain.</h3>
+
+<ol>
+  <li>What is the subject?</li>
+  <li>What is the main comparison?</li>
+  <li>What can the reader do next?</li>
+</ol>
+
+<p>Five seconds tests <strong>orientation</strong>, not perfect recall.</p>
+
+<p>Show for 5 secondsReveal for discussionReset</p>
+
+<p><strong>Source / attribution:</strong> Classroom first-look exercise. Example: Jeffrey A. Shaffer, <em>Complaints Dashboard</em>, <a href="https://www.bigbookofdashboards.com/dashboards.html">The Big Book of Dashboards</a>.</p>
+
+<hr />
+
+<h2 id="slide-30--three-five-rules-for-this-class">Slide 30 — Three “five” rules for this class</h2>
+
+<!-- chapter: Test & review -->
+
+<p><strong>5 seconds</strong>Subject, main signal, and next action should be recognizable.</p>
+
+<p><strong>5 views or fewer</strong>A useful starting point for a focused dashboard.</p>
+
+<p><strong>Fewer than 5 prominent colors</strong>Use a limited palette; reserve strong color for meaning.</p>
+
+<p>These are classroom starting rules—not universal laws. Break one only when the task gives you a clear reason.</p>
+
+<p><strong>Source / attribution:</strong> Five views or fewer and the five-second test come from the prior lecture. The limited-color rule is a course design heuristic.</p>
+
+<hr />
+
+<h2 id="slide-31--numbers-show-what-a-story-explains-why-it-matters">Slide 31 — Numbers show what. A story explains why it matters.</h2>
+
+<!-- chapter: Storytelling -->
+
+<p>NUMBERS</p>
+
+<h3 id="what-happened">What happened?</h3>
+
+<p>Show the values, comparisons, and changes.</p>
+
+<p>Keep the evidence accurate.</p>
+
+<p><img src="/IA342/modules/module-10/assets/figures/slide-31.png" alt="Brain illustration detail from the supplied storytelling slide, used as a metaphor for connecting numbers and narrative." /></p>
+
+<p>STORY</p>
+
+<h3 id="why-should-we-care">Why should we care?</h3>
+
+<p>Give the question, a clear sequence, and the main takeaway.</p>
+
+<p>Help the audience connect the pieces.</p>
+
+<p><strong>The next step:</strong> after building a readable dashboard, guide the audience through one finding.</p>
+
+<p><strong>Source / attribution:</strong> Illustration detail: Staying Alive UK, reproduced in the supplied lecture. Numbers-and-stories teaching connection adapted from Jeffrey A. Shaffer.</p>
+
+<hr />
+
+<h2 id="slide-32--attract--engage--punchline">Slide 32 — Attract · Engage · Punchline</h2>
+
+<!-- chapter: Storytelling -->
+
+<p><strong>Attract</strong>State a relevant question and define the scope.<em>“Which regions are losing money?”</em></p>
+
+<p><strong>Engage</strong>Guide the comparison with sequence, size, color, and interaction.<em>Map → ranked bars → trend</em></p>
+
+<p><strong>Punchline</strong>Make the takeaway or next question clear.<em>“Investigate these states first.”</em></p>
+
+<p>Storytelling changes emphasis and sequence. It does not excuse weak evidence.</p>
+
+<p><strong>Source / attribution:</strong> Adapted from the Attract–Engage–Punchline framework in the prior lecture.</p>
+
+<hr />
+
+<h2 id="slide-33--watch-a-data-story-unfold">Slide 33 — Watch a data story unfold</h2>
+
+<!-- chapter: Storytelling -->
+
+<p>Play a 60-second Hans Rosling segment</p>
+
+<p>Watch how the speaker keeps the axes stable, directs attention at the right moment, and connects movement to a clear claim.</p>
+
+<p><a href="https://www.youtube.com/watch?v=jbkSRLYSojo">Open the full BBC video</a></p>
+
+<p><strong>Source / attribution:</strong> BBC, Hans Rosling: “200 Countries, 200 Years, 4 Minutes.”</p>
+
+<hr />
+
+<h2 id="slide-34--final-design-review">Slide 34 — Final design review</h2>
+
+<!-- chapter: Review -->
+
+<p><strong>Purpose</strong>Can a new reader state the question?</p>
+
+<p><strong>Evidence</strong>Does each view answer part of that question?</p>
+
+<p><strong>Hierarchy</strong>Do position, emphasis, grouping, and proportion match importance?</p>
+
+<p><strong>Consistency</strong>Do color, labels, and controls keep the same meaning?</p>
+
+<p><strong>Interaction</strong>Can the reader select, understand the result, and clear it?</p>
+
+<p><strong>First look</strong>Five seconds · five views or fewer · fewer than five prominent colors.</p>
+
+<p><strong>Test</strong>Did another person complete the task without coaching?</p>
+
+<p><strong>Source / attribution:</strong> Course review checklist synthesized from the lecture examples.</p>
+
+<hr />
+
+<h2 id="slide-35--sources-and-public-examples">Slide 35 — Sources and public examples</h2>
+
+<!-- chapter: References -->
+
+<p><strong>Research dashboard:</strong> Wei, X., Wang, M., &amp; Kraak, M.-J. (2020). <a href="https://doi.org/10.1177/0308518X20931515">Where we are in fighting against COVID-19</a>; <a href="https://public.tableau.com/app/profile/xuebin.wei/viz/covid19_15842259755690/Dashboard">Tableau Public dashboard</a>.</p>
+
+<p><strong>Additional teaching cases:</strong> <a href="https://svs.gsfc.nasa.gov/13650/">NASA Goddard Earth Observation Dashboard</a>; <a href="https://www.vizwiz.com/2017/07/income-statement.html">Andy Kriebel’s income statement</a>; <a href="https://help.tableau.com/current/pro/desktop/en-us/dashboards_best_practices.htm">Tableau Superstore</a>; <a href="https://help.tableau.com/current/pro/desktop/en-us/accessibility_dashboards.htm">Tableau accessibility walkthrough</a>.</p>
+
+<p><strong>Dashboard foundations:</strong> Stephen Few, Dashboard Confusion and Information Dashboard Design; The Big Book of Dashboards.</p>
+
+<p><strong>Public examples:</strong> Robert Allison oil dashboards; TARGIT balanced-scorecard video; Jeffrey Shaffer Complaints and Website Analytics dashboards; Andy Kriebel public Tableau examples; Jeffrey Shaffer Halloween data project; Tableau accessibility guidance.</p>
+
+<p><strong>Attention:</strong> Nielsen Norman Group F-pattern research and video; Tableau eye-tracking study.</p>
+
+<p><strong>Story and memory:</strong> Bower &amp; Clark (1969), Narrative stories as mediators for serial learning; Stephens, Silbert, &amp; Hasson (2010), Speaker–listener neural coupling underlies successful communication; BBC Hans Rosling video.</p>
+
+<p>Public availability does not place an image in the public domain. Retain creator attribution and instructional context.</p>
+
+<p><strong>Source / attribution:</strong> Source record for the IA342 Week 10 instructor-review draft.</p>
+
+<hr />
+
+<!-- Revision: 2026-10-21-figure-panels-dedup-old-lab-screenshots. Original Figure 1(a)/(b) inserted from the author-supplied image. -->
+
+<div id="ia342-slides-end"></div>
+<script src="assets/slide-deck.js" defer=""></script>
+
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/JMU-Data/IA342/edit/gh-pages/modules/module-10/index.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
