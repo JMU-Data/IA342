@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Calculations in Tableau | IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Calculations in Tableau" />
+<meta name="author" content="Dr. Xuebin Wei" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<meta property="og:description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<link rel="canonical" href="https://jmu-data.github.io/IA342/pr-preview/pr-50/modules/module-11/source.html" />
+<meta property="og:url" content="https://jmu-data.github.io/IA342/pr-preview/pr-50/modules/module-11/source.html" />
+<meta property="og:site_name" content="IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Calculations in Tableau" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Dr. Xuebin Wei"},"description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Calculations in Tableau","url":"https://jmu-data.github.io/IA342/pr-preview/pr-50/modules/module-11/source.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-50/assets/css/style.css?v=159058e314bc4ec88b3cc95922b7ca4d0ee8c813">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/IA342/pr-preview/pr-50/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://jmu-data.github.io/IA342/pr-preview/pr-50/">IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</a></h1>
+      
+
+      <h2 id="calculations-in-tableau">Calculations in Tableau</h2>
+
+<!-- source-slide:1 -->
+
+<p>Xuebin Wei<br />
+James Madison University</p>
+
+<h2 id="diamonds-dataset">Diamonds dataset</h2>
+
+<p>One record describes <strong>one diamond</strong>. We will use this same dataset throughout the lecture.</p>
+
+<!-- markdown-fallback:start -->
+<p>| IDNO | WEIGHT | COLOR | CLARITY | RATER | PRICE |
+|—:|—:|—|—|—|—:|
+| 1 | 0.30 | D | VS2 | GIA | 1,302 |
+| 2 | 0.30 | E | VS1 | GIA | 1,510 |
+| 3 | 0.30 | G | VVS1 | GIA | 1,510 |
+| 4 | 0.30 | G | VS1 | GIA | 1,260 |
+| 5 | 0.31 | D | VS1 | GIA | 1,641 |
+| 6 | 0.31 | E | VS1 | GIA | 1,555 |
+| 7 | 0.31 | F | VS1 | GIA | 1,427 |
+| 8 | 0.31 | G | VVS2 | GIA | 1,427 |
+<!-- markdown-fallback:end --></p>
+
+<p><strong>308 diamonds.</strong> <code class="language-plaintext highlighter-rouge">IDNO</code> identifies a diamond; <code class="language-plaintext highlighter-rouge">RATER</code>, <code class="language-plaintext highlighter-rouge">COLOR</code>, and <code class="language-plaintext highlighter-rouge">CLARITY</code> describe it; <code class="language-plaintext highlighter-rouge">WEIGHT</code> and <code class="language-plaintext highlighter-rouge">PRICE</code> are numeric measures. Treat <code class="language-plaintext highlighter-rouge">IDNO</code> as a dimension.</p>
+
+<p>Source: <a href="https://github.com/xbwei/data-analysis-with-generative-ai/blob/main/diamonds.csv">Course Diamonds CSV</a>.</p>
+
+<h2 id="calculations-in-tableau-1">Calculations in Tableau</h2>
+
+<!-- source-slide:2 -->
+
+<p>Calculations transform existing data into new values. A formula combines <strong>functions</strong>, <strong>fields</strong>, and <strong>operators</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Calculation</th>
+      <th>What it uses</th>
+      <th>Diamonds example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Regular calculation: row level</td>
+      <td>Values from an individual source record</td>
+      <td><code class="language-plaintext highlighter-rouge">[PRICE] / [WEIGHT]</code></td>
+    </tr>
+    <tr>
+      <td>Regular calculation: aggregate</td>
+      <td>Records belonging to a group in the view</td>
+      <td><code class="language-plaintext highlighter-rouge">SUM([PRICE]) / SUM([WEIGHT])</code></td>
+    </tr>
+    <tr>
+      <td>Table calculation</td>
+      <td>Results already returned to the view</td>
+      <td>Percent of Total or Running Total</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Regular calculations are evaluated as part of the data-source query. Table calculations operate on the resulting view inside Tableau.</p>
+
+<p>Functions include <strong>number, string, date, logical, and type conversion</strong> functions.</p>
+
+<h2 id="calculation-syntax">Calculation Syntax</h2>
+
+<!-- source-slide:3 -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Syntax</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Function</td>
+      <td>Function name followed by arguments in parentheses</td>
+      <td><code class="language-plaintext highlighter-rouge">SUM([PRICE])</code></td>
+    </tr>
+    <tr>
+      <td>Field</td>
+      <td>Field name in square brackets</td>
+      <td><code class="language-plaintext highlighter-rouge">[WEIGHT]</code></td>
+    </tr>
+    <tr>
+      <td>Operator</td>
+      <td>Arithmetic, comparison, or logical operation</td>
+      <td><code class="language-plaintext highlighter-rouge">[WEIGHT] &gt;= 1</code></td>
+    </tr>
+    <tr>
+      <td>Literal</td>
+      <td>A value written directly in the formula</td>
+      <td><code class="language-plaintext highlighter-rouge">1</code>, <code class="language-plaintext highlighter-rouge">"GIA"</code>, <code class="language-plaintext highlighter-rouge">#2000-01-01#</code>, <code class="language-plaintext highlighter-rouge">TRUE</code>, <code class="language-plaintext highlighter-rouge">NULL</code></td>
+    </tr>
+    <tr>
+      <td>Parameter</td>
+      <td>A user-controlled value, also in square brackets</td>
+      <td><code class="language-plaintext highlighter-rouge">[Minimum Weight]</code></td>
+    </tr>
+    <tr>
+      <td>Comment</td>
+      <td>Two forward slashes before the comment</td>
+      <td><code class="language-plaintext highlighter-rouge">// Price per carat</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Arithmetic: <code class="language-plaintext highlighter-rouge">+</code> <code class="language-plaintext highlighter-rouge">-</code> <code class="language-plaintext highlighter-rouge">*</code> <code class="language-plaintext highlighter-rouge">/</code> <code class="language-plaintext highlighter-rouge">%</code> <code class="language-plaintext highlighter-rouge">^</code> · Comparison: <code class="language-plaintext highlighter-rouge">=</code> <code class="language-plaintext highlighter-rouge">==</code> <code class="language-plaintext highlighter-rouge">!=</code> <code class="language-plaintext highlighter-rouge">&lt;&gt;</code> <code class="language-plaintext highlighter-rouge">&gt;</code> <code class="language-plaintext highlighter-rouge">&lt;</code> <code class="language-plaintext highlighter-rouge">&gt;=</code> <code class="language-plaintext highlighter-rouge">&lt;=</code> · Logic: <code class="language-plaintext highlighter-rouge">AND</code> <code class="language-plaintext highlighter-rouge">OR</code> <code class="language-plaintext highlighter-rouge">NOT</code>. Parentheses control the order of operations.</p>
+
+<!-- widget:syntax -->
+
+<!-- markdown-fallback:start -->
+<pre><code class="language-tableau">IF [WEIGHT] &gt; 0.5 THEN "big" ELSE "small" END
+</code></pre>
+<!-- markdown-fallback:end -->
+
+<p>Reference: <a href="https://help.tableau.com/current/pro/desktop/en-us/functions_operators.htm">Writing calculations in Tableau</a>.</p>
+
+<h2 id="basic-functions">Basic Functions</h2>
+
+<!-- source-slide:4 -->
+
+<!-- markdown-fallback:start -->
+<p>Examples for IDNO 1 (WEIGHT 0.30, PRICE 1,302, RATER GIA):</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Example</th>
+      <th>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Date</td>
+      <td><code class="language-plaintext highlighter-rouge">DATEDIFF('day', #2000-01-01#, #2000-01-03#)</code></td>
+      <td>2 days</td>
+    </tr>
+    <tr>
+      <td>Logical</td>
+      <td><code class="language-plaintext highlighter-rouge">IF [WEIGHT] &gt; 0.5 THEN "big" ELSE "small" END</code></td>
+      <td><code class="language-plaintext highlighter-rouge">"small"</code></td>
+    </tr>
+    <tr>
+      <td>String</td>
+      <td><code class="language-plaintext highlighter-rouge">LOWER([RATER])</code></td>
+      <td><code class="language-plaintext highlighter-rouge">"gia"</code></td>
+    </tr>
+    <tr>
+      <td>Number</td>
+      <td><code class="language-plaintext highlighter-rouge">ROUND([WEIGHT], 1)</code></td>
+      <td>0.3</td>
+    </tr>
+    <tr>
+      <td>Null handling</td>
+      <td><code class="language-plaintext highlighter-rouge">ZN([PRICE])</code>; <code class="language-plaintext highlighter-rouge">ZN(NULL)</code></td>
+      <td>1,302; 0</td>
+    </tr>
+    <tr>
+      <td>Type conversion</td>
+      <td><code class="language-plaintext highlighter-rouge">STR([IDNO])</code></td>
+      <td><code class="language-plaintext highlighter-rouge">"1"</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Diamonds has no date field; the date example uses two date literals.
+<!-- markdown-fallback:end --></p>
+
+<p>Logical expressions can define a calculated field or a filter. For example, <strong><code class="language-plaintext highlighter-rouge">AVG([WEIGHT]) &gt; 0.5</code></strong> keeps groups whose average weight is greater than 0.5.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">ZN()</code> returns its input when it is not NULL; otherwise, it returns zero.</strong> A missing value and a measured zero do not necessarily mean the same thing.</p>
+
+<p>References: <a href="https://help.tableau.com/current/pro/desktop/en-us/functions_functions_date.htm">Date functions</a> · <a href="https://help.tableau.com/current/pro/desktop/en-us/functions_functions_logical.htm">Logical functions and ZN</a> · <a href="https://help.tableau.com/current/pro/desktop/en-us/functions_all_categories.htm">Function reference</a>.</p>
+
+<h2 id="table-calculation">Table Calculation</h2>
+
+<!-- source-slide:5 -->
+
+<p>A table calculation operates on the <strong>aggregated results in the current view</strong>.</p>
+
+<ul>
+  <li>Adding or removing dimensions changes the view and can change the calculation.</li>
+  <li>Quick Table Calculations apply common operations to an existing measure.</li>
+  <li>A table calculation can be saved as a calculated field.</li>
+</ul>
+
+<p><img src="/IA342/pr-preview/pr-50/modules/module-11/assets/figures/image13.png" alt="Quick Table Calculation menu" /></p>
+
+<p>For Diamonds, first count the diamonds in each group. Then calculate each group’s <strong>percent of total</strong>, <strong>running total</strong>, or another transformation of those counts.</p>
+
+<p>Reference: <a href="https://help.tableau.com/current/pro/desktop/en-us/calculations_tablecalculations.htm">Table calculations</a>.</p>
+
+<h2 id="scope-and-direction">Scope and Direction</h2>
+
+<!-- source-slide:6 -->
+
+<p>Keep the same counts. Change <strong>which cells share the denominator</strong>. The 100% totals show where the calculation restarts.</p>
+
+<!-- widget:scopeSimple -->
+
+<table>
+  <thead>
+    <tr>
+      <th>RATER</th>
+      <th style="text-align: right">D</th>
+      <th style="text-align: right">E</th>
+      <th style="text-align: right">F</th>
+      <th style="text-align: right">G</th>
+      <th style="text-align: right">H</th>
+      <th style="text-align: right">I</th>
+      <th style="text-align: right">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GIA</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: right">25</td>
+      <td style="text-align: right">40</td>
+      <td style="text-align: right">26</td>
+      <td style="text-align: right">29</td>
+      <td style="text-align: right">21</td>
+      <td style="text-align: right">151</td>
+    </tr>
+    <tr>
+      <td>HRD</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: right">19</td>
+      <td style="text-align: right">17</td>
+      <td style="text-align: right">22</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">79</td>
+    </tr>
+    <tr>
+      <td>IGI</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">9</td>
+      <td style="text-align: right">23</td>
+      <td style="text-align: right">22</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: right">78</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">44</td>
+      <td style="text-align: right">82</td>
+      <td style="text-align: right">65</td>
+      <td style="text-align: right">61</td>
+      <td style="text-align: right">40</td>
+      <td style="text-align: right">308</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Percent of Total = <code class="language-plaintext highlighter-rouge">COUNTD([IDNO]) / TOTAL(COUNTD([IDNO]))</code>.</p>
+
+<p>For <strong>RATER = GIA, COLOR = D</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Compute Using</th>
+      <th style="text-align: right">Denominator</th>
+      <th style="text-align: right">Selected cell</th>
+      <th>Where the total is 100%</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Across</td>
+      <td style="text-align: right">151</td>
+      <td style="text-align: right">6.62%</td>
+      <td>At the end of each row</td>
+    </tr>
+    <tr>
+      <td>Down</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">62.50%</td>
+      <td>At the bottom of each column</td>
+    </tr>
+    <tr>
+      <td>Entire table</td>
+      <td style="text-align: right">308</td>
+      <td style="text-align: right">3.25%</td>
+      <td>Bottom-right grand total</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The HTML shows original counts and calculated percentages side by side. Only Percent of Total is calculated in this demonstration.</p>
+
+<details>
+<summary>Extend the example: Pane, Cell, and Specific Dimensions</summary>
+
+<!-- source-slide:6 -->
+
+Now add **COLOR beneath RATER** in Rows, with **CLARITY** in Columns. Each RATER block is a pane. This extends the preceding two-dimensional example rather than repeating it.
+
+<!-- widget:scopePanes -->
+
+For **RATER = GIA, COLOR = E, CLARITY = VS1**, count = 16:
+
+| Scope | Denominator | Percent of Total | 100% boundary |
+|---|---:|---:|---|
+| Table Across | 25 | 64.00% | Each row |
+| Table Down | 81 | 19.75% | Each column across all raters |
+| Pane Down | 61 | 26.23% | Each rater–clarity column inside its pane |
+| Pane | 151 | 10.60% | Each rater subtotal |
+| Entire table | 308 | 5.19% | Grand total |
+| Cell | 16 | 100.00% | Each nonempty cell |
+
+**Scope** is the group of marks used. **Direction** is how the calculation moves through them. Under Specific Dimensions, checked fields are **addressing** and unchecked fields define **partitions**. For the GIA pane, check COLOR and CLARITY; leave RATER unchecked.
+
+The highlighted partition always totals 100%. Displayed percentages can differ slightly due to rounding. Missing combinations have no record and are shown as —, not invented zero-valued marks.
+
+</details>
+
+<h2 id="aggregate-functions">Aggregate Functions</h2>
+
+<!-- source-slide:7 -->
+
+<p>Aggregate functions summarize records and change the level of detail.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Result for the records in a mark</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">SUM([PRICE])</code></td>
+      <td>Total price</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">AVG([PRICE])</code>, <code class="language-plaintext highlighter-rouge">MEDIAN([PRICE])</code></td>
+      <td>Mean or median price</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">MIN([PRICE])</code>, <code class="language-plaintext highlighter-rouge">MAX([PRICE])</code></td>
+      <td>Smallest or largest price</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">COUNT([IDNO])</code>, <code class="language-plaintext highlighter-rouge">COUNTD([IDNO])</code></td>
+      <td>Non-null count or distinct count</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">ATTR([RATER])</code></td>
+      <td>One shared value, or <code class="language-plaintext highlighter-rouge">*</code> when several values are present</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Constants work with either level: both <code class="language-plaintext highlighter-rouge">SUM([PRICE] * 1.05)</code> and <code class="language-plaintext highlighter-rouge">SUM([PRICE]) * 1.05</code> are valid.</p>
+
+<p><strong><code class="language-plaintext highlighter-rouge">AGG(...)</code> identifies a field whose formula already contains aggregation.</strong> Tableau does not apply another ordinary SUM or AVG to that field. <code class="language-plaintext highlighter-rouge">AGG</code> is the displayed label, not a function to type.</p>
+
+<p>Reference: <a href="https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_aggregate_create.htm">Aggregate functions and rules</a>.</p>
+
+<h2 id="attr-do-the-records-agree">ATTR: do the records agree?</h2>
+
+<!-- source-slide:7,8 -->
+
+<p>Look inside <strong>one mark</strong>. If every non-null value agrees, <code class="language-plaintext highlighter-rouge">ATTR()</code> returns that value; if the values disagree, it displays <code class="language-plaintext highlighter-rouge">*</code>.</p>
+
+<!-- widget:attrEvidence -->
+
+<table>
+  <thead>
+    <tr>
+      <th>Source records represented by one GIA mark</th>
+      <th>PRICE values</th>
+      <th style="text-align: right">Distinct prices</th>
+      <th>ATTR(PRICE)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IDNO 1</td>
+      <td>1,302</td>
+      <td style="text-align: right">1</td>
+      <td>1,302</td>
+    </tr>
+    <tr>
+      <td>IDNO 2 and 3</td>
+      <td>1,510; 1,510</td>
+      <td style="text-align: right">1</td>
+      <td>1,510</td>
+    </tr>
+    <tr>
+      <td>IDNO 1, 2, and 3</td>
+      <td>1,302; 1,510; 1,510</td>
+      <td style="text-align: right">2</td>
+      <td>*</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>One distinct value does not mean one record.</strong> Multiple records with an identical price still return that number. The asterisk means multiple values, not multiplication, missing data, or an error.</p>
+
+<p>Add IDNO to Rows to split the source records into one mark per diamond. Each mark then has one PRICE. <code class="language-plaintext highlighter-rouge">ATTR([RATER])</code> can return text, such as GIA. The HTML displays RATER and IDNO as separate columns, not slash-separated labels.</p>
+
+<p>Reference: <a href="https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_aggregate_create.htm">ATTR</a>.</p>
+
+<h2 id="attr-in-an-aggregate-calculation">ATTR in an aggregate calculation</h2>
+
+<!-- source-slide:8 -->
+
+<p>This calculation uses an average for IGI and a median for the other raters:</p>
+
+<pre><code class="language-tableau">IF ATTR([RATER]) = "IGI" THEN AVG([PRICE])
+ELSE MEDIAN([PRICE])
+END
+</code></pre>
+
+<p><img src="/IA342/pr-preview/pr-50/modules/module-11/assets/figures/image17.png" alt="ATTR in a conditional calculation, compared with AVG(PRICE)" /></p>
+
+<p><code class="language-plaintext highlighter-rouge">ATTR([RATER])</code> makes the condition aggregate, so it is compatible with <code class="language-plaintext highlighter-rouge">AVG([PRICE])</code> and <code class="language-plaintext highlighter-rouge">MEDIAN([PRICE])</code>. The view contains one mark per rater.</p>
+
+<h2 id="aggregate-and-non-aggregate-values">Aggregate and non-aggregate values</h2>
+
+<!-- source-slide:7 -->
+
+<p><strong>A calculation cannot mix an aggregate value with an individual row value.</strong> Arguments to a function must also use compatible levels.</p>
+
+<!-- widget:invalid-mix -->
+
+<!-- markdown-fallback:start -->
+<p>| Invalid expression | Error | Compatible expression |
+|—|—|—|
+| <code class="language-plaintext highlighter-rouge">SUM([PRICE]) / [WEIGHT]</code> | <code class="language-plaintext highlighter-rouge">[WEIGHT]</code> is a row value, while the numerator is aggregate | <code class="language-plaintext highlighter-rouge">SUM([PRICE]) / SUM([WEIGHT])</code> |
+| <code class="language-plaintext highlighter-rouge">MAX(AVG([PRICE]), [PRICE])</code> | The arguments mix aggregate and row values | <code class="language-plaintext highlighter-rouge">MAX(AVG([PRICE]), MEDIAN([PRICE]))</code> |
+<!-- markdown-fallback:end --></p>
+
+<p>The expression <strong><code class="language-plaintext highlighter-rouge">AVG([PRICE]) + [PRICE]</code></strong> has the same error: the first part summarizes a group, while the second part still describes a row.</p>
+
+<p>A formula can be syntactically valid and still calculate the wrong quantity. The next example shows why.</p>
+
+<p>Reference: <a href="https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_aggregate_create.htm">Rules for aggregate calculations</a>.</p>
+
+<h2 id="unit-price-or-overall-ratio">Unit price or overall ratio?</h2>
+
+<p>A formula containing division can answer different questions. Decide whether the result describes <strong>each record</strong> or <strong>the whole group</strong>.</p>
+
+<!-- widget:ratioDecision -->
+
+<h3 id="each-diamonds-unit-price-calculate-at-row-level">Each diamond’s unit price: calculate at row level</h3>
+
+<p><code class="language-plaintext highlighter-rouge">[PRICE] / [WEIGHT]</code></p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">IDNO</th>
+      <th style="text-align: right">PRICE</th>
+      <th style="text-align: right">WEIGHT</th>
+      <th style="text-align: right">Price per carat</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">1</td>
+      <td style="text-align: right">1,302</td>
+      <td style="text-align: right">0.30</td>
+      <td style="text-align: right">4,340.00</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">116</td>
+      <td style="text-align: right">15,582</td>
+      <td style="text-align: right">1.00</td>
+      <td style="text-align: right">15,582.00</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each object needs its own unit price. AVG(row unit price) = <strong>9,961.00</strong>, giving each diamond equal weight. Do not SUM unit prices to report an overall unit price.</p>
+
+<h3 id="overall-deaths-to-cases-ratio-aggregate-first-then-divide">Overall deaths-to-cases ratio: aggregate first, then divide</h3>
+
+<p>Illustrative counts only; these are not observed COVID data. The lab calls deaths divided by cases “death rate.”</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Group</th>
+      <th style="text-align: right">Deaths</th>
+      <th style="text-align: right">Cases</th>
+      <th style="text-align: right">Row ratio</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>A</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: right">20.00%</td>
+    </tr>
+    <tr>
+      <td>B</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">90</td>
+      <td style="text-align: right">3.33%</td>
+    </tr>
+    <tr>
+      <td>Combined</td>
+      <td style="text-align: right">5</td>
+      <td style="text-align: right">100</td>
+      <td style="text-align: right"><strong>5.00%</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><code class="language-plaintext highlighter-rouge">SUM([Deaths]) / SUM([Cases]) = (2 + 3) / (10 + 90) = 5.00%</code></p>
+
+<p>AVG(row ratios) = 11.67%; SUM(row ratios) = 23.33%. Neither answers the combined-rate question.</p>
+
+<p><strong>Choose the calculation level from the question:</strong> one value for each object → row calculation; one overall rate for a group → aggregate numerator and denominator first.</p>
+
+<p>Optional comparison: for one price per carat for the entire diamond group, <code class="language-plaintext highlighter-rouge">SUM([PRICE]) / SUM([WEIGHT]) = 16,884 / 1.30 = 12,987.69</code>. That weights by carat rather than giving each diamond equal weight. Both averages can be useful, but they answer different questions.</p>
+
+<h2 id="level-of-detail-expressions">Level of Detail Expressions</h2>
+
+<!-- source-slide:9 -->
+
+<p><strong>LOD expressions give more control on the level of granularity you want to compute.</strong></p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ [FIXED | INCLUDE | EXCLUDE] &lt;dimension declaration&gt; : &lt;aggregate expression&gt; }
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Keyword</th>
+      <th>Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>FIXED</td>
+      <td>Compute values using the specified dimensions <strong>without reference to the view</strong>.</td>
+    </tr>
+    <tr>
+      <td>INCLUDE</td>
+      <td>Compute values using the specified dimensions <strong>in addition to dimensions in the view</strong>.</td>
+    </tr>
+    <tr>
+      <td>EXCLUDE</td>
+      <td>Explicitly <strong>remove dimensions</strong> from the expression.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If no dimension is declared, the LOD is <strong>table scoped</strong>. The aggregate expression cannot contain <code class="language-plaintext highlighter-rouge">ATTR</code> or table calculations.</p>
+
+<p><strong>View level:</strong> RATER and CLARITY means one mark for each combination.</p>
+
+<p><strong>Calculation level:</strong> <code class="language-plaintext highlighter-rouge">{ FIXED [RATER] : AVG([PRICE]) }</code> means one average for each RATER.</p>
+
+<h2 id="fixed-include-and-exclude">FIXED, INCLUDE, and EXCLUDE</h2>
+
+<!-- source-slide:10 -->
+
+<p>Keep <strong>RATER and CLARITY</strong> in the view. One mark means one combination: for example, <strong>GIA and IF</strong> contains <strong>6 diamonds with $47,769 in total price</strong>. The following four calculations answer different grouping questions.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Calculation</th>
+      <th>Tableau formula</th>
+      <th>Records used for GIA–IF</th>
+      <th style="text-align: right">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ordinary view AVG</td>
+      <td><code class="language-plaintext highlighter-rouge">AVG([PRICE])</code></td>
+      <td>GIA + IF, 6 diamonds: 47,769 ÷ 6</td>
+      <td style="text-align: right"><strong>7,961.50</strong></td>
+    </tr>
+    <tr>
+      <td>FIXED RATER</td>
+      <td><code class="language-plaintext highlighter-rouge">{ FIXED [RATER] : AVG([PRICE]) }</code></td>
+      <td>All 151 GIA diamonds: 801,873 ÷ 151</td>
+      <td style="text-align: right"><strong>5,310.42</strong></td>
+    </tr>
+    <tr>
+      <td>INCLUDE RATER</td>
+      <td><code class="language-plaintext highlighter-rouge">{ INCLUDE [RATER] : AVG([PRICE]) }</code></td>
+      <td>RATER is already in the view; 47,769 ÷ 6</td>
+      <td style="text-align: right"><strong>7,961.50</strong></td>
+    </tr>
+    <tr>
+      <td>EXCLUDE RATER</td>
+      <td><code class="language-plaintext highlighter-rouge">{ EXCLUDE [RATER] : AVG([PRICE]) }</code></td>
+      <td>All 44 IF diamonds across three raters: 118,570 ÷ 44</td>
+      <td style="text-align: right"><strong>2,694.77</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Read the field declaration, not just the value:</strong> FIXED selects its own grouping dimensions; INCLUDE adds to the view’s dimensions; EXCLUDE removes from them. In the interactive table, click a result to inspect the contributing groups and records.</p>
+
+<!-- widget:lod-types -->
+
+<h2 id="lod-and-aggregation">LOD and Aggregation</h2>
+
+<!-- source-slide:11 -->
+
+<p><strong>FIXED computes values using the specified dimensions without reference to the view’s LOD.</strong> The original lecture gives three possible relationships:</p>
+
+<ul>
+  <li><strong>More granular than the view:</strong> multiple FIXED results must be <strong>aggregated</strong> into one view mark.</li>
+  <li><strong>Less granular than the view:</strong> one FIXED result is <strong>replicated</strong> into several view marks.</li>
+  <li><strong>Entirely disjoint dimensions:</strong> FIXED and the view share no grouping dimension, so the values are <strong>aggregated at table scope</strong> before being displayed.</li>
+</ul>
+
+<p><strong>INCLUDE results are below Viz LOD and to be aggregated in the view.</strong></p>
+
+<p><strong>EXCLUDE results are above Viz LOD and to be replicated in the view.</strong></p>
+
+<p>Here, <strong>below</strong> means finer/more detailed and <strong>above</strong> means coarser/less detailed. The view still needs a visible aggregation choice such as <code class="language-plaintext highlighter-rouge">AVG([calculated field])</code>; it is not the same as the <code class="language-plaintext highlighter-rouge">AVG([PRICE])</code> inside a FIXED expression.</p>
+
+<h2 id="lod-and-aggregation-examples">LOD and Aggregation: examples</h2>
+
+<!-- source-slide:12 -->
+
+<!-- widget:lod-aggregation -->
+
+<h3 id="scenario-1--fixed-replicated-coarser-calculation--finer-view">Scenario 1 — FIXED: Replicated (coarser calculation → finer view)</h3>
+
+<p><strong>Calculate by RATER; display by RATER and CLARITY.</strong></p>
+
+<p>Create <code class="language-plaintext highlighter-rouge">[Avg Price per Rater]</code>:</p>
+
+<pre><code class="language-tableau">{ FIXED [RATER] : AVG([PRICE]) }
+</code></pre>
+
+<p>Display it as <code class="language-plaintext highlighter-rouge">AVG([Avg Price per Rater])</code> in a view with RATER and CLARITY. For GIA, <strong>801,873 ÷ 151 = 5,310.42</strong>. The GIA–IF mark has only <strong>6 diamonds</strong> and an ordinary average price of <strong>7,961.50</strong>, but the FIXED result <strong>5,310.42</strong> is repeated in GIA–IF, GIA–VS1, GIA–VS2, GIA–VVS1 and GIA–VVS2.</p>
+
+<p><strong>Why?</strong> The calculation has one value per RATER, while the view has five marks within each RATER. This is <strong>replication, not recalculation of five distinct GIA averages</strong>.</p>
+
+<h3 id="scenario-2--fixed-aggregated-finer-calculation--coarser-view">Scenario 2 — FIXED: Aggregated (finer calculation → coarser view)</h3>
+
+<p><strong>Calculate by RATER and CLARITY; display by CLARITY only.</strong></p>
+
+<p>Create <code class="language-plaintext highlighter-rouge">[Avg Price per Rater and Clarity]</code>:</p>
+
+<pre><code class="language-tableau">{ FIXED [RATER], [CLARITY] : AVG([PRICE]) }
+</code></pre>
+
+<p>Then in the view, use:</p>
+
+<pre><code class="language-tableau">AVG([Avg Price per Rater and Clarity])
+</code></pre>
+
+<p>For CLARITY = IF, the first calculation produces <strong>three distinct LOD results</strong>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>RATER</th>
+      <th>CLARITY</th>
+      <th style="text-align: right">Number of diamonds</th>
+      <th style="text-align: right">Sum of PRICE</th>
+      <th style="text-align: right">First AVG(PRICE)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GIA</td>
+      <td>IF</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: right">47,769</td>
+      <td style="text-align: right">47,769 ÷ 6 = <strong>7,961.50</strong></td>
+    </tr>
+    <tr>
+      <td>HRD</td>
+      <td>IF</td>
+      <td style="text-align: right">4</td>
+      <td style="text-align: right">26,133</td>
+      <td style="text-align: right">26,133 ÷ 4 = <strong>6,533.25</strong></td>
+    </tr>
+    <tr>
+      <td>IGI</td>
+      <td>IF</td>
+      <td style="text-align: right">34</td>
+      <td style="text-align: right">44,668</td>
+      <td style="text-align: right">44,668 ÷ 34 = <strong>1,313.76</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Now the second AVG combines <strong>those three group means</strong>, not the 44 diamonds:</p>
+
+<p>[
+\frac{7,961.50 + 6,533.25 + 1,313.7647\ldots}{3} = \mathbf{5,269.50}
+]</p>
+
+<p>For contrast, direct <code class="language-plaintext highlighter-rouge">AVG([PRICE])</code> across the 44 IF diamonds is <strong>118,570 ÷ 44 = 2,694.77</strong>. The two answers are different because <strong>an average of group averages gives each RATER group equal weight</strong>, whereas an average of records gives each diamond equal weight.</p>
+
+<h3 id="scenario-3--fixed-disjoint-different-dimensions">Scenario 3 — FIXED: Disjoint (different dimensions)</h3>
+
+<p><strong>Calculate by RATER; display by CLARITY only.</strong> Reuse the first field:</p>
+
+<pre><code class="language-tableau">{ FIXED [RATER] : AVG([PRICE]) }
+</code></pre>
+
+<p>The three FIXED RATER results are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>RATER</th>
+      <th style="text-align: right">Number of diamonds</th>
+      <th style="text-align: right">Sum of PRICE</th>
+      <th style="text-align: right">RATER-level AVG</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GIA</td>
+      <td style="text-align: right">151</td>
+      <td style="text-align: right">801,873</td>
+      <td style="text-align: right"><strong>5,310.42</strong></td>
+    </tr>
+    <tr>
+      <td>HRD</td>
+      <td style="text-align: right">79</td>
+      <td style="text-align: right">567,293</td>
+      <td style="text-align: right"><strong>7,180.92</strong></td>
+    </tr>
+    <tr>
+      <td>IGI</td>
+      <td style="text-align: right">78</td>
+      <td style="text-align: right">176,835</td>
+      <td style="text-align: right"><strong>2,267.12</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Use <code class="language-plaintext highlighter-rouge">AVG([Avg Price per Rater])</code> with CLARITY in the view:</p>
+
+<p>[
+\frac{5,310.4172\ldots + 7,180.9241\ldots + 2,267.1154\ldots}{3} = \mathbf{4,919.49}
+]</p>
+
+<p>RATER and CLARITY are <strong>disjoint</strong> (no shared grouping field): the result is aggregated at table scope, then <strong>4,919.49</strong> is replicated for IF, VS1, VS2, VVS1 and VVS2. All calculations use unrounded values before formatting.</p>
+
+<h2 id="lod-and-filters">LOD and Filters</h2>
+
+<!-- source-slide:13 -->
+
+<p><img src="/IA342/pr-preview/pr-50/modules/module-11/assets/figures/image20.png" alt="Filter order and LOD evaluation" /></p>
+
+<ul>
+  <li><strong>FIXED</strong> is calculated before ordinary dimension filters. Context, data-source, and extract filters still affect its input.</li>
+  <li><strong>INCLUDE and EXCLUDE</strong> are calculated after dimension filters.</li>
+  <li>INCLUDE and EXCLUDE produce measures. A FIXED field can be a dimension or measure, depending on the expression’s result.</li>
+</ul>
+
+<p>Reference: <a href="https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod_filters.htm">Filters and LOD expressions</a>.</p>
+
+<h2 id="lod-and-filters-the-denominator">LOD and Filters: the denominator</h2>
+
+<!-- source-slide:13 -->
+
+<p>This calculation gives each rater’s share of total price:</p>
+
+<!-- markdown-fallback:start -->
+<pre><code class="language-tableau">SUM([PRICE]) / ATTR({ SUM([PRICE]) })
+</code></pre>
+<!-- markdown-fallback:end -->
+
+<!-- widget:lod-filters -->
+
+<!-- markdown-fallback:start -->
+<p>| Rater | Ordinary filter | Context filter |
+|—|—:|—:|
+| GIA | 51.87% | 58.57% |
+| HRD | 36.69% | 41.43% |
+| Visible total | 88.56% | 100.00% |
+<!-- markdown-fallback:end --></p>
+
+<!-- markdown-fallback:start -->
+<p>With only <strong>GIA and HRD</strong> selected, an ordinary RATER filter leaves the denominator at <strong>1,546,001</strong>, the total for all three raters. A context filter changes it to <strong>1,369,166</strong>, the total for the selected raters.
+<!-- markdown-fallback:end --></p>
+
+<p>Reference: <a href="https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod_filters.htm">FIXED and filter order</a>.</p>
+
+<h2 id="nested-lod--identify-the-inner-and-the-outer">Nested LOD — identify the inner and the outer</h2>
+
+<!-- source-slide:14 -->
+
+<p><strong>Nested means that one full LOD expression appears INSIDE the aggregate part of another LOD expression.</strong> The outer braces are the parent; the inner braces are the child. The same expression can be entered in one Tableau calculated field:</p>
+
+<p><strong>OUTER LOD:</strong> The first <code class="language-plaintext highlighter-rouge">FIXED</code> declares no grouping dimensions, so its result is table-wide. <strong>INNER LOD:</strong> The second <code class="language-plaintext highlighter-rouge">FIXED</code>, inside the first AVG, groups by RATER and CLARITY.</p>
+
+<pre><code class="language-tableau">{ FIXED : AVG(
+    { FIXED [RATER], [CLARITY] : AVG([PRICE]) }
+) }
+</code></pre>
+
+<p><strong>Original lecture principle:</strong> <em>The context for an inner calculation is defined by its parent.</em> When the outer FIXED declares no dimensions, the parent context is the whole table. The inner calculation still produces its 15 RATER-and-CLARITY groups within that context.</p>
+
+<h3 id="what-happens-to-the-data-two-calculations-then-a-display">What happens to the data? (two calculations, then a display)</h3>
+
+<p><strong>Step 1 — Inner LOD (finer):</strong> <code class="language-plaintext highlighter-rouge">{ FIXED [RATER], [CLARITY] : AVG([PRICE]) }</code></p>
+
+<p>The 308 diamonds form <strong>3 RATER × 5 CLARITY = 15 groups</strong>. Each group gives one mean. For instance, GIA–IF: <strong>47,769 ÷ 6 = 7,961.50</strong>; HRD–IF: <strong>26,133 ÷ 4 = 6,533.25</strong>; IGI–IF: <strong>44,668 ÷ 34 = 1,313.76</strong>. The HTML table shows all 15 group means and each group’s record count.</p>
+
+<p><strong>Step 2 — Outer LOD (coarser):</strong> <code class="language-plaintext highlighter-rouge">{ FIXED : AVG( [inner LOD results] ) }</code></p>
+
+<p>The outer AVG combines <strong>15 group averages</strong>, with one contribution per group:</p>
+
+<p>[
+\frac{\text{SUM of 15 unrounded group averages }(80,560.1210\ldots)}{15}
+= \mathbf{5,370.67}
+]</p>
+
+<p>That is <strong>not</strong> <code class="language-plaintext highlighter-rouge">AVG([PRICE])</code> on 308 raw records, which equals <strong>1,546,001 ÷ 308 = 5,019.48</strong>. A nested average of group means and a direct record-level average answer different questions.</p>
+
+<p><strong>Step 3 — Display (replicated):</strong> Show the outer result in a view with RATER and CLARITY. The outer result has <strong>one table-wide value</strong>, so each of the 15 marks shows <strong>5,370.67</strong>. This replication from the outer LOD to the view is <strong>separate from the aggregation from inner to outer</strong>.</p>
+
+<!-- widget:nestedLOD -->
+
+<h3 id="the-two-original-nesting-rules">The two original nesting rules</h3>
+
+<ul>
+  <li><strong>Inner finer than parent/outer:</strong> the parent <strong>aggregates</strong> several inner results. This is the demonstrated 15-to-1 example.</li>
+  <li><strong>Inner coarser than parent/outer:</strong> the inner result is <strong>replicated</strong> to the parent’s more detailed groups. For comparison, an inner <code class="language-plaintext highlighter-rouge">{ FIXED [RATER] : AVG([PRICE]) }</code> computes 5,310.42 for GIA; an outer grouped by RATER and CLARITY can carry that same GIA result into each of GIA’s five clarity groups. An illustrative reverse nesting formula is:</li>
+</ul>
+
+<pre><code class="language-tableau">{ FIXED [RATER], [CLARITY] :
+    AVG({ FIXED [RATER] : AVG([PRICE]) }) }
+</code></pre>
+
+<p>Here the <strong>inner</strong> result has only one value for each RATER. The <strong>outer</strong> has more detailed RATER-and-CLARITY groups, so it repeats the relevant rater value rather than creating five new prices.</p>
+
+<p><strong>Original slide’s saved-field form (equivalent two-field teaching formulation):</strong></p>
+
+<pre><code class="language-tableau">// [avg price per rater per clarity fixed]
+{ FIXED [RATER], [CLARITY] : AVG([PRICE]) }
+
+// [Nested LOD]
+{ FIXED : AVG([avg price per rater per clarity fixed]) }
+</code></pre>
+
+<p>The first field is the <strong>inner</strong>; its field name occurs <strong>inside <code class="language-plaintext highlighter-rouge">AVG(...)</code> in the second/outer field</strong>. The single inline expression above makes the nesting visible with two pairs of <code class="language-plaintext highlighter-rouge">{ ... }</code>.</p>
+
+<p>Reference: original <code class="language-plaintext highlighter-rouge">lec8.pptx</code>, slide 14. See also Tableau’s <a href="https://help.tableau.com/current/pro/desktop/en-us/calculations_calculatedfields_lod.htm">Nested LOD example</a>.</p>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/JMU-Data/IA342/edit/gh-pages/modules/module-11/source.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
