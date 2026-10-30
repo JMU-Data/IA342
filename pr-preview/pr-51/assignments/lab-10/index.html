@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Lab 10: Dashboard Design in Tableau - IA342 | IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Lab 10: Dashboard Design in Tableau - IA342" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<meta property="og:description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<link rel="canonical" href="https://jmu-data.github.io/IA342/pr-preview/pr-51/assignments/lab-10/" />
+<meta property="og:url" content="https://jmu-data.github.io/IA342/pr-preview/pr-51/assignments/lab-10/" />
+<meta property="og:site_name" content="IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Lab 10: Dashboard Design in Tableau - IA342" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Lab 10: Dashboard Design in Tableau - IA342","url":"https://jmu-data.github.io/IA342/pr-preview/pr-51/assignments/lab-10/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-51/assets/css/style.css?v=157540387d9394ea92a91e3c1cb8da507cc4ff23">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/IA342/pr-preview/pr-51/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://jmu-data.github.io/IA342/pr-preview/pr-51/">IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</a></h1>
+      
+
+      <h1 id="lab-10--dashboard-design-in-tableau">Lab 10 — Dashboard Design in Tableau</h1>
+
+<p><strong>IA342 · Week 10 · October 26–30, 2026</strong><br />
+<strong>Monday:</strong> create five worksheets · <strong>Wednesday:</strong> design, test, and publish one interactive dashboard</p>
+
+<p><strong>Deadline:</strong> Friday, October 30, 2026, <strong>11:59 PM Eastern Time (EDT)</strong>.</p>
+
+<h2 id="objectives">Objectives</h2>
+
+<ul>
+  <li>Reuse the <strong>published Week 9 COVID Data Source</strong>. Do not publish a second Data Source.</li>
+  <li>Build <strong>four charts (3.1–3.4) and one totals table (3.5)</strong> in a new workbook.</li>
+  <li>Arrange the views intentionally, working with <strong>Automatic size, layout containers, Floating and Tiled objects, legends, images, Text, and Blank objects</strong>.</li>
+  <li>Connect the state map to other views, add useful titles, and create a thoughtful <strong>Phone layout</strong>.</li>
+</ul>
+
+<p><strong>Student deliverable:</strong> One workbook named <strong><code class="language-plaintext highlighter-rouge">firstname_lastname_lab10</code></strong> in the <strong><code class="language-plaintext highlighter-rouge">fall2026</code></strong> Tableau Online project. Replace <code class="language-plaintext highlighter-rouge">firstname_lastname</code> with your own name. No new Data Source and no Canvas file upload.</p>
+
+<blockquote>
+  <p><strong>Screenshot guide.</strong> These screenshots were captured by the instructor in Tableau Online on <strong>October 22, 2026</strong>. Their demo values, sheet labels during editing, and account names are illustrations—not numbers to copy. Follow the written instructions and name the final worksheets <strong>3.1–3.5</strong>.</p>
+</blockquote>
+
+<h2 id="part-i--monday-prepare-the-individual-views">Part I — Monday: Prepare the individual views</h2>
+
+<h3 id="1-download-a-covid-related-image-required">1. Download a COVID-related image (<strong>required</strong>)</h3>
+
+<p>Find a relevant COVID-related image that you are <strong>allowed to reuse</strong>, download it to your computer, and save its creator/source URL and any attribution or license information. You will insert this file into the dashboard in Step 4.7. The image is <strong>required</strong>, not an optional decoration. Use a meaningful photo or illustration rather than an unrelated graphic.</p>
+
+<p><strong>Respect image and logo rights.</strong> Being available online does not mean an image is free to reuse. Check its license/terms. Corporate and university logos can have additional trademark or brand restrictions; do not assume you can use them without permission.</p>
+
+<h3 id="2-create-the-week-10-workbook-using-the-week-9-data-source">2. Create the Week 10 workbook using the Week 9 Data Source</h3>
+
+<ol>
+  <li>Open <strong>Tableau Online → <code class="language-plaintext highlighter-rouge">fall2026</code></strong> and locate your published <strong><code class="language-plaintext highlighter-rouge">firstname_lastname_week9_covid_data</code></strong> Data Source.</li>
+  <li>Open the Data Source menu and choose <strong>New Workbook</strong>. You are starting a new workbook from the existing published Data Source, <em>not</em> copying the Week 9 workbook.</li>
+  <li>Save it as <strong><code class="language-plaintext highlighter-rouge">firstname_lastname_lab10</code></strong>. Leave the Week 9 Data Source and workbook unchanged.</li>
+  <li>Create and rename worksheets <strong>3.1, 3.2, 3.3, 3.4, and 3.5</strong> as you complete the steps below.</li>
+</ol>
+
+<p>The data are from the historical class exercise. They are <strong>not live COVID reporting</strong>. Use <code class="language-plaintext highlighter-rouge">Confirmed Count</code>, <code class="language-plaintext highlighter-rouge">Death Count</code>, <code class="language-plaintext highlighter-rouge">Confirmed Date</code>, and the geographic fields shown in your Data pane.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20150546.png" alt="Open New Workbook from the existing Week 9 COVID Data Source." /></p>
+
+<h3 id="31--line-chart-cases-and-deaths-by-week">3.1 — Line chart: Cases and deaths by week</h3>
+
+<ol>
+  <li>Add <strong><code class="language-plaintext highlighter-rouge">WEEK(Confirmed Date)</code></strong> on Columns and <strong><code class="language-plaintext highlighter-rouge">SUM(Death Count)</code></strong>, <strong><code class="language-plaintext highlighter-rouge">SUM(Confirmed Count)</code></strong> on Rows.</li>
+  <li>Use <strong>Line</strong> marks, displaying deaths in <strong>orange</strong> and cases in <strong>blue</strong>, as illustrated.</li>
+  <li>Keep the weekly axis and the labels readable; do not hide either measure’s scale. Rename the worksheet <strong>3.1</strong>.</li>
+</ol>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20151148.png" alt="Worksheet 3.1 — two weekly line charts, deaths in orange and cases in blue." /></p>
+
+<h3 id="32--bar-chart-cases-and-deaths-by-county">3.2 — Bar chart: Cases and deaths by county</h3>
+
+<ol>
+  <li>Add <strong><code class="language-plaintext highlighter-rouge">County Name</code> only</strong> to Rows. <strong>Do not add <code class="language-plaintext highlighter-rouge">State Name</code></strong> to Rows for this worksheet.</li>
+  <li>Put <strong><code class="language-plaintext highlighter-rouge">SUM(Death Count)</code></strong> and <strong><code class="language-plaintext highlighter-rouge">SUM(Confirmed Count)</code></strong> on Columns, side by side.</li>
+  <li>Make two horizontal bar panes (orange for deaths and blue for cases). Sort counties so the comparison is useful; keep county labels legible.</li>
+  <li>Rename the worksheet <strong>3.2</strong>. Later, the dashboard’s state-map filter will narrow which counties are displayed; you do <strong>not</strong> need to build a separate State Name row grouping.</li>
+</ol>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20151246.png" alt="Worksheet 3.2 — county names on Rows, death and confirmed count bars side by side." /></p>
+
+<h3 id="33--build-a-dual-axis-state-map-follow-the-sequence">3.3 — Build a dual-axis state map (follow the sequence)</h3>
+
+<p><strong>Step A — Create a filled map (choropleth).</strong> On a fresh worksheet, select <strong><code class="language-plaintext highlighter-rouge">State Name</code></strong> and <strong><code class="language-plaintext highlighter-rouge">Confirmed Count</code></strong> in the Data pane. Open <strong>Show Me → Filled Map</strong>. Check that states are colored according to <code class="language-plaintext highlighter-rouge">SUM(Confirmed Count)</code>; this becomes the background layer.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20151731.png" alt="3.3 Step A — select State Name and Confirmed Count, then choose Filled Map in Show Me." /></p>
+
+<p><strong>Step B — Copy the map layer.</strong> Duplicate <strong><code class="language-plaintext highlighter-rouge">Latitude (generated)</code></strong> on the Rows shelf so the worksheet has <strong>two maps</strong>, one above the other. In the Marks cards, you can now edit the two Latitude layers separately. Leave the first filled-map layer as the cases layer.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20151750.png" alt="3.3 Step B — two Latitude (generated) pills create two map layers before dual axis." /></p>
+
+<p><strong>Step C — Make the second layer show deaths.</strong> Select the <strong>second <code class="language-plaintext highlighter-rouge">Latitude (generated)</code> Marks card</strong> (not <code class="language-plaintext highlighter-rouge">All</code>). Remove <code class="language-plaintext highlighter-rouge">SUM(Confirmed Count)</code> from <strong>Color</strong> on that card, change the Marks type to <strong>Circle</strong> if needed, and place <strong><code class="language-plaintext highlighter-rouge">SUM(Death Count)</code> on Size</strong>. Keep <code class="language-plaintext highlighter-rouge">State Name</code> as the state-level geographic detail. You should now see the cases choropleth above and death-sized circles below.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20151805.png" alt="3.3 Step C — the lower map uses Death Count on Size, not cases on Color." /></p>
+
+<p><strong>Step D — Overlay the maps.</strong> Open the menu on the <strong>second <code class="language-plaintext highlighter-rouge">Latitude (generated)</code></strong> pill and select <strong>Dual Axis</strong>. The state fill and death circles become a single overlaid map.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20151815.png" alt="3.3 Step D — choose Dual Axis from the second generated latitude pill." /></p>
+
+<p><strong>Step E — Finish the marks.</strong> In the second layer’s Marks card, change the death circles to <strong>orange</strong>. The resulting view shows a cases-filled state choropleth with orange circles sized by deaths. Confirm that both legends are visible and rename the worksheet <strong>3.3</strong>.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20151840.png" alt="3.3 Step E — final dual-axis state map, with a cases fill and orange death circles." /></p>
+
+<h3 id="34--county-map-duplicate-33-and-drill-down">3.4 — County map: Duplicate 3.3 and drill down</h3>
+
+<ol>
+  <li><strong>Duplicate worksheet 3.3</strong>, then rename the copy <strong>3.4</strong>.</li>
+  <li>In the <strong>Marks</strong> area, use the geographic hierarchy to <strong>expand <code class="language-plaintext highlighter-rouge">State Name</code> to <code class="language-plaintext highlighter-rouge">County Name</code></strong>. The map changes from state to county detail while keeping the dual-axis structure.</li>
+  <li>Check the result against the screenshot. Keep the existing two map layers; no extra geographic fields are needed.</li>
+</ol>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20151939.png" alt="3.4 Step 1 — duplicate the completed worksheet 3.3." /></p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20152006.png" alt="3.4 Step 2 — expand State Name to County Name in the Marks geographic hierarchy." /></p>
+
+<h3 id="35--totals-table">3.5 — Totals table</h3>
+
+<ol>
+  <li>Create worksheet <strong>3.5</strong>, showing <strong>total Confirmed Count and total Death Count</strong> as a compact text table using Measure Names / Measure Values.</li>
+  <li>Format the numbers so they fit their cells and are easy to read. <strong>No extra color changes are required</strong> for this table.</li>
+  <li>Check <strong>Fit → Entire View</strong> (or the available equivalent) so the totals fit cleanly in the allocated space.</li>
+</ol>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20152210.png" alt="3.5 Step 1 — compact text table with Confirmed Count and Death Count." /></p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20152223.png" alt="3.5 Step 2 — use Fit / Entire View to keep both totals visible." /></p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20153313.png" alt="3.5 Final — formatted total values, ready for the dashboard." /></p>
+
+<p><strong>Monday checkpoint:</strong> Your new workbook has exactly the <strong>five required worksheets</strong>, all using the published Week 9 Data Source. Save your work. You will arrange these into one dashboard on Wednesday.</p>
+
+<h2 id="part-ii--wednesday-build-the-dashboard">Part II — Wednesday: Build the dashboard</h2>
+
+<h3 id="41--create-a-dashboard-set-size-to-automatic">4.1 — Create a dashboard; set Size to Automatic</h3>
+
+<p>Create a new Dashboard and set <strong>Size → Automatic</strong>. We are using <strong>Automatic</strong>, not a fixed width/height. As the available window changes, the layout needs to remain readable.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20153354.png" alt="4.1 — the dashboard size menu with Automatic selected." /></p>
+
+<h3 id="42--add-35-first">4.2 — Add 3.5 first</h3>
+
+<p>Drag worksheet <strong>3.5</strong> onto the blank dashboard first. It will serve as the totals panel. You can resize the panel by dragging its edges or the boundaries of the surrounding containers.</p>
+
+<h3 id="43--check-dashboard-and-layout-views">4.3 — Check Dashboard and Layout views</h3>
+
+<p>Switch between the <strong>Dashboard</strong> and <strong>Layout</strong> tabs in the editing panel. The <strong>Layout</strong> view exposes the item hierarchy: a dashboard contains layout containers, and containers contain sheets, legends, Text, Blank, and other items. Select different items in the hierarchy and observe which area is highlighted. <strong>Moving or resizing one container affects its contents.</strong></p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20153450.png" alt="4.2–4.3 — totals worksheet added and the Layout panel showing its container position." /></p>
+
+<h3 id="44--add-33-make-its-legends-floating">4.4 — Add 3.3; make its legends Floating</h3>
+
+<p>Drag <strong>3.3</strong> onto the dashboard. If a legend is hidden, open the small drop-down triangle on that worksheet’s dashboard item and use <strong>Legends → Show legend</strong>. Move the <strong>3.3 legends to Floating</strong>, then drag them into useful positions that do not hide the map.</p>
+
+<p><strong>Why Floating?</strong> Floating objects can be placed freely, even on top of another item. That flexibility has a tradeoff: because they use positioned coordinates rather than participating in a tiled container, they may overlap or appear poorly aligned when an <strong>Automatic</strong> dashboard resizes. You must check the result at different window sizes.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20153528.png" alt="4.4 — use the dashboard-item menu to switch a legend to Floating." /></p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20153715.png" alt="4.4 — floating legends can be moved independently around the state map." /></p>
+
+<h3 id="45--place-34-below-the-totals-panel-keep-its-legends-tiled">4.5 — Place 3.4 below the totals panel; keep its legends Tiled</h3>
+
+<p>Drag <strong>3.4</strong> into the <strong>Tiled</strong> layout beneath the <strong>3.5 totals panel</strong>, as shown in the instructor’s dashboard arrangement. If Tableau does not show a legend automatically, use the worksheet’s drop-down menu to enable it. Keep the <strong>3.4 legends Tiled</strong> and place them within the appropriate container.</p>
+
+<p><strong>Why Tiled here?</strong> County-map content changes with the selected state. A <strong>Tiled</strong> legend remains part of its container’s layout rather than floating at a fixed overlay position, which usually makes it more predictable as the content or screen size changes. It is less free-form than Floating, but better suited to a responsive layout. Adjust the container boundaries to allocate stable space for the county map and its legends.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20153855.png" alt="4.5 — worksheet menu for Legends and the Tiled option while arranging 3.4." /></p>
+
+<h3 id="46--add-31-and-32-fine-tune-the-layout">4.6 — Add 3.1 and 3.2; fine-tune the layout</h3>
+
+<p>Drag <strong>3.1</strong> (weekly trend) and <strong>3.2</strong> (county bars) into the remaining dashboard space. Your finished <strong>Default</strong> layout must include <strong>all four charts and the totals table</strong>. Revisit <strong>Dashboard → Layout</strong> to resize containers and keep charts, legends, and titles readable. Avoid covering the data with Floating items.</p>
+
+<h3 id="47--insert-your-downloaded-covid-image-required">4.7 — Insert your downloaded COVID image (<strong>required</strong>)</h3>
+
+<ol>
+  <li>In the <strong>Objects</strong> pane, select <strong>Image</strong> and <strong>drag → drop → release</strong> it onto the dashboard.</li>
+  <li>In the <strong>Edit Image Object</strong> dialog, choose <strong>Insert Image File → Choose</strong> and upload the COVID image downloaded in Step 1. You may also use <strong>Link to Image</strong> when the image URL is stable and its reuse rights allow it.</li>
+  <li>Optionally set <strong>URL Opened When Image Is Clicked</strong> to an appropriate source or information page. Add meaningful <strong>Alt Text</strong> and adjust <strong>Fit Image / Center Image</strong> if helpful.</li>
+  <li>Make room for the image without shrinking the analytical views so much that they become unreadable. Record the image’s source and reuse/credit details in the dashboard.</li>
+</ol>
+
+<p>Do not use a company or university logo unless its applicable trademark/brand policy permits your use. In an instructional demo, it is better to use a clearly reusable image than assume a logo is unrestricted.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20154216.png" alt="4.7 — drag Image into a container; choose Insert Image File, optional link and Alt Text." /></p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20154507.png" alt="4.7 — image container placed on the dashboard before uploading the file." /></p>
+
+<h3 id="48--add-text-and-blank-objects">4.8 — Add Text and Blank objects</h3>
+
+<p>Use <strong>Text</strong> for short descriptions and source credits. At minimum, identify <strong>your name</strong>, the historical COVID Data Source (original source: <strong>1Point3Acres</strong>), and your image credit. If helpful, state the data period shown in your workbook.</p>
+
+<p>Use <strong>Blank</strong> objects to control <strong>spacing and relative positions within a Tiled container</strong>. Think of Blank as intentional breathing room between objects, rather than an empty chart. You can resize the Blank object’s area to help align and balance nearby sheets.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20154444.png" alt="4.8 — Text editor for author and data-source attribution." /></p>
+
+<h3 id="49--enable-the-33-state-map-as-a-filter">4.9 — Enable the <strong>3.3 State map</strong> as a filter</h3>
+
+<ol>
+  <li>Select the <strong>3.3 State map</strong> on the dashboard.</li>
+  <li>Open the item’s drop-down menu or its small filter icon and choose <strong>Use as Filter</strong>.</li>
+  <li>Try selecting a state. It should filter the connected <strong>3.1, 3.2, 3.4, and 3.5</strong> views; the <strong>3.3 map itself</strong> should remain usable so you can select another state.</li>
+  <li>Clear the selection and confirm that the other views return to the full set. If necessary, inspect the dashboard filter action and its target-sheet behavior.</li>
+</ol>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20154707.png" alt="4.9 — the state-map item menu: Use as Filter." /></p>
+
+<h3 id="410--tell-the-user-how-to-interact">4.10 — Tell the user how to interact</h3>
+
+<p>Edit the <strong>3.3 map title</strong> to make its action obvious. For example:</p>
+
+<blockquote>
+  <p><strong>Number of Cases and Deaths — Select a state to see the details</strong></p>
+</blockquote>
+
+<p>A user should be able to discover the interaction without your standing beside them. Use <strong>select</strong> rather than assuming the user has a mouse.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20154653.png" alt="4.10 — edit the state-map title and add a short instruction." /></p>
+
+<h3 id="411--create-useful-dynamic-titles">4.11 — Create useful <strong>dynamic</strong> titles</h3>
+
+<p>Edit the titles of the <strong>county comparison (3.2)</strong> and <strong>county map (3.4)</strong> so the selected state is reflected in the title. Open each sheet’s title editor and use <strong>Insert → State Name</strong> (or the available field/filter token). <strong>Do not type a literal fixed state name</strong>.</p>
+
+<p>You may choose your own clear wording for <strong>3.1 and 3.2</strong> titles and for the overall dashboard. The screenshots show a title-editing technique, not an exact sentence you must copy. Test after selecting a state, then clear it and verify the title matches what is displayed.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20154735.png" alt="4.11 — title editor: use the Insert menu to select State Name." /></p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20154750.png" alt="4.11 — dynamic title example using the State Name token." /></p>
+
+<h3 id="412--hide-the-default-title-for-35">4.12 — Hide the default title for 3.5</h3>
+
+<p>When the totals are already explained by the dashboard layout, open the <strong>3.5</strong> item menu and choose <strong>Hide Title</strong>. This removes a redundant worksheet label; it <strong>does not remove the table</strong>.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20154333.png" alt="4.12 — hiding the 3.5 worksheet title." /></p>
+
+<h3 id="413--add-a-meaningful-dashboard-title">4.13 — Add a meaningful dashboard title</h3>
+
+<p>Turn on <strong>Show dashboard title</strong> and edit the title to describe the actual content, for example <strong>COVID Cases and Deaths in the USA</strong>. You can format key words but keep the text simple and readable. Do not use only “Dashboard 1” or “Lab 10” as your displayed title.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20154942.png" alt="4.13 — editing the overall dashboard title." /></p>
+
+<h3 id="414--improve-the-arrangement-using-containers-and-blank">4.14 — Improve the arrangement using containers and Blank</h3>
+
+<p>Review the <strong>Layout</strong> item hierarchy again. A <strong>Horizontal container</strong> groups objects side by side; a <strong>Vertical container</strong> stacks objects. Resize the containers to make map selection and labels comfortable. Use <strong>Blank</strong> as a spacer when needed. Check that Floating objects and Tiled legends do not cover other content when you resize the browser window.</p>
+
+<h3 id="415--design-the-phone-layout">4.15 — Design the <strong>Phone</strong> layout</h3>
+
+<p>Choose <strong>Phone</strong> in the device-layout panel. Rearrange the most useful information for a narrow screen: for example, move the <strong>totals to the top</strong>, followed by the state map and key charts. You can <strong>remove less essential items from the Phone layout</strong> (such as the decorative COVID image) without deleting them from the Default dashboard. Verify that the titles and state selection still make sense on a phone.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20155140.png" alt="4.15 — instructor Phone layout: totals first, image removed from Phone layout." /></p>
+
+<h3 id="416--hide-worksheet-tabs-used-in-the-dashboard">4.16 — Hide worksheet tabs used in the dashboard</h3>
+
+<p>After the five sheets are placed and the dashboard works, use the worksheet tab menu to <strong>Hide</strong> the worksheets that are included in the dashboard. This keeps the published navigation focused on the dashboard. Do not delete the sheets. The hide option applies to worksheets already used on the dashboard; do not assume unused sheets can be hidden the same way.</p>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20155215.png" alt="4.16 — Hide worksheet from the sheet tab after it is included in the dashboard." /></p>
+
+<h2 id="publish-and-verify">Publish and verify</h2>
+
+<ol>
+  <li><strong>Publish / Save</strong> the completed workbook in the <strong><code class="language-plaintext highlighter-rouge">fall2026</code></strong> Tableau Online project as <strong><code class="language-plaintext highlighter-rouge">firstname_lastname_lab10</code></strong> (replace with your own name). This is the <strong>only new published item</strong> for Lab 10.</li>
+  <li>Open the published dashboard in <strong>viewing mode</strong>. Confirm that the <strong>Default</strong> view looks complete, the <strong>state map updates the other charts</strong>, and your titles and legends are readable.</li>
+  <li>Open the <strong>Phone</strong> layout (or use the Tableau mobile app on your phone if you want). Installing the Tableau app is <strong>optional</strong>; it is not a separate submission requirement.</li>
+  <li>Keep the workbook linked to your <strong>existing Week 9 COVID Data Source</strong>. <strong>Do not publish an additional Data Source</strong> and <strong>do not upload a file to Canvas</strong>. The published workbook is the submission. The deadline is <strong>Friday, October 30, 2026 at 11:59 PM EDT</strong>; the course late policy applies.</li>
+</ol>
+
+<p><img src="screenshots/Screenshot%202026-10-22%20155354.png" alt="Final example — published dashboard in viewing mode with the source map, detail views, titles and totals." /></p>
+
+<h2 id="grading-rubric--100-points">Grading Rubric — 100 points</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Criterion</th>
+      <th>Full-credit evidence</th>
+      <th style="text-align: right">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Five worksheets (3.1–3.5)</strong></td>
+      <td>All four required charts and the totals table are complete, correctly configured, and readable, including the two dual-axis maps.</td>
+      <td style="text-align: right"><strong>50</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Dashboard layout and design</strong></td>
+      <td>Clear layout and visual hierarchy; effective use of containers, Floating/Tiled legends, labels, color, required COVID image, and text/spacing. State-map filtering and dynamic titles work correctly. The dashboard is easy to understand at first glance.</td>
+      <td style="text-align: right"><strong>40</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Phone layout and publication</strong></td>
+      <td>Phone layout prioritizes important content; the correctly named <code class="language-plaintext highlighter-rouge">firstname_lastname_lab10</code> workbook is published and checked in viewing mode using the existing Week 9 Data Source.</td>
+      <td style="text-align: right"><strong>10</strong></td>
+    </tr>
+    <tr>
+      <td><strong>TOTAL</strong></td>
+      <td> </td>
+      <td style="text-align: right"><strong>100</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The three categories are graded as a whole. Partial credit may be given within each category, without a separate point breakdown for individual steps.</p>
+
+<h2 id="checklist-before-you-finish">Checklist before you finish</h2>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />I downloaded and used one COVID-related image with appropriate permission/credit.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />My five worksheets <strong>3.1–3.5</strong> match the required charts/table; <strong>3.2 uses only County Name on Rows</strong>.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />The state and county maps use the two-layer Dual Axis technique, with the county map created from a copy of the state map.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />My Default dashboard uses <strong>Automatic</strong> and contains the four charts plus totals.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />3.3 selects a state; the other views respond; clearing the selection restores them.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />The titles, legends, colors, image credit, Text, and spacing make sense.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />I reviewed the Phone layout and published <strong>one new workbook</strong>, not a new Data Source.</li>
+</ul>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/JMU-Data/IA342/edit/gh-pages/assignments/lab-10/index.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
