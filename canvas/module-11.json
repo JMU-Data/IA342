@@ -1,0 +1,110 @@
+{
+  "schema_version": "canvas-content-profile/v1",
+  "course_key": "ia342",
+  "allowed_hosts": [
+    "jmu-data.github.io"
+  ],
+  "assignments": [
+    {
+      "key": "lab-11",
+      "title": "Lab 11 — Calculations in Tableau",
+      "assignment_group": "Labs",
+      "points": 100,
+      "due_at": null,
+      "published": true,
+      "submission_types": [
+        "none"
+      ],
+      "allowed_extensions": [],
+      "description": null,
+      "instruction_url": "https://jmu-data.github.io/IA342/assignments/lab-11/"
+    }
+  ],
+  "rubrics": [
+    {
+      "key": "lab-11-rubric",
+      "title": "Lab 11 — Calculations in Tableau",
+      "assignment": "lab-11",
+      "use_for_grading": true,
+      "scoring": "ratings",
+      "criteria": [
+        {
+          "key": "flow",
+          "description": "Published Tableau Prep flow: clean COVID and population/income inputs, construct five-character FIPS, join daily records to county data, and publish/run the output.",
+          "points": 30,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 30
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "data-source",
+          "description": "Published Lab 11 data source: source fields, state/county hierarchy, lowercase-field death rate / fixed pop / case rate calculations, income bins of 10,000, county-level verification, and final republish.",
+          "points": 30,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 30
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "workbook-story",
+          "description": "Published workbook: six worksheets, cases blue/deaths orange, moving averages, scatter trend line and median reference line, state-filter dashboard, and four Story points with VA and NY.",
+          "points": 40,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 40
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "key": "module-11",
+      "title": "Module 11",
+      "published": true,
+      "items": [
+        {
+          "key": "lecture",
+          "type": "ExternalUrl",
+          "title": "Week 11 — Calculations in Tableau",
+          "published": true,
+          "external_url": "https://jmu-data.github.io/IA342/modules/module-11/",
+          "assignment": null
+        },
+        {
+          "key": "lab-11",
+          "type": "Assignment",
+          "title": "Lab 11 — Calculations in Tableau",
+          "published": true,
+          "external_url": null,
+          "assignment": "lab-11"
+        }
+      ]
+    }
+  ]
+}
