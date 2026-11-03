@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Syllabus - IA 342","url":"https://jmu-data.github.io/IA342/syllabus/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/IA342/assets/css/style.css?v=b3cbe70df76b9f76c09e1af0cb114dc26f97b458">
+    <link rel="stylesheet" href="/IA342/assets/css/style.css?v=3b62b9cc85e9dcfe48b3382c361d1a1922ed88fd">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -43,8 +43,8 @@
 
       <h1 id="syllabus---fall-2026">Syllabus - Fall 2026</h1>
 
-<p><strong>Last updated: October 11, 2026</strong><br />
-<em>Revision: Week 12 now uses FBI NIBRS data to compare traditional BI with AI-generated dashboards; the final project uses independently assigned-state NIBRS analysis in Tableau Online. The Week 8 workflow and October 7 AI policy remain unchanged.</em></p>
+<p><strong>Last updated: November 3, 2026</strong><br />
+<em>Revision: The Final Project now combines assigned-state FBI NIBRS analysis in Tableau Online with a narrated Google Slides briefing and a Google Flow AI-generated video. The Final Project rubric and detailed instructions will be provided separately; earlier lab instructions and course policies are unchanged.</em></p>
 
 <p><strong>Course:</strong> IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis<br />
 <strong>Term:</strong> Fall 2026<br />
@@ -98,6 +98,19 @@
   <li><strong>Google AI Skills:</strong> 10% (<a href="../assignments/google-skills/">Google Skills Hands-on Lab Assignment</a>: this is a <strong>100-point Canvas assignment</strong>. One distinct passed hands-on Lab = <strong>30/100 points</strong>; two = <strong>60/100</strong>; three or more = <strong>100/100</strong>. Only activities with <strong>Type: Lab</strong> and <strong>Passed</strong> status count. Students must use the JMU-email-registered Google account enrolled in the instructor’s <strong>shared 5,000-credit pool</strong>. The Lab completions and single screenshot upload must both be completed <strong>by the due date and time shown in Canvas</strong>; late work is not accepted.)</li>
   <li><strong>Final Project:</strong> 20%</li>
 </ul>
+
+<h2 id="final-project--proposed-format-weeks-1517">Final Project — Proposed Format (Weeks 15–17)</h2>
+
+<p><strong>Working plan:</strong> Analyze 2025 FBI NIBRS data for your individually assigned U.S. state and communicate a defensible finding through Tableau visual analytics and a <strong>narrated Google Slides presentation of no more than five minutes</strong>. The two workshop weeks provide four class meetings; the final project assignment will specify the detailed rubric, submission procedure, and due time.</p>
+
+<ol>
+  <li><strong>Data preparation (Tableau Prep Flow + Data Source):</strong> Clean and combine the assigned-state NIBRS tables in Tableau Online. Check reporting coverage, join keys, data grain, and incident-versus-offense counts. Publish the Flow and its output Data Source.</li>
+  <li><strong>Visual analysis (Tableau Workbook + Dashboard):</strong> Create appropriate charts, use meaningful Tableau calculations, and build a clear interactive dashboard with filters and actions. Verify numerical claims, mapping assumptions, and visual design.</li>
+  <li><strong>AI video (Google Flow):</strong> Generate a short AI video that supports the analytical story. Clearly identify AI-generated imagery and do not present simulated scenes or unsupported AI claims as factual FBI evidence.</li>
+  <li><strong>Presentation (Google Slides):</strong> Bring together selected Tableau chart images, findings, a <strong>voice-over</strong>, an <strong>avatar/presenter</strong>, and the AI-generated video (embedded or linked). Keep the <strong>entire narrated presentation, including the video, within five minutes</strong> and link to the full Tableau Workbook for inspection.</li>
+</ol>
+
+<p><strong>Final deliverable:</strong> Submit a viewable <strong>Google Slides presentation link</strong> through the course’s final-project assignment. The published <strong>Tableau Flow, Data Source, and Workbook</strong> must also remain accessible in the course <code class="language-plaintext highlighter-rouge">fall2026</code> Tableau Online project for instructor review. A separate Tableau Story and a live in-class presentation are <strong>not required</strong>.</p>
 
 <h2 id="letter-grade-scale">Letter-Grade Scale</h2>
 
@@ -299,20 +312,20 @@
     </tr>
     <tr>
       <td style="text-align: left"><strong>Week 15</strong><br />Nov 30 – Dec 4</td>
-      <td style="text-align: left"><strong>Final Project Workshop: FBI NIBRS Data Preparation</strong><br />Assigned-state crime data, reporting coverage, join keys, and record grain <em>(No new lecture)</em></td>
-      <td style="text-align: left"><strong>Assigned-state NIBRS CSVs → Tableau Flow → Data Source</strong><br />Download the 2025 FBI NIBRS raw CSVs for your randomly assigned state. Use the core agency, incident, offense, and offense-type tables; additional NIBRS tables are optional. Organize raw files in Google Drive if useful. Clean and combine the data in a Tableau Flow, validate join matches and incident-versus-offense counts, then publish and run the Flow in Tableau Online.</td>
-      <td style="text-align: left">First workshop outcome: published Flow and its Flow-generated Data Source. No student PostgreSQL database setup is required.</td>
+      <td style="text-align: left"><strong>Final Project Workshop: NIBRS Data &amp; Analysis</strong><br />Assigned-state FBI crime data, reporting coverage, data grain, and analytical questions <em>(No new lecture)</em></td>
+      <td style="text-align: left"><strong>Mon: Tableau Prep Flow → Data Source</strong><br />Download 2025 FBI NIBRS data for your assigned state; prepare core agency, incident, offense, and offense-type tables; validate joins and incident-versus-offense counts; publish and run the Flow to create a Data Source in Tableau Online.<br /><strong>Wed: Charts &amp; Calculations</strong><br />Choose a meaningful question, build analytical worksheets from the published Data Source, apply relevant calculations, and check the results against the source.</td>
+      <td style="text-align: left">Workshop outcomes: published <strong>Flow + Data Source</strong> and initial Tableau worksheets. No student PostgreSQL database setup required.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>Week 16</strong><br />Dec 7 – 11</td>
-      <td style="text-align: left"><strong>Final Project Workshop: Crime Visual Analytics and Dashboard</strong><br />Tableau calculations, geographic/temporal patterns, interactivity, and defensible interpretation <em>(No new lecture)</em></td>
-      <td style="text-align: left"><strong>Data Source → Workbook → Dashboard</strong><br />Choose a meaningful crime-analysis topic within your assigned state. Build from your own Flow output; use Tableau calculations, a map where geographic attribution is defensible, time trends, comparisons, and meaningful interactive filters/actions. Label reported offenses correctly and explain reporting/geographic limitations. Publish the Workbook in the course Tableau Online project.</td>
-      <td style="text-align: left">Test calculations, mapping, filters, views, and the published Flow, Data Source, and Workbook.</td>
+      <td style="text-align: left"><strong>Final Project Workshop: Interactive Dashboard &amp; Presentation</strong><br />Dashboard design, filters/actions, visual storytelling, and responsible AI video use <em>(No new lecture)</em></td>
+      <td style="text-align: left"><strong>Mon: Tableau Dashboard</strong><br />Complete the Workbook with clear chart design, meaningful filters/actions, appropriate geographic and temporal views, and verified labels and limitations. Publish the Workbook in the <code class="language-plaintext highlighter-rouge">fall2026</code> course project.<br /><strong>Wed: Google Slides &amp; Google Flow</strong><br />Export selected Tableau visuals, create a short Google Flow AI video, and assemble a narrated Google Slides briefing with voice-over and avatar. Integrate or link the video and keep the total presentation within five minutes.</td>
+      <td style="text-align: left">End-of-workshop outputs: published <strong>Flow + Data Source + Workbook</strong> and a draft narrated <strong>Google Slides presentation</strong>. The instructor will inspect the live Tableau work; no separate Tableau Story.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>Week 17</strong><br />Dec 12 – 18</td>
-      <td style="text-align: left"><strong>Final Exam Week</strong><br />Final project submission only <em>(No presentations)</em></td>
-      <td style="text-align: left"><strong>Final Project Submission in Tableau Online</strong><br />Published <strong>Flow + Data Source + Workbook</strong>; the Workbook contains the required calculations, analytical views, and dashboard.</td>
+      <td style="text-align: left"><strong>Final Exam Week</strong><br />Final project submission only <em>(No live in-class presentations)</em></td>
+      <td style="text-align: left"><strong>Final Project: Google Slides Briefing (≤ 5 minutes)</strong><br />Submit the viewable Slides link as the primary deliverable. Include narrated findings, an avatar, the Google Flow AI video, and selected Tableau visualizations, with a link to the full published Workbook. The instructor will also review the Flow, Data Source, and Workbook in <code class="language-plaintext highlighter-rouge">fall2026</code>.</td>
       <td style="text-align: left"><strong>Final Project Due</strong> at the time announced in the final-project assignment.<br /><strong>Late submissions are not accepted.</strong></td>
     </tr>
   </tbody>
