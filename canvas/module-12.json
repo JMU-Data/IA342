@@ -1,0 +1,119 @@
+{
+  "schema_version": "canvas-content-profile/v1",
+  "course_key": "ia342",
+  "allowed_hosts": [
+    "jmu-data.github.io"
+  ],
+  "assignments": [
+    {
+      "key": "lab-12",
+      "title": "Lab 12 — Gun Violence Dashboards in Tableau Public and Gemini Canvas",
+      "assignment_group": "Labs",
+      "points": 100,
+      "due_at": null,
+      "published": false,
+      "submission_types": [
+        "online_text_entry"
+      ],
+      "allowed_extensions": [],
+      "description": null,
+      "instruction_url": "https://jmu-data.github.io/IA342/assignments/lab-12/"
+    }
+  ],
+  "rubrics": [
+    {
+      "key": "lab-12-rubric",
+      "title": "Lab 12 — Gun Violence Dashboards in Tableau Public and Gemini Canvas",
+      "assignment": "lab-12",
+      "use_for_grading": true,
+      "scoring": "ratings",
+      "criteria": [
+        {
+          "key": "tableau-data-source",
+          "description": "Tableau Public Data Source: correct five-field GVA working CSV; source and data period recorded; incident ID/date/state/victim fields validated; separately published source and working access link.",
+          "points": 20,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "tableau-dashboard",
+          "description": "Tableau Public dashboard: proportional-symbol state map, grouped victim killed/injured bars, daily incident bars; correct COUNTD/SUM, GVA citation and dates, clear five-second design, map filters and reset.",
+          "points": 30,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 30
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "gemini-dashboard",
+          "description": "Gemini Canvas dashboard: uses the same CSV, shows the same three views with correct values and dates; state selection/reset, one verified design improvement, and a working shared app with default data.",
+          "points": 30,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 30
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "written-comparison",
+          "description": "Canvas text entry: two functioning dashboard URLs, exact Tableau Public data source name, four to six comparison sentences, two checked values, download date/period, design critique and verified AI improvement.",
+          "points": 20,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "key": "module-12",
+      "title": "Module 12",
+      "published": false,
+      "items": [
+        {
+          "key": "lab-12",
+          "type": "Assignment",
+          "title": "Lab 12 — Gun Violence Dashboards in Tableau Public and Gemini Canvas",
+          "published": false,
+          "external_url": null,
+          "assignment": "lab-12"
+        }
+      ]
+    }
+  ]
+}
