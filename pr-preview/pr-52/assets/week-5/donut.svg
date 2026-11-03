@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc"><title id="title">Donut and concentric rings: check what length or area means</title><desc id="desc">Constructed shares: Complete 65%, In progress 25%, Not started 10%</desc><rect width="100%" height="100%" fill="white"/>
+<text x="32.00" y="40.00" font-family="Arial, sans-serif" font-size="26" fill="#233947" text-anchor="start" font-weight="700" >Donut and concentric rings: check what length or area means</text>
+<text x="32.00" y="68.00" font-family="Arial, sans-serif" font-size="15" fill="#586a79" text-anchor="start"  >Constructed shares: Complete 65%, In progress 25%, Not started 10%</text>
+<path d="M 300 330 L 300.0 140.0 A 190 190 0 1 1 146.28677106876 441.6791979355699 Z" fill="#337da5" stroke="white" stroke-width="2" />
+<path d="M 300 330 L 146.28677106876 441.6791979355699 A 190 190 0 0 1 188.3208020644301 176.28677106876 Z" fill="#df8b32" stroke="white" stroke-width="2" />
+<path d="M 300 330 L 188.3208020644301 176.28677106876 A 190 190 0 0 1 299.99999999999994 140.0 Z" fill="#667d58" stroke="white" stroke-width="2" />
+<circle cx="300" cy="330" r="118" fill="white" stroke="none"/>
+<text x="300.00" y="327.00" font-family="Arial, sans-serif" font-size="35" fill="#233947" text-anchor="middle" font-weight="700" >65%</text>
+<text x="300.00" y="359.00" font-family="Arial, sans-serif" font-size="20" fill="#233947" text-anchor="middle"  >Complete</text>
+<rect x="670" y="215" width="24" height="24" fill="#337da5" stroke="none" rx="0"/>
+<text x="715.00" y="236.00" font-family="Arial, sans-serif" font-size="23" fill="#233947" text-anchor="start"  >Complete  65%</text>
+<rect x="670" y="315" width="24" height="24" fill="#df8b32" stroke="none" rx="0"/>
+<text x="715.00" y="336.00" font-family="Arial, sans-serif" font-size="23" fill="#233947" text-anchor="start"  >In progress  25%</text>
+<rect x="670" y="415" width="24" height="24" fill="#667d58" stroke="none" rx="0"/>
+<text x="715.00" y="436.00" font-family="Arial, sans-serif" font-size="23" fill="#233947" text-anchor="start"  >Not started  10%</text>
+<text x="600.00" y="590.00" font-family="Arial, sans-serif" font-size="19" fill="#233947" text-anchor="middle"  >A donut is still part-to-whole. Unequal ring radii make arc-length comparisons misleading.</text>
+</svg>
