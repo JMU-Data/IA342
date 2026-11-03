@@ -22,7 +22,7 @@
 {"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Syllabus - IA 342","url":"https://jmu-data.github.io/IA342/syllabus/"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="/IA342/assets/css/style.css?v=3b62b9cc85e9dcfe48b3382c361d1a1922ed88fd">
+    <link rel="stylesheet" href="/IA342/assets/css/style.css?v=6e75e4e39a8c9f52b93f6e6a4731a879c83dec11">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup Google Analytics -->
@@ -44,7 +44,7 @@
       <h1 id="syllabus---fall-2026">Syllabus - Fall 2026</h1>
 
 <p><strong>Last updated: November 3, 2026</strong><br />
-<em>Revision: The Final Project now combines assigned-state FBI NIBRS analysis in Tableau Online with a narrated Google Slides briefing and a Google Flow AI-generated video. The Final Project rubric and detailed instructions will be provided separately; earlier lab instructions and course policies are unchanged.</em></p>
+<em>Revision: The Final Project working plan now uses assigned-state Gun Violence Archive incidents, Census ACS enrichment in Colab with optional Gemini assistance, Tableau Public dashboards, and a narrated Google Slides briefing with a Google Flow AI video. Detailed rubric and final instructions will follow; grading weights and established course policies are unchanged.</em></p>
 
 <p><strong>Course:</strong> IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis<br />
 <strong>Term:</strong> Fall 2026<br />
@@ -101,16 +101,16 @@
 
 <h2 id="final-project--proposed-format-weeks-1517">Final Project — Proposed Format (Weeks 15–17)</h2>
 
-<p><strong>Working plan:</strong> Analyze 2025 FBI NIBRS data for your individually assigned U.S. state and communicate a defensible finding through Tableau visual analytics and a <strong>narrated Google Slides presentation of no more than five minutes</strong>. The two workshop weeks provide four class meetings; the final project assignment will specify the detailed rubric, submission procedure, and due time.</p>
+<p><strong>Working plan:</strong> Investigate Gun Violence Archive (GVA) incidents in your <strong>individually assigned U.S. state</strong>, enrich the dataset with U.S. Census population and median household income, produce a professional <strong>Tableau Public dashboard</strong>, and communicate evidence-based findings in a <strong>narrated Google Slides presentation lasting no more than five minutes</strong>. The two workshop weeks provide four class meetings; a separate final-project assignment will provide the detailed rubric and deadline.</p>
 
 <ol>
-  <li><strong>Data preparation (Tableau Prep Flow + Data Source):</strong> Clean and combine the assigned-state NIBRS tables in Tableau Online. Check reporting coverage, join keys, data grain, and incident-versus-offense counts. Publish the Flow and its output Data Source.</li>
-  <li><strong>Visual analysis (Tableau Workbook + Dashboard):</strong> Create appropriate charts, use meaningful Tableau calculations, and build a clear interactive dashboard with filters and actions. Verify numerical claims, mapping assumptions, and visual design.</li>
-  <li><strong>AI video (Google Flow):</strong> Generate a short AI video that supports the analytical story. Clearly identify AI-generated imagery and do not present simulated scenes or unsupported AI claims as factual FBI evidence.</li>
-  <li><strong>Presentation (Google Slides):</strong> Bring together selected Tableau chart images, findings, a <strong>voice-over</strong>, an <strong>avatar/presenter</strong>, and the AI-generated video (embedded or linked). Keep the <strong>entire narrated presentation, including the video, within five minutes</strong> and link to the full Tableau Workbook for inspection.</li>
+  <li><strong>GVA data acquisition and scope:</strong> Use the <a href="https://www.gunviolencearchive.org/query">Gun Violence Archive query</a> to download records for your assigned state and a clearly defined analysis period; preserve the raw CSV in your own Google Drive. Record download date, query filters, record counts, temporal coverage, and any export limits. If an export is capped, split the request into smaller date windows when practical and check duplicate Incident IDs. <strong>Incomplete coverage is acceptable if documented; do not present a truncated extract as complete statewide data.</strong></li>
+  <li><strong>Census enrichment in Colab:</strong> Use Google Colab and an authorized AI assistant (such as Gemini) to help retrieve <strong>population</strong> and <strong>median household income</strong> from the <a href="https://www.census.gov/data/developers/data-sets/acs-5year.html">Census ACS API</a>. Keep any Census API key in <strong>Colab Secrets</strong>; never embed it in code, shared output, or Tableau. Use a <strong>best-effort</strong> match to Census counties or county-equivalent geographies, taking care with independent cities and ambiguous place names. <strong>Some unmatched or imperfect geographic matches are acceptable</strong>: spot-check a few representative locations against Census records, document known errors and unmatched cases, and do not claim that all records were matched correctly. Use the <strong>2024 ACS 5-year estimates (2020–2024)</strong> as the common population/income reference for this project and identify that Census vintage separately from the GVA incident year (including incidents in 2025–2026). Do not label 2024 ACS figures as 2025 or 2026 estimates. Preserve the original incidents and save a separate cleaned/enriched CSV.</li>
+  <li><strong>Tableau Public analytics and verification:</strong> Publish an approved, appropriately aggregated <strong>Tableau Public Data Source</strong> and develop a Workbook with informative charts, calculations, and a <strong>clear interactive Dashboard</strong>, including meaningful filters and actions. Check distinct Incident IDs, spot-check a few Census values and geographic matches, explain data coverage and any unmatched records, and apply the five-second design test. <strong>Do not sum repeated population values across incident rows or infer rates from incomplete incident coverage without a clear limitation.</strong> Cite GVA and Census, and follow all data-use and privacy requirements before publishing. <strong>A Tableau Prep Flow is not required</strong> for this project.</li>
+  <li><strong>AI-assisted analytical presentation:</strong> Use <strong>Google Flow</strong> to create a short, non-graphic AI-generated video appropriate for a public-safety analysis. Integrate selected Tableau visuals, analytical findings, limitations, <strong>voice-over</strong>, an <strong>AI avatar/presenter</strong>, and the video (embedded or linked) into <strong>Google Slides</strong>. The entire narrated presentation, including the AI video, must be <strong>five minutes or less</strong>. Identify AI-generated scenes; do not represent them as footage of real incidents.</li>
 </ol>
 
-<p><strong>Final deliverable:</strong> Submit a viewable <strong>Google Slides presentation link</strong> through the course’s final-project assignment. The published <strong>Tableau Flow, Data Source, and Workbook</strong> must also remain accessible in the course <code class="language-plaintext highlighter-rouge">fall2026</code> Tableau Online project for instructor review. A separate Tableau Story and a live in-class presentation are <strong>not required</strong>.</p>
+<p><strong>Final deliverable:</strong> Submit <strong>one viewable Google Slides presentation link</strong> through the final-project assignment, with links to the published <strong>Tableau Public dashboard/Workbook and Data Source</strong> for instructor inspection. Keep the Colab workflow and original/enriched data available for verification under the instructor’s submission instructions; do not publicly expose raw sensitive data or API credentials. A separate Tableau Story, Tableau Prep Flow, or live classroom presentation is <strong>not required</strong>.</p>
 
 <h2 id="letter-grade-scale">Letter-Grade Scale</h2>
 
@@ -212,7 +212,7 @@
 
 <h2 id="course-schedule-fall-2026">Course Schedule (Fall 2026)</h2>
 
-<p><em>Schedule updated: October 11, 2026</em></p>
+<p><em>Schedule updated: November 3, 2026 (Final Project, Weeks 15–17)</em></p>
 
 <p>Weeks 9–11 follow a consistent pattern: <strong>Monday combines a focused explanation with a guided in-class exercise; Wednesday is an independent lab with instructor support.</strong> Week 8 is one extended lab with no separate lecture. In this course, Tableau Online refers to the course Tableau Cloud site. Tableau Flow means a Tableau Prep data-preparation flow; Google Flow in Week 13 is the separate video-generation tool.</p>
 
@@ -312,20 +312,20 @@
     </tr>
     <tr>
       <td style="text-align: left"><strong>Week 15</strong><br />Nov 30 – Dec 4</td>
-      <td style="text-align: left"><strong>Final Project Workshop: NIBRS Data &amp; Analysis</strong><br />Assigned-state FBI crime data, reporting coverage, data grain, and analytical questions <em>(No new lecture)</em></td>
-      <td style="text-align: left"><strong>Mon: Tableau Prep Flow → Data Source</strong><br />Download 2025 FBI NIBRS data for your assigned state; prepare core agency, incident, offense, and offense-type tables; validate joins and incident-versus-offense counts; publish and run the Flow to create a Data Source in Tableau Online.<br /><strong>Wed: Charts &amp; Calculations</strong><br />Choose a meaningful question, build analytical worksheets from the published Data Source, apply relevant calculations, and check the results against the source.</td>
-      <td style="text-align: left">Workshop outcomes: published <strong>Flow + Data Source</strong> and initial Tableau worksheets. No student PostgreSQL database setup required.</td>
+      <td style="text-align: left"><strong>Final Project Workshop: GVA + Census Data Preparation</strong><br />Assigned-state incidents, data scope, Census geography, and transparent AI-assisted preparation <em>(No new lecture)</em></td>
+      <td style="text-align: left"><strong>Mon: GVA download → Google Drive → Colab</strong><br />Export incidents for your assigned state; document date coverage and export limits; store the original CSV. Use Colab/Gemini and a Census API key stored in Secrets to retrieve <strong>2024 ACS 5-year</strong> population and median household income for counties/county-equivalents where practical.<br /><strong>Wed: Validate → Save enriched CSV → Tableau Public Data Source</strong><br />Make a best-effort attempt to distinguish independent cities from similarly named counties, spot-check a few matches, and document unresolved or incorrect locations. Preserve distinct Incident IDs, original incident years, and the <strong>2024 ACS</strong> vintage; save a new CSV. <strong>Full geographic match coverage is not required.</strong> Prepare an appropriate public Data Source and start the Workbook.</td>
+      <td style="text-align: left"><strong>Milestones:</strong> Raw and enriched datasets, inspectable Colab workflow, a short note on matching limitations and spot checks, and a Tableau Public Data Source. <strong>No Tableau Prep Flow or student PostgreSQL setup.</strong> Incomplete but honestly documented GVA coverage can be used.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>Week 16</strong><br />Dec 7 – 11</td>
-      <td style="text-align: left"><strong>Final Project Workshop: Interactive Dashboard &amp; Presentation</strong><br />Dashboard design, filters/actions, visual storytelling, and responsible AI video use <em>(No new lecture)</em></td>
-      <td style="text-align: left"><strong>Mon: Tableau Dashboard</strong><br />Complete the Workbook with clear chart design, meaningful filters/actions, appropriate geographic and temporal views, and verified labels and limitations. Publish the Workbook in the <code class="language-plaintext highlighter-rouge">fall2026</code> course project.<br /><strong>Wed: Google Slides &amp; Google Flow</strong><br />Export selected Tableau visuals, create a short Google Flow AI video, and assemble a narrated Google Slides briefing with voice-over and avatar. Integrate or link the video and keep the total presentation within five minutes.</td>
-      <td style="text-align: left">End-of-workshop outputs: published <strong>Flow + Data Source + Workbook</strong> and a draft narrated <strong>Google Slides presentation</strong>. The instructor will inspect the live Tableau work; no separate Tableau Story.</td>
+      <td style="text-align: left"><strong>Final Project Workshop: Interactive Visual Analytics and Storytelling</strong><br />Tableau calculations, five-second design, filter actions, and responsible multimedia communication <em>(No new lecture)</em></td>
+      <td style="text-align: left"><strong>Mon: Tableau Public Charts &amp; Dashboard</strong><br />Build and verify appropriate maps, comparisons and trends, calculations, readable labels, sources, filters, and dashboard actions. Do not double-count population repeated across incident records; explain limits on incident coverage and population-based interpretation.<br /><strong>Wed: Google Flow + Narrated Google Slides</strong><br />Generate a non-graphic AI video; combine selected Tableau visualizations, evidence and limitations with voice-over and an AI avatar/presenter. Link the Tableau Public Workbook and source. Keep the entire presentation within five minutes.</td>
+      <td style="text-align: left">Workshop outcomes: Published, permission-compliant <strong>Tableau Public Data Source + Workbook/Dashboard</strong>, and a draft <strong>narrated Google Slides briefing</strong>. Instructor reviews data accuracy and interactive behavior. No Tableau Story.</td>
     </tr>
     <tr>
       <td style="text-align: left"><strong>Week 17</strong><br />Dec 12 – 18</td>
-      <td style="text-align: left"><strong>Final Exam Week</strong><br />Final project submission only <em>(No live in-class presentations)</em></td>
-      <td style="text-align: left"><strong>Final Project: Google Slides Briefing (≤ 5 minutes)</strong><br />Submit the viewable Slides link as the primary deliverable. Include narrated findings, an avatar, the Google Flow AI video, and selected Tableau visualizations, with a link to the full published Workbook. The instructor will also review the Flow, Data Source, and Workbook in <code class="language-plaintext highlighter-rouge">fall2026</code>.</td>
+      <td style="text-align: left"><strong>Final Exam Week</strong><br />Final-project submission only <em>(No live classroom presentations)</em></td>
+      <td style="text-align: left"><strong>Final Project: Google Slides Briefing (≤ 5 minutes)</strong><br />Submit a viewable Slides link containing evidence-based conclusions, Tableau visualizations, voice-over, an avatar, and a non-graphic Google Flow video; include working links to the Tableau Public Dashboard/Workbook and Data Source. Keep the Colab analysis available for instructor verification according to final instructions.</td>
       <td style="text-align: left"><strong>Final Project Due</strong> at the time announced in the final-project assignment.<br /><strong>Late submissions are not accepted.</strong></td>
     </tr>
   </tbody>
