@@ -1,0 +1,119 @@
+{
+  "schema_version": "canvas-content-profile/v1",
+  "course_key": "ia342",
+  "allowed_hosts": [
+    "jmu-data.github.io"
+  ],
+  "assignments": [
+    {
+      "key": "lab-12",
+      "title": "Lab 12 — Gun Violence Dashboards in Tableau Public and Gemini Canvas",
+      "assignment_group": "Labs",
+      "points": 100,
+      "due_at": null,
+      "published": false,
+      "submission_types": [
+        "online_text_entry"
+      ],
+      "allowed_extensions": [],
+      "description": null,
+      "instruction_url": "https://jmu-data.github.io/IA342/assignments/lab-12/"
+    }
+  ],
+  "rubrics": [
+    {
+      "key": "lab-12-rubric",
+      "title": "Lab 12 — Gun Violence Dashboards in Tableau Public and Gemini Canvas",
+      "assignment": "lab-12",
+      "use_for_grading": true,
+      "scoring": "ratings",
+      "criteria": [
+        {
+          "key": "tableau-data-source",
+          "description": "Tableau Public Data Source: six cleaned GVA analysis fields; appropriate types, unique IDs, valid zeros retained, checked date range and source credit; separately published source used by the workbook.",
+          "points": 20,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "tableau-dashboard",
+          "description": "Tableau dashboard: three linked views; Choose Measure selector, correct CASE aggregation and dynamic titles; state filtering/clearing, readable five-second design and source link. Optional extensions are not required.",
+          "points": 30,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 30
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "gemini-dashboard",
+          "description": "Gemini Canvas: same CSV and three measures; corresponding map/state/daily views, dynamic labels, state filtering and Reset, one checked improvement, and accessible default data.",
+          "points": 30,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 30
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "written-comparison",
+          "description": "Canvas text: two dashboard URLs and exact source name; 4–6 comparison sentences with two numeric checks, interaction/design comparison, AI improvement verification, and data period.",
+          "points": 20,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 20
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "key": "module-12",
+      "title": "Module 12",
+      "published": false,
+      "items": [
+        {
+          "key": "lab-12",
+          "type": "Assignment",
+          "title": "Lab 12 — Gun Violence Dashboards in Tableau Public and Gemini Canvas",
+          "published": false,
+          "external_url": null,
+          "assignment": "lab-12"
+        }
+      ]
+    }
+  ]
+}
