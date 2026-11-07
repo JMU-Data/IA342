@@ -30,7 +30,7 @@
       "criteria": [
         {
           "key": "tableau-data-source",
-          "description": "Tableau Public Data Source: correct five-field GVA working CSV; source and data period recorded; incident ID/date/state/victim fields validated; separately published source and working access link.",
+          "description": "Tableau Public Data Source: six cleaned GVA analysis fields; appropriate types, unique IDs, valid zeros retained, checked date range and source credit; separately published source used by the workbook.",
           "points": 20,
           "ratings": [
             {
@@ -47,7 +47,7 @@
         },
         {
           "key": "tableau-dashboard",
-          "description": "Tableau Public dashboard: proportional-symbol state map, grouped victim killed/injured bars, daily incident bars; correct COUNTD/SUM, GVA citation and dates, clear five-second design, map filters and reset.",
+          "description": "Tableau dashboard: three linked views; Choose Measure selector, correct CASE aggregation and dynamic titles; state filtering/clearing, readable five-second design and source link. Optional extensions are not required.",
           "points": 30,
           "ratings": [
             {
@@ -64,7 +64,7 @@
         },
         {
           "key": "gemini-dashboard",
-          "description": "Gemini Canvas dashboard: uses the same CSV, shows the same three views with correct values and dates; state selection/reset, one verified design improvement, and a working shared app with default data.",
+          "description": "Gemini Canvas: same CSV and three measures; corresponding map/state/daily views, dynamic labels, state filtering and Reset, one checked improvement, and accessible default data.",
           "points": 30,
           "ratings": [
             {
@@ -81,7 +81,7 @@
         },
         {
           "key": "written-comparison",
-          "description": "Canvas text entry: two functioning dashboard URLs, exact Tableau Public data source name, four to six comparison sentences, two checked values, download date/period, design critique and verified AI improvement.",
+          "description": "Canvas text: two dashboard URLs and exact source name; 4–6 comparison sentences with two numeric checks, interaction/design comparison, AI improvement verification, and data period.",
           "points": 20,
           "ratings": [
             {
