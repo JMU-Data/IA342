@@ -30,7 +30,7 @@
       "criteria": [
         {
           "key": "tableau-data-source",
-          "description": "Personal Tableau Public profile; Google Drive GVA CSV; appropriate field types, hidden unused columns and Extract; accessible standalone published source or inspectable embedded source. No real-name requirement.",
+          "description": "Personal Tableau Public profile; GVA CSV from own Google Drive, correct data types, hidden unused fields and Extract; accessible standalone Data Source or inspectable Workbook-embedded source.",
           "points": 20,
           "ratings": [
             {
@@ -47,7 +47,7 @@
         },
         {
           "key": "tableau-dashboard",
-          "description": "Four views: state map, ranked state bars, daily chart, cumulative Gantt waterfall; one measure parameter and CASE field, dynamic titles, map-as-filter, data source/date caption, readable layout.",
+          "description": "Four readable Tableau views with working Choose Measure and CASE calculation, dynamic titles, chronological daily chart and waterfall, map filtering, and accurate GVA source attribution.",
           "points": 30,
           "ratings": [
             {
@@ -64,7 +64,7 @@
         },
         {
           "key": "gemini-dashboard",
-          "description": "Same GVA data, four views, metric switch and state filtering/reset; one checked improvement, a factual AI Summary area and public app Share Link. Paid-only generators are not required.",
+          "description": "Accessible Gemini Canvas app using GVA data, fewer than five informative views, clear color and labels, useful interactivity, and a shareable link. No particular AI add-on or edit count required.",
           "points": 30,
           "ratings": [
             {
@@ -81,7 +81,7 @@
         },
         {
           "key": "written-comparison",
-          "description": "Exactly two URLs: personal Tableau Public profile and Gemini Canvas share link; 4-6 sentences covering two numeric checks, comparison, verified Gemini improvement and incident-date range.",
+          "description": "Two URLs (Tableau Public profile and Gemini Canvas share link); thoughtful 2–3 sentence comparison of accuracy or hallucinations, ease of use, and AI-generated versus manual BI. No fixed opinion.",
           "points": 20,
           "ratings": [
             {
