@@ -33,6 +33,7 @@
 - [Lab 10 — Dashboard Design in Tableau (due Oct 30, 2026, 11:59 PM EDT)](docs/assignments/lab-10/index.md)
 - [Module 11 — Calculations in Tableau](docs/modules/module-11/index.html)
 - [Lab 11 — Calculations in Tableau](docs/assignments/lab-11/index.html)
+- [Lab 12 — GVA Dashboards in Tableau Public and Gemini Canvas (due Nov 13, 2026, 11:59 PM EST)](docs/assignments/lab-12/index.html)
 - [Google Skills Hands-on Lab Assignment](docs/assignments/google-skills/index.md)
 
 ## Course Overview

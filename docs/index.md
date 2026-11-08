@@ -126,6 +126,11 @@ title: "Home - IA 342"
     <p style="margin-bottom: 0; color: #57606a;">Clean and join COVID and Census data, check calculations, and publish a dashboard Story.</p>
   </a>
 
+  <a href="assignments/lab-12/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow 0.2s;">
+    <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">📝 Lab 12</h3>
+    <p style="margin-bottom: 0; color: #57606a;">Tableau Public and Gemini Canvas GVA dashboards. Due Friday, November 13 at 11:59 PM EST.</p>
+  </a>
+
   <a href="assignments/google-skills/" style="display: block; text-decoration: none; color: inherit; border: 1px solid #d0d7de; border-radius: 6px; padding: 1.5rem; background: #f6f8fa; transition: border-color 0.2s, box-shadow: 0.2s;">
     <h3 style="margin-top: 0; color: #8250df; display: flex; align-items: center; gap: 0.5rem;">🧪 Google Skills Hands-on Labs</h3>
     <p style="margin-bottom: 0; color: #57606a;">Pass three distinct Google Skills hands-on Labs for full credit and upload one screenshot by the Canvas deadline.</p>
