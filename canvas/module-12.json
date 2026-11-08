@@ -30,7 +30,7 @@
       "criteria": [
         {
           "key": "tableau-data-source",
-          "description": "Student-owned Tableau Public profile URL; a separate six-field GVA Data Source named firstname_lastname_lab12_data, validated types/rows/dates, GVA source, and source accessible through that profile.",
+          "description": "New free personal Tableau Public account and Profile URL; separately published, correctly named six-field GVA source with validated types/IDs/dates. Check Create Data Source permission before starting.",
           "points": 20,
           "ratings": [
             {
@@ -47,7 +47,7 @@
         },
         {
           "key": "tableau-dashboard",
-          "description": "Published firstname_lastname_lab12 Workbook: four views, shared Choose Measure CASE calculation, dynamic titles, correct counts, state filtering, locality drill-down, highlighter, source link, waterfall and reset.",
+          "description": "Required named Workbook: four charts, shared Choose Measure/CASE, dynamic titles, correct counts, State filters, locality inspection, highlighter, source-title hyperlink, cumulative waterfall and reset.",
           "points": 30,
           "ratings": [
             {
@@ -64,7 +64,7 @@
         },
         {
           "key": "gemini-dashboard",
-          "description": "Publicly shared Gemini Canvas app with the same CSV and four views, three selectable measures, state filters and Reset, one verified design improvement, and default data accessible to a separate viewer.",
+          "description": "Required public Gemini Canvas app: same CSV and four views, three measures, state selection/filter and Reset, one verified Select & ask improvement, read-only default data usable by a separate Google account.",
           "points": 30,
           "ratings": [
             {
@@ -81,7 +81,7 @@
         },
         {
           "key": "written-comparison",
-          "description": "One Canvas text entry with exactly two URLs (student Tableau Public Profile and public Gemini Canvas app) plus 4–6 sentences, two numeric checks, interaction comparison, AI design improvement and incident-date range.",
+          "description": "Exactly two URLs: own Tableau Public Profile and public Gemini Canvas app; 4–6 sentences with two CSV-checked numbers, interaction/clarity comparison, one verified AI improvement, and incident-date range.",
           "points": 20,
           "ratings": [
             {
