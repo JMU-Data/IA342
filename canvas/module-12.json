@@ -30,7 +30,7 @@
       "criteria": [
         {
           "key": "tableau-data-source",
-          "description": "Tableau Public Data Source: six cleaned GVA analysis fields; appropriate types, unique IDs, valid zeros retained, checked date range and source credit; separately published source used by the workbook.",
+          "description": "Student-owned Tableau Public profile URL; a separate six-field GVA Data Source named firstname_lastname_lab12_data, validated types/rows/dates, GVA source, and source accessible through that profile.",
           "points": 20,
           "ratings": [
             {
@@ -47,7 +47,7 @@
         },
         {
           "key": "tableau-dashboard",
-          "description": "Tableau dashboard: three linked views; Choose Measure selector, correct CASE aggregation and dynamic titles; state filtering/clearing, readable five-second design and source link. Optional extensions are not required.",
+          "description": "Published firstname_lastname_lab12 Workbook: four views, shared Choose Measure CASE calculation, dynamic titles, correct counts, state filtering, locality drill-down, highlighter, source link, waterfall and reset.",
           "points": 30,
           "ratings": [
             {
@@ -64,7 +64,7 @@
         },
         {
           "key": "gemini-dashboard",
-          "description": "Gemini Canvas: same CSV and three measures; corresponding map/state/daily views, dynamic labels, state filtering and Reset, one checked improvement, and accessible default data.",
+          "description": "Publicly shared Gemini Canvas app with the same CSV and four views, three selectable measures, state filters and Reset, one verified design improvement, and default data accessible to a separate viewer.",
           "points": 30,
           "ratings": [
             {
@@ -81,7 +81,7 @@
         },
         {
           "key": "written-comparison",
-          "description": "Canvas text: two dashboard URLs and exact source name; 4–6 comparison sentences with two numeric checks, interaction/design comparison, AI improvement verification, and data period.",
+          "description": "One Canvas text entry with exactly two URLs (student Tableau Public Profile and public Gemini Canvas app) plus 4–6 sentences, two numeric checks, interaction comparison, AI design improvement and incident-date range.",
           "points": 20,
           "ratings": [
             {
