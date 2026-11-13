@@ -1,0 +1,104 @@
+{
+  "schema_version": "canvas-content-profile/v1",
+  "course_key": "ia342",
+  "allowed_hosts": [
+    "jmu-data.github.io"
+  ],
+  "assignments": [
+    {
+      "key": "lab-13",
+      "title": "Lab 13 — Create a Short Video with AI",
+      "assignment_group": "Labs",
+      "points": 100,
+      "due_at": "2026-11-20T23:59:00-05:00",
+      "published": true,
+      "submission_types": [
+        "online_upload"
+      ],
+      "allowed_extensions": [
+        "mp4"
+      ],
+      "description": null,
+      "instruction_url": "https://jmu-data.github.io/IA342/assignments/lab-13/"
+    }
+  ],
+  "rubrics": [
+    {
+      "key": "lab-13-rubric",
+      "title": "Lab 13 — Create a Short Video with AI",
+      "assignment": "lab-13",
+      "use_for_grading": true,
+      "scoring": "ratings",
+      "criteria": [
+        {
+          "key": "ai-generated-media",
+          "description": "At least one original Gemini image and one original Flow video clip clearly used in the submitted MP4, both relevant to the topic.",
+          "points": 40,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 40
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "video-audio-storytelling",
+          "description": "Coherent, readable slides; at least one speaking AI avatar and voiceovers for the other explanatory scenes; controlled audio and timing; MP4 no longer than two minutes.",
+          "points": 45,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 45
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "reflection",
+          "description": "A 3–5 sentence Canvas submission comment connects AI video tools to an intelligence-analysis use and identifies one meaningful limitation or risk.",
+          "points": 15,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 15
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "key": "module-13",
+      "title": "Module 13 — Lab 13",
+      "published": true,
+      "items": [
+        {
+          "key": "lab-13",
+          "type": "Assignment",
+          "title": "Lab 13 — Create a Short Video with AI",
+          "published": true,
+          "external_url": null,
+          "assignment": "lab-13"
+        }
+      ]
+    }
+  ]
+}
