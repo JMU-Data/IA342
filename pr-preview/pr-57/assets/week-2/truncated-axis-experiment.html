@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Truncated Axis Experiment — IA 342</title>
+<style>
+:root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: #17324d; background: #f8fafc; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 12px; min-height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+.card { width: min(880px, 98%); background: #fff; border: 1px solid #d8e1ea; border-radius: 14px; padding: 18px 24px; box-shadow: 0 4px 16px rgba(23,50,77,0.08); text-align: center; }
+h1 { margin: 0 0 4px; font-size: 22px; color: #0f172a; }
+.sub { margin: 0 0 14px; font-size: 14px; color: #64748b; }
+.controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+button { border: 0; border-radius: 8px; padding: 8px 16px; font-size: 14px; font-weight: 700; cursor: pointer; background: #0969da; color: white; transition: background 0.15s ease; }
+button:hover { background: #0858b9; }
+button.secondary { background: #e2e8f0; color: #1e293b; }
+button.secondary:hover { background: #cbd5e1; }
+.chart { height: 240px; position: relative; border-left: 2px solid #71869a; border-bottom: 2px solid #71869a; margin: 10px 30px 28px 55px; }
+.grid { position: absolute; inset: 0; background: repeating-linear-gradient(to top, transparent 0, transparent 19.5%, #e6ebf0 20%); }
+.bar { position: absolute; bottom: 0; width: 22%; background: #3f7cac; border-radius: 6px 6px 0 0; transition: height 0.5s ease; }
+.b1 { left: 20%; }
+.b2 { left: 58%; }
+.value { position: absolute; left: 50%; transform: translate(-50%, -24px); font-weight: 800; font-size: 18px; color: #0f172a; }
+.label { position: absolute; bottom: -26px; left: 50%; transform: translateX(-50%); color: #52677c; font-weight: 600; font-size: 14px; }
+.axislabels { position: absolute; left: -48px; top: 0; bottom: 0; width: 40px; color: #64748b; font-size: 13px; font-weight: 500; }
+.axislabels span { position: absolute; right: 0; transform: translateY(50%); }
+.note { padding: 10px 14px; border-radius: 8px; background: #eef4f8; font-size: 13px; line-height: 1.4; color: #1e293b; margin-top: 6px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <h1>Same Data, Different Story?</h1>
+  <p class="sub">Notice how truncating the vertical axis exaggerates the perceived visual difference.</p>
+  <div class="controls">
+    <button id="toggle">Show zero baseline</button>
+    <button class="secondary" id="reset">Reset</button>
+  </div>
+  <div class="chart" id="chart">
+    <div class="grid"></div>
+    <div class="axislabels" id="axislabels"></div>
+    <div class="bar b1" id="b1"><span class="value">35%</span><span class="label">2012</span></div>
+    <div class="bar b2" id="b2"><span class="value">39.6%</span><span class="label">2013</span></div>
+  </div>
+  <div class="note"><strong>Teaching point:</strong> The numbers (35% vs 39.6%) are 100% identical. Truncating the baseline distorts the physical bar length proportion.</div>
+</div>
+<script>
+const b1=document.getElementById('b1'), b2=document.getElementById('b2'), labels=document.getElementById('axislabels'), toggle=document.getElementById('toggle'), reset=document.getElementById('reset');
+let zero=false;
+function render(){
+ if(zero){
+   b1.style.height=(35/45*100)+'%'; b2.style.height=(39.6/45*100)+'%';
+   labels.innerHTML='<span style="bottom:0%">0%</span><span style="bottom:22.2%">10%</span><span style="bottom:44.4%">20%</span><span style="bottom:66.7%">30%</span><span style="bottom:88.9%">40%</span>';
+   toggle.textContent='Show truncated axis';
+ }else{
+   b1.style.height=((35-34)/(42-34)*100)+'%'; b2.style.height=((39.6-34)/(42-34)*100)+'%';
+   labels.innerHTML='<span style="bottom:0%">34%</span><span style="bottom:25%">36%</span><span style="bottom:50%">38%</span><span style="bottom:75%">40%</span><span style="bottom:100%">42%</span>';
+   toggle.textContent='Show zero baseline';
+ }
+}
+toggle.onclick=()=>{zero=!zero;render()};
+reset.onclick=()=>{zero=false;render()};
+render();
+</script>
+</body>
+</html>

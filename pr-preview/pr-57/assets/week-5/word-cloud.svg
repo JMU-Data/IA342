@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="490" viewBox="0 0 1100 490" role="img" aria-label="Illustrative word cloud with 46 terms about visual analytics">
+<style>text{font-family:'DejaVu Sans';font-weight:normal;font-style:normal;}</style>
+<rect width="100%" height="100%" style="fill:white"></rect>
+<text transform="translate(692,107)" font-size="120" style="fill:#175d7b">data</text>
+<text transform="translate(45,261)" font-size="108" style="fill:#466d83">visualization</text>
+<text transform="translate(430,450)" font-size="103" style="fill:#175d7b">analysis</text>
+<text transform="translate(28,463)" font-size="98" style="fill:#965e28">charts</text>
+<text transform="translate(154,95)" font-size="94" style="fill:#466d83">questions</text>
+<text transform="translate(624,184)" font-size="90" style="fill:#175d7b">evidence</text>
+<text transform="translate(554,327)" font-size="85" style="fill:#175d7b">patterns</text>
+<text transform="translate(259,167)" font-size="83" style="fill:#3d785e">Tableau</text>
+<text transform="translate(15,370)" font-size="81" style="fill:#466d83">dashboard</text>
+<text transform="translate(713,257)" font-size="66" style="fill:#965e28">comparison</text>
+<text transform="translate(809,389)" font-size="64" style="fill:#3d785e">context</text>
+<text transform="translate(26,162)" font-size="62" style="fill:#965e28">design</text>
+<text transform="translate(894,442)" font-size="60" style="fill:#3d785e">clarity</text>
+<text transform="translate(335,299)" font-size="58" style="fill:#3d785e">sources</text>
+<text transform="translate(6,297)" font-size="45" style="fill:#965e28">interpretation</text>
+<text transform="translate(574,360)" font-size="41" style="fill:#3d785e">uncertainty</text>
+<text transform="translate(748,483)" font-size="40" style="fill:#175d7b">distribution</text>
+<text transform="translate(42,89)" font-size="39" style="fill:#466d83">scale</text>
+<text transform="translate(481,486)" font-size="38" style="fill:#466d83">color</text>
+<text transform="translate(931,310)" font-size="37" style="fill:#965e28">labels</text>
+<text transform="translate(90,35)" font-size="36" style="fill:#466d83">decisions</text>
+<text transform="translate(534,30)" font-size="35" style="fill:#175d7b">accuracy</text>
+<text transform="translate(745,216)" font-size="34" style="fill:#175d7b">audience</text>
+<text transform="translate(915,337)" font-size="33" style="fill:#3d785e">interaction</text>
+<text transform="translate(882,30)" font-size="32" style="fill:#466d83">relationships</text>
+<text transform="translate(187,191)" font-size="31" style="fill:#175d7b">maps</text>
+<text transform="translate(1064,209) rotate(-90)" font-size="30" style="fill:#175d7b">storytelling</text>
+<text transform="translate(448,384)" font-size="29" style="fill:#3d785e">aggregation</text>
+<text transform="translate(284,486)" font-size="28" style="fill:#3d785e">correlation</text>
+<text transform="translate(956,65)" font-size="27" style="fill:#175d7b">time</text>
+<text transform="translate(232,318)" font-size="26" style="fill:#3d785e">ranking</text>
+<text transform="translate(327,418)" font-size="25" style="fill:#175d7b">outliers</text>
+<text transform="translate(31,487) rotate(-90)" font-size="24" style="fill:#175d7b">metadata</text>
+<text transform="translate(112,397)" font-size="23" style="fill:#965e28">proportion</text>
+<text transform="translate(602,131)" font-size="22" style="fill:#466d83">units</text>
+<text transform="translate(908,128)" font-size="21" style="fill:#466d83">accessibility</text>
+<text transform="translate(115,479)" font-size="20" style="fill:#175d7b">sampling</text>
+<text transform="translate(25,188)" font-size="19" style="fill:#466d83">rates</text>
+<text transform="translate(353,27)" font-size="18" style="fill:#965e28">tables</text>
+</svg>
