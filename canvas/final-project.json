@@ -1,0 +1,291 @@
+{
+  "schema_version": "canvas-content-profile/v1",
+  "course_key": "ia342",
+  "allowed_hosts": [
+    "jmu-data.github.io"
+  ],
+  "assignments": [
+    {
+      "key": "final-project-1",
+      "title": "Assignment 1 — Colab Data Preparation",
+      "assignment_group": "Final Project",
+      "points": 30,
+      "due_at": "2026-12-04T23:59:00-05:00",
+      "published": true,
+      "submission_types": [
+        "online_text_entry"
+      ],
+      "description": null,
+      "instruction_url": "https://jmu-data.github.io/IA342/assignments/final-project/#assignment-1"
+    },
+    {
+      "key": "final-project-2",
+      "title": "Assignment 2 — Tableau Public Data Source and Dashboard",
+      "assignment_group": "Final Project",
+      "points": 50,
+      "due_at": "2026-12-11T23:59:00-05:00",
+      "published": true,
+      "submission_types": [
+        "online_url"
+      ],
+      "description": null,
+      "instruction_url": "https://jmu-data.github.io/IA342/assignments/final-project/#assignment-2"
+    },
+    {
+      "key": "final-project-3",
+      "title": "Assignment 3 — Video Presentation",
+      "assignment_group": "Final Project",
+      "points": 20,
+      "due_at": "2026-12-16T23:59:00-05:00",
+      "published": true,
+      "submission_types": [
+        "online_upload"
+      ],
+      "allowed_extensions": [
+        "mp4"
+      ],
+      "description": null,
+      "instruction_url": "https://jmu-data.github.io/IA342/assignments/final-project/#assignment-3"
+    }
+  ],
+  "rubrics": [
+    {
+      "key": "final-project-1-rubric",
+      "title": "Assignment 1 — Colab Data Preparation",
+      "assignment": "final-project-1",
+      "use_for_grading": true,
+      "scoring": "ratings",
+      "criteria": [
+        {
+          "key": "colab-notebook",
+          "description": "Colab Notebook — Accessible code and saved outputs show GVA loading, Census retrieval, matching, saving, and reopening.",
+          "points": 10,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 10
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "csv-dataset",
+          "description": "CSV Dataset — Accessible assigned-state records with 2024 ACS population, median household income and five-digit FIPS; one row per incident; unmatched values blank.",
+          "points": 15,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 15
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "ai-use-summary",
+          "description": "AI Use Summary — Identifies AI tools, explains their role in data collection and processing, and reports verification of selected results.",
+          "points": 5,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 5
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "final-project-2-rubric",
+      "title": "Assignment 2 — Tableau Public Data Source and Dashboard",
+      "assignment": "final-project-2",
+      "use_for_grading": true,
+      "scoring": "ratings",
+      "criteria": [
+        {
+          "key": "data-source",
+          "description": "Published and prepared data source — Accessible source; Operations and Address excluded; correct date type, dimensions, geographic roles, measures, and hierarchy.",
+          "points": 10,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 10
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "lod-calculations",
+          "description": "FIXED LOD rate calculations — Correct deaths and injuries per 1,000 using county-level FIXED population; saved and used without repeated-population errors.",
+          "points": 10,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 10
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "required-charts",
+          "description": "Required charts — Geographic view, time-series chart, and at least one chart of choice; no more than five views in total.",
+          "points": 10,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 10
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "parameter-and-filter",
+          "description": "Parameter and filter actions — All three metrics switch in geographic and time-series views; dynamic titles update; county filter works and resets correctly.",
+          "points": 10,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 10
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "dashboard-design",
+          "description": "Dashboard design and clarity — Five-second principle, readable layout, appropriate colors, legends, labels, units, and source/date notes.",
+          "points": 10,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 10
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "final-project-3-rubric",
+      "title": "Assignment 3 — Video Presentation",
+      "assignment": "final-project-3",
+      "use_for_grading": true,
+      "scoring": "ratings",
+      "criteria": [
+        {
+          "key": "storytelling",
+          "description": "Storytelling and findings — Complete, logical account of data collection, preparation, calculated fields, actual charts, findings, and conclusion; each required chart explained.",
+          "points": 10,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 10
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        },
+        {
+          "key": "video-presentation",
+          "description": "Video presentation — 5–10 slides, clear narration on every slide, readable screenshots of the student's own charts, and a playable 2–3-minute MP4.",
+          "points": 10,
+          "ratings": [
+            {
+              "key": "pass",
+              "description": "PASS",
+              "points": 10
+            },
+            {
+              "key": "missing",
+              "description": "MISSING",
+              "points": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "key": "final-project",
+      "title": "Final Project",
+      "published": true,
+      "items": [
+        {
+          "key": "final-project-instructions",
+          "type": "ExternalUrl",
+          "title": "Final Project Instructions",
+          "published": true,
+          "external_url": "https://jmu-data.github.io/IA342/assignments/final-project/",
+          "assignment": null
+        },
+        {
+          "key": "final-project-1",
+          "type": "Assignment",
+          "title": "Assignment 1 — Colab Data Preparation",
+          "published": true,
+          "external_url": null,
+          "assignment": "final-project-1"
+        },
+        {
+          "key": "final-project-2",
+          "type": "Assignment",
+          "title": "Assignment 2 — Tableau Public Data Source and Dashboard",
+          "published": true,
+          "external_url": null,
+          "assignment": "final-project-2"
+        },
+        {
+          "key": "final-project-3",
+          "type": "Assignment",
+          "title": "Assignment 3 — Video Presentation",
+          "published": true,
+          "external_url": null,
+          "assignment": "final-project-3"
+        }
+      ]
+    }
+  ]
+}

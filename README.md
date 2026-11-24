@@ -35,6 +35,7 @@
 - [Lab 11 — Calculations in Tableau](docs/assignments/lab-11/index.html)
 - [Lab 12 — GVA Dashboards in Tableau Public and Gemini Canvas (due Nov 13, 2026, 11:59 PM EST)](docs/assignments/lab-12/index.html)
 - [Lab 13 — Create a Short AI Video (Gemini, Flow and Google Vids)](docs/assignments/lab-13/index.html)
+- [Final Project — Gun Violence, Population, and Income](docs/assignments/final-project/index.html)
 - [Google Skills Hands-on Lab Assignment](docs/assignments/google-skills/index.md)
 
 ## Course Overview
