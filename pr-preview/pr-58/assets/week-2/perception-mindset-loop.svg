@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<rect x="0" y="0" width="1200" height="675" rx="0" fill="#F7F8FA" stroke="none" stroke-width="0" opacity="1"/>
+<text x="70" y="70" font-family="Inter,Arial,sans-serif" font-size="36" font-weight="700" fill="#18212F" text-anchor="start" >Perception and analytic mind-sets</text>
+<text x="70" y="108" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="400" fill="#667085" text-anchor="start" >Existing expectations can shape what evidence is noticed and how it is interpreted.</text>
+<rect x="485" y="136" width="230" height="68" rx="20" fill="#FFFFFF" stroke="#D9DEE7" stroke-width="2" opacity="1"/>
+<text x="600" y="177" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700" fill="#18212F" text-anchor="middle" >EXPECTATIONS</text>
+<rect x="785" y="296" width="230" height="68" rx="20" fill="#FFFFFF" stroke="#D9DEE7" stroke-width="2" opacity="1"/>
+<text x="900" y="337" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700" fill="#18212F" text-anchor="middle" >WHAT WE NOTICE</text>
+<rect x="485" y="466" width="230" height="68" rx="20" fill="#FFFFFF" stroke="#D9DEE7" stroke-width="2" opacity="1"/>
+<text x="600" y="507" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700" fill="#18212F" text-anchor="middle" >INTERPRETATION</text>
+<rect x="185" y="296" width="230" height="68" rx="20" fill="#FFFFFF" stroke="#D9DEE7" stroke-width="2" opacity="1"/>
+<text x="300" y="337" font-family="Inter,Arial,sans-serif" font-size="17" font-weight="700" fill="#18212F" text-anchor="middle" >MENTAL MODEL</text>
+<line x1="600" y1="170" x2="900" y2="330" stroke="#3559E0" stroke-width="3" opacity="1"/><polygon points="886.0079214826628,330.4708914574202 900,330 892.5961567767805,318.1179502809496" fill="#3559E0" stroke="none" stroke-width="0" opacity="1"/>
+<line x1="900" y1="330" x2="600" y2="500" stroke="#3559E0" stroke-width="3" opacity="1"/><polygon points="607.0973704033473,487.93238493497205 600,500 613.9995464110797,500.11269553685264" fill="#3559E0" stroke="none" stroke-width="0" opacity="1"/>
+<line x1="600" y1="500" x2="300" y2="330" stroke="#3559E0" stroke-width="3" opacity="1"/><polygon points="313.9995464110797,329.88730446314736 300,330 307.0973704033473,342.06761506502795" fill="#3559E0" stroke="none" stroke-width="0" opacity="1"/>
+<line x1="300" y1="330" x2="600" y2="170" stroke="#3559E0" stroke-width="3" opacity="1"/><polygon points="592.5961567767805,181.88204971905043 600,170 586.0079214826628,169.52910854257982" fill="#3559E0" stroke="none" stroke-width="0" opacity="1"/>
+<text x="600" y="610" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="600" fill="#3559E0" text-anchor="middle" >Good visualization should expose evidence—not merely confirm expectations.</text>
+</svg>

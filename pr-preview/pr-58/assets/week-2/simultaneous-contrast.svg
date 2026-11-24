@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<rect x="0" y="0" width="1200" height="675" rx="0" fill="#F7F8FA" stroke="none" stroke-width="0" opacity="1"/>
+<text x="70" y="70" font-family="Inter,Arial,sans-serif" font-size="36" font-weight="700" fill="#18212F" text-anchor="start" >Simultaneous contrast</text>
+<text x="70" y="108" font-family="Inter,Arial,sans-serif" font-size="20" font-weight="400" fill="#667085" text-anchor="start" >Two identical gray squares can appear different because of their surroundings.</text>
+<rect x="140" y="170" width="380" height="360" rx="12" fill="#2F3742" stroke="none" stroke-width="0" opacity="1"/>
+<rect x="680" y="170" width="380" height="360" rx="12" fill="#E8EAEE" stroke="none" stroke-width="0" opacity="1"/>
+<rect x="272" y="292" width="116" height="116" rx="4" fill="#8D96A3" stroke="none" stroke-width="0" opacity="1"/>
+<rect x="812" y="292" width="116" height="116" rx="4" fill="#8D96A3" stroke="none" stroke-width="0" opacity="1"/>
+<text x="330" y="575" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" fill="#667085" text-anchor="middle" >same gray</text>
+<text x="870" y="575" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="600" fill="#667085" text-anchor="middle" >same gray</text>
+<line x1="390" y1="350" x2="810" y2="350" stroke="#3559E0" stroke-width="3" opacity="1" stroke-dasharray="9 8"/>
+</svg>

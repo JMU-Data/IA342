@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="light" name="color-scheme"/><meta content="IA342 final project: Colab data preparation, a Tableau Public dashboard, and a 2–3 minute video presentation." name="description"/><title>IA342 Final Project · Course Draft</title><style>
+:root{--purple:#3d2567;--purple-deep:#251841;--purple-soft:#f1edf7;--gold:#c6aa68;--ink:#222938;--muted:#5d6474;--line:#dce0e8;--paper:#fff;--back:#f5f6f9;--teal:#176b69}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;background:var(--back);color:var(--ink);font:16px/1.72 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:#513487;text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#24163e}a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--teal);outline-offset:4px}.skip{position:absolute;top:-80px;left:16px;z-index:20;padding:10px 16px;background:white}.skip:focus{top:16px}
+.topbar{background:var(--purple-deep);color:white;border-bottom:4px solid var(--gold)}.topbar-inner{max-width:1360px;margin:auto;padding:15px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{font-weight:750;letter-spacing:.035em}.draft-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#eee5d2}.hero{max-width:1360px;margin:auto;padding:52px 32px 24px}.hero h1{font-size:clamp(32px,4vw,52px);line-height:1.1;max-width:890px;color:var(--purple-deep);letter-spacing:-.035em;margin:0 0 22px}.hero>p{font-size:14px;line-height:1.9;color:var(--muted);margin:0 0 22px}.hero>p strong{font-weight:550}.hero blockquote{margin:0;max-width:1050px;background:#fffaf0;border:1px solid #e9d6a8;border-left:4px solid var(--gold);border-radius:0 10px 10px 0;padding:14px 19px;font-size:14px}.hero blockquote p{margin:0}
+.scorecards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1360px;margin:0 auto;padding:0 32px 32px}.scorecard{display:block;text-decoration:none;color:var(--ink);background:white;border:1px solid var(--line);border-radius:13px;padding:20px 23px;box-shadow:0 2px 6px #25184105}.scorecard:hover{border-color:var(--purple);color:var(--ink)}.scorecard .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:750;color:var(--muted)}.scorecard .number{font-size:38px;line-height:1.2;color:var(--purple);font-weight:800;letter-spacing:-.04em;float:right}.scorecard .number small{font-size:12px;font-weight:600;letter-spacing:0}.scorecard h2{font-size:18px;margin:9px 0 3px}.scorecard p{font-size:13px;color:var(--muted);margin:0}
+.layout{max-width:1360px;padding:0 32px 64px;margin:auto;display:grid;grid-template-columns:230px minmax(0,1fr);gap:26px;align-items:start}aside{position:sticky;top:28px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:21px 17px}aside .label{font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.12em;margin:0 10px 11px;text-transform:uppercase}aside a{display:block;font-size:13px;line-height:1.45;padding:9px 10px;text-decoration:none;color:#454258;border-radius:6px}aside a:hover{background:var(--purple-soft);color:var(--purple)}.aside-foot{font-size:12px;border-top:1px solid var(--line);margin:14px 10px 0;padding-top:14px;color:var(--muted)}main{min-width:0;background:white;border:1px solid var(--line);border-radius:14px;padding:18px 40px 36px;box-shadow:0 4px 16px #25184105}main h2{font-size:27px;line-height:1.26;letter-spacing:-.025em;color:var(--purple);border-top:2px solid var(--purple-soft);padding-top:35px;margin:42px 0 20px}main h2:first-child{border:0;margin-top:12px;padding-top:9px}main h3{font-size:20px;line-height:1.35;color:var(--purple-deep);margin:31px 0 13px}p{margin:13px 0}ul,ol{padding-left:24px;margin:15px 0}li{padding-left:3px;margin:8px 0}li>p{margin:8px 0}strong{font-weight:700}blockquote{background:var(--purple-soft);border-left:4px solid #8264ab;padding:12px 20px;margin:20px 0;border-radius:0 9px 9px 0}blockquote p{margin:6px 0;font-size:14px}.table-wrap{overflow-x:auto;margin:20px 0;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.55}th{background:var(--purple-soft);color:var(--purple-deep);text-align:left;font-size:13px;padding:12px 14px;border-bottom:1px solid #d7cde5}td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}tbody tr:nth-child(even){background:#fafafd}tbody tr:last-child td{border-bottom:0}td:first-child{min-width:130px}th[align=right],td[align=right]{text-align:right;white-space:nowrap}code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.86em;background:#f0f1f6;color:#51326f;padding:.1em .35em;border-radius:4px;overflow-wrap:anywhere}pre{background:#232538;color:#f0f1fa;border-radius:10px;padding:21px 24px;overflow:auto;font-size:14px;line-height:1.7;margin:20px 0}pre code{padding:0;background:none;color:inherit;overflow-wrap:normal;font-size:inherit}input[type=checkbox]{accent-color:var(--purple);margin-right:6px}footer{max-width:1360px;margin:auto;padding:0 32px 32px;font-size:12px;color:var(--muted)}.footer-line{border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;gap:20px}
+@media(max-width:1050px){.layout{grid-template-columns:190px minmax(0,1fr);gap:18px}main{padding:18px 25px 30px}.scorecard{padding:17px}.scorecard h2{font-size:16px}.scorecard .number{font-size:32px}}
+@media(max-width:760px){body{font-size:15px}.topbar-inner{padding:14px 20px;align-items:flex-start}.brand{font-size:13px}.draft-label{font-size:9px;max-width:125px;text-align:right}.hero{padding:32px 20px 22px}.hero blockquote{font-size:13px}.scorecards{padding:0 20px 23px;gap:9px}.scorecard{padding:13px 11px}.scorecard .number{float:none;font-size:29px;display:block;margin:7px 0}.scorecard .eyebrow{font-size:9px}.scorecard h2{font-size:13px;line-height:1.3;margin:5px 0}.scorecard p{font-size:11px;line-height:1.4}.layout{display:block;padding:0 12px 32px}aside{position:static;border-radius:10px;margin:0 8px 18px;padding:14px}aside nav{display:grid;grid-template-columns:1fr 1fr}aside a{font-size:12px;padding:7px 8px}.aside-foot{display:none}main{padding:14px 20px 28px;border-radius:10px}main h2{font-size:23px;padding-top:28px;margin-top:34px}main h3{font-size:18px}td,th{padding:10px 11px}table{font-size:12px;min-width:520px}th{font-size:12px}pre{padding:16px;font-size:12px}footer{padding:0 20px 24px}.footer-line{display:block}.footer-line span{display:block}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{@page{size:Letter;margin:.65in}body{background:white;font-size:10pt;line-height:1.5}.skip,.topbar,aside,.scorecards{display:none}.hero{padding:0;margin:0}.hero h1{font-size:28pt}.hero>p{font-size:9pt}.hero blockquote{font-size:9pt;padding:10px;margin-bottom:18px}.layout{display:block;padding:0;margin:0}main{padding:0;border:none;box-shadow:none}main h2{font-size:17pt;margin-top:24px;padding-top:12px;break-after:avoid}main h3{font-size:12pt;break-after:avoid}pre{font-size:8pt;white-space:pre-wrap;break-inside:avoid;color:#222;background:#f4f4f4}pre code{color:#222}table{font-size:8pt;min-width:0}.table-wrap{overflow:visible;border-radius:0}th{font-size:8pt}td,th{padding:7px}tr{break-inside:avoid}thead{display:table-header-group}a{color:#342452}footer{padding:20px 0 0}.footer-line{font-size:8pt}blockquote{break-inside:avoid}}
+
+figure{margin:24px 0;border:1px solid var(--line);border-radius:10px;padding:12px;background:#fafafd;break-inside:avoid}figure img{display:block;max-width:100%;height:auto;margin:auto;border-radius:5px}figcaption{font-size:13px;line-height:1.6;color:var(--muted);margin:13px 4px 3px}.policy{border-left:4px solid #9b2c36;background:#fff5f4;padding:13px 18px;border-radius:0 8px 8px 0}.rubric-title{border-left:5px solid var(--gold);padding:8px 14px;background:#fffaf0}.table-wrap:focus{outline-offset:3px}h2,h3{scroll-margin-top:24px}@media(max-width:760px){figure{padding:5px;margin:18px -9px}figcaption{font-size:12px;padding:4px}.scorecards .eyebrow{letter-spacing:.04em}}@media print{figure{padding:6px}figcaption{font-size:8pt}figure img{max-height:7in}}
+
+/* Keep the notebook sharing dialog compact on wide screens. */
+.colab-share-figure{max-width:468px;margin:22px auto}.colab-share-figure img{display:block;width:100%;max-width:430px;height:auto;margin:0 auto}
+@media(max-width:760px){.colab-share-figure{max-width:100%;margin:18px auto}.colab-share-figure img{max-width:100%}}
+
+figure.share-figure{max-width:478px;margin:20px auto;padding:12px}figure.share-figure img{width:430px;max-width:100%;height:auto;margin:auto}
+
+.share-figure{max-width:460px;margin:22px auto}.share-figure img{display:block;width:430px;max-width:100%;height:auto;margin:0 auto} .total-row td{background:#f1edf7;font-weight:700}
+</style></head><body>
+<a class="skip" href="#main">Skip to project instructions</a><div class="topbar"><div class="topbar-inner"><span class="brand">JMU · IA342</span><span class="draft-label">Final Project</span></div></div>
+<header class="hero"><h1>Final Project: Gun Violence, Population, and Income</h1>
+<p><strong>IA342 · Visualization Methods and Tools · Fall 2026</strong><br/>
+<strong>Individual project · 100 points</strong><br/>
+<strong>Submission deadlines: December 4, 11, and 16, 2026 · 11:59 PM EST (Eastern Time)</strong></p>
+<blockquote>
+<p><strong>Late submissions are not accepted.</strong> Missing, late, or inaccessible submissions receive <strong>0 for the affected assignment</strong>. Resubmissions for regrading are not accepted.</p>
+<p>Feedback will be provided as promptly as possible after each submission; however, feedback before the next deadline is not guaranteed. Students may use feedback to improve their work for subsequent assignments. Revisions made after an assignment’s deadline will not affect its grade.</p>
+</blockquote>
+</header><div aria-label="Three assignments" class="scorecards"><a class="scorecard" href="#assignment-1"><span class="eyebrow">Assignment 1 · Data</span><span class="number">30 <small>pts</small></span><h2>Colab + Census</h2><p>Submit notebook and CSV URLs</p><p><strong>Due Fri, Dec 4</strong></p></a><a class="scorecard" href="#assignment-2"><span class="eyebrow">Assignment 2 · Dashboard</span><span class="number">50 <small>pts</small></span><h2>Tableau Public</h2><p>Submit your profile URL</p><p><strong>Due Fri, Dec 11</strong></p></a><a class="scorecard" href="#assignment-3"><span class="eyebrow">Assignment 3 · Video</span><span class="number">20 <small>pts</small></span><h2>2–3 minute video</h2><p>Upload the final MP4</p><p><strong>Due Wed, Dec 16</strong></p></a></div>
+<div class="layout"><aside><p class="label">In this project</p><nav aria-label="On this page"><a href="#project-overview">Project overview</a><a href="#assignment-1">Assignment 1 · Colab + rubric</a><a href="#assignment-2">Assignment 2 · Tableau + rubric</a><a href="#assignment-3">Assignment 3 · Video + rubric</a><a href="#class-schedule">Class schedule</a><a href="#final-submission-check">Final submission check</a></nav><p class="aside-foot">Dec 4 · Colab<br/>Dec 11 · Tableau<br/>Dec 16 · Video<br/>11:59 PM EST<br/>Three assignments · 100 points<br/>No late submissions</p></aside><main id="main"><h2 id="project-overview">Project overview</h2>
+<p>Analyze the state randomly assigned to you. Enrich its Gun Violence Archive (GVA) data with Census data in <strong>Colab</strong>, build an interactive <strong>Tableau Public dashboard</strong>, and present your findings in a <strong>2–3 minute video</strong>.</p>
+<div aria-label="Scrollable table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Canvas assignment</th>
+<th>Submit</th>
+<th>Due date</th>
+<th style="text-align:right">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Assignment 1 — Colab Data Preparation</strong></td>
+<td>Your shared <strong>Colab notebook URL and CSV file URL</strong></td>
+<td><strong>Fri, Dec 4</strong></td>
+<td style="text-align:right">30</td>
+</tr>
+<tr>
+<td><strong>Assignment 2 — Tableau Public Data Source and Dashboard</strong></td>
+<td>Your <strong>Tableau Public profile URL</strong></td>
+<td><strong>Fri, Dec 11</strong></td>
+<td style="text-align:right">50</td>
+</tr>
+<tr>
+<td><strong>Assignment 3 — Video Presentation</strong></td>
+<td>Your finished <strong>MP4 video</strong></td>
+<td><strong>Wed, Dec 16</strong></td>
+<td style="text-align:right">20</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td></td>
+<td style="text-align:right"><strong>100</strong></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="assignment-1">Assignment 1 — Colab Data Preparation · 30 points</h2>
+<p><strong>Due: Friday, December 4, 2026, at 11:59 PM EST.</strong></p>
+<h3 id="1-download-and-load-your-gva-data">1. Download and load your GVA data</h3>
+<p>Open the <a href="https://www.gunviolencearchive.org/query">GVA query page</a>. Set the Location filter to your assigned state, leave City and County blank, and display results as Incidents. Run the search and export the results as a CSV file. Upload the original CSV to <strong>your Google Drive</strong>.</p>
+<figure><img alt="GVA incident search with the Location filter set to Virginia" loading="lazy" src="assets/gva-query.png" width="1484"/><figcaption><p><em>Example: select your assigned state, search for incidents, and download the CSV from the results.</em></p></figcaption></figure>
+
+<p>Create a Colab notebook. Tell Gemini your <strong>state, incident-date range, and Drive file path</strong>. Ask it to mount Google Drive, load the CSV, and inspect the data. Run the code and save the outputs.</p>
+<p>Show the source, download date, incident-date range, row count, distinct Incident ID count, and a data preview. Remove duplicate incidents, retain valid zero counts, and note any gaps in the downloaded data.</p>
+<h3 id="2-retrieve-and-verify-census-data">2. Retrieve and verify Census data</h3>
+<p>Use your <strong>IA340 Census API key</strong>, or <a href="https://api.census.gov/data/key_signup.html">request a new key</a>. Store it in <strong>Colab Secrets</strong>. Refer to <a href="https://jmu-data.github.io/IA340/modules/module-5/">IA340 Module 5</a> for the API and Secrets workflow.</p>
+<p>Use <strong>2024 ACS 5-year data</strong> for all Census fields. Confirm that your code requests <code>/2024/acs/acs5</code>.</p>
+<p>Ask Gemini to help you retrieve these fields from the <a href="https://www.census.gov/data/developers/data-sets/acs-5year.html">Census API</a> for the counties and county equivalents in your state:</p>
+<div aria-label="Scrollable table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Required field</th>
+<th>Census variable / identifier</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Population</strong></td>
+<td><code>B01003_001E</code></td>
+</tr>
+<tr>
+<td><strong>Median Household Income</strong></td>
+<td><code>B19013_001E</code></td>
+</tr>
+<tr>
+<td>State and county name</td>
+<td><code>NAME</code>, with the correct state</td>
+</tr>
+<tr>
+<td>County or city FIPS (<code>fips</code>)</td>
+<td>Five-digit Census county/county-equivalent code; preserve leading zeros</td>
+</tr>
+</tbody>
+</table></div>
+<p>Use Gemini to match the GVA <strong>State</strong> and <strong>City Or County</strong> fields to the 2024 Census data and add a five-digit <code>fips</code> for each matched location. Keep leading zeros; leave unmatched values blank.</p>
+<p><strong>Manually verify a few Census data values</strong> against the Census API or an official Census table. Check the accuracy of the matched FIPS, population, and median household income.</p>
+<h3 id="3-combine-save-and-reopen-the-csv">3. Combine, save, and reopen the CSV</h3>
+<p>Preserve all original GVA columns, including <strong>Incident ID</strong>, <strong>Incident Date</strong>, <strong>Victims Killed</strong>, and <strong>Victims Injured</strong>. Append these three columns from the 2024 Census data: <strong><code>population</code></strong>, <strong><code>median_household_income</code></strong>, and <strong><code>fips</code></strong>. Keep one row per incident and check that the number of incidents has not changed after matching.</p>
+<p>Save the combined CSV to <strong>your Google Drive</strong>, then <strong>reopen that saved file in Colab</strong>. Display its columns, row count, and a preview showing the matched Census values. Use this CSV in Assignment 2.</p>
+<p><strong>Example output</strong></p>
+<figure><img alt="Combined GVA and Census data saved as a CSV in Google Drive" loading="lazy" src="assets/combined-data.png" width="1520"/><figcaption><p><em>Example of the combined GVA records with 2024 Census population, median household income, and FIPS added (incident IDs and addresses obscured for publication).</em></p></figcaption></figure>
+
+<p><strong>Gemini prompt to adapt</strong></p>
+<blockquote>
+<p>My state is [state]. My GVA CSV covers [dates] and is saved at [Drive path]. Help me load the file from Drive and retrieve <strong>2024 ACS 5-year</strong> population, median household income, and FIPS using my Census API key stored in Colab Secrets. Preserve the original columns and add <code>population</code>, <code>median_household_income</code>, and <code>fips</code>. Help me verify selected data values against Census, save the combined CSV to Drive, and reopen it. Keep my API key private.</p>
+</blockquote>
+<h3 id="4-ai-use-summary">4. AI Use Summary</h3>
+<p>At the end of your Colab notebook, write a brief <strong>AI Use Summary</strong> in a Markdown cell. Identify the AI tools you used, explain how you used them to collect and process the data, and report how you verified selected results and whether they were correct.</p>
+<h3 id="5-share-and-submit">5. Share and submit</h3>
+<p>Share both your <strong>Colab notebook</strong> and your <strong>final combined CSV file</strong> in Google Drive. For each file, set <strong>Share → General access → Anyone with the link → Viewer</strong>, then copy the link. Test both links in an incognito/private window. Keep your notebook code, saved outputs, and AI Use Summary visible.</p>
+<p><strong>Share the Colab notebook</strong></p>
+<figure class="share-figure"><img alt="Colab notebook sharing settings: Anyone with the link and Viewer" class="share-shot" loading="lazy" src="assets/colab-share.png" width="430"/></figure>
+<p><strong>Share the final CSV file</strong></p>
+<figure><img alt="Google Drive CSV file sharing dialog set to Anyone with the link and Viewer" loading="lazy" src="assets/csv-share.png" width="430"/><figcaption><p><em>Example of sharing the combined CSV directly from Google Drive.</em></p></figcaption></figure>
+
+<p>In <strong>Canvas → Assignment 1 — Colab Data Preparation</strong>, submit both URLs in the same submission:</p>
+<ul>
+<li>Colab notebook URL</li>
+<li>Google Drive URL for the combined CSV file</li>
+</ul>
+<h3 class="rubric-title" id="assignment-1-rubric-30-points">Assignment 1 rubric · 30 points</h3>
+<div aria-label="Scrollable table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th style="text-align:right">Points</th>
+<th>Full-credit evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Colab Notebook</strong></td>
+<td style="text-align:right"><strong>10</strong></td>
+<td>Accessible notebook with code and saved outputs showing the GVA data loaded, Census data retrieved, combined, saved, and reopened.</td>
+</tr>
+<tr>
+<td><strong>CSV Dataset</strong></td>
+<td style="text-align:right"><strong>15</strong></td>
+<td>Accessible combined CSV containing the assigned state's downloaded GVA records and the required 2024 ACS population, median household income, and five-digit FIPS fields. One row per incident; unmatched values remain blank.</td>
+</tr>
+<tr>
+<td><strong>AI Use Summary</strong></td>
+<td style="text-align:right"><strong>5</strong></td>
+<td>Identifies the AI tools used, explains their role in data collection and processing, and reports verification of selected data results.</td>
+</tr>
+<tr>
+<td><strong>Assignment 1 total</strong></td>
+<td style="text-align:right"><strong>30</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Credential penalty:</strong> Exposing an API key or other credential in the notebook, outputs, screenshots, or shared data deducts <strong>10 points from Assignment 1</strong>, to a minimum of zero. Remove and revoke or rotate any exposed key.</p>
+<h2 id="assignment-2">Assignment 2 — Tableau Public Data Source and Dashboard · 50 points</h2>
+<p><strong>Due: Friday, December 11, 2026, at 11:59 PM EST.</strong></p>
+<h3 id="part-a-data-source-and-calculations">Part A. Data source and calculations</h3>
+<p>Follow <a href="https://jmu-data.github.io/IA342/assignments/lab-12/">IA342 Lab 12</a> to connect the combined CSV in Google Drive to Tableau Public. Prepare the data source:</p>
+<ul>
+<li><strong>Exclude</strong> <code>Operations</code> (empty in the example) and <code>Address</code> from the <strong>published</strong> data source. Keep your original CSV in Drive.</li>
+<li>Set <code>Incident Date</code> to <strong>Date</strong>.</li>
+<li>Assign <code>State</code> the <strong>State/Province</strong> geographic role and the appropriate <strong>County</strong> or <strong>City</strong> geographic role to your location field. Create a <strong>State → County/City hierarchy</strong>, as appropriate for your data.</li>
+<li>Set <code>Incident ID</code> and <code>fips</code> to <strong>Dimensions</strong>. Store <code>fips</code> as five-digit text, including leading zeros.</li>
+<li>Keep <code>Victims Killed</code> and <code>Victims Injured</code> as numeric measures. You may also keep <code>Suspects Killed</code>, <code>Suspects Injured</code>, and <code>Suspects Arrested</code> for additional charts.</li>
+<li>Confirm that <code>population</code> and <code>median_household_income</code> are numeric.</li>
+</ul>
+<p>Create both measures using the <strong>FIXED level-of-detail (LOD)</strong> approach from <a href="https://jmu-data.github.io/IA342/assignments/lab-11/">IA342 Lab 11</a>:</p>
+<div aria-label="Scrollable table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Required measure</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GVA deaths per 1,000 residents</strong></td>
+<td>Recorded deaths relative to the county population for the incident period</td>
+</tr>
+<tr>
+<td><strong>GVA injuries per 1,000 residents</strong></td>
+<td>Recorded injuries relative to the county population for the incident period</td>
+</tr>
+</tbody>
+</table></div>
+<p>Create <strong><code>fixed pop</code></strong> using a FIXED LOD by <strong><code>fips</code></strong>, following Lab 11. Do not add the same population once for every incident row. Calculate both measures <strong>per 1,000 residents</strong>, not as percentages; leave rates missing when population is unavailable or nonpositive.</p>
+<p>Save <code>fixed pop</code> and both rate calculations with your Tableau data source. Verify a few calculated values. Use matched FIPS and valid population for the rate calculations. Do not sum repeated population or income values across incident records.</p>
+<p>Some counties may have no matched data. <strong>Missing values and blank areas are acceptable</strong>; they do not indicate zero incidents.</p>
+<figure><img alt="Tableau data pane showing dimensions, geographic hierarchy, and calculated measures" loading="lazy" src="assets/tableau-fields.png" width="693"/><figcaption><p><em>Illustration: a prepared data source with FIXED population and both rate calculations.</em></p></figcaption></figure>
+
+<figure><img alt="Tableau demonstration of a table used to compare fixed population, raw population sums, and injury rates" loading="lazy" src="assets/calculation-check.png" width="906"/><figcaption><p><em>Illustration: a table for verifying FIXED population and rate calculations. Null values may occur where Census data could not be matched.</em></p></figcaption></figure>
+
+<h3 id="part-b-interactive-dashboard">Part B. Interactive dashboard</h3>
+<p>Build an <strong>interactive dashboard with at least three charts and no more than five views in total</strong>. Include the following three required charts:</p>
+<div aria-label="Scrollable table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Chart</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Geographic view</strong></td>
+<td>Show county-level median household income, deaths per 1,000 residents, and injuries per 1,000 residents, using the full available incident period.</td>
+</tr>
+<tr>
+<td><strong>2. Time-series chart</strong></td>
+<td>Show the selected metric over time for your assigned state, using the available data (for example, a monthly line chart).</td>
+</tr>
+<tr>
+<td><strong>3. Chart of your choice</strong></td>
+<td>Explore an additional question, such as the relationship between income and a rate in a scatter plot, or total deaths by county in a bar chart.</td>
+</tr>
+</tbody>
+</table></div>
+<p>You may add up to two additional views. The screenshots below are <strong>for illustration purposes only</strong>; you may use different chart designs.</p>
+<p><strong>Parameter control.</strong> Following <a href="https://jmu-data.github.io/IA342/assignments/lab-12/">Lab 12</a>, use one parameter to switch both the geographic and time-series views among <strong>Median Household Income</strong>, <strong>Deaths per 1,000 Residents</strong>, and <strong>Injuries per 1,000 Residents</strong>. Use dynamic titles that reflect the selected metric.</p>
+<p><strong>Example 1 — County map</strong></p>
+<figure><img alt="Illustrative Virginia Tableau county map with a three-option metric parameter" loading="lazy" src="assets/map-example.png" width="1357"/><figcaption><p><em>Illustration: a geographic view with a metric selection parameter. Some counties may have no matched data.</em></p></figcaption></figure>
+
+<p><strong>Example 2 — Time-series chart</strong></p>
+<figure><img alt="Illustrative Tableau monthly line chart controlled by the same three-option parameter" loading="lazy" src="assets/time-series-example.png" width="1335"/><figcaption><p><em>Illustration: a monthly line chart using the same parameter. Income reflects the locations represented in each period, not changes in 2024 household income. Rates describe the population represented by the matched data.</em></p></figcaption></figure>
+
+<p><strong>Interactivity.</strong> A county filter action is required. Selecting a county in the geographic view must update the time-series chart. Clearing the selection should restore the view for the state. Additional interactions are optional.</p>
+<p><strong>Design.</strong> Apply the <strong>five-second principle</strong>. Use appropriate colors, readable legends, clear titles and units, and a well-organized layout. Identify the state, data sources, and dates.</p>
+<h3 id="publish-and-submit">Publish and submit</h3>
+<p>Publish the <strong>data source and dashboard/workbook</strong> to your Tableau Public profile with clear final-project names. Check the published data for unnecessary addresses or credentials, and make sure the source and calculated fields can be inspected.</p>
+<p>Test the profile in an incognito/private window. Confirm that the dashboard opens and that the parameter and filter action work. Report publication or access problems to the instructor before the deadline.</p>
+<p>In <strong>Canvas → Assignment 2 — Tableau Public Data Source and Dashboard → Website URL</strong>, submit your <strong>Tableau Public profile URL</strong>.</p>
+<h3 class="rubric-title" id="assignment-2-rubric-50-points">Assignment 2 rubric · 50 points</h3>
+<p><strong>Data source — 20 points</strong></p>
+<div aria-label="Scrollable table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th style="text-align:right">Points</th>
+<th>Full-credit evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Published and prepared data source</strong></td>
+<td style="text-align:right"><strong>10</strong></td>
+<td>Accessible source; <code>Operations</code> and <code>Address</code> excluded; correct date type, dimensions, geographic roles, measures, and State → County/City hierarchy where appropriate.</td>
+</tr>
+<tr>
+<td><strong>Both FIXED LOD rate calculations</strong></td>
+<td style="text-align:right"><strong>10</strong></td>
+<td>Correct deaths and injuries per 1,000 residents using county-level FIXED population; formulas are saved in Tableau, avoid repeated-population errors, and are used in the dashboard.</td>
+</tr>
+<tr>
+<td><strong>Data source subtotal</strong></td>
+<td style="text-align:right"><strong>20</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Dashboard — 30 points</strong></p>
+<div aria-label="Scrollable table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th style="text-align:right">Points</th>
+<th>Full-credit evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Required charts</strong></td>
+<td style="text-align:right"><strong>10</strong></td>
+<td>Includes the geographic view, time-series chart, and at least one chart of the student’s choice; no more than five views in total.</td>
+</tr>
+<tr>
+<td><strong>Parameter controls and filter actions</strong></td>
+<td style="text-align:right"><strong>10</strong></td>
+<td>The parameter switches all three metrics in the geographic and time-series views; dynamic titles update; the required county filter works and resets correctly.</td>
+</tr>
+<tr>
+<td><strong>Dashboard design and clarity</strong></td>
+<td style="text-align:right"><strong>10</strong></td>
+<td>Five-second principle, readable layout, appropriate colors, legends, labels, units, and source/date notes.</td>
+</tr>
+<tr>
+<td><strong>Dashboard subtotal</strong></td>
+<td style="text-align:right"><strong>30</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Assignment 2 total</strong></td>
+<td style="text-align:right"><strong>50</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="assignment-3">Assignment 3 — Video Presentation · 20 points</h2>
+<p><strong>Due: Wednesday, December 16, 2026, at 11:59 PM EST.</strong></p>
+<h3 id="1-create-your-presentation">1. Create your presentation</h3>
+<p>Create a <strong>Google Slides presentation of 5–10 slides</strong> that tells a complete story about your project. Use actual screenshots of your Tableau dashboard and its charts to explain your analysis and findings. You may capture screenshots of your dashboard’s charts under different parameter or filter selections to illustrate your findings.</p>
+<p>Your presentation should cover:</p>
+<ul>
+<li>Introduction to your project and assigned state.</li>
+<li>Data collection: GVA and 2024 Census data.</li>
+<li>Data preparation and calculated fields: how you combined the data and calculated your rates.</li>
+<li>Dashboard and findings: explain each of the three required charts individually and what you learned from them.</li>
+<li>Conclusion: summarize your main findings.</li>
+</ul>
+<h3 id="2-produce-your-video">2. Produce your video</h3>
+<p>Write a narration script for <strong>every slide</strong>. Use AI voice-over to narrate each slide; a speaking AI avatar may also deliver the narration. Your narration should explain the visuals and findings, not simply read the slide titles.</p>
+<p>Use <a href="https://jmu-data.github.io/IA342/assignments/lab-13/">IA342 Lab 13 — Flow and Vids</a> as a reference. Assemble the presentation into a <strong>2–3 minute MP4 video</strong>. Make sure the charts are readable and the narration is clear. Export and watch the finished video to check the duration and sound.</p>
+<p><strong>Optional enhancements:</strong> AI avatars, Flow-generated video clips, Gemini-generated infographics, or background music. These are optional and do not affect your score. If you use generated visuals, keep them relevant and non-graphic and distinguish them from actual project data.</p>
+<h3 id="submit-the-video">Submit the video</h3>
+<p>In <strong>Canvas → Assignment 3 — Video Presentation → File Upload</strong>, upload only your finished <strong>MP4 video</strong>. Check that it plays with sound.</p>
+<h3 class="rubric-title" id="assignment-3-rubric-20-points">Assignment 3 rubric · 20 points</h3>
+<div aria-label="Scrollable table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Criterion</th>
+<th style="text-align:right">Points</th>
+<th>Full-credit evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Storytelling and findings</strong></td>
+<td style="text-align:right"><strong>10</strong></td>
+<td>Complete, logical presentation of data collection, preparation, calculated fields, actual dashboard charts, findings, and conclusion. Each required chart is clearly explained.</td>
+</tr>
+<tr>
+<td><strong>Video presentation</strong></td>
+<td style="text-align:right"><strong>10</strong></td>
+<td>Uses 5–10 slides, includes clear narration on every slide, shows readable screenshots of the student's own charts, and is a playable MP4 lasting 2–3 minutes.</td>
+</tr>
+<tr>
+<td><strong>Assignment 3 total</strong></td>
+<td style="text-align:right"><strong>20</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="class-schedule">Class schedule</h2>
+<div aria-label="Scrollable table" class="table-wrap" role="region" tabindex="0"><table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Format</th>
+<th>Attendance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Monday, November 30, 2026</strong></td>
+<td>In-person class</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><strong>Wednesday, December 2, 2026</strong></td>
+<td>In-person class</td>
+<td><strong>Required</strong></td>
+</tr>
+<tr>
+<td><strong>Monday, December 7, 2026</strong></td>
+<td>Optional Zoom help during regular class time; Zoom link on Canvas. No separate office hours.</td>
+<td><strong>Not required</strong></td>
+</tr>
+<tr>
+<td><strong>Wednesday, December 9, 2026</strong></td>
+<td>Optional Zoom help during regular class time; Zoom link on Canvas. No separate office hours.</td>
+<td><strong>Not required</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>If you have questions on December 7 or 9, join the Zoom meeting during our regular class time using the link posted on Canvas.</p>
+<h2 id="final-submission-check">Final submission check</h2>
+<p>Submit each assignment by its own deadline: <strong>December 4, 11, and 16, 2026, at 11:59 PM EST</strong>, respectively. Confirm successful Canvas submissions, both Assignment 1 URLs, the Tableau Public profile URL, and a playable MP4. Keep the submitted work and sharing settings available for grading.</p>
+</main></div>
+<footer><div class="footer-line"><span>IA342 · Fall 2026 · Final Project</span><span>Due Dec 4, 11, and 16, 2026 · 11:59 PM EST</span></div></footer></body></html>

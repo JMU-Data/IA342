@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Final Project: Gun Violence, Population, and Income | IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Final Project: Gun Violence, Population, and Income" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<meta property="og:description" content="James Madison University · Intelligence Analysis · Fall 2026" />
+<link rel="canonical" href="https://jmu-data.github.io/IA342/pr-preview/pr-58/assignments/final-project/source.html" />
+<meta property="og:url" content="https://jmu-data.github.io/IA342/pr-preview/pr-58/assignments/final-project/source.html" />
+<meta property="og:site_name" content="IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Final Project: Gun Violence, Population, and Income" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"James Madison University · Intelligence Analysis · Fall 2026","headline":"Final Project: Gun Violence, Population, and Income","url":"https://jmu-data.github.io/IA342/pr-preview/pr-58/assignments/final-project/source.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/IA342/pr-preview/pr-58/assets/css/style.css?v=7b4c567da7d92f27052c496e6393ab2b8e54e5bd">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/IA342/pr-preview/pr-58/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://jmu-data.github.io/IA342/pr-preview/pr-58/">IA 342: Visualization Methods, Technologies, and Tools for Intelligence Analysis</a></h1>
+      
+
+      <h1 id="final-project-gun-violence-population-and-income">Final Project: Gun Violence, Population, and Income</h1>
+
+<p><strong>IA342 · Visualization Methods and Tools · Fall 2026</strong><br />
+<strong>Individual project · 100 points</strong><br />
+<strong>Submission deadlines: December 4, 11, and 16, 2026 · 11:59 PM EST (Eastern Time)</strong></p>
+
+<blockquote>
+  <p><strong>Late submissions are not accepted.</strong> Missing, late, or inaccessible submissions receive <strong>0 for the affected assignment</strong>. Resubmissions for regrading are not accepted.</p>
+
+  <p>Feedback will be provided as promptly as possible after each submission; however, feedback before the next deadline is not guaranteed. Students may use feedback to improve their work for subsequent assignments. Revisions made after an assignment’s deadline will not affect its grade.</p>
+</blockquote>
+
+<h2 id="project-overview">Project overview</h2>
+
+<p>Analyze the state randomly assigned to you. Enrich its Gun Violence Archive (GVA) data with Census data in <strong>Colab</strong>, build an interactive <strong>Tableau Public dashboard</strong>, and present your findings in a <strong>2–3 minute video</strong>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Canvas assignment</th>
+      <th>Submit</th>
+      <th>Due date</th>
+      <th style="text-align: right">Points</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Assignment 1 — Colab Data Preparation</strong></td>
+      <td>Your shared <strong>Colab notebook URL and CSV file URL</strong></td>
+      <td><strong>Fri, Dec 4</strong></td>
+      <td style="text-align: right">30</td>
+    </tr>
+    <tr>
+      <td><strong>Assignment 2 — Tableau Public Data Source and Dashboard</strong></td>
+      <td>Your <strong>Tableau Public profile URL</strong></td>
+      <td><strong>Fri, Dec 11</strong></td>
+      <td style="text-align: right">50</td>
+    </tr>
+    <tr>
+      <td><strong>Assignment 3 — Video Presentation</strong></td>
+      <td>Your finished <strong>MP4 video</strong></td>
+      <td><strong>Wed, Dec 16</strong></td>
+      <td style="text-align: right">20</td>
+    </tr>
+    <tr>
+      <td><strong>Total</strong></td>
+      <td> </td>
+      <td> </td>
+      <td style="text-align: right"><strong>100</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="assignment-1--colab-data-preparation--30-points">Assignment 1 — Colab Data Preparation · 30 points</h2>
+
+<p><strong>Due: Friday, December 4, 2026, at 11:59 PM EST.</strong></p>
+
+<h3 id="1-download-and-load-your-gva-data">1. Download and load your GVA data</h3>
+
+<p>Open the <a href="https://www.gunviolencearchive.org/query">GVA query page</a>. Set the Location filter to your assigned state, leave City and County blank, and display results as Incidents. Run the search and export the results as a CSV file. Upload the original CSV to <strong>your Google Drive</strong>.</p>
+
+<p><img src="/IA342/pr-preview/pr-58/assignments/final-project/assets/gva-query.png" alt="GVA incident search with the Location filter set to Virginia" /></p>
+
+<p><em>Example: select your assigned state, search for incidents, and download the CSV from the results.</em></p>
+
+<p>Create a Colab notebook. Tell Gemini your <strong>state, incident-date range, and Drive file path</strong>. Ask it to mount Google Drive, load the CSV, and inspect the data. Run the code and save the outputs.</p>
+
+<p>Show the source, download date, incident-date range, row count, distinct Incident ID count, and a data preview. Remove duplicate incidents, retain valid zero counts, and note any gaps in the downloaded data.</p>
+
+<h3 id="2-retrieve-and-verify-census-data">2. Retrieve and verify Census data</h3>
+
+<p>Use your <strong>IA340 Census API key</strong>, or <a href="https://api.census.gov/data/key_signup.html">request a new key</a>. Store it in <strong>Colab Secrets</strong>. Refer to <a href="https://jmu-data.github.io/IA340/modules/module-5/">IA340 Module 5</a> for the API and Secrets workflow.</p>
+
+<p>Use <strong>2024 ACS 5-year data</strong> for all Census fields. Confirm that your code requests <code class="language-plaintext highlighter-rouge">/2024/acs/acs5</code>.</p>
+
+<p>Ask Gemini to help you retrieve these fields from the <a href="https://www.census.gov/data/developers/data-sets/acs-5year.html">Census API</a> for the counties and county equivalents in your state:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Required field</th>
+      <th>Census variable / identifier</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Population</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">B01003_001E</code></td>
+    </tr>
+    <tr>
+      <td><strong>Median Household Income</strong></td>
+      <td><code class="language-plaintext highlighter-rouge">B19013_001E</code></td>
+    </tr>
+    <tr>
+      <td>State and county name</td>
+      <td><code class="language-plaintext highlighter-rouge">NAME</code>, with the correct state</td>
+    </tr>
+    <tr>
+      <td>County or city FIPS (<code class="language-plaintext highlighter-rouge">fips</code>)</td>
+      <td>Five-digit Census county/county-equivalent code; preserve leading zeros</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Use Gemini to match the GVA <strong>State</strong> and <strong>City Or County</strong> fields to the 2024 Census data and add a five-digit <code class="language-plaintext highlighter-rouge">fips</code> for each matched location. Keep leading zeros; leave unmatched values blank.</p>
+
+<p><strong>Manually verify a few Census data values</strong> against the Census API or an official Census table. Check the accuracy of the matched FIPS, population, and median household income.</p>
+
+<h3 id="3-combine-save-and-reopen-the-csv">3. Combine, save, and reopen the CSV</h3>
+
+<p>Preserve all original GVA columns, including <strong>Incident ID</strong>, <strong>Incident Date</strong>, <strong>Victims Killed</strong>, and <strong>Victims Injured</strong>. Append these three columns from the 2024 Census data: <strong><code class="language-plaintext highlighter-rouge">population</code></strong>, <strong><code class="language-plaintext highlighter-rouge">median_household_income</code></strong>, and <strong><code class="language-plaintext highlighter-rouge">fips</code></strong>. Keep one row per incident and check that the number of incidents has not changed after matching.</p>
+
+<p>Save the combined CSV to <strong>your Google Drive</strong>, then <strong>reopen that saved file in Colab</strong>. Display its columns, row count, and a preview showing the matched Census values. Use this CSV in Assignment 2.</p>
+
+<p><strong>Example output</strong></p>
+
+<p><img src="/IA342/pr-preview/pr-58/assignments/final-project/assets/combined-data.png" alt="Combined GVA and Census data saved as a CSV in Google Drive" /></p>
+
+<p><em>Example of the combined GVA records with 2024 Census population, median household income, and FIPS added (incident IDs and addresses obscured for publication).</em></p>
+
+<p><strong>Gemini prompt to adapt</strong></p>
+
+<blockquote>
+  <p>My state is [state]. My GVA CSV covers [dates] and is saved at [Drive path]. Help me load the file from Drive and retrieve <strong>2024 ACS 5-year</strong> population, median household income, and FIPS using my Census API key stored in Colab Secrets. Preserve the original columns and add <code class="language-plaintext highlighter-rouge">population</code>, <code class="language-plaintext highlighter-rouge">median_household_income</code>, and <code class="language-plaintext highlighter-rouge">fips</code>. Help me verify selected data values against Census, save the combined CSV to Drive, and reopen it. Keep my API key private.</p>
+</blockquote>
+
+<h3 id="4-ai-use-summary">4. AI Use Summary</h3>
+
+<p>At the end of your Colab notebook, write a brief <strong>AI Use Summary</strong> in a Markdown cell. Identify the AI tools you used, explain how you used them to collect and process the data, and report how you verified selected results and whether they were correct.</p>
+
+<h3 id="5-share-and-submit">5. Share and submit</h3>
+
+<p>Share both your <strong>Colab notebook</strong> and your <strong>final combined CSV file</strong> in Google Drive. For each file, set <strong>Share → General access → Anyone with the link → Viewer</strong>, then copy the link. Test both links in an incognito/private window. Keep your notebook code, saved outputs, and AI Use Summary visible.</p>
+
+<p><strong>Share the Colab notebook</strong></p>
+
+<p><img src="assets/colab-share.png" alt="Colab notebook sharing settings: Anyone with the link and Viewer" width="430" /></p>
+
+<p><strong>Share the final CSV file</strong></p>
+
+<p><img src="assets/csv-share.png" alt="Google Drive CSV file sharing dialog set to Anyone with the link and Viewer" width="430" /></p>
+
+<p><em>Example of sharing the combined CSV directly from Google Drive.</em></p>
+
+<p>In <strong>Canvas → Assignment 1 — Colab Data Preparation</strong>, submit both URLs in the same submission:</p>
+
+<ul>
+  <li>Colab notebook URL</li>
+  <li>Google Drive URL for the combined CSV file</li>
+</ul>
+
+<h3 id="assignment-1-rubric--30-points">Assignment 1 rubric · 30 points</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Criterion</th>
+      <th style="text-align: right">Points</th>
+      <th>Full-credit evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Colab Notebook</strong></td>
+      <td style="text-align: right"><strong>10</strong></td>
+      <td>Accessible notebook with code and saved outputs showing the GVA data loaded, Census data retrieved, combined, saved, and reopened.</td>
+    </tr>
+    <tr>
+      <td><strong>CSV Dataset</strong></td>
+      <td style="text-align: right"><strong>15</strong></td>
+      <td>Accessible combined CSV containing the assigned state’s downloaded GVA records and the required 2024 ACS population, median household income, and five-digit FIPS fields. One row per incident; unmatched values remain blank.</td>
+    </tr>
+    <tr>
+      <td><strong>AI Use Summary</strong></td>
+      <td style="text-align: right"><strong>5</strong></td>
+      <td>Identifies the AI tools used, explains their role in data collection and processing, and reports verification of selected data results.</td>
+    </tr>
+    <tr>
+      <td><strong>Assignment 1 total</strong></td>
+      <td style="text-align: right"><strong>30</strong></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Credential penalty:</strong> Exposing an API key or other credential in the notebook, outputs, screenshots, or shared data deducts <strong>10 points from Assignment 1</strong>, to a minimum of zero. Remove and revoke or rotate any exposed key.</p>
+
+<h2 id="assignment-2--tableau-public-data-source-and-dashboard--50-points">Assignment 2 — Tableau Public Data Source and Dashboard · 50 points</h2>
+
+<p><strong>Due: Friday, December 11, 2026, at 11:59 PM EST.</strong></p>
+
+<h3 id="part-a-data-source-and-calculations">Part A. Data source and calculations</h3>
+
+<p>Follow <a href="https://jmu-data.github.io/IA342/assignments/lab-12/">IA342 Lab 12</a> to connect the combined CSV in Google Drive to Tableau Public. Prepare the data source:</p>
+
+<ul>
+  <li><strong>Exclude</strong> <code class="language-plaintext highlighter-rouge">Operations</code> (empty in the example) and <code class="language-plaintext highlighter-rouge">Address</code> from the <strong>published</strong> data source. Keep your original CSV in Drive.</li>
+  <li>Set <code class="language-plaintext highlighter-rouge">Incident Date</code> to <strong>Date</strong>.</li>
+  <li>Assign <code class="language-plaintext highlighter-rouge">State</code> the <strong>State/Province</strong> geographic role and the appropriate <strong>County</strong> or <strong>City</strong> geographic role to your location field. Create a <strong>State → County/City hierarchy</strong>, as appropriate for your data.</li>
+  <li>Set <code class="language-plaintext highlighter-rouge">Incident ID</code> and <code class="language-plaintext highlighter-rouge">fips</code> to <strong>Dimensions</strong>. Store <code class="language-plaintext highlighter-rouge">fips</code> as five-digit text, including leading zeros.</li>
+  <li>Keep <code class="language-plaintext highlighter-rouge">Victims Killed</code> and <code class="language-plaintext highlighter-rouge">Victims Injured</code> as numeric measures. You may also keep <code class="language-plaintext highlighter-rouge">Suspects Killed</code>, <code class="language-plaintext highlighter-rouge">Suspects Injured</code>, and <code class="language-plaintext highlighter-rouge">Suspects Arrested</code> for additional charts.</li>
+  <li>Confirm that <code class="language-plaintext highlighter-rouge">population</code> and <code class="language-plaintext highlighter-rouge">median_household_income</code> are numeric.</li>
+</ul>
+
+<p>Create both measures using the <strong>FIXED level-of-detail (LOD)</strong> approach from <a href="https://jmu-data.github.io/IA342/assignments/lab-11/">IA342 Lab 11</a>:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Required measure</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>GVA deaths per 1,000 residents</strong></td>
+      <td>Recorded deaths relative to the county population for the incident period</td>
+    </tr>
+    <tr>
+      <td><strong>GVA injuries per 1,000 residents</strong></td>
+      <td>Recorded injuries relative to the county population for the incident period</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Create <strong><code class="language-plaintext highlighter-rouge">fixed pop</code></strong> using a FIXED LOD by <strong><code class="language-plaintext highlighter-rouge">fips</code></strong>, following Lab 11. Do not add the same population once for every incident row. Calculate both measures <strong>per 1,000 residents</strong>, not as percentages; leave rates missing when population is unavailable or nonpositive.</p>
+
+<p>Save <code class="language-plaintext highlighter-rouge">fixed pop</code> and both rate calculations with your Tableau data source. Verify a few calculated values. Use matched FIPS and valid population for the rate calculations. Do not sum repeated population or income values across incident records.</p>
+
+<p>Some counties may have no matched data. <strong>Missing values and blank areas are acceptable</strong>; they do not indicate zero incidents.</p>
+
+<p><img src="/IA342/pr-preview/pr-58/assignments/final-project/assets/tableau-fields.png" alt="Tableau data pane showing dimensions, geographic hierarchy, and calculated measures" /></p>
+
+<p><em>Illustration: a prepared data source with FIXED population and both rate calculations.</em></p>
+
+<p><img src="/IA342/pr-preview/pr-58/assignments/final-project/assets/calculation-check.png" alt="Tableau demonstration of a table used to compare fixed population, raw population sums, and injury rates" /></p>
+
+<p><em>Illustration: a table for verifying FIXED population and rate calculations. Null values may occur where Census data could not be matched.</em></p>
+
+<h3 id="part-b-interactive-dashboard">Part B. Interactive dashboard</h3>
+
+<p>Build an <strong>interactive dashboard with at least three charts and no more than five views in total</strong>. Include the following three required charts:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Chart</th>
+      <th>Requirement</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Geographic view</strong></td>
+      <td>Show county-level median household income, deaths per 1,000 residents, and injuries per 1,000 residents, using the full available incident period.</td>
+    </tr>
+    <tr>
+      <td><strong>2. Time-series chart</strong></td>
+      <td>Show the selected metric over time for your assigned state, using the available data (for example, a monthly line chart).</td>
+    </tr>
+    <tr>
+      <td><strong>3. Chart of your choice</strong></td>
+      <td>Explore an additional question, such as the relationship between income and a rate in a scatter plot, or total deaths by county in a bar chart.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You may add up to two additional views. The screenshots below are <strong>for illustration purposes only</strong>; you may use different chart designs.</p>
+
+<p><strong>Parameter control.</strong> Following <a href="https://jmu-data.github.io/IA342/assignments/lab-12/">Lab 12</a>, use one parameter to switch both the geographic and time-series views among <strong>Median Household Income</strong>, <strong>Deaths per 1,000 Residents</strong>, and <strong>Injuries per 1,000 Residents</strong>. Use dynamic titles that reflect the selected metric.</p>
+
+<p><strong>Example 1 — County map</strong></p>
+
+<p><img src="/IA342/pr-preview/pr-58/assignments/final-project/assets/map-example.png" alt="Illustrative Virginia Tableau county map with a three-option metric parameter" /></p>
+
+<p><em>Illustration: a geographic view with a metric selection parameter. Some counties may have no matched data.</em></p>
+
+<p><strong>Example 2 — Time-series chart</strong></p>
+
+<p><img src="/IA342/pr-preview/pr-58/assignments/final-project/assets/time-series-example.png" alt="Illustrative Tableau monthly line chart controlled by the same three-option parameter" /></p>
+
+<p><em>Illustration: a monthly line chart using the same parameter. Income reflects the locations represented in each period, not changes in 2024 household income. Rates describe the population represented by the matched data.</em></p>
+
+<p><strong>Interactivity.</strong> A county filter action is required. Selecting a county in the geographic view must update the time-series chart. Clearing the selection should restore the view for the state. Additional interactions are optional.</p>
+
+<p><strong>Design.</strong> Apply the <strong>five-second principle</strong>. Use appropriate colors, readable legends, clear titles and units, and a well-organized layout. Identify the state, data sources, and dates.</p>
+
+<h3 id="publish-and-submit">Publish and submit</h3>
+
+<p>Publish the <strong>data source and dashboard/workbook</strong> to your Tableau Public profile with clear final-project names. Check the published data for unnecessary addresses or credentials, and make sure the source and calculated fields can be inspected.</p>
+
+<p>Test the profile in an incognito/private window. Confirm that the dashboard opens and that the parameter and filter action work. Report publication or access problems to the instructor before the deadline.</p>
+
+<p>In <strong>Canvas → Assignment 2 — Tableau Public Data Source and Dashboard → Website URL</strong>, submit your <strong>Tableau Public profile URL</strong>.</p>
+
+<h3 id="assignment-2-rubric--50-points">Assignment 2 rubric · 50 points</h3>
+
+<p><strong>Data source — 20 points</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Criterion</th>
+      <th style="text-align: right">Points</th>
+      <th>Full-credit evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Published and prepared data source</strong></td>
+      <td style="text-align: right"><strong>10</strong></td>
+      <td>Accessible source; <code class="language-plaintext highlighter-rouge">Operations</code> and <code class="language-plaintext highlighter-rouge">Address</code> excluded; correct date type, dimensions, geographic roles, measures, and State → County/City hierarchy where appropriate.</td>
+    </tr>
+    <tr>
+      <td><strong>Both FIXED LOD rate calculations</strong></td>
+      <td style="text-align: right"><strong>10</strong></td>
+      <td>Correct deaths and injuries per 1,000 residents using county-level FIXED population; formulas are saved in Tableau, avoid repeated-population errors, and are used in the dashboard.</td>
+    </tr>
+    <tr>
+      <td><strong>Data source subtotal</strong></td>
+      <td style="text-align: right"><strong>20</strong></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Dashboard — 30 points</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Criterion</th>
+      <th style="text-align: right">Points</th>
+      <th>Full-credit evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Required charts</strong></td>
+      <td style="text-align: right"><strong>10</strong></td>
+      <td>Includes the geographic view, time-series chart, and at least one chart of the student’s choice; no more than five views in total.</td>
+    </tr>
+    <tr>
+      <td><strong>Parameter controls and filter actions</strong></td>
+      <td style="text-align: right"><strong>10</strong></td>
+      <td>The parameter switches all three metrics in the geographic and time-series views; dynamic titles update; the required county filter works and resets correctly.</td>
+    </tr>
+    <tr>
+      <td><strong>Dashboard design and clarity</strong></td>
+      <td style="text-align: right"><strong>10</strong></td>
+      <td>Five-second principle, readable layout, appropriate colors, legends, labels, units, and source/date notes.</td>
+    </tr>
+    <tr>
+      <td><strong>Dashboard subtotal</strong></td>
+      <td style="text-align: right"><strong>30</strong></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td><strong>Assignment 2 total</strong></td>
+      <td style="text-align: right"><strong>50</strong></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="assignment-3--video-presentation--20-points">Assignment 3 — Video Presentation · 20 points</h2>
+
+<p><strong>Due: Wednesday, December 16, 2026, at 11:59 PM EST.</strong></p>
+
+<h3 id="1-create-your-presentation">1. Create your presentation</h3>
+
+<p>Create a <strong>Google Slides presentation of 5–10 slides</strong> that tells a complete story about your project. Use actual screenshots of your Tableau dashboard and its charts to explain your analysis and findings. You may capture screenshots of your dashboard’s charts under different parameter or filter selections to illustrate your findings.</p>
+
+<p>Your presentation should cover:</p>
+
+<ul>
+  <li>Introduction to your project and assigned state.</li>
+  <li>Data collection: GVA and 2024 Census data.</li>
+  <li>Data preparation and calculated fields: how you combined the data and calculated your rates.</li>
+  <li>Dashboard and findings: explain each of the three required charts individually and what you learned from them.</li>
+  <li>Conclusion: summarize your main findings.</li>
+</ul>
+
+<h3 id="2-produce-your-video">2. Produce your video</h3>
+
+<p>Write a narration script for <strong>every slide</strong>. Use AI voice-over to narrate each slide; a speaking AI avatar may also deliver the narration. Your narration should explain the visuals and findings, not simply read the slide titles.</p>
+
+<p>Use <a href="https://jmu-data.github.io/IA342/assignments/lab-13/">IA342 Lab 13 — Flow and Vids</a> as a reference. Assemble the presentation into a <strong>2–3 minute MP4 video</strong>. Make sure the charts are readable and the narration is clear. Export and watch the finished video to check the duration and sound.</p>
+
+<p><strong>Optional enhancements:</strong> AI avatars, Flow-generated video clips, Gemini-generated infographics, or background music. These are optional and do not affect your score. If you use generated visuals, keep them relevant and non-graphic and distinguish them from actual project data.</p>
+
+<h3 id="submit-the-video">Submit the video</h3>
+
+<p>In <strong>Canvas → Assignment 3 — Video Presentation → File Upload</strong>, upload only your finished <strong>MP4 video</strong>. Check that it plays with sound.</p>
+
+<h3 id="assignment-3-rubric--20-points">Assignment 3 rubric · 20 points</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Criterion</th>
+      <th style="text-align: right">Points</th>
+      <th>Full-credit evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Storytelling and findings</strong></td>
+      <td style="text-align: right"><strong>10</strong></td>
+      <td>Complete, logical presentation of data collection, preparation, calculated fields, actual dashboard charts, findings, and conclusion. Each required chart is clearly explained.</td>
+    </tr>
+    <tr>
+      <td><strong>Video presentation</strong></td>
+      <td style="text-align: right"><strong>10</strong></td>
+      <td>Uses 5–10 slides, includes clear narration on every slide, shows readable screenshots of the student’s own charts, and is a playable MP4 lasting 2–3 minutes.</td>
+    </tr>
+    <tr>
+      <td><strong>Assignment 3 total</strong></td>
+      <td style="text-align: right"><strong>20</strong></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="class-schedule">Class schedule</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Format</th>
+      <th>Attendance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Monday, November 30, 2026</strong></td>
+      <td>In-person class</td>
+      <td><strong>Required</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Wednesday, December 2, 2026</strong></td>
+      <td>In-person class</td>
+      <td><strong>Required</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Monday, December 7, 2026</strong></td>
+      <td>Optional Zoom help during regular class time; Zoom link on Canvas. No separate office hours.</td>
+      <td><strong>Not required</strong></td>
+    </tr>
+    <tr>
+      <td><strong>Wednesday, December 9, 2026</strong></td>
+      <td>Optional Zoom help during regular class time; Zoom link on Canvas. No separate office hours.</td>
+      <td><strong>Not required</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If you have questions on December 7 or 9, join the Zoom meeting during our regular class time using the link posted on Canvas.</p>
+
+<h2 id="final-submission-check">Final submission check</h2>
+
+<p>Submit each assignment by its own deadline: <strong>December 4, 11, and 16, 2026, at 11:59 PM EST</strong>, respectively. Confirm successful Canvas submissions, both Assignment 1 URLs, the Tableau Public profile URL, and a playable MP4. Keep the submitted work and sharing settings available for grading.</p>
+
+
+      
+      <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+        This site is open source. <a href="https://github.com/JMU-Data/IA342/edit/gh-pages/assignments/final-project/source.md">Improve this page</a>.
+      </div>
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>
